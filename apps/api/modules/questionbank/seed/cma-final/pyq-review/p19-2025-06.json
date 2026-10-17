@@ -1,0 +1,68 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p19-2025-06",
+ "items": {
+  "1(ii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key C equals printed key (C).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(viii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (A).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(x)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answer prints '(A/B/C/D)' (every option accepted), so no key can be given.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer accepts every option (A/B/C/D) for this MCQ."
+   ]
+  },
+  "1(xiv)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Option (D) prints 'removal of goods from the place of worker'; stem prints 'maintain update the records'."
+   ]
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer compared with the print; complete, including the OR alternatives.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer compared with the print; both alternatives (nil ITC, or ₹ 3,15,000) present and figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer tables compared with the print; both alternatives present and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Alternate 2 is headed '@ 100 %' but computes Plasma TV duty at 110%."
+   ]
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer table compared with the print; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem prints exported September 2024 and re-imported August 2024."
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem, circular limits table, exclusions list and both alternatives compared with the print; complete.",
+   "fixes": [],
+   "printed_issues": []
+  }
+ }
+}

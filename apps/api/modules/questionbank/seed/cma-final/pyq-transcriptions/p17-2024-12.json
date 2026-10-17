@@ -1,0 +1,665 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p17",
+ "term_code": "2024-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Q1 has (a) 10 MCQs (2×10=20) and (b) 5 MCQs (2×5=10) on XYZ Ltd. data; part labels '(a)(i)'.. and '(b)(xi)'..(xv); the shared XYZ table is in intro_md."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Where considered necessary, suitable assumptions may be made and clearly indicated in the respective answer. All workings should form part of the answer. The figures in the margin on the right side indicate full marks. SECTION-A (Compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "(a) Choose the correct option from the four alternatives given: 2×10=20\n\n(b) Choose the correct option: 2×5=10\n\nThe following figures relate to XYZ Ltd., for the two years:\n\n| Year ended on | 31.03.2024 | 31.03.2023 |\n|---|---|---|\n| Gross Profit (%) | 25 | 20 |\n| Average Stock (₹) | 40,000 | 50,000 |\n| Stock Turnover (times) | 20 | 25 |\n| Income Tax Rate (%) | 30 | 30 |\n| Post-tax Income as % of Sales | 9 | 10 |\n\nFind out the correct option in respect of the following items:",
+     "parts": [
+      {
+       "label": "(a)(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is/are the objective(s) for which cost audit is undertaken?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "To establish the accuracy of costing data"
+        },
+        {
+         "key": "B",
+         "body_md": "To ensure that cost accounting principles are governed by the management objectives and these are strictly adhered in preparing cost accounts"
+        },
+        {
+         "key": "C",
+         "body_md": "To reduce the amount of detailed checking by the external auditor if effective internal cost audit system is in operation"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is not a professional misconduct in relation to Cost Accountants in Practice as per Second Schedule of the CWA Act, 1959?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "He/She fails to invite attention to any material departure from the generally accepted procedure of costing and pricing applicable to the circumstances."
+        },
+        {
+         "key": "B",
+         "body_md": "He/She does not exercise due diligence or is grossly negligent in the conduct of his /her professional duties."
+        },
+        {
+         "key": "C",
+         "body_md": "He/She fails to report a material misstatement known to him /her to appear in a cost or pricing statement with which he/she is concerned in a professional capacity."
+        },
+        {
+         "key": "D",
+         "body_md": "In the opinion of the council, he/she brings disrepute to the Profession or the Institute as a result of his/her action whether or not related to his/her professional work."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key (D) is the option describing disrepute to the Profession; cross-check with the Second Schedule not possible from the paper alone; kept as printed."
+       ]
+      },
+      {
+       "label": "(a)(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The foreign exchange component of imported material is converted at the rate on ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Date of Payment"
+        },
+        {
+         "key": "B",
+         "body_md": "Date of Delivery"
+        },
+        {
+         "key": "C",
+         "body_md": "Date of Transaction"
+        },
+        {
+         "key": "D",
+         "body_md": "Date of Use"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Penalty paid to PF authorities is ____________ in employee cost.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "included"
+        },
+        {
+         "key": "B",
+         "body_md": "excluded"
+        },
+        {
+         "key": "C",
+         "body_md": "based on individual case"
+        },
+        {
+         "key": "D",
+         "body_md": "partly included"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Management Audit is useful for ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "suggestion for targets."
+        },
+        {
+         "key": "B",
+         "body_md": "assistance for management."
+        },
+        {
+         "key": "C",
+         "body_md": "good staff relationship."
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Internal Controls and Internal Checks are:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "one and the same."
+        },
+        {
+         "key": "B",
+         "body_md": "different."
+        },
+        {
+         "key": "C",
+         "body_md": "internal control includes internal checks."
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is not prescribed in the Prevention of Money Laundering Act, 2002?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Seizure of property"
+        },
+        {
+         "key": "B",
+         "body_md": "Attachment of property"
+        },
+        {
+         "key": "C",
+         "body_md": "Confiscation of property"
+        },
+        {
+         "key": "D",
+         "body_md": "Life imprisonment"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following does not form part of the cost of transportation?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Local Octroi Charges"
+        },
+        {
+         "key": "B",
+         "body_md": "Transit Insurance"
+        },
+        {
+         "key": "C",
+         "body_md": "Freight Expenses"
+        },
+        {
+         "key": "D",
+         "body_md": "Demurrage Charge"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "As per CAS 2, Actual Capacity utilization shall be presented as a percentage of ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Installled capacity"
+        },
+        {
+         "key": "B",
+         "body_md": "Practical capacity"
+        },
+        {
+         "key": "C",
+         "body_md": "Abnormal Loss"
+        },
+        {
+         "key": "D",
+         "body_md": "Actual Production"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Machinery used in defense, space and atomic energy sector and fulfilling turnover criterion is under",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "regulated sector"
+        },
+        {
+         "key": "B",
+         "body_md": "unregulated sector"
+        },
+        {
+         "key": "C",
+         "body_md": "occupied by different statute"
+        },
+        {
+         "key": "D",
+         "body_md": "not applicable category"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following figures relate to XYZ Ltd., for the two years:\n\n| Year ended on | 31.03.2024 | 31.03.2023 |\n|---|---|---|\n| Gross Profit (%) | 25 | 20 |\n| Average Stock (₹) | 40,000 | 50,000 |\n| Stock Turnover (times) | 20 | 25 |\n| Income Tax Rate (%) | 30 | 30 |\n| Post-tax Income as % of Sales | 9 | 10 |\n\nFind out the correct option in respect of the following items:\n\nCost of Goods Sold for the two years ending on 31.03.2024 and 31.03.2023: (₹)",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "10,00,000 and 10,00,000"
+        },
+        {
+         "key": "B",
+         "body_md": "12,50,000 and 8,00,000"
+        },
+        {
+         "key": "C",
+         "body_md": "8,00,000 and 12,50,000"
+        },
+        {
+         "key": "D",
+         "body_md": "10,00,000 and 12,50,000"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following figures relate to XYZ Ltd., for the two years:\n\n| Year ended on | 31.03.2024 | 31.03.2023 |\n|---|---|---|\n| Gross Profit (%) | 25 | 20 |\n| Average Stock (₹) | 40,000 | 50,000 |\n| Stock Turnover (times) | 20 | 25 |\n| Income Tax Rate (%) | 30 | 30 |\n| Post-tax Income as % of Sales | 9 | 10 |\n\nFind out the correct option in respect of the following items:\n\nSales for the two years ending on 31.03.2024 and 31.03.2023: (₹)",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "10,66,667 and 15,62,500"
+        },
+        {
+         "key": "B",
+         "body_md": "15,62,500 and 10,66,667"
+        },
+        {
+         "key": "C",
+         "body_md": "8,00,000 and 12,50,000"
+        },
+        {
+         "key": "D",
+         "body_md": "10,00,000 and 15,62,500"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following figures relate to XYZ Ltd., for the two years:\n\n| Year ended on | 31.03.2024 | 31.03.2023 |\n|---|---|---|\n| Gross Profit (%) | 25 | 20 |\n| Average Stock (₹) | 40,000 | 50,000 |\n| Stock Turnover (times) | 20 | 25 |\n| Income Tax Rate (%) | 30 | 30 |\n| Post-tax Income as % of Sales | 9 | 10 |\n\nFind out the correct option in respect of the following items:\n\nNet Income after Tax for the two years ending on 31.03.2024 and 31.03.2023:(₹)",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "96,000 and 1,56,250"
+        },
+        {
+         "key": "B",
+         "body_md": "1,56,250 and 96,000"
+        },
+        {
+         "key": "C",
+         "body_md": "1,00,000 and 1,56,250"
+        },
+        {
+         "key": "D",
+         "body_md": "1,56,250 and 1,00,000"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following figures relate to XYZ Ltd., for the two years:\n\n| Year ended on | 31.03.2024 | 31.03.2023 |\n|---|---|---|\n| Gross Profit (%) | 25 | 20 |\n| Average Stock (₹) | 40,000 | 50,000 |\n| Stock Turnover (times) | 20 | 25 |\n| Income Tax Rate (%) | 30 | 30 |\n| Post-tax Income as % of Sales | 9 | 10 |\n\nFind out the correct option in respect of the following items:\n\nProfit Before Tax for the two years ending on 31.03.2024 and 31.03.2023 (₹)",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "96,000 and 1,56,250"
+        },
+        {
+         "key": "B",
+         "body_md": "2,23,214 and 1,37,143"
+        },
+        {
+         "key": "C",
+         "body_md": "1,00,000 and 1,56,250"
+        },
+        {
+         "key": "D",
+         "body_md": "1,37,143 and 2,23,214"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following figures relate to XYZ Ltd., for the two years:\n\n| Year ended on | 31.03.2024 | 31.03.2023 |\n|---|---|---|\n| Gross Profit (%) | 25 | 20 |\n| Average Stock (₹) | 40,000 | 50,000 |\n| Stock Turnover (times) | 20 | 25 |\n| Income Tax Rate (%) | 30 | 30 |\n| Post-tax Income as % of Sales | 9 | 10 |\n\nFind out the correct option in respect of the following items:\n\nWhat is the increase/decrease in the Profit before Tax from 31.03.2023 to 31.03.2024?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Decrease by ₹ 86,071"
+        },
+        {
+         "key": "B",
+         "body_md": "Increase by ₹ 86,071"
+        },
+        {
+         "key": "C",
+         "body_md": "No Change"
+        },
+        {
+         "key": "D",
+         "body_md": "Increase by ₹ 1,00,000"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "(Answer any five questions out of seven questions given. Each question carries 14 marks) 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What are the advantages of the Cost Accounting Standards?",
+       "options": [],
+       "correct": null,
+       "answer_md": "ADVANTAGES OF COST ACCOUNTING STANDARDS:\nCost Accounting Standards are set of standards that are designed to achieve uniformity and consistency in cost\naccounting principles and practices.\n\nThe Cost Accounting Standards:\n  Provide a structured approach to measurement of costs in manufacturing process or service industry;\n  Integrate, harmonize, and standardize cost accounting principles and practices;\n  Provide guidance to users to achieve uniformity and consistency in classification, measurement, assignment, and\n     allocation of costs to products or services;\n  Arrive at the basis of computing the cost of product, activity, or service where required by legal or regulatory\n     bodies;\n  Enable practicing members to make use of Cost Accounting Standards in the attestation of General Purpose\n     Cost Statements; and\n  Assist in clear and uniform understanding of all the related issues of various user organisations, government\n     bodies, regulators, research agencies and academic institutions.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the provisions relating to Applicability for Cost Audit as per Companies (Cost Records and Audit) Rules, 2014.",
+       "options": [],
+       "correct": null,
+       "answer_md": "APPLICABILITY FOR COST AUDIT:\n  (1) Every company specified in item (A) of rule 3 shall get its cost records audited in accordance with these rules, if\n       the overall annual turnover of the company from all its products and services during the immediately preceding\n       financial year is rupees fifty crore or more and the aggregate turnover of the individual product or products or\n       service or services for which cost records are required to be maintained under rule 3 is rupees twenty five crore\n       or more.\n\n (2) Every company specified in item (B) of rule 3 shall get its cost records audited in accordance with these rules, if\n     the overall annual turnover of the company from all its products and services during the immediately preceding\n     financial year is rupees one hundred crore or more and the aggregate turnover of the individual product or\n     products or service or services for which cost records are required to be maintained under rule 3 is rupees thirty\n     five crore or more.\n (3) The requirement for cost audit under these rules shall not apply to a company which is covered in rule 3; and\n (i) whose revenue from exports, in foreign exchange, exceeds seventy five per cent of its total revenue; or\n (ii) which is operating from a special economic zone;\n (iii) which is engaged in generation of electricity for captive consumption through Captive Generating Plant. For this\n       purpose, the term “Captive Generating Plant” shall have the same meaning as assigned in rule 3 of the\n       Electricity Rules, 2005.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "As per the Companies Act, 2013, enumerate the qualifications and disqualifications of a Cost Auditor?",
+       "options": [],
+       "correct": null,
+       "answer_md": "QUALIFICATIONS:\nApplicability of Section 141 of the Companies Act,2013, with respect to the Qualification of Cost Auditor, to be read\nalong with Section 148 of the Companies Act, 2013, Cost and Works Accountants Act, 1959 and Companies (Cost\nRecords and Audit) Rules, 2014\n\nSection 148(5) of the Companies Act, 2013, inter alia provides that qualifications as applicable to auditor (financial) is\nalso applicable to cost auditor, so far as may be applicable.\n\nIn view of what is stated above, Qualification of Cost Auditor are enumerated as given below:\n 1) A person shall be eligible for appointment as cost auditor who is a cost accountant (Section 148(3))\n 2) Cost Accountant means a Cost Accountant as defined in clause (b) of sub-section (1) of Section 2 of the Cost\n      and Works Accountants Act,1959 and who holds a valid certificate of practice under sub-section(1) of Section 6\n      of the Cost and Works Accountants Act,1959 (Section 2(28))\n 3) “Cost Accountant” means a person who is a member of the Institute (Clause (b) of sub-section (1) of Section 2\n      of Cost and Works Accountants Act, 1959.\n 4) A person is a member of the Institute, if his name appears in the Register of the Institute (Subsection (2) of\n      Section 19 of Cost and Works Act, 1959\n 5) An Individual or Firm, as the case may be is eligible for appointment as cost auditor provided he/it satisfies the\n      criteria as provided in section 141 of the Act (Sub Section (b) of Section (1A) of Rule 6 of Companies (Cost\n      Records and Audit) Rules, 2014.\n 6) Proviso to subsection (1) of Section 141 provides that a firm can also be appointed by its firm name as cost\n      auditor of the company, if majority of its partners practising in India are qualified for appointments as cost\n      auditors of the company.\n 7) Sub-Section (2) of Section 141 provides that where a firm including a limited liability partnership (LLP) is\n      appointed as Cost Auditor of the company, only the partners who are cost accountants shall be authorized to act\n      and sign on behalf of the firm.\n\nDISQUALIFICATIONS:\nAs per Section 141(3), read with Rule 10 of Company (Audit and Auditor) Rule 2014 and Section 148, the following\npersons shall not be eligible for appointment as Cost Auditor of a company:\n (a) a body corporate other than a limited liability partnership registered under the Limited Liability Partnership Act,\n       2008;\n (b) an officer or employee of the company;\n (c) a person who is a partner, or who is in the employment, of an officer or employee of the company;\n (d) a person who, or his relative or partner:\n (i) is holding any security of or interest in the company or its subsidiary, or of its holding or associate company or a\n       subsidiary of such holding company, of face value not exceeding rupees one lakh;\n (ii) is indebted to the company, or its subsidiary, or its holding or associate company or a subsidiary of such holding\n       company, in excess of rupees five lakh;\n (iii) has given a guarantee or provided any security in connection with the indebtedness of any third person to the\n       company, or its subsidiary, or its holding or associate company or a subsidiary of such holding company, in\n       excess of rupees one lakh\n (e) a person or a firm who, whether directly or indirectly, has business relationship with the Company, or its\n       subsidiary, or its holding or associate company or subsidiary of such holding company of such nature as may be\n       prescribed;\n\n (f)  a person whose relative is a director or is in the employment of the company as a director or key managerial\n     personnel.\n (g) a person who is in full time employment elsewhere or a person or partner of a firm holding appointment as its\n     auditor, if such persons or partner is at the date of such appointment or reappointment holding appointment as\n     auditor of more than twenty companies;\n (h) a person who has been convicted by a court of an offence involving fraud and a period of ten years has not\n     elapsed from the date of such conviction;\n (i) a person who, directly or indirectly, renders any service referred to in Section 144 to the company or its holding\n     company or its subsidiary company.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "In a Cost Audit program, draw a checklist to audit the production of a manufacturing unit-product-wise.",
+       "options": [],
+       "correct": null,
+       "answer_md": "In a Cost Audit program, draw a checklist to audit the production of a manufacturing unit-\n  ● The audit assignment should be planned with professional care. It has to provide reasonable assurance that the\n       cost information provided is free of material misstatements. As regards the audit of production- product-wise,\n       the following checklist may be considered.\n  ● Ensure that there is proper inventory balancing for each of the finished products. Viz. (op stock+ production =\n       sales+ closing stock.)\n  ● The closing stock of the previous year is correctly considered in the opening stock of the current year.\n  ● Check the capacity utilization of 5 years‟ product-wise.\n  ● For any abnormal underutilization of production capacity, the auditor should seek the reasons and enquire into\n       the steps the management proposes to overcome it.\n  Alternatively,\n       For any abnormal underutilisation of production capacity the auditor should seek the reasons from the\n       management and what steps management has proposed to undertake to overcome underutilisation of capacity.\n       Underutilisation of capacity should merit attention and focus where either product is profitable or the product\n       has substantial positive contribution.\n  ● Check whether there are any circumstances where there is an addition to capacity for any product during the\n       year but the increase is not reflected in the records.\n  Alternatively,\n       Check whether there is any circumstance where there is addition to capacity for any product during the year but\n       actual production achieved is either equal to or less than that of previous year. Reasons for the same should be\n       sought from the management.\n  ● An MIS for five years in prescribed form be submitted.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following information is provided to you in respect of a cement manufacturing company for the year ended March 31:\n\n| The year ended March 31 | 2024 | 2023 |\n|---|---|---|\n| Rated Capacity per Hour (in MT) | 90 | 90 |\n| Break down (Hrs) | 2,388 | 1,230 |\n| Planned Maintenance (Hrs) | 258 | 482 |\n| Power restrictions (Hrs) | 1,374 | 1,691 |\n| Shortfall (there are no orders) (Hrs) | 822 | 878 |\n| Non-availability of Wagons (Hrs) | 506 | 839 |\n| Total Stoppage (Hrs) | 5,348 | 5,120 |\n| Total Running (Hrs) | 3,570 | 3,971 |\n| Total Available Hours | 8,918 | 9,091 |\n| Production during the year (in MT) | 2,49,865 | 3,17,650 |\n| Hourly Rate of Production (in MT) | 70 | 80 |\n| Capacity Utilisation (%) | 59.49% | 75.63% |\n| Annual Installed capacity (in MT) | 4,20,000 | 4,20,000 |\n\nBased on the information stated above, you as a Cost Auditor are required to offer your comments on:\n(i) The performance of the company\n(ii) Your suggestion for improvement",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i)\n  (a) Rated Capacity = 90 MT/ Hr\n       Rated Capacity achieved in 2023-24: (70/90) X 100 =77.78%\n       Rated Capacity achieved in 2022-23: (80/90) X 100 =88.89%\n       The capacity achievement as % of rated capacity has declined from 88.89% to 77.78% in 2023-24\n       Further the capacity utilisation has gone down to 59.49% in 2023-24 from 75.63% of previous year, a reduction\n       of 16.14%.\n\n (b) From the data available the following observations are noted:\n 1. Breakdown hours have gone up from 1,230 to 2,388 hours an increase by 94.15%\n 2.    Planned Maintenance hours has reduced from 482 hours to 258 hours that is by 46.47%\n 3.    Shortfall hours due to lack of orders has decreased from 878 to 822 hours i.e by 6.38%\n 4.    The total stoppage hours has increased from 5,120 to 5,348 hours i.e. by 4.45%\n 5.    The total running hours has come down from 3,971 to 3,570 hours i.e. by 10.10%\n 6.    The production has come down from 3,17,650 MT to 2,49,865 MT i.e. by 21.34%\n\nFrom the above findings, it can be pointed out that the underutilization of capacity can be attributed mainly to:\n (i) Increased total stoppage hours and\n (ii) the net increase of stoppage hours is again due to increase of breakdown hours\n\n (ii) Suggestions:\n      Therefore, the company should look into the aspect of proper maintenance, securing sufficient orders to avoid\n      that time. Better utilization of capacity can be also be achieved by improving availability of wagons. The\n      company may also carry out a cost-benefit analysis to have captive source of power.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A Steel Company which produced Iron Casting Pipes and TMT Bar is covered under the Cost Audit according to the Companies (Cost Records and Audit) Rules, 2014. From the expenditure data relating to 2023-24, determine the Employees Cost according to CAS-7, clearly indicating the items not included.\n\n| | Particulars | ₹ in lakhs |\n|---|---|---|\n| (i) | Salary, Wages and other allowances | 825 |\n| (ii) | Bonus | 120 |\n| (iii) | Contribution to Provident Fund | 100 |\n| (iv) | Wages to contractors' employees | 110 |\n| (v) | Employees welfare | 45 |\n| (vi) | Abnormal cost due to strike | 85 |\n| (vii) | VRS payment for closure of TMT Bar Section of the plant | 67 |\n| (viii) | Arrear Salary (2022-23) | 220 |\n| (ix) | Compensation paid against the past periods against Court Order | 60 |",
+       "options": [],
+       "correct": null,
+       "answer_md": "The following items will not be included according to CAS -7:\n  (i) VRS paid for closure of a unit\n  (ii) Abnormal cost charges to Profit and Loss account\n  (iii) Arrears salary not related to the current year\n  (iv) Compensation paid against past periods\n  (v) Wages paid to contractor employees\n\n As per Explanation (1) of CAS-7 under Para 4.7, Contract employees directly engaged by the employer on contract\n basis but does not include employees of any contractor engaged in the organisation.\n                                  Employees Cost:                   ₹ in lakhs\n                              Salary and Wages                                  825\n                              Contribution to Provident Fund                    100\n                              Employees Welfare                                  45\n                              Bonus                                             120\n                              Total                                           1,090",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "WXY Ltd. shows the following figures in their Cost Accounting Records for the Current year 2023-24 and the previous year 2022-23. Find Value Addition as per Annexure to Cost Audit Report (Part D).\n\n₹ in lakh\n\n| The year ended 31st March | 2024 | 2023 |\n|---|---|---|\n| Revenue from Operations including GST | 10,324 | 8,773 |\n| Export Incentives | 116 | 103 |\n| Income from other sources | 218 | 178 |\n| Increase in stock of finished goods | 235 | 182 |\n| Materials consumed | 5278 | 4473 |\n| Stores and spares | 348 | 287 |\n| Power & Fuel | 522 | 450 |\n| Manufacturing overhead | 203 | 186 |\n| Packing overheads | 44 | 35 |\n| Wages and salaries | 1,325 | 1,115 |\n| Interest | 265 | 201 |\n| GST paid | 510 | 440 |\n| Income tax | 385 | 190 |\n| Dividend | 175 | 160 |",
+       "options": [],
+       "correct": null,
+       "answer_md": "Value Addition                                     (₹in lakh)\n         The year ended 31st March                              2024                   2023\n\n         Revenue from Operations + GST                          10,324                8,773\n\n         Less: GST                                               510                   440\n\n         Net Revenue from Operations                            9,814                 8,333\n\n         Export Incentives                                       116                   103\n\n         Increase in stock of finished goods                     235                   182\n\n         Total                                                  10,165                8,618\n\n         Less: cost of bought-out inputs\n\n         Materials consumed                                     5,278                 4,473\n\n         Stores and spares                                       348                   287\n\n         Power & Fuel                                            522                   450\n\n         Others (Prime Overheads)                                247                   221\n\n         Total cost of bought-out inputs                        6,395                 5,431\n\n         Value Added                                            3,770                 3,187",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "List out the Code of Ethics for Certified Fraud Examiners as per the CFE Code of Professional Standards.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Code of Ethics for Certified Fraud Examiners:\n  1. A Certified Fraud Examiner shall, at all times, demonstrate a commitment to professionalism and diligence in\n       the performance of his or her duties.\n  2. A certified Fraud Examiner shall not engage in any illegal or unethical conduct or any activity which would\n       constitute a conflict of interest\n  3. A Certified Fraud Examiner shall, at all times, exhibit the highest level of integrity in the performance of all\n       professional assignments, and will accept only assignments for which there is a reasonable expectation that the\n       assignment will be completed with professional competence.\n  4. A Certified Fraud Examiner will comply with lawful orders of the courts, and will testify to matters truthfully\n       and without bias or prejudice.\n  5. A Certified Fraud Examiner, in conducting examinations, will obtain evidence or other documentation to\n       establish a reasonable basis for any opinion rendered. No opinion shall be expressed regarding the guilt or\n       innocence of any person or party.\n  6. A Certified Fraud Examiner, shall not reveal any confidential information obtained during a professional\n       engagement without proper authorization\n  7. A Certified Fraud Examiner shall reveal all material matters discovered during an examination, which, if\n       omitted, could cause a disorder.\n  8. A Certified Fraud Examiner shall continuously strive to increase the competence and effectiveness of\n       professional services performed under his or her direction.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Enumerate the measures to be taken for Customer Due Diligence and provisions related to Record Keeping as per Prevention of Money-Laundering Act (PMLA), 2002.",
+       "options": [],
+       "correct": null,
+       "answer_md": "CUSTOMER DUE DILIGENCE:\nFinancial institutions should be prohibited from keeping anonymous accounts or accounts in fictitious names.\nFinancial institutions should be required to undertake customer due diligence (CDD) measures when:\n  (i) Establishing business relations\n  (ii) Carrying out occasional transactions above the applicable designated threshold (USD/EUR 15,000); or\n  (iii) There is a suspicion of money laundering or terrorist financing; or\n  (iv) The financial institution has doubts about the veracity or adequacy of previously obtained customer\n        identification data.\nThe principle that financial institutions should conduct CDD should be set out in law. Each country may determine\nhow it imposes specific CDD obligations, either through law or enforceable means.\n\nThe CDD measures to be taken are as follows:\n (a) Identifying the customer and verifying that customer‟s identity using reliable, independent source documents,\n     data or information.\n (b) Identifying the beneficial owner, and taking reasonable measures to verify the identity of the beneficial owner,\n     such that the financial institution is satisfied that it knows who the beneficial owner is. For legal persons and\n     arrangements, this should include financial institutions understanding the ownership and control structure of the\n     customer.\n (c) Understanding and, as appropriate, obtaining information on the purpose and intended nature of the business\n     relationship.\n (d) Conducting on going due diligence on the business relationship and scrutiny of transactions are undertaken\n     throughout that relationship to ensure that the transactions being conducted are consistent with the institution‟s\n     knowledge of the customer, their business, and risk profile, including, where necessary, the source of funds.\n\nFinancial institutions should be required to apply each of the CDD measures under (a) to (d) above but should\ndetermine the extent of such measures using a risk-based approach (RBA) by the Interpretive Notes to this\nRecommendation.\n\nFinancial institutions should be required to verify the identity of the customer and beneficial owner before or during\nestablishing a business relationship or conducting transactions for occasional customers. Countries may permit\nfinancial institutions to complete the verification as soon as reasonably practicable following the establishment of the\nrelationship, where the money laundering and terrorist financing risks are effectively managed, and where this is\nessential not to interrupt the normal conduct of business.\n\nWhere the financial institution is unable to comply with the applicable requirements under paragraphs (a) to (d) above\n(subject to appropriate modification of the extent of the measures on a risk-based approach) it should be required not\nto open the account, commence business relations or perform the transaction, or should be required to terminate the\nbusiness relationship, and should consider making a suspicious transactions report about the customer.\n\nThese requirements should apply to all new customers, although financial institutions should also apply this\nRecommendation to existing customers based on materiality and risk, and should conduct due diligence on such\nexisting relationships at appropriate times.\n\nRecord-Keeping:\nFinancial institutions should be required to maintain, for at least 5 years, all necessary records on transactions, both\ndomestic and international, to enable them to comply swiftly with information requests from competent authorities.\nSuch records must be sufficient to permit the reconstruction of individual transactions (including the amounts and\ntypes of currency involved, if any) to provide, if necessary, evidence for the prosecution of criminal activity.\n\nFinancial institutions should be required to keep all records obtained through CDD measures (e.g. copies or records of\nofficial identification documents like passports, identity cards, driving licenses, or similar documents), account files,\nand business correspondence, including the results of any analysis undertaken (e.g., inquiries to establish the\nbackground and purpose of complex, unusual large transactions), for at least five years after the business relationship\nis ended, or after the date of the occasional transaction.\n\nFinancial institutions should be required by law to maintain records on transactions and information obtained through\nthe CDD measures.\n\nThe CDD information and the transaction records should be available to domestic competent authorities upon\nappropriate authority.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What do you understand by Corporate Social Responsibility? How are the Internal Auditors involved in CSR Audit?",
+       "options": [],
+       "correct": null,
+       "answer_md": "CORPORATE SOCIAL RESPONSIBILITY (CSR) AUDIT:\nCorporate Social Responsibility can be understood as the initiative of a company to assess and take responsibility for\nthe environment and impact on social welfare. Corporate social responsibility is a form of corporate self-regulation\nintegrated into a business model. CSR policy functions as a built-in, self-regulating mechanism whereby a business\nmonitors and ensures its active compliance with the spirit of the law, ethical standards, and international norms.\nThe goal of CSR is to embrace responsibility for the company‟s activities and encourage a positive impact through its\nactivities on the environment, consumers, employees, communities, stakeholders, and all other members of the public\nsphere who may also be considered as stakeholders.\n\nAll types of CSR information disclosure are effected by the need for credibility. Some examples are:\n 1. Employees, to provide confidence in systems, establish progress against targets and improve confidence;\n 2. Specialists, including analysts, particularly rating agencies, government officials, and NGOs;\n 3. Business partners, to strengthen the supply chain; and\n 4. Communities, to establish credibility with neighbours and local organisations.\n\nInternal Auditors might be involved in CSR at various levels:\n (i) Internal Auditors might facilitate or advise management on CSR self-assessment activities.\n (ii) Internal Auditors might be involved in auditing CSR programs, either as individual components of the audit\n       plan, or as a broad-based review of how CSR is managed, and whether the company is achieving its CSR\n       objectives.\n (iii) Internal Auditors might become involved in co-ordinating or participating in CSR Report verifications.\n (iv) Proposed expenditure is made in areas demarcated/specified.\nInternal Auditors have an opportunity to make value additions to the Corporate Sustainability Reporting process of\ntheir organisation. They must have a good knowledge and understanding of prevalent CSR concepts. Important role\ninternal auditors can play includes:\n  (i) Assist in the design/implementation of the CSR management system\n  (ii) Perform limited scope audits requested by top management\n  (iii) Perform compliance audits.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "As an Information System Auditor of XYZ Bank, how would you maintain the Data Integrity? Explain.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Maintenance of Data Integrity:\nData Integrity includes the safeguarding of the information against unauthorized addition, deletion, modification or\nalteration. This includes items such as accounting records, backup, documentation, etc. Information Systems are used\nto capture, store, process, retrieve and transmit the data securely and efficiently. The emphasis is on the accuracy of\nthe data and its transmission in a secured manner. Data Integrity also implies that during the various phases of\nelectronic processing, various features of the data viz. Accuracy, Confidentiality, Completeness, Up-to-date status,\nReliability, Availability, Timeliness and Effectiveness are not compromised. In other words, data should remain\naccurate during electronic processing.\n\nThe desired features of the data are described hereunder:\n\n  (a) Accuracy: Data should be accurate. Inaccurate data may lead to wrong decisions and thereby, hindering the\n       business development process.\n  (b) Confidentiality: Information should not lose its confidentiality. It should be protected from being read or copied\n       by anyone who is not authorised to do so. It also includes protecting the individual pieces of information that\n       may seem harmless by the owner but can be used to infer other confidential information.\n  (c) Completeness: Data should be complete. Incomplete data loses its significance and importance.\n  (d) Up-to-date Status: Data should be updated regularly. If the information is not up-to-date, it presents a false\n       picture of the organisation.\n  (e) Reliability: Data should be reliable because all business decisions are taken based on the current database.\n  (f) Availability: Data should be available when an authorized user needs it. It should be ensured that the\n       information services are unavailable to unauthorized users.\n  (g) Timeliness: Timeliness of the data is very important because if data is not available when required, the very\n       purpose of maintaining the database gets defeated.\n  (h) Effectiveness: Information should be effective so that it helps in the process of business development and\n       expansion.\nIf data integrity is not maintained, an organisation loses its true representation. Poor data integrity could lead to the\nloss of competitive advantage. The corruption of data would affect many users in a networked environment. If the data\nis valuable to a competitor, its loss may undermine an organisation‟s competitive position.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What are the four essential dimensions involved in Corporate Development Audit? Explain the Scope of Corporate Development Audit.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Four essential dimensions involved in Corporate Development Audit:\n\n (i) Regularity: That means the different elements/parts of a body corporate are under constant watch.\n (ii) Systematic Check: This suggests the assessment of changing requirements of a corporate body in the context of\n      forces generated from within and outside.\n\n (iii) Review: This assesses past performance, its quality, and content, and its contribution to the corporate goals as\n       definitively pronounced from time to time. This examines the deviations from goal realisation and suggests\n       measures for achievement.\n\n (iv) Appraisal: This examines in detail the character, content and quality of the corporate goals set matches the\n      resources employed against the attainments recorded, and suggests the Future course of action on the premise\n      that nothing is taken for granted even goals.\n\nScope of Corporate Development Audit:\nThe scope of corporate development audit can be viewed from both Micro and Macro level:\n 1. Corporate Planning and Policy:\n      Planning is an exercise undertaken on a long-term basis even before the forecast are drawn up. It requires\n      examining the business enterprise and its whole environment in greater detail from the viewpoints of potential\n      strengths and weaknesses. The possible audit areas are planning and policy issues on the product, production,\n      finance, personnel, managerial-particularly „succession‟ etc.\n\n 2.    Corporate Forecasting:\n       Forecasts are usually medium-term and commonly short-term. The thrust of the audit is to ascertain by a review\n       process.\n (a)   The degree of co-relationship that exists between corporate plans and total industry plans.\n (b)   The competitive market share position within that industry.\n (c)   The factors for forecasts, such as supply and demand, industry trends, enterprise‟s competitive performance,\n       general economic and political trends, financial standing about the competitors, etc.\n (d)   How well the corporate forecasts match with national economic development plans.\n\n 3.    Corporate Strategy:\n       For a long-term strategy, the auditor attempts to assess whether a corporate sector will survive as a viable entity.\n       For short-term strategies, the auditor examines and evaluates how a firm analyses its on-going strategy-the\n       strategy of operations on existing lines.\n\n Four broad dimensions are usually covered in any strategic audit, viz:\n (a) Product lines and basic competitive position\n (b) R & D and operating departments\n (c) Financial analysis and financial management, and\n (d) Top management for each dimension, past achievements, present attainments, and future potential for each area\n     are considered.\n\n 4.    Corporate Externalities:\n       Certain elements external to a corporate firm have impacts on its policies and decisions. The audit, in this\n       respect, seeks to evaluate the factors, such as economic environment, industry structure and corporate position,\n       risk of technological obsolescence, socio-politico-cultural environment, etc. which affect the growth and\n       development of an enterprise.\n\n 5.    Corporate Internalities:\n       The areas covered are organisation development, management development, personnel development, and their\n       detailed sub-systems- which provide internal strengths or weaknesses to a corporation.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "You are appointed to conduct an Operational Audit for a company. How do you prepare for such an Operational Audit and what are the objectives of Operational Audit?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Preparation for Operational Audit:\nThere are two kinds of approaches Active and Passive approach in all types of assignments and especially for\nOperational Audit for a paradigm shift to „beyond compliance‟. The active zone of „operational audit‟ is to prevent\n„wasteful activities‟ with a view „to reduce revenue leakages and cost‟. This in turn having a positive impact on\nbusiness performance.\n\nThe contemporary approaches of „Risk Based Audit‟ are not in total sync with „Operational Audit‟. Risk pertaining to\n„Operations” is prioritized for „Risk Based Audit‟ and recommended mitigation, fails to provide a holistic coverage for\nthe entire gamut of risk associated with the „Operation‟ and improvement in „value chain‟ through a set of corrective\nmeasures.\n\nObjectives:\nOperational Audit objective has been coined here after the name of connoisseur of TQM (Total Quality Management)\nW.E. Deming. To define the objective the word „DEMING‟ is used, where each of the word stands for a definitive\nobjective accomplishment.\n\nD – Detailed understanding for existing process to suggest improvement\nE – Eliminate Waste, Duplication of work\nM –Merge Operations/Processes to reduce Turn Around Time\nI- Improve/Increase Quality, Volume, Revenue\nN – New Methods, Techniques, Devices for better result/throughput\nG – Govern Man, Machine, Methods and Money\n\nTo carry out the heightened expectations of „stakeholders‟ on their shoulder, Auditors can no longer spend their time\nlooking down at financial controls and compliances rather to spend much more time in operation reviews.\n\nTo support the accomplishment of aforesaid objective, the audit process to tend appropriate support. Process provides\na methodology for intelligently and efficiently integrating People, Tools, Procedures and Technology for the best\nresults/outcome.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "List out the important points to be considered while conducting the Audit of Hospitals.",
+       "options": [],
+       "correct": null,
+       "answer_md": "AUDIT OF HOSPITALS:\nThe following points are to be considered necessary for conducting an audit of Hospital.\n\n (i) Check the letter of appointment to ascertain the scope of responsibilities\n (ii) Ownership and control of the institution\n (iii) Process (e.g. admission, release, outdoor check-up, pathology and other test facilities, Operation Theatre\n       facility, vaccination etc.) and related controls till revenue generation. Normally facilities not provided for other\n       than cash terms.\n (iv) Donation, Special Grant, Interest and/or dividend income etc. to be validated through necessary supporting\n       documents should be vouched with a reference to the Investment Register and Interest and Dividend Warrants.\n (v) Ensure purposive donations, grants etc. spent for the particular purpose only.\n (vi) Clear distinction should be made between the items of capital and revenue nature.\n (vii) Adherence to Standard Operating Procedure w.r.t. Expenses (Capex and Opex)\n (viii) Verify the system of internal check as regards purchases and issue of stores, medicines, medical equipment\n       etc.\n (ix) Examine that the appointment of the staff, visiting specialist doctors, payment of salaries etc. for expenditure\n       booking validation.\n (x) Physically verify the investments, fixed assets and inventories\n (xi) Check appropriateness of capitalization and depreciation rates charged and value in Books.\n\n                                             ______________________________",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

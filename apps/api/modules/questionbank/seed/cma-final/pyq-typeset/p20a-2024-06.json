@@ -1,0 +1,44 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p20a-2024-06",
+ "items": {
+  "1(xi)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "3(a)": {
+   "stem_md": "A company sells one of its products in the domestic as well as in the export market. The relationship between price and demand in the two different markets are as under:\nDomestic market: $136 - 8Q_1$\nExport Market: $228 - 20Q_2$,\nwhere $Q_1$ and $Q_2$ represent quantity of demand in '000 units.\nThe variable cost per unit of the product is represented by $38 - Q$ where $Q = Q_1 + Q_2$\nFind the optimum selling price and total contribution for domestic market and export market.",
+   "confidence": "high",
+   "review": [
+    "Print shows 'Q1', 'Q2' without subscript formatting; typeset as Q_1, Q_2 (same meaning).",
+    "Answer text already matches the print."
+   ]
+  }
+ }
+}

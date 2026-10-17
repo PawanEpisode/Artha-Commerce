@@ -1,0 +1,80 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p19-2023-12",
+ "items": {
+  "1(viii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print and the stored key A equals the key (A) printed in the suggested answers.",
+   "fixes": []
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared the stem table, notes and requirement with the print; the answer gives only the final figure as printed.",
+   "fixes": [
+    "Restored the printed 'You. are required'."
+   ],
+   "stem_md": "Mr. Basant a registered supplier of Chennai, received the following amounts in respect of the various activities undertaken by him during the month of May, 2023:\n\n| S. No. | Particulars | Amount (₹) |\n|---|---|---|\n| (i) | Actionable claim received from normal business debtors | 9,20,000 |\n| (ii) | Commission received as a recovery agent from a non-banking finance-company (NBFC) | 51,000 |\n| (iii) | He got permission from the municipal authorities to build 7 floors building in the Bengaluru but he agreed to build only 3 floors and received ₹ 22,00,000 as compensation from Ranjeet Constructions Ltd, a neighboring housing project which wants to protect its sunlight | 22,00,000 |\n| (iv) | Amount received from GHK Ltd. for performance of classical dance in one program. | 1,99,500 |\n| (v) | Amount charged for providing services by way of fumigation in a warehouse of agricultural produce. | 1,20,000 |\n| (vi) | Consideration received for one month rent from a registered individual person for renting of residential dwelling for use as office. | 18,000 |\n| (vii) | Amount charged for composite supply of goods and service by way of milling of wheat in to wheat flour, along with fortification to Karnataka Government for distribution of such wheat flour under Public Distribution System (PDS) in Karnataka. (The value of supply of goods in the above supply constitutes 48% of the value of composite supply) | 7,00,000 |\n\nNotes:-\n(i) All the amount stated above in both the tables are exclusive of GST, wherever applicable\n(ii) Aggregate turnover of Mr. Basant in previous year was ₹ 42,00,000\n\nYou. are required to Compute Gross Value of supplies, on which GST to be paid by Mr. Basant for the month of May, 2023.\nCorrect legal provision should form part of your answer.",
+   "printed_issues": [
+    "Section B is headed 'Customs Act and Rules' although the question is a GST question.",
+    "Requirement reads 'You. are required'.",
+    "Suggested answer gives only the final figure."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem table matches the print; answer gives only the final figures as printed.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and requirement match the print; answer figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Compared the stem with the print (checked at high resolution under the watermark) and the long answer with the suggested answers.",
+   "fixes": [
+    "Restored the printed 'and as personal computer'."
+   ],
+   "stem_md": "After visiting USA for a month, Mrs. and Mr. X (Indian residents aged 40 and 45 years respectively) brought to India a laptop computer valued at ₹ 80,000, used personal effects valued at ₹ 90,000 and as personal computer for ₹ 52,000. What is the customs duty payable? (Ignore Agriculture infrastructure and development cess.)",
+   "printed_issues": [
+    "Stem prints 'and as personal computer'.",
+    "Section B is headed 'Customs Act and Rules'."
+   ]
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the final figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem, table and additional information match the print apart from one symbol; answer gives only the final figure as printed.",
+   "fixes": [
+    "Restored the printed '₹ 3 %' in the trade discount line."
+   ],
+   "stem_md": "Following are the particulars, relating to one of the machines sold by M/s TDR Ltd. registered at Mumbai to M/s. FDT Ltd. of Rajasthan in the month of April 2023, at contract price of ₹ 6,00,000. (Exclusive of taxes and discount)\nFurther, following additional amounts have been charged from M/s FDT Ltd:\n\n| S. No. | Particulars | Amount (₹) |\n|---|---|---|\n| (i) | Outward freight Charges (Contract was to deliver machine at FDT Ltd's factory i.e. F.O.R. contract) | 40,000 |\n| (ii) | CGST and SGST chargeable on the machine | 72,000 |\n\nAdditional information:\n(i) M/s TDR Ltd. offers trade discount of ₹ 3 % on the price of ₹ 6,00,000 which was recorded in invoice.\n(ii) M/s TDR Ltd. normally gives an interest-free credit period of 20 days for payment, after that it charge interest @ 1.50 % P.M. or part thereof on contract price. M/s FDT Ltd. paid for the supply after 25 days but M/s TDR Ltd. waived the interest payable for delay\n(iii) M/s TDR Ltd. received ₹ 50,000 as subsidy, from one non-government organization (NGO) on sale of such machine., this Subsidy not linked to the price of machine and also not considered in contract price of ₹ 6,00,000.\n\nCompute the Taxable Value of supply as per provision of GST laws considering that the price is the sole consideration for the supply and both parties are unrelated to each other\nNote:- Correct legal provision should form part of your answer.",
+   "printed_issues": [
+    "Trade discount printed as '₹ 3 %'.",
+    "Suggested answer gives only the final figure."
+   ]
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ]
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p15-2026-06",
+ "items": {
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed '80JJA' where 80JJAA is meant",
+    "Printed 'Surcharge @1 0%' (10%)"
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. Figures flagged by the text check were only comma/lakh formatting.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. The 7 marks are printed once for items (i)-(vii).",
+   "fixes": [],
+   "printed_issues": [
+    "Answer to (iii) says 'not less than 10% interest'; (iv) says 'book value of total assets' (as printed)"
+   ]
+  }
+ }
+}

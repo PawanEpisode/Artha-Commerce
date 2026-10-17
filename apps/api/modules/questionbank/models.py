@@ -150,6 +150,22 @@ class Question(UUIDModel):
     published_at = models.DateTimeField(null=True, blank=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        """
+        `marks` is a copy of the marks of the version a student sees (the live version, or the current draft before
+        anything is live). The question list reads this copy and the detail page reads the version, so every save brings
+        the copy back in line: the two can never show different numbers.
+        """
+        version_id = self.live_version_id or self.current_version_id
+        if version_id:
+            version = self.live_version if self.live_version_id else self.current_version
+            if version is not None and self.marks != version.marks:
+                self.marks = version.marks
+                fields = kwargs.get("update_fields")
+                if fields is not None:
+                    kwargs["update_fields"] = {*fields, "marks"}
+        super().save(*args, **kwargs)
+
     class Meta:
         db_table = "questionbank_question"
         constraints = [
@@ -236,6 +252,15 @@ class QuestionVersion(UUIDModel):
     reviewed_at = models.DateTimeField(null=True, blank=True)
     live_at = models.DateTimeField(null=True, blank=True)
     superseded_at = models.DateTimeField(null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        """Editing a version's marks moves the question's copy too (see Question.save)."""
+        super().save(*args, **kwargs)
+        fields = kwargs.get("update_fields")
+        if fields is None or "marks" in fields:
+            Question.objects.filter(
+                Q(live_version_id=self.pk) | Q(live_version__isnull=True, current_version_id=self.pk)
+            ).exclude(marks=self.marks).update(marks=self.marks)
 
     class Meta:
         db_table = "questionbank_questionversion"

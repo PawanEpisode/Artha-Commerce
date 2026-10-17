@@ -1,0 +1,234 @@
+{
+ "schema": "artha.qbreview.v1",
+ "paper": "p20a",
+ "items": {
+  "workbook:cma-final:p20a:ch1:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem (income statement, house/rent, staff, planned maintenance, running repairs tables, Required i-iii) and the full solution across printed pages 8-15 cell by cell; all figures and text match, no neighbouring Illustration 8 leaked.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed 52,000 in sanitary-fittings sentence vs 52,200 elsewhere",
+    "'peer ES', 'form tenants', 'are generally do not add' as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch2:q3": {
+   "verdict": "approve",
+   "reason": "Stem and the solution lines match the print; the single required quantity is the required return and the printed final answer 8.25% equals the key.",
+   "fixes": [],
+   "printed_issues": [
+    "Correlation denominator printed as 'Sd Market + Sd Security'"
+   ],
+   "numeric_key": {
+    "numeric_value": "8.25",
+    "tolerance_rel": "0.01",
+    "unit": "%",
+    "key_note": "Taken from the last line of the Institute's worked solution: Required Return from the security= Rf + Beta (Rm - Rf) = 3.55 + 0.91 × (8.69 - 3.55) = 8.25%"
+   }
+  },
+  "workbook:cma-final:p20a:ch2:q5": {
+   "verdict": "approve",
+   "reason": "Stem and both solution parts (Gordon 89, P/E 96) match the print; Illustration 6 correctly excluded.",
+   "fixes": [],
+   "printed_issues": [
+    "Gordon formula printed as 'r-g' without brackets"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q7": {
+   "verdict": "approve",
+   "reason": "Income statement, balance sheet and cash flow tables and the full FCFF/FCFE solution match printed pages 32-34 figure by figure.",
+   "fixes": [],
+   "printed_issues": [
+    "Cash flow header 'Forecast for 20X7'",
+    "'(210 – 160)' in fixed capital investment working"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q8": {
+   "verdict": "approve",
+   "reason": "Stem bullets and forecast table match; the FCFE table compared cell by cell (all years and Terminal) and the year-1 workings match; footnote and debt-financing lines placed after the table are acceptable.",
+   "fixes": [],
+   "printed_issues": [
+    "'Debt financing = (0.4) x [(1.95) + 0.455] = 0.962' and 'debt-to-asset ratio (D/E)' as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q10": {
+   "verdict": "approve",
+   "reason": "Stem bullets, answer table, residual income table and valuation lines match the print cell by cell; conclusion present.",
+   "fixes": [],
+   "printed_issues": [
+    "'present value of continuing residual income in Year 3' and 'omega = 0' as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q11": {
+   "verdict": "approve",
+   "reason": "Stem, figures table and parts a-c of the solution match the print, including both WACC workings.",
+   "fixes": [],
+   "printed_issues": [
+    "Subscripts in W_E/W_D/WACC typeset consistently (print inconsistent); 'Risk-free rate + ... = 11.4%' as one run"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q12": {
+   "verdict": "approve",
+   "reason": "Stem table and the merged solution table across the page break match row by row (formula text and amounts).",
+   "fixes": [],
+   "printed_issues": [
+    "'(1 -0.20)' as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q13": {
+   "verdict": "approve",
+   "reason": "Stem, new-product table and both solution tables match the print cell by cell including column placement of figures.",
+   "fixes": [],
+   "printed_issues": [
+    "'Profit before tax (87/1-0.30)' as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q14": {
+   "verdict": "approve",
+   "reason": "Stem and solution (K=12%, X=0.80, weights 60/72, 14.54%, 1949 lakhs) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "'60 of equity and 72 of debt' and 'X = 0.80' as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch3:q16": {
+   "verdict": "approve",
+   "reason": "Stem, balance data, WACC working, NOPAT table and EVA line match the print; next chapter banner not included.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says 'QZY ltd' while company is Piyush Ltd"
+   ]
+  },
+  "workbook:cma-final:p20a:ch4:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem and the solution table across the page break cell by cell against the print; all rows and figures match, repeated header correctly merged.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p20a:ch4:q4": {
+   "verdict": "approve",
+   "reason": "Stem and formula layout checked on the image: bracket with (1 - (1+YTM/2)^-2(15))/(YTM/2) plus 1000/(1+YTM/2)^2(15), answer 862.35 present.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed formula has a stray caret before 2(15) in the second term (typeset without it); formula also omits any factor conversion, left as printed."
+   ]
+  },
+  "workbook:cma-final:p20a:ch4:q6": {
+   "verdict": "approve",
+   "reason": "Stem table, both solution tables and Working Note 1 compared with print; all figures and ordering match.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed subscript in Working Note 1 looks like R_J (typeset R_f); K_E year 3 shows 15.1 with no 10 + 5.1 step as printed; Year 3 cost of equity 0.151 and EVA arithmetic left as printed."
+   ]
+  },
+  "workbook:cma-final:p20a:ch4:q7": {
+   "verdict": "approve",
+   "reason": "Income statement across the page break, balance sheet, NOPAT, WACC tables and working lines compared to print; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "EBIT 3,400 vs 6,250-2,850 and 2,650 operating expenses, 33.33/23.33/43.33 weights, MVA 6825-850 and EVA 2,224.6 do not reconcile; left as printed."
+   ]
+  },
+  "workbook:cma-final:p20a:ch4:q8": {
+   "verdict": "approve",
+   "reason": "Stem table and worked solution match the print; question asks for one quantity (value of firm) and printed final answer INR 14,40,000 equals the key.",
+   "fixes": [],
+   "printed_issues": [],
+   "numeric_key": {
+    "numeric_value": "1440000",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Taken from the last line of the Institute's worked solution: Total Firm value = INR 3,00,000 + INR 10,00,000 + INR 1,40,000 = INR 14,40,000"
+   }
+  },
+  "workbook:cma-final:p20a:ch5:q1": {
+   "verdict": "approve",
+   "reason": "Stem table, tax rate, cost of capital, FCF table (title row and year rows) and terminal value/firm value/per-share workings compared cell by cell with print; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed values such as 1,079.69 terminal value and 21.25 per share left as printed."
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q2": {
+   "verdict": "approve",
+   "reason": "Stem and solution match print. The question asks for NPV to two firms (Agarwal 26 and Jaiswal 19), so the single numeric key 19 is wrong; converted to long_form.",
+   "fixes": [
+    "numeric_key removed: question asks for NPV of both firms, key only captured Jaiswal"
+   ],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p20a:ch5:q3": {
+   "verdict": "approve",
+   "reason": "Stem table, rejoined sentence and solution match print. The question asks for NPV to both Afternoon and Evening, so the single key is wrong; converted to long_form.",
+   "fixes": [
+    "numeric_key removed: question asks for NPV to two firms, key only captured Evening"
+   ],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p20a:ch5:q4": {
+   "verdict": "approve",
+   "reason": "Stem tables, PV tables, terminal value workings and ownership/NPV lines match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem asks NPV to Pd Ltd but solution computes NPV for Pj Ltd; ownership fraction printed with x instead of +; row label PVIFA 13.5% holds PV values; number of shares of Pd printed as INR 7,00,000. Left as printed."
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q5": {
+   "verdict": "approve",
+   "reason": "Stem, data table and solution (a)-(g) compared with print; all match including overlapping '4.1Pre Merger P/E'.",
+   "fixes": [],
+   "printed_issues": [
+    "Typos 'compay' and 'Makret'; solution lettering (a)-(g) vs stem a-h; '4.1Pre Merger P/E' overlap; left as printed."
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q6": {
+   "verdict": "approve",
+   "reason": "Stem paragraph across page break, balance sheet, other-information tables, WACC, the long solution table across the page break, terminal value and exchange workings compared to print; all figures including years 2011-2016 match.",
+   "fixes": [],
+   "printed_issues": [
+    "Terminal-value column, 269.57 terminal FCF, 5.38 Crore shares and 'Pattern' rows left as printed."
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem, data table and solution (a)-(d) with pages 71-72 cell by cell; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed 0.94 x 12,00,000 = 11,33,333 and 26% premium kept as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q8": {
+   "verdict": "approve",
+   "reason": "Compared stem table and the full solution including both large fractions with pages 72-74; digits and bracket placement match.",
+   "fixes": [],
+   "printed_issues": [
+    "Denominator 0.1465 - 0.22125 is negative as printed; 22.125% growth kept"
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q9": {
+   "verdict": "approve",
+   "reason": "Compared stem, ratio tables and valuation table with pages 74-75; all cells match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says Firm Dice and cement industry while firm is Acer in laptop industry; kept as printed"
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q11": {
+   "verdict": "approve",
+   "reason": "Compared stem table, MPS table and parts a-c with pages 76-77; figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed '= INR 115 lakh Equity (shares)' and '= 40 + 16 = INR 56 lakh' kept"
+   ]
+  },
+  "workbook:cma-final:p20a:ch5:q13": {
+   "verdict": "approve",
+   "reason": "Compared stem tables, solution table and working notes 1-3 with pages 78-81; all cells match and no page furniture leaked.",
+   "fixes": [],
+   "printed_issues": [
+    "XY Ltd. used instead of Priti Ltd. in (iii); 31.3.08 kept as printed"
+   ]
+  }
+ }
+}

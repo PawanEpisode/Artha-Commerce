@@ -1,0 +1,34 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p13-2024-12",
+ "items": {
+  "1(ii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (ii) A.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key D equals printed key (vii) D.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(x)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answers print the key as (A/ B/ C/ D), i.e. every option accepted, so no single key can be given; it is also stored as a long-form draft with no options.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer key for (x) printed as A/ B/ C/ D."
+   ]
+  },
+  "1(xii)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answers print the key as (A/ B/ C/ D), i.e. every option accepted, so no single key can be given; it is also stored as a long-form draft with no options.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer key for (xii) printed as A/ B/ C/ D."
+   ]
+  }
+ }
+}

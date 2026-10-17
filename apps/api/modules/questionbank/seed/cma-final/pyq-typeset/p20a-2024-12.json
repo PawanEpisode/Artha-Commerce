@@ -1,0 +1,102 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p20a-2024-12",
+ "items": {
+  "1(xi)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "3(a)": {
+   "stem_md": "Given the cost function of a firm\n$\\text{Cost} = 300x - 10x^2 + (1/3)x^3$,\n**Calculate:**\n(i) Output at which Marginal Cost is minimum.\n(ii) Output at which Average Cost is minimum.\n(iii) Output at which Marginal Cost = Average Cost.",
+   "answer_md": "(i) $\\text{Cost} = 300x - 10x^2 + \\frac{1}{3}x^3$\n\nMarginal Cost $= \\frac{dc}{dx} = 300 - 20x + x^2$ (say, y)\nIn order that MC is minimum first derivative must be equal to zero and 2nd derivative must be positive.\nTherefore $\\frac{dy}{dx} = 2x - 20 \\Rightarrow 2x = 20$\n$x = 10$\n$\\frac{d^2y}{dx^2} = 2$, which is positive. It is minimum at $x = 10$.\n\n(ii) Average Cost $= 300 - 10x + \\frac{1}{3}x^2$ (y say)\n\n$$\n\\begin{aligned}\n\\frac{dy}{dx} &= -10 + \\frac{2}{3}x = 0 \\\\\n&\\Rightarrow x = 30/2 = 15 \\\\\n\\frac{d^2y}{dx^2} &= \\frac{2}{3} > 0,\n\\end{aligned}\n$$\n\nTherefore, Average Cost is minimum of output at $x = 15$\n\n(iii) Output at which Marginal Cost = Average Cost\n\n$$\n\\begin{aligned}\n300 - 20x + x^2 &= 300 - 10x + \\frac{1}{3}x^2 \\\\\n-20x + 10x + x^2 - \\frac{1}{3}x^2 &= 0 \\\\\n-10x + \\frac{2}{3}x^2 &= 0 \\\\\n\\frac{-30x + 2x^2}{3} &= 0 \\\\\n2x^2 - 30x &= 0 \\\\\n2x(x - 15) &= 0 \\\\\nx - 15 &= 0\n\\end{aligned}\n$$\n\nTherefore, $x = 15$",
+   "confidence": "medium",
+   "review": [
+    "Answer re-typeset from the printed page image: the flattened input text differed from the print in a few places (e.g. input had 'dy/dx = –20 + 2x = 0, i.e. 2x – 20 = 0', 'x = 10' and '(after multiplying by 3)'; print shows 'dy/dx = 2x – 20 => 2x = 20' and the stacked fraction (–30x + 2x^2)/3 = 0). Followed the print; the print's 'x' is set in a Greek chi glyph, read as x.",
+    "Printed '〉0' read as '> 0'."
+   ]
+  },
+  "4(a)": {
+   "answer_md": "(i) Du-Pont Analysis of Lotus Ltd:\n\nParticulars | 2023 | 2022 | 2021 | 2020 | Comment\n---|---|---|---|---|---\nNet income (₹ in crore) | 438 | 423 | 410 | 395 | Growing\nRevenue (₹ in crore) | 2620 | 2450 | 2340 | 2240 | Growing\nAssets (₹ in crore) | 1588 | 1468 | 1400 | 1335 | Growing\nEquity (₹ in crore) | 790 | 726 | 685 | 650 | Growing\nDUPONT ANALYSIS | | | | |\n$\\text{Profit Margin} = \\text{Net income}/\\text{Revenue}$ | 16.72% | 17.27% | 17.52% | 17.63% | Declining\n$\\text{Asset Turnover} = \\text{Revenue}/\\text{Assets}$ | 1.65 | 1.67 | 1.67 | 1.68 | Declining\n$\\text{ROA (Return on Assets)} = \\text{Profit Margin} \\times \\text{Assets Turnover (\\%)}$ | 27.59 | 28.84 | 29.26 | 29.62 | Declining\n$\\text{Equity Multiplier} = \\text{Assets}/\\text{Equity}$ | 2.01 | 2.02 | 2.04 | 2.05 | Declining\n$\\text{ROE} = \\text{(Return on Equity)} = \\text{ROA} \\times \\text{Equity Multiplier (\\%)}$ | 55.46 | 58.26 | 59.69 | 60.72 | Declining\n\nProfit margin which measures the operational efficiency is declining continuously.\n\n(ii) Sales/ Total Assets at 1.65 indicates that assets are managed efficiently, although the same is also in the declining trend. The reason being the rate of increase in assets and rate of increase in revenue are mostly same in 2021 & 2022 whereas in 2023, the rate of increase in revenue is less than that of assets, as evident from the following calculations:\n\n | 2023 | 2022 | 2021\n---|---|---|---\nRate of Increase in Assets (%) as compared to previous year | 8.17 | 4.86 | 4.87\nRate of Increase in Revenue (%) as compared to previous year | 6.94 | 4.70 | 4.46\n\nBecause of declining profit margin as well as asset turnover, ROA is also in declining trend.\n\n(iii) Equity multiplier is also declining because the rate at which equity is increasing is more than of assets as is evident from the following calculations:\n\n | 2023 | 2022 | 2021\n---|---|---|---\nRate of Increase in Assets (%) as compared to previous year | 8.17 | 4.86 | 4.87\nRate of Increase in Equity (%) as compared to previous year | 8.82 | 5.99 | 5.38\n\nBecause of declining trend both in ROA & Equity Multiplier, the ROE is also exhibiting a declining trend over the years.",
+   "confidence": "high",
+   "review": [
+    "Stem table unchanged.",
+    "Printed figures kept (e.g. ROA/ROE columns as printed)."
+   ]
+  },
+  "5(a)": {
+   "answer_md": "(i) Assumption: The P/E of the stock remains the same under both alternatives.\n\nAlternative I:\nPay ₹ 400 thousand in the form of dividend\n$\\text{Number of shares} = (1700/10) = 170$ thousand\n$\\text{Dividend per share} = (400/170) = \\text{₹ }2.35$ per share\nPE Ratio is $20/2 = 10$\n\nAs P/E is constant, the share price depends only on earning power of the company and suppose earnings are going to remain at ₹ 2 per share, then the price will remain at ₹ 20 per share.\n\nAlternative II:\nRepurchase 400 thousand worth of shares\n$\\text{Number of shares repurchased} = (400/20)\\text{ thousand} = 20\\text{ thousand shares}$.\n$\\text{Shares remaining} = 170 - 20 = 150\\text{ thousand shares}$\n$\\text{Changed EPS} = 2 \\times (170/150) = \\text{₹ }2.27$\nPE Ratio continues to be same that is 10\n$\\text{Revised Price} = 2.27 \\times 10 = \\text{₹ }22.70$\n\n(ii) Decision :\nAlternative II is better as the price of the share increases to ₹ 22.70 from ₹ 20.",
+   "confidence": "high",
+   "review": []
+  },
+  "5(b)": {
+   "answer_md": "Valuation multiples for the comparable firms can be calculated as follows:\n\nParticulars | Alpha Ltd | Beta Ltd | Gamma Ltd | Average\n---|---|---|---|---\nPrice/Sales Ratio | 1.21 | 1.38 | 1.63 | 1.41\nPrice/Earnings Ratio | 7.67 | 6.59 | 8.80 | 7.69\nPrice/Book Value Ratio | 2.40 | 2.64 | 3.44 | 2.83\n\nApplying the multiples calculated in Step 1, the value of Sundar Televisions Ltd. can be calculated as follows:\n\nParticulars | Average Multiple | Parameter | Value ₹ Crores\n---|---|---|---\nPrice/Sales Ratio | 1.41 | 250.00 | 352.50\nPrice/Earnings Ratio | 7.69 | 40.00 | 307.60\nPrice/Book Value Ratio | 2.83 | 100.00 | 283.00\n\nBy applying the weightage to the P/S ratio, P/E ratio and P/BV ratio we get:\n$[(352.50 \\times 1) + (307.60 \\times 2) + (283.00 \\times 1)] / (1+2+1) = 312.675$, i.e. ₹ 312.675 crore is the value.\nTherefore, the value of Sundar Televisions Ltd. is ₹ 312.675 Crore.",
+   "confidence": "high",
+   "review": [
+    "Institute misprint kept: stem says 'Smart Televisions Ltd.' in the last paragraph vs 'Sundar Televisions Ltd.' elsewhere.",
+    "Stem tables unchanged."
+   ]
+  },
+  "6(a)": {
+   "answer_md": "(i) Required rate of return of Pinnacle Venture (KPE) = 40%.\nRequired value PE Investments 6 $= 4000 \\times 5.3782 = \\text{₹ }21513$ million.\n\nEstimated Equity Value 6 $= 5000 \\times 6 + 600 - 2000 = \\text{₹ }28600$ million.\n\nOwnership Share in the Best Systems:\n\n$$\n= \\frac{21513}{28600} \\times 100 = 75.22\\%\n$$\n\n(ii) Post-Money Investment Value of the Best Systems' Equity :\n\n$$\n\\begin{aligned}\n&= \\frac{4000}{0.7522} \\\\\n&= \\text{₹ }5317.73\\text{ million}\n\\end{aligned}\n$$\n\n(iii) Pre-Money Investment Value of the Best Systems' Equity\n\n$$\n= 5317.73 - 4000 = \\text{₹ }1317.73\\text{ million}\n$$",
+   "confidence": "medium",
+   "review": [
+    "Printed 'Required value PE Investments 6' and 'Estimated Equity Value 6' kept as printed (the '6' is not a visible subscript in the print; the holding period is 5 years - possible misprint, not changed).",
+    "Printed answer breaks the working across lines/fractions; typeset as display math."
+   ]
+  },
+  "6(b)": {
+   "answer_md": "(i) Minimum Price of the Warrant :\n$= \\text{₹ }(10.00 - 11.71) \\times 1.0 = (-)\\text{ ₹ }1.71$\n\nThus, the minimum price on this warrant is considered to be zero, because the price cannot be negative. Since shares are traded at ₹ 10, the warrant holders will not pay ₹ 11.71 to purchase the same stock.\n(ii) Warrant Premium\n$= 3 - 0 = \\text{₹ }3$\n(iii) When Current price = ₹ 16.38 :\n(a) Minimum price of Warrant :\n$= (16.38 - 11.71) \\times 1.0 = \\text{₹ }4.67$\n(b) Warrant Premium :\n$= \\text{₹ }9.75 - \\text{₹ }4.67 = \\text{₹ }5.08$",
+   "confidence": "high",
+   "review": [
+    "Restored the leading rupee sign before '(10.00 – 11.71)' as printed."
+   ]
+  },
+  "7(a)": {
+   "answer_md": "Let the value of Sandy Co. and Vindi Co. be represented as $PV_S$ and $PV_V$ and the value of the combined firm $PV_{SV}$.\n(i) Gain from the Merger:\nGain from the merger = reduction of costs due to the merger.\nSandy Co estimates that by combining the two companies, it will reduce marketing and administrative costs by ₹ 50000 per year perpetually.\nCost of capital = 10%\nHence, $\\text{PV of gain} = \\text{₹ }50000/10\\% = \\text{₹ }500000$\n(ii) Cost of the Cash Offer:\n$= \\text{₹ }1400000 - \\text{₹ }1000000 = \\text{₹ }400000$\n(iii) Cost of the Stock Alternative:\nWhen the sellers receive N shares worth $PV_{SV}$, the cost is given as\n$\\text{Cost} = N \\times PV_{SV} - PV_V$\nHere, 50% of the combined value of the firm is paid as stock.\n\n$$\n\\begin{aligned}\n\\text{Combined Firm Value} &= \\text{Gain} + (PV_S + PV_V) \\\\\n&= \\text{₹ }500000 + \\text{₹ }(2000000 + 1000000) = \\text{₹ }3500000.\n\\end{aligned}\n$$\n\nHence $\\text{Value of Stock offered} = 0.50 \\times \\text{₹ }3500000 = \\text{₹ }1750000$.\n\n$$\n\\begin{aligned}\n\\text{Hence, cost of the stock alternative} &= \\text{₹ }1750000 - \\text{₹ }1000000. \\\\\n&= \\text{₹ }750000.\n\\end{aligned}\n$$",
+   "confidence": "high",
+   "review": [
+    "Printed 'N X PVSV' typeset as N times PV_SV."
+   ]
+  },
+  "7(b)": {
+   "answer_md": "(i) & (ii) Calculation of P/E Ratio\n\nParticulars | Tarun Ltd. | Arun Ltd. | Barun Ltd.\n---|---|---|---\nNo. of Equity Shares (in million) | 45 | 18 | 9\nEarnings (₹ millions) | 90 | 18 | 18\nEPS (₹) | 2 | 1 | 2\nMarket Price of each share (₹) | 60 | 37 | 46\nP/E Ratio | 30 | 37 | 23\n\nAnalysis of EPS of Tarun Ltd. after acquisition of Arun Ltd. & Barun Ltd.\n\nParticulars | Tarun Ltd. | Arun Ltd. | Barun Ltd.\n---|---|---|---\nExchange ratio in Tarun Ltd. | | 1.23 | 0.77\nValue of Shares (₹ million) | 2700 | 666 | 414\nNo. of Tarun Ltd. shares to be given (million) | | $666/60 = 11.10$ | $414/60 = 6.9$\nTotal Earnings after acquisition (₹ million) for both options | | 108 | 108\nTotal No. of Shares (million) | | 56.10 | 51.9\nE.P.S. (₹) | | 1.93 | 2.08\n\nRecommendation & Justification:\nYes, the Merger with only Barun Ltd. will be recommended to increase the value to the Shareholders of Tarun Ltd.\n\nSince after merger of Tarun Ltd. with Barun Ltd, combined EPS is higher than the earlier pre-merger EPS of Tarun Ltd. on the other hand, after merger of Tarun Ltd. with Arun Ltd., combined EPS is lower than the earlier pre-merger EPS of Tarun Ltd. the merger with only Barun Ltd. is suggested.",
+   "confidence": "high",
+   "review": [
+    "Print row label reads 'Total Earnings after acquisition (₹ million)'; input had '(₹ millions)'. Kept the print wording."
+   ]
+  },
+  "8(b)": {
+   "answer_md": "(i) $\\text{Purchase price premium} = 90/60 = 1.5$\n\n(ii) $\\text{Exchange Ratio} = 90/50 = 1.8$\nAcquiring company issues 1.8 shares of stock for each of Target Company's stock.\n\n(iii) $\\text{New shares issued by acquiring Company} = 20000 \\times 1.8 = 36000$ Nos.\n\n(iv) Post-merger EPS of the combined Companies.\n$\\text{Combined Earnings} = (250000 + 72500) = \\text{₹ }322500$\nTotal Shares outstanding of the New Entity\n$= 110000 + 36000 = 146000$\n$\\text{EPS} = \\text{₹ }322500 \\div 146000 = \\text{₹ }2.209$\n\n(v) Pre-merger EPS of the acquiring company\n$\\text{EPS} = 250000/110000 = \\text{₹ }2.273$\n\n(vi) $\\text{Pre-merger P/E} = 50/2.273 = 22.00$\n\n(vii) $\\text{Post-merger share price} = 2.209 \\times 22.00 = \\text{₹ }48.60$ (as compared to ₹ 50 Pre-merger)",
+   "confidence": "high",
+   "review": [
+    "Printed '20000 x 1.8' typeset with a multiplication sign."
+   ]
+  }
+ }
+}

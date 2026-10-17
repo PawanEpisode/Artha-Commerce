@@ -1,0 +1,45 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p15-2025-06",
+ "items": {
+  "1(x)": {
+   "verdict": "approve",
+   "reason": "Stem with the three numbered companies and four options match the print; stored key C equals printed key (x) (C).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key 'None' conflicts with the usual view that a foreign company with place of effective management wholly in India (Bruno GmbH) is resident in India."
+   ]
+  },
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem table and items (i)-(vii) and the printed answer table compared line by line; all lines and figures present in order.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer assumption note says Rs 35.50 lakhs paid whereas the question says 37.50 lakhs.",
+    "Answer lists 'Deferred tax / doubtful debts / loss of subsidiary' as provisions, as printed."
+   ]
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; answer table matches except one figure the transcription had silently corrected.",
+   "fixes": [
+    "Answer: restored printed '(1,20000)' for gross rent received."
+   ],
+   "answer_md": "Computation of total income and tax payable of Babloo for the AY 2025-26 (₹)\n| Particulars | Default regime | Normal regime |\n|---|---|---|\n| Rent received | 1,20,000 | |\n| Less: Standard deduction @ 30% | 36,000 | |\n| Interest on loan | 2,20,000 | |\n| Loss from house property (Loss is not eligible for set off under default regime) | Nil | (1,36,000) |\n| Income from PGBP: Net profit as per P/L A/c | 51,70,000 | |\n| Add: Interest on loan taken for let out property | 2,20,000 | |\n| Less: Gross rent received, not being business income | (1,20000) | |\n| Income from Business | 52,70,000 | 52,70,000 |\n| Gross total income | 52,70,000 | 51,34,000 |\n| Less: Deduction under Chapter VI-A | Nil | |\n| Deduction u/s 80C (restricted to ₹ 1,50,000) (Deposit in PPF is assumed to be made for self, his spouse or any child) | | 1,50,000 |\n| Deduction u/s 80D (restricted to ₹ 25,000) (It is assumed that the premium has been paid by any permissible mode, other than cash) | | 25,000 |\n| Total income | 52,70,000 | 49,59,000 |\n| Tax on total income | 12,71,000 | 13,00,200 |\n| Add: Surcharge @ 10% | 1,27,100 | Nil |\n| Add: Cess @ 4% | 55,924 | 52,008 |\n| Tax liability | 14,54,024 | 13,52,208 |\n| Tax liability (rounded off) | 14,54,020 | 13,52,210 |\nConclusion: Normal i.e. old regime is beneficial since the tax payable is lower",
+   "printed_issues": [
+    "Gross rent deduction printed as (1,20000) without the grouping comma."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; answer table matches, with the missing first heading row of the printed table added.",
+   "fixes": [
+    "Answer: added the printed heading row 'Profits and gains from business or profession'."
+   ],
+   "answer_md": "Computation of total income of Sara Ltd. for the A.Y. 2025-26 (₹)\n| Particulars | Normal provisions | Section 115BAB |\n|---|---|---|\n| Profits and gains from business or profession | | |\n| Net profit as per the Statement of Profit and Loss | 30,90,000 | 30,90,000 |\n| Add: Items debited but to be considered separately or disallowed | | |\n| Depreciation as per the Companies Act | 4,50,000 | 4,50,000 |\n| Employer’s contribution to EPF – allowed as it was paid before the ‘due date’ of filing the ROI | Nil | Nil |\n| Employee’s contribution to EPF – Not allowed as it was paid after the due date of the relevant Act | 11,00,000 | 11,00,000 |\n| Expenses on earning dividend (not allowed under PGBP head) | 3,60,000 | 3,60,000 |\n| Sub-total | 50,00,000 | 50,00,000 |\n| Less: Normal Depreciation as per the Income-tax Rules | 4,90,000 | 4,90,000 |\n| Additional Depreciation as per the Income-tax Act (not allowed under section 115BAB) | 1,50,000 | Nil |\n| Dividend (taxable under the head ‘Income from other sources’) | 17,00,000 | 17,00,000 |\n| Income from PGBP | 26,60,000 | 28,10,000 |\n| Income from other sources: Dividend 17,00,000 Less: Expenses (Max 20% allowed) hence, limited to 3,40,000 (It is assumed that the expenses relates to the interest expenditure to earn such income) | | |\n| Income from other sources | 13,60,000 | 13,60,000 |\n| Gross Total Income | 40,20,000 | 41,70,000 |\n| Less: Deduction under sec 80M Inter-corporate dividend up to the amount of dividend received (net of expenses, as per s.80 AB) | 13,60,000 | 13,60,000 |\n| Total income | 26,60,000 | 28,10,000 |\n| Tax on total income: @25% on ₹ 26,60,000 | 6,65,000 | |\n| @15% of 28,10,000 | | 4,21,500 |\n| Add: Surcharge@10% | | 42,150 |\n| Add: Cess @4% | 26,600 | 18,546 |\n| Tax liability | 6,91,600 | 4,82,196 |\n| Tax liability (rounded off) | | 4,82,200 |\nConclusion: The assessee should opt of section 115BAB, since the tax liability is lower.",
+   "printed_issues": [
+    "Printed 115BAB column shows PGBP 28,10,000 and gross total income 41,70,000, kept as printed."
+   ]
+  }
+ }
+}

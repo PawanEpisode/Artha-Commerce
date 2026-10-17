@@ -1,0 +1,684 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p13",
+ "term_code": "2024-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Page-1 header prints the title as 'CORPORATE LAWS AND ECONOMIC LAWS' and paper code P-13(CL).",
+  "Q1 (x) and (xii): suggested answer key shows 'A/ B/ C/ D' (all options accepted); correct left null.",
+  "Q6(b) is printed as (b)(i) 4 marks and (b)(ii) 3 marks; answer split accordingly. Answer text from OCR of suggested-answer PDF with noise removed; minor OCR typos may remain."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section-A (Compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the most appropriate option for the following MCQs: 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "PQR Ltd., wants to shift its registered office within the city limits. This can be done through",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "special resolution."
+        },
+        {
+         "key": "B",
+         "body_md": "board resolution."
+        },
+        {
+         "key": "C",
+         "body_md": "approval of the ROC."
+        },
+        {
+         "key": "D",
+         "body_md": "approval of the Central Govt."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In the parlance of the Companies Act, 2013, ‘loan’ means",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "cash credit."
+        },
+        {
+         "key": "B",
+         "body_md": "short-term loans for revenue purposes."
+        },
+        {
+         "key": "C",
+         "body_md": "long-term loans."
+        },
+        {
+         "key": "D",
+         "body_md": "working capital loan."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Keyed (A) cash credit per suggested answer; option wording as printed, not independently verified against s.2(71)/loan definition."
+       ]
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A company may remove a director through/with",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "board resolution."
+        },
+        {
+         "key": "B",
+         "body_md": "special resolution of the shareholders."
+        },
+        {
+         "key": "C",
+         "body_md": "ordinary resolution of the shareholders."
+        },
+        {
+         "key": "D",
+         "body_md": "approval of the ROC"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which Rule of the Companies (Appointment and Qualification of Directors) Rules, 2014 provides a detailed procedure for making application for allotment of DIN?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Rule 12"
+        },
+        {
+         "key": "B",
+         "body_md": "Rule 11"
+        },
+        {
+         "key": "C",
+         "body_md": "Rule 10"
+        },
+        {
+         "key": "D",
+         "body_md": "Rule 9"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The Insolvency Professional (IP) proposed shall be continued/rejected by the Adjudicating Authority (AA) based on information on IP, to be sent by the Board. In case none is proposed, the AA shall request for nomination within ______ to Board and Board shall nominate within ______.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "7 days, 10 days"
+        },
+        {
+         "key": "B",
+         "body_md": "3 days, 10 days"
+        },
+        {
+         "key": "C",
+         "body_md": "5 days, 10 days"
+        },
+        {
+         "key": "D",
+         "body_md": "10 days, 15 days"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under IBC, the Resolution Professional shall file an application to the Adjudicating Authority to extend the period of the corporate insolvency resolution process beyond permitted days, if instructed to do so by a resolution passed at a meeting of the committee of creditors by a vote of ______ of the voting shares.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "51%"
+        },
+        {
+         "key": "B",
+         "body_md": "66%"
+        },
+        {
+         "key": "C",
+         "body_md": "75%"
+        },
+        {
+         "key": "D",
+         "body_md": "60%"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The format for compliance report on Corporate Governance by listed entities has been specified to be submitted within specified time limit. Accordingly Annex-IV has to be submitted ______.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "on quarterly basis"
+        },
+        {
+         "key": "B",
+         "body_md": "on annual basis"
+        },
+        {
+         "key": "C",
+         "body_md": "on monthly basis"
+        },
+        {
+         "key": "D",
+         "body_md": "on a half yearly basis"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Keyed (D) half-yearly per suggested answer; not independently verified."
+       ]
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In the context of sustainability reporting, the SEBI has raised the format in May, 2021 for reporting ESG parameters called Business Responsibility and Sustainability Report (BRSR). It seeks disclosure from listed entities on their performance against the principles of National Guidelines on Responsible Business Conduct (NGBRC). Each parameter is divided into leadership (former) and essential indicators (Latter). The binding nature of each are",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "former is voluntary and latter is mandatory."
+        },
+        {
+         "key": "B",
+         "body_md": "both are voluntary."
+        },
+        {
+         "key": "C",
+         "body_md": "both are mandatory."
+        },
+        {
+         "key": "D",
+         "body_md": "former is mandatory and latter is voluntary."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "SEBI has three functions rolled into one body. Which of the following is not the function of SEBI?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Quasi-judicial"
+        },
+        {
+         "key": "B",
+         "body_md": "Quasi-legislative"
+        },
+        {
+         "key": "C",
+         "body_md": "Quasi-official"
+        },
+        {
+         "key": "D",
+         "body_md": "Quasi-executive"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "For the purposes of the Competition Act, 2002, the turnover threshold for individual company, operating in India, in combination is ₹ ______ crores.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "5,000"
+        },
+        {
+         "key": "B",
+         "body_md": "7,000"
+        },
+        {
+         "key": "C",
+         "body_md": "8,000"
+        },
+        {
+         "key": "D",
+         "body_md": "10,000"
+        }
+       ],
+       "correct": null,
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer key prints '(A/ B/ C/ D)' i.e. any option accepted (question evidently dropped/ all options awarded); `correct` left null."
+       ]
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The insurance policy issued by the insurer shall not be questioned after ______.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "1 year"
+        },
+        {
+         "key": "B",
+         "body_md": "2 years"
+        },
+        {
+         "key": "C",
+         "body_md": "3 years"
+        },
+        {
+         "key": "D",
+         "body_md": "No time limit"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In case of life insurance and motor accident insurance, the insurable interest must be present",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "at the time of taking the policy."
+        },
+        {
+         "key": "B",
+         "body_md": "at the time of death or accident."
+        },
+        {
+         "key": "C",
+         "body_md": "both at the time of taking the policy as well as at the time of death or accident."
+        },
+        {
+         "key": "D",
+         "body_md": "at none of these times."
+        }
+       ],
+       "correct": null,
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer key prints '(A/ B/ C/ D)' i.e. any option accepted (question evidently dropped/ all options awarded); `correct` left null."
+       ]
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The judicial authority under SARFESI is",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "DRT"
+        },
+        {
+         "key": "B",
+         "body_md": "District Court"
+        },
+        {
+         "key": "C",
+         "body_md": "High court"
+        },
+        {
+         "key": "D",
+         "body_md": "SEBI"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The decision of Cyber Appellate Tribunal can be appealed to",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "High Court"
+        },
+        {
+         "key": "B",
+         "body_md": "Supreme Court"
+        },
+        {
+         "key": "C",
+         "body_md": "Central Government"
+        },
+        {
+         "key": "D",
+         "body_md": "Not appealable"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The cases under PMLA can be tried in",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Common Courts."
+        },
+        {
+         "key": "B",
+         "body_md": "Special designated Courts set up in this regard."
+        },
+        {
+         "key": "C",
+         "body_md": "High Court."
+        },
+        {
+         "key": "D",
+         "body_md": "Supreme Court."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from Question nos. 2 to 8. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Gautam of Uttar Pradesh incorporated a One Person Company (OPC). In compliance to law, he appointed his brother Rohit as nominee. Both are resident Indian citizens. On 12/02/2024, Rohit left India permanently to settle in Dubai and he has withdrawn his nomination. You are required to answer the following in the light of the provisions of the Companies Act, 2013:\n(i) What action shall be taken by Gautam when he gets notice of withdrawal of nomination and within what time limit?\n(ii) Gautam wants to appoint his minor son (Abhijit). Can Gautam appoint his minor son (Abhijit) as nominee in OPC? Examine, with relevance, the correctness of the same.\n(iii) In case Gautam fails to appoint a new nominee, what shall be the legal consequences?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Action to be taken by Gautam when he gets notice of withdrawal of nomination\n In case of OPC, the Shareholder shall nominate another person who shall become the shareholders in case of\n death/incapacity of the original shareholder. Such nominee shall give his/her consent and such consent for\n being appointed as the Nominee for the sole Shareholder. The company shall within thirty days of receipt of\n the notice of withdrawal of consent, file with the Registrar,\n  notice of such withdrawal of consent,\n  the intimation of the name of another person nominated by him in Form No INC.4, and\n  the written consent of such another person so nominated in Form No.INC.3.\n along with fee as provided in the Companies (Registration offices and fees) Rules, 2014\n\n (ii) Correctness of nomination of minor son in the OPC\n As per the Companies (Incorporation) Rules, 2014, a minor cannot become member or nominee of the OPC or\n can hold share with beneficial interest.\n In view of this, Gautam‘s minor son Abhijit Cannot be appointed as nominee.\n\n (iii) Position when Gautam fails to appoint a nominee\n As per law, there must be appointment of a nominee for perpetual the existence. In case of failure to do so, the\n OPC and any officer of the company will be liable for fine which may extend to Five thousand rupees and\n with a further fine which may extend to Five hundred rupees for every day after the first during which such\n contravention continues.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Examine the provisions of the Companies Act, 2013 relating to maintenance of the books of account in electronic form under section 128.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Maintenance in electronic form of the books of accounts\nSection 128 of the Companies Act 2013 and Rule 3 of the companies (Accounts) Rules 2014, every company must\nmaintain proper books of Accounts.\n (a) Rule 3 of the Companies (Accounts) Rules, 2014 provides that the company may keep its books of account or\n other relevant papers in electronic mode.\n\n (b) The books of account and other relevant books and papers maintained in electronic mode shall:\n (1) remain accessible in India so as to be usable for subsequent reference.\n (2) be retained completely in the format in which they were originally generated, sent or received, or in a format\n which shall present accurately the information generated, sent or received and the information contained in the\n electronic records shall remain complete and unaltered.\n (3) Branch Accounts shall be kept intact in line with HO\n (4) The information in the electronic record of the document shall in a legible form.\n (5) There shall be a proper system for storage, retrieval, display or printout of the electronic records as the Audit\n Committee, if any, or the Board may deem appropriate and such records shall not be disposed of or rendered\n unusable, unless permitted by law.\n (6) The back-up of the books of account and other books and papers of the company maintained in electronic\n mode, including at a place outside India, if any, shall be kept in servers physically located in India on a\n periodic basis.\n\n (c) The company shall intimate to the Registrar on an annual basis at the time of filing of financial statement:\n (1) the name of the service provider.\n (2) the internet protocol address of service provider.\n (3) the location of the service provider (wherever applicable).\n (4) where the books of account and other books and papers are maintained on cloud, such address as provided by\n the service provider.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mirinda Ltd., is an unlisted company with paid-up capital of ₹40 cr. and turnover of ₹350 cr. The Company has the following top management personnel:\n(i) Mr. Rajib Mishra, who is promoter and Managing Director of the company;\n(ii) Mr. Pritam is the Non-executive Chairman;\n(iii) Mr. Charan Chadha - Director (Finance)\n(iv) Mr. Anurag Sinha - Director (Operation) is related to the promoter\n(v) Ms. Supriti - Company Secretary\nThe company is in a plan for expansion and therefore wants to avail sizeable loan from a nationalised bank. The bank wants to nominate a director in the Board.\nThe MD seeks your advice in the following points:\n(i) Is the present Board properly constituted? If not, what is the non-compliance?\n(ii) Can Mr. Anurag Sinha be considered as independent director?\n(iii) What will be the status of the director if nominated by bank? If the said nominated director is a women, would she satisfy the requirement of women director?\n(iv) Is there any requirement of a CFO?\nYou are required to advise the MD suitably.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Correctness of the Composition of the BOD\n The Company is an unlisted company with four directors which is properly constituted.\n A public company will be required to mandatorily appoint at least one-woman director if it fulfils any of the\n following criteria:\n 1. It is a company having paid-up capital of Rupees one hundred (100) crore or more, or\n 2. a turnover of Rupees three hundred (300) crores or more.\n However, since the turnover is more than Rs 300 cr., a women director is required.\n\n (ii) The relatives of an independent director should not held or holds the position of Key Managerial Personnel\n (KMP). Mr. Anurag Sinha is relative of the MD, who is otherwise KMP. Hence he cannot be called as\n Independent Director.\n\n (iii) He or she will be classified as nominee director. Yes, if she will be considered to fulfil the requirement as per\n Rule 3 of companies (appointment and qualification of directors) Rule 2014.\n\n (iv) As per Sec 203 &as per Rule 8 of the Companies (Appointment and Remuneration of Managerial Personnel)\n Rules, 2014, every listed company and every other public company having a paid-up share capital of ten crore\n rupees or more shall have whole-time KMP. As per Sec 203 CFO is to be appointed as a KMP since Paid up\n Capital is more than Rs. 10 crore.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is data protection under the Information Technology Act, 2000? Throw light on the data protection law as prevalent in India today.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Data protection under the Information Technology Act, 2000\nData Protection refers to the set of privacy laws, policies and procedures that aim to minimise intrusion into one‘s\nprivacy caused by the collection, storage and dissemination of personal data. Personal data generally refers to the\ninformation or data which relate to a person who can be identified from that information or data whether collected by\nany Government or any private organization or an agency. Data Protection laws provide a set of laws that deal with the\nmatters related to privacy, policies, and procedures and it is imperative for the protection of one‘s privacy and regulating\nits collection.\n\nData Protection Law in India\nIndia currently is not having a separate data protection law and when the Information Technology Act, 2000 (hereinafter\nreferred to as the ―IT Act‖) first came into force on October 17, 2000 and it lacked provisions for protection and the\n\fprocedure to be followed to ensure the safety and security of sensitive personal information of an individual.\nThis was taken care of in Information Technology (Amendment) Act, 2008 whose provisions came into force on\nOctober 27, 2009. Section 43A was inserted in the IT Act and the Central Government, notified the Information\nTechnology (Reasonable security practices and procedures and sensitive personal data or information) Rules, 2011. The\nright to privacy in India was declared a fundamental right by the Hon‘ble Supreme Court of India on August 24, 2017.\n\nImportant Provisions of IT Act related to Data Protection\n  1. Section 43A of the IT Act explicitly provides that whenever a corporate body possesses or deals with any\n sensitive personal data or information, and is negligent in maintaining a reasonable security to protect such\n data or information, which thereby causes wrongful loss or wrongful gain to any person, then such body\n corporate shall be liable to pay damages to the person(s) so affected.\n  2. 2.Further, Section 72A provides for the punishment for disclosure of information in breach of lawful contract\n and any person may be punished with imprisonment for a term not exceeding three years, or with a fine not\n exceeding up to five lakh rupees, or with both in case disclosure of information is made in breach of lawful\n contract.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Under section 28 of the IBC, 2016, the Resolution Professional will have to take prior approval for some cases, otherwise it will be invalid. What are those cases and what percentage of voting is required in favour of the decision?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Prior approval under section 28 of the IBC, 2016\nIn following cases, resolution professional can take action only with prior approval of committee of creditors, with 66%\nvoting in favour, failing which the action by IP will be invalid and action may be taken against IP.\n (a) raise any interim finance.\n (b) create any security interest over the assets of the corporate debtor.\n (c) change the capital structure of the corporate debtor.\n (d) record any change in the ownership interest of the corporate debtor.\n (e) give instructions to financial institutions maintaining accounts of the corporate debtor for a debit transaction.\n (f) undertake any related party transaction\n (g) amend any constitutional documents of the corporate debtor.\n (h) delegate its authority to any other person.\n (i) dispose of or permit the disposal of shares of any shareholder of the corporate debtor or their nominees to third\n parties.\n (j) make any change in the management of the corporate debtor or its subsidiary.\n (k) transfer rights or financial debts or operational debts under material contracts otherwise than in the ordinary\n course of business.\n (l) make changes in the appointment or terms of contract of such personnel as specified by the committee of\n creditors; or\n (m) make changes in the appointment or terms of contract of statutory auditors or internal auditors of the corporate\n debtor.\n (n) Invite prospective resolution applicant who fulfil certain criteria as laid down by COC.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is meant by Corporate Governance? How are the listed entities required to submit periodic report on Corporate Governance to the stock exchanges and what are the areas to be covered in such reports?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Corporate Governance\n ―Corporate governance is the well-designed system by which companies are directed and controlled.‖ Boards of\ndirectors are responsible for the governance of their companies. Corporate governance reporting is a well-defined\nbusiness process that reflects how corporates monitor the corporation's policies, procedures, actions, practices and\nmanagement decisions.\n\nSecurities and Exchange Board of India (SEBI) has issued Circular dated 31st May, 2021 to provide ―Format of\ncompliance report on Corporate Governance by Listed Entities‖. As per the provisions of Securities and Exchange\nBoard of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 (―Listing Regulations‖), and\ncircular cited above, a listed entity is required to submit periodic compliance report on corporate governance in the\nformat specified by the Board from time to time to recognised Stock Exchange(s).\nThe format for compliance report on Corporate Governance by listed entities has been specified,\n\n I. Annex – I – on quarterly basis; (Composition of Board of Directors/ Composition of Committees/stakeholder\n committees/meeting of BOD or and Committees/Related party transactions/affirmations)\n II. Annex – II – at the end of a financial year\n III. Annex – III – at the end of 6 months from the close of financial year\n IV. Annex-IV-loans/ guarantees/comfort letters/ security provided by the listed entity, directly or indirectly to\n promoter/ promoter group entities or any other entity controlled by them.\n The report referred in shall be signed by the company Secretary / Compliance Officer / Managing Director /\n CEO / CFO\n\nAreas to be covered:\nListed Entities-\nListed companies in India are required to report on corporate governance\n in their annual reports, and\n to submit quarterly compliance reports to stock exchanges in prescribed format.\n Directors‘ responsibility report shall include among other things a part called Corporate Governance.\n As per SEBI LODR the listed entities are required to comply with the guidelines. Various areas are- Composition of\n BOD, Formation of Audit Committee, NRC committee, Stakeholders committee, Risk management committee,\n CSR committee, Whistle blower policy.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Examine the important aspects relating to due diligence and various aspects to be seen in the context of evaluation of CSR projects before the project costs are incurred.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Due diligence of CSR projects\n―Due diligence‖ means to investigate and verify an entity or project before initiating a business arrangement with the\nentity. In the general business sense, due diligence means vetting issues that affect the business thoughtfully and\ncarefully before assigning the project to a partner. Companies can assess their financial and governance parameters, and\ntheir ability to execute the project.\nEvaluation of CSR projects can be in two phases;\n1. Evaluation before making the expenditure:\n2. Evaluation after making the expenditure\n\nEvaluation before making the expenditure is also called due diligence of CSR projects after shortlisting have been made.\nNormally companies make a shortlisting on the basis of parameters fixed for the projects proposals available to the\ncompany. The purpose of due diligence is to decide whether the company is ultimately taking up the project or making\nthe expenditure.\n1. Nature of project\n2. Cost of the project\n3. Independent or linked to some other project\n4. Collaborative project\n5. Beneficiaries\n6. Technical feasibility\n7. Financial feasibility\n8. Implementation time\n9. Whether impact can be measurable\n10. Monitoring mechanism",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A public limited company has 600 members. The issued and paid-up capital is ₹5 crore consisting of 5 lakh equity shares of ₹100 each. 90 members holding 10,000 equity shares filed a petition before the Tribunal for the purpose of relief against oppression and mis-management by majority shareholders. In the light of the above, answer the following:\n(i) Examine the relevant provisions of the law and decide whether the said petition is maintainable.\n(ii) In case 40 members subsequently withdrew their consent, what will happen to the petition?\n(iii) In case the total members are less than the requirement, is it possible to file a petition? If so, under what circumstances?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Petition to Tribunal against mismanagement by majority members\n(i) Who can file the petition Section-241. Provides application to Tribunal for relief in cases of oppression\n\nAs per section 244, the following members of a company shall have the right to apply, namely: —\n1. in the case of a company having a share capital, not less than one hundred members of the company or not less than\n one-tenth of the total number of its members, whichever is less, or\n any member or members holding not less than one-tenth of the issued share capital of the company,\n subject to the condition that the applicant or applicants has or have paid all calls and other sums due on his or their\n shares;\n\f2. in the case of a company not having a share capital, not less than one-fifth of the total number of its members In the\n light of the above provisions the petition is maintainable since the number of members who file petition is 90 which\n is more than the minimum requirement i.e 1/10 th of total number of member600/10=60.\n\n(ii) Subsequent withdrawal by some members\n The maintainability of the petition is to be judged to be judged with reference to the fulfilment of the criteria at the\n time of its filing. Once the petition is duly filed, subsequent withdrawal by some member or members will not\n invalidate the petition.\n\n(iii) Maintainability when the minimum number of members is not present\n Yes, the power is vested with NCLT.\n The NCLT may waive all or any of the conditions.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Describe Insider Trading as regulated under SEBI (Prohibition of Insider Trading) Regulations, 2015. What Institutional mechanism are to be placed by a listed company to check, control and curb Insider Trading?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Insider Trading as per SEBI Regulations\nInsider trading, also known as insider dealing, is the malpractice of selling or buying securities such as equity and bonds\nby the insiders of a company, which includes the employees, directors, executives and promoters.\n\nInstitutional Mechanism for Prevention of Insider trading\n(1) The Chief Executive Officer shall put in place adequate and effective system of internal controls for compliance.\n(2) The Audit Committee shall review compliance with the provisions of these regulations at least once in a financial\n year and shall verify that the systems for internal control are adequate and are operating effectively.\n(3) Every listed company shall formulate policies and procedures for inquiry in case of leak or suspected leak of\n unpublished price sensitive information, which shall be approved by the Board of directors of the company and\n accordingly initiate appropriate inquiries on time and inform the Board promptly of the status.\n Listed entities shall have a process for how and when people are brought ‗inside‘ on sensitive transactions.\n Individuals should be made aware of the duties and responsibilities attached to the receipt of Inside Information,\n and the liability that attaches to misuse or unwarranted use of such information.\n(4) The listed company shall have a whistle-blower policy and make employees aware of such policy to enable\n employees to report instances of leak of unpublished price sensitive information.\n(5) If an inquiry has been initiated by a listed company in case of leak of unpublished price sensitive information or\n suspected leak of unpublished price sensitive information, the relevant intermediaries and fiduciaries shall co-\n operate with the listed company in connection with such inquiry conducted by listed company.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(i)",
+       "kind": "long_form",
+       "marks": 4,
+       "stem_md": "What is understood by ‘abuse of dominant position’ as per the provisions of the Competition Act, 2002?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Abuse of Dominant Position\n\n(a) when a party directly or indirectly, imposes unfair or discriminatory—\n(i) condition in purchase or sale of goods or service; or\n(ii) price in purchase or sale (including predatory price) of goods or service; or\n\n(b) indulges in practice or practices resulting in denial of market access; or\n\n(c) uses its dominant position in one relevant market to enter into, or protect, other relevant market. ―dominant\n position‖ means a position of strength, enjoyed by an enterprise, in the relevant market, in India, which enables it\n to—\n(i) operate independently of competitive forces prevailing in the relevant market; or\n(ii) affect its competitors or consumers or the relevant market in its favour.\n\n(d) ―predatory price‖ means the sale of goods or provisions of services, at a price which is below the cost, as may be\n determined by regulations, of production of the goods or provision of services, with a view to reduce competition\n or eliminate the competitor.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(ii)",
+       "kind": "long_form",
+       "marks": 3,
+       "stem_md": "State the provisions of the Banking Regulation Act, 1948 relating to disposal of non-banking assets.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(ii) Disposal of non-banking assets by a banking company\nSection 9 of the Banking Regulation Act, 1949 deals with the disposal of non-banking assets. Notwithstanding anything\ncontained in section 6, no banking company shall hold any immovable property howsoever acquired, except such as is\nrequired for its own use, for any period exceeding seven years from the acquisition thereof or from the commencement\nof this Act, whichever is later or any extension of such period as in this section provided, and such property shall be\ndisposed of within such period or extended period, as the case may be:\n\nHowever, the banking company may, within the period of seven years as aforesaid, deal or trade in any such property for\nthe purpose of facilitating the disposal thereof:\n\nThe Reserve Bank may in any particular case, extend the aforesaid period of seven years by such period not exceeding\nfive years where it is satisfied that such extension would be in the interest of the depositors of the banking company.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "State the persons eligible to claim the benefits under the Liberalised Remittance Scheme. What are the purposes for which such remittances can be made?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Liberalised Remittance Scheme\nUnder the Liberalised Remittance Scheme, all resident individuals, including minors, are allowed to freely remit up to\nUSD 2,50,000 per financial year (April – March) for\n any permissible current or\n capital account transaction or\n a combination of both.\nThe Scheme was introduced on February 4, 2004, with a limit of USD 25,000. The LRS limit has been revised in stages\nconsistent with prevailing macro and micro economic conditions. The Scheme is not available to corporates, partnership\nfirms, HUF, Trusts etc.\n\nIndividuals can avail foreign exchange facility for the following purposes within the LRS limit of USD 2,50,000 on\nfinancial year basis:\ni. Private visits to any country (except Nepal and Bhutan)\nii. Gift or donation Going abroad for employment\niii. Emigration\niv. Maintenance of close relatives abroad\nv. Travel for business, or attending a conference or specialised training or for meeting expenses for meeting medical\n expenses, or check-up abroad, or for accompanying as attendant to a patient going abroad for medical treatment/\n check-up\nvi. Expenses in connection with medical treatment abroad\nvii. Studies abroad\nviii. Any other current account transaction which is not covered under the definition of current account in FEMA,1999",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "State the offences of Money Laundering listed in different schedules under PMLA Act, 2002.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Offence of Money Laundering\nWhosoever directly or indirectly attempts to indulge or knowingly assists or knowingly is a party or is actually involved\nin any process or activity connected with the proceeds of crime including its concealment possession, acquisition or use\nor projecting or claiming as untainted property shall be guilty of offence of money-laundering.\nIt prescribes obligation of banking companies, financial institutions and intermediaries for verification and maintenance\nof records of the identity of all its clients and also of all transactions and for furnishing information of such transactions\nin prescribed form to the Financial Intelligence Unit-India (FIU-IND). It empowers the Director of FIU-IND to impose\nfine on banking company, financial institution or intermediary on noncompliance of the provisions of the Act.\n\nThe offences listed in the Schedule the Act, are scheduled offences and are divided into three parts - Part A,B and C.\nIn Part A, offences to the Schedule have been listed in 28 paragraphs and it comprises of offences under Indian Penal\nCode, offences under Narcotic Drugs and Psychotropic Substances, offences under Explosive Substances Act, 1908,\noffences under Unlawful Activities (Prevention) Act, 1967, offences under Arms Act, 1959, offences under Wild Life\n(Protection) Act, 1972, offences under the Immoral Traffic (Prevention) Act, 1956, offences under the Prevention of\nCorruption Act, 1988, offences under the Explosives Act, 1884 and offences under Antiquities & Arts Treasures Act,\n1972 etc.\n\fPart 'B' of the Schedule are offences with total value involved is Rs 1 crore or more. Part 'C' deals with trans-border\ncrimes, and is a vital step in tackling Money Laundering across International boundaries. Every Scheduled Offence is a\nPredicate Offence. The Scheduled Offence is called Predicate Offence and the occurrence of the same is a pre requisite\nfor initiating investigation into the offence of money laundering.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "All dues of MSME vendor have to be paid in time. In case of delay in making the payment, there will be some disallowances or interest payments to be made by the buyer under the Micro, Small and Medium Enterprises Development Act, 2006 (MSMED, Act, 2006). You are required to throw light on the same. What are to be disclosed in Financial Statements by the buyer entities?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Consequences of making delayed payments by the buyers to MSMEs Due date as per law-\nThe buyer is to make payment on or before the date agreed on between him and the supplier in writing or, in case of no\nagreement, before the appointed day. The agreement between seller and buyer shall not exceed more than 45 days.\n\n1. Interest payment on outstanding dues- The Company is liable to pay interest on delayed payment to MSME\n registered supplier. Rate of Interest (Compound interest with monthly rests to the supplier on the amount from the\n appointed day or, on the date agreed on) shall be three times of the bank rate notified by the Reserve Bank.\n\n2. Income tax disallowance-Section 43B(h) of the Income Tax Act, introduced in 2023, aims to ensure timely\n payments to Micro, Small and Medium Enterprises (MSMEs) This clause stipulates that any payments owed to\n MSMEs, not resolved within 45 days, will not qualify for allowable expenses till it is paid. Deduction will be\n allowed only in the year of actual payment.\n\n3. Reporting in Financial Statement- In the notes to Accounts the company has have to give lot of new disclosures of\n default as mentioned above in their financial statement. Buyers who are required to have their annual accounts\n audited must include the following information in their annual financial statements:\na. The principal amount and interest due to the supplier\nb. The interest paid by the buyer to the supplier\n\n4. Tax Auditor to report the amount of interest inadmissible u/s 23 of the Micro, Small and Medium Enterprises\n Development Act, 2006(MSMED, Act2006), read with section 44AB of the Income-tax Act, 1961.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Discuss about the amalgamation by Central Government on public interest as per the provisions of the Companies Act, 2013.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Amalgamation by Central Government on public interest\nSection 237 (1) of the Companies Act, 2013 states that when the Central Government is satisfied that it is essential in the\npublic interest that two or more companies should amalgamate, the Central Government may, by order notified in the\nOfficial Gazette, provide for the amalgamation of those companies into a single company with such constitution, with\nsuch property, powers, rights, interests, authorities and privileges, and with such liabilities, duties and obligations, as\nmay be specified in the order. The order under Sub-Section (1) may also provide for the continuation by or against the\ntransferee company of any legal proceedings pending by or against any transferor company.\n\nEvery member or creditor, including a debenture holder, of each of the transferor companies before the amalgamation\nshall have, as nearly as may be, the same interest in or rights against the transferee company as he had in the company\nof which he was originally a member or creditor, and in case the interest or rights of such member or creditor in or\nagainst the transferee company are less than his interest in or rights against the original company, he shall be entitled to\ncompensation to that extent, which shall be assessed by such authority as may be prescribed and every such assessment\nshall be published in the Official Gazette. The compensation so assessed shall be paid to the member or creditor\nconcerned by the transferee company.\n\nAs per Section 237 (4) Any person aggrieved by any assessment of compensation made by the prescribed authority\nunder Sub-Section (3) may, within a period of thirty days from the date of publication of such assessment in the Official\nGazette, prefer an appeal to the Tribunal and thereupon the assessment of the compensation shall be made by the\nTribunal.\n\n ________________________________",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

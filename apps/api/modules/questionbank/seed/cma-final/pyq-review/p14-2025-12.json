@@ -1,0 +1,78 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p14-2025-12",
+ "items": {
+  "1(iii)": {
+   "verdict": "hold",
+   "reason": "Stem table and options match the question paper, but the printed suggested answer for 1(iii) is 'C/D' (two options accepted), so no single key can be given.",
+   "fixes": [],
+   "printed_issues": [
+    "Key printed as (C/D)."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem, tables and the NPV, PI, advice and working notes (a)-(c) compared with question and answer pages; all figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the loan-outflow table, terminal inflow working and break-even lease rent match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Uses annuity factor 3.79 (sum of given PVs is 3.790)."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem, given factors and answer (i)-(v) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Part (iv) prints '848.24 x 1(3.978/100)' with an extra factor 1; label 'Yields' in (iii) as printed."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem, sector index table and answer (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and both printed solutions (main and 'Alternatively') match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "The two solutions give opposite recommendations (Moon in the main solution, Sun in the alternative)."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the beta, CAPM and ranking tables match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the main and alternative workings in (i)-(iv) match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Given constant e^-0.03 = 0.970446 printed in the stem as shown."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and answer (i)-(ii) including the arbitrage boxes, read from the printed page image, match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Print shows 'Rs. 6840 400' (read as 6840400); profit line prints USD (94753.73 - 80000) against 94753.74 received above."
+   ]
+  }
+ }
+}

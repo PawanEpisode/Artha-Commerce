@@ -1,0 +1,704 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p14",
+ "term_code": "2025-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Q1 (iii) has a non-single key 'C/D' in suggested answer; correct left null.",
+  "PDF page 12 is blank.",
+  "Q8 sub-marks 5+5+4 as printed; (c) any four."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section A is compulsory and contains question 1 of 30 marks. (Answer all the questions. Each question carries two marks.)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct answer from the given alternatives : 2x15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The PROFITABILITY Index (PI) of Project TN is 2 when its annual after tax cash inflows commencing from year end 2 to 4 of ₹ 400 Lakh (each year) is discounted at 10%. How much would have been the initial cash outlay which was fully made at the beginning of year 1 ?\n[Given : PVIF (10% yr1 to yr4) = 0.909, 0.826, 0.751 and 0.683]",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 400 Lakh"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 452 Lakh"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 634 Lakh"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following information is available with respect to Project XZ :\n\n| Particular | Value |\n|---|---|\n| Project Cost (₹) | 12000 |\n| Annual Cash inflow (₹) | 4500 |\n| Life of Project (yrs.) | 4 |\n| Cost of Capital (%) | 14 |\n| PVIFA (14% yr 4) | 2.9137 |\n\nThe sensitivity with respect to the project cost will be ________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "9.26 %"
+        },
+        {
+         "key": "B",
+         "body_md": "10.26 %"
+        },
+        {
+         "key": "C",
+         "body_md": "9.72 %"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following information is extracted from the Project of PAM Ltd. :\n\n| Expected Cash Flow (₹) | Probability |\n|---|---|\n| 10,000 | 0.70 |\n| 20,000 | 0.30 |\n\nAmount in lieu of Expected Cash Flow = ₹ 12,000.\nThe certainty equivalent co-efficient is",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "1.083"
+        },
+        {
+         "key": "B",
+         "body_md": "1.00"
+        },
+        {
+         "key": "C",
+         "body_md": "0.920"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": null,
+       "answer_md": "",
+       "confidence": "low",
+       "review": [
+        "Suggested answer prints key as 'C/D' (two options accepted); `correct` left null. Computation 12000/13000 = 0.923 is closest to (C)."
+       ]
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under \"Securitization process\", ________ are instruments which are issued by a subsidiary company in respect of receivable of holding or parent company.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Pass through Certificates"
+        },
+        {
+         "key": "B",
+         "body_md": "Pay through Certificates"
+        },
+        {
+         "key": "C",
+         "body_md": "Preferred Stock Certificates"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In a 100-day stochastic analysis, if the closing price is ₹ 210, the 100-day low and high prices are ₹ 200 and ₹ 240 respectively, then stochastic (%K) will be equal to",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "25 %"
+        },
+        {
+         "key": "B",
+         "body_md": "16 %"
+        },
+        {
+         "key": "C",
+         "body_md": "12 %"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "ARON Ltd. has 1 million AAA rated 12 % bonds outstanding, maturity in 7 years from now. If the market interest rate is 14 %, the price of the bond (Face value ₹ 100 and Coupons are payable annually) is ________.\n[Given : PVIFA (14% 7yrs.) = 4.288, PVIFA (12% 7 yrs.) = 4.564, PVIF (14% 7 yrs) = 0.400, PVIF (12% 7 yrs) = 0.452]",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 90.00"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 91.46"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 93.00"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "MS. SAKALI, a prospective investor, has collected the following information pertaining to two securities as under :\n\n| Security | Return (%) | Standard Deviation (%) |\n|---|---|---|\n| Gilt – edged Security | 7 | 0 |\n| Equity | 25 | 30 |\n\nUsing the above two securities, if Ms. Sakali is planning to invest ₹ 5,00,000 to Construct a Portfolio with a standard deviation of 24%, the return on such Portfolio is",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 1,10,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 1,07,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 99,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 1,08,200"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "ZOMB Ltd. is entirely financed by equity shares. The equity share has a beta of 0·8. The company pays no taxes. ZOMB Ltd. now decides to buy back half of the equity shares by borrowing an equal amount. If the debt yields a Risk free return of 10% (Beta = 0), what will be the beta of the equity shares after buy back ?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "1.60"
+        },
+        {
+         "key": "B",
+         "body_md": "1.20"
+        },
+        {
+         "key": "C",
+         "body_md": "0.80"
+        },
+        {
+         "key": "D",
+         "body_md": "1.50"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which one of the following types of Credit Risk, is a chance that a rating agency will lower its rating on the issuer or the probability of loss from a fall in issuers rating because of deterioration in its financial condition ?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Credit Spread Risk"
+        },
+        {
+         "key": "B",
+         "body_md": "Default Risk"
+        },
+        {
+         "key": "C",
+         "body_md": "Downgrade Risk"
+        },
+        {
+         "key": "D",
+         "body_md": "Country Risk"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Consider a bullish Spread Option Strategy using a call option on the stock of CNC Oil with ₹ 220 exercise price priced at ₹ 24 and a call option with ₹ 280 exercise price priced at ₹ 14. The current market price of stock of CNC Oil is ₹ 248. If the price of the stock is ₹ 360 on maturity, the new profit at expiration will be ________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 70"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 60"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 50"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following complex financial derivatives are options having a maturity of up to three years ?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "LEAPS (Long Term Equity Anticipation Securities)"
+        },
+        {
+         "key": "B",
+         "body_md": "Baskets"
+        },
+        {
+         "key": "C",
+         "body_md": "Warrants"
+        },
+        {
+         "key": "D",
+         "body_md": "Swapstions"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is / are feature(s) of Global Depository Receipts (GDRs) ?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Returns"
+        },
+        {
+         "key": "B",
+         "body_md": "Globally Marketed"
+        },
+        {
+         "key": "C",
+         "body_md": "Both (A) and (B)"
+        },
+        {
+         "key": "D",
+         "body_md": "Not negotiable"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The actual exchange rates are available at the market as follows.\n\n| | |\n|---|---|\n| EUR/USD : EUR 1 = | $ 1·1201 – 1·1216 |\n| INR/USD : ₹ 1 = | $ 0·0116 – 0·0118 |\n\nWhat will be the cross rate between EUR/INR?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 94·9237 / 96·6897"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 94·9287 / 95·7071"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 96·5603 / 96·7075"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "________ explains the relationship between inflation rate differential and the expected spot rate.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Interest Rate Parity (IRP)"
+        },
+        {
+         "key": "B",
+         "body_md": "Fisher Effect (FE)"
+        },
+        {
+         "key": "C",
+         "body_md": "International Fisher Effect (IFE)"
+        },
+        {
+         "key": "D",
+         "body_md": "Purchasing Power Parity (PPP)"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which one of the following examples of cryptocurrencies, takes its name from an internet meme featuring a Shiba Inu Dog ?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Litecoin"
+        },
+        {
+         "key": "B",
+         "body_md": "Dogecoin"
+        },
+        {
+         "key": "C",
+         "body_md": "Bitcoin"
+        },
+        {
+         "key": "D",
+         "body_md": "Ethereum"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from Question No. 2 to Question No. 8. Each question carries 14 marks. 14x5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "PEGUS Ltd., is a leading manufacturer of railway parts for passenger coaches and freight wagons. Due to high wastage of material and quality issues in production, the General Manager of the company is considering the replacement of machine X with a new Computer Numerical Control (CNC) machine Y. Machine X has a book value of ₹ 4,80,000 and remaining economic life is 6 years. It could be sold now at ₹ 1,80,000 and zero salvage value at the end of sixth year.\n\nThe purchase price of machine Y is ₹ 24,00,000 with economic life of 6 years. It will require ₹ 1,40,000 for installation and ₹ 60,000 for testing. Subsidy of 15% on the purchase price of the machine Y will be received from Government at the end of 1st year. Salvage value at the end of sixth year will be ₹ 3,20,000.\n\nThe General Manager estimates that the annual savings due to installation of machine Y include a reduction of three skilled workers with annual salaries of ₹ 1,68,000 each, ₹ 4,80,000 from reduced wastage of materials and defectives and ₹ 3,50,000 from loss in sales due to delay in execution of purchase orders. Operation of machine Y will require the services of a trained technician with annual salary of ₹ 3,90,000 and annual operation and maintenance cost will increase by ₹ 1,54,000.\n\nThe tax rate applicable to the company is 30% and the required rate of return is 14%.\nThe company follows straight line method of depreciation.\n(Ignore tax savings on loss due to sale of existing machine.)\nThe present value factors at 14% are:\n\n| Years | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|---|\n| PV Factor (14 %, t) | 1 | 0.877 | 0.769 | 0.675 | 0.592 | 0.519 | 0.456 |\n\nRequired :\n(i) Assess the Net Present Value and Profitability Index of the proposal.\n(ii) Advice PEGUS Ltd., whether they should replace the existing machine with a new CNC machine.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Calculation of NPV\n| Particulars | Year | Net Cashflow (₹) | PVF @ 14% | PV (₹) |\n|---|---|---|---|---|\n| Initial Cash outflows [W/N (a)] | 0 | (2420000) | 1 | (2420000) |\n| Less : Subsidy from government (15% of 2400000) | 1 | 360000 | 0.877 | 315720 |\n| Net Cash outflow | | | | (2104280) |\n| Incremental CFAT [W/N (c)] | 1 to 6 | 625000 | 3.888 | 2430000 |\n| Salvage Value of New Machine | 6 | 320000 | 0.456 | 145920 |\n| PV of inflows | | | | 2575920 |\n| Net Present Value | | | | 471640 |\n\nProfitability Index = Sum of discounted cash inflows / Initial cash outlay or Total discounted cash outflow (as the case may)\n= 2575920/2104280 = 1.224\n(ii) Advise: Since the NPV is positive and PI is greater than 1, the company should replace the machine.\n\nWorking Notes:\n(a) Calculation of Initial Cash Outflows:\n| Particulars | ₹ |\n|---|---|\n| Cost of new machine | 2400000 |\n| Less : Sale Proceeds of existing machine | (180000) |\n| Add : Installation Cost | 140000 |\n| Add : Testing Cost | 60000 |\n| Initial Cash outflows | 2420000 |\n\n(b) Calculation of Incremental Depreciation:\n| Particulars | ₹ |\n|---|---|\n| Depreciation on existing machine (480000/6) (i) | 80000 |\n| Depreciation base of New Machine: | |\n| Cost of new machine | 2400000 |\n| Add: Installation | 140000 |\n| Add: Testing | 60000 |\n| Less: Subsidy from government | (360000) |\n| Less: Salvage value at the end of 6th Year | (320000) |\n| Depreciation base of New Machine | 1920000 |\n| Depreciation on New Machine (1920000/6) (ii) | 320000 |\n| Incremental Depreciation [(ii) – (i)] | 240000 |\n\n(c) Computation of Annual Operating Cash Flow after Tax (CFAT)\n| Particulars | Amount (₹) | Amount (₹) |\n|---|---|---|\n| Saving in Cost: | | |\n| Cost of 3 skilled workers (₹ 168000 x 3) | 504000 | |\n| Reduced Wastage of Material | 480000 | |\n| Saving in loss of Sales | 350000 | |\n| Total | | 1334000 |\n| Less : Increase in Cost: | | |\n| Salary to Trained Technician | 390000 | |\n| Increase in annual operation and maintenance cost | 154000 | |\n| Total | | (544000) |\n| Incremental Saving before tax and depreciation | | 790000 |\n| Less : Incremental Depreciation | | (240000) |\n| Incremental PBT | | 550000 |\n| Less : Tax @ 30 % | | (165000) |\n| PAT | | 385000 |\n| Add : Depreciation | | 240000 |\n| Incremental CFAT | | 625000 |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer layout reconstructed from aid.txt text; verify numbers against the suggested-answer PDF if used for grading."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Gamma Ltd. is considering the acquisition of a laptop server system costing ₹ 80,000. The effective life of the computer is expected to be five years. The company plans to acquire the same either by borrowing ₹ 80,000 from its bankers at 12% interest p.a. or on lease. The company wishes to know the lease rentals to be paid annually, which will make it indifferent to the loan option.\n\nThe following additional information is available:\n(I) The principal amount of loan will be paid in five annual equal instalments.\n(II) Interest, lease rentals, principal repayment are to be paid on the last day of each year.\n(III) The full cost of the computer will be written off over the effective life of computer on a straight-line basis and the same will be allowed for tax purposes.\n(IV) The company's effective tax rate is 35% and the after-tax cost of capital is 10%.\n(V) The computer will be sold for ₹ 4,000 at the end of the 5th year. The commission on such sales is 10% on the sale value.\n\nGiven : PV Factor at 10% :\n\n| Year | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Present value | 0.909 | 0.826 | 0.751 | 0.683 | 0.621 |\n\nRequired:\nAnalyze and assess annual lease rentals payable by Gamma Ltd. which will result in indifference to the loan option.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of Net Cash out flow if the Asset is Purchased by Borrowing\n| Year | Principal repayment | Interest | Instalment | Tax savings on interest | Tax savings on dep | Net cash outflow | PV @ 10% | Present value |\n|---|---|---|---|---|---|---|---|---|\n| 1 | 16,000 | 9,600 | 25,600 | 3,360 | 5,600 | 16,640 | 0.909 | 15,126 |\n| 2 | 16,000 | 7,680 | 23,680 | 2,688 | 5,600 | 15,392 | 0.826 | 12,714 |\n| 3 | 16,000 | 5,760 | 21,760 | 2,016 | 5,600 | 14,144 | 0.751 | 10,622 |\n| 4 | 16,000 | 3,840 | 19,840 | 1,344 | 5,600 | 12,896 | 0.683 | 8,808 |\n| 5 | 16,000 | 1,920 | 17,920 | 672 | 5,600 | 11,648 | 0.621 | 7,233 |\n| | | | | | | | Total (₹) | 54,503 |\n\nPresent value of terminal cash inflows:\nSale value of asset = 4,000\n(-) Commission = 400 → 3,600\n(-) Tax on profit @ 35% = 1,260\nNet Cash inflow = 2,340\nPresent value (2340 × 0.621) = 1,453\n\nNet PV of Purchase Outflow = 54,503 – 1,453 = ₹ 53,050\n\nComputation of break-even lease rent:\nLet X be the break-even lease rent\nPresent value of cash inflows:\nLease rent X\n(-) Tax saving (X @ 35%) 0.35X\nLease rent after tax per year 0.65X\nPresent value of lease rental for five years = (0.65X) × (3.79) = 53,050\nor, X = ₹ 21534.\nSo, the required annual lease rental is ₹ 21534.",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer layout reconstructed from aid.txt text; verify numbers against the suggested-answer PDF if used for grading.",
+        "Suggested answer uses annuity factor 3.79 (sum of given PVs 3.790)."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "ARON Ltd. is evaluating two mutually exclusive projects, A and B, each requiring an investment of ₹ 25,00,000. Project A is expected to generate annual cash inflows of ₹ 7,00,000 in the pessimistic case, ₹ 9,50,000 in the most likely case, and ₹ 12,00,000 in the optimistic case. The probabilities of these outcomes are 0.20, 0.50 and 0.30 respectively. The standard deviation of Project A's inflows is estimated at ₹ 1,80,000.\n\nProject B is expected to generate annual cash inflows of ₹ 5,00,000 in the pessimistic case, ₹ 10,00,000 in the most likely case, and ₹ 14,00,000 in the optimistic case, with corresponding probabilities of 0.30, 0.40 and 0.30. The standard deviation of Project B's inflows is estimated at ₹ 2,50,000.\n\nFor benchmarking purposes, the industry has three comparable projects: Project X, with an expected inflow of ₹ 8,00,000 and standard deviation of ₹ 1,60,000; Project Y, with an expected inflow of ₹ 10,00,000 and standard deviation of ₹ 2,20,000; and Project Z, with an expected inflow of ₹ 9,00,000 and standard deviation of ₹ 1,80,000. The industry benchmark Coefficient of Variation (CV) is defined as the average CV of these three projects.\n\nRequired:\n(i) Assess the Expected Cash inflows of Projects A and B.\n(ii) Analyze the Coefficient of Variation (CV) for Projects A and B.\n(iii) Assess the Industry Benchmark Coefficient of Variation (CV).\n(iv) Recommend which project ARON Ltd. should select as compared to industry.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Assessment of expected cash flow for each project:\nProject A\n| Scenario | Cash Inflow (₹) | Probability | Contribution (₹) |\n|---|---|---|---|\n| Pessimistic | 7,00,000 | 0.2 | 1,40,000 |\n| Most Likely | 9,50,000 | 0.5 | 4,75,000 |\n| Optimistic | 12,00,000 | 0.3 | 3,60,000 |\n| Expected Inflow (A) | | | 9,75,000 |\n\nProject B\n| Scenario | Cash Inflow (₹) | Probability | Contribution (₹) |\n|---|---|---|---|\n| Pessimistic | 5,00,000 | 0.3 | 1,50,000 |\n| Most Likely | 10,00,000 | 0.4 | 4,00,000 |\n| Optimistic | 14,00,000 | 0.3 | 4,20,000 |\n| Expected Inflow (B) | | | 9,70,000 |\n\n(ii) Analysis of coefficient of variation for each project\nCoefficient of Variation (CV) = Standard Deviation / Expected Cashflow\nCV-Project A = 1,80,000/9,75,000 = 0.1846\nCV-Project B = 2,50,000 / 9,70,000 = 0.2577\n\n(iii) Assessment of coefficient of variation for industry:\n| Project | Expected Inflow (₹) | Standard Deviation (₹) | CV |\n|---|---|---|---|\n| X | 8,00,000 | 1,60,000 | 0.2000 |\n| Y | 10,00,000 | 2,20,000 | 0.2200 |\n| Z | 9,00,000 | 1,80,000 | 0.2000 |\n| Industry Benchmark-CV | | | 0.2067 |\n\n(iv) Recommendation:\nProject A's CV (0.1846) is better than the industry benchmark (0.2067), while Project B (0.2577) is riskier. Therefore, Project A should be selected.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "LMN Ltd. is evaluating its share value with the following information:\n\nThe current dividend per share is ₹ 25, and the current market price is ₹ 550. The company's return on equity (ROE) stands at 18%, with a retention ratio of 50%. The required rate of return is 14%. The expected growth rates are 12% for the first year, 10% for the second year, and sustainable growth rate (by considering the retention ratio) for the third year and beyond.\n\nGiven : PV Factor :\n\n| Year | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| PVIF (14%) | 0.877 | 0.769 | 0.675 | 0.592 |\n| PVIF (18%) | 0.847 | 0.718 | 0.609 | 0.516 |\n\nRequired:\n(i) Assess the intrinsic value of the share using the Dividend Discount Model.\n(ii) Analyze the intrinsic value with the current market price to determine if the share is overvalued or undervalued.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Sustainable Growth Rate for Year 3 and beyond, g = Return on Equity (ROE) x Retention Ratio\ng = 0.18 x 0.50 = 0.09 or 9%\nExpected Dividend for 3 years:\nYear 1 Dividend (D1) = 25 x (1 + 0.12) = ₹ 28.00\nYear 2 Dividend (D2) = 28.00 x (1 + 0.10) = ₹ 30.80\nYear 3 Dividend (D3) = 30.80 x (1 + 0.09) = ₹ 33.57\nPresent Value of Dividend for 2 years = D1/(1+K)^1 + D2/(1+K)^2\n= 28.00 x 0.877 + 30.80 x 0.769\n= 24.5560 + 23.6852 = ₹ 48.24\nTerminal Value at End of Year 2:\nTerminal Value P2 = D3/(k-g) = 33.57/(0.14–0.09) = ₹ 671.40\nPresent Value of Terminal Value: 671.40 x 0.769 = ₹ 516.30\nThe present value per share of LMN Ltd. will be: 48.24 + 516.30 = ₹ 564.54\n(ii) The intrinsic value of ₹ 564.54 is higher than the current market price of ₹ 550. Therefore, the share of LMN Ltd., is undervalued.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following data is available for a Corporate Bond :\n\n| Particular | Value |\n|---|---|\n| Face Value | ₹ 1,000 |\n| Coupon Rate | 11 % |\n| Years to Maturity | 6 |\n| Redemption Value | ₹ 1,000 |\n| Yield to Maturity | 15 % |\n\nRequired :\n(i) Assess the Current Market Price.\n(ii) Assess the Duration of the Bond.\n(iii) Analyze the Volatility of the Bond.\n(iv) Analyze the Expected Market Price if increase in required yield is by 100 basis points.\n(v) Analyze the Expected Market Price if decrease in required yield is by 75 basis points.\n(Round off your answer to 3 decimals.)\n[Given : PVIFA (15%, 6years) = 3·784 and PVIF (15%, 6 years) = 0·432]",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Current Market Price of Corporate Bond:\nPV of Coupon Payments = 110 × 3.784 = ₹ 416.24\nPV of Redemption Value = 1,000 × 0.432 = ₹ 432.00\nCurrent Market Price = 416.24 + 432.00 = ₹ 848.24\n(ii) Duration of the Bond:\n| Year | Cash flow | P.V. @15% | P.V. | P.V. x Year |\n|---|---|---|---|---|\n| 1 | 110 | 0.870 | 95.70 | 95.70 |\n| 2 | 110 | 0.756 | 83.16 | 166.32 |\n| 3 | 110 | 0.657 | 72.27 | 216.81 |\n| 4 | 110 | 0.572 | 62.92 | 251.68 |\n| 5 | 110 | 0.497 | 54.67 | 273.35 |\n| 6 | 1110 | 0.432 | 479.52 | 2877.12 |\n| | | | 848.24 | 3880.98 |\n\nDuration = 3880.98 / 848.24 = 4.575 Years\n(iii) Volatility of the Bond = Duration / (1 + Yield) = 4.575 / 1.15 = 3.978\n(iv) Expected Market Price if increase in required yield is by 100 basis points:\n= 848.24 x (3.978 / 100) = 33.74\nThen Market Price will be (848.24 – 33.74) = ₹ 814.50\n(v) Expected Market Price if decrease in required yield is by 75 basis points:\n= 848.24 x (3.978 x 0.75 / 100) = 25.31\nThen Market Price will be 848.24 + 25.31 = ₹ 873.55",
+       "confidence": "medium",
+       "review": [
+        "Formula symbols in aid.txt were garbled; restored from the printed numbers.",
+        "Suggested answer layout reconstructed from aid.txt text; verify numbers against the suggested-answer PDF if used for grading."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Wealth Plus Gift Fund Scheme was launched two years ago with the objective of providing growth through a mix of equity and debt investments. The scheme attracted good response from investors, and over the years it built a diversified portfolio across multiple sectors and instruments.\n\nThe portfolio of the fund is as follows:\nThe scheme had invested ₹ 35 crore in IT & ITES companies, ₹ 20 crore in Infrastructure, ₹ 10 crore in Aviation & Transport, ₹ 25 crore in Automotive, and ₹ 15 crore in Banking/ Financial Services. Alongside these equity holdings, the fund also purchased unlisted bonds worth ₹ 20 crore. The fund also maintains ₹ 4 crore as cash and other assets throughout the fund period, while expenses payable on the closure date are estimated at ₹ 5 crore. The market expectation on listed bonds is 8%. The scheme has 7 crore units outstanding. Assume that there is no cash as on date of purchase.\n\nThe particulars relating to Sectoral Index are as follows :\n\n| Sector | Index on Date of Purchase (01.04.2023) | Index on Valuation Date (31.03.2025) |\n|---|---|---|\n| IT and ITES | 1800 | 3100 |\n| Infrastructure | 1500 | 2550 |\n| Aviation/Transport | 1400 | 2300 |\n| Automotive | 1750 | 2800 |\n| Banking/Financial | 1600 | 2500 |\n\nRequired:\n(i) Assess net asset value of the fund as of valuation date.\n(ii) Analyze NAV per unit as of 31.03.2025.\n(iii) Assess and analyze Net Return (Annualized) % of the scheme over the 2-year horizon when the fund has distributed ₹ 3.00 per unit per year as cash dividend.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Net Asset Value (NAV) of the Fund:\n| Particulars | ₹ in Crore |\n|---|---|\n| Market value of Shares : | |\n| IT & ITES [35 x (3100 ÷ 1800)] | 60.28 |\n| Infrastructure [20 x (2550 ÷ 1500)] | 34.00 |\n| Aviation / Transport [10 x (2300 ÷ 1400)] | 16.43 |\n| Automotive [25 x (2800 ÷ 1750)] | 40.00 |\n| Banking / Financial [15 x (2500 ÷ 1600)] | 23.44 |\n| Cost of investment in unlisted bonds | 20 |\n| Cash and other assets | 4.00 |\n| Total assets of the fund | 198.15 |\n| Less : Outstanding expenses | (5.00) |\n| Net Asset Value (NAV) of the fund | 193.15 |\n\n(ii) Net Asset Value (NAV) per unit\nNAV Per Unit = Net Asset Value of the Fund ÷ No. of units outstanding\n= 193.15 Crore ÷ 7 crore units = ₹ 27.59\n\n(iii) Computation of Opening NAV:\n| Particulars | ₹ in Crore |\n|---|---|\n| (a) IT & ITES | 35.00 |\n| (b) Infrastructure | 20.00 |\n| (c) Aviation / Transport | 10.00 |\n| (d) Automotive | 25.00 |\n| (e) Banking / Financial | 15.00 |\n| Cost of investment in unlisted bonds | 20 |\n| Net Asset Value (NAV) of the fund at opening | 125 |\n| Opening NAV per unit ₹ (125/7) | ₹ 17.86 |\n\nComputation of Annualized Returns\n| Particulars | Value |\n|---|---|\n| Closing NAV per unit | ₹ 27.59 |\n| Opening NAV per unit | ₹ 17.86 |\n| Capital appreciation | ₹ 9.73 |\n| Cash dividend (₹ 3 x 2 years) | ₹ 6 → ₹ 15.73 |\n| Total return (%) = (15.73 ÷ 17.86) | 88.074 % |\n| Return per year = (88.074 % ÷ 2) | 44.037 % |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer layout reconstructed from aid.txt text; verify numbers against the suggested-answer PDF if used for grading.",
+        "Question text printed 'and? 15 crore' (OCR glitch of ₹ 15 crore, clear in image as ₹ 15 crore)."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Returns on two portfolios, Moon and Sun, for the past 4 years are—\n\n| Year | Portfolio Moon | Portfolio Sun |\n|---|---|---|\n| 1 | 14.20 % | 15.45 % |\n| 2 | 14.70 % | 12.48 % |\n| 3 | 13.70 % | 14.70 % |\n| 4 | 15.20 % | 14.00 % |\n\nBeta factor of the two portfolios are 1.8 and 1.4 respectively. The market portfolio fetches 11 % return and RBI Bonds, which are considered risk-free, yield 5.5 % return.\n\nRequired :\n(i) Assess expected rate of return under CAPM.\n(ii) Evaluate alpha adjusted return.\n(iii) Recommend which of the above two portfolios the investor will prefer.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Assessment of Expected Rate of Return under CAPM\nE(R) = RF + [β × (RM – RF)]\nRisk Free Return, RF = 5.5% [Treasury Bills]\nReturn on Market Portfolio, RM = 11% [Given]\nPortfolio Moon (β 1.8): E(RMoon) = 5.5% + [1.8 × (11% - 5.5%)] = 5.5% + [1.8 × 5.5%] = 5.5% + 9.90% = 15.40%\nPortfolio Sun (β 1.4): E(RSun) = 5.5% + [1.40 × (11% - 5.5%)] = 5.5% + [1.40 × 5.5%] = 5.5% + 7.70% = 13.20%\n\n(ii) Alpha Adjusted Return:\n| Year | Moon Actual Return | Abnormal Return [ARMoon] = (2)-E(RMoon) | Sun Actual Return | Abnormal Return [ARSun] = (4)-E(RSun) |\n|---|---|---|---|---|\n| 1 | 14.20% | 14.20% - 15.40% = (1.20%) | 15.45% | 15.45% - 13.20% = 2.25% |\n| 2 | 14.70% | 14.70% - 15.40% = (0.70%) | 12.48% | 12.48% - 13.20% = (0.72%) |\n| 3 | 13.70% | 13.70% - 15.40% = (1.70%) | 14.70% | 14.70% - 13.20% = 1.50% |\n| 4 | 15.20% | 15.20% - 15.40% = (0.20%) | 14.00% | 14.00% - 13.20% = 0.80% |\n| | | (3.80%) | | 3.83% |\n\nAlpha factor:\nPortfolio Moon α = (3.80%) ÷ 4 Years = (0.95%)\nPortfolio Sun α = 3.83 % ÷ 4 Years = 0.96%\nExpected Return adjusted for Alpha: Alpha Adjusted Return = Return under CAPM + α\nPortfolio Moon = E(RMoon) + α = 15.40% - 0.95% = 14.45%\nPortfolio Sun = E(RSun) + α = 13.20% + 0.96% = 14.16%\n(iii) Recommendation: The Alpha adjusted return for Portfolio Moon is higher than Sun, indicating its better performance relative to Sun. Hence, an investor should prefer Portfolio Moon.\n\nAlternatively:\n(i) Expected return under CAPM: Moon 15.40%, Sun 13.20% (as above)\n(ii) Alpha Adjusted Return:\nAverage Actual Return\nPortfolio Moon = (14.20 + 14.70 + 13.70 + 15.20) / 4 = 57.80 / 4 = 14.45%\nPortfolio Sun = (15.45 + 12.48 + 14.70 + 14.00) / 4 = 56.63 / 4 = 14.16%\nAlpha (α) = Actual Return − CAPM Return\n| Portfolio | Actual Avg (%) | CAPM (%) | Alpha (%) |\n|---|---|---|---|\n| Moon | 14.45 | 15.40 | –0.95 |\n| Sun | 14.16 | 13.20 | +0.96 |\n\nAlpha-Adjusted Returns\n• Moon → –0.95% (Underperformed CAPM expectation)\n• Sun → +0.96% (Outperformed CAPM expectation)\n(iii) Recommendation:\nInvestor should prefer Portfolio Sun because: Portfolio Sun delivers returns (14.16%) higher than CAPM-expected return (13.20%); Portfolio Sun has positive alpha, meaning it generated returns above what was required for its risk level.",
+       "confidence": "low",
+       "review": [
+        "Suggested answer gives two alternative solutions with OPPOSITE recommendations (Moon vs Sun).",
+        "Suggested answer layout reconstructed from aid.txt text; verify numbers against the suggested-answer PDF if used for grading."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "MS. TAMIA, a Mutual Fund Analyst, has collected past performance of the three Funds and the Sensex.\n\n| FUND | Return (%) | Std. Deviation (%) | Correlation with the Market Return |\n|---|---|---|---|\n| ROX FUND | 19% | 2.50 | 0.840 |\n| SEZ FUND | 13.50 % | 2.00 | 0.540 |\n| TOM FUND | 11.00% | 0.80 | 0.975 |\n| Market Risk | - | 1.20 | - |\n| Market rate of Return | 14.00% | - | - |\n| Risk free rate | 9.00% | - | - |\n\nRequired :\nAnalyze and assess the rank of the three Funds in tabular form for\n(i) Sharp's Measure,\n(ii) Treynor's Measure,\n(iii) Jensen's Alpha.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Calculation of Beta:\nBeta of Stock ROX (βR) = (0.840 x 2.50) / 1.20 = 1.75\nBeta of Stock SEZ (βS) = (0.540 x 2.00) / 1.20 = 0.90\nBeta of Stock TOM (βT) = (0.975 x 0.80) / 1.20 = 0.65\n\nRequired Rate of Return of Stock is given by CAPM:\nStock ROX = 9 % + 1.75 (14 % – 9%) = 17.75 %\nStock SEZ = 9 % + 0.90 (14 % – 9%) = 13.50 %\nStock TOM = 9 % + 0.65 (14 % – 9%) = 12.25 %\n\nAssessment of Rank of the Fund for (i) Sharpe's Measurement (ii) Treynor's Measure and (iii) Jensen's Alpha\n| Name of the Funds | Return (%) (2) | Risk Free Return (%) (3) | Market Return (%) (4) | Standard Deviation (%) (5) | Beta (6) | Ri − Rf (2 – 3) (7) |\n|---|---|---|---|---|---|---|\n| ROX | 19 | 9 | 14 | 2.50 | 1.75 | 10.00 |\n| SEZ | 13.50 | 9 | 14 | 2.00 | 0.90 | 4.50 |\n| TOM | 11.00 | 9 | 14 | 0.80 | 0.65 | 2.00 |\n\n| Name of the Funds | Rf + β (Rm − Rf) (%) (8)/(9) | Sharpe's Measure (Ri − Rf)/σ (10) | Rank (11) | Treynor's Measure (Ri − Rf)/β (%) (12) | Rank (13) | Jensen's Alpha (2 – 9) (%) (14) | Rank (15) |\n|---|---|---|---|---|---|---|---|\n| ROX | 17.75 | 4.00 | 1 | 5.71 | 1 | 1.25 | 1 |\n| SEZ | 13.50 | 2.25 | 3 | 5.00 | 2 | 0 | 2 |\n| TOM | 12.25 | 2.50 | 2 | 3.08 | 3 | (1.25) | 3 |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer formula layout garbled in aid.txt; reconstructed from numbers.",
+        "Suggested answer layout reconstructed from aid.txt text; verify numbers against the suggested-answer PDF if used for grading."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "MR. HICKS, an investor, has a portfolio of five securities on January 1, 2025 as given below :\n\n| Security | Price (₹) | No. of Shares | Beta |\n|---|---|---|---|\n| AN | 612.65 | 3000 | 0.90 |\n| BZ | 334.20 | 5000 | ? |\n| CT | 454.45 | 6000 | 0.40 |\n| DM | 775.10 | 10000 | 0.95 |\n| EB | 781.05 | 3000 | 0.85 |\n\nOther Information :\n- Portfolio beta is 0.859.\n- The cost of capital to the investor is 10.5 % p.a.\n- No. of days in a year to be traded as 365 days\n\nRequired :\n(i) Calculate the value of Beta of Security BZ.\n(ii) Analyse the theoretical value of the Nifty Futures for February, 2025. Current value of Nifty is 13000. [Given : ln (1.105) = 0.0998, e^0.015858 = 1.01598 and e^0.01668 = 1.01682 ]\n(iii) Identify the number of contract of Nifty the investor needs to sell to get a full hedge until February, for his portfolio, if the current value of Nifty is 13000 and Nifty Futures have a minimum trade lot requirement of 100 units. Assume that the Futures are trading at their fair value.\n(iv) Assess the number of Future Contracts to be sold to the Customers if the new Beta of the Portfolio is 1.263.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Calculation of Beta of Security BZ\nLet beta of Security BZ be βB\n| Security | Price of the Stock | No. of Shares | Value | Weightage Wi | Beta βi | Weighted Beta |\n|---|---|---|---|---|---|---|\n| AN | 612.65 | 3000 | 1837950 | 0.113 | 0.90 | 0.1017 |\n| BZ | 334.20 | 5000 | 1671000 | 0.102 | βB | 0.102 βB |\n| CT | 454.45 | 6000 | 2726700 | 0.167 | 0.40 | 0.067 |\n| DM | 775.10 | 10000 | 7751000 | 0.475 | 0.95 | 0.451 |\n| EB | 781.05 | 3000 | 2343150 | 0.143 | 0.85 | 0.122 |\n| | | | 16329800 | | | 0.7417 + 0.102 βB |\n\nSince the Portfolio beta is 0.859, the beta of Security BZ shall be:\n0.7417 + 0.102 βB = 0.859, or 0.102 βB = 0.1173 or, βB = 1.15\n\n(ii) Calculation of Theoretical Value of Future Contract\nCost of Capital = 10.5 % p.a.\nAccordingly, the Continuously Compounded Rate of Interest ln (1.105) = 0.0998\nFor February 2025 contract, t = 58/365 = 0.1589\nF = S e^(rt)\nF = ₹ 13000 e^((0.0998) (0.1589))\nF = ₹ 13000 e^0.015858\nF = ₹ 13000 x 1.01598 = ₹ 13207.74\nAlternatively, it can also be taken as follows:\n= ₹ 13000 x e^(0.105 x 58/365)\n= ₹ 13000 x e^0.01668\n= ₹ 13000 x 1.01682 = ₹ 13218.66\n\n(iii) When total portfolio is to be hedged, the number of contracts is:\n(Value of Spot position requiring hedging / Value of Future Contract) x Portfolio Beta\n= (16329800 / (13207.74 x 100)) x 0.859 = 10.62 Contracts i.e. 11 Contracts\nAlternatively: (16329800 / (13218.66 × 100)) × 0.859 = 14027298.2 / 1321866 = 10.61 i.e 11 contracts\n\n(iv) If Revised Portfolio Beta is 1.263, Number of Future contracts to be sold to Customer will be:\n(1.263 − 0.859) x 16329800 / (13207.74 x 100) = 0.404 x 12.3638 = 4.995 i.e. 5 Contracts\nAlternatively: (1.263 − 0.859) x 16329800 / (13218.66 x 100) = 0.404 x 12.3536 = 4.991 i.e. 5 Contracts",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer layout reconstructed from aid.txt text; verify numbers against the suggested-answer PDF if used for grading.",
+        "Suggested answer (iv) subtracts 0.859 from 1.263 (i.e. increasing beta) yet says 'sold'; transcribed as printed."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "HONT Ltd.'s equity shares are presently selling at a price of ₹ 648. After 3 months the prices will either be ₹ 680 or ₹ 616 with respective probabilities 60% and 40%. There is a Call option on the shares of HONT Ltd., that can be exercised only at the end of three months at an exercise price of ₹ 640. The Risk-Free Rate of Interest is 6% per annum continuously compounding. No dividend was paid in the interim period.\n\nRequired :\n(i) Analyze the value of three months Call option using the Binomial Model (Delta Method).\n(ii) Assess the value of the put-option under put-call parity.\n(iii) Analyze the expected values of the option and the stock price at the end of three months.\n\n[Given : e^-0.015 = 0.985112, e^-0.03 = 0.970446, e^0.015 = 1.015113, e^0.03 = 1.030455]\n(Approximate up to two decimal points.)",
+       "options": [],
+       "correct": null,
+       "answer_md": "Basic Data: Stock Price (SP0) = 648; Exercise Price (EP) = 640; Future Price 1 [FP1] (Higher Limit) = 680; Future Price 2 [FP2] (Lower Limit) = 616\n(i) Binomial Model (Delta Method)\nComputation of Option Delta:\n| Particulars | FP1 | FP2 |\n|---|---|---|\n| Future Spot Price | 680 | 616 |\n| Position on Expiry Date (in comparison with Exercise Price) | In the Money | Out of Money |\n| Action on Expiry Date | Exercise | Lapse |\n| Value of Option on Expiry [Future Spot Price Less Exercise Price] | 40 (680 – 640) | 0 |\n\nOption Delta = Change in Value of Option ÷ Change in Future Spot Price = (40 – 0) ÷ (680 - 616) = 40 ÷ 64 = 0.625\nComputation of amount to be invested at Risk Free Rate:\n= Present Value of Lower Band of Future Spot Price i.e. FP2\n= Present Value of 616 discounted at 6% Continuous Compounding for a 3 months Period\n= ₹ 616 x e^-rt = 616 x e^(-0.06 x 0.25) = 616 x e^-0.015 = 616 x 0.985112 = ₹ 606.83\nValue of Call (C) Option:\nOption Delta x [Current Stock Price Less Amount to be invested at Risk Free Rate]\n= 0.625 x (648 – 606.83) = ₹ 25.73\n(ii) Value of Put (P) (Under Put Call Parity):\nValue of Call + Present Value of Exercise Price = Current Spot Price + Value of Put\nC + EP x e^-rt = SP0 + P\n= 25.73 + 640 x 0.985112 = 648 + Put Option\nOr, 25.73 + 630.47 = 648 + Put Option\nPut Option = 656.20 – 648 = ₹ 8.20\n(iii) Expected Value of Option: 0.60 x 40 + 0.40 x 0 = ₹ 24\nExpected Value of Stock Price at the end of three months:\n= 0.60 x 680 + 0.40 x 616 = 408 + 246.40 = ₹ 654.40",
+       "confidence": "medium",
+       "review": [
+        "Question's given constant printed 'e^-0.03 = 0.970446' (as printed; the 2023 paper has 0.980446).",
+        "Stem for call: 'either be ₹ 680 or ₹ 616' (OCR dropped the rupee sign; image is clear)."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "MR. ASHAN is a Trader holding US Dollar. Actual exchange rates are quoted at the forex market as follows :\n\n| | |\n|---|---|\n| GBP / USD : £ 1 = | $ 1.5715 – 1.5740 |\n| GBP / INR : £ 1 = | ₹ 113.4407 – 113.4487 |\n| USD / INR : $ 1 = | ₹ 85.5050 – 85.5085 |\n\nThere are no Transaction costs.\n\nRequired :\n(i) Analyze if any arbitrage opportunity exists.\n(ii) Align the steps, Mr. Ashan need to make a profit and Assess how much profit Mr. Ashan will make if he has USD 80,000 with him.\n(Approximate upto 2 decimal points)",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Check whether Arbitrage Opportunity Exists:\nCalculation of Cross Rate :\nImplied (USD INR) Bid = (GBP INR) Bid x (USD GBP) Bid = (GBP INR) Bid x 1/(GBP USD) ASK\n= 113.4407 x 1/1.5740 = 72.0716\nImplied (USD INR) ASK = (GBP INR) ASK x (USD GBP) ASK = (GBP INR) ASK x 1/(GBP USD) Bid\n= 113.4487 x 1/1.5715 = 72.1913\nSince implied (USD INR) Cross rate is lower than the Actual rate, it appears that in the actual market USD is overpriced in relation to INR. So INR is weaker currency here and we must buy INR by selling USD.\nHence, there exists an arbitrage opportunity.\n\n(ii) The Steps to make riskless profit from arbitrage are:\n(i) Sell $ to buy INR\n(ii) Sell INR to buy £\n(iii) Sell £ to buy $ USD.\n\n[Assessment of Project from Arbitrage: table/working appears as an image in the suggested answer and is not available in aid.txt]",
+       "confidence": "low",
+       "review": [
+        "Profit computation table for USD 80,000 is an image in the suggested-answer PDF and is MISSING from aid.txt; final profit figure not captured.",
+        "Stem table values read from image; ensure bid/ask for USD/INR 85.5050 – 85.5085."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "MedCare Devices Ltd., an Indian healthcare company, has recently signed a contract to import high-end diagnostic equipment worth USD 8 million, payable in six months. Given the volatility of the rupee, the CFO is concerned about the risk of a higher outflow at maturity. The treasury department is evaluating alternative hedging strategies. The following information is available:\n\nSpot exchange rate (INR/USD): ₹ 83.70 / USD\n6-month forward rate (INR/USD): ₹ 84.50 / USD\nInterest rates (6-month, simple): India = 8% p.a.; USA = 3% p.a.\nOption available: A 6-month USD call option (strike price ₹ 84.00) with premium of ₹ 1.20 per USD.\n\nPossible spot rate scenarios after six months:\n\n| Probability | Rate |\n|---|---|\n| 0.4 | ₹ 82.50/USD |\n| 0.6 | ₹ 86.00/USD |\n\nRequired:\n(i) Assess the forward contract hedge strategy to hedge the USD payment.\n(ii) Analyze INR outflow if the company uses a money market hedge.\n(iii) Assess and analyze the INR outflow under both scenarios using the option hedge and also the expected outflow.\n(iv) Advise which hedge strategy provides the lowest certain cost.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Forward hedge\nINR outflow = 8000000 x 84.50 = ₹ 676000000 = ₹ 6760.00 Lakh\n(ii) Money market hedge\nInterest rates (6 - month, simple): India 8% p.a.: Half yearly - 0.08 x 0.5 = 0.04; USA 3% p.a.: Half yearly - 0.03 x 0.5 = 0.015\nUSD required today = 8000000 ÷ 1.015 = 7881773.40 USD\nConvert into INR at spot = 7881773.40 x 83.70 = ₹ 659704433.58\nBorrow this INR today and repay in 6 months at 4% (half-year Indian rate)\nRepayment = 659704433.58 x 1.04 = ₹ 686092610.92 = 6860.93 Lakh\nOutflow under money market = ₹ 6860.93 Lakh\n(iii) Option hedge\nPremium paid now = 8000000 x 1.20 = ₹ 9600000\nScenario A (prob 0.4, spot = 82.50): Cheaper to buy at spot\nOutflow = 8000000 x 82.50 = ₹ 660000000 + 9600000 = ₹ 669600000 = ₹ 6696.00 Lakh\nScenario B (prob 0.6, spot = 86.00): Exercise option at 84.00\nOutflow = 8000000 x 84.00 = ₹ 672000000 + 9600000 = ₹ 681600000 = ₹ 6816.00 Lakh\nExpected outflow = 0.4 x 6696 + 0.60 x 6816 = ₹ 6768.00 Lakh\n(iv) Advise:\n• Forward hedge: ₹ 6760.00 Lakh\n• Money market hedge : ₹ 6860.93 Lakh\n• Option hedge : Expected outflow ₹ 6768.00 Lakh\nConclusion: The forward hedge ensures the lowest certain cost (₹ 6760.00 Lakh).",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 5,
+       "stem_md": "In the Context of Digital Finance, what is the Central Bank Digital Currency (CBDC)? Align the Potential Advantages of Central Bank Digital Currency (CBDC).",
+       "options": [],
+       "correct": null,
+       "answer_md": "Central Bank Digital Currencies (CBDC) are digital tokens, similar to crypto-currency, issued by a central bank. It is the virtual money backed and Issued by a central bank. They are pegged to the value of that country's flat currency. A CBDC is a high-security digital instrument; like paper banknotes, It is a means of payment, a unit of account, and a store of value. Like paper currency, each unit is uniquely identifiable to prevent counterfeiting.\n\nThe potential advantages of a CBDC are aligned below:\n(i) Technological efficiency in storing and transacting with reduced cost;\n(ii) Keeping track of transactions, exact location of money;\n(iii) Preventing illegal activities like money laundering, tax evasion, terror financing;\n(iv) Providing a digital record of every transaction;\n(v) More secure payment system;\n(vi) Introducing competition and resilience in the domestic payments market;\n(vii) Promoting financial inclusion.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 5,
+       "stem_md": "\"Global Depository Receipt (GDR) is a tool for Global Capital.\"— In this Context, append the key features of Global Depository Receipts.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The Key Features of GDRs are appended below:\n(i) Underlying Shares: Each GDR may represent one or more underlying share, which are physically held by the Custodian appointed by the Depository Bank.\n(ii) Entry in Company's Books: In the Company's books, the Depository Bank's name appears as the holder of the shares.\n(iii) Returns: Depository gets the dividends from the Company (in local currency) and distributes them to the holders of the Depository Receipts after converting into dollars at the going rate of exchange.\n(iv) Negotiable: GDRs are exchangeable with the underlying share either at any time, or after the lapse of a particular period of time, generally 45 Days.\n(v) Globally Marketed: GDRs are marketed globally without being confined to borders of any market or country as it can be traded in more than one country.\n(vi) Settlement: GDRs are settled through CEDEL & Euro-Clear International Book Entry Systems.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(c)",
+       "kind": "long_form",
+       "marks": 4,
+       "stem_md": "\"In a Securitization Transaction, different types of Securities are structured and issued to Investors, depending on their risk-return preferences.\"— In this Context, briefly analyze the different types of Securities issued by the Special Purpose Vehicle (SPV) in Securitization Transactions (any four).",
+       "options": [],
+       "correct": null,
+       "answer_md": "Different type of securities issued by the special purpose vehicle (SPV) in securitization transactions are as follows:\n(i) Pass Through Certificates: In case of a pass-through certificate, payments to investors depend upon the cash flow from the assets backing such certificates. That is to say, as and when cash (principal and interest) is received from the original borrower by the SPV, it is passed on to the holders of certificates at regular intervals and the entire principal is returned with the retirement of the assets packed in the pool.\n(ii) Pay Through Certificates: Pay through certificates has a multiple maturity structure depending upon the maturity pattern of underlying assets. Thus, the SPV can issue two or three different types of securities with different maturity patterns like short term, medium term and long term. Thus, these have a greater flexibility with varying maturity pattern needed by the investors.\n(iii) Preferred Stock Certificates: These are issued by a subsidiary company against the trade debts and consumer receivables of its parent company. In other words, subsidiary companies buy the trade debts and receivables of parent companies to enjoy liquidity.\n(iv) Asset Backed Commercial Papers: This type of structure is mostly prevalent in mortgage-backed securities. Under this the SPV purchases portfolio of mortgages from different sources (various lending institution) and they are combined into a single group on the basis of interest rate, maturity dates and underlying collaterals.\n(v) Interest Only Certificates: In case of these certificates, payments are made to investors only from the interest incomes earned from the assets securitized.\n(vi) Principal Only Certificates: As the very name suggest payments are made to the investors only from the repayment of principal by the original borrower. These certificates enable speculative dealings since the speculators know well that the interest rate movements would affect the bond value immediately. When interest rate increases, the bond value will decline and vice-versa.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

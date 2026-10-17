@@ -1,0 +1,77 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p16-2024-12",
+ "items": {
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem tables, requirements and the full answer (cost segregation, budget statement and alternative, export order, capacity check, make-or-buy) compared with the print; faithful.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem and tables match the print; answer compared page by page and a duplicated printed line removed.",
+   "fixes": [
+    "Removed the duplicated line 'Calculation of Absorption of overhead cost rate'"
+   ],
+   "printed_issues": [],
+   "answer_md": "Absorption of overhead on the basis of Prime Cost\nCalculation of Absorption of overhead cost rate\n\n$$\n= \\frac{2250000 + 1730000 + 684500 + 514800}{30139000}\n$$\n\nAbsorption of Overhead Rate = 17.18 %\n(For a batch of 15000 units)\n\n(i) Calculation of Cost of Product per unit on the basis of absorption costing method.\n\n| Particulars | Amount (₹) |\n|---|---|\n| Materials | 26,38,700.00 |\n| Wages | 3,75,200.00 |\n| Prime Cost | 30,13,900.00 |\n| Overhead Cost (17.18% of Prime Cost) | 5,17,788.02 |\n| Cost of Product | 35,31,688.02 |\n| No. of unit in a batch | 15,000 units |\n| Cost of Product Per unit | ₹ 235.45 |\n\n(ii) Statement Showing Cost Driver Rate\n\n| Overhead | Cost (₹) | Cost Driver | Cost Driver Rate (₹) |\n|---|---|---|---|\n| Material Procurement | 22,50,000 | No. of Purchase Orders = 1,500 Order | 1500 per order |\n| Maintenance | 17,30,000 | Maintenance Hours = 9,080 hours | 190.53 per hour |\n| Set up | 6,84,500 | No. of Setup = 2,250 Setup | 304.22 per setup |\n| Quality Control | 5,14,800 | No. of inspections = 2,710 insp. | 189.96 per inspection |\n\n(iii) Statement Showing Total Cost and Per unit Cost based on Activity Based Costing :\n\n| Particulars | Total Cost (₹) | Per Unit Cost (₹) |\n|---|---|---|\n| Materials | 26,38,700.00 | 175.91 |\n| Wages | 3,75,200.00 | 25.01 |\n| Prime Cost | 30,13,900.00 | 200.92 |\n| Overhead Activity Cost : | | |\n| Material Order Cost | 72,000.00 | 4.80 |\n| Maintenance Cost | 1,54,329.30 | 10.29 |\n| Setup Cost | 12,168.80 | 0.81 |\n| Quality control Cost | 4,749.00 | 0.32 |\n| Total Cost | 32,57,147.10 | 217.14 |"
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem and the printed answer compared; the stored answer repeated the alternative solution (with a wrong standard-profit table and reconciliation) so the duplicates were removed to match the print.",
+   "fixes": [
+    "Removed the misplaced per-unit standard profit table and first reconciliation after the alternative analysis",
+    "Removed the duplicated plain-text copy of the alternative analysis"
+   ],
+   "printed_issues": [
+    "Print reads 'actual price – standard cost = ₹ 140 - ₹ 108 = ₹ 3' (₹ 32 intended)",
+    "Reconciliation arrangement as printed"
+   ],
+   "answer_md": "(i) Analysis of Variances:\n1. Direct Material Cost Variances:\n\n$$\n\\begin{aligned}\n\\text{Direct Material Price Variance} &= 16{,}500\\left(\\text{₹ }20 - \\frac{\\text{₹ }396000}{16500}\\right) \\\\\n&= \\text{₹ }3{,}30{,}000 - \\text{₹ }3{,}96{,}000 = \\text{₹ }66{,}000\\ \\text{(A)} \\\\\n\\text{Direct Material Usage Variance} &= \\text{₹ }20\\,(8{,}000 \\times 2 - 16{,}500) = \\text{₹ }10{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n2. Direct Wages Variances:\n\n$$\n\\begin{aligned}\n\\text{Wages Rate Variance} &= \\left(\\text{₹ }2 - \\frac{\\text{₹ }346800}{170000}\\right) 1{,}70{,}000 \\\\\n&= \\text{₹ }3{,}40{,}000 - \\text{₹ }3{,}46{,}800 = \\text{₹ }6{,}800\\ \\text{(A)} \\\\\n\\text{Wages Efficiency Variance} &= \\text{₹ }2\\,(8{,}000 \\times 20 - 1{,}66{,}000) \\\\\n&= \\text{₹ }2\\,(1{,}60{,}000 - 1{,}66{,}000) = \\text{₹ }12{,}000\\ \\text{(A)} \\\\\n\\text{Idle time Variance} &= 4{,}000 \\times \\text{₹ }2 = \\text{₹ }8{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n3. Variable Overhead Cost Variance\n\n$$\n\\text{Variable Overhead Cost Variance} = \\text{₹ }8 \\times 8{,}000 - \\text{₹ }60{,}000 = \\text{₹ }4{,}000\\ \\text{(F)}\n$$\n\nAlternatively\n\n$$\n\\begin{aligned}\n\\text{VOH Expenditure Variance} &= \\text{₹ }\\left(\\frac{8}{20} - \\frac{60{,}000}{170{,}000}\\right) \\times 1{,}70{,}000 \\\\\n&= \\text{₹ }68{,}000 - \\text{₹ }60{,}000 = \\text{₹ }8{,}000\\ \\text{(F)} \\\\\n\\text{VOH Efficiency Variance} &= \\text{₹ }0.4\\,(1{,}60{,}000 - 1{,}70{,}000) \\\\\n&= \\text{₹ }4{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n4. Fixed Overhead Cost Variance\n\n$$\n\\begin{aligned}\n\\text{FO Expenditure Variance} &= \\text{₹ }2{,}00{,}000 - \\text{₹ }1{,}84{,}000 = \\text{₹ }16{,}000\\ \\text{(F)} \\\\\n\\text{FO Volume Variance} &= \\text{₹ }20 \\times 8{,}000 - \\text{₹ }2{,}00{,}000 = \\text{₹ }40{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n5. Sales Margin Variances\nHere actual sales margin per unit and standard sales margin per unit remains same i.e. actual price – standard cost = $\\text{₹ }140 - \\text{₹ }108 = \\text{₹ }3$\n\n$$\n\\begin{aligned}\n\\text{Sales Margin Price Variance} &= (\\text{₹ }32 - \\text{₹ }32) \\times 8{,}000 = \\text{NIL} \\\\\n\\text{Sales Margin Volume Variance} &= (8{,}000 - 10{,}000) \\times \\text{₹ }32 = \\text{₹ }64{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n(ii) Calculation of Standard Profit\n\n| | Per Unit (₹) |\n|---|---|\n| Selling Price | 140 |\n| Less: Variable Cost | 88 |\n| Contribution | 52 |\n| Standard Sales Quantity | 8000 |\n| Total Contribution | 4,16,000 |\n| Less: Standard Fixed Overhead @ ₹ 20 per unit | 1,60,000 |\n| Standard Profit | 2,56,000 |\n\nReconciliation between Standard Profit & Actual Profit\n\n| | Adverse (₹) | Favourable (₹) | |\n|---|---|---|---|\n| Standard Profit | | | ₹ 2,56,000 |\n| Cost Variances | Adverse (₹) | Favourable (₹) | |\n| Direct Material | | | |\n| Price Variance | 66,000 | | |\n| Usage Variance | 10,000 | | |\n| Wages | | | |\n| Rate Variance | 6,800 | | |\n| Idle Time Variance | 8,000 | | |\n| Efficiency Variance | 12,000 | | |\n| Variable Overhead | | | |\n| Cost Variance | | 4,000 | |\n| Fixed Overhead | | | |\n| Expenditure Variance | | 16,000 | |\n| Volume Variance | 40,000 | | |\n| | 1,42,800 | 20,000 | 1,22,800 (A) |\n| Actual Profit | | | 1,33,200 |\n\nAlternative Solution\n(i) Analysis of Variances:\n\n| For Material Cost Variances : | ₹ |\n|---|---|\n| M1 – Actual Cost of Material used | 3,96,000 |\n| M2 – Standard Cost of Material used | 3,30,000 |\n| M3 – No mix variance | Nil |\n| M4 – Standard material cost Output | 3,20,000 |\n| Material Price Variance. (M1 – M2) | 66,000 (A) |\n| Material Usage Variance. (M2– M4) | 10,000 (A) |\n| For Direct Wages Variances : | |\n| L1– Actual payment made to workers for actual hours worked | 346800 |\n| L2– Payment involved, if workers had been paid at standard rate | 340000 |\n| L3– No gang variance | |\n| L4– Standard labour cost of labour hours utilised. (This step will have value when there is a difference between hours available and hours utilised.) | 3,32,000 |\n| L5– Standard labour cost of output achieved | 3,20,000 |\n| Wage Rate Variance (L1 – L2) | 6,800 (A) |\n| Wage idle Time Variance(L2 – L4) | 8,000 (A) |\n| Wage Yield Variance(L4 – L5) | 12,000 (A) |\n| For Variable Overhead Variances : | |\n| VO1 – Actual variable overhead (given) | 60,000 |\n| VO2 – No expenditure variance | Nil |\n| VO3– Standard variable overhead for production | 64,000 |\n| Variable Overhead Variance (VO1 – VO3) | 4,000 (F) |\n| For Fixed Overhead Variances : | |\n| FO1 – Actual fixed overhead incurred (given) | 1,84,000 |\n| FO2 – Budgeted fixed overhead for the period | 2,00,000 |\n| FO3 –There is no calendar or idle time variance | |\n| FO4 – Fixed overhead for actual hours worked at standard rate | 1,66,000 |\n| FO5 – Standard fixed overhead for production | 1,60,000 |\n| Fixed overhead expenditure variance(FO1 – FO2) | 16,000 (F) |\n| Fixed overhead idle time variance(FO2 – FO4) | 34,000 (A) |\n| Fixed overhead efficiency variance(FO4 – FO5) | 6,000 (A) |\n| For Sales Margin Variances : | |\n| Standard sales margin = ₹ 32 (given). Actual sales margin also remains the same i.e., actual price – standard cost. | |\n| SM1– Actual sales margin on actual sales. | 2,56,000 |\n| SM2– Standard sales margin on actual sales | 2,56,000 |\n| SM3– No Mix Variances | Nil |\n| SM4– Standard sales margin on standard sales mix or budgeted sales margin as per budget or standard. | 3,20,000 |\n| Sales Margin Price Variance (SM1 – SM2) | Nil |\n| Sales Margin Volume Variance (SM2 – SM4) | 64,000 (A) |\n\nii) Calculation of Standard Profit\n\n| | Amount (₹) |\n|---|---|\n| Budgeted Profit | 3,20,000 |\n| Less: Sales Margin Volume Variance (Adverse) | 64,000 |\n| Standard Profit | 2,56,000 |\n\nReconciliation between Standard Profit & Actual Profit\n\n| | Adverse (₹) | Favourable (₹) | |\n|---|---|---|---|\n| Standard Profit | | | ₹ 2,56,000 |\n| Cost Variances | Adverse (₹) | Favourable (₹) | |\n| Direct Material | | | |\n| Price Variance | 66,000 | | |\n| Usage Variance | 10,000 | | |\n| Wages | | | |\n| Rate Variance | 6,800 | | |\n| Idle Time Variance | 8,000 | | |\n| Yield Variance | 12,000 | | |\n| Variable Overhead | | | |\n| Cost Variance | | 4,000 | |\n| Fixed Overhead | | | |\n| Expenditure Variance | | 16,000 | |\n| Idle Time Variance | 34,000 | | |\n| Efficiency Variance | 6,000 | | |\n| | 1,42,800 | 20,000 | 1,22,800 (A) |\n| Actual Profit | | | 1,33,200 |"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and Tables 1 and 2 match the print; the two image-only assignment matrices were added with the boxed cells marked, and the rest of the answer matches.",
+   "fixes": [
+    "Replaced the first image placeholder with the printed first assignment matrix (boxed zeros in bold)",
+    "Replaced the second image placeholder with the printed revised assignment matrix (boxed cells in bold)"
+   ],
+   "printed_issues": [
+    "Table-2 prints hand-drawn cover lines, not reproduced"
+   ],
+   "answer_md": "Reduced matrix after Row subtraction operation:\nTable-1\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | 0 | 12 | 13 | 3 |\n| B | 0 | - | 10 | 12 | 1 |\n| C | 0 | 1 | - | 8 | 2 |\n| D | 0 | 3 | 8 | - | 2 |\n| E | 0 | 1 | 11 | 13 | - |\n\nReduced matrix after Column subtraction operation:\nTable-2\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | 0 | 4 | 5 | 2 |\n| B | 0 | - | 2 | 4 | 0 |\n| C | 0 | 1 | - | 0 | 1 |\n| D | 0 | 3 | 0 | - | 1 |\n| E | 0 | 1 | 3 | 5 | - |\n\nHere minimum number of straight lines to cover all the zeroes = 5 = order of the matrix. So, the solution is optimal. Now, assignments done by following standard rules of Hungarian method is as follows:\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | **0** | 4 | 5 | 2 |\n| B | 0 | - | 2 | 4 | **0** |\n| C | 0 | 1 | - | **0** | 1 |\n| D | 0 | 3 | **0** | - | 1 |\n| E | **0** | 1 | 3 | 5 | - |\n\nAs per the solution above, the salesman will travel from A to B, B to E, then E to A. This is not meeting the requirement of travelling through all the cities and finally returning to the starting point. Hence the solution is unacceptable.\n\nUnder the circumstances, it is decided to try for the assignment at the cells which are having next higher entry after zero. The next minimum non-zero element in the matrix is 1 & 2. So, an assignment is made at cell (5,4) instead of zero assignment at cell (4,3) and at cell (2,3) instead of cell (2,5). The resulting solution will be:\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | **0** | 4 | 5 | 2 |\n| B | 0 | - | **2** | 4 | 0 |\n| C | 0 | 1 | - | **0** | 1 |\n| D | 0 | 3 | 0 | - | **1** |\n| E | **0** | 1 | 3 | 5 | - |\n\nThe solution is A → B → C → D → E → A.\nThe distance travelled will be = $12+16+18+16+12 = 74$ km.\nThere can be another schedule also: A → B → E → C → D → A.\nBased on this, distance will be = $12+7+23+18+14 = 74$ km."
+  },
+  "7": {
+   "verdict": "approve",
+   "reason": "Stem, crash-data table, paths, cost-slope table, all steps and the percentage compared with the print; the network diagram is an image and the answer otherwise stands alone.",
+   "fixes": [],
+   "printed_issues": [
+    "Network diagram printed only as an image, not reproduced",
+    "Activity B has crash duration 5 above normal 4 and cost slope printed as -200",
+    "Percentage formula printed with 'Rs'"
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem matrix matches the print; the answer was compared and the bracketed label notes (not in the print) were replaced by the printed labelled matrices.",
+   "fixes": [
+    "2x2 pay-off matrix shown with its printed row and column labels, removing the added bracketed note",
+    "Optimal strategy vectors shown under their printed column labels, removing the added bracketed note"
+   ],
+   "printed_issues": [
+    "Print writes p and q with subscript i for the first strategy",
+    "Value of game 90/7 and p1 = 4/7 as printed"
+   ],
+   "answer_md": "Clearly, the first column is dominated by the second column as all the elements of the first column are greater than elements of the second column. Thus eliminating first column, we get\n\n| | FIRM Q: Medium Advertising | FIRM Q: Heavy Advertising |\n|---|---|---|\n| FIRM P: No Advertising | 5 | -2 |\n| FIRM P: Medium Advertising | 12 | 15 |\n| FIRM P: Heavy Advertising | 14 | 10 |\n\nAgain, first row is dominated by second and third row as all the elements of first row are less than the respective elements of second and third row. Hence eliminating first row, we obtain the following 2 x 2 pay-off matrix.\n| | FIRM Q: Medium Advertising | FIRM Q: Heavy Advertising |\n|---|---|---|\n| FIRM P: Medium Advertising | 12 | 15 |\n| FIRM P: Heavy Advertising | 14 | 10 |\n\nAs the pay-off matrix does not possess any saddle point, the firms will use mixed strategies. The optimum mixed strategy for firm P is determined by:\n$$\np_1 = \\frac{10 - 14}{12 + 10 - (14 + 15)} = \\frac{4}{7} \\quad \\text{and} \\quad p_2 = 1 - p_1 = \\frac{3}{7}\n$$\n\nand for the firm Q is given by:\n\n$$\nq_1 = \\frac{10 - 15}{12 + 10 - (14 + 15)} = \\frac{5}{7} \\quad \\text{and} \\quad q_2 = 1 - q_1 = \\frac{2}{7}\n$$\n\nHence the optimum strategies for the two firms are:\n| | No Advertising | Medium Advertising | Heavy Advertising |\n|---|---|---|---|\n| $S_A$ | 0 | 4/7 | 3/7 |\n| $S_B$ | 0 | 5/7 | 2/7 |\n\nThe Value of the game (corresponding to the above strategies) is given by:\n$$\nV = \\frac{12 \\times 10 - 14 \\times 15}{12 + 10 - (14 + 15)} = \\frac{90}{7}\n$$\n\nTherefore, the Value of the game is $v = 90 / 7$"
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and the answer (trend, t values, table with 'Total value (T)') compared with the print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Print reads 't – 0' for the first quarter (t = 0 intended)"
+   ]
+  }
+ }
+}

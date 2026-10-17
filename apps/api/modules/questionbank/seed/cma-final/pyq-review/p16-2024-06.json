@@ -1,0 +1,47 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p16-2024-06",
+ "items": {
+  "1(ix)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key D equals the printed key (D).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (D) '(B) and (C) only' for a 'not features' stem looks odd; kept as printed"
+   ]
+  },
+  "1(xii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key C equals the printed key (C) (marginal revenue 25 gives x = 5).",
+   "fixes": [],
+   "printed_issues": [
+    "Print sets the exponents of x in the revenue equation on the baseline (looks like x3 and x2); typeset as cubic and square as intended"
+   ]
+  },
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem tables, further information and requirements (a)-(c) compared with the print; the answer prints only final figures and matches them.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem table heading restored to the printed group heading; the formulation in the answer matches the printed steps, constraints and final model.",
+   "fixes": [
+    "Replaced the added note '(Column heading: Requirement per unit of Product)' by the printed group heading in the column titles"
+   ],
+   "printed_issues": [],
+   "stem_md": "FAMC Ltd., a manufacturing company produces three products A, B and C. It uses two types of raw materials I and II of which 5000 and 7500 units respectively are available. The raw material requirements per unit of the products are given below:\n\n| Raw Material | Requirement per unit of Product: A | Requirement per unit of Product: B | Requirement per unit of Product: C |\n|---|---|---|---|\n| I | 3 | 4 | 5 |\n| II | 5 | 3 | 5 |\n\nThe labour time for each unit of product A is twice that of product B and three times that of product C. The entire labour force of the firm can produce the equivalent of 3,000 units. The minimum demand of the three products is 600, 650 and 500 units respectively. Also the ratios of the number of units produced must be equal to 2 : 3 : 4. The profits per unit of A, B and C are ₹ 50, ₹ 50 and ₹ 80 respectively.\n\nRequired:\nAnalyze and Formulate the problem as a linear programming model in order to determine the number of units of each product which will maximize the profit."
+  },
+  "7": {
+   "verdict": "approve",
+   "reason": "Stem table, requirements and normal-area table match the print; the written answer matches; the network diagram is an image and the remaining answer stands alone.",
+   "fixes": [],
+   "printed_issues": [
+    "Network diagram printed only as an image, not reproduced",
+    "Print gives Z = 0.33 for 0.333 and 'Probability = 0.3707 = 0.3707'",
+    "Part (ii) does not tabulate expected durations and variances of each activity"
+   ]
+  }
+ }
+}

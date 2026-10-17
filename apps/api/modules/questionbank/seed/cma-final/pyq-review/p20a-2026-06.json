@@ -1,0 +1,64 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p20a-2026-06",
+ "items": {
+  "1(xiv)": {
+   "verdict": "approve",
+   "reason": "Scenario, table, question and four options match the print; stored key D equals the printed key (xiv) (D).",
+   "fixes": [],
+   "printed_issues": [
+    "Question names 'Asterix' while the scenario company is Zenith Pharmaceuticals Ltd."
+   ]
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Stem and requirements match the print; main and alternative solutions follow the printed steps and figures (100 units, ₹ 1000, ₹ 35000), with the chi glyph read as x.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the printed table, explanation and course of action match, including 12.70%, 15.52%, 80.43 and 50.27.",
+   "fixes": [],
+   "printed_issues": [
+    "Question gives B Ltd. market price as ₹ 56 but the answer table and part (iii) use ₹ 55.",
+    "Answer calculates D1 as 3.50 x 1.08 although the question says the dividend of 3.50 was paid."
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and assumption match the print; answer steps, figures (2,10,648.14; 52,66,203.50; 70,99,536.50) and the closing notes match the print order.",
+   "fixes": [],
+   "printed_issues": [
+    "2,10,648.14 x 25 is 52,66,203.50 as printed; the total of both groups is printed with .50 while the unskilled total is rounded to 18,33,333."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem data and comparable-transactions table match the print digit for digit; both answer tables match the printed ones.",
+   "fixes": [],
+   "printed_issues": [
+    "Question has no explicit Required line.",
+    "Sales-multiple enterprise value is printed as 1,162.0 although 700.0 x 1.7 is 1,190.0.",
+    "Comparable transaction C-R shows Equity 700 against EV 100, as printed."
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and requirements match the print; the trend table, observations and both viability answers match the printed ones.",
+   "fixes": [],
+   "printed_issues": [
+    "Net Profit and Gross Profit are not given in the question; they are derived in the answer.",
+    "Two answers to (ii) are printed, the second labelled Alternative Answer."
+   ]
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem and data table match the print; the three scheme tables, inferences and conclusion match the printed answer.",
+   "fixes": [],
+   "printed_issues": [
+    "Question shows SIL EPS 2 with price 100 and P/E 10, which is inconsistent with earnings 1,00,000 over 10,000 shares."
+   ]
+  }
+ }
+}

@@ -8,3 +8,6 @@ hypothesis>=6.100
 
 # F-15 recall: py-fsrs is the oracle for the scheduler tests only (never imported by app code)
 fsrs>=6.3,<7
+
+# question bank: only `build_question_bank_seed --kind mcq` reads PDFs (pdfplumber); workbooks also need poppler (brew install poppler)
+pdfplumber>=0.11

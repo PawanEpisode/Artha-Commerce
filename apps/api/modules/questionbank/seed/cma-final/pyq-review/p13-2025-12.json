@@ -1,0 +1,71 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p13-2025-12",
+ "items": {
+  "1(i)": {
+   "verdict": "approve",
+   "reason": "Case scenario, question and options match the print; stored key A equals printed key (i) A.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(ii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print. The suggested answers print the key as (A/C); A is the legally correct choice (limit ₹5,00,000 for indebtedness, s.141(3)(d)(ii) with Rule 10(2)), so it is stored as the key with a note. The Highway Ltd. case scenario was added to the stem.",
+   "fixes": [
+    "Added the shared case scenario to the stem.",
+    "Key A chosen from the Institute's (A/C)."
+   ],
+   "printed_issues": [
+    "Suggested answer key for (ii) printed as A/C."
+   ]
+  },
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key B equals printed key (iii) B. The shared Highway Ltd. case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case scenario printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "stem_md": "Case Scenario:\nHighway Ltd. is a transport company providing transport to Government departments of Bihar, West Bengal and Odisha. Each of the three state governments hold 15% shares in the company. The company appointed Mr. Parimal, CA, by ordinary resolution as statutory auditor for FY 2024-25, after observing due formalities. The remuneration was fixed at ₹2,00,000. But some members opposed it, stating that approval of CAG was required and the resolution be special resolution. Mr. Parimal had tenure till 31st March, 2025, but due to some personal problems resigned on 15th January, 2025. The BOD appointed another auditor on 25th January, 2025.\nIn this context answer the following questions.\n\nAfter appointment at GM, the auditor was found to be involved in fraud amounting to ₹1.50 Cr. and the GST authorities charged him. Can he continue as an auditor?"
+  },
+  "1(iv)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key D equals printed key (iv) D. The shared Highway Ltd. case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case scenario printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "stem_md": "Case Scenario:\nHighway Ltd. is a transport company providing transport to Government departments of Bihar, West Bengal and Odisha. Each of the three state governments hold 15% shares in the company. The company appointed Mr. Parimal, CA, by ordinary resolution as statutory auditor for FY 2024-25, after observing due formalities. The remuneration was fixed at ₹2,00,000. But some members opposed it, stating that approval of CAG was required and the resolution be special resolution. Mr. Parimal had tenure till 31st March, 2025, but due to some personal problems resigned on 15th January, 2025. The BOD appointed another auditor on 25th January, 2025.\nIn this context answer the following questions.\n\nMr. Parimal has not completed audit and not signed the Balance Sheet. What will happen to his remuneration?"
+  },
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (vii) A.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(xiii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (xiii) A.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; answer compared with suggested-answer pages 1-2 for all three situations, complete and in print order.",
+   "fixes": [],
+   "printed_issues": [
+    "\"Section160\" printed without a space.",
+    "Answer to (iii) concludes the notice is invalid on grounds not stated in the question."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; answer compared with suggested-answer pages 5-6 (venue, notice, quorum, video disconnection, resolutions), complete and as printed.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says 2 directors attended from London (3+2+2=7) but also that 3 directors on video conferencing were disconnected; the answer refers to three directors from London.",
+    "Answer takes board strength as 12 (14 less 2 vacancies) and says participating directors fell from 7 to 4, equal to quorum."
+   ]
+  }
+ }
+}

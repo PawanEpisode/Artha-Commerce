@@ -1,0 +1,100 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p20a-2025-06",
+ "items": {
+  "1(xi)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "3(a)": {
+   "stem_md": "ABC Ltd., a manufacturing firm, operates in a competitive market and aims to maximize its profit. The company's Total Revenue (TR) and Total Cost (TC) functions are given as follows:\n$\\text{TR} = 4000Q - 33Q^2$\n$\\text{TC} = 2Q^3 - 3Q^2 + 400Q + 5000$\nWhere $Q$ represents the quantity of goods produced and sold. The management seeks to determine the maximum possible profit the firm can achieve, assuming $Q > 0$.\n\n**Required:**\n**At what** level of output does ABC Ltd. achieve maximum profit, and what is the maximum profit value?",
+   "answer_md": "(i) $\\text{Profit} = \\text{TR} - \\text{TC}$\nSubstituting the given functions:\n\n$$\n\\begin{aligned}\n\\text{Profit} &= (4000Q - 33Q^2) - (2Q^3 - 3Q^2 + 400Q + 5000) \\\\\n&= 3600Q - 30Q^2 - 2Q^3 - 5000\n\\end{aligned}\n$$\n\nChange in profit (dp) due to change in output (dQ)\n\n$$\n\\begin{aligned}\ndp/dQ &= d/dQ \\times (3600Q - 30Q^2 - 2Q^3 - 5000) \\\\\ndp/dQ &= (3600 - 60Q - 6Q^2)\n\\end{aligned}\n$$\n\nSetting this to zero to find the critical points:\n\n$$\n3600 - 60Q - 6Q^2 = 0\n$$\n\nDividing by 6:\n\n$$\n600 - 10Q - Q^2 = 0\n$$\n\nRearrange :\n\n$$\nQ^2 + 10Q - 600 = 0\n$$\n\nThe quadratic equation is:\n\n$$\n\\begin{aligned}\nQ^2 + 10Q - 600 &= 0 \\\\\n\\text{Or, } Q(Q + 30) - 20(Q + 30) &= 0 \\\\\n\\text{Or, } (Q - 20)(Q + 30) &= 0 \\\\\n\\text{Either, } Q = 20, \\text{ or } Q &= -30\n\\end{aligned}\n$$\n\n$\\therefore Q = 20$ or $-30$\nSince $Q > 0$, we take $Q = 20$\n\n$$\n\\begin{aligned}\nd^2\\text{profit}/dQ^2 &= d/dQ \\times (3600 - 60Q - 6Q^2) \\\\\nd^2\\text{profit}/dQ^2 &= (-60 - 12Q)\n\\end{aligned}\n$$\n\nSubstituting $Q = 20$\n\n$$\nd^2\\text{profit}/dQ^2 = -60 - 12(20) = -60 - 240 = -300\n$$\n\n$d^2\\text{profit}/dQ^2 < 0$, the function is concave, confirming a maximum profit at $Q = 20$\n\n(ii) Calculation of Maximum Profit :\n\n$$\n\\begin{aligned}\nP(20) &= 3600(20) - 30(20)^2 - 2(20)^3 - 5000 \\\\\n&= 72000 - 12000 - 16000 - 5000 \\\\\n&= 39000 \\text{ (₹)}\n\\end{aligned}\n$$",
+   "confidence": "high",
+   "review": [
+    "Print has bold sub-headings ('Substituting the given functions:' etc.); not reproduced as bold."
+   ]
+  },
+  "4(a)": {
+   "answer_md": "(i) Return on Capital Employed (ROCE):\n$\\text{Profit before Interest \\& Taxes (PBIT)} / \\text{Capital Employed (CE)}$\n$= \\text{₹ }(54 + 4) / \\text{₹ }(236 + 80) \\times 100 = 18.4\\%$ for 2024 – 25\n$\\text{₹ }(46 + 4) / \\text{₹ }(238 + 80) \\times 100 = 15.7\\%$ for 2023 – 24\nThe return on capital employed has increased over the year from 15.7% to 18.4%. The profit has increased which may have resulted in the increase.\n\nAternative Answer :\n$\\text{₹ }(54 + 4) / \\text{₹ }(236 - 20 + 80) \\times 100 = 19.59\\%$ for 2024 – 25\n$\\text{₹ }(46 + 4) / \\text{₹ }(238 + 80) \\times 100 = 15.7\\%$ for 2023 – 24\nThe return on capital employed has increased over the year from 15.7% to 19.59%. The profit has increased which may have resulted in the increase.\n\n(ii) Asset Turnover Ratio (ATR)\n$\\text{Turnover}/\\text{Total Assets} = \\text{₹ }418 / \\text{₹ }408 = 1.02$ times for 2024 – 25 and\n$\\text{₹ }392 / \\text{₹ }448 = 0.88$ times for 2023 – 24\nThe asset turnover has increased indicating that the company is using its assets more effectively.\n\n(iii) Current Ratio (CR)\n$\\text{₹ }148 / \\text{₹ }92 = 1.61$ for 2024 – 25\n$\\text{₹ }170 / \\text{₹ }130 = 1.31$ for 2023 – 24\nThe current ratio has increased, meaning that the organization is more liquid. This is due to the fact that inventory and trade receivables have increased (which are nonproductive assets), and trade payables have been reduced. Although this may be better for the current ratio, it may not necessarily mean that the company is operating more efficiently.\n\n(iv) Inventory Turnover Ratio (ITR)\n$\\text{₹ }314 / \\text{₹ }(74 + 84) \\times 0.5 = 4.0$ times for 2024 – 25\n$\\text{₹ }302 / \\text{₹ }(58 + 74)\\ 0.5 = 4.6$ times for 2023 – 24\nThis ratio shows how quickly the inventory is being sold. In 2023 – 24 it was being sold at a much higher rate than in 2024-25\nThe nature of the business needs to be known to see whether these turnover times are in line with the normal industry standards.\n\n(v) Equity Gearing Ratio (EGR) :\n$= \\text{Preference shares capital} + \\text{loans} / \\text{Ordinary Share Capital} + \\text{reserves}$\n$\\text{₹ }(50 + 80) / \\text{₹ }(236 - 50) = 69.9\\%$ for 2024 – 25\n$\\text{₹ }(50 + 80) / \\text{₹ }(238 - 50) = 69.1\\%$ for 2023 – 24\nLow geared = less than 100%, highly geared = more than 100% and neutrally geared if ratio is 100%. The gearing remains at almost similar levels. The company is not highly geared.\n\n(vi) Dividend Coverage Ratio (DCR) :\n$= \\text{Profit after tax and after preference dividend} / \\text{dividend paid}$\n$\\text{₹ }(34 - 4) / \\text{₹ }12 = 2.5$ times for 2024 – 25\n$\\text{₹ }(26 - 4) / \\text{₹ }10 = 2.2$ times for 2023 – 24\nThe dividend cover is after allowing for preference dividends. There is a reasonably comfortable cover.\n\n(vii) Price / Earnings Ratio (P/E Ratio):\n$= \\text{Market price} / \\text{EPS}$\n$240 / 21.42 = 11.20$ times for 2024 – 25\n$170 / 15.71 = 10.82$ times for 2023 – 24\nThe PE ratio is quite high, indicating that the market has confidence in the company's future growth. However, this needs to be compared with industry or similar companies.\n\nWith all the ratios it would be useful to compare against the industry averages.",
+   "confidence": "high",
+   "review": [
+    "Institute text kept as printed: 'Aternative Answer', '(v) Equity Gearing Ratio (EGR)' (question says Capital Gearing Ratio), second ITR line prints '(58 + 74) 0.5' with no multiplication sign, ROCE working '(236 + 80)' vs alternative '(236 – 20 + 80)'.",
+    "Stem tables unchanged."
+   ]
+  },
+  "5(a)": {
+   "answer_md": "1. Computation of Future Maintainable Equity Earnings\n\nParticulars | 2022 | 2023 | 2024\n---|---|---|---\nProfit After Tax | 2,20,500 | 3,22,500 | 2,40,000\nLess: Profit on Non- recurring Item $(10\\% \\times 3{,}22{,}500)$ | - | (32,250) | --\nClaims unaccounted, now accounted | -- | --- | (8,250)\nAdd: Provision for Bad Debts not required $(2{,}99{,}250 \\times 5/95)$ | --- | --- | 15,750\nLess: Tax Provision at 50% on the above $(15{,}750 - 8{,}250) \\times 50\\%$ | -- | --- | (3,750)\nAdjusted Profits after Tax | 2,20,500 | 2,90,250 | 2,43,750\n\nAverage Profits $(2{,}20{,}500 + 2{,}90{,}250 + 2{,}43{,}750) \\div 3$ | | | 2,51,500\nAdd: Interest on Debentures (No Longer Payable) $(\\text{₹ }3{,}00{,}000 \\times 5\\% \\times 50\\%)$ (after tax) | | | 7,500\nLess: Income from Investments (No Longer receivable) $(\\text{₹ }3{,}00{,}000 \\times 10\\% \\times 50\\%)$ (after tax) | | | (15,000)\nFuture Maintainable Profits before Preference Dividend | | | 2,44,000\nLess: Preference Dividend | | | (9,000)\nFuture Maintainable Equity Earnings | | | 2,35,000\n\nNote :\n• Sundry Debtors as per Balance Sheet reflects the net balance after deducting 5% provision. Since Net Debtors of ₹ 2,99,250 reflect 95% of the Total Debtors Amount, Provision = $\\text{₹ }2{,}99{,}250 \\times 5/95 = \\text{₹ }15{,}750$.\n• Simple Average is taken due to fluctuating / oscillating trend of profits.\n\n2. Computation of Capital Employed\n\nParticulars | ₹\n---|---\nFreehold Property (Capitalization of Rental Value of ₹ 50,400 at 8%) | 6,30,000\nPlant & Machinery | 1,50,000\nStock | 2,70,000\nSundry Debtors [ $\\text{₹ }2{,}99{,}250 \\div (100\\% - \\text{Provision at 5\\%})$ | 3,15,000\nBank [$\\text{Balance } 345000 + \\text{Investment Sale } 375000 - \\text{Debenture Redemption } 225000$] | 4,95,000\nTotal Assets | 18,60,000\nLess : Outside Liabilities (excluding Equity Shareholders' Funds) |\nSundry Creditors [ $\\text{₹ }2{,}39{,}250 + \\text{Unaccounted Claim of ₹ }8{,}250$] | 2,47,500\nPreference Shareholders [Share Capital + Dividend Due] | 1,59,000\nAdditional Tax Liability due to unaccounted claim & provision w/back | 3,750\n | (4,10,250)\nNet Worth of Equity Share Holders on B/s date | 14,49,750\n\nNote :\n• Since Normal Return is 12% on the Net Assets available to Equity Shares (given), Future Maintainable Equity Earnings should be compared with the Expected Equity Earnings. Hence, Net Worth of Equity Shareholders (i.e after deducting Preference Shareholders dues) is considered.\n• Goodwill in the Balance Sheet should not be considered for computing net worth for Goodwill computation.\n• Redemption value of debentures = face Value ₹ 3,00,000 – 25% Discount = ₹ 2,25,000\n\n3. Computation of Super profits and Goodwill\n\nParticulars | ₹\n---|---\nFuture Maintainable Equity Earnings | 2,35,000\nLess: Normal Earnings $= \\text{Normal Return} \\times \\text{Capital Employed} = 12\\% \\times 14{,}49{,}750$ | (1,73,970)\nSuper Profit i.e Excess Earnings available for Equity Shareholders | 61,030\nGoodwill at 4 years purchase of Super Profits $= \\text{₹ }61{,}030 \\times 4\\text{ years}$ | 2,44,120\n\nNote :\nAlternatively, Average Capital Employed can be considered as Proxy for Future Capital Employed to determine normal earnings.\n\n4. Valuation of Shares\n\nParticulars | ₹\n---|---\na. Net Worth attributable to Equity Holders (calculated above) | 14,49,750\nb. Goodwill | 2,44,120\nc. Total Net Assets of Equity Shareholders | 16,93,870\nd. Number of Equity Shares | 4,500 shares\ne. Value per Equity Share | ₹ 376.42",
+   "confidence": "medium",
+   "review": [
+    "Restored the continuation of the first table (Average Profits ... Future Maintainable Equity Earnings) as table rows; the flattened input had them as loose lines.",
+    "Computation of Capital Employed: print shows '3,750' in an inner column on the same row as '(4,10,250)'; kept the input's two-column layout (3,750 row, then a separate (4,10,250) row).",
+    "Unbalanced bracket in 'Sundry Debtors [ ₹ 2,99,250 ÷ (100 % - Provision at 5%)' kept as printed.",
+    "Stem tables unchanged."
+   ]
+  },
+  "6(a)": {
+   "answer_md": "(i) Calculation of fair Value per Share of AMGI Limited using Cost Approach.\n\n | \n---|---\nTotal Asset | 3,62,78,008\nLess: Total Liability | 22,30,898\nNet Asset Value | 3,40,47,110\nLess: Book Value of Land | 1,00,00,000\nAdd: Fair Value of Land | 1,75,00,000\nLess: Contingent Liability | 12,00,000\nAdjusted Net Asset Value | 4,03,47,110\nNo. of Share (Note - 1) | 10,00,000\nValue Per Share | 40.35\n\nNote : 1\nThe Number of shares of AMGI Ltd $= 1{,}00{,}00{,}000 / 10 = 10{,}00{,}000$ Shares.\n\n(ii) The Fair Value of Investments in AMGI Limited in the Books of Panda Limited.\n$\\text{Number of Shares} \\times \\text{Fair Value Per Share}$.\n$4{,}00{,}000 \\times 40.35 = \\text{₹ }1{,}61{,}40{,}000$\n\n(iii) Cost of Investment = ₹ 48,00,000\nFair Value of Investment = ₹ 1,61,40,000\nCompounded Annual Growth Rate =\n\n$$\n\\begin{aligned}\n&= \\sqrt[4]{\\text{FV}/\\text{Cost}} - 1 = \\sqrt[4]{16140000/4800000} - 1 \\\\\n&= \\sqrt[4]{3.3625} - 1 = 1.35415 - 1 \\\\\n&= 0.35 \\text{ i.e. } 35\\%\n\\end{aligned}\n$$",
+   "confidence": "medium",
+   "review": [
+    "Restored the printed two-column calculation as a table (no printed header row; blank header cells used).",
+    "CAGR typeset from the printed fourth-root layout (the flattened input had (FV/Cost)^(1/4)); '4,00,000 x 40.35' kept as printed."
+   ]
+  },
+  "6(b)": {
+   "answer_md": "CALCULATION OF NOPAT: | (₹ In Lakhs)\n---|---\nProfit before Interest, Exceptional Items and Tax | 1,323.50\nLess: Non-Operating Income: |\nInterest and Dividend Income on Non - Current Financial Investments | 250.00\nOther Non-Operating Income | 1.25\n | 251.25\nOperating EBIT | 1,072.25\nLess: Tax @ 30% | 321.67\nNOPAT | 750.58\nCALCULATION OF OPERATING CAPITAL : | (₹ In Lakhs)\nShare Capital (Face Value - ₹ 10 each) | 36.35\nOther Equity | 2,225.66\n12% Redeemable Non-Convertible Preference Shares | 2,717.18\n8% Long-Term Borrowings from Bank | 3,007.09\nTotal | 7,986.28\nLess : Non-Operating Non-Current Assets |\nNon-current investments | 1,664.30\nLong- term loans and advances | 891.97\nOther non-current financial assets | 3.03\nOperating Capital | 5,426.98\nReturn on Capital Employed $= \\text{NOPAT}/\\text{Operating Capital}$ ……. | 13.83%\nCost of Capital | 12.50%\nEVA $(\\text{Return on Operating Capital Employed} - \\text{WACC}) \\times \\text{Operating Capital}$ $(0.1383 - 0.125)(5426.98)$ | ₹ 72.18 Lakh\nAlternatively, EVA $(\\text{NOPAT} - (\\text{Operating Capital Employed} \\times \\text{WACC})$ $(750.58) - (5426.98 \\times 0.125)$ | ₹ 72.21 Lakh",
+   "confidence": "medium",
+   "review": [
+    "Restored the printed two-column table (the flattened input had it as loose lines); the 'CALCULATION OF OPERATING CAPITAL' sub-header kept as a row inside the same table, as in the print.",
+    "Print has unbalanced bracket '(NOPAT – (Operating Capital Employed x WACC)'; kept as printed.",
+    "EVA printed two ways (₹ 72.18 Lakh and ₹ 72.21 Lakh); kept as printed.",
+    "Stem tables unchanged."
+   ]
+  },
+  "7(a)": {
+   "answer_md": "(i) Value of the Firms before the Merger\nCalculation of Free Cash Flow to each of the Firm\n$\\text{Free cash flow to RAJJAN} = \\text{EBIT}(1 - \\text{tax rate})$\n$= 2{,}00{,}000(1 - 0.4) = \\text{₹ }1{,}20{,}000$\n$\\text{Free cash flow to REKHA} = \\text{EBIT}(1 - \\text{tax rate})$\n$= 1{,}60{,}000(1 - 0.4) = \\text{₹ }96{,}000$\nValue of the two firms independently\n\n$$\n\\begin{aligned}\n\\text{Value of RAJJAN} &= [1{,}20{,}000(1.06)] / (0.10 - 0.06) = \\text{₹ }31{,}80{,}000 \\\\\n\\text{Value of REKHA} &= [96{,}000(1.08)] / (0.12 - 0.08) = \\text{₹ }25{,}92{,}000 \\\\\n\\text{Total of the two firms} &= \\text{₹ }57{,}72{,}000\n\\end{aligned}\n$$\n\n(ii) Value of the Firm with Synergy\nOn combining the two firms the cost of goods sold is reduced firm 70% to 65% of revenues. The revenue of the combined firm $= 8{,}00{,}000 + 4{,}00{,}000 = \\text{₹ }12{,}00{,}000$\n$\\text{Cost of goods sold} = 65\\%\\text{ of revenues}$\n$= 0.65 \\times 12{,}00{,}000 = \\text{₹ }7{,}80{,}000$\nWeighted average cost of capital for the combined firm\n$= 10\\% [31{,}80{,}000 / 57{,}72{,}000] + 12\\% [25{,}92{,}000 / 57{,}72{,}000]$\n$= 0.0551 + 0.0539 = 0.109$\nOr 11% approximately\nWeighted average expected growth rate for the combined firm\n$= 6\\% [31{,}80{,}000 / 57{,}72{,}000] + 8\\% [25{,}92{,}000 / 57{,}72{,}000]$\n$= 0.033 + 0.0359 = 0.0689$\nOr 7% approximately\n\nParticulars | Firm with No Synergy | Firm with Synergy\n---|---|---\nRevenues | 12,00,000 | 12,00,000\nCost of Goods Sold (COGS) | 8,40,000 | 7,80,000\nEBIT | 3,60,000 | 4,20,000\nGrowth Rate | 7% | 7%\nCost of Capital | 11% | 11%\n$\\text{FCF} = \\text{EBIT}(1 - T)$ | 2,16,000 | 2,52,000\n\nValue of the Firm without Synergy\n$[2{,}16{,}000(1.07)] / (0.11 - 0.07) = \\text{₹ }57{,}78{,}000$\nValue of the firm with Synergy\n$= [2{,}52{,}000(1.07)] / (0.11 - 0.07) = \\text{₹ }67{,}41{,}000$",
+   "confidence": "high",
+   "review": [
+    "Printed 'reduced firm 70% to 65%' ('firm' for 'from') kept as printed.",
+    "Printed weighted cost 0.109 'or 11% approximately' and 'Total ₹ 57,72,000' kept; stem table unchanged."
+   ]
+  },
+  "7(b)": {
+   "answer_md": "Valuation Based on market price\nMarket Price per share ₹ 440\nThus, value of total business is $(\\text{₹ }440 \\times 3.1\\text{Cr.})$ ₹ 1,364 Cr.\n\nValuation based on discounted cashflow\nPresent Value of Cashflows\n$(460\\text{ Cr} \\times 0.893) + (600\\text{ Cr} \\times 0.797) + (740\\text{ Cr.} \\times 0.712) = \\text{₹ }1{,}415.86\\text{ Cr.}$\nValue per share $(\\text{₹ }1415.86 / 3.1\\text{ Cr}) = \\text{₹ }456.73$\n\nRange of Valuation\n\n | Per Share (₹) | Total (₹ in Cr)\n---|---|---\nMinimum based on Market Value | 440.00 | 1364\nMaximum based on Discounted cashflow | 456.73 | 1415.86",
+   "confidence": "high",
+   "review": []
+  },
+  "8(a)": {
+   "answer_md": "Income Statement based on actual results :\n(i) Income statement contains sales revenue, variable costs, fixed costs and profit (loss). In the problem, sales and income are known. We are required to determine variable costs and fixed costs. Given the P/V ratio of 40%, the expected contribution margin is ₹ 1,60,000 i.e. $(40\\% \\times 8{,}000 \\times \\text{₹ }50)$ and the expected profit is ₹ 96,000. Hence expected fixed costs would be ₹ 64,000 (i.e. $\\text{₹ }1{,}60{,}000 - \\text{₹ }96{,}000$). The actual fixed costs were higher by the amount of advertisement expenditure of ₹ 4,000 i.e. actual fixed costs would be ₹ 68,000. Since actual income was ₹ 1,26,400 and fixed costs were ₹ 68,000, total actual contribution must have been ₹ 1,94,400 $(\\text{₹ }1{,}26{,}400 + \\text{₹ }68{,}000)$, Variable costs, then should be ₹ 2,59,200 i.e. $(\\text{₹ }4{,}53{,}600 - \\text{₹ }1{,}94{,}400)$.\n\nThe income statement for the year would be as follows:\n\n | Amount (₹)\n---|---\nSales | 4,53,600\nLess : Variable costs | 2,59,200\nContribution | 1,94,400\nLess : Fixed costs | 68,000\nNet Income | 1,26,400\n\n(ii) (I) Since variable costs per unit were as expected, variable costs per unit were $(60\\% \\times \\text{₹ }50)$ i.e. ₹ 30. Total actual variable costs were ₹ 2,59,200.\nUnits sold were $(\\text{₹ }2{,}59{,}200 \\div \\text{₹ }30) = 8{,}640$ units\n(II) $\\text{Sales price per unit} = \\text{Total sales revenue} / \\text{No. of units sold}$\n$= \\text{₹ }4{,}53{,}600 / 8{,}640 = \\text{₹ }52.50$\n\nExplanation to Chief Executive :\nMr. Sandeep's answer to the chief executive should highlight the changes in the selling price and fixed costs. In the cost-volume-profit-relationship, assumptions are critical. If they vary, the planned and actual results are bound to differ. Here, selling price has gone up causing higher P/V ratio (variable cost per unit remains constant) and hence, more profit rate than ₹ 0.40 per rupee of additional sales. Revised P/V ratio is 42.86% ($9/21$ per rupee of sales). Furthermore, additional fixed costs have been incurred. These two factors distorted the cost-volume profit relationship stipulated by Mr. Sandeep.",
+   "confidence": "high",
+   "review": [
+    "Stem unchanged (plain text)."
+   ]
+  }
+ }
+}

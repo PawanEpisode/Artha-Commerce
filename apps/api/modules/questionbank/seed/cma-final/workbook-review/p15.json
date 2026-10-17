@@ -1,0 +1,104 @@
+{
+ "schema": "artha.qbreview.v1",
+ "paper": "p15",
+ "items": {
+  "workbook:cma-final:p15:ch1:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem and the whole computation table cell by cell with pages 1-2 of the print; all figures, rows and totals match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p15:ch1:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem, computation table and 80C table with the print; figures, columns and totals match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p15:ch1:q7": {
+   "verdict": "approve",
+   "reason": "Compared three stem tables, computation, notes 1-3 and tax table with the print; all figures and column placement match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p15:ch1:q14": {
+   "verdict": "approve",
+   "reason": "The print is a single table whose last two columns are the answers; all cells match the print. Split the question columns (Case, Cash Turnover / Receipts) into the stem and the answer columns (Tax Audit Applicable?, Remarks) into the solution.",
+   "fixes": [
+    "moved the 'Tax Audit Applicable?' and 'Remarks' columns (the solution) out of stem_md into explanation_md"
+   ],
+   "printed_issues": [],
+   "stem_md": "(Tax Audit)\n\nExamine the applicability of tax audit u/s 44AB in the following independent cases, considering updated provisions and threshold limits:\n\n| Case | Cash Turnover / Receipts |\n|---|---|\n| 1 | Business A: ₹48 L; Profession A: ₹46 L |\n| 2 | Business A: ₹98 L; Profession A: ₹52 L |\n| 3 | Business A: ₹1.80 Cr (under 44AD) |",
+   "explanation_md": "| Case | Tax Audit Applicable? | Remarks |\n|---|---|---|\n| 1 | No | Both business turnover and professional receipts are below respective thresholds (₹1 Cr / ₹50 L) |\n| 2 | Yes | Professional receipts exceed ₹50 L, hence audit u/s 44AB is applicable |\n| 3 | No | Audit is not applicable if presumptive scheme u/s 44AD is opted |"
+  },
+  "workbook:cma-final:p15:ch1:q16": {
+   "verdict": "approve",
+   "reason": "Compared the 14 items and additional information, the 5-column computation table (column placement of each figure), notes 1-18, the 80JJAA table and the tax table with pages 24-30; all match apart from one stray rupee sign.",
+   "fixes": [
+    "note 5: removed the rupee sign before 5,00,000 in '5,00,000 x 4/5' (print has no rupee sign)"
+   ],
+   "printed_issues": [
+    "Note 15 says 'domestic foreign company' (as printed)",
+    "Note 1 mentions 'U.S.A' as printed"
+   ],
+   "explanation_md": "Computation of total income of Shivam Ltd. for the A.Y. 2025-26\n\n| Particulars | Notes | Details | Amount | Amount |\n|---|---|---:|---:|---:|\n| ***Profits & gains of business or profession*** | | | | |\n| Net profit as per Statement of Profit and Loss | | | 1,20,00,000 | |\n| Over-valuation of opening stock [$\\text{₹ }55{,}00{,}000 \\times 10\\% / 110\\%$] | | 5,00,000 | | |\n| Under-valuation of closing stock [$\\text{₹ }54{,}00{,}000 \\times 10\\% / 90\\%$] | | 6,00,000 | | |\n| *Add*: Items debited but to be considered separately or to be disallowed | | | | |\n| Sales commission to Mr. John, a non-resident, for procuring orders from outside India | 1 | - | | |\n| Payment to Mr. Raj, an employee, on his retirement | 2 | - | | |\n| Expenses in connection with inauguration of a new branch for expanding business | 3 | - | | |\n| Penalty to Government for failure in performance of a contract | 4 | - | | |\n| Voluntary Retirement Scheme expenditure [$\\text{₹ }5{,}00{,}000 \\times 4 / 5$] | 5 | 4,00,000 | | |\n| Interest paid to non-resident buyers of goods, on deposits made by them | 6 | 75,000 | | |\n| Salary paid to employees through bearer cheques | 7 | 13,50,000 | | |\n| Marked to market losses | 8 | 6,00,000 | | |\n| Contribution to National Laboratory | 9 | 2,50,000 | | |\n| Depreciation on tangible fixed assets | 10 | 2,20,000 | 39,95,000 | |\n| | | | 1,59,95,000 | |\n| *Less*: Depreciation u/s 32 [$\\text{₹ }2{,}60{,}000 + (\\text{₹ }20{,}00{,}000 \\times 15\\% \\times \\tfrac{1}{2})$] | 11 | 4,10,000 | | |\n| *Less*: Items credited but chargeable to tax under another head / expenses allowed but not debited | | | | |\n| Profit on sale of shares of M/s ABC Ltd. | 12 | 3,50,000 | | |\n| Short term capital gain on sale of capital asset on which no depreciation is allowable | 13 | 75,000 | | |\n| Profit on sale of plot of land to 100% subsidiary | 14 | 6,00,000 | | |\n| Dividend received from domestic company | 15 | 50,000 | | |\n| Contribution to National Fund for Rural Development | 16 | 1,20,000 | 16,05,000 | 1,43,90,000 |\n| ***Capital Gains*** | | | | |\n| *Long term capital gain on sale of shares of M/s. ABC Ltd* | | | | |\n| Full value of consideration [$\\text{₹ }250 \\times 2000$] | | 5,00,000 | | |\n| *Less*: Cost of acquisition being higher of the following | | | | |\n| a) Actual cost of acquisition [$\\text{₹ }75 \\times 2000$] i.e., ₹ 1,50,000 | | | | |\n| b) ₹3,50,000, being lower of fair market value as on 31.1.2018 (i.e., ₹3,50,000, being $2{,}000 \\times \\text{₹ }175$) and sale consideration (i.e., ₹ 5,00,000) | | 3,50,000 | 1,50,000 | |\n| Short term capital gain on sale of capital asset on which no depreciation is allowable | | | 75,000 | |\n| Profit on sale of plot of land to 100% subsidiary | 17 | | - | 2,25,000 |\n| ***Income from other sources*** | | | | |\n| Dividend received from domestic company | 15 | | | 50,000 |\n| **Gross Total Income** | | | | 1,46,65,000 |\n| *Less*: Deduction u/s 80JJAA | | | | 14,49,000 |\n| **Total Income** | | | | **1,32,16,000** |\n\nNotes\n\n1. The commission paid to Mr. John, a non-resident agent, for services performed outside India is not taxable in India. This commission, being paid directly to him in foreign currency, is neither received by him nor on his behalf in India. Consequently, since the commission earned by a non-resident for securing orders while remaining outside India is not subject to Indian taxation, the disallowance under section 40(a)(i) does not apply to such payments, even if tax has not been deducted at source.\n2. Section 40A(3) mandates a 100% disallowance of any expenditure exceeding ₹10,000 if it is made through means other than an account payee cheque, an account payee bank draft, electronic clearing systems via a bank account, or other prescribed electronic modes. However, as per Rule 6DD, no disallowance under section 40A(3) applies to the payment made to Mr. Raj upon his retirement, as the amount does not exceed ₹ 50,000.\n3. Expenditure incurred for the inauguration of a new branch aimed at business expansion qualifies as a revenue expense, as it is exclusively for business purposes. Since this amount has already been recorded in the statement of profit and loss, no additional adjustments are necessary.\n4. A penalty of ₹ 20,000 paid for failing to fulfill a contract within the stipulated timeframe is not considered a violation of law but rather a violation of contractual obligations, making it an allowable expense. As this amount has already been recorded in the statement of profit and loss, no additional adjustments are needed.\n5. Under section 35DDA, 1/5th of the expenditure on a voluntary retirement scheme is allowable as a deduction over a five-year period. Since the entire expenditure has been debited to the statement of profit and loss, 4/5th of the amount, i.e., $5{,}00{,}000 \\times 4/5$, must be added back.\n6. Interest paid to a non-resident buyer of goods on deposits made by them is deemed to accrue or arise in India. This is because the interest is paid by a resident company, which utilized the deposit for its business operations within India. Therefore, such interest is taxable in India, and Shivam Ltd. is liable to deduct tax at source on this interest. A 100% disallowance of the interest paid is attracted under section 40(a)(i), as tax has not been deducted at source\n7. Salary paid through bearer cheques to 9 employees for 10 months ($\\text{₹ }15{,}000 \\times 9 \\times 10$) will be subject to disallowance under Section 40A(3). Consequently, the entire amount must be added back\n8. Marked to market loss or other expected loss as computed in accordance with the ICDS would be allowed as deduction u/s 36(1)(xviii). As per ICDS I, marked to market losses cannot be recognized unless the recognition of such loss is in accordance with the provisions of any other ICDS. Marked to market loss in respect of an unsettled derivative contract is not allowable as deduction. Since such losses have been debited to the profit and loss A/c, they have to be added back for computing business income\n9. As per section 35(2AA) donation to National Laboratory eligible for 100% deduction but when the assessee opted section 115BAB then this deduction not allowed\n10. An amount of ₹ 2,20,000, representing depreciation as per the books of account and debited to the statement of profit and loss, must be added back.\n11. Additional depreciation shall not be available as the company is opting for section 115BAB\n12. Capital Gain arising on sale of shares of ABC Ltd. is taxable under the head “Capital Gains”. Since the profit on sale of shares has been credited to the statement of profit and loss, the same has to be deducted while computing business income\n13. Short-term capital gain (STCG) arising from the sale of a capital asset is taxable under the head “Capital Gains.” As this STCG has been credited to the statement of profit and loss, it must be deducted while computing business income.\n14. The taxability or otherwise of such gain is to be determined under the head “Capital Gains.” As this profit has been credited to the statement of profit and loss, it must be deducted while computing business income.\n15. Dividend income received from a domestic foreign company is taxable under the head “Income from Other Sources.” As this dividend income has been credited to the statement of profit and loss, it must be deducted while computing business income. Further, amount credited into the Statement of Profit and Loss is gross dividend, hence grossing up is not required.\n16. A deduction under section 35CCA is allowable for contributions made to a National Fund for Rural Development while computing business income. This deduction is also available to an assessee opting for the provisions of Section 115BAB.\n17. As per Section 47, if the transfer is made to a 100% subsidiary company and the subsidiary company is an Indian company, such a transaction does not qualify as a transfer for the purpose of levying capital gains tax.\n18. Computation of deduction under section 80JJAA\n\n| | |\n|---|---:|\n| No of eligible additional employees [56 - 14 = 42] | 42 |\n| [14 employees who joined on 1.7.2024 do not qualify as “additional employees” since their monthly emoluments exceed ₹ 25,000. However, 3 employees who joined on 1.11.2024 qualify as additional employees, since they have been employed for more than 150 days during the P.Y.2024-25] | |\n| Additional employee cost means the total emoluments paid or payable to additional employees employed during the P.Y. 2024-25. However, the additional employee cost in respect of 9 employees who joined on 1.6.2024, whose salary is paid by bearer cheque would be Nil | |\n| *Additional employee cost* | |\n| [$\\text{₹ }15{,}000 \\times 30 \\text{ employees } (39 - 9) \\times 10 \\text{ months}$] + [$\\text{₹ }22{,}000 \\times 3 \\text{ employees} \\times 5 \\text{ months}$] = ₹ 45,00,000 + ₹ 3,30,000 | ₹ 48,30,000 |\n| Eligible deduction = 30% of ₹ 48,30,000 | ₹ 14,49,000 |\n\nComputation of tax liability\n\n| Particulars | ₹ |\n|---|---:|\n| Tax on long-term capital gains in excess of ₹ 1.25 lakh @ 12.5% u/s 112A [$\\text{₹ }25{,}000 \\times 12.5\\%$] | 3,125 |\n| Tax on short term capital gain of ₹ 75,000 derived from transfer of a capital asset on which no depreciation is allowable @ 22% | 16,500 |\n| Tax on dividend income of ₹ 50,000 @ 22% | 11,000 |\n| Tax on business income @ 15% of ₹ 1,29,41,000 (i.e. 1,43,90,000 – 14,49,000) | 19,41,150 |\n| | 19,71,775 |\n| *Add:* Surcharge @ 10% | 1,97,178 |\n| | 21,68,953 |\n| *Add:* Health and education cess @ 4% | 86,758 |\n| *Tax Liability* | 22,55,711 |\n| *Tax Liability being rounded off* | 22,55,710 |\n\nSince the assessee has opted for section 115BAB, the provision of section 115JB is not applicable."
+  },
+  "workbook:cma-final:p15:ch1:q17": {
+   "verdict": "approve",
+   "reason": "Compared stem table and both case computations with the print; all figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p15:ch5:q5": {
+   "verdict": "approve",
+   "reason": "Compared all ten rows (particulars, category, justification) with the print; text matches. The print has one table with the answers in the last two columns, so I moved Category and Justification into the solution.",
+   "fixes": [
+    "moved the 'Category' and 'Justification' columns (the solution) out of stem_md into explanation_md"
+   ],
+   "printed_issues": [],
+   "stem_md": "(Tax Planning)\nClassify the following acts into:\n(i) Tax Management\n(ii) Tax Planning\n(iii) Tax Evasion\n\n| SN | Particulars |\n|---|---|\n| a | Mr. A pays health insurance premium for himself and his family and claims deduction under section 80D. |\n| b | Mr. B submits Form 15G though his income exceeds the basic exemption limit, to avoid TDS. |\n| c | Mr. C maintains proper records of TDS deducted from employees’ salaries and deposits the tax on time. |\n| d | Mr. D invests ₹1,50,000 in PPF to reduce tax liability under section 80C. |\n| e | M/s E Ltd. creates fictitious entries of rent paid to director’s relative to reduce net income. |\n| f | Mr. F forgets to file his return by the due date but files it before the end of assessment year. |\n| g | Mr. G sells agricultural land located in the rural area and claims it as exempt income. |\n| h | Mr. H claims business depreciation on his personal car by including it in the block of assets. |\n| i | Mr. I calculates advance tax liability and pays instalments before due dates. |\n| j | Mr. J earns ₹4,000 as interest from the savings account and claims a deduction under section 80TTA. |",
+   "explanation_md": "| SN | Category | Justification |\n|---|---|---|\n| a | Tax Planning | Legal way to reduce taxable income by claiming permissible deductions. |\n| b | Tax Evasion | Willful false declaration to avoid tax deduction is a punishable offence. |\n| c | Tax Management | Compliance measures to fulfill legal obligations in time. |\n| d | Tax Planning | Optimizing investments to avail tax benefits legally. |\n| e | Tax Evasion | Intentional false entries were made to reduce income unlawfully. |\n| f | Tax Management | Late filing but still within permissible time under section 139(4) – procedural compliance. |\n| g | Tax Planning | Proper application of provisions to structure the transaction in a tax-exempt manner. |\n| h | Tax Evasion | False claim for personal expense is a clear misrepresentation. |\n| i | Tax Management | Ensures timely discharge of tax obligations. |\n| j | Tax Planning | Rightly disclosing income and claiming eligible deduction. |"
+  },
+  "workbook:cma-final:p15:ch6:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem and the solution table with footnote against the print; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Solution says 'Income from Country Z' while the question says Country Y"
+   ]
+  },
+  "workbook:cma-final:p15:ch6:q4": {
+   "verdict": "approve",
+   "reason": "Compared the nine-point stem and the full computation table with footnote against pages 58-59; figures and column placement match.",
+   "fixes": [],
+   "printed_issues": [
+    "Point 9 says tax paid in 'Country M' while income is from Country X",
+    "'Investment n PPF' typo in the solution"
+   ]
+  },
+  "workbook:cma-final:p15:ch6:q6": {
+   "verdict": "approve",
+   "reason": "Compared both stem tables, the computation table and both working notes with pages 61-64; all figures match; the following chapter banner is correctly excluded.",
+   "fixes": [],
+   "printed_issues": [
+    "Question text says 'Mr. Shan Lal' while the heading says 'Sohan Lal'"
+   ]
+  },
+  "workbook:cma-final:p15:ch7:q6": {
+   "verdict": "approve",
+   "reason": "Compared the two-sided P&L table, explanation text and the 94B computation table with pages 71-73; all figures and wording match.",
+   "fixes": [],
+   "printed_issues": [
+    "'A.Y. 2024-24' printed in the first sub-heading of the computation"
+   ]
+  },
+  "workbook:cma-final:p15:ch7:q7": {
+   "verdict": "approve",
+   "reason": "Compared the P&L table, steps 1-3 and the final table with pages 73-74; figures, wording and the closing line match.",
+   "fixes": [],
+   "printed_issues": [
+    "Figures printed without Indian grouping (2400, 1920) as in the print",
+    "Closing line says 'PY 2024-25' as printed"
+   ]
+  }
+ }
+}

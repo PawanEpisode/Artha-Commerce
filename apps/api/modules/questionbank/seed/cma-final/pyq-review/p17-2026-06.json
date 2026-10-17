@@ -1,0 +1,44 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p17-2026-06",
+ "items": {
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem (i)-(xii) matches the print; the cost sheet table and units flow match suggested answer pages 4-5 digit for digit and the column sums check (330.90, 327.90, 2.157).",
+   "fixes": [],
+   "printed_issues": [
+    "Coal and oil calculations printed as 'mt' and 'per month' against per-MT rates, kept as printed",
+    "Cost Per Unit Generated is computed on 152 lakh units supplied, not on 160 lakh generated, as printed"
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and royalty/hire lines match the print; the answer was rebuilt as a table from the suggested answer image and all figures match (totals 11,35,000 and 11,40,000).",
+   "fixes": [
+    "Rebuilt the compilation of direct expenses from the OCR layout text as a Markdown table"
+   ],
+   "answer_md": "ABC Ltd.\n\nCompilation of Direct Expenses (as per CAS 10)\n\n| Particulars | Product X | Product Y |\n|---|---|---|\n| Royalty paid on Sales | 5,25,000 | 4,50,000 |\n| Add: Royalty paid on Units produced | 2,50,000 | 1,75,000 |\n| Add: Hire charges of Equipment used in producing of product Y | Nil | 75,000 |\n| Add: Design Charges | 1,60,000 | 1,90,000 |\n| Add: Software Development charges | 2,00,000 | 2,50,000 |\n| Direct Expenses (Total) | 11,35,000 | 11,40,000 |",
+   "printed_issues": []
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and requirement match the print; the value addition statement was rebuilt as a table from the suggested answer image with all figures and totals matching.",
+   "fixes": [
+    "Rebuilt the value addition statement from the OCR layout text as a Markdown table"
+   ],
+   "answer_md": "Calculation of Value Addition:\n\n| Year ended 31st March | 2026 | 2025 |\n|---|---|---|\n| | Amount in ₹ lakh | |\n| VALUE ADDITION: | | |\n| Net Sales | 4800 | 3840 |\n| Add: Export Incentives | - | - |\n| Add/Less: Adjustment in Finished stocks | 20 | 10 |\n| | 4820 | 3850 |\n| Less: Cost of bought out input: | | |\n| i) Cost of Raw materials consumed | 1760 | 1440 |\n| ii) Consumption of stores and spares | 160 | 140 |\n| iii) Power & Fuel | 240 | 192 |\n| iv) Other overheads | 1,056 | 861 |\n| (430+36+260+20+250+60) = 1,056 | | |\n| (370+30+220+16+200+25) = 861 | | |\n| Total cost of bought out input: | 3216 | 2633 |\n| VALUE ADDED | 1,604 | 1,217 |",
+   "printed_issues": []
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print including the printed 'th.e'; answer text compared with suggested answer pages 5-6 and complete, only the layout (hard line breaks, indents, private-use bullet glyphs) was cleaned.",
+   "fixes": [
+    "Joined hard-wrapped lines into paragraphs, replaced private-use bullet glyphs with list bullets and removed indentation that would render as code; wording unchanged"
+   ],
+   "answer_md": "Corporate Frauds: Corporate fraud consists of illegal or unethical and deceptive actions committed either by a company or an individual acting in their capacity as an employee of the company. Corporate fraud schemes are often extremely complicated and, therefore, difficult to identify. It often takes an office full of forensic accountants’ months to unravel a corporate fraud scheme in its entirety.\n\nWhen corporate fraud is perpetrated by the top executives of a large corporation, the fraud often extends to billions of dollars in scale. The victims of corporate fraud are consumers or clients, creditors, investors, other businesses, and eventually, the company that is the source of the fraud and its employees. When it is finally discovered, the company committing the fraud is often left in ruins and forced to declare bankruptcy.\n\n- Corporate fraud consists of illegal, deceptive actions committed either by a company or an individual who is an employee of the company.\n- Many corporate fraud schemes are highly complicated accounting schemes used to inflate a company’s apparent profits and may take years to detect.\n- When massive corporate fraud is eventually discovered, it can take down even huge multinational companies with billions in annual revenues.\n\nMuch of the money illegally obtained through corporate fraud is often never recovered, after being spent long ago by the perpetrators.\n\nThe major causes leading to corporate fraud in modern business organisation:\n\n(a) The Desire or Perceived need to attract or retain Investors: Corporate fraud commonly occurs for the same reason as any other fraud scheme-greed. However, amid the highly competitive global business environment of the modern world, it may also occur for other reasons. Many corporate fraud schemes consist of fraudulent accounting schemes used to make a company appear more profitable than it is. The impetus behind such schemes is the desire or perceived need to attract or retain investors.\n\n(b) Problems or defects with a Company’s Products: Another cause of corporate fraud may be problems or defects with a company’s products, which it tries to hide. Several recent corporate fraud cases have occurred with pharmaceutical companies that attempted to hide certain side effects or dangers associated with using certain medicines they manufactured and sold.\n\nGovernment regulatory authorities, the Securities Exchange Board of India (SEBI) and the Securities and Exchange Commission (SEC) in the United States, use laws and regulations to try to prevent, detect and punish corporate frauds. However, fraud may go undetected for many years before it becomes apparent to authorities, especially if the guilty company is a private company that is not required to publicly disclose its financial records.",
+   "printed_issues": [
+    "Question prints 'th.e' for 'the'"
+   ]
+  }
+ }
+}

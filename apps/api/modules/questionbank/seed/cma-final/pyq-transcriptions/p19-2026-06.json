@@ -1,0 +1,678 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p19",
+ "term_code": "2026-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "PDF has 11 pages; Q8(b) requirements on page 11.",
+  "Q1(vii) keyed (B / D) in suggested answer."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section - A (Compulsory). (Paper: All sections are compulsory. Each section contains instructions regarding the number of questions to be answered within the section.)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct option: 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In case of Banks, charges for delayed payment of brokerage is __________ and Interest charged on outstanding credit card balance is __________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Liable to GST; Exempt"
+        },
+        {
+         "key": "B",
+         "body_md": "Exempt; Liable to GST"
+        },
+        {
+         "key": "C",
+         "body_md": "Liable to GST; Liable to GST"
+        },
+        {
+         "key": "D",
+         "body_md": "Exempt ; Exempt"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following supply of services are exempt under GST?\n(I) Testing of agricultural produce\n(II) Supply of farm labour\n(III) Warehousing of agricultural produce",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "(I)"
+        },
+        {
+         "key": "B",
+         "body_md": "(I) and (II)"
+        },
+        {
+         "key": "C",
+         "body_md": "(II) and (III)"
+        },
+        {
+         "key": "D",
+         "body_md": "(I), (II) and (III)"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following activities or transactions shall be treated neither as a supply of goods nor a supply of services?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Rent of building"
+        },
+        {
+         "key": "B",
+         "body_md": "Lease of land"
+        },
+        {
+         "key": "C",
+         "body_md": "Sale of land"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "M/s \"UNICORN\" Capitals Ltd., located in Mumbai, is receiving legal services from a lawyer Mr. Niraj, registered under GST on 15th April, 2025. The aggregate turnover of M/s \"UNICORN\" Capitals Ltd. in the preceding financial year is ₹ 46 lakh. The information regarding date of payment, invoice etc. is as follows—\nInvoice issued by Mr. Niraj on 16th April, 2025\nPayment debited in the bank account of M/s \"UNICORN\" Capitals Ltd. on 6th May, 2025 and same day entered in the books\nWhat is time of supply of services under GST law?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "16th May, 2025"
+        },
+        {
+         "key": "B",
+         "body_md": "6th May, 2025"
+        },
+        {
+         "key": "C",
+         "body_md": "15th June, 2025"
+        },
+        {
+         "key": "D",
+         "body_md": "16th April, 2025"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Beauty Plaza a modelling agency, registered in Hyderabad having 12 models entered into a contact in Delhi for beauty treatment of their models with Ever Glow Ltd. registered in Chennai but the beauty treatment was done before a fashion show in the city of Kolkata. What is the place of supply under the GST law?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Hyderabad"
+        },
+        {
+         "key": "B",
+         "body_md": "Kolkata"
+        },
+        {
+         "key": "C",
+         "body_md": "Chennai"
+        },
+        {
+         "key": "D",
+         "body_md": "Delhi"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In case of sale (supply) of plant & machinery on which ITC is taken, tax to be paid on is—",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Tax on transaction (sale) value"
+        },
+        {
+         "key": "B",
+         "body_md": "Amount equal to ITC availed less 5% for every quarter or part thereof"
+        },
+        {
+         "key": "C",
+         "body_md": "Lower of above two"
+        },
+        {
+         "key": "D",
+         "body_md": "Higher of above two"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Annual Return is summary of",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "GSTR-3B and GSTR-4"
+        },
+        {
+         "key": "B",
+         "body_md": "GSTR-3B and GSTR-1"
+        },
+        {
+         "key": "C",
+         "body_md": "GSTR-1 and GSTR-4"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "low",
+       "review": [
+        "Suggested answer prints '(B / D)' - two options accepted by the institute; first listed key recorded."
+       ]
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following category of supply of goods is notified as deemed exports by the government under GST Law?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Supply of goods by a registered person against advance authorisation (AA)"
+        },
+        {
+         "key": "B",
+         "body_md": "High sea sales"
+        },
+        {
+         "key": "C",
+         "body_md": "Supply of goods from a place in the non-taxable territory to another place in the non-taxable territory without such goods entering into India"
+        },
+        {
+         "key": "D",
+         "body_md": "Supply of goods to a SEZ Unit for authorised operations"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under section 74A of the CGST Act, 2017 the time-limit for issuance of show cause notice in case of non-payment of tax on account of reasons other than fraud, wilful misstatement or suppression of facts, etc. is",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "2 years and 9 months from the due date of filing Annual Return for the Financial Year to which the tax not paid relates to."
+        },
+        {
+         "key": "B",
+         "body_md": "42 months from the due date of filing Annual Return for the Financial Year to which the tax not paid relates to."
+        },
+        {
+         "key": "C",
+         "body_md": "4 years and 6 months from the due date of filing Annual Return for the Financial Year to which the tax not paid relates to."
+        },
+        {
+         "key": "D",
+         "body_md": "60 months from the due date of filing Annual Return for the Financial Year to which the tax not paid relates to."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "What action should be taken by an assessee to satisfy with anti-profiteering provision?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Reduce rate of tax on any supply of goods or services, if such assessee has got the benefit of such reduced rate"
+        },
+        {
+         "key": "B",
+         "body_md": "Pass on the benefit of input tax credit, if such assessee has got such input tax credit"
+        },
+        {
+         "key": "C",
+         "body_md": "Both (A) and (B)"
+        },
+        {
+         "key": "D",
+         "body_md": "Either (A) or (B)"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Once a __________ is cleared for home consumption, the bond submitted by the importer gets debited automatically in the customs automated system and the details shall be made available electronically to the Jurisdictional Custom Officer.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Shipping Bill"
+        },
+        {
+         "key": "B",
+         "body_md": "Entry Inwards"
+        },
+        {
+         "key": "C",
+         "body_md": "Bill of Entry"
+        },
+        {
+         "key": "D",
+         "body_md": "Entry Outwards"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Determine price to be taken for computing deductive value in rule 7 of Customs Valuation (Determination of Value of Imported Goods) Rules, 2007:\nSale quantity: 60 units @ ₹ 90, 65 units @ ₹ 95, 40 units @ ₹ 105, 35 units @ ₹ 100:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 105"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 100"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 95"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 90"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A Gentleman passenger returning to India having resided abroad for more than a year shall be allowed clearance free of duty jewellery in his bonafide baggage to the extent of the following:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 1,00,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 50,000"
+        },
+        {
+         "key": "C",
+         "body_md": "upto a weight of 20 grams, no amount limit"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "M/s Poorvisha SHANKAR Ltd. imported a machine from Dubai for business use and paid ₹ 92,000 as import duty. Company used machine and re-exports the same after 15 months 6 days. Calculate the amount of Drawback under Customs Act, 1962.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 90,160"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 71,760"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 55,200"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 59,800"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Only projects having a minimum investment of __________ in plant & machinery shall be considered for establishment as EOUs.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Below ₹ 5 crore"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 1 crore"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 10 crores or above"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 100 crores or above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "SECTION - B. (Answer any five questions out of seven questions given. Each question carries 14 Marks.)",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "With reference to GST law analyze the various exemption available to Good Transport Agency on the services provided by it under entry 21, 21A and 21B of Exemption notification No. 12/2017.",
+       "options": [],
+       "correct": null,
+       "answer_md": "| Entry No. | Exempted services |\n|---|---|\n| 21 | Services provided by a goods transport agency, by way of transport in a goods carriage of— 1. agricultural produce; 2. Milk, salt and food grain (any one) including flour, pulses and rice; 3. organic manure; 4. newspaper or magazines registered with the Registrar of Newspapers; 5. relief materials meant for victims of natural or man-made disasters, calamities, accidents or mishap; or 6. defence or military equipment's. |\n| 21A | \"Services provided by a goods transport agency to an unregistered person, including an unregistered casual taxable person, other than the specified recipients\" also exempt from GST |\n| 21B | Services provided by a goods transport agency, by way of transport of goods in a goods carriage, to,— 1. a Department or Establishment of the Central Government or State Government or Union territory; or 2. local authority ( or Municipal corporation) ; or 3. Governmental agencies, which has taken registration under the Central Goods and Services Tax Act, 2017 (12 of 2017) only for the purpose of deducting tax under Section 51 and not for making a taxable supply of goods or services. |",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "With reference to Form GSTR -9 (Annual return) under the GST law Explain the followings:\n(i) Taxable persons who are not required to file form GSTR-9\n(ii) Data which are auto-populated in form GSTR-9",
+       "options": [],
+       "correct": null,
+       "answer_md": "Non-Applicability of Annual Return (GSTR-9) under GST:\nThe following taxable persons are not required to file Annual Return under GST:\n(1) Input Service Distributor (ISD)\n(2) Tax Deductor (TDS) under Section 51\n(3) Tax Collector (TCS) under Section 52\n(4) Casual taxable Person (CTP)\n(5) Non-resident Taxable person (NRTP)\n(6) OIDAR Service Providers\n(7) A registered person whose aggregate turnover of the financial year is up to Rs. 2 crore\n\nForm GSTR-9 has following auto-populated data :\n(1) Details of Inward supplies made during the financial year\n(2) Details of advances, Outward supplies made during the financial year on which tax is payable\n(3) Details of Outward supplies made during the financial year on which tax is not payable\n(4) Total amount of Input tax credit (ITC) availed through FORM GSTR-3B (sum total of Table 4A of FORM GSTR- 3B)\n(5) Input tax credit (ITC) as per GSTR-2A/2B\n(6) Input Tax credit (ITC) received from Input Service Distributor (ISD)\n(7) Transition Credit through TRAN-I (including revisions if any)\n(8) Transition Credit through TRAN-II\n(9) Details of tax paid as declared in returns filed during the financial year",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. N.G. Srinivasan engaged in providing various services is registered as a regular taxpayer under GST. He furnished the following information relating to various transactions done for the month of October 2025:\n\n| S. No. | Particulars | Amount (₹) |\n|---|---|---|\n| (i) | Provided services by way of pre-conditioning, pre-cooling, ripening and waxing of fruits. The essential characteristics of fruits remain same. | 42,00,000 |\n| (ii) | Security services received from M/s. KBCL Security Services, sole proprietorship firm, registered under composition scheme at Kanpur, (Uttar Pradesh) | 35,000 |\n| (iii) | Rent received for renting of land for fish farming. | 4,00,000 |\n| (iv) | Received price linked subsidy from M/s Happy Days, a registered Charitable Trust. | 2,00,000 |\n| (v) | Provided services as National Testing Agency to M/s Fine Future Institute, a recognized educational institute for conducting an entrance examination for admission to educational institute. | 1,30,000 |\n| (vi) | Providing rooms having room charges ₹ 4,600 per day to a person receiving health care services from his established health care clinic. | 1,15,000 |\n| (vii) | Provided service as an agent of Business Correspondent (BC) to such Business corresponded who is registered at Mumbai. | 40,000 |\n\nAll amounts given above are exclusive of taxes wherever applicable\nRequired:\nCalculate the amount of taxable supply on which tax to be paid by N.G. Srinivasan for the month of October, 2025 showing each item separately.\nCorrect legal reasoning of each item should form part of your answer",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of taxable supplies for the month of October 2025\n\n| S. No. | Particulars | Amount (₹) |\n|---|---|---|\n| i. | Provided services by way of pre-conditioning, pre-cooling, ripening and waxing of fruits. The essential characteristics of fruits remain same. (Services by way of pre-conditioning, pre-cooling. ripening and waxing of fruits where the essential characteristics of fruits remain same is an exempt supply.) | Nil |\n| ii. | Security services received from M/s KBCL- Security Services registered under composition scheme at Kanpur, Uttar Pradesh (Security services provided by any person other than a body corporate to a registered person is taxable under reverse charge mechanism (RCM), hence Mr. N.G. Srinivasan will pay tax). | 35,000 |\n| iii. | Rent received for renting of land for fish farming. Alternate 1: (Assume it is as per agreement) (Renting of vacant land for fish farming is exempt.) OR Alternate 2: (Assume it is not as per agreement) (Renting of vacant land for fish farming is exempt, only if it is exclusively as per the agreement.) | Nil OR 4,00,000 |\n| iv. | Received price linked subsidy from M/s Happy Days, a registered Charitable Trust. Registered under 12AA of the Income Tax Act, 1961 (Since price linked subsidy is received from the non-Government body, same is included in the value of taxable supply.) | 2,00,000 |\n| v. | Provided services as National Testing Agency to M/s Fine Future Institute, a recognized educational institute for conducting an entrance examination for admission to educational institute. (Service provides by National Testing Agency to conduct entrance examination for admission to educational institution is exempt (or not taxable) from GST.) | Nil |\n| vi. | Providing rooms having room charges ₹ 4,600 per day to a person receiving health care services from his established health care clinic. (The services provided by a clinical establishment by way of providing having room charges upto ₹5000 per day to a person receiving health care services are exempt.) | Nil |\n| vii. | Provided service as an agent of Business Correspondent (BC) to such Business corresponded who is registered at Mumbai. (RCM is applicable, hence Mr. N.G. Srinivasan will NOT pay tax such Business Correspondent will pay tax) | Nil |\n| | Total Taxable Value | 2,35,000 Or 6,35,000 |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives alternatives for item (iii) (Nil or 4,00,000) and total (2,35,000 or 6,35,000)."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "SSAL Industries Ltd. a registered person under GST law at Madurai procured the following goods in the month of November, 2025.\n\n| S.No. | Particulars | GST Paid (₹) |\n|---|---|---|\n| (i) | Purchased equipment from Original Equipment Manufacturer (OEM) as an Ex-Works (EXW) contract basis on 27th November, 2025. As per terms of the contract, the goods are to be delivered by the OEM to transporter on behalf of the recipient, at supplier's (OEM) place of business. The OEM handed over the equipment to transporter on 28th November, 2025 but equipment physically received by SSAL Industries Ltd. on 2nd December, 2025. And on that day 50% equipment was received in damaged condition and was not useful at all. | 1,30,000 |\n| (ii) | Goods used for setting up Telecommunication Towers being immovable property | 1,60,000 |\n| (iii) | As per the policy of the company, the Managing Director (MD) of the company has taken membership of local sports club on behalf of company. The company paid fees monthly. | 5,000 |\n| (iv) | Food and beverages purchased for the employees during office hours | 12,000 |\n| (v) | Account paper for photocopying machine used in administrative office | 6,000 |\n| (vi) | Goods used for providing services during warranty period | 18,000 |\n\nRequired:\nExamine the above and Calculate the amount of Input Tax Credit (ITC) available with SSAL Industries Ltd. for the month of November, 2025 by giving necessary explanations. Assume, that all the other conditions necessary for availing ITC have been fulfilled.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of amount of ITC available for the month of November, 2025\n\n| SN | Particulars | Eligible ITC (₹) |\n|---|---|---|\n| (i) | Purchase of equipment from Original Equipment [In order to take ITC, goods must have been actually received. But in the given case since this is case of ex-works contract, equipment will be considered to have been \"received\" by the recipient at the time of handing over of said equipment by OEM to the transporter, at OEM's place of business.] 50 % (Rs 65000) destroyed goods will be reversed in the next month of December | 1,30,000 |\n| (ii) | Goods used for setting up Telecommunication Towers being immovable property (Goods received by taxable person for construction of an immovable property (other than Plant and Machinery) on his own account is blocked. Since Plant and Machinery excludes telecommunication tower, ITC is blocked under section 17(5).) | Nil |\n| (iii) | Membership of local sports club [Since membership of club is not obligatory for employer to provide the same under any law, ITC on the same is blocked] OR [Since membership of club is not statutory obligation for employer to provide the same, ITC on the same is blocked] | NIL |\n| (iv) | Food and beverages purchased for the employees during office hours (Since ITC on food or beverages is blocked u/s17(5) unless the same is used in same line of business or as an element of the taxable composite or mixed supply) | Nil |\n| (v) | Account paper for photocopying machine used in administrative office (Since Inputs are used in the course or furtherance of business and hence, ITC thereon is allowed) | 6,000 |\n| (vi) | Goods used for providing services during warranty period (Since Inputs are used in the course or furtherance of business and hence, ITC thereon is allowed) | 18,000 |\n| | Total Input Tax Credit (ITC) available for November, 25 | 1,54,000 |",
+       "confidence": "medium",
+       "review": [
+        "Stem prints 'SSAL Industries Ltd.' in text and 'SSAL' consistently; answer table prints 'Original Equipment' only. Suggested answer notes reversal of damaged 50% (Rs 65,000) in December."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Demonstrate any seven activities (check list) to be conducted as auditor to conduct the audit under GST.",
+       "options": [],
+       "correct": null,
+       "answer_md": "An Illustrative checklist to conduct audit under GST are as follows\n1. GST Registration: It is most important to check and verify all the details specified in the GST registration certificate.\n2. Detail Analysis of Particulars of Invoice Documents: The second most important part to be analyzed by the auditor is invoicing under GST. Tax invoice contains all the particulars as prescribed under rule 46 of the Central Goods and Service Tax Rules, 2017.\n3. Verification of time of issuance of tax invoice needs to be done.\n4. Check debit and credit note. It should be checked that the debit and credit note, if applicable, has been issued as per the GST law. If the issuance of the bill of supply is applicable the same needs to be checked.\n5. Correct availment of Input Tax Credit (ITC) After GST registration certificate and invoicing, the next most important point is to verify the input tax credit availed during the specified period.\n6. Verification of Job-Work Transactions. It must be verified that the goods have been sent to a job-work under the cover of delivery challan. In case of a job-work transaction,\n7. GST Returns: GST monthly / quarterly returns, as applicable, should be verified and confirmed that the same is duly filed as per GST law.\n8. Interest calculations on liability @ 18% p.a. is required to be made and auditor is required to check whether the same has been deposited timely by the taxpayer.\n9. As GST Turnover definition is somewhat different from Income Tax Turnover. However, now both the department will exchange the information with each other. Therefore, one needs to take care in reporting turnover under Income Tax and GST.\n10. GST Audit is applicable when Total Turnover on PAN India basis exceeds ₹ 5 crores in a financial year. However, GST Audit will be done GSTIN wise. Turnover will be checked on PAN basis that means all supplies made inclusive of exempted supplies made throughout the country either from one place or multiple branches will be considered, while checking turnover for GST audit.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "With reference to key Advance ruling Discuss along with reason and decide whether \"Supply of external storage battery with UPS\" constitutes as Composite supply or Mixed Supply.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The facts given in the question is similar to case of Switching Avo Electro Power Ltd. (2018) 96 taxmann.com 106 (AAAR-West Bengal)\n\nHere the appellant contended that the UPS cannot function without battery as the same is an integral part of UPS and it is naturally bundled and supplied in conjunction with each other, therefore the supply of static converter along with the external battery should be considered as a composite supply and not mixed supply.\n\nHowever, the AAAR opined that the when a UPS is supplied with built-in batteries in a manner that the supply of the battery is inseparable from the supply of the UPS, and the two items are 'naturally bundled' then it should be treated as a composite supply under Section 2(30) of the CGST Act,\nbut when the storage batteries having multiple uses is supplied with the static converter i.e. UPS, it cannot be said that they are naturally bundled even if the same is supplied under a single contract at a combined single price.\n\nTherefore, the supply of external storage battery supplied with UPS would NOT be considered as natural bundle and hence to be considered as a 'Mixed Supply'.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Analyze and Determine the time of supply with reference to section 12 of the CGST Act, 2017 and related circular and clarifications issued, in the following independent cases if supply involves movement of goods under forward charges:\n\n| S. No. | Date of removal of goods | Date of issue of invoice | Date when goods made available to the recipient | Date on which payment received |\n|---|---|---|---|---|\n| 1. | 17-03-2025 | 18-03-2025 | 19-03-2025 | 08-04-2025 |\n| 2. | 19-03-2025 | 17-03-2025 | 20-03-2025 | 08-04-2025 |\n| 3. | 20-05-2025 | 21-05-2025 | 18-05-2025 | 08-04-2025 |\n\nAlso discuss in brief the provision related to identify the Time of supply if supply involves movement of goods.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Section 12 which defines time of supply of goods, provides that time of supply of goods shall be earlier of following date:\n(i) The date of issue of invoice by supplier or last date on which supplier is liable to issue invoice as per provision of sec. 31 of CGST Act; or\n(ii) The date on which the supplier receives the payment with respect to the supply.\n\nHowever as per Notification No. 66/2017, Advance (or payment) received is not taxable at the time of receipt\n\nHence practically Time of supply will be\"\nEarlier of The date of issue of invoice by supplier or last date ( or say due date) on which supplier is liable to issue invoice as per provision of sec. 31 of CGST Act;\nFurther, as per sec. 31, if supply involves movement of goods then invoice shall be issued before or at the time of removal of such goods to recipient.\nIn any other cases, invoice shall be issued at the time of delivery of goods or making available thereof to the recipient.\n\n| S. No. | Date of removal of goods | Date of issue of invoice | Date when goods made available | Date on which payment recd. | Time of Supply |\n|---|---|---|---|---|---|\n| 1. | 17-03-2025 | 18-03-2025 | 19-03-2025 | 08-04-2025 | 17-03-2025 |\n| 2. | 19-03-2025 | 17-03-2025 | 20-03-2025 | 08-04-2025 | 17-03-2025 |\n| 3. | 20-05-2025 | 21-05-2025 | 18-05-2025 | 08-04-2025 | 20-05-2025 |\n\nSince this is the case of movement of goods hence date of goods made available is not relevant",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "S. Anand lakshmi Forex Solutions Pvt. Ltd., registered in Pune, Maharashtra, operates as a money changer. The company has undertaken the following purchase and sale of foreign currency transactions:\n(i) 1,200 US Dollars were purchased from Bincon traders at the rate of ₹ 79 per US Dollar. RBI reference rate for the US Dollar on that day was ₹ 80.80.\n(ii) 2,600 US Dollars were sold to Meera Exports at the rate of ₹ 78 per US Dollar. RBI reference rate for the US Dollar was not available on that day.\nRequired:\nDiscuss the specific rules in brief first and then Determine the value of supply in each of the above cases as per the provisions of CGST Rules, 2017, under:\n1. Rule 32(2)(b) of the CGST Rules, 2017\n2. Rule 32(2)(a) of the CGST Rules, 2017",
+       "options": [],
+       "correct": null,
+       "answer_md": "Determination of Value of Supply as per CGST Rules, 2017 for S Anand Lakshmi Forex Solutions Private Limited\n\n(1) Value of Supply under Rule 32(2)(b) of the CGST Rules, 2017\nRule 32(2)(b) provides that value in relation to the supply of foreign currency, including money changing shall be deemed to be\n\n| S. No. | Currency exchanged | Value of supply |\n|---|---|---|\n| 1. | Upto ₹ 1,00,000 | 1% of the gross amount of currency exchanged OR ₹ 250 whichever is higher |\n| 2. | Exceeding ₹ 1,00,000 and upto ₹ 10,00,000 | ₹ 1,000 + 0.50% of the (gross amount of currency exchanged - ₹ 1,00,000) |\n| 3. | Exceeding ₹ 10,00,000 | ₹ 5,500 + 0.1% of the (gross amount of currency exchanged - ₹ 10,00,000) OR ₹ 60,000 whichever is lower |\n\nCase 1: For the purchase of 1,200 USD from Bincon traders:\nGross amount of currency exchanged: ₹ 79 × 1,200 = 94,800\nSince the amount is less than ₹ 1,00,000, the value of supply is 1% of the gross amount or ₹ 250, whichever is higher. i.e. 948 or 250\nTherefore, Value of supply = ₹ 948\n\nCase 2: For the sale of 2,600 USD to Meera Exports:\nGross amount of currency exchanged: ₹ 78 × 2,600 = ₹ 2,02,800\nSince the amount exceeds ₹ 1,00,000 but is less than ₹ 10,00,000, the value of supply is ₹ 1,000 + 0.50% of (₹ 2,02,800 - ₹ 1,00,000).\n1000+ 514\nTherefore, Value of supply = ₹ 1,514\n\n(2) Value of Supply under Rule 32(2)(a) of the CGST Rules, 2017\nKey Aspects of Rule 32(2)(a) and related provisions:\n• Rule 32(2)(a) of the CGST Rules, 2017, It enables the supplier to calculate the value based on the difference between the RBI rate and buying/selling rate, If RBI Reference Rate is available\n• If no RBI Reference Rate: the rate determined by 1% of the gross amount of Indian Rupees provided or received.\n• No Indian Rupees Involved: If neither currency exchanged is Indian Rupees, the value is 1% of the lesser of the two amounts that the person changing the money would have received by converting into Indian Rupees at the RBI reference rate, say\n\nCase 1: For the purchase of 1,200 USD from Bincon traders:\n(RBI reference rate - transaction rate) × Amount in USD\nCalculation: (₹ 80.80 - ₹ 79) × 1,200 USD\nTherefore, Value of supply = ₹ 2,160\n\nCase 2: For the sale of 2,600 USD to Meera Exports:\n1% of (Transaction rate × Amount in USD)\nCalculation: 1% of (₹ 78 × 2,600 USD)\nValue of supply = ₹ 2,028",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer for Rule 32(2)(a) case 1 shows (80.80-79)x1200 = 2,160 and case 2 as 1% of gross = 2,028; copied as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "GGTR Pvt. Ltd. imported High Spirit Diesel (HSD) and stored it in a public warehouse. An ex-bond bill of entry for home consumption was filed and applicable customs duty was paid based on the rate prevalent on the date of presentation of such bill of entry.\nThe proper officer passed an order for clearance for home consumption. Owing to the highly inflammable nature of the commodity, the importer made an application to permit the storage of such diesel in the same warehouse until actual clearance for sale/ use. The application was allowed.\nAt the time of actual removal of goods from the warehouse, the rate of duty had been revised upwards. The Department, invoking the revised duty rate, demanded payment of the differential duty on the ground that the goods were removed at a time when the higher rate was in effect. GGTR Pvt. Ltd. has contested the legitimacy of this demand.\nRequired:\nExamine the validity of the Department's demand in light of the provisions of the Customs Act, 1962 and relevant judicial ruling, if any.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Section 49 of the Customs Act, 1962 inter alia provides that imported goods entered for home consumption if stored in a public warehouse, or in a private warehouse on the application of the importer and if the same cannot be cleared within a reasonable time, shall not be deemed to be warehoused goods for the purposes of this Act, and accordingly the provisions of Chapter IX shall not apply to such goods.\n\nThe facts of the given situation are also similar to the case of CCus vs. Biecco Lawrie Ltd. 2008 (223) ELT 3 (SC) wherein the Supreme Court has held that where duty on the warehoused goods is paid and out of charge order for home consumption is made by the proper officer in compliance of the provisions of section 68 of the Customs Act, the goods allowed to be retained for storage in the warehouse as permitted under section 49 of the Customs Act are not treated as warehoused goods and importer would not be required to pay anything more.\n\nHence,\nThe demand raised by the Department is not valid/ Not Correct.\nOR\nThe contention of the GGTR Pvt Ltd is valid /correct",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "As per the latest amendment [vide Notification No. 70/2023 dated 08.03.2024]:, Briefly Describe any seven ineligible categories of exports/exporters which shall not be eligible for rebate under the RoDTEP Scheme under Foreign Trade Policy.",
+       "options": [],
+       "correct": null,
+       "answer_md": "As per latest Amendment in Ineligible categories under the RoDTEP Scheme for claiming benefit: The following categories of exports/exporters which shall not be eligible for rebate under the RoDTEP Scheme [vide Notification No. 70/2023 dated 08.03.2024]:\n(i) Exports of imported goods as per para 2.46 of FTP i.e. Import for Export;\n(ii) Exports through trans-shipments, meaning thereby exports originating in third country but trans-shipped through India;\n(iii) Export products which are subject to minimum export price or export duty;\n(iv) Products which are restricted for exports under Schedule-2 of Export Policy in ITC (HS);\n(v) Products which are prohibited for exports under Schedule-2 of Export Policy in ITC (HS);\n(vi) Deemed Exports;\n(vii) Supplies of products manufactured by DTA units to SEZ/FTWZ units;\n(viii) Products manufactured in EHTP and BTP (Omitted- vide Notification No. 70/2023 dated 08.03.2024);\n(ix) Products manufactured partly or wholly in a warehouse under section 65 of Customs Act, 1962;\n(x) Products manufactured or exported in discharge of export obligation against advance authorisation (AA) or Duty Free Import Authorization (DFIA) or Special Advance Authorisation issued under a duty exemption scheme of relevant Foreign Trade Policy; ( any one bold)\n(xi) Products manufactured or exported by a unit licensed as 100% Export Oriented Unit (EOU) in terms of the provisions of the Foreign Trade Policy;\n(xii) Products manufactured or exported by any of the units situated in Free Trade Zone (FTZ), Export Processing Zones (EPZ) or Special Economic Zone (SEZ);\n(xiii) Products manufactured or exported availing the benefit of Notification No 32/1997-Customs dated 01.04.2017 (i.e. jobbing transactions);\n(xiv) Exports for which electronic documentation in ICEGATE EDI has not been generated or Exports from Non-EDI port; and\n(xv) Goods which have been taken into use after manufacture (i.e. second-hand goods); [***As per para 4.55B of the FTP (inserted vide DGFT Notification No. 19/2015-20 dated 17.08.2021), the inclusion of exports made by categories mentioned in Sr. No. X, XI and XII above i.e. the exporters under the categories of SEZ, EOU, Advance Authorisation etc. and the RoDTEP rates for export items under such categories would be decided later based on the recommendations of the RoDTEP Committee.] - (omitted - vide Notification No. 70/2023 dated 08.03.2024)",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Calculate the amount of duty drawback allowable under Section 74 of the Customs Act, 1962 in the following independent cases:\n(i) Mr Mukesh imported a music player from Dubai for personal use and paid ₹ 24,000 as import duty. He used it for five months and re-exports the same after five months.\n(ii) Mr Vansh imported a motor car for his personal use and paid ₹ 5,28,000 as import duty. The car is re-exports after 16 months and 17 days\n(iii) M/s ABB Ltd. imported a machine from Dubai for business use and paid ₹ 98,000 as import duty. Company used machine and re-exports the same after 16 months.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) For other goods drawback Rate fixed FOR PERSONAL USE by Government under Section 74(2) by Notification No. 23/2008-Cus., dt. 1.3.2008. for 2nd quarter is 92%\nHence He can claim draw back as 92% of 24000 = ₹ 22080\n(ii) The drawback rates on motor car are calculated, by reducing the Import duty paid by 4%, 3%, 2-1/2% and 2% for use, for each quarter or part thereof, during the period of First, Second, Third and Fourth year respectively.\nHence in this case it used for 16 month and 16 days means 6 quarter\nso amount to be reduced by 22 % (4% x 4 quarter+3% x 2 quarter)\nOR\nhence drawback would be 78%\nSo drawback would be ₹ 4,11,840 (78% of 5,28,000)\n(iii) For other goods drawback Rate fixed FOR BUSINESS by Government under Section 74(2) by Notification No. 23/2008-Cus., dt. 1.3.2008. for 15 to 18 month is 60%\nHence company can claim draw back as 60% of 98000 = ₹58800",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer for (ii) shows reduction of 22% as '4% x 4 quarter + 3% x 2 quarter' and drawback 78%; copied as printed."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Ravishankar Ltd. is the manufacturer of heavy machines in the State of Karnataka. It imported one machinery by air from USA for making sub parts to be used in assembling of heavy machinery. The following particulars are furnished by it:\n\n| S. No. | Particulars | Amount US $ |\n|---|---|---|\n| (i) | CIF value of the machinery | 60,000 |\n| (ii) | Insurance charges | 2,700 |\n| (iii) | Freight paid (Air) | 14,500 |\n\nAdditional information:\n(i) Design and patent charges of USD 2500 was required to be paid in France, which is not included in CIF value given above.\n(ii) Date of filing the Bill of entry was 26th September, 2025 and the rate of exchange notified by CBIC on this date was ₹ 81 per US $. The inter-bank rate was ₹ 80 per US $. And Basic Custom duty (BCD) rate was 10%\n(iii) Date of arrival of aircraft was 21st October, 2025 and the rate of exchange notified by CBIC on this date was ₹ 84 per US $. The inter-bank rate was ₹ 83 per US $. And Basic Custom duty (BCD) rate was 15%\nRequired:\nFrom the above information, Analyze and Calculate the Assessable value and Basic customs Duty (BCD) payable under the Customs Act, 1962.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of assessable value of machinery\n\n| Particulars | Amount (in $) |\n|---|---|\n| CIF price of the machine | 60,000 |\n| Less: Insurance | (2,700) |\n| Less: Freight | (14,500) |\n| | 42,800 |\n| Add: Design and patent charges paid in France (Design and engineering work undertaken elsewhere than in India and necessary for the production of the imported goods is includible in the assessable value) | 2,500 |\n| FOB value for customs | 45,300 |\n| Add: Freight (If the goods are imported by air, the freight cannot exceed 20% of FOB price) | 9,060 |\n| Add: Insurance (Actual) | 2,700 |\n| CIF value for customs purpose | 57,060 |\n| Applicable exchange rate (The rate of exchange notified by the CBIC on the date of presentation of bill of entry has been considered) | ₹ 81 |\n| Assessable value in rupees [57,060 × 81] | 46,21,860 |\n| Applicable BCD rate (Rate of duty is the rate prevalent on the date of presentation of bill of entry or the rate prevalent on the date of arrival of aircraft , whichever is later) | 15% |\n| Basic Customs Duty (BCD) | 6,93,279 |",
+       "confidence": "medium",
+       "review": [
+        "Stem says BCD rate prevalent at BoE (10%) vs arrival (15%); suggested answer uses 81 exchange rate and 15% BCD."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "M/s. SHANKAR Distributors Pvt. Ltd., registered under normal GST provisions in Salem, Tamil Nadu, undertakes the following transactions in April 2026:\n(i) Goods worth ₹ 48,000 plus 18% GST were sold 10 days back to TY Co. in Chennai. TY Co. now returns the goods to SHANKAR distributors in Salem.\n(ii) Samples worth ₹ 40,000 are sent free of cost from Salem to Coimbatore (Both cities are in Tamil Nadu) for marketing purposes.\n(iii) Goods worth ₹ 90,000 are transferred from Salem Head Office to its branch in Madurai (same State).\n(iv) A consignment worth ₹ 1,20,000 is moved from Salem (Tamilnadu) to Bengaluru, (Karnataka). The e-way bill generated for the consignment expires en route due to vehicle breakdown and delay in delivery. What should be done now?\n(v) A consignment worth ₹ 65,000 is moved from Salem to Trichy (Both cities are in Tamil Nadu). The transporter generates Part-A of the e-way bill but fails to update Part-B (vehicle details).\nRequired:\nDiscuss the legal implications/requirements under GST law for each of the above situations, with reference to the provisions relating to e-way bills (Rule 138 of the CGST Rules, 2017).",
+       "options": [],
+       "correct": null,
+       "answer_md": "E-Way Bill Case Scenario\n\n| S No | Particulars |\n|---|---|\n| (i) | Return of goods (₹ 48,000 + 18% GST, returned by TY Co. to Shankar) • Movement of goods by the recipient back to the supplier is also a \"supply\" for the purpose of E-way Bill Rules. • Since the consignment value (₹ 48,000 + GST = ₹ 56,640), exceeds ₹ 50,000 an e-way bill is mandatory. TY Co. must generate the e-way bill for the return movement |\n| (ii) | Samples worth ₹ 40,000 sent free of cost • Even though there is no consideration, movement of goods for business purposes requires documentation ( e way bill) • Since the consignment value is below ₹ 50,000, e-way bill is optional / Not mandatory/ not required • If the consignment value had exceeded ₹ 50,000, e-way bill would have been mandatory even for samples. |\n| (iii) | Branch transfer within same State (₹ 90,000) • Transfer between distinct persons (different GSTINs) or branches is treated as supply under GST. • Consignment value exceeds ₹ 50,000, hence e-way bill is mandatory/ Required • The supplier (Head Office) must generate the e-way bill. |\n| (iv) | E-way bill expires en route due to vehicle breakdown (₹ 1,20,000 consignment) • The transporter/supplier must extend the validity within eight (8) hours from the time of expiry by updating Part-B with new vehicle details and extend validity as per Rule 138(10). • If more than eight (8) hrs expired then The transporter/supplier must generate a fresh e-way bill by updating Part-B with new vehicle details and extend validity as per Rule 138(10). • If not done, movement beyond expiry is a contravention and attracts penalty. |\n| (v) | Part-A generated but Part-B not updated (₹ 65,000 consignment) • Part-B (vehicle details) is mandatory for movement of goods. • Without Part-B, the e-way bill is incomplete and invalid. Movement of goods without valid e-way bill attracts penalty under section 122 and detention under section 129( any one bold points) |",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Following facts relating to GJ Enterprises are made available:\nTax Year: 2024-25.\nThe Proper Officer passes an order on M/s. Beta Enterprises on 12th April, 2025:\nTax demand: ₹ 100 lakhs (addition to turnover).\nInterest demand: ₹ 12 lakhs.\nPenalty levied u/s 122: ₹ 34 lakhs.\nThe assessee files a first appeal in time.\nThe Appellate Authority, vide order dated 23rd July, 2025, decides as follows:\nDeletes addition covering tax demand of ₹ 35 lakhs.\nDeletes penalty of ₹ 34 lakhs.\nConfirms balance tax demand of ₹ 65 lakhs and interest of ₹ 12 lakhs.\nThe assessee now proposes to file a second appeal before the GST Appellate Tribunal (GSTAT) against the balance tax and interest demand.\nRequired:\n(i) How much pre-deposit was required at the time of filing the first appeal on 12th April, 2025?\n(ii) After the order of the Appellate Authority dated 23rd July, 2025, how much pre-deposit is required for filing the second appeal before GSTAT?\n(iii) What happens to the pre-deposit already made earlier in respect of the deleted tax demand (₹ 35 lakhs) and penalty (₹ 34 lakhs)?\n(iv) Can the earlier pre deposit made be adjusted against the requirement for the second appeal, or must fresh deposit be made?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Pre-Deposit in GST Appeals\n\n| S No | Particulars |\n|---|---|\n| (i) | Pre-deposit at First Appeal (filed on 12th April, 2025): • Section 107(6) of the CGST Act requires: ❖ Full amount of admitted tax, interest, fine, fee, penalty; plus ❖ 10% of the disputed tax Maximum 20Cr ( 40 Cr in IGST) • Here, disputed tax = ₹ 100 lakhs. • Pre-deposit required = ₹ 10 lakhs (10% of 100 lakhs). |\n| (ii) | Pre-deposit at Second Appeal (to GSTAT after order dated 23rd July, 2025): • Section 112(8) requires: ❖ Full amount of admitted tax, interest, fine, fee, penalty; plus ❖ 10% of the disputed tax (in addition to the 10% already deposited). Maximum 20Cr ( 40 Cr in IGST) • After first appeal, disputed tax = ₹ 65 lakhs (since ₹ 35 lakhs deleted) • Pre-deposit required = ₹ 6.50 lakhs (10% of 65 lakhs) |\n| (iii) | Treatment of earlier pre-deposit on deleted demands: • Tax demand of ₹ 35 lakhs deleted: proportionate pre-deposit already made on this portion is refundable with interest under section 115 • Penalty of ₹ 34 lakhs deleted: since penalty is not subject to percentage pre-deposit, no pre-deposit would have been made. |\n| (iv) | Adjustment of earlier pre-deposit: • The law requires incremental deposit (10% at first stage, 10% at second stage). • The earlier deposit of ₹ 10 lakhs remains valid and counts towards total • Only the fresh deposit of ₹ 6.5 lakhs is required now for GSTAT appeal. • No duplication or re-deposit of the entire amount is necessary. The ₹ 10L already deposited at first appeal stage is not adjustable against the fresh ₹ 6.5L required for GSTAT. They operate under separate statutory provisions: |\n\nAlternate answers possibilities:\n(1) This is assumed that the tax amounts given here is combined amount of demand as per intra state transaction hence along with tax CGST/SGST not written .\nIf any student divide amount equally as CGST AND SGST then also award due credit like 5 lakh and 3.25 lakh each CGST+SGST for point (i) and (ii) respectively.\nIf students assumed that the amount of tax given here are CGST ONLY then the answer will NOT change and in that case along with 10 lakh and 6.50 lakh word CGST OR Each CGST+SGST can be written for point (i) and (ii)\nIf students assumed that the amount of tax given here are for Inter-State . (i e IGST) then also the answer will NOT change in that case along with 10 lakh and 6.50 lakh word IGST can be written for point (i) and (ii)\nSo In short, only two numerical answer possible.\n(1) 10 lakh and 6.50 lakh for point (i) and (ii) ignore the word CGST/SGST/IGST\n(2) 5 lakh and 3.25 lakh each under CGST+SGST for point (i) and (ii)",
+       "confidence": "medium",
+       "review": [
+        "Stem names 'GJ Enterprises' in facts and 'Beta Enterprises' in the order; transcribed as printed. Suggested answer includes alternate-answer guidance."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

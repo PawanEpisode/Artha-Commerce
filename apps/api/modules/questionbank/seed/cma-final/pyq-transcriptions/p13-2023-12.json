@@ -1,0 +1,663 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p13",
+ "term_code": "2023-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Page 1 carries a watermark overlay; text legible. Q.1 (xii)-(xv) share a case-study paragraph printed before (xii). Answer text taken from OCR of suggested-answer PDF with watermark noise lines removed; minor OCR typos (e.g. 'I crore' for ₹1 crore) may remain."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section-A (Compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct option: 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In terms of section 123(4), the amount of the dividend including interim dividend shall be deposited in a scheduled bank in a separate account within ______ days from the date of declaration of such dividend.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Five"
+        },
+        {
+         "key": "B",
+         "body_md": "Six"
+        },
+        {
+         "key": "C",
+         "body_md": "Seven"
+        },
+        {
+         "key": "D",
+         "body_md": "Ten"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Where a company changes the place of its registered office from the Jurisdiction of one Registrar to the Jurisdiction of another Registrar within the same state, such change is to be confirmed by ______ as on application made by a company.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Director"
+        },
+        {
+         "key": "B",
+         "body_md": "Managing Director"
+        },
+        {
+         "key": "C",
+         "body_md": "Regional Director"
+        },
+        {
+         "key": "D",
+         "body_md": "Deputy Director"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Consolidated financial statements shall be sent in not less than 21 days before the date of meeting, may be sent less than 21 days before, if shareholders with ______ voting rights.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "75%"
+        },
+        {
+         "key": "B",
+         "body_md": "80%"
+        },
+        {
+         "key": "C",
+         "body_md": "90%"
+        },
+        {
+         "key": "D",
+         "body_md": "95%"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The forcible taking of property by a Government Law official, Enforcement official from a person who is suspected of violating of law is known as",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Inspection"
+        },
+        {
+         "key": "B",
+         "body_md": "Investigation"
+        },
+        {
+         "key": "C",
+         "body_md": "Search"
+        },
+        {
+         "key": "D",
+         "body_md": "Seizure"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In which case the minimum contribution should not be less than 20% of the post issue capital?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "An initial public offer"
+        },
+        {
+         "key": "B",
+         "body_md": "Further public offer"
+        },
+        {
+         "key": "C",
+         "body_md": "A composite issue"
+        },
+        {
+         "key": "D",
+         "body_md": "Fresh public offer"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Banking Companies incorporated in India are obligated to transfer to the reserve fund a sum equivalent to not less than ______ of the profit each year, unless the amount in such fund together with the amount in the share premium account is more than or equal to its paid up capital.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "5%"
+        },
+        {
+         "key": "B",
+         "body_md": "10%"
+        },
+        {
+         "key": "C",
+         "body_md": "20%"
+        },
+        {
+         "key": "D",
+         "body_md": "25%"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under which principle of insurance a promise whereby the assured undertakes that some particular thing shall or shall not be done, or that some condition shall be fulfilled or affirms or negatives the existence of a particular state of facts?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Good faith"
+        },
+        {
+         "key": "B",
+         "body_md": "Warranty"
+        },
+        {
+         "key": "C",
+         "body_md": "Conditions"
+        },
+        {
+         "key": "D",
+         "body_md": "Indemnity"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Banks pay dividends after taking specific approval of",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The Reserve Bank of India"
+        },
+        {
+         "key": "B",
+         "body_md": "The Central Government"
+        },
+        {
+         "key": "C",
+         "body_md": "Board of Directors"
+        },
+        {
+         "key": "D",
+         "body_md": "Chairman of the meeting"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "It is a public-private partnership project to provide a single window, self sustainable e-Governance solution with regard to handling of grievances, land record maintenance and providing a mixture of essential services. This project is known as",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Bhomi Project in Karnataka"
+        },
+        {
+         "key": "B",
+         "body_md": "Lokvani Project in UP"
+        },
+        {
+         "key": "C",
+         "body_md": "E-Seva in Andhra Pradesh"
+        },
+        {
+         "key": "D",
+         "body_md": "E-Mitra Project in Rajasthan"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The quality of something which enables one to understand the truth easily, in the context of Corporate Governance, implies an accurate, adequate and timely disclosure of relevant information about the operating results. This principle of Corporate Governance is known as",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Accountability"
+        },
+        {
+         "key": "B",
+         "body_md": "Transparency"
+        },
+        {
+         "key": "C",
+         "body_md": "Independence"
+        },
+        {
+         "key": "D",
+         "body_md": "Fairness"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Abuse of dominant impedes for fair competition between firms, explains consumers and makes it difficult for other players to compete with the dominant undertaking on merit. It does not include",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "predatory pricing."
+        },
+        {
+         "key": "B",
+         "body_md": "creating barriers entry."
+        },
+        {
+         "key": "C",
+         "body_md": "agreement to fix price."
+        },
+        {
+         "key": "D",
+         "body_md": "imposing unfair conditions or price."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Question No. (xii to xv): PQR limited has on its Board four directors A, B, C and D. In addition, the Company has Mr. E as the managing director. The Company also has a full time company secretary Mr. F on its rolls. The financial statements of the company, i.e., Balance Sheet and Statement of Profit & Loss and the Board’s Report for the year ended 31st March, 2023 were authenticated by two of the directors, Mr. B and C under their signatures, referring to the provision of the Companies Act, 2013. Examine the validity of the authentication of the Balance Sheet and Statement of Profit & Loss and Board’s Report.\n\nIn case of one person company by—",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Three directors only"
+        },
+        {
+         "key": "B",
+         "body_md": "Two directors only"
+        },
+        {
+         "key": "C",
+         "body_md": "One director only"
+        },
+        {
+         "key": "D",
+         "body_md": "Four directors only"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Question No. (xii to xv): PQR limited has on its Board four directors A, B, C and D. In addition, the Company has Mr. E as the managing director. The Company also has a full time company secretary Mr. F on its rolls. The financial statements of the company, i.e., Balance Sheet and Statement of Profit & Loss and the Board’s Report for the year ended 31st March, 2023 were authenticated by two of the directors, Mr. B and C under their signatures, referring to the provision of the Companies Act, 2013. Examine the validity of the authentication of the Balance Sheet and Statement of Profit & Loss and Board’s Report.\n\nIn other case at least by",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The Chairman of the company"
+        },
+        {
+         "key": "B",
+         "body_md": "The Chief Financial Officer of the company wherever he is appointed."
+        },
+        {
+         "key": "C",
+         "body_md": "The Chief Account Officer if he is a director in the company."
+        },
+        {
+         "key": "D",
+         "body_md": "The Chartered Accountant of the company wherever he is appointed."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Question No. (xii to xv): PQR limited has on its Board four directors A, B, C and D. In addition, the Company has Mr. E as the managing director. The Company also has a full time company secretary Mr. F on its rolls. The financial statements of the company, i.e., Balance Sheet and Statement of Profit & Loss and the Board’s Report for the year ended 31st March, 2023 were authenticated by two of the directors, Mr. B and C under their signatures, referring to the provision of the Companies Act, 2013. Examine the validity of the authentication of the Balance Sheet and Statement of Profit & Loss and Board’s Report.\n\nIf there is no chairman of the board, the financial statement should have been signed by",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "any one director out of four directors A, B, C and D."
+        },
+        {
+         "key": "B",
+         "body_md": "Mr. E (the managing director)"
+        },
+        {
+         "key": "C",
+         "body_md": "Mr. F (the company secretary)"
+        },
+        {
+         "key": "D",
+         "body_md": "All of them"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Question No. (xii to xv): PQR limited has on its Board four directors A, B, C and D. In addition, the Company has Mr. E as the managing director. The Company also has a full time company secretary Mr. F on its rolls. The financial statements of the company, i.e., Balance Sheet and Statement of Profit & Loss and the Board’s Report for the year ended 31st March, 2023 were authenticated by two of the directors, Mr. B and C under their signatures, referring to the provision of the Companies Act, 2013. Examine the validity of the authentication of the Balance Sheet and Statement of Profit & Loss and Board’s Report.\n\nThe Board’s Report should have been signed by",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Auditor"
+        },
+        {
+         "key": "B",
+         "body_md": "any one director out of four directors A, B, C and D."
+        },
+        {
+         "key": "C",
+         "body_md": "Shareholder"
+        },
+        {
+         "key": "D",
+         "body_md": "Manager"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions out of seven questions given. Each questions carries 14 marks.",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Is their any provision for Prohibition on Acceptance of Deposits from Public exist in Companies Act, 2013? If so, analyze the provision.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Prohibition on Acceptance of Deposits from Public [Section 73 of Companies Act 2013]\n (1) No company can invite, accept or renew deposits under this Act from the public except in a manner\n provided under Chapter V provided that nothing in this Sub section shall apply to a banking company\n and non-banking financial company and to such other companies as the Central Government may,\n\n after consultation with the Reserve Bank of India, specify in this behalf.\n (2) A company may, with the mandate of a resolution in general meeting and subject to such rules as\n\n may be prescribed accept deposits from its members on such terms and conditions, including the\n provision of security, if any, or for the repayment of such deposits with interest, as may be agreed\n upon between the company and its members, subject to the fulfillment of the following conditions,\n namely\n (a) Issuance of a circular to its members including therein a statement showing the financial position of\n the company, the credit rating obtained, the total number of depositors and the amount due towards\n deposits in respect of any previous deposits accepted by the company and such other particulars in\n such form and in such manner as may be prescribed.\n (b) filing a copy of the circular along with such statement with the Registrar within thirty days before the\n date of issue of the circular\n (c) depositing on or before 30th April each year such sum which shall not be less than twenty percent of\n the amount of its deposits maturing during the following financial year, and kept in a scheduled bank\n in a separate bank account to be called as deposit repayment reserve account\n (d) Certifying that the company has not committed any default in the repayment of deposits accepted\n either before or after the commencement of this Act or payment of interest on such deposits, and\n where the default has occurred, the company made good the default and five years have elapsed since\n then.\n\n\f (e) Providing security, if any, for the due repayment of the amount of deposit or the interest thereon\n including the creation of such charge on the property or assets of the company.\n Provided that in case where a company does not secure the deposits or secures such deposits\n partially, then, the deposits shall be termed as 'unsecured deposits' and shall be so quoted in every\n circular, form, advertisement or in any document related to invitation or acceptance of deposits.\n (3) Every deposit accepted by a company under sub-section (2) shall be repaid with interest in\n accordance with the terms and conditions of the agreement referred to in that sub-section.\n (4) Where a company fails to repay the deposit or part thereof or any interest thereon under Sub- Section\n (3) the depositor concerned may apply to the Tribunal for an order directing the company to pay the\n sum due or for any loss or damage incurred by him as a result of such non-payment and for such\n other orders as the Tribunal may deem fit.\n (5) The deposit repayment reserve account referred to in clause (c) of Sub-Section (2) shall not be used\n by the company for any purpose other than repayment of deposits.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "All related party transactions shall require approval of the Audit Committee and the Audit Committee may make omnibus approval for related party transactions proposed to be entered into by the company subject to certain conditions. Elucidate that conditions to omnibus approval for related party transactions.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Omnibus approval for related party transactions on annual basis (Rule 6A)\nAll related party transactions shall require approval of the Audit Committee and the Audit Committee may\nmake omnibus approval for related party transactions proposed to be entered into by the company subject to\n\nthe following conditions, namely -\n  (1) The Audit Committee shall, after obtaining approval of the Board of Directors, specify the criteria for\n\n making the omnibus approval which shall include the following, namely:\n  (a) maximum value of the transactions, in aggregate, which can be allowed under the omnibus route in a\n year\n  (b) the maximum value per transaction which can be allowed.\n  (c) extent and manner of disclosures to be made to the Audit Committee at the time of seeking omnibus\n approval\n\n  (d) review, at such intervals as the Audit Committee may deem fit, related party transaction entered into\n by the company pursuant to each of the omnibus approval made.\n  (e) transactions which cannot be subject to the omnibus approval by the Audit Committee.\n\n  (2) The Audit Committee shall consider the following factors while specifying the criteria for making\n omnibus approval, namely:\n\n  (a) repetitiveness of the transactions (in past or in future).\n  (b) justification for the need of omnibus approval.\n  (3) The Audit Committee shall satisfy itself on the need for omnibus approval for transactions of\n repetitive nature and that such approval is in the interest of the company.\n  (4) The omnibus approval shall contain or indicate the following:\n  (a) name of the related parties.\n  (b) nature and duration of the transaction.\n  (c) maximum amount of transaction that can be entered into.\n  (d) the indicative base price or current contracted price and the formula for variation in the price, if any,\n and\n  (e) any other information relevant or important for the Audit Committee to take a decision on the\n proposed transaction:\n Provided that where the need for related party transactions cannot be foreseen and aforesaid details\n are not available, the audit committee may make omnibus approval for such transactions subject to\n their value not exceeding I crore per transaction.\n  (5) Omnibus approval shall be valid for a period not exceeding one financial year and shall require fresh\n approval after the expiry of such financial year.\n\n\f (6) Omnibus approval shall not be made for transactions in respect of selling or disposing of the\n undertaking of the company.\n (7) Any other conditions as the Audit Committee may deem fit.\n It is to be noted that the proviso to the Section 188 provides that a company, whose paid-up capital is more\n than Rupees Ten crore or is proposed to enter into transactions exceeding such sums as prescribed under\n Rule 15 of the Companies (Meetings of Board and its Powers) Rules 2014, cannot enter into the\n transactions, except with the previous approval of shareholders by way of resolution The transactions, as\n prescribed under Rule 15(3), which require prior approval of Shareholders.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Section 180 of the Companies Act, 2013 provides certain restrictions on powers of Board of Directors. List out those restrictions.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Restrictions on Powers of Board (Section 180 of Companies Act 2013)\nSection 180 of the Act provides for restrictions on powers of Board However, this section shall not apply to\nprivate companies vide Notification No. GSR 46(E) dated 05 June, 2015\n (a) The Board of Directors of a company shall exercise the following powers only with the consent of\n the company by a special resolution, namely\n (1) To sell, lease or otherwise dispose of the whole or substantially the whole of the undertaking of the\n company or where the company owns more than one undertaking of the whole or substantially the\n whole of any of such undertakings substantially the whole of the undertaking shall mean Twenty per\n\n cent or more of the value of the undertaking as per balance sheet of the preceding financial year.\n Here the 'Undertaking' means a unit of business in which the investment of the company exceeds\n\n twenty percent of its net worth as per the audited balance sheet of the preceding financial year or an\n undertaking which generates twenty per cent of the total income of the company during the previous\n financial year.\n (2) To invest otherwise in trust securities the amount of compensation received by it as a result of any\n merger or amalgamation,\n (3) To borrow money, where the money to be borrowed, together with the money already borrowed will\n\n exceed aggregate of its paid-up share capital and free reserves and security premium, apart from\n temporary loans obtained from the company's bankers in the ordinary course of business, The\n acceptance by a banking company, in the ordinary course of its business, of deposits of money from\n\n the public, repayable on demand or otherwise, and withdrawable by cheque, draft, order or otherwise,\n shall not be deemed to be a borrowing of monies by the banking company within the meaning of this\n\n clause. \"Temporary loans' means loans repayable on demand or within six months from the date of\n the loan such as short term, cash credit arrangements, the discounting of bills and the issue of other\n short term loans of a seasonal character, but does not include loans raised for the purpose of financial\n expenditure of a capital nature,\n Note: For above mater, E-Form MGT - 14 is required to be filed under Section 117(3) (e)\n (4) To remit, or give time for the repayment of, any debt due from a director.\n Note Every Special Resolution is required to be filed in Form No.MGT-14 as per Section 117(3) (a)\n (b) Every special resolution in relation to borrowing shall specify the total amount up to which monies\n may be borrowed by the Board of Directors.\n (c) No debt incurred by the company in excess of the limit imposed by above point (3) shall be valid or\n effectual, unless the lender proves that he advanced the loan in good faith and without knowledge\n that the limit imposed by that clause had been exceeded.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Briefly narrate the provisions of Section 135 of the Companies Act, 2013 relating to minimum contribution w.r.t Corporate Social Responsibilities.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The company shall give preference to the local area and areas around it where it operates, for\n spending the amount earmarked for CSR activities.\n (c) If the company fails to spend such an amount, the Board shall, in its report, specify the reasons for\n not spending the amount.\n (d) Companies may build CSR capacities of their own personnel as well as those of their implementing\n agencies through Institutions with established track records of at least three financial years. However,\n such expenditure shall not exceed five percent of total CSR expenditure of the company in one\n financial year.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The Board of Directors of PQR Limited met thrice in the year 2022 and 4th meeting though called but could not be held for want of quorum. Examine with reference to the relevant provisions of the Companies Act, 2013, whether any provision of the Act has been contravened.",
+       "options": [],
+       "correct": null,
+       "answer_md": "In terms of section 173(1) of the Companies Act, 2013, a company must hold a minimum number of four\nmeetings of its Board of directors every year in such a manner that not more than 120 days shall elapse\nbetween two consecutive meetings of the Board.\nThe proviso to this subsection provides that the Central Government may by notification, direct that these\nprovisions will not apply in relation to any class or description of companies or may apply subject to such\nexceptions, modifications or conditions as may be specified in the notification As per section 174(4) of the\nAct, if a meeting of the Board could not be held for want of quorum then, unless the articles otherwise\nprovide the meeting shall automatically stand adjourned till the same day in the next week, at the same time\nand place, or if that day is a National Holiday till the next succeeding day which is not a national holiday, at\n\nthe same time and place.\nIf there is no Quorum at the adjourned Meeting also, the Meeting shall stand cancelled. An adjourned\nMeeting being a continuation of the original Meeting, the interval period in such a case, shall be counted\nfrom the date of the original Meeting Thus, in case of an adjourned Meeting, the gap of one hundred and\ntwenty days for the purpose of fixing up the date of the next Meeting or for any other purpose should be\ncounted from the date of the original Meeting In this case, the Board meeting of PQR limited was held 3\ntimes and for the 4th time the meeting was called but could not be held for want of quorum.\nHence, as per the provisions of the Companies Act, 2013 the Company (PQR) has violated the provisions\n\nwith respect to convening the Board Meetings.\nBut if the 4th Board meeting was adjourned due to want of quorum and the adjourned meeting was duly held\nwithin the stipulated time, then the company has not contravened the provisions of the Act.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "KFR Limited was registered as a public company. There are 230 members in the company as noted below:\n(i) Directors and their relatives = 50\n(ii) Employees = 15\n(iii) Ex-employees (Shares were allotted when they were employees) = 10\n(iv) 5 couples holding shares jointly in the name of husband and wife (5×2)=10\n(v) Others = 145\nThe Board of Directors of the company proposes to convert it into a private company. Advise whether reduction in the number of members is necessary.",
+       "options": [],
+       "correct": null,
+       "answer_md": "According to section 2(68) of the Companies Act, 2013, \"Private company\" means a company having a\n\nminimum paid-up share capital as may be prescribed, and which by its articles, except in case of One Person\nCompany, limits the number of its members to two hundred. However, where two or more persons hold one\nor more shares in a company jointly, they shall, for the purposes of this clause, be treated as a single member\nIt is further provided that –\n  (a) persons who are in the employment of the company, and\n  (b) persons who, having been formerly in the employment of the company, were members of the\n company while in that employment and have continued to be members after the employment ceased,\n shall not be included in the number of members.\nIn the instant case, KFR Limited may be converted into a private company only if the total members of the\ncompany are limited to 200 Total Number of members\n I. Directors and their relatives 50\n II. 5 Couples (5x1) 5\n  III. Others 145\n Total 200\nTherefore, there is no need for reduction in the number of members since the existing number of members is\n200 which does not exceed the maximum limit of 200.",
+       "confidence": "medium",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "How far the acts of the director will be invalid if his appointment is not valid?",
+       "options": [],
+       "correct": null,
+       "answer_md": "The provisions relating to validity of acts of directors are contained in section 176.\nThe provisions of section 176 are discussed below in detail:\nSection 176 seeks to give protection to the company and third parties where certain acts are done by a\ndirector in good faith and without notice that these are done wrongly or illegally Thus, section 176 validates\nthe bona fide acts of de facto directors. These provisions may be explained as follows:\n  1. Acts of a director – Validated\n  No act done by a person as a director shall be deemed to be invalid, notwithstanding that it was\n  subsequently noticed that -\n  (a) his appointment was invalid by reason of any defect or disqualification; or\n  (b) his appointment was terminated by virtue of any provision contained in the Act or in the Articles of\n the company.\n  2. Acts of managing director - Not validated\n  Acts done by a director in his capacity as managing director are not validated under section 176.\n  Accordingly, where a managing director ceased to hold his office, all his subsequent acts were held to be\n  invalid. It was not an irregular exercise of power, but exercise of power by a person who had no authority\n  at all [Varkey Souriarv Keraleeya Banking Co. Ltd. AIR 1957 Ker 97).\n  3. Acts of a director - Not validated in certain cases\n\n  In the following cases, the acts of a director shall not be valid:\n  (a) where his appointment is illegal or there is no appointment at all;\n  (b) If an appointment has been shown to the company as invalid or terminated, where such defect comes\n into the knowledge of the company, all subsequent acts done by such a director shall be invalid.\n  (c) Where the acts of a director are ultra vires the Companies act 2013.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "In a scheme of reconstruction by a multinational company listed in India, the company wanted the minority shareholders to get out of the company by selling their shares back to the promoters at a price determined by the promoters. The minority shareholders were not given a choice whether they wanted to tender their shares or not. In the meeting, there were six non-promoter shareholders who voted against the scheme, but Chairman declared that the motion was carried with an overwhelming majority of more than 90% shareholding. However, minority shareholders contended that they had a right to reject the offer. Will they succeed?",
+       "options": [],
+       "correct": null,
+       "answer_md": "In the scheme of reconstruction by a Multinational Company listed in India, the company wanted to acquire\n\nthe minority shareholders by selling their shares to the promoters at a price determined by the promoters,\nAs per Section 236(1) of the Companies Act, 2013 (the Act), in the event of an acquirer, or a person acting\nin concert with such acquirer, becoming registered holder of ninety per cent or more of the issued equity\n\nshare capital of a company, or in the event of any person or group of persons becoming ninety per cent.\nmajority or holding ninety per cent of the Issued equity share capital of a company, by virtue of an\n\namalgamation, share exchange, conversion of securities or for any other reason, such acquirer, person or\ngroup of persons, as the case may be, shall notify the company of their intention to buy the remaining equity\nshares.\nAccording to Section 236(2) of the Act, the acquirer, person or group of persons, shall offer to the minority\nshareholders of the company for buying the equity shares held by such shareholders at a determined price on\nthe basis of valuation by a Registered Valuer.\n The minority shareholders of the Company may offer to the majority shareholders to purchase the minority\nequity shareholding of the Company at the determined price as above.\nIn the given case, the minority shareholders were not given a choice whether they wanted to tender their\nshares or not. Also, 6 minority shareholders were dissenting from the scheme. Chairman declared that such a\nscheme was passed by a majority of more than 90% shareholding. Further the price of the shares was\ndetermined by the Promoters and not by a Registered Valuer.\nAccordingly, in the given instance, the said procedure of acquisition of shares of minority shareholders is not\nin compliance with the procedure given in Section 236 of the Act.\nFurther, as per the Section 236(9) of the Act, when a shareholder or the majority equity shareholder fails to\nacquire full purchase of the shares of the minority equity shareholders, then, the provisions of this section\nshall continue to apply to the residual minority equity shareholders.\n\n\fTherefore, as per the above provisions of the Act, minority shareholders will succeed in rejecting the said\noffer of purchasing minority shareholding in the Company.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Prepare a statement of the Features of Corporate Governance.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Features of Corporate Governance:\nLet us discuss a few features or elements of Corporate governance generally accepted by the industry.\n 1. A proper tool for transparency: disclosing the status of the affairs company at every step to every\n stakeholder is required to maintain transparency. The concept goes against the theory of suppression\n of material facts by the company to its stakeholders, may be or may not be, for the benefit of the\n shareholders only\n 2. Prudent and participative management: The management should use its full intelligence and\n knowledge for the benefit of the stakeholders. Hence, it may be taken that management is prudent\n and wise in its decision making\n 3. Enhancing value of the enterprise: Any company should grow from year to year, if it wants to\n satisfy its stakeholders. Value may be monetary or reputation, image, goodwill etc. Better governing\n companies will have better reputation, trust of the stakeholders and there will be enhancement of\n business, leading to more profit and better enterprise valuation.\n 4. Accountability: Success and accountability has to go together. Successful companies will make\n themselves accountable to the stakeholders. There are many combinations of relationships, ie. with\n\n the customer, creditors, shareholders, employees, etc. The company cannot say it is accountable to\n one stakeholder only It has to be accountable to all stakeholders.\n 5.\n Innovation: Doing something new or doing the same thing in a novel manner is the essence of\n growth and sustainability of an enterprise. The governance structure should encourage new things in\n the company to enhance the value of the company.\n 6. Professionalism and specialisation: The basics of professionalism is that the job shall not be\n compromised at any level and there should not be conflict of interest of the directors and senior\n\n managers between his duty and personal gain. It also takes into account the competence of the person\n doing job having obviously adequate domain knowledge either by academic qualification or track\n record of experience\n 7. Stakeholder recognition: All stakeholders should be recognized and respected. The Company\n\n should believe that all these stakeholders have a contribution in making the company work and grow.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The business intelligence has some process of works. Elucidate that process of works.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The process works of the business intelligence:\nA business intelligence architecture includes more than just Bl software Business intelligence data is\ntypically stored in a data warehouse built for an entire organisation or in smaller data marts that hold subsets\nof business information for individual departments and business units, often with ties to an enterprise data\nwarehouse. Bl data can include historical information and real-time data gathered from source systems as it's\ngenerated, enabling Bl tools to support both strategic and tactical decision-making processes Before it's used\nin Bl applications, raw data from different source systems generally must be integrated, consolidated and\ncleansed using data integration and data quality management tools to ensure that Bl teams and business users\nare analysing accurate and consistent information. Steps in Bl can be\n (a) data preparation, in which data sets are organised and modelled for analysis,\n (b) analytical querying of the prepared data,\n (c) distribution of key performance indicators (KPIs) and other findings to business users, and\n (d) use of the information to help influence and drive business decisions Initially, Bl tools were primarily\n used by BI and IT professionals. However, now, business analysts, executives and workers are using\n business intelligence platforms themselves, thanks to the development of self-service BI and data\n\n discovery tools. Self-service business intelligence environments enable business users to query Bl\n data, create data visualisations and design dashboards on their own.\n Bl programs often incorporate forms of advanced analytics, such as data mining, predictive analytics,\n text mining, statistical analysis and big data analytics. A common example is predictive modelling\n that enables what-if analysis of different business scenarios. In most cases, though, advanced\n analytics projects are conducted by separate teams of data scientists, statisticians, predictive\n modellers and other skilled analytics professionals, while BI teams oversee more straightforward\n querying and analysis of business data.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "An issuer cannot make a public issue or rights issue of equity shares and convertible securities under certain conditions. Explain that condition for a public issue or rights issue of equity shares and convertible securities.",
+       "options": [],
+       "correct": null,
+       "answer_md": "An issuer cannot make a public issue or rights issue of equity shares and convertible securities under the\nfollowing conditions:\n  (a) If the issuer, any of its promoters, promoter group or directors or selling shareholders are debarred\n from accessing the capital market by SEBI, or of any other company which is debarred from\n accessing the capital market under the order or directions made by SEBI.\n  (b) Unless an application is made to one or more stock exchanges for \"in principle\" approval of listing of\n equity shares and convertible securities on such stock exchanges and has chosen one of them as a\n designated stock exchange. In case of an initial public offer, the issuer should make an application for\n\n listing in at least one recognised stock exchange having nationwide trading terminals\n  (c) Unless it has entered into an agreement with a depository for dematerialisation of equity shares and\n\n convertible securities already issued or proposed to be issued.\n  (d) Unless all existing partly paid-up equity shares of the issuer have either been fully paid up or\n forfeited.\n  (e) Unless firm arrangements of finance through verifiable means towards 75% of the stated means of\n finance, excluding the amount to be raised through the proposed public issue or rights issue or\n through existing identifiable internal accruals, have been made\n\n  (f) Promoter's holding is in dematerialised form prior to filing of offer document.\n  (g) The amount for general corporate purposes as mentioned in the objects of the issue in the draft offer\n document shall not exceed 25% of the amount raised by the issuer.\n\n  (h) A public use of equity securities, if the issuer or any of its promoters or directors is a willful\n defaulter, or\n\n  (i) Issue shall be open for at least 3 days and not more than 10 days\n  (j) Minimum subscription shall be 90% of the issuer size failing which the application money has to be\n refunded within 15 days of closure of the issue",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Enumerate the Penalty for offences in relation to furnishing of information under the Competition Act, 2002.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Penalty for offences in relation to furnishing of information\nWithout prejudice to the provisions of section 44 of the Competition Act 2002, if a person, who furnishes or\nis required to furnish under this Act any particulars, documents or any information,\n  (a) makes any statement or furnishes any document which he knows or has reason to believe to be false\n in any material particular, or\n  (b) omits to state any material fact knowing it to be material, or\n  (c) Willfully alters, suppresses or destroys any document which is required to be furnished as aforesaid,\n such person shall be punishable with fine which may extend to 1 crore as may be determined by the\n Commission.\n\nThe Commission may, if it is satisfied, impose a lesser penalty that any person has made a full and true\ndisclosure in respect of the alleged violations, a lesser penalty. However, a lesser penalty shall not be\n\n\fimposed by the Commission in cases where the report of investigation directed under section 26 has been\nreceived before making of such disclosure.\nLesser penalty shall not be imposed by the Commission if the person making the disclosure does not\ncontinue to cooperate with the Commission till the completion of the proceedings before the Commission.\nThe Commission may, if it is satisfied that such producer, seller, distributor, trader or service provider\nincluded in the cartel had in the course of proceedings,\n  (a) not complied with the condition on which the lesser penalty was imposed by the Commission, or\n  (b) had given false evidence, or\n  (c) the disclosure made is not vital, and thereupon such producer, seller, distributor, trader or service\n provider may be tried for the offence with respect to which the lesser penalty was imposed and shall\n also be liable to the imposition of penalty to which such person has been liable, had lesser penalty not\n been imposed.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Discuss Permitted Investments by persons resident outside India.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Permitted Investments by persons resident outside India\nAny investment made by a person resident outside India shall be subject to the entry routes, sectoral caps or\nthe investment limits, may make investment as stated hereinafter For details, one has to see the relevant\nannexure, out of various annexures which relate to each kind of investment.\n\n  (i) Subscribe/ purchase/ sale of capital instruments of an Indian company is permitted as per the\n directions laid down in Annex 1\n\n  (ii) Purchase/ sale of capital instruments of a listed Indian company on a recognised stock exchange in\n India by Foreign Portfolio Investors is permitted as per the directions laid down in Annex 2\n  (iii) Purchase/ sale of Capital Instruments of a listed Indian company on a recognised stock exchange in\n India by Non-Resident Indian (NRI) or Overseas Citizen of India (OCI) on repatriation basis is\n permitted as per the directions laid down in Annex 3\n  (iv) Purchase/ sale of Capital Instruments of an Indian company or Units or contribution to capital of a\n\n LLP or a firm or a proprietary concern by Non-Resident Indian (NRI) or Overseas Citizen of India\n (OCI) on a Non-Repatriation basis is permitted as per the directions laid down in Annex 4\n  (v) Purchase/ sale of securities other than capital instruments by a person resident outside India is\n\n permitted as per the directions laid down in Annex 5\n  (vi) Investment in a Limited Liability Partnership (LLP) is permitted as per the directions laid down in\n\n Annex 6\n  (vii) Investment by a Foreign Venture Capital Investor (FVCI) is permitted as per the directions laid down\n in Annex 7\n  (viii) Investment in an Investment Vehicle is permitted as per the directions laid down in Annex 8.\n  (ix) Issue/ transfer of eligible instruments to a foreign depository for the purpose of issuance of\n Depository receipts by eligible person(s) is permitted as per the directions laid down in Annex 9.\n  (x) Purchase/ sale of Indian Depository Receipts (IDRs) issued by Companies Resident outside India is\n permitted as per directions laid down in Annex 10.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "An asset reconstruction company may, for the purposes of asset reconstruction, provide for any one or more of the measures. Elucidate that measures to be taken for assets reconstruction.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Measures for assets reconstruction (Section 9 of SARFAESI Act, 2002)\nAn asset reconstruction company may for the purposes of asset reconstruction, provide for any one or more\nof the following measures, namely\n (a) the proper management of the business of the borrower, by change in or takeover of, the management\n of the business of the borrower,\n (b) the sale or lease of a part or whole of the business of the borrower,\n (c) rescheduling of payment of debts payable by the borrower,\n (d) Enforcement of security interest in accordance with the provisions of this Act.\n\f (e) settlement of dues payable by the borrower,\n (f) taking possession of secured assets in accordance with the provisions of this Act,\n (g) Conversion of any portion of debt into shares of a borrower company Provided that conversion of\n any part of debt into shares of a borrower company shall be deemed always to have been valid, as if\n the provisions of this clause were in force at all material times.\nThe Reserve bank for this purpose shall determine the policy and issue necessary directions including the\ndirections for regulation of management of the business of the borrower and fees to be charged. The asset\nreconstruction company shall take measures as per the directions of RBI.\n\n _________________________",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

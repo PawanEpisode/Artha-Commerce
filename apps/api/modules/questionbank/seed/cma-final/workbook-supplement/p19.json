@@ -1,0 +1,14 @@
+{
+ "schema": "artha.qbsupplement.v1",
+ "paper": "p19",
+ "merge": [
+  {
+   "into": "workbook:cma-final:p19:ch7:q14",
+   "from": "workbook:cma-final:p19:ch7:q15",
+   "note": "Owner decision: Illustration 15 is the continuation of Illustration 14 (same company, same month) and the printed answer solves both, so they are one item: stem = both illustrations, solution = the ITC table and the net GST liability.",
+   "printed_issues": [
+    "Illustration 14 has no requirement line printed; the printed answer computes ITC and net GST payable"
+   ]
+  }
+ ]
+}

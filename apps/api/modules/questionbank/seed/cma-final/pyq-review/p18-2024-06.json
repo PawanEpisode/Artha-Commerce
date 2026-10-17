@@ -1,0 +1,74 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p18-2024-06",
+ "items": {
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options compared with the print; stored key D equals printed key (vii) D.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says 'DAWN's identifiable net assets' although the acquiree is NIGHT Ltd."
+   ]
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem including the cost table and all four requirements, and the printed four-part answer, match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer uses '₹ 16 lakh', '₹ 20 lakh' and '₹ 197.08 lakh' where crore is meant.",
+    "Dates '31.04.2024' printed in the stem and answer.",
+    "Impairment loss 14.92 and final carrying amount 197.08 as printed; answer headings say up to 31.04.2024."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; both printed alternative answer sets are present.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only final figures, in two alternative sets, with no working."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Balance sheet, notes, scheme items and the printed journal entries (including the final Capital Reduction entry of 13,37,500) match the print line by line.",
+   "fixes": [],
+   "printed_issues": [
+    "Journal gives no narration or dates, as printed."
+   ]
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem tables and requirements (a)-(d) and the printed answer including the journal entry match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Part (b) says gain on previously held interest is ₹ 150 crore but the journal credits ₹ 250 crore as gain and Retained Earnings 50.",
+    "Part (a) opening sentence reads 'The date of which the acquirer obtains control'."
+   ]
+  },
+  "6": {
+   "verdict": "approve",
+   "reason": "Balance sheet, additional information (i)-(vii) and the printed consolidated balance sheet match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Item (ii) refers to 01.04.2020 as the date for fair values.",
+    "Suggested answer prints only the final balance sheet; workings not printed."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem data table and the printed three-line EVA answer match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only final figures, no working."
+   ]
+  },
+  "8(c)": {
+   "verdict": "approve",
+   "reason": "Stem and the printed final figures (6,500; 7,700; 1,180; 360) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only final figures, no working."
+   ]
+  }
+ }
+}

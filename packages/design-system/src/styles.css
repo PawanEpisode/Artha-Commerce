@@ -693,9 +693,13 @@
     background: none;
     padding: 0;
   }
+  /* A wide table (cash-flow years, allocation grids) scrolls inside itself instead of widening the page. */
   .prose-reading :where(table) {
     border-collapse: collapse;
     font-size: 0.95em;
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
   }
   .prose-reading :where(th, td) {
     border: 1px solid var(--border);

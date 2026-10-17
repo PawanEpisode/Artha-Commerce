@@ -1,0 +1,27 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p14-2024-06",
+ "items": {
+  "4(b)": {
+   "stem_md": "MS AYARA, an investor is trying to analyse the performance of the four Funds. The relevant data about the Fund is given as under:\n\n| Fund | Return (%) | Variance $(\\%)^2$ | Unsystematic Risk $(\\%)^2$ |\n|---|---|---|---|\n| RE Fund | 16 | 215 | 21 |\n| HE Fund | 21 | 304 | 18 |\n| AE Fund | 16 | 104 | 16 |\n| TE Fund | 14 | 126 | 17 |\n\nThe variance on the returns from the Market Portfolio is $360(\\%)^2$. The risk-free rate of return is 7%.\n[Given: $\\beta = \\sqrt{\\dfrac{\\text{Systematic Risk}}{\\text{Market Risk (Variance)}}}$]\n\nRequired:\nAnalyse and assess the Rewards to Volatility Ratio and Rank these Portfolios using\n(i) Sharpe Measure and\n(ii) Treynor's Method.\n(Calculation upto 3 decimal points)",
+   "answer_md": "(i) Reward to Variability (Sharpe Ratio):\n\n| Mutual Fund | $R_j$ | $R_f$ | $R_j - R_f$ | $\\sigma_i$ | Reward to Variability | Ranking |\n|---|---|---|---|---|---|---|\n| RE Fund | 16 | 7 | 9 | 14.663 | 0.614 | 4 |\n| HE Fund | 21 | 7 | 14 | 17.436 | 0.803 | 2 |\n| AE Fund | 16 | 7 | 9 | 10.198 | 0.883 | 1 |\n| TE Fund | 14 | 7 | 7 | 11.225 | 0.624 | 3 |\n\n(ii) Reward to Volatility (Treynor Ratio):\n\n| Mutual Fund | $R_j$ | $R_f$ | $R_j - R_f$ | $\\beta_i$ | Reward to Volatility | Ranking |\n|---|---|---|---|---|---|---|\n| RE Fund | 16 | 7 | 9 | 0.734 | 12.262 | 4 |\n| HE Fund | 21 | 7 | 14 | 0.891 | 15.713 | 2 |\n| AE Fund | 16 | 7 | 9 | 0.494 | 18.219 | 1 |\n| TE Fund | 14 | 7 | 7 | 0.550 | 12.727 | 3 |",
+   "confidence": "high",
+   "review": [
+    "Table headings Rj, Rf, (Rj - Rf), sigma_i, beta_i typeset as printed; (%)^2 units typeset."
+   ]
+  },
+  "5(b)": {
+   "confidence": "high",
+   "review": [
+    "Stem and answer are plain text/tables matching the print; no typesetting needed. Alternative answer (-25%) kept as printed."
+   ]
+  },
+  "6(b)": {
+   "stem_md": "The information pertaining to the Shares of MACHON Ltd. is available below :\n\n| Particular | Value |\n|---|---|\n| Current Market Price (₹) | 432 |\n| Strike Price (₹) | 462 |\n| Maximum Price (₹) expected in next 3 months' time | 537 |\n| Minimum Price (₹) expected in next 3 months' time | 390 |\n| Continuously Compounded Rate of Interest (p.a.) (%) | 9% |\n| $e^{rt}$ | 1.0228 |\n\nRequired:\n(i) Assess the 3 months call option by using Binomial Method and Risk Neutral Method.\n(ii) Justify that the Calculated value under both the models are same.",
+   "confidence": "high",
+   "review": [
+    "Only e^rt in the data table needed typesetting; answer is plain text matching the print."
+   ]
+  }
+ }
+}

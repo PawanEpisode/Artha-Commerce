@@ -1,0 +1,81 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p20a-2023-12",
+ "items": {
+  "1(vii)": {
+   "verdict": "hold",
+   "reason": "The suggested answers print '(A/B/C/D) Any' for 1(vii), so no single key exists and the part cannot be keyed; no answer text is printed.",
+   "fixes": [
+    "Removed the duplicated option list from the stem (the options appeared twice)"
+   ],
+   "stem_md": "The demand curve for X is given by the equation: $P = 24 - \\frac{1}{2}\\sqrt{q}$ where P & q denote price and quantity respectively. Find the price point elasticity for P = ₹ 20.\n\n(A) 64\n(B) 48\n(C) 72\n(D) 60",
+   "printed_issues": [
+    "Suggested answer prints '(A/B/C/D) Any' instead of a single key"
+   ]
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Answer prints only the final profit.",
+   "fixes": [],
+   "printed_issues": [
+    "Question gives no cost function although the suggested answer assumes c = 3000 + 50Q"
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Both statements and the DuPont table agree digit for digit.",
+   "fixes": [
+    "converted pipe-less tables to standard Markdown tables"
+   ],
+   "printed_issues": [
+    "Suggested answer refers to 'Metcalf Ltd.' and to years 2022-23 / 2023-24 whereas the question concerns Surya Textiles, FY 2020-2023"
+   ],
+   "stem_md": "The following financial statements have been extracted from the Annual Report 2022-23 of SURYA TEXTILES Ltd. a largest textile company, having a strong presence in over 80 countries in the world.\n\nThe company wants to keep its shareholders happy by giving them a fair rate of return. The company is using return on equity (ROE) as one of the metrics of performance evaluation for determining the return for shareholders. Due to intense competition, in recent years, its ROE is under pressure and to maintain the level of ROE, the company is to change its business Model-in that, it is varying its margin, assets utilization and leverage.\n\nYou are required to:\n(i) **Carry out** the DuPont Analysis considering the financial parameters given below and show how the return on equity (ROE) of the company is changing due to change in its Margins, Assets utilization and Leverage over the period of four years.\n(ii) **Give** your comments on the trend of the said parameters.\n\nStatement of Profit & Loss for year ended March 31 (Amount in ₹ Crore)\n\n|  | 2020 | 2021 | 2022 | 2023 |\n|---|---|---|---|---|\n| Total Revenue | 7998 | 8992 | 9976 | 11804 |\n| Profit before tax | 1855 | 1612 | 1990 | 2817 |\n| Profit after tax | 1514 | 1345 | 1574 | 2110 |\n| Dividend | 225 | 315 | 225 | 225 |\n| Tax on dividend | 37 | 51 | 36 | 38 |\n| Retained earning | 1252 | 979 | 1313 | 1847 |\n\nBalance Sheet (Amount in ₹ Crore)\n\n|  |  | 2020 | 2021 | 2022 | 2023 |\n|---|---|---|---|---|---|\n|  | **Equity and Liability** |  |  |  |  |\n| 1 | Shareholders' fund: Share capital | 225 | 225 | 225 | 225 |\n|  | Reserve and Surplus | 8055 | 9034 | 10347 | 12194 |\n| 2 | Non-current liabilities: Loan funds | 7 | 617 | 17 | 1352 |\n| 3 | Current liabilities Deferred tax | 251 | 296 | 324 | 392 |\n|  | **Total** | 8538 | 10172 | 10913 | 14163 |\n|  | **Assets** |  |  |  |  |\n| 1 | Non-current assets: Fixed assets | 3774 | 4369 | 4685 | 5276 |\n| 2 | Non-current Investment | 371 | 799 | 1449 | 3642 |\n| 3 | Investments-Current Assets | 4393 | 5004 | 4779 | 5245 |\n|  | **Total** | 8538 | 10172 | 10913 | 14163 |"
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. 'Cash at Bank' confirmed in the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints two Z values: 2.35978 Or 2.36078"
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says the value of Rs.30 is 'calculated above' for part (ii) while stating the constant growth value Rs.21.52 as the comparison"
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer text mentions 'EV/EBITDA' while the question asks for EV/EBIT",
+    "Company-C debt is printed as '-'"
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints 'parameters holding percentage' for promoters' holding percentage"
+   ]
+  }
+ }
+}

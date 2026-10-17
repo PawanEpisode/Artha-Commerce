@@ -6,6 +6,7 @@ from modules.questionbank.domain.content import (
     lint_explanation,
     lint_option,
     lint_stem,
+    math_to_text,
 )
 
 
@@ -62,3 +63,18 @@ def test_compute_content_hash_deterministic():
     # Different marks -> different hash
     h3 = compute_content_hash(stem, opts, None, None, Decimal("2.0"))
     assert h1 != h3
+
+
+def test_math_to_text_is_readable():
+    md = r"$$\text{Coefficient of variation} = \frac{\text{Standard deviation}}{\text{Mean}} = \frac{10.95}{75}$$"
+    assert math_to_text(md).strip() == "Coefficient of variation = Standard deviation/Mean = 10.95/75"
+    assert (
+        " ".join(math_to_text(r"cost $\text{₹ }9{,}71{,}800 \times 2^{3}$ only").split())
+        == "cost ₹ 9,71,800 × 2^3 only"
+    )
+
+
+def test_stem_head_shows_words_not_tex():
+    head, search = extract_search_text(r"Find $\sqrt{120}$ given $\sigma = 10.95$", None, "")
+    assert head == "Find √(120) given σ = 10.95"
+    assert "σ" in search

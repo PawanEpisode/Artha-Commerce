@@ -1,0 +1,26 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "paper": "p18",
+ "items": {
+  "mcq:cma-final:p18:q002": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p18:q003": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p18:q080": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p18:q087": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p18:q095": {
+   "confidence": "high",
+   "review": []
+  }
+ }
+}

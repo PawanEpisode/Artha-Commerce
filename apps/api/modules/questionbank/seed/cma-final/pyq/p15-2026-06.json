@@ -1,0 +1,1036 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "15",
+ "source_file": "pyq-transcriptions/p15-2026-06.json",
+ "paper_review": [
+  "Page 1 instructions: figures in margin indicate full marks; assumptions may be made; all workings must form part of the relevant answer.",
+  "Suggested answers published by ICMAI for June 2026 were added (answer text typeset from the printed pages)."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p15:2026-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "direct-tax-laws-and-international-taxation",
+  "term_code": "2026-06",
+  "title": "CMA Final June 2026: Direct Tax Laws and International Taxation (Paper 15)",
+  "paper_code": "P15",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct alternative from the four alternatives given: 2×15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Ganesh, a resident individual (age 42) has a total income of ₹ 3,50,000 comprising of salary income and interest from bank deposits for the financial year 2025-26. During the same year he incurred an expenditure of ₹ 1,40,000 each, on himself and his wife, for a travel to Singapore. Which of the following statements is correct assuming Ganesh has not opted out of default tax regime for the A.Y. 2026-27?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "He is not required to file the return of income for the A.Y. 2026-27 since his total income does not exceed the basic exemption limit.",
+      "is_correct": false
+     },
+     {
+      "body_md": "He is not required to file the return of income for the A.Y. 2026-27 since his expenses on foreign travel does not exceed ₹ 2 lakhs.",
+      "is_correct": false
+     },
+     {
+      "body_md": "He is required to file the return of income for the A.Y. 2026-27 since his aggregate expenses on foreign travel exceeded ₹ 2 lakhs.",
+      "is_correct": true
+     },
+     {
+      "body_md": "He is required to file the return of income for the A.Y. 2026-27 since his total income before standard deduction u/s 16(i)(a) exceeds the basic exemption limit.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.35,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Cheetah Ltd. a domestic company has a total tax liability of ₹ 10,00,000 for A.Y. 2026-27. The company has a TDS credit of ₹ 2,00,000. The advance tax instalments paid by the company during P.Y.2025-26 are as follows: 12.06.2025 = ₹ 1,00,000; 14.09.2025 = ₹ 2,00,000; 13.12.2025 = ₹ 2,60,000 and 18.03.2026 = ₹ 2,40,000. How much of interest is payable under section 234C by Cheetah Ltd.?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 1,200",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 3,600",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 4,800",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 6,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "“Save Trees”, a charitable trust registered under section 12AB of the Income-tax Act, 1961 received total donation amounting to ₹ 15 lakhs during the financial year 2025-26 and it includes anonymous donation of ₹ 2,50,000. How much of anonymous donation is taxable @30%?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 1,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1,50,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 75,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1,75,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "There is an estimated lump sum addition of ₹ 5 lakhs for admitting low gross profit in the assessment of Boyce & Co LLP. What is the time limit for filing appeal before Commissioner (Appeals)?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "30 days from the date of assessment order",
+      "is_correct": false
+     },
+     {
+      "body_md": "30 days from the date of payment of tax as per assessment order",
+      "is_correct": false
+     },
+     {
+      "body_md": "30 days from the date of service of the notice of demand",
+      "is_correct": true
+     },
+     {
+      "body_md": "30 days from the date of communication of the order to the assessee",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "tax-management-return-and-assessment-procedure",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A domestic company who had entered into multiple international transactions with its Associated Enterprises failed to furnish such documents relating thereto when asked by the Assessing Officer. How much would be the penalty leviable for the said failure?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 1000 for each day of default till the date of assessment",
+      "is_correct": false
+     },
+     {
+      "body_md": "No penalty for not furnishing documents relating to international transactions",
+      "is_correct": false
+     },
+     {
+      "body_md": "Fixed penalty of ₹ 1,00,000, irrespective of the transaction value",
+      "is_correct": false
+     },
+     {
+      "body_md": "2% of the value of each international transaction for which documentation was not furnished",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "e-commerce-transaction-and-liability-in-special-cases",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Anand (P) Ltd. made timely payment of the advance tax due and thereby, avoided the interest under sections 234B and 234C. What would you call this act of Anand (P) Ltd, out of the following?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Tax management",
+      "is_correct": true
+     },
+     {
+      "body_md": "Tax planning",
+      "is_correct": false
+     },
+     {
+      "body_md": "Tax evasion",
+      "is_correct": false
+     },
+     {
+      "body_md": "Tax avoidance",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "black-money-act-2015",
+    "mapping_confidence": 0.14,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is not a fundamental accounting assumption as per the Income Computation and Disclosure Standards?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Going Concern",
+      "is_correct": false
+     },
+     {
+      "body_md": "Materiality",
+      "is_correct": true
+     },
+     {
+      "body_md": "Consistency",
+      "is_correct": false
+     },
+     {
+      "body_md": "Accrual",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "income-computation-and-disclosure-standards-icds",
+    "mapping_confidence": 0.58,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "What is the aggregate monetary limit for foreign assets (other than immovable property) not reported in the ITR, in order to be not liable for penalty under the Black Money Act, 2015?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 10,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 20,00,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 30,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 40,00,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "black-money-act-2015",
+    "mapping_confidence": 0.94,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following assets cannot be seized during a search operation under Section 132 of the Income-tax Act, 1961?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Unaccounted cash found at the premises",
+      "is_correct": false
+     },
+     {
+      "body_md": "Jewellery not recorded in the books of account",
+      "is_correct": false
+     },
+     {
+      "body_md": "Stock-in-trade of the business",
+      "is_correct": true
+     },
+     {
+      "body_md": "Undisclosed bank account balances",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "tax-management-return-and-assessment-procedure",
+    "mapping_confidence": 0.01,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Atom Ltd., an Indian company, is a wholly owned subsidiary of Bull Inc., of USA. During FY 2025-26, Atom Ltd. transferred semi-finished products to Bull Inc., which was used by Bull Inc., to process further and manufacture a final product. To determine the arm’s length price of the transactions between Atom Ltd. and Bull Inc., which of the following would be the most appropriate method?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Comparable Uncontrolled Price Method",
+      "is_correct": false
+     },
+     {
+      "body_md": "Cost-plus method",
+      "is_correct": true
+     },
+     {
+      "body_md": "Profit-split method",
+      "is_correct": false
+     },
+     {
+      "body_md": "Transactional Net Margin method",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "transfer-pricing",
+    "mapping_confidence": 0.36,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "PMQ Ltd. applied for APA on 20.10.2025 and the APA was entered into on 10.04.2026. For which of the financial years, the APA would be applicable?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "F.Y. 2025-26 to F.Y.2029-30",
+      "is_correct": true
+     },
+     {
+      "body_md": "F.Y. 2026-27 to F.Y.2030-31",
+      "is_correct": false
+     },
+     {
+      "body_md": "F.Y. 2024-25 to F.Y.2029-30",
+      "is_correct": false
+     },
+     {
+      "body_md": "F.Y.2026-27 to F.Y. 2029-30",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The total income of Xavier Ltd. an Indian company, for the assessment year 2023-24 was enhanced by the Assessing Officer, by ₹ 210 lakhs, in conformity with the Arm’s Length Price determined by the Transfer Pricing Officer in respect of its international transactions with AE. How much is the additional income-tax payable by Xavier Ltd. to avoid secondary adjustment?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 43,24,320",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 37,80,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 39,31,200",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 44,02,944",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "transfer-pricing",
+    "mapping_confidence": 0.53,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following can be termed as Juridical Double Taxation?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "When two different persons are taxed on the same income",
+      "is_correct": false
+     },
+     {
+      "body_md": "When the same income is taxed in the hands of the same person by more than one country",
+      "is_correct": true
+     },
+     {
+      "body_md": "When the same income is taxed at different tax rates in different countries",
+      "is_correct": false
+     },
+     {
+      "body_md": "When both a company and its shareholders are taxed on dividends",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "double-taxation-and-avoidance-agreements-dtaa-sec-90-90a-and-91",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "OECD Model Tax Convention is primarily designed for treaties between which of the following?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "A developed country and a developing country",
+      "is_correct": false
+     },
+     {
+      "body_md": "Two developed countries",
+      "is_correct": true
+     },
+     {
+      "body_md": "Two developing countries",
+      "is_correct": false
+     },
+     {
+      "body_md": "Only member States of the United Nations",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "double-taxation-and-avoidance-agreements-dtaa-sec-90-90a-and-91",
+    "mapping_confidence": 0.05,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Butter Ltd., an Indian company, set up a unit in a Special Economic Zone (SEZ) during F.Y. 2020-21 for manufacture of chemicals. It claimed deduction under section 10AA in respect of profits earned from that unit in F.Y. 2025-26 (amount of deduction ₹ 15 crore). Which of the following statement is correct?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Yes, GAAR is applicable since the tax benefit exceeds ₹ 3 crore.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Yes, GAAR is applicable since the transaction is impermissible and lacks commercial substance.",
+      "is_correct": false
+     },
+     {
+      "body_md": "No, GAAR is not applicable since it is taking advantage of the beneficial tax provisions.",
+      "is_correct": true
+     },
+     {
+      "body_md": "Both GAAR and SAAR would be applicable in this case.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "e-commerce-transaction-and-liability-in-special-cases",
+    "mapping_confidence": 0.67,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Happy Foundations, a charitable institution registered under section 12AB of the Income-tax Act, 1961 runs a hospital and an engineering college. The following particulars pertain to the previous year 2025-26:\n(i) Gross receipts of hospital ₹ 350 lakhs\n(ii) Gross receipts of Engineering college ₹ 141 lakhs\n(iii) Voluntary contributions received from public in respect of hospital ₹ 28 lakhs, which is included in the gross receipts given above\n(iv) Dividend from Indian companies (net) ₹ 9 lakhs\n(v) Agricultural income in India ₹ 2.80 lakhs\n(vi) Hospital and College administrative and operating expenses are ₹ 65 lakhs and ₹ 40 lakhs respectively\n(vii) The trust gave corpus donation of ₹ 10 lakhs to Smile Foundations, Mysore a charitable trust registered under section 12AB\n(viii) Gave non-corpus donation of ₹ 20 lakhs to Sanskar Charitable Trust, Patna being a trust registered under section 12AB\n(ix) Acquired a building for the hospital for ₹ 180 lakhs (cost of land included therein ₹ 90 lakhs), Stamp duty value of land and building on the date of registration of sale deed was ₹ 210 lakhs\n\nRequired:\nCalculate the total income of the trust for the A.Y. 2026-27.",
+    "parent_ref": "2",
+    "explanation_md": "Computation of total income of Happy Foundations for the A.Y. 2026-27\n\n| Particulars | ₹ in lakhs | ₹ in lakhs |\n|---|---|---|\n| Gross receipts from hospital | | 350 |\n| Gross receipts from Engineering college | | 141 |\n| Add: Dividend from Indian companies (grossed up) | | 10 |\n| Agricultural income in India - exempt u/s 10(1) | | Nil |\n| | | 501 |\n| Less: 15% eligible for deduction without any condition | | 75.15 |\n| | | 425.85 |\n| Less: Amount applied for charitable purposes | | |\n| Hospital operating and admin expenses | 65 | |\n| Engineering college admin and operating expenses | 40 | |\n| Capital expenditure on account of purchase of land and building. Note: Only the actual amount spent for acquiring the building will be treated as application [Section 56(2)(x) is not attracted in respect of value of property received by a trust registered u/s 12AB.] | 180 | |\n| Corpus donation to Smile Foundations, a charitable trust registered u/s 12AB (donation to the corpus of other registered trust not allowable application, Explanation 2 to section 11(2)) | Nil | |\n| Donation to Sanskar Charitable Trust, a charitable trust registered under section 12AB (85% of ₹ 20 lakhs). Non-corpus donation allowed at 85% as application, Explanation 4(iii) to section 11(10) | 17 | |\n| | | 302 |\n| Total income | | 123.85 |",
+    "reference_solution_md": "Computation of total income of Happy Foundations for the A.Y. 2026-27\n\n| Particulars | ₹ in lakhs | ₹ in lakhs |\n|---|---|---|\n| Gross receipts from hospital | | 350 |\n| Gross receipts from Engineering college | | 141 |\n| Add: Dividend from Indian companies (grossed up) | | 10 |\n| Agricultural income in India - exempt u/s 10(1) | | Nil |\n| | | 501 |\n| Less: 15% eligible for deduction without any condition | | 75.15 |\n| | | 425.85 |\n| Less: Amount applied for charitable purposes | | |\n| Hospital operating and admin expenses | 65 | |\n| Engineering college admin and operating expenses | 40 | |\n| Capital expenditure on account of purchase of land and building. Note: Only the actual amount spent for acquiring the building will be treated as application [Section 56(2)(x) is not attracted in respect of value of property received by a trust registered u/s 12AB.] | 180 | |\n| Corpus donation to Smile Foundations, a charitable trust registered u/s 12AB (donation to the corpus of other registered trust not allowable application, Explanation 2 to section 11(2)) | Nil | |\n| Donation to Sanskar Charitable Trust, a charitable trust registered under section 12AB (85% of ₹ 20 lakhs). Non-corpus donation allowed at 85% as application, Explanation 4(iii) to section 11(10) | 17 | |\n| | | 302 |\n| Total income | | 123.85 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.48,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Hardy Components, a partnership firm is engaged in the business of computer hardwares. It has two partners viz. Mr. X and Mr. Y who share the profits and losses in the ratio of 3 : 2. For F.Y. 2025-26, the firm reported a Net Profit of ₹ 8,50,000 after debit of the following:\n(i) Interest on capital @ 12% p.a. on partners’ capital was authorised in the partnership deed. Interest was ₹ 6,00,000 for Mr. X and ₹ 4,00,000 for Mr. Y. [Note: Firm did not deduct TDS on the interest on capital paid to partners]\n(ii) Partners’ remuneration ₹ 12,00,000 (₹ 6,00,000 to each partner) as authorized by the partnership deed. [Note: Tax deduction was made on partners’ salary]\n(iii) A payment of ₹ 5,00,000 made to a resident technical engineer without deducting tax at source.\n(iv) An invoice of ₹ 2,00,000 for supply of goods issued by Anil LLP (a micro enterprise under MSMED Act, 2015) dated 1st March, 2026 was paid thru NEFT on 5th April, 2026 (i.e. within 45 days). However, the agreed term between the parties was a credit period of 30 days.\n(v) Depreciation ₹ 12,00,000\n\nAdditional information: Depreciation allowable as per Income-tax Rules, 1962 was ₹ 10,00,000.\n\nYou are required to Calculate the total income and tax payable by the firm and the total income of Partner Mr. X for the A.Y. 2026-27, assuming that he has no other income except income from the firm.",
+    "parent_ref": "2",
+    "explanation_md": "Computation of Total Income and Tax Liability of Hardy Components (A.Y. 2026-27)\n\n| | Particulars | ₹ | ₹ |\n|---|---|---|---|\n| | Profits and Gains of Business and Profession | | |\n| | Net Profit as per P&L Account | | 8,50,000 |\n| | Add: Disallowances and Adjustments | | |\n| (i) | Interest paid to partners without deduction of TDS - disallowed @30% | 3,00,000 | |\n| (ii) | Partners' Remuneration (added back for computing Book Profit) | 12,00,000 | |\n| (iii) | 30% Disallowance u/s 40(a)(ia) for TDS default [5L × 30%] | 1,50,000 | |\n| (iv) | Disallowance u/s 43B(h) (MSE payment in the next financial year and after the agreed credit period) | 2,00,000 | |\n| (v) | Depreciation as per P&L A/c | 12,00,000 | |\n| | | | 30,50,000 |\n| | | | 39,00,000 |\n| | Allowable Deductions | | |\n| (vi) | Depreciation as per IT Rules | | (10,00,000) |\n| | Book Profit u/s 40(b) | | 29,00,000 |\n| | Less: Allowable Remuneration u/s 40(b) | | |\n| | (A) Actually paid | 12,00,000 | |\n| | (B) As per section 40(b) limits | | |\n| | On first ₹ 6,00,000: 90% of ₹ 6L or ₹ 3,00,000 whichever is higher | 5,40,000 | |\n| | On balance ₹ 23,00,000: 60% of ₹ 23 L | 13,80,000 | |\n| | | 19,20,000 | |\n| | (A) or (B) - whichever is less is deductible | | (12,00,000) |\n| | Total Income | | 17,00,000 |\n\nTax Liability\n\n| Particulars | ₹ |\n|---|---|\n| Income Tax @ 30% | 5,10,000 |\n| Add: Cess @ 4% | 20,400 |\n| Total tax payable | 5,30,400 |\n\nComputation of Total Income of Mr. X (Partner) for A.Y. 2026-27\n\n| Particulars | ₹ |\n|---|---|\n| Profits and Gains of Business and Profession: Remuneration actually paid and allowed under section 40(b) | 6,00,000 |\n| Interest on capital allowed to the firm ₹ 4,20,000 proportionate share being ₹ 6,00,000 × 70/100. Note: The amount which was disallowed in the firm's hands, will not be includible in the hands of Mr. X | 4,20,000 |\n| Share of Profit - Exempt U/s.10(2A) | Nil |\n| Total Income | 10,20,000 |",
+    "reference_solution_md": "Computation of Total Income and Tax Liability of Hardy Components (A.Y. 2026-27)\n\n| | Particulars | ₹ | ₹ |\n|---|---|---|---|\n| | Profits and Gains of Business and Profession | | |\n| | Net Profit as per P&L Account | | 8,50,000 |\n| | Add: Disallowances and Adjustments | | |\n| (i) | Interest paid to partners without deduction of TDS - disallowed @30% | 3,00,000 | |\n| (ii) | Partners' Remuneration (added back for computing Book Profit) | 12,00,000 | |\n| (iii) | 30% Disallowance u/s 40(a)(ia) for TDS default [5L × 30%] | 1,50,000 | |\n| (iv) | Disallowance u/s 43B(h) (MSE payment in the next financial year and after the agreed credit period) | 2,00,000 | |\n| (v) | Depreciation as per P&L A/c | 12,00,000 | |\n| | | | 30,50,000 |\n| | | | 39,00,000 |\n| | Allowable Deductions | | |\n| (vi) | Depreciation as per IT Rules | | (10,00,000) |\n| | Book Profit u/s 40(b) | | 29,00,000 |\n| | Less: Allowable Remuneration u/s 40(b) | | |\n| | (A) Actually paid | 12,00,000 | |\n| | (B) As per section 40(b) limits | | |\n| | On first ₹ 6,00,000: 90% of ₹ 6L or ₹ 3,00,000 whichever is higher | 5,40,000 | |\n| | On balance ₹ 23,00,000: 60% of ₹ 23 L | 13,80,000 | |\n| | | 19,20,000 | |\n| | (A) or (B) - whichever is less is deductible | | (12,00,000) |\n| | Total Income | | 17,00,000 |\n\nTax Liability\n\n| Particulars | ₹ |\n|---|---|\n| Income Tax @ 30% | 5,10,000 |\n| Add: Cess @ 4% | 20,400 |\n| Total tax payable | 5,30,400 |\n\nComputation of Total Income of Mr. X (Partner) for A.Y. 2026-27\n\n| Particulars | ₹ |\n|---|---|\n| Profits and Gains of Business and Profession: Remuneration actually paid and allowed under section 40(b) | 6,00,000 |\n| Interest on capital allowed to the firm ₹ 4,20,000 proportionate share being ₹ 6,00,000 × 70/100. Note: The amount which was disallowed in the firm's hands, will not be includible in the hands of Mr. X | 4,20,000 |\n| Share of Profit - Exempt U/s.10(2A) | Nil |\n| Total Income | 10,20,000 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Paras, a resident individual aged 35 years, furnishes following particulars of his income relating to the assessment year 2026-27:\n(i) Basic salary of Paras is ₹ 1,00,000 per month. He is entitled to dearness allowance, @ 40% of basic salary. 50% of dearness allowance forms part of the retirement benefits. His employer contributed 15% of the basic salary to the pension scheme referred to in section 80CCD.\n(ii) He sold a residential property in April 2025 for ₹ 20,00,000. The property was purchased in July 2023 for ₹ 20,00,000 and he made some additions to the property incurring ₹ 2,00,000 in August 2023. Out of the sale proceeds, he purchased another residential property in September 2025 for ₹ 8,00,000.\n(iii) He deposited a sum of ₹ 60,000 with LIC every year for the maintenance of his disabled father (more than 80% disabled) who is wholly dependent on him.\n(iv) Short-term capital loss on sale of equity oriented mutual funds ₹ 2 lakhs (computed)\n\nRequired:\nCalculate the total income and tax liability of Paras for the A.Y. 2026-27 under the regular provisions and default tax regime. You are required to suggest which one is better.",
+    "parent_ref": "3",
+    "explanation_md": "Computation of total income and tax liability of Paras for the A.Y. 2026-27\n\n| Particulars | Detail ₹ | Normal provisions ₹ | Section 115BAC ₹ |\n|---|---|---|---|\n| Salary Income | | | |\n| Basic salary | 12,00,000 | | |\n| DA (40% of salary) | 4,80,000 | | |\n| Employer's contribution to pension scheme (15% of ₹ 12,00,000) | 1,80,000 | | |\n| | | 18,60,000 | 18,60,000 |\n| Less: Standard Deduction u/s 16(i) | | 50,000 | 75,000 |\n| Income under the head salary | | 18,10,000 | 17,85,000 |\n| Capital gains | | | |\n| Sales consideration | 20,00,000 | | |\n| Less: Cost of acquisition | 20,00,000 | | |\n| Less: Cost of improvement | 2,00,000 | | |\n| Short term capital loss | (2,00,000) | | |\n| Short-term capital loss from equity oriented mutual funds (computed) | (2,00,000) | | |\n| (As the holding period is less than 24 months, it is a loss associated with short-term capital asset) | | | |\n| STCL eligible for carry forward | (4,00,000) | | |\n| Gross total income | | 18,10,000 | 17,85,000 |\n| Deduction under Chapter VI-A | | | |\n| U/s 80CCD(2): restricted to the least of the following: Employer's contribution, or 10% of salary (normal provisions) | | 1,44,000 | |\n| 14% of salary ₹ 2,01,600 or actual contribution ₹ 1,80,000 (section 115BAC) | | | 1,80,000 |\n| Note: Salary for the purpose of section 80CCD means basic salary plus DA forming part of retirement benefits, i.e. ₹ 14,40,000 [Basic salary ₹ 12,00,000 + ₹ 2,40,000 (50% of DA) = ₹ 14,40,000] | | | |\n| U/s 80DD: Since more than 80% disability. Note: Deduction available is a flat amount, actual amount incurred is immaterial | | 1,25,000 | Nil |\n| Total income | | 15,41,000 | 16,05,000 |\n| Tax on total income at the slab rates | | 2,74,800 | 1,21,000 |\n| Add: HEC @ 4% | | 10,992 | 4,840 |\n| Total tax liability | | 2,85,792 | 1,25,840 |\n| Total tax liability (rounded off) | | 2,85,790 | 1,25,840 |\n\nConclusion: The assessee Paras should opt section 115BAC, since the tax liability is lower.",
+    "reference_solution_md": "Computation of total income and tax liability of Paras for the A.Y. 2026-27\n\n| Particulars | Detail ₹ | Normal provisions ₹ | Section 115BAC ₹ |\n|---|---|---|---|\n| Salary Income | | | |\n| Basic salary | 12,00,000 | | |\n| DA (40% of salary) | 4,80,000 | | |\n| Employer's contribution to pension scheme (15% of ₹ 12,00,000) | 1,80,000 | | |\n| | | 18,60,000 | 18,60,000 |\n| Less: Standard Deduction u/s 16(i) | | 50,000 | 75,000 |\n| Income under the head salary | | 18,10,000 | 17,85,000 |\n| Capital gains | | | |\n| Sales consideration | 20,00,000 | | |\n| Less: Cost of acquisition | 20,00,000 | | |\n| Less: Cost of improvement | 2,00,000 | | |\n| Short term capital loss | (2,00,000) | | |\n| Short-term capital loss from equity oriented mutual funds (computed) | (2,00,000) | | |\n| (As the holding period is less than 24 months, it is a loss associated with short-term capital asset) | | | |\n| STCL eligible for carry forward | (4,00,000) | | |\n| Gross total income | | 18,10,000 | 17,85,000 |\n| Deduction under Chapter VI-A | | | |\n| U/s 80CCD(2): restricted to the least of the following: Employer's contribution, or 10% of salary (normal provisions) | | 1,44,000 | |\n| 14% of salary ₹ 2,01,600 or actual contribution ₹ 1,80,000 (section 115BAC) | | | 1,80,000 |\n| Note: Salary for the purpose of section 80CCD means basic salary plus DA forming part of retirement benefits, i.e. ₹ 14,40,000 [Basic salary ₹ 12,00,000 + ₹ 2,40,000 (50% of DA) = ₹ 14,40,000] | | | |\n| U/s 80DD: Since more than 80% disability. Note: Deduction available is a flat amount, actual amount incurred is immaterial | | 1,25,000 | Nil |\n| Total income | | 15,41,000 | 16,05,000 |\n| Tax on total income at the slab rates | | 2,74,800 | 1,21,000 |\n| Add: HEC @ 4% | | 10,992 | 4,840 |\n| Total tax liability | | 2,85,792 | 1,25,840 |\n| Total tax liability (rounded off) | | 2,85,790 | 1,25,840 |\n\nConclusion: The assessee Paras should opt section 115BAC, since the tax liability is lower.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.46,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "RST Ltd., Chennai was incorporated on 01.06.2022. It is engaged in the manufacture of automobile spare parts. It showed a net profit of ₹ 80,00,000 after debiting or crediting the following items:\n(i) Sales commission paid to Clive (resident of India) without deducting tax at source ₹ 17,00,000.\n(ii) Depreciation as per Companies Act, 2013 ₹ 9,40,000\n(iii) Short term capital gain on sale of vacant land ₹ 1,20,000\n\nAdditional Information:\n(i) The company employed 400 employees since 01.07.2022. During the FY 2025-26, it employed 245 additional employees. The details of these employees are as follows:\n\n| Date of joining | No. of employees | Regular or casual | Wages per month (₹) |\n|---|---|---|---|\n| 01/06/2025 | 35 | Regular | 22,000 |\n| 01/05/2025 | 10 | Regular | 30,000 |\n| 01/04/2025 | 200 | Casual | 18,000 |\n\n(ii) The company made cash payment of ₹ 20,000 to a supplier of raw material on 15.10.2025 for the purchases made in the financial year 2024-25 as the supplier had discontinued the business and has no bank account.\n(iii) The turnover of RST Ltd during the FY 2023-24 was ₹ 350 crore.\n(iv) Depreciation as per Income-tax Rules, 1962 was ₹ 9,20,000.\n\nYou are required to calculate the total income of the company and Assess the tax payable, both as per the normal tax regime and under section 115BAA and suggest which one is better.",
+    "parent_ref": "3",
+    "explanation_md": "Computation of the total income of RST Ltd as per normal tax regime (AY 2026-27)\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Profits and gains of business and profession | | |\n| Net profit as per Statement of Profit and Loss | | 80,00,000 |\n| Add | | |\n| Sales commission paid to Clive without deducting tax at source, 30% disallowed | 5,10,000 | |\n| Depreciation as per Companies Act, 2013 | 9,40,000 | |\n| Cash payment to supplier disallowed under section 40A(3A). Supplier not having a bank account is NOT covered by Rule 6DD | 20,000 | |\n| | | 14,70,000 |\n| | | 94,70,000 |\n| Less: | | |\n| Short term capital gain on sale of vacant land. Taxable under 'Capital gains' | 1,20,000 | |\n| Depreciation as per Income-tax Rules, 1962 | 9,20,000 | |\n| | | 10,40,000 |\n| PGBP income | | 84,30,000 |\n| Capital Gains | | |\n| STCG on sale of vacant land | | 1,20,000 |\n| Gross total income | | 85,50,000 |\n| Less Deduction u/s 80JJAA | | |\n| 35 regular employees with monthly wages of ₹ 22,000 | Eligible | |\n| 30% of (22,000 × 35 × 10 = ₹ 77,00,000) | 23,10,000 | |\n| 10 regular employees with monthly wages of ₹ 30,000 | Not eligible | |\n| 200 Casual workers | Not eligible | |\n| | | 23,10,000 |\n| Total Income | | 62,40,000 |\n| Tax on total income | | |\n| @25% since PY turnover does not exceed ₹ 400 crores | | 15,60,000 |\n| Surcharge | | Nil |\n| Cess @4% | | 62,400 |\n| Total tax | | 16,22,400 |\n\nComputation of the total income and tax payable by RST Ltd as per Section 115BAA\n\n| Particulars | ₹ |\n|---|---|\n| Total Income as per normal provisions | 62,40,000 |\n| Add: Ded under section 80JJA (allowed under section 115BAA also) | Nil |\n| Total income as per section 115BAA | 62,40,000 |\n| Tax @22% | 13,72,800 |\n| Add Surcharge @10% | 1,37,280 |\n| Total | 15,10,080 |\n| Add: Cess @4% | 60,403 |\n| Total tax | 15,70,483 |\n| Rounded off | 15,70,480 |\n\nConclusion: Since the tax liability is lower when opted for section 115BAA, the assessee should opt for section 115BAA.\n\nAlternate presentation of computation of total income as per section 115BAA\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Profits and gains of business and profession | | |\n| Net profit as per Statement of Profit and Loss | | 80,00,000 |\n| Add | | |\n| Sales commission paid to Clive without deducting tax at source, 30% disallowed | 5,10,000 | |\n| Depreciation as per Companies Act, 2013 | 9,40,000 | |\n| Cash payment to supplier disallowed under section 40A(3A). Supplier not having a bank account is NOT covered by Rule 6DD | 20,000 | |\n| | | 14,70,000 |\n| | | 94,70,000 |\n| Less: | | |\n| Short term capital gain on sale of vacant land. Taxable under 'Capital gains' | 1,20,000 | |\n| Depreciation as per Income-tax Rules, 1962 | 9,20,000 | |\n| | | 10,40,000 |\n| PGBP income | | 84,30,000 |\n| Capital Gains | | |\n| STCG on sale of vacant land | | 1,20,000 |\n| Gross total income | | 85,50,000 |\n| Less Deduction u/s 80JJAA | | |\n| 35 regular employees with monthly wages of ₹ 22,000 | Eligible | |\n| 30% of (22,000 × 35 × 10 = ₹ 77,00,000) | 23,10,000 | |\n| 10 regular employees with monthly wages of ₹ 30,000 | Not eligible | |\n| 200 Casual workers | Not eligible | |\n| | | 23,10,000 |\n| Total Income | | 62,40,000 |\n| Tax @ 22% | | 13,72,800 |\n| Add Surcharge @10% | | 1,37,280 |\n| Total | | 15,10,080 |\n| Add: Cess @4% | | 60,403 |\n| Total tax | | 15,70,483 |\n| Rounded off | | 15,70,480 |\n\nConclusion: Since the tax liability is lower when opted for section 115BAA, the assessee should opt for section 115BAA.",
+    "reference_solution_md": "Computation of the total income of RST Ltd as per normal tax regime (AY 2026-27)\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Profits and gains of business and profession | | |\n| Net profit as per Statement of Profit and Loss | | 80,00,000 |\n| Add | | |\n| Sales commission paid to Clive without deducting tax at source, 30% disallowed | 5,10,000 | |\n| Depreciation as per Companies Act, 2013 | 9,40,000 | |\n| Cash payment to supplier disallowed under section 40A(3A). Supplier not having a bank account is NOT covered by Rule 6DD | 20,000 | |\n| | | 14,70,000 |\n| | | 94,70,000 |\n| Less: | | |\n| Short term capital gain on sale of vacant land. Taxable under 'Capital gains' | 1,20,000 | |\n| Depreciation as per Income-tax Rules, 1962 | 9,20,000 | |\n| | | 10,40,000 |\n| PGBP income | | 84,30,000 |\n| Capital Gains | | |\n| STCG on sale of vacant land | | 1,20,000 |\n| Gross total income | | 85,50,000 |\n| Less Deduction u/s 80JJAA | | |\n| 35 regular employees with monthly wages of ₹ 22,000 | Eligible | |\n| 30% of (22,000 × 35 × 10 = ₹ 77,00,000) | 23,10,000 | |\n| 10 regular employees with monthly wages of ₹ 30,000 | Not eligible | |\n| 200 Casual workers | Not eligible | |\n| | | 23,10,000 |\n| Total Income | | 62,40,000 |\n| Tax on total income | | |\n| @25% since PY turnover does not exceed ₹ 400 crores | | 15,60,000 |\n| Surcharge | | Nil |\n| Cess @4% | | 62,400 |\n| Total tax | | 16,22,400 |\n\nComputation of the total income and tax payable by RST Ltd as per Section 115BAA\n\n| Particulars | ₹ |\n|---|---|\n| Total Income as per normal provisions | 62,40,000 |\n| Add: Ded under section 80JJA (allowed under section 115BAA also) | Nil |\n| Total income as per section 115BAA | 62,40,000 |\n| Tax @22% | 13,72,800 |\n| Add Surcharge @10% | 1,37,280 |\n| Total | 15,10,080 |\n| Add: Cess @4% | 60,403 |\n| Total tax | 15,70,483 |\n| Rounded off | 15,70,480 |\n\nConclusion: Since the tax liability is lower when opted for section 115BAA, the assessee should opt for section 115BAA.\n\nAlternate presentation of computation of total income as per section 115BAA\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Profits and gains of business and profession | | |\n| Net profit as per Statement of Profit and Loss | | 80,00,000 |\n| Add | | |\n| Sales commission paid to Clive without deducting tax at source, 30% disallowed | 5,10,000 | |\n| Depreciation as per Companies Act, 2013 | 9,40,000 | |\n| Cash payment to supplier disallowed under section 40A(3A). Supplier not having a bank account is NOT covered by Rule 6DD | 20,000 | |\n| | | 14,70,000 |\n| | | 94,70,000 |\n| Less: | | |\n| Short term capital gain on sale of vacant land. Taxable under 'Capital gains' | 1,20,000 | |\n| Depreciation as per Income-tax Rules, 1962 | 9,20,000 | |\n| | | 10,40,000 |\n| PGBP income | | 84,30,000 |\n| Capital Gains | | |\n| STCG on sale of vacant land | | 1,20,000 |\n| Gross total income | | 85,50,000 |\n| Less Deduction u/s 80JJAA | | |\n| 35 regular employees with monthly wages of ₹ 22,000 | Eligible | |\n| 30% of (22,000 × 35 × 10 = ₹ 77,00,000) | 23,10,000 | |\n| 10 regular employees with monthly wages of ₹ 30,000 | Not eligible | |\n| 200 Casual workers | Not eligible | |\n| | | 23,10,000 |\n| Total Income | | 62,40,000 |\n| Tax @ 22% | | 13,72,800 |\n| Add Surcharge @10% | | 1,37,280 |\n| Total | | 15,10,080 |\n| Add: Cess @4% | | 60,403 |\n| Total tax | | 15,70,483 |\n| Rounded off | | 15,70,480 |\n\nConclusion: Since the tax liability is lower when opted for section 115BAA, the assessee should opt for section 115BAA.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.33,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Raj Ltd has 2 units engaged in manufacture of medicine and textile. Unit 1 established in the year 2020 is engaged in manufacture of medicine and Unit 2 established in April, 2023 engaged in manufacture of textile. The company transferred Unit 1 by way of slump sale for a lump sum consideration of ₹ 1600 lakhs on 01.04.2025.\n\nBalance Sheet as on 31.03.2025 (₹ in lakhs)\n\n| Liabilities | Total | Assets | Unit 1 | Unit 2 | Total |\n|---|---|---|---|---|---|\n| Share capital | 6,000 | Land | 3,000 | 1,000 | 4,000 |\n| Revaluation reserve (land of unit 1) | 1,000 | Machinery | 1,800 | 4,000 | 5,800 |\n| Bank loan (80% for unit 1) | 3,000 | Debtors | 400 | 800 | 1,200 |\n| Trade creditors (30% for unit 1) | 2,000 | Patents | 400 | 600 | 1,000 |\n| | 12,000 | | | | 12,000 |\n\nOther information:\n(i) Revaluation reserve was created by revaluing the land of unit 1. The stamp duty value of the said land as on 01.04.2025 is ₹ 2,400 lakhs.\n(ii) Patents acquired on 10.08.2024 and on which no depreciation was charged right from the date of acquisition. Book value may be taken as the FMV on the date of slump sale.\n(iii) The value of machinery represents WDV as per the Income-tax Act, 1961.\n\nCalculate the capital gain for the assessment year 2026-27 arising on the slump sale of unit 1.",
+    "parent_ref": "4",
+    "explanation_md": "Computation of net worth of unit 1 of Raj Ltd\n\n| Particulars | ₹ in lakhs | ₹ in lakhs |\n|---|---|---|\n| (i) Land (Book value ₹ 3,000 lakhs less ₹ 1000 lakhs on account of revaluation) | | 2,000 |\n| Machinery | | 1,800 |\n| Patents acquired on 10.08.2024 | 400 | |\n| Less: Depreciation for FY 2024-25 @ 25% | 100 | |\n| | | 300 |\n| Debtors | | 400 |\n| | | 4,500 |\n| Less: Trade creditors @30% of ₹ 2,000 | 600 | |\n| Bank loan @80% of ₹ 3,000 | 2,400 | |\n| | | 3,000 |\n| Net worth | | 1,500 |\n\nComputation of full value of consideration\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| Fair market value of capital assets transferred by way of slump sale | |\n| Land, immovable property stamp duty value as on 01.04.2025 | 2,400 |\n| Machinery book value as appearing in the books of account | 1,800 |\n| Debtors | 400 |\n| Patents as appearing in the books of account | 400 |\n| | 5,000 |\n| Less: Liabilities: Bank loan (80% of 3,000) 2,400 and Trade creditors (30% of 2,000) 600. Liabilities may be arrived at in alternate manner also, and total 3000 may be computed | 3,000 |\n| Fair market value of capital assets transferred by way of slump sale | 2,000 |\n| Fair market value of consideration received as a result of transfer of undertaking by way of slump sale | 1,600 |\n| Full value of consideration (FMV of assets transferred or FMV of consideration received whichever is higher is taken) | 2,000 |\n\nComputation of capital gain\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| Full value of consideration | 2,000 |\n| Less: Net worth | 1,500 |\n| Long term capital gain | 500 |",
+    "reference_solution_md": "Computation of net worth of unit 1 of Raj Ltd\n\n| Particulars | ₹ in lakhs | ₹ in lakhs |\n|---|---|---|\n| (i) Land (Book value ₹ 3,000 lakhs less ₹ 1000 lakhs on account of revaluation) | | 2,000 |\n| Machinery | | 1,800 |\n| Patents acquired on 10.08.2024 | 400 | |\n| Less: Depreciation for FY 2024-25 @ 25% | 100 | |\n| | | 300 |\n| Debtors | | 400 |\n| | | 4,500 |\n| Less: Trade creditors @30% of ₹ 2,000 | 600 | |\n| Bank loan @80% of ₹ 3,000 | 2,400 | |\n| | | 3,000 |\n| Net worth | | 1,500 |\n\nComputation of full value of consideration\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| Fair market value of capital assets transferred by way of slump sale | |\n| Land, immovable property stamp duty value as on 01.04.2025 | 2,400 |\n| Machinery book value as appearing in the books of account | 1,800 |\n| Debtors | 400 |\n| Patents as appearing in the books of account | 400 |\n| | 5,000 |\n| Less: Liabilities: Bank loan (80% of 3,000) 2,400 and Trade creditors (30% of 2,000) 600. Liabilities may be arrived at in alternate manner also, and total 3000 may be computed | 3,000 |\n| Fair market value of capital assets transferred by way of slump sale | 2,000 |\n| Fair market value of consideration received as a result of transfer of undertaking by way of slump sale | 1,600 |\n| Full value of consideration (FMV of assets transferred or FMV of consideration received whichever is higher is taken) | 2,000 |\n\nComputation of capital gain\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| Full value of consideration | 2,000 |\n| Less: Net worth | 1,500 |\n| Long term capital gain | 500 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Ms. Sophia, a Non-Resident Individual (NRI) and an international cricketer, participated in the Women’s Premier League (WPL) 2025 held in India. She also made certain investments in Indian securities. The following details are furnished for the financial year 2025–26:\n\n| Particulars | ₹ |\n|---|---|\n| (i) Match fees received for playing in WPL matches in India | 12,00,000 |\n| (ii) Income from advertisement endorsements in India | 5,00,000 |\n| (iii) Interest on bonds of an Indian public company issued in accordance with the scheme of the Central Government. (purchased in convertible foreign currency) | 4,00,000 |\n| (iv) Long-term capital gain on sale of such bonds | 3,00,000 |\n| (v) Income received from units of UTI (purchased in convertible foreign currency) | 2,50,000 |\n| (vi) Interest from savings bank account in India | 60,000 |\n\nAdditional Information:\n1. She invested ₹ 1,50,000 in her PPF account and ₹ 50,000 in National Pension Scheme.\n2. Stay and incidental expenses incurred for playing matches in India ₹ 5,00,000.\n\nYou are required to calculate the total income and assess the tax liability of Ms. Sophia for AY 2026–27. Ignore the provisions of Chapter XII-A of the Act.",
+    "parent_ref": "4",
+    "explanation_md": "Computation of total income of Ms Shopia (non-resident) for AY 2026-27 (assuming the assessee opts out of the default tax regime)\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Capital Gain | | |\n| Long-term capital gain on sale of bonds | | 3,00,000 |\n| PGBP | | |\n| Match fees received for playing in WPL matches in India (Expenditures are not allowed on special incomes covered by section 115BBA.) May also be shown as IFOS | | 12,00,000 |\n| Income from other sources | | |\n| Income from advertisement endorsements in India | 5,00,000 | |\n| Interest on bonds of an Indian public company (purchased in foreign currency) | 4,00,000 | |\n| Income received from units of UTI (purchased in foreign currency) | 2,50,000 | |\n| Interest from savings bank account in India | 60,000 | |\n| | | 12,10,000 |\n| GROSS TOTAL INCOME | | 27,10,000 |\n| Special income | 26,50,000 | |\n| Normal income | 60,000 | |\n| Less: Deductions under Chapter VI-A | | |\n| U/s 80TTA | 10,000 | |\n| u/s 80C restricted to ₹ 1,50,000 | 1,50,000 | |\n| u/s 80CCD(1B) | 50,000 | |\n| Total eligible deductions | 2,10,000 | |\n| But, deduction under Chapter VI-A are not allowed in respect of special incomes. Thus restricted to ₹ 60,000 | | 60,000 |\n| Total Income | | 26,50,000 |\n\nComputation of tax liability\n\n| Particulars | ₹ |\n|---|---|\n| Tax @20% u/s 115BBA on Match fees ₹ 12,00,000 | 2,40,000 |\n| Tax @20% u/s 115BBA on Income from advertisement endorsements in India ₹ 5,00,000 | 1,00,000 |\n| Tax @10% u/s 115AC on Interest on bonds of an Indian public company (purchased in foreign currency) ₹ 4,00,000 | 40,000 |\n| Tax @12.5% u/s 115AC on long-term capital gain on sale of such bonds ₹ 3,00,000 | 37,500 |\n| Tax @20% u/s 115A on Income received from units of UTI (purchased in foreign currency) ₹ 2,50,000 | 50,000 |\n| Total | 4,67,500 |\n| Add: HEC @4% | 18,700 |\n| Total tax liability | 4,86,200 |\n\nAlternative answer\n\nComputation of total income of Ms Shopia (non-resident) for AY 2026-27 (as per the default tax regime)\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Capital Gain | | |\n| Long-term capital gain on sale of bonds | | 3,00,000 |\n| PGBP | | |\n| Match fees received for playing in WPL matches in India (Expenditures are not allowed on special incomes covered by section 115BBA.) May also be shown as IFOS | | 12,00,000 |\n| Income from other sources | | |\n| Income from advertisement endorsements in India | 5,00,000 | |\n| Interest on bonds of an Indian public company (purchased in foreign currency) | 4,00,000 | |\n| Income received from units of UTI (purchased in foreign currency) | 2,50,000 | |\n| Interest from savings bank account in India | 60,000 | |\n| | | 12,10,000 |\n| GROSS TOTAL INCOME | | 27,10,000 |\n| Less: Deductions under Chapter VI-A | | |\n| U/s 80TTA | 10,000 | |\n| u/s 80C restricted to ₹ 1,50,000 | 1,50,000 | |\n| u/s 80CCD(1B) | 50,000 | |\n| Total eligible deductions | 2,10,000 | |\n| But, deduction under Chapter VI-A are not allowed under default tax regime | | Nil |\n| Total Income | | 27,10,000 |\n\nComputation of tax liability\n\n| Particulars | ₹ |\n|---|---|\n| Tax @20% u/s 115BBA on Match fees ₹ 12,00,000 | 2,40,000 |\n| Tax @20% u/s 115BBA on Income from advertisement endorsements in India ₹ 5,00,000 | 1,00,000 |\n| Tax @10% u/s 115AC on Interest on bonds of an Indian public company (purchased in foreign currency) ₹ 4,00,000 | 40,000 |\n| Tax @12.5% u/s 115AC on long-term capital gain on sale of such bonds ₹ 3,00,000 | 37,500 |\n| Tax @20% u/s 115A on Income received from units of UTI (purchased in foreign currency) ₹ 2,50,000 | 50,000 |\n| Tax on remaining income ₹ 60,000 | Nil |\n| Total | 4,67,500 |\n| Add: HEC @4% | 18,700 |\n| Total tax liability | 4,86,200 |",
+    "reference_solution_md": "Computation of total income of Ms Shopia (non-resident) for AY 2026-27 (assuming the assessee opts out of the default tax regime)\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Capital Gain | | |\n| Long-term capital gain on sale of bonds | | 3,00,000 |\n| PGBP | | |\n| Match fees received for playing in WPL matches in India (Expenditures are not allowed on special incomes covered by section 115BBA.) May also be shown as IFOS | | 12,00,000 |\n| Income from other sources | | |\n| Income from advertisement endorsements in India | 5,00,000 | |\n| Interest on bonds of an Indian public company (purchased in foreign currency) | 4,00,000 | |\n| Income received from units of UTI (purchased in foreign currency) | 2,50,000 | |\n| Interest from savings bank account in India | 60,000 | |\n| | | 12,10,000 |\n| GROSS TOTAL INCOME | | 27,10,000 |\n| Special income | 26,50,000 | |\n| Normal income | 60,000 | |\n| Less: Deductions under Chapter VI-A | | |\n| U/s 80TTA | 10,000 | |\n| u/s 80C restricted to ₹ 1,50,000 | 1,50,000 | |\n| u/s 80CCD(1B) | 50,000 | |\n| Total eligible deductions | 2,10,000 | |\n| But, deduction under Chapter VI-A are not allowed in respect of special incomes. Thus restricted to ₹ 60,000 | | 60,000 |\n| Total Income | | 26,50,000 |\n\nComputation of tax liability\n\n| Particulars | ₹ |\n|---|---|\n| Tax @20% u/s 115BBA on Match fees ₹ 12,00,000 | 2,40,000 |\n| Tax @20% u/s 115BBA on Income from advertisement endorsements in India ₹ 5,00,000 | 1,00,000 |\n| Tax @10% u/s 115AC on Interest on bonds of an Indian public company (purchased in foreign currency) ₹ 4,00,000 | 40,000 |\n| Tax @12.5% u/s 115AC on long-term capital gain on sale of such bonds ₹ 3,00,000 | 37,500 |\n| Tax @20% u/s 115A on Income received from units of UTI (purchased in foreign currency) ₹ 2,50,000 | 50,000 |\n| Total | 4,67,500 |\n| Add: HEC @4% | 18,700 |\n| Total tax liability | 4,86,200 |\n\nAlternative answer\n\nComputation of total income of Ms Shopia (non-resident) for AY 2026-27 (as per the default tax regime)\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Capital Gain | | |\n| Long-term capital gain on sale of bonds | | 3,00,000 |\n| PGBP | | |\n| Match fees received for playing in WPL matches in India (Expenditures are not allowed on special incomes covered by section 115BBA.) May also be shown as IFOS | | 12,00,000 |\n| Income from other sources | | |\n| Income from advertisement endorsements in India | 5,00,000 | |\n| Interest on bonds of an Indian public company (purchased in foreign currency) | 4,00,000 | |\n| Income received from units of UTI (purchased in foreign currency) | 2,50,000 | |\n| Interest from savings bank account in India | 60,000 | |\n| | | 12,10,000 |\n| GROSS TOTAL INCOME | | 27,10,000 |\n| Less: Deductions under Chapter VI-A | | |\n| U/s 80TTA | 10,000 | |\n| u/s 80C restricted to ₹ 1,50,000 | 1,50,000 | |\n| u/s 80CCD(1B) | 50,000 | |\n| Total eligible deductions | 2,10,000 | |\n| But, deduction under Chapter VI-A are not allowed under default tax regime | | Nil |\n| Total Income | | 27,10,000 |\n\nComputation of tax liability\n\n| Particulars | ₹ |\n|---|---|\n| Tax @20% u/s 115BBA on Match fees ₹ 12,00,000 | 2,40,000 |\n| Tax @20% u/s 115BBA on Income from advertisement endorsements in India ₹ 5,00,000 | 1,00,000 |\n| Tax @10% u/s 115AC on Interest on bonds of an Indian public company (purchased in foreign currency) ₹ 4,00,000 | 40,000 |\n| Tax @12.5% u/s 115AC on long-term capital gain on sale of such bonds ₹ 3,00,000 | 37,500 |\n| Tax @20% u/s 115A on Income received from units of UTI (purchased in foreign currency) ₹ 2,50,000 | 50,000 |\n| Tax on remaining income ₹ 60,000 | Nil |\n| Total | 4,67,500 |\n| Add: HEC @4% | 18,700 |\n| Total tax liability | 4,86,200 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.43,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Evergreen Ltd. has the following income-tax issues:\n(i) For the assessment year 2023-24, the assessment was completed under section 143(3) on 30.10.2024 by accepting the returned income. There was a reference to Valuation Officer for cost of construction of its corporate office at Mumbai and the valuation report was not received up to the date of completion of assessment. Subsequently, it was received with a difference of ₹ 80 lakhs between the cost admitted by the assessee and valuation made by the Valuation Officer. On the basis of the said valuation report, the Commissioner of Income-tax issued a notice under section 263 in November, 2025, to set aside the completed assessment. Discuss the validity of the revision under section 263.\n(ii) For the assessment year 2024-25, the company admitted ₹ 45 lakh as its total income. The assessment under section 143(3) was completed on 20.10.2025 with an addition of ₹ 18 lakhs. The company wants you to give an opinion as to whether it can avail the benefit of Dispute Resolution Committee in respect of the assessment.\n\nNote: Assume that there is no change in legal provisions as regards the above issues for the assessment year 2026-27.",
+    "parent_ref": "5",
+    "explanation_md": "Validity of revision and possibility of approaching Dispute Resolution Committee\n\n(i) Section 263 provides that the Principal Commissioner/ Commissioner may call for and examine the records of any proceeding under the Act. If he considers that any order passed by the Assessing Officer is prejudicial to the interests of the Revenue, he can revise the assessment.\n\n\"Record\" shall include all records relating to any proceeding under this Act available at the time of examination by the Principal Chief Commissioner or Chief Commissioner or Principal Commissioner or Commissioner. This means that any material, which was not available at the time of assessment but available at the time of examination by the Principal Commissioner or Commissioner, shall also be considered for revision under section 263.\n\nSince, the valuation report was not in existence when the AO completed the assessment, such report can be considered by the Commissioner by invoking revisionary jurisdiction under section 263.\n\nFurther, the time limit for passing revision order is 2 years from the end of the financial year in which the order sought to be revised was passed.\n\nSince in the present case, the notice under section 263 was issued in November 2025 for the assessment order passed in October, 2024, it is within the prescribed time limit.\n\nHence, the action of CIT is justified.\n\n(ii) A person can opt for Dispute Resolution Committee under Chapter XIX-AA in respect of dispute arising from any variation in the specified order.\n\nSpecified order includes assessment order.\n\nThe following conditions are to be satisfied to avail DRC:\n\n(i) aggregate sum of variations proposed or made in such order should not exceed ₹ 10 lakhs.\n\n(ii) such order of assessment / reassessment is not based on\n- search initiated u/s 132; or\n- requisition u/s 132A in the case of assessee or any other person; or\n- survey u/s 133A; or\n- information received under an agreement referred to in sec. 90 or sec. 90A.\n\n(iii) where return has been filed by the assessee for the assessment year relevant to such order, total income as per such return should not exceed ₹ 50 lakhs.\n\nIn the given case, since the variation made in the order is more than ₹ 10 lakhs (i.e. ₹ 18 lakhs) though the total income as per his return is ₹ 45 lakhs (which is less than ₹ 50 lakhs) the assessee cannot opt for dispute resolution through DRC.",
+    "reference_solution_md": "Validity of revision and possibility of approaching Dispute Resolution Committee\n\n(i) Section 263 provides that the Principal Commissioner/ Commissioner may call for and examine the records of any proceeding under the Act. If he considers that any order passed by the Assessing Officer is prejudicial to the interests of the Revenue, he can revise the assessment.\n\n\"Record\" shall include all records relating to any proceeding under this Act available at the time of examination by the Principal Chief Commissioner or Chief Commissioner or Principal Commissioner or Commissioner. This means that any material, which was not available at the time of assessment but available at the time of examination by the Principal Commissioner or Commissioner, shall also be considered for revision under section 263.\n\nSince, the valuation report was not in existence when the AO completed the assessment, such report can be considered by the Commissioner by invoking revisionary jurisdiction under section 263.\n\nFurther, the time limit for passing revision order is 2 years from the end of the financial year in which the order sought to be revised was passed.\n\nSince in the present case, the notice under section 263 was issued in November 2025 for the assessment order passed in October, 2024, it is within the prescribed time limit.\n\nHence, the action of CIT is justified.\n\n(ii) A person can opt for Dispute Resolution Committee under Chapter XIX-AA in respect of dispute arising from any variation in the specified order.\n\nSpecified order includes assessment order.\n\nThe following conditions are to be satisfied to avail DRC:\n\n(i) aggregate sum of variations proposed or made in such order should not exceed ₹ 10 lakhs.\n\n(ii) such order of assessment / reassessment is not based on\n- search initiated u/s 132; or\n- requisition u/s 132A in the case of assessee or any other person; or\n- survey u/s 133A; or\n- information received under an agreement referred to in sec. 90 or sec. 90A.\n\n(iii) where return has been filed by the assessee for the assessment year relevant to such order, total income as per such return should not exceed ₹ 50 lakhs.\n\nIn the given case, since the variation made in the order is more than ₹ 10 lakhs (i.e. ₹ 18 lakhs) though the total income as per his return is ₹ 45 lakhs (which is less than ₹ 50 lakhs) the assessee cannot opt for dispute resolution through DRC.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "tax-management-return-and-assessment-procedure",
+    "mapping_confidence": 0.37,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "You are required to state with reasons the applicability or correctness of treatment under Income Computation and Disclosure Standards in the following independent scenarios:\n(i) Buildcon Ltd. is a contractor. In the first year of a 4-year project, the stage of completion is 15%. The company did not recognize any revenue, citing the uncertainty of the project outcome.\n(ii) On 31st March 2026, an Indian company had an outstanding trade payable of $1,00,000. The exchange rate on the date of transaction was ₹ 90 per $ and on 31st March, 2026 it was ₹ 93 per $. The company treated ₹ 3,00,000 loss as “Notional” and did not claim it as an expense in its return of income.\n(iii) A partnership firm by name Nyle & Co. had three partners viz. L, M and N. The firm was dissolved on 31st December, 2025 and the business was continued by L. On the date of dissolution, the firm valued its closing stock at “Cost,” whereas the Net Realisable Value was 20% higher.\n(iv) True Ltd. followed a policy of creating a provision for “Expected Future Losses” on a long-term contract based on the “Marked-to-Market” (MTM) principle. The company argued that since it follows the mercantile system, it must recognize the loss.",
+    "parent_ref": "5",
+    "explanation_md": "Correct treatment as per ICDS\n\n(i) Under ICDS III, contract revenue must be recognized under the Percentage of Completion Method. Revenue recognition cannot be deferred beyond the early stage of a contract.\n\nThe \"early stage\" is specifically defined as not exceeding 25% of the stage of completion. Since the stage of completion is 15%, and the outcome cannot be estimated, revenue is recognized only to the extent of costs incurred.\n\n(ii) ICDS VI requires that monetary items (like trade payables / debtors) denominated in foreign currency must be reported using the closing rate at the end of each previous year.\n\nAny exchange difference arising on such reporting shall be recognized as income or expense. Hence, the ₹ 3,00,000 being exchange fluctuation loss, it is a deductible expense in the current year.\n\n(iii) According to ICDS II, in case of dissolution of a partnership firm, the inventory on the date of dissolution of a firm shall be valued at Net Realizable Value (NRV), regardless of whether the business is continued or not. Thus, the firm must value stock at NRV, thereby increasing the profits of the firm.\n\n(iv) ICDS I, states that expected losses or marked-to-market losses shall not be recognized unless the recognition is in accordance with the provisions of any other ICDS.\n\nThere is no ICDS which recognizes such provision for future losses. Therefore, True Ltd's provision for future losses is to be disallowed and must be added back to the total income.",
+    "reference_solution_md": "Correct treatment as per ICDS\n\n(i) Under ICDS III, contract revenue must be recognized under the Percentage of Completion Method. Revenue recognition cannot be deferred beyond the early stage of a contract.\n\nThe \"early stage\" is specifically defined as not exceeding 25% of the stage of completion. Since the stage of completion is 15%, and the outcome cannot be estimated, revenue is recognized only to the extent of costs incurred.\n\n(ii) ICDS VI requires that monetary items (like trade payables / debtors) denominated in foreign currency must be reported using the closing rate at the end of each previous year.\n\nAny exchange difference arising on such reporting shall be recognized as income or expense. Hence, the ₹ 3,00,000 being exchange fluctuation loss, it is a deductible expense in the current year.\n\n(iii) According to ICDS II, in case of dissolution of a partnership firm, the inventory on the date of dissolution of a firm shall be valued at Net Realizable Value (NRV), regardless of whether the business is continued or not. Thus, the firm must value stock at NRV, thereby increasing the profits of the firm.\n\n(iv) ICDS I, states that expected losses or marked-to-market losses shall not be recognized unless the recognition is in accordance with the provisions of any other ICDS.\n\nThere is no ICDS which recognizes such provision for future losses. Therefore, True Ltd's provision for future losses is to be disallowed and must be added back to the total income.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "income-computation-and-disclosure-standards-icds",
+    "mapping_confidence": 0.66,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Double Taxation Avoidance Agreements (DTAAs) have become vital in the present-day global business decisions. Section 90 of the Income-tax Act, 1961 empowers the Central Government to enter into agreements with foreign jurisdictions for this purpose. In this context, write a note addressing (i) The primary objectives of DTAAs; (ii) The broad classification/types of DTAAs generally entered into by countries; and (iii) Name the prominent International Models of DTAAs used globally for drafting these agreements and highlight the key difference between the two major Models.",
+    "parent_ref": "6",
+    "explanation_md": "Double Taxation Avoidance Agreements (DTAA) and International Models\n\n(i) Objectives of DTAA\n\n1. To prevent the double taxation of the same income.\n2. To prevent tax evasion and avoidance through the exchange of information between contracting states.\n3. To promote mutual economic relations, cross-border trade, and the free flow of investment and technology.\n4. To provide certainty regarding the taxing rights of the respective contracting States.\n\n(ii) Types of DTAAs\n\nAgreements to avoid double taxation are generally classified into two types:\n\nComprehensive Agreements: These agreements cover almost all types of incomes (such as business profits, property income, capital gains, royalties, dividends, salaries, etc.). They provide a complete framework for resolving jurisdictional conflicts across all heads of income. India's DTAAs with most countries (e.g., USA, UK, UAE) are comprehensive in nature.\n\nLimited (or Specific) Agreements: These agreements are restricted to specific types of income or specific industries. For example, treaties covering only the income derived from the operation of international shipping or aircraft, or agreements restricted only to inheritance/estate taxes.\n\n(iii) Prominent International Models of DTAA and their Philosophical Difference\n\nThe prominent international models used globally as starting points for negotiating DTAAs are:\n\n1. OECD Model Tax Convention\n2. UN Model Double Taxation Convention\n3. US Model Income Tax Convention\n\nKey Philosophical Difference between the two major models (OECD vs. UN):\n\nThe OECD Model is generally preferred by developed (capital-exporting) countries. Its core philosophy heavily favors \"Residence-based\" taxation. It advocates that the primary right to tax income should rest with the country where the taxpayer is a resident, thereby restricting the taxing rights of the source country.\n\nThe UN Model is generally preferred by developing (capital-importing) countries, including India. Its core philosophy places much greater emphasis on \"Source-based\" taxation. It grants broader taxing rights to the country where the income is actually generated (the source country), ensuring a more equitable sharing of tax revenues between developed and developing nations.",
+    "reference_solution_md": "Double Taxation Avoidance Agreements (DTAA) and International Models\n\n(i) Objectives of DTAA\n\n1. To prevent the double taxation of the same income.\n2. To prevent tax evasion and avoidance through the exchange of information between contracting states.\n3. To promote mutual economic relations, cross-border trade, and the free flow of investment and technology.\n4. To provide certainty regarding the taxing rights of the respective contracting States.\n\n(ii) Types of DTAAs\n\nAgreements to avoid double taxation are generally classified into two types:\n\nComprehensive Agreements: These agreements cover almost all types of incomes (such as business profits, property income, capital gains, royalties, dividends, salaries, etc.). They provide a complete framework for resolving jurisdictional conflicts across all heads of income. India's DTAAs with most countries (e.g., USA, UK, UAE) are comprehensive in nature.\n\nLimited (or Specific) Agreements: These agreements are restricted to specific types of income or specific industries. For example, treaties covering only the income derived from the operation of international shipping or aircraft, or agreements restricted only to inheritance/estate taxes.\n\n(iii) Prominent International Models of DTAA and their Philosophical Difference\n\nThe prominent international models used globally as starting points for negotiating DTAAs are:\n\n1. OECD Model Tax Convention\n2. UN Model Double Taxation Convention\n3. US Model Income Tax Convention\n\nKey Philosophical Difference between the two major models (OECD vs. UN):\n\nThe OECD Model is generally preferred by developed (capital-exporting) countries. Its core philosophy heavily favors \"Residence-based\" taxation. It advocates that the primary right to tax income should rest with the country where the taxpayer is a resident, thereby restricting the taxing rights of the source country.\n\nThe UN Model is generally preferred by developing (capital-importing) countries, including India. Its core philosophy places much greater emphasis on \"Source-based\" taxation. It grants broader taxing rights to the country where the income is actually generated (the source country), ensuring a more equitable sharing of tax revenues between developed and developing nations.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "double-taxation-and-avoidance-agreements-dtaa-sec-90-90a-and-91",
+    "mapping_confidence": 0.86,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Angad, a resident individual aged 68 years furnishes the following particulars of his income for the financial year 2025-26:\n(i) Business income in India ₹ 6,00,000\n(ii) Dividend income (gross) ₹ 1,80,000, from a company in Country T. Tax rate in country T was @20% without basic exemption limit.\n(iii) Royalty ₹ 8,00,000 earned from Country W on authoring a book. (₹ 5,60,000 was received in India on 30.06.2026. ₹ 80,000 was TDS in Country W on royalty). The expenses incurred for earning royalty ₹ 1,20,000\n(iv) Rent from house property situated in Country W ₹ 2,00,000\n(v) Income-tax rate in Country W is 10% without any basic exemption limit\n(vi) Paid interest on housing loan to State Bank of India ₹ 1,70,000 for the residential property in Mumbai, where his family resides.\n(vii) He deposited ₹ 1,75,000 in Public Provident Fund account of his wife during the year.\n\nRequired:\nCalculate the total income and assess the tax payable by Angad for the A.Y. 2026-27 under the default tax regime, assuming India does not have DTAA with Country T and Country W.",
+    "parent_ref": "6",
+    "explanation_md": "Computation of total income and tax liability of Angad for the A.Y. 2026-27\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Income from house property | | |\n| Annual value of self-occupied house property in India | Nil | |\n| Less: Interest on housing loan (not allowable u/s 115BAC) | Nil | |\n| Income chargeable from this property | Nil | |\n| Annual value of property in Country W | 2,00,000 | |\n| Less: Deduction u/s 24(a) @30% | 60,000 | |\n| Income from house property | | 1,40,000 |\n| Profits and gains from business and profession | | |\n| Business income in India | | 6,00,000 |\n| Income from other sources | | |\n| Dividend from Country T | 1,80,000 | |\n| Royalty from Country W less expenses ₹ 1,20,000 (may also be shown in PGBP) | 6,80,000 | |\n| | | 8,60,000 |\n| Gross total income | | 16,00,000 |\n| Less: Chapter VI-A Deductions | | |\n| 80C - Deposit in PPF a/c of his wife (not allowed u/s 115BAC) | | Nil |\n| 80QQB - not allowed u/s 115BAC | | Nil |\n| Total Income | | 16,00,000 |\n| Tax on total income u/s 115BAC | 1,20,000 | |\n| Add: HEC @4% | 4,800 | |\n| | | 1,24,800 |\n| Less: Deduction u/s 91 (see the working note below) | | 78,000 |\n| Net tax liability | | 46,800 |\n\nWorking note: calculation of deduction u/s 91\n\n$$\n\\text{Indian average tax rate}=\\frac{\\text{₹ }1{,}24{,}800}{\\text{₹ }16{,}00{,}000}\\times 100=7.8\\%\n$$\n\nAverage rate of tax in Country T is 20%. Doubly taxed income pertaining to Country T is the dividend income of ₹ 1,80,000.\n\nDeduction u/s 91 = (lower of average rate of tax in Country T and Indian rate of tax) × doubly taxed income\n\n$$\n\\text{Deduction}=7.8\\%\\times\\text{₹ }1{,}80{,}000=\\text{₹ }14{,}040\n$$\n\nAverage rate of tax in Country W is 10%. Doubly taxed income pertaining to Country W is royalty less expenses ₹ 6,80,000 plus rent after standard deduction ₹ 1,40,000, that is ₹ 8,20,000.\n\nDeduction u/s 91 = (lower of average rate of tax in Country W and Indian rate of tax) × doubly taxed income\n\n$$\n\\text{Deduction}=7.8\\%\\times\\text{₹ }8{,}20{,}000=\\text{₹ }63{,}960\n$$\n\nTotal deduction u/s 91 = ₹ 14,040 + ₹ 63,960 = ₹ 78,000",
+    "reference_solution_md": "Computation of total income and tax liability of Angad for the A.Y. 2026-27\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Income from house property | | |\n| Annual value of self-occupied house property in India | Nil | |\n| Less: Interest on housing loan (not allowable u/s 115BAC) | Nil | |\n| Income chargeable from this property | Nil | |\n| Annual value of property in Country W | 2,00,000 | |\n| Less: Deduction u/s 24(a) @30% | 60,000 | |\n| Income from house property | | 1,40,000 |\n| Profits and gains from business and profession | | |\n| Business income in India | | 6,00,000 |\n| Income from other sources | | |\n| Dividend from Country T | 1,80,000 | |\n| Royalty from Country W less expenses ₹ 1,20,000 (may also be shown in PGBP) | 6,80,000 | |\n| | | 8,60,000 |\n| Gross total income | | 16,00,000 |\n| Less: Chapter VI-A Deductions | | |\n| 80C - Deposit in PPF a/c of his wife (not allowed u/s 115BAC) | | Nil |\n| 80QQB - not allowed u/s 115BAC | | Nil |\n| Total Income | | 16,00,000 |\n| Tax on total income u/s 115BAC | 1,20,000 | |\n| Add: HEC @4% | 4,800 | |\n| | | 1,24,800 |\n| Less: Deduction u/s 91 (see the working note below) | | 78,000 |\n| Net tax liability | | 46,800 |\n\nWorking note: calculation of deduction u/s 91\n\n$$\n\\text{Indian average tax rate}=\\frac{\\text{₹ }1{,}24{,}800}{\\text{₹ }16{,}00{,}000}\\times 100=7.8\\%\n$$\n\nAverage rate of tax in Country T is 20%. Doubly taxed income pertaining to Country T is the dividend income of ₹ 1,80,000.\n\nDeduction u/s 91 = (lower of average rate of tax in Country T and Indian rate of tax) × doubly taxed income\n\n$$\n\\text{Deduction}=7.8\\%\\times\\text{₹ }1{,}80{,}000=\\text{₹ }14{,}040\n$$\n\nAverage rate of tax in Country W is 10%. Doubly taxed income pertaining to Country W is royalty less expenses ₹ 6,80,000 plus rent after standard deduction ₹ 1,40,000, that is ₹ 8,20,000.\n\nDeduction u/s 91 = (lower of average rate of tax in Country W and Indian rate of tax) × doubly taxed income\n\n$$\n\\text{Deduction}=7.8\\%\\times\\text{₹ }8{,}20{,}000=\\text{₹ }63{,}960\n$$\n\nTotal deduction u/s 91 = ₹ 14,040 + ₹ 63,960 = ₹ 78,000",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Laxman Ltd, Cochin is engaged in software development and support services worldwide. Peter Inc. of USA, holds 45% voting rights in Laxman Ltd. During the FY 2025-26, Laxman Ltd. developed software for Peter Inc.\n\nThe following information is provided as regards the development of software for Peter Inc:\n(i) Total cost incurred ₹ 50 crore. Total price billed ₹ 70 crore.\n(ii) Peter Inc. provides technical know-how for development of software. The value of such know-how can be taken at 8% of normal gross profit.\n(iii) A discount of 12% of normal gross profit was given to Peter Inc.\n(iv) Credit period given to Peter Inc. 90 days. Interest cost can be taken at 2% on the normal billing rate.\n\nLaxman Ltd. provided similar service to an unrelated party Roshan Ltd. of UK and the details as regards its service to Roshan Ltd. are as under:\n(i) Gross profit earned from the transaction with Roshan Ltd. 75% on cost.\n(ii) Roshan Ltd. does not provide any technical know-how.\n(iii) No discount was given to Roshan Ltd.\n(iv) Roshan Ltd. had to pay the entire amount upfront and no credit period was allowed.\n\nRequired:\nCalculate the arm’s length price of the international transaction between the associated enterprises as per the most appropriate method by giving reasons for the same.",
+    "parent_ref": "7",
+    "explanation_md": "Computation of ALP under Cost Plus Method\n\nSince Peter Inc. holds 26% or more voting power in Laxman Ltd both are deemed to be associated enterprises and the transaction between them is \"international transaction\". Hence it needs to be valued at arm's length price.\n\nCost plus method is the most appropriate method for determination of ALP because it is an instance of developing a product where direct and indirect cost of production would be found. Also, the normal gross profit mark-up and the mark-up to the AE could be compared. The mark-up is adjusted taking into account functional and other differences.\n\nComputation of Arm's Length Price\n\n| Particulars | % | % |\n|---|---|---|\n| Normal GP mark up | | 75 |\n| Less: Adjustment for differences | | |\n| Technical know-how from associated enterprises 8% of 75% | 6 | |\n| Discount given to associated enterprises 12% of 75% | 9 | |\n| | | 15 |\n| | | 60 |\n| Add: Cost of credit period to associated enterprise | | 2 |\n| Arm's length gross profit mark-up | | 62 |\n\nComputation of increase in total income of Laxman Ltd.\n\n| Particulars | ₹ in crore |\n|---|---|\n| Cost of services provided to associated enterprises | 50 |\n| Arm's length mark up 50 crore × 62% | 31 |\n| Arm's length price | 81 |\n\nAlternate way of calculation of ALP\n\nComputation of Arm's Length Price under Cost Plus Method\n\n| Particulars | ₹ in crore | ₹ in crore |\n|---|---|---|\n| Normal GP mark up (75% of ₹ 50 crore) | | 37.50 |\n| Less: Adjustment for differences | | |\n| Technical know-how from associated enterprises (8% of ₹ 37.50 crore) | 3.00 | |\n| Discount given to associated enterprises (12% of ₹ 37.50 crore) | 4.50 | |\n| | | 7.50 |\n| | | 30.00 |\n| Add: Cost of credit period to associated enterprise (2% of ₹ 50 crore) | | 1.00 |\n| Arm's length gross profit mark-up | | 31 |\n\nComputation of increase in total income of Laxman Ltd.\n\n| Particulars | ₹ in crore |\n|---|---|\n| Cost of services provided to associated enterprises | 50 |\n| Arm's length mark up (as calculated above) | 31 |\n| Arm's length price | 81 |",
+    "reference_solution_md": "Computation of ALP under Cost Plus Method\n\nSince Peter Inc. holds 26% or more voting power in Laxman Ltd both are deemed to be associated enterprises and the transaction between them is \"international transaction\". Hence it needs to be valued at arm's length price.\n\nCost plus method is the most appropriate method for determination of ALP because it is an instance of developing a product where direct and indirect cost of production would be found. Also, the normal gross profit mark-up and the mark-up to the AE could be compared. The mark-up is adjusted taking into account functional and other differences.\n\nComputation of Arm's Length Price\n\n| Particulars | % | % |\n|---|---|---|\n| Normal GP mark up | | 75 |\n| Less: Adjustment for differences | | |\n| Technical know-how from associated enterprises 8% of 75% | 6 | |\n| Discount given to associated enterprises 12% of 75% | 9 | |\n| | | 15 |\n| | | 60 |\n| Add: Cost of credit period to associated enterprise | | 2 |\n| Arm's length gross profit mark-up | | 62 |\n\nComputation of increase in total income of Laxman Ltd.\n\n| Particulars | ₹ in crore |\n|---|---|\n| Cost of services provided to associated enterprises | 50 |\n| Arm's length mark up 50 crore × 62% | 31 |\n| Arm's length price | 81 |\n\nAlternate way of calculation of ALP\n\nComputation of Arm's Length Price under Cost Plus Method\n\n| Particulars | ₹ in crore | ₹ in crore |\n|---|---|---|\n| Normal GP mark up (75% of ₹ 50 crore) | | 37.50 |\n| Less: Adjustment for differences | | |\n| Technical know-how from associated enterprises (8% of ₹ 37.50 crore) | 3.00 | |\n| Discount given to associated enterprises (12% of ₹ 37.50 crore) | 4.50 | |\n| | | 7.50 |\n| | | 30.00 |\n| Add: Cost of credit period to associated enterprise (2% of ₹ 50 crore) | | 1.00 |\n| Arm's length gross profit mark-up | | 31 |\n\nComputation of increase in total income of Laxman Ltd.\n\n| Particulars | ₹ in crore |\n|---|---|\n| Cost of services provided to associated enterprises | 50 |\n| Arm's length mark up (as calculated above) | 31 |\n| Arm's length price | 81 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "transfer-pricing",
+    "mapping_confidence": 0.45,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "On 01.04.2025, Board (P) Ltd, Jaipur engaged in construction business, borrowed a loan of ₹ 100 crore from Crow Ltd. of UK. Crow Ltd. is engaged in manufacturing business. The interest rate for the loan was @ 9% p.a. The tenure of the loan was 5 years and no repayment of loan was made in FY 2025-26. This loan was guaranteed by Pity Ltd. of USA. Mr. Rubin, an individual resident in Germany, holds 30% voting rights in both Board (P) Ltd. and Pity Ltd. Board (P) Ltd. does not have any other loan. Its net profit for the FY 2025-26 was ₹ 22 crore after interest on loan, depreciation of ₹ 4 crore and provision for income-tax of ₹ 5 crore.\n\nRequired:\nCalculate the interest to be disallowed in the hands of Board (P) Ltd. for the AY 2026-27 after discussing legal provisions governing the transactions for allowance of interest.",
+    "parent_ref": "7",
+    "explanation_md": "Legal provisions limiting interest deduction - Section 94B\n\nAs per section 94B of the Income-tax Act, 1961 where an Indian company or an Indian PE of a foreign company, being the borrower, incurs any expenditure by way of interest or of similar nature exceeding ₹ 1 crore, which is deductible under the head PGBP in respect of any debt issued by a non-resident, being an associated enterprise of such borrower, the interest shall not be deductible in computation of income under the said head to the extent that it arises from excess interest.\n\nProvided that where the debt is issued by a lender which is not associated but an associated enterprise provides an implicit or explicit guarantee to such lender or deposits a corresponding and matching amount of funds with the lender, such debt shall be deemed to have been issued by an associated enterprise.\n\nIn the present case, the loan taken by Board (P) Ltd an Indian company from Crow Ltd of UK is guaranteed by Pity Ltd of USA. Moreover, Mr. Rubin holds more than 26% in both, Board (P) Ltd and Pity Ltd. Board (P) Ltd and Pity Ltd will be deemed to be associated enterprises and the loan guaranteed by Pity Ltd will also be deemed to be borrowed from the associated enterprise.\n\nTherefore, the provisions of section 94B will be applicable, since the amount of interest exceeds ₹ 1 crore (₹ 100 crore × 9% = ₹ 9 crore).\n\nAs per section 94B, the amount of excess interest shall be disallowed. Excess interest shall mean an amount of:\n\n(i) The total interest paid or payable in excess of 30% of earnings before interest, tax, depreciation and amortisation (EBITDA) of the borrower in the previous year;\n\n(ii) Interest paid or payable to associated enterprises for that previous year,\n\nwhichever is less.\n\nComputation of disallowance of interest u/s 94B for the current year\n\n| Particulars | ₹ in crore |\n|---|---|\n| Profit after interest, tax and depreciation | 22 |\n| Add: interest | 9 |\n| Income-tax | 5 |\n| Depreciation | 4 |\n| EBITDA | 40 |\n| 30% of EBITDA | 12 |\n| Interest allowed (lower of Actual amount ₹ 9 crore or ₹ 12 crore) | 9 |\n| Interest disallowed (since the interest paid is within 30% of EBITDA) | NIL |\n\nHence, the entire interest of ₹ 9 crore is allowable as deduction and no amount is required to be carried forward.",
+    "reference_solution_md": "Legal provisions limiting interest deduction - Section 94B\n\nAs per section 94B of the Income-tax Act, 1961 where an Indian company or an Indian PE of a foreign company, being the borrower, incurs any expenditure by way of interest or of similar nature exceeding ₹ 1 crore, which is deductible under the head PGBP in respect of any debt issued by a non-resident, being an associated enterprise of such borrower, the interest shall not be deductible in computation of income under the said head to the extent that it arises from excess interest.\n\nProvided that where the debt is issued by a lender which is not associated but an associated enterprise provides an implicit or explicit guarantee to such lender or deposits a corresponding and matching amount of funds with the lender, such debt shall be deemed to have been issued by an associated enterprise.\n\nIn the present case, the loan taken by Board (P) Ltd an Indian company from Crow Ltd of UK is guaranteed by Pity Ltd of USA. Moreover, Mr. Rubin holds more than 26% in both, Board (P) Ltd and Pity Ltd. Board (P) Ltd and Pity Ltd will be deemed to be associated enterprises and the loan guaranteed by Pity Ltd will also be deemed to be borrowed from the associated enterprise.\n\nTherefore, the provisions of section 94B will be applicable, since the amount of interest exceeds ₹ 1 crore (₹ 100 crore × 9% = ₹ 9 crore).\n\nAs per section 94B, the amount of excess interest shall be disallowed. Excess interest shall mean an amount of:\n\n(i) The total interest paid or payable in excess of 30% of earnings before interest, tax, depreciation and amortisation (EBITDA) of the borrower in the previous year;\n\n(ii) Interest paid or payable to associated enterprises for that previous year,\n\nwhichever is less.\n\nComputation of disallowance of interest u/s 94B for the current year\n\n| Particulars | ₹ in crore |\n|---|---|\n| Profit after interest, tax and depreciation | 22 |\n| Add: interest | 9 |\n| Income-tax | 5 |\n| Depreciation | 4 |\n| EBITDA | 40 |\n| 30% of EBITDA | 12 |\n| Interest allowed (lower of Actual amount ₹ 9 crore or ₹ 12 crore) | 9 |\n| Interest disallowed (since the interest paid is within 30% of EBITDA) | NIL |\n\nHence, the entire interest of ₹ 9 crore is allowable as deduction and no amount is required to be carried forward.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.35,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Eagle Pharma Ltd., a domestic company, provides the following Profit & Loss Account for the year ended 31st March, 2026:\n\n| Particulars | ₹ (in Lakhs) | Particulars | ₹ (in Lakhs) |\n|---|---|---|---|\n| To Manufacturing Exp. | 950 | By Sales | 4,200 |\n| To Depreciation | 1,300 | By Other Incomes | 150 |\n| To Provision for Income Tax | 120 | | |\n| To Proposed Dividend | 80 | | |\n| To Provision for Doubtful Debts | 50 | | |\n| To Net Profit | 1,850 | | |\n| | 4,350 | | 4,350 |\n\nAdditional Information:\n(i) Depreciation as per Income-tax Rules is ₹ 850 Lakhs, which includes additional depreciation of ₹ 150 lakhs on new machinery.\n(ii) Depreciation debited in the Profit and Loss account includes depreciation on revalued amounts ₹ 300 lakhs.\n(iii) Brought Forward items:\nAs per Books of account: Business Loss = Nil; Unabsorbed Depreciation = ₹ 150 Lakhs.\nAs per Income-tax Act, 1961: Business Loss of AY 2024-25 = ₹ 250 Lakhs; Unabsorbed Depreciation for AY 2011-12 = ₹ 300 Lakhs.\n(iv) The company has not opted for the provisions contained in section 115BAA and its turnover for F.Y.2023-24 was ₹ 100 crore.\n\nYou are required to calculate the total income as per normal provisions and book profit under section 115JB and determine the final tax liability for the AY 2026-27.",
+    "parent_ref": "8",
+    "explanation_md": "Computation of Total Income of Eagle Ltd (A.Y.2026-27) (under normal provisions)\n\n| Particulars | ₹ in lakhs | ₹ in lakhs |\n|---|---|---|\n| Net Profit as per P&L | | 1,850 |\n| Add: Provision for Income Tax | | 120 |\n| Add: Proposed Dividend | | 80 |\n| Add: Provision for Doubtful Debts (Disallowed) | | 50 |\n| Add: Depreciation as per Books | | 1,300 |\n| | | 3,400 |\n| Less: Depreciation as per IT Act including additional depreciation (for the current year) | 850 | |\n| Unabsorbed depreciation | 300 | |\n| | | 1,150 |\n| | | 2,250 |\n| Less: Brought forward business Loss (AY 2024-25) | | (250) |\n| Income from business | | 2,000 |\n| Gross Total Income (GTI) / Total Income | | 2,000 |\n\nComputation of Book Profit (u/s 115JB)\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| Net Profit as per P&L | 1,850 |\n| Add: Provision for Income Tax | 120 |\n| Add: Proposed Dividend | 80 |\n| Add: Provision for Doubtful Debts | 50 |\n| Add: Depreciation as per Books ₹ 1300 lakhs of which amount attributable to revalued assets to be added back | 300 |\n| | 2,400 |\n| Less: Lower of B/f Loss as per books (NIL) or Unabsorbed Dep (₹ 150 L) | (NIL) |\n| Book Profit | 2,400 |\n\nComputation of Final Tax Liability of Eagle Pharma Ltd.\n\n| Particulars | Normal Tax (₹ in lakhs) | 15% of Book Profit (₹ in lakhs) |\n|---|---|---|\n| Income-tax | 2,000 @25% = 500.00 | 2,400 @15% = 360.00 |\n| Add: Surcharge | 500 @ 12% = 60.00 | 360 @ 12% = 43.20 |\n| Add: HEC @4% | 22.40 | 16.128 |\n| Total tax liability | 582.40 | 419.328 |\n\nSince, tax on total income is more than 15% of the book profits, the income as per normal provisions would be liable to tax.",
+    "reference_solution_md": "Computation of Total Income of Eagle Ltd (A.Y.2026-27) (under normal provisions)\n\n| Particulars | ₹ in lakhs | ₹ in lakhs |\n|---|---|---|\n| Net Profit as per P&L | | 1,850 |\n| Add: Provision for Income Tax | | 120 |\n| Add: Proposed Dividend | | 80 |\n| Add: Provision for Doubtful Debts (Disallowed) | | 50 |\n| Add: Depreciation as per Books | | 1,300 |\n| | | 3,400 |\n| Less: Depreciation as per IT Act including additional depreciation (for the current year) | 850 | |\n| Unabsorbed depreciation | 300 | |\n| | | 1,150 |\n| | | 2,250 |\n| Less: Brought forward business Loss (AY 2024-25) | | (250) |\n| Income from business | | 2,000 |\n| Gross Total Income (GTI) / Total Income | | 2,000 |\n\nComputation of Book Profit (u/s 115JB)\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| Net Profit as per P&L | 1,850 |\n| Add: Provision for Income Tax | 120 |\n| Add: Proposed Dividend | 80 |\n| Add: Provision for Doubtful Debts | 50 |\n| Add: Depreciation as per Books ₹ 1300 lakhs of which amount attributable to revalued assets to be added back | 300 |\n| | 2,400 |\n| Less: Lower of B/f Loss as per books (NIL) or Unabsorbed Dep (₹ 150 L) | (NIL) |\n| Book Profit | 2,400 |\n\nComputation of Final Tax Liability of Eagle Pharma Ltd.\n\n| Particulars | Normal Tax (₹ in lakhs) | 15% of Book Profit (₹ in lakhs) |\n|---|---|---|\n| Income-tax | 2,000 @25% = 500.00 | 2,400 @15% = 360.00 |\n| Add: Surcharge | 500 @ 12% = 60.00 | 360 @ 12% = 43.20 |\n| Add: HEC @4% | 22.40 | 16.128 |\n| Total tax liability | 582.40 | 419.328 |\n\nSince, tax on total income is more than 15% of the book profits, the income as per normal provisions would be liable to tax.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.44,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "State with reasons, whether the following entities can be regarded as associated enterprises/ deemed to be associated enterprises as per the provisions of Income-tax Act, 1961:\n(i) Mano Ltd. an Indian company holds 25% equity shares in PWR LLP of UAE.\n(ii) Red Pte of Singapore is the owner of a patented technology for manufacturing a specific type of fertilizer X. Blue Ltd. of Delhi manufactures fertilizer X exclusively using the technology of Red Pte and for which Blue Ltd. pays royalty to Red Pte as per market norms. Blue Ltd. does not manufacture or produce any other article or thing.\n(iii) Multi Associates, an Indian partnership firm at Mumbai, has three partners viz., Mr. Ray, Mr. Joy and M/s Bounty Inc. of USA having profit sharing ratio of 50%, 30% and 20% respectively.\n(iv) Bihu Ltd. an Indian company advanced a loan of ₹ 20 crore to Ritu Ltd. of UK which is 5% of total loan taken by Ritu Ltd. from various entities. The book value of total assets of Bihu Ltd. was ₹ 100 crore and of Ritu Ltd. was ₹ 350 crore.\n(v) Mango Ltd., Chennai guarantees a loan taken by Banana Inc. of USA (taken from a bank in USA) of ₹ 12 crore which is 15% of the total loan taken by Banana Inc. The book value of total assets of Mango Ltd. was ₹ 250 crore and of Banana Inc. ₹ 150 crore.\n(vi) Mr. Ranavijay holds a right to appoint 9 directors out of 15 directors on the Board of Directors of both Pigeon Ltd. of India and Cuckoo Inc. of USA. However, he appointed only 5 directors in Pigeon Ltd. and 8 directors in Cuckoo Inc.\n(vii) Mr. Cooper a foreign national and a non-resident in India, controls Carrot Ltd. of Kolkata while Mrs. Cooper controls Cucumber Inc. of USA.",
+    "parent_ref": "8",
+    "explanation_md": "Associated and deemed associated enterprises in India\n\n(i) Since Mano Ltd an Indian company does not hold 26% or more of the equity shares of PWR LLP of UAE, they cannot be deemed to be associated enterprise.\n\n(ii) Since the manufacture by Blue Ltd. is wholly dependent on the patented technology owned by Red Pte. they are deemed as associated enterprises.\n\n(iii) Since M/s Bounty Inc. of USA holds not less than 10% interest in Multi Associates, being an Indian partnership firm, they are to be deemed as associated enterprises i.e. Multi Associates and Bounty Inc.\n\n(iv) Since Bihu Ltd., advanced a loan which was less than 51% of book value of total assets held by Ritu Ltd of UK, they cannot be deemed as associated enterprises.\n\n(v) Since Mango Ltd., guarantees a loan taken by Banana Inc. of USA which is more than 10% (i.e., 15%) of total loan taken by Banana Inc., they are deemed to be associated enterprises.\n\n(vi) Since Mr. Ranavijay does not appoint more than half of the Board of directors in one of the companies, i.e., Pigeon Ltd they cannot be deemed as associated enterprises. In other words, Pigeon Ltd and Cuckoo Inc. are not deemed to be associated enterprises.\n\n(vii) Since one individual (Mr. Cooper), and his relative (wife of Mr. Cooper), control Carrot Ltd of India and Cucumber Inc. of USA, both Carrot Ltd and Cucumber Inc. are deemed to be associated enterprises.",
+    "reference_solution_md": "Associated and deemed associated enterprises in India\n\n(i) Since Mano Ltd an Indian company does not hold 26% or more of the equity shares of PWR LLP of UAE, they cannot be deemed to be associated enterprise.\n\n(ii) Since the manufacture by Blue Ltd. is wholly dependent on the patented technology owned by Red Pte. they are deemed as associated enterprises.\n\n(iii) Since M/s Bounty Inc. of USA holds not less than 10% interest in Multi Associates, being an Indian partnership firm, they are to be deemed as associated enterprises i.e. Multi Associates and Bounty Inc.\n\n(iv) Since Bihu Ltd., advanced a loan which was less than 51% of book value of total assets held by Ritu Ltd of UK, they cannot be deemed as associated enterprises.\n\n(v) Since Mango Ltd., guarantees a loan taken by Banana Inc. of USA which is more than 10% (i.e., 15%) of total loan taken by Banana Inc., they are deemed to be associated enterprises.\n\n(vi) Since Mr. Ranavijay does not appoint more than half of the Board of directors in one of the companies, i.e., Pigeon Ltd they cannot be deemed as associated enterprises. In other words, Pigeon Ltd and Cuckoo Inc. are not deemed to be associated enterprises.\n\n(vii) Since one individual (Mr. Cooper), and his relative (wife of Mr. Cooper), control Carrot Ltd of India and Cucumber Inc. of USA, both Carrot Ltd and Cucumber Inc. are deemed to be associated enterprises.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "assessment-of-income-and-computation-of-tax-liability-of-various-entities",
+    "mapping_confidence": 0.7,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(iv)": [
+   "Printed key C (date of service of notice of demand); accepted as printed."
+  ],
+  "1(xi)": [
+   "Printed key A accepted as printed."
+  ],
+  "2(a)": [
+   "Printed 'Shopia/Sophia' and figures kept as printed; dividend grossed up to 10 as printed."
+  ],
+  "3(b)": [
+   "Printed alternate presentation reproduced."
+  ],
+  "4(b)": [
+   "Institute spelling 'Shopia' kept; both regime computations printed as alternatives."
+  ],
+  "6(b)": [
+   "Printed 'Less: Deduction u/s 91' working kept as printed (average Indian rate 7.8%)."
+  ]
+ },
+ "review_decisions": {
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed '80JJA' where 80JJAA is meant",
+    "Printed 'Surcharge @1 0%' (10%)"
+   ],
+   "by": "claude-review"
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. Figures flagged by the text check were only comma/lakh formatting.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. The 7 marks are printed once for items (i)-(vii).",
+   "fixes": [],
+   "printed_issues": [
+    "Answer to (iii) says 'not less than 10% interest'; (iv) says 'book value of total assets' (as printed)"
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 29
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p15-2024-06",
+ "items": {
+  "1(iv)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key D equals printed key (iv) (D).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(v)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print (stray tick near A ignored); stored key C equals printed key (v) (C).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "2": {
+   "verdict": "approve",
+   "reason": "Compared stem items (i)-(xi) and the printed answer table line by line; all lines, figures and totals (1,04,50,000; 40,00,000; 64,50,000) present in order.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem and rate table match; answer table with USD and rupee columns matches the print, figures digit for digit.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says 'divided by 72' although the stem gives TT buying 70 / selling 74.",
+    "Sale consideration shown as USD 1,00,000 with only the note 'average of USD rate on the date of sale'; final 9,50,000 sits in the rupee column."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem, securities table and answer match the print (ICDS V block and ICDS VIII category-wise comparison).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer match the print; figures 33,70,000, 3,29,160, 9.77%, 52,758 and 2,76,400 verified.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer's slab-rate and LTCG tax working is not shown in detail (final figures only)."
+   ]
+  }
+ }
+}

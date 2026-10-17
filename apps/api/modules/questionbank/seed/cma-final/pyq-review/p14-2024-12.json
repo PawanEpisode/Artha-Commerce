@@ -1,0 +1,100 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p14-2024-12",
+ "items": {
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key C equals printed key (C).",
+   "fixes": [],
+   "printed_issues": [
+    "Forward ask rate printed as '78.8550 / 9650' (shorthand for 78.9650)."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print. Cash-flow and NPV working lines are tables in the print; rebuilt as tables.",
+   "fixes": [
+    "Cash-flow and NPV working lines rebuilt as tables as printed; blank line before tables."
+   ],
+   "printed_issues": [
+    "Book value of new machine printed as 810000 (price plus installation).",
+    "NPV arithmetic printed as 902337 - 626800 giving 2,75,538 (advice quotes 275538)."
+   ],
+   "answer_md": "(i) Analysis of Cash Saving and NPV of Cash inflow\n(Amount in ₹)\n\n| | Old Machine | New Machine | Difference |\n|---|---|---|---|\n| Price | 400000 | 750000 | |\n| Shipping and Installation | 0 | 60000 | |\n| Original life | 10 | 5 | |\n| Current Life | 5 | 5 | |\n| Original Salvage value | 0 | 150000 | |\n| Current Salvage Value (Cash) | 220000 | Not Applicable | |\n| Book Value | 200000 | 810000 | |\n| Increase in raw materials | 0 | 30000 | |\n| Depreciation | 40000 | 132000 | (-)92000 |\n| Salaries | 290000 | 0 | 290000 |\n| Maintenance | 100000 | 70000 | 30000 |\n| Marginal tax rate | 34 % | | |\n| Required return | 15 % | | |\n\n| CASH FLOWS Replacement | ₹ |\n|---|---|\n| Annual Cash-flow After tax Saving | 211200 |\n| Depreciation tax Benefit | 31280 |\n| Total Cash Flows after tax | 242480 |\n\nCalculation of Net Present Value:\n\n| | ₹ |\n|---|---|\n| Operating Cash Inflow from 1 to 5 years | 812841 |\n| Add: PV of Terminal Cash Flow | 89496 |\n| PV of Total Cash Inflow | 902337 |\n| Less: Initial Outlay | 626800 |\n| Net Present Value (NPV) | 2,75,538 |\n\n(ii) Advice :\nSince Net Present Value (NPV) of Cash inflows is positive (+ ₹ 275538), the Company should consider to replace the existing machine by a New Machine."
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print. Blank lines added before tables.",
+   "fixes": [
+    "Blank line before tables."
+   ],
+   "printed_issues": [
+    "Question's principal schedule 5 / 8.5 / 8.5 lakhs; printed answer misspells 'Least Rent'."
+   ],
+   "answer_md": "(i) Option: Purchase of Computer\n(₹)\n\n| Particulars | Year 1 | Year 2 | Year 3 |\n|---|---|---|---|\n| Instalment Payment | | | |\n| Principal | 500000 | 850000 | 850000 |\n| Interest | 352000 | 272000 | 136000 |\n| Total | 852000 | 1122000 | 986000 |\n| Tax Shield @50 % | | | |\n| Interest Payment | 176000 | 136000 | 68000 |\n| Depreciation | 200000 | 200000 | 200000 |\n| Total (B) | 376000 | 336000 | 268000 |\n| Net Cash outflow | 476000 | 786000 | 718000 |\n| PV factor at 8 % | 0.926 | 0.857 | 0.794 |\n| PV of Cash Outflows | 440776 | 673602 | 570092 |\n\nTotal PV of Cash outflows : 1684470\nLess : PV of Salvage value 794000\nNet PV of Cash outflows 890470\n\nOption – Lease of the Computer\n(₹)\n\n| Particulars | Year 1 | Year 2 | Year 3 |\n|---|---|---|---|\n| Least Rent | 500000 | 500000 | 500000 |\n| 10 % of gross revenue | 225000 | 250000 | 275000 |\n| Lump sum payment | | | 600000 |\n| Total Payment | 725000 | 750000 | 1375000 |\n| Less : Tax shield @ 50 % | 362500 | 375000 | 687500 |\n| Net Cash Outflows | 362500 | 375000 | 687500 |\n| PV of Cash Outflows @ 8% | 335675 | 321375 | 545875 |\n\nTotal PV of Cash Outflows 1202925\n\n(ii) Advice :\nSince the present value (PV) of net cash outflow of option (1) (Purchase of Computer) is lower than that of option (II) lease of Computer the company should go for purchasing of computer."
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says 'Simulation Trails'; discounting at the risk-free rate (12%) as printed."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Print gives two alternative terminal values (1251.76 or 910.34) and final prices (₹ 496.83 or ₹ 387.57); the sum shows 419.325 or 310.07.",
+    "Price per share assessed 'at time O' as printed."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer uses PV annuity factors 4.917 and 2.402 that are not in the stem table; 2000 x 1.08^3 shown as 2000 x 1.26."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Print omits the equals sign in the line '25 (E(R) - Rf)/beta_y'.",
+    "Line '(E(R) - Rf)/12 x 3.5 = 42' printed as is."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Portfolio variance printed as 0.08982 in (ii) but 0.089826 in (iii).",
+    "Print uses P for rho and multiplication by juxtaposition."
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "December working prints e^0.67 although the given value and result correspond to e^0.067.",
+    "Print says 'say 4 contract'."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and answer with the question paper and suggested answers; text and figures match the print. Blank lines added before tables.",
+   "fixes": [
+    "Blank line before tables."
+   ],
+   "printed_issues": [
+    "Option hedge workings are inconsistent as printed (call option for receivable; 'INR Receivable 25 million', premium (50 million), net 2450 million; payable 990 million to 1005 million)."
+   ],
+   "answer_md": "(i) Forward Contracts\n\n| Transaction Exposure | Amount (₹) |\n|---|---|\n| Receivable | 2425 million |\n| Payable | 970 million |\n| Net Outcome | 1455 million |\n\n(ii) Money Market Hedge\nFor Receivable:\n\n| Particulars | Amount (EUR) | Amount (₹) |\n|---|---|---|\n| Future Value of Receivable | 25 Million | -- |\n| Borrow EUR Today | 24.57 million | -- |\n| Convert to INR at Current Spot Rate | -- | 2334.15 million |\n| Invest INR for 6 Months at 7% p.a. | -- | 2415.85 million |\n\nFor Payable:\n\n| Particulars | Amount (EUR) | Amount (₹) |\n|---|---|---|\n| Future EUR payable | 10 Million | -- |\n| Invest EUR Today | 9.828 million | -- |\n| Borrowed INR today at Current Spot Rate | - | 933.66 million |\n| Repayment INR after 6 Months | - | 975.67 million |\n\nNet Outcome Using Money Market Hedge:\n\n| Item | Amount (₹) |\n|---|---|\n| Receivable | 2415.85 million |\n| Payable | 975.67 million |\n| Net Outcome | 1440.18 Million |\n\n(iii) Currency Option Hedge\nReceivable:\n\n| Particulars | Amount (₹) |\n|---|---|\n| INR Receivable | 25 million |\n| Option Premium | (50 million) |\n| Net Pay off | (25 million) |\n| Net INR Receivable | 2450 million |\n\nPayable:\n\n| Particulars | Amount (₹) |\n|---|---|\n| INR Payable | Nil |\n| Option Premium | 15 million |\n| Expected Spot Rate in 6 Months | 990 million |\n| Net INR Payable | 1005 million |\n\nNet Outcome Using Currency Option Hedge:\n\n| Item | Amount (₹) |\n|---|---|\n| Receivable | 2450 million |\n| Payable | 1005 million |\n| Net Outcome | 1445 Million |\n\n(iv) Comparison of All Three Strategies\n\n| Strategy | ₹ Receivable (After 6 Months) | ₹ Payable (After 6 Months) | Net ₹ Outcome (After 6 Months) |\n|---|---|---|---|\n| Forward Contracts | 2425 million | 970 million | 1455 million |\n| Money Market Hedge | 2415.85 million | 975.67 million | 1440.18 million |\n| Currency Option Hedge | 2450 million | 1005 million | 1445 million |\n\nRecommendation: The Forward contract hedge provides the best Net outcome of ₹ 1455 million due to its flexibility and the potential to benefit from favourable exchange rates."
+  }
+ }
+}

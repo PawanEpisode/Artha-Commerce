@@ -1,0 +1,1085 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "20A",
+ "source_file": "pyq-transcriptions/p20a-2023-12.json",
+ "paper_review": [
+  "Paper title printed: P-20A (SPMBV) Strategic Performance Management and Business Valuation, Syllabus 2022. Q1(vii) answer key is 'any' (no single key).",
+  "Many Section B answers in the suggested-answer PDF are images; only text-extractable final values are included."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p20a:2023-12",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-performance-management-and-business-valuation",
+  "term_code": "2023-12",
+  "title": "CMA Final December 2023: Strategic Performance Management and Business Valuation (Paper 20A)",
+  "paper_code": "P20A",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct answer from the given alternatives: 2×15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "If the proportionate change in the price is more than the proportionate change in the demand, it is called",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Relatively inelastic demand.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Relatively elastic demand.",
+      "is_correct": true
+     },
+     {
+      "body_md": "Perfectly inelastic demand.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Perfectly elastic demand.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "It is assumed that M. Ltd, would realize ₹ 40 million from the liquidation of its assets. It pays ₹ 20 million to its Creditors and Preference Shareholders in full and final settlement of their claims. If the number of equity shares of M. Ltd. is 2 million, the liquidation value per share would be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 1 per share",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 10 per share",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 12 per share",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 15 per share",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.47,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "**Given:** The growth rate in the dividends is expected to be 8%. The Beta of the stock is 1.60 and the return on the market index is 13%. The required rate of return would be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "14%",
+      "is_correct": false
+     },
+     {
+      "body_md": "16%",
+      "is_correct": true
+     },
+     {
+      "body_md": "18%",
+      "is_correct": false
+     },
+     {
+      "body_md": "20%",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "fundamentals-of-business-valuation",
+    "mapping_confidence": 0.09,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Performance will be a product of ______________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Efficiency and Utilization",
+      "is_correct": false
+     },
+     {
+      "body_md": "Utilization and Productivity",
+      "is_correct": false
+     },
+     {
+      "body_md": "Efficiency and Productivity",
+      "is_correct": false
+     },
+     {
+      "body_md": "Efficiency, Utilization and Productivity",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.2,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "If the divestiture value is greater than the present value of the expected cash flows, the value of the divesting firm will ______________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "increase on the divestiture",
+      "is_correct": true
+     },
+     {
+      "body_md": "decrease on the divestiture",
+      "is_correct": false
+     },
+     {
+      "body_md": "remain same on the divestiture",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.29,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Under perfect competition and at the point of equilibrium of firm",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "MC curve must be falling.",
+      "is_correct": false
+     },
+     {
+      "body_md": "MC curve must be rising.",
+      "is_correct": true
+     },
+     {
+      "body_md": "MR curve must be falling.",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "economic-efficiency-of-the-firm-performance-analysis",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The demand curve for X is given by the equation: $P = 24 - \\frac{1}{2}\\sqrt{q}$ where P & q denote price and quantity respectively. Find the price point elasticity for P = ₹ 20.",
+    "parent_ref": "1",
+    "explanation_md": "",
+    "reference_solution_md": null,
+    "difficulty": 2,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true,
+    "options": [
+     {
+      "body_md": "64",
+      "is_correct": false
+     },
+     {
+      "body_md": "48",
+      "is_correct": false
+     },
+     {
+      "body_md": "72",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": true
+     }
+    ]
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "RICO Ltd. has PAT of ₹ 40.20 lakh with extra ordinary income of ₹ 7.00 lakh. If the cost of capital is 20% and the applicable tax rate is 40% the value of Rico Ltd. will be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 250 lakh",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 180 lakh",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 150 lakh",
+      "is_correct": false
+     },
+     {
+      "body_md": "Insufficient information",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A bottom-up approach used in strategy formulation is known as ______________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "strategy implementation",
+      "is_correct": false
+     },
+     {
+      "body_md": "formulation of operational plan",
+      "is_correct": false
+     },
+     {
+      "body_md": "formulation of tactical plan",
+      "is_correct": false
+     },
+     {
+      "body_md": "reverse mapping",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.75,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The probability of a product's failure in relation to a time frame is categorized as the dimension of ______________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Conformance",
+      "is_correct": false
+     },
+     {
+      "body_md": "Durability",
+      "is_correct": false
+     },
+     {
+      "body_md": "Reliability",
+      "is_correct": true
+     },
+     {
+      "body_md": "Aesthetics",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Monopolistic competition and Oligopoly are the examples of ______________ market.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "perfect",
+      "is_correct": false
+     },
+     {
+      "body_md": "imperfect",
+      "is_correct": true
+     },
+     {
+      "body_md": "no market structure.",
+      "is_correct": false
+     },
+     {
+      "body_md": "All of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "economic-efficiency-of-the-firm-performance-analysis",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Net Income ₹ 1650; Interest Expenses ₹ 20; Tax on Income ₹ 900; Cash Sales ₹ 5000 and Credit Sales ₹ 2100, in this case what would be the DuPont Return on Equity?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "0.33",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.23",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.36",
+      "is_correct": true
+     },
+     {
+      "body_md": "0.51",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.21,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Net operating profit before tax 1 crore, Net operating profit after tax ₹ 98 lakh, Weighted average cost of capital 11.5%, Average cost of capital 13.5% and total capital ₹ 700 lakhs, then economic value added will be ______________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "10.50 lakhs",
+      "is_correct": false
+     },
+     {
+      "body_md": "16.50 lakhs",
+      "is_correct": false
+     },
+     {
+      "body_md": "17.50 lakhs",
+      "is_correct": true
+     },
+     {
+      "body_md": "18.75 lakhs",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.04,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Market price of share ₹ 500; earnings per share ₹ 25, dividend per share ₹ 50, what would be earnings yield?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "5%",
+      "is_correct": true
+     },
+     {
+      "body_md": "10%",
+      "is_correct": false
+     },
+     {
+      "body_md": "15%",
+      "is_correct": false
+     },
+     {
+      "body_md": "2%",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.2,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A company with PAT of ₹ 60 Crores, Tax Rate 30% plus a cess of 3%, Return on Equity is 20%, Other Equity ₹ 225 Crores, PAT of the company is growing by 8% per year then equity share with a par value of ₹ 10 will have EPS of ______________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 2",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 8",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 10",
+      "is_correct": false
+     },
+     {
+      "body_md": "Insufficient information",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.27,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Briefly explain three fundamental aspects of CRM to facilitate building relationship with customer. Discuss the impact of CRM initiative on an organization, in terms of enhanced risk that it may face.",
+    "parent_ref": "2",
+    "explanation_md": "Fundamental aspects of CRM and its impact on organization:\nCRM system, comprises following three fundamental aspects to facilitate building relationship with profitable customers –\n\nOperative CRM takes care of individual transactions and is used by operational team. Interactions by customers are kept in the data base and are used later by the service, sales, and marketing team for operational decisions.\nAnalytical CRM analyses the data created on the operational side of the CRM effort for evaluation and prediction of customer behaviour.\nCollaborative CRM ensures that information about customer must flow seamlessly throughout the supply chain, majorly distribution channel; in form of collaborative effort by all associated department of an organization to increase the quality of services provided to customers. Increase in utility at customer end will result in increased loyalty. Collaborative CRM comprises interactive technology like email, digital media to simplify the communications between customers and staff which would help in building relationships.\n\nA CRM initiative generally has some of the following impacts on an organization:\n1. Increased expectations from senior management to increase revenues reduce costs, increase market share and increase business flexibility may put tremendous pressure on the organization and may potentially compromise the internal control structure.\n2. Increased complexity of managing multiple channels, technologies, customer relationships and customer definitions.\n3. Vital and confidential customer information may be transmitted and shared across new networks, systems and platforms\n4. Significant changes to the organization, attitudes and beliefs, placing heavy reliance on the organization's employees for the successful adoption of the solution.\nThese factors introduce many risks to the organization, for instance, the potential disruption of vital operations, violations to customer privacy and confidentiality, ineffective, inconsistent or inefficient processes, lack of internal business controls, poor customer service, incorrectly targeted sales and marketing efforts, non-acceptance of new systems and processes and security breaches. Effective risk management helps in minimizing CRM risks and softens the impact.",
+    "reference_solution_md": "Fundamental aspects of CRM and its impact on organization:\nCRM system, comprises following three fundamental aspects to facilitate building relationship with profitable customers –\n\nOperative CRM takes care of individual transactions and is used by operational team. Interactions by customers are kept in the data base and are used later by the service, sales, and marketing team for operational decisions.\nAnalytical CRM analyses the data created on the operational side of the CRM effort for evaluation and prediction of customer behaviour.\nCollaborative CRM ensures that information about customer must flow seamlessly throughout the supply chain, majorly distribution channel; in form of collaborative effort by all associated department of an organization to increase the quality of services provided to customers. Increase in utility at customer end will result in increased loyalty. Collaborative CRM comprises interactive technology like email, digital media to simplify the communications between customers and staff which would help in building relationships.\n\nA CRM initiative generally has some of the following impacts on an organization:\n1. Increased expectations from senior management to increase revenues reduce costs, increase market share and increase business flexibility may put tremendous pressure on the organization and may potentially compromise the internal control structure.\n2. Increased complexity of managing multiple channels, technologies, customer relationships and customer definitions.\n3. Vital and confidential customer information may be transmitted and shared across new networks, systems and platforms\n4. Significant changes to the organization, attitudes and beliefs, placing heavy reliance on the organization's employees for the successful adoption of the solution.\nThese factors introduce many risks to the organization, for instance, the potential disruption of vital operations, violations to customer privacy and confidentiality, ineffective, inconsistent or inefficient processes, lack of internal business controls, poor customer service, incorrectly targeted sales and marketing efforts, non-acceptance of new systems and processes and security breaches. Effective risk management helps in minimizing CRM risks and softens the impact.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Explain the objectives of the Management Information system. Discuss different types of reports prepared under such a system.",
+    "parent_ref": "2",
+    "explanation_md": "Objectives of MIS\n- To provide the managers at all levels with timely and accurate information for control of business activities\n- To highlight the critical factors in the operation of the business for appropriate decision making\n- To develop a systematic and regular process of communication within the organization on performance in different functional areas\n- To use the tools and techniques available under the system for programmed decision making\n- To provide best services to customers\n- To gain competitive advantage\n- To provide information support for business planning for future.\n\nMIS Reports—Few examples of MIS reports\nSummary reports, Trend reports, Predictive report, Exception report, on demand report, financial reports, inventory report sales reports, budget reports, production report, Cash flow reports, cost reports etc.",
+    "reference_solution_md": "Objectives of MIS\n- To provide the managers at all levels with timely and accurate information for control of business activities\n- To highlight the critical factors in the operation of the business for appropriate decision making\n- To develop a systematic and regular process of communication within the organization on performance in different functional areas\n- To use the tools and techniques available under the system for programmed decision making\n- To provide best services to customers\n- To gain competitive advantage\n- To provide information support for business planning for future.\n\nMIS Reports—Few examples of MIS reports\nSummary reports, Trend reports, Predictive report, Exception report, on demand report, financial reports, inventory report sales reports, budget reports, production report, Cash flow reports, cost reports etc.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.03,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Bajaj Ltd., a monopolist, can effectively segment the market into two sub-markets with the demand functions: P1 = 300 – 2Q1 and P2 = 200 – 2Q2. If price discrimination is allowed, what is the maximum possible profit that can be earned by the monopolist?",
+    "parent_ref": "3",
+    "explanation_md": "Profit of the discriminating monopolist = ₹7625 by Considering Cost Function as $c = 3000 + 50Q$",
+    "reference_solution_md": "Profit of the discriminating monopolist = ₹7625 by Considering Cost Function as $c = 3000 + 50Q$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "economic-efficiency-of-the-firm-performance-analysis",
+    "mapping_confidence": 0.27,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Explain the interrelated components of an Enterprise Risk Management framework Advocated by Committee of Sponsoring Organization's (COSO).",
+    "parent_ref": "3",
+    "explanation_md": "The components of ERM\nThe components of ERM do not occur serially where one component affects only the next. Rather it is a multi-directional, iterative process in which component effects and influences other. The COSO Framework advocates eight interrelated components of an ERM which are:\n\n(i) Internal Environment – this is the basis around which risk is viewed and addressed by an entity. The risk management philosophy which is based on the risk appetite, integrity and ethical values of the entity, and the environment in which they operate are aspects which design the internal environment.\n(ii) Objective Setting – Objectives must be set before management can identify potential events affecting their achievement. Effectively implemented ERM ensures that management has in place a process to set objectives and that the chosen objectives support and align with the entity's mission and are consistent with its risk appetite.\n(iii) Event Identification –Events that affect accomplishment of an entity's objectives are identified either as risks or opportunities. Opportunities, referred to as upside aspect of risk, are to be adjusted against the management's strategy or objective-setting processes.\n(iv) Risk Assessment – Risks are analyzed, considering likelihood of occurrence and magnitude of impact. This is the basis which is the determining factor of risk management.\n(v) Risk Response – Management must select risk responses which are either avoiding, accepting, reducing, or sharing risk. For this purpose, the organization must develop set of actions to align risks with the entity's risk tolerances.\n(vi) Control Activities – Policies and procedures are established and implemented to help ensure risk responses are effectively carried out.\n(vii) Information and Communication – Relevant information is identified, captured, and communicated in a structured form and within a timeframe that enable people to carry out their responsibilities. An important aspect of this component is effective communication which transpires in a broader sense, flowing down, across, and up the entity.\n(viii) Monitoring – The entirety of ERM is monitored and modifications made as necessary. Monitoring is accomplished through ongoing management activities.",
+    "reference_solution_md": "The components of ERM\nThe components of ERM do not occur serially where one component affects only the next. Rather it is a multi-directional, iterative process in which component effects and influences other. The COSO Framework advocates eight interrelated components of an ERM which are:\n\n(i) Internal Environment – this is the basis around which risk is viewed and addressed by an entity. The risk management philosophy which is based on the risk appetite, integrity and ethical values of the entity, and the environment in which they operate are aspects which design the internal environment.\n(ii) Objective Setting – Objectives must be set before management can identify potential events affecting their achievement. Effectively implemented ERM ensures that management has in place a process to set objectives and that the chosen objectives support and align with the entity's mission and are consistent with its risk appetite.\n(iii) Event Identification –Events that affect accomplishment of an entity's objectives are identified either as risks or opportunities. Opportunities, referred to as upside aspect of risk, are to be adjusted against the management's strategy or objective-setting processes.\n(iv) Risk Assessment – Risks are analyzed, considering likelihood of occurrence and magnitude of impact. This is the basis which is the determining factor of risk management.\n(v) Risk Response – Management must select risk responses which are either avoiding, accepting, reducing, or sharing risk. For this purpose, the organization must develop set of actions to align risks with the entity's risk tolerances.\n(vi) Control Activities – Policies and procedures are established and implemented to help ensure risk responses are effectively carried out.\n(vii) Information and Communication – Relevant information is identified, captured, and communicated in a structured form and within a timeframe that enable people to carry out their responsibilities. An important aspect of this component is effective communication which transpires in a broader sense, flowing down, across, and up the entity.\n(viii) Monitoring – The entirety of ERM is monitored and modifications made as necessary. Monitoring is accomplished through ongoing management activities.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.88,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The following financial statements have been extracted from the Annual Report 2022-23 of SURYA TEXTILES Ltd. a largest textile company, having a strong presence in over 80 countries in the world.\n\nThe company wants to keep its shareholders happy by giving them a fair rate of return. The company is using return on equity (ROE) as one of the metrics of performance evaluation for determining the return for shareholders. Due to intense competition, in recent years, its ROE is under pressure and to maintain the level of ROE, the company is to change its business Model-in that, it is varying its margin, assets utilization and leverage.\n\nYou are required to:\n(i) **Carry out** the DuPont Analysis considering the financial parameters given below and show how the return on equity (ROE) of the company is changing due to change in its Margins, Assets utilization and Leverage over the period of four years.\n(ii) **Give** your comments on the trend of the said parameters.\n\nStatement of Profit & Loss for year ended March 31 (Amount in ₹ Crore)\n\n|  | 2020 | 2021 | 2022 | 2023 |\n|---|---|---|---|---|\n| Total Revenue | 7998 | 8992 | 9976 | 11804 |\n| Profit before tax | 1855 | 1612 | 1990 | 2817 |\n| Profit after tax | 1514 | 1345 | 1574 | 2110 |\n| Dividend | 225 | 315 | 225 | 225 |\n| Tax on dividend | 37 | 51 | 36 | 38 |\n| Retained earning | 1252 | 979 | 1313 | 1847 |\n\nBalance Sheet (Amount in ₹ Crore)\n\n|  |  | 2020 | 2021 | 2022 | 2023 |\n|---|---|---|---|---|---|\n|  | **Equity and Liability** |  |  |  |  |\n| 1 | Shareholders' fund: Share capital | 225 | 225 | 225 | 225 |\n|  | Reserve and Surplus | 8055 | 9034 | 10347 | 12194 |\n| 2 | Non-current liabilities: Loan funds | 7 | 617 | 17 | 1352 |\n| 3 | Current liabilities Deferred tax | 251 | 296 | 324 | 392 |\n|  | **Total** | 8538 | 10172 | 10913 | 14163 |\n|  | **Assets** |  |  |  |  |\n| 1 | Non-current assets: Fixed assets | 3774 | 4369 | 4685 | 5276 |\n| 2 | Non-current Investment | 371 | 799 | 1449 | 3642 |\n| 3 | Investments-Current Assets | 4393 | 5004 | 4779 | 5245 |\n|  | **Total** | 8538 | 10172 | 10913 | 14163 |",
+    "parent_ref": "4",
+    "explanation_md": "(i) Extended DuPont provides the drivers of ROE in terms of margins, assets utilization and leverage thereby provides important information in understanding business model of a company.\nExtended DuPont Analysis decomposes ROE into three components as given below: -\n\n$$\n\\text{ROE} = (\\text{PAT}/\\text{Sales}) \\times (\\text{Sales}/\\text{Assets}) \\times (\\text{Assets}/\\text{Equity})\n$$\n\nThe above equation shows that ROE is driven by profit Margin (PAT/Sales), Assets Utilization or Assets Turnover (Sales/Assets) and how much of the assets are financed by equity and debt, i.e. a measure of leverage (Assets/Equity)\nUsing the above decomposition, we obtain various decomposed components of ROE over a period of four years which are given below:\n\nYear ended $31^{\\text{st}}$ March | 2020 | 2021 | 2022 | 2023\n---|---|---|---|---\nROE | 18.287% | 14.532% | 14.883% | 16.974%\nPAT / Sales | 18.930% | 14.958% | 15.778% | 17.875%\nSales to Assets | 0.937 | 0.884 | 0.914 | 0.833\nAssets to Equity (Net worth) | 1.031 | 1.099 | 1.032 | 1.140\n\n(ii) The company saw a sharp decline in ROE in year 2021-22 which was primarily due to reduction in Profit Margins (from 18.930% to 14.958%) as well as reduction in the assets utilization, which may hint that the company (or perhaps the industry) might be having a tough time in pushing sales; situation improved in 2022-23 and 2023-24 and the main driver was Profit Margin. The big increase in ROE 2023-24 came primarily from Profit Margin and Leverage; had the company increased its assets utilization ROE would have increased further; seeing this, it is clear that the biggest challenge before Metcalf Ltd. is to increase Asset utilization.",
+    "reference_solution_md": "(i) Extended DuPont provides the drivers of ROE in terms of margins, assets utilization and leverage thereby provides important information in understanding business model of a company.\nExtended DuPont Analysis decomposes ROE into three components as given below: -\n\n$$\n\\text{ROE} = (\\text{PAT}/\\text{Sales}) \\times (\\text{Sales}/\\text{Assets}) \\times (\\text{Assets}/\\text{Equity})\n$$\n\nThe above equation shows that ROE is driven by profit Margin (PAT/Sales), Assets Utilization or Assets Turnover (Sales/Assets) and how much of the assets are financed by equity and debt, i.e. a measure of leverage (Assets/Equity)\nUsing the above decomposition, we obtain various decomposed components of ROE over a period of four years which are given below:\n\nYear ended $31^{\\text{st}}$ March | 2020 | 2021 | 2022 | 2023\n---|---|---|---|---\nROE | 18.287% | 14.532% | 14.883% | 16.974%\nPAT / Sales | 18.930% | 14.958% | 15.778% | 17.875%\nSales to Assets | 0.937 | 0.884 | 0.914 | 0.833\nAssets to Equity (Net worth) | 1.031 | 1.099 | 1.032 | 1.140\n\n(ii) The company saw a sharp decline in ROE in year 2021-22 which was primarily due to reduction in Profit Margins (from 18.930% to 14.958%) as well as reduction in the assets utilization, which may hint that the company (or perhaps the industry) might be having a tough time in pushing sales; situation improved in 2022-23 and 2023-24 and the main driver was Profit Margin. The big increase in ROE 2023-24 came primarily from Profit Margin and Leverage; had the company increased its assets utilization ROE would have increased further; seeing this, it is clear that the biggest challenge before Metcalf Ltd. is to increase Asset utilization.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.22,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Using Altman's Model, **compute** the value of Z from the provided data (Balance Sheet extract):\n\nLiabilities | ₹ | Assets | ₹\n---|---|---|---\nShare Capital @ ₹10 each | 2,00,000 | Fixed Assets | 4,20,000\nReserves & Surplus | 60,000 | Inventory | 1,80,000\n10% Debentures | 3,00,000 | Book Debts | 70,000\nSundry Creditors | 80,000 | Loans & Advances | 20,000\nOutstanding Expenses | 60,000 | Cash at Bank | 10,000\n**Total** | 7,00,000 | **Total** | 7,00,000\n\nAdditional Information:\nMarket value per share ₹ 12.50\nOperating Profit (20% on sales) ₹ 1,40,000",
+    "parent_ref": "4",
+    "explanation_md": "$Z\\text{-score} = 2.35978$ Or $2.36078$",
+    "reference_solution_md": "$Z\\text{-score} = 2.35978$ Or $2.36078$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.45,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The following information of Achal Ltd. are given:\nCurrent dividend = ₹ 2.50 per share\nDiscount rate = 10.5%\nGrowth rate = 2%\n\nBased on the above information of Achal Ltd, you are required to\n(i) **Calculate** the present value of stock of Achal Ltd.\n(ii) **Assess** stock of Achal Ltd. whether it is overvalued if the stock price is ₹ 35, ROE is 9% and EPS is ₹ 2.25. Support your answer with complete workings.",
+    "parent_ref": "5",
+    "explanation_md": "(i) Present value of the stock of Achal Ltd.= Rs.30\n(ii) Using the constant growth model, the value will be = Rs.21.52\nThis value is less than the stock price of Rs. 30 as calculated above or Rs.35 as given in the question which indicates that stock of Achal Ltd is overvalued.",
+    "reference_solution_md": "(i) Present value of the stock of Achal Ltd.= Rs.30\n(ii) Using the constant growth model, the value will be = Rs.21.52\nThis value is less than the stock price of Rs. 30 as calculated above or Rs.35 as given in the question which indicates that stock of Achal Ltd is overvalued.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.36,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Monika is trying to value Chat App, a Chat Messaging App that currently has 16 million users but does not generate any revenues. She has identified that WhatsApp was recently valued at USD 17.5 billion while having 450 million users. Considering the difference in size, Monika believes that a size discount of 95 percent should be applied while valuing Chat App. The foreign exchange rate is INR 65 per USD.",
+    "parent_ref": "5",
+    "explanation_md": "Value of CHATAPP = ₹ 202.224 Crore.",
+    "reference_solution_md": "Value of CHATAPP = ₹ 202.224 Crore.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.24,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "You have been asked to find the value of an office building having rateable area 300000 square feet in Bandra, Mumbai based upon 'comparable properties' sold in recent years. There have been six property sales in the surrounding area. Market rent of the building is ₹ 5 per square feet.\n\n| Property | Sale Price (₹ in Crore) | Occupancy Rate (%) | Size (Square feet in lakhs) | Gross Rent (₹ in lakh) |\n|---|---|---|---|---|\n| Ashra | 2.00 | 99 | 4.00 | 5.50 |\n| Happy Home | 1.80 | 95 | 4.25 | 4.75 |\n| Pratiksha | 2.20 | 97 | 4.50 | 5.10 |\n| Bandhan | 2.50 | 96 | 4.00 | 5.05 |\n| Asha | 1.50 | 92 | 3.50 | 4.00 |\n| Jeevan Deep | 1.20 | 93 | 3.00 | 3.05 |\n\n**Required:**\n(i) **Estimate** the value of the building based upon price per square feet considering occupancy rate of 94%.\n(ii) **Estimate** the value based on price per gross rent.",
+    "parent_ref": "6",
+    "explanation_md": "(i) Value of the building = ₹ 14131060.53\n(ii) Value of the building = ₹ 60930000",
+    "reference_solution_md": "(i) Value of the building = ₹ 14131060.53\n(ii) Value of the building = ₹ 60930000",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.21,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The below information is given about 3 Companies:\n\n| Particulars | Company-A | Company-B | Company-C |\n|---|---|---|---|\n| Debt | 1,00,000 | 50,000 | - |\n| Equity (Opening Balance) | 1,00,000 | 1,50,000 | 2,00,000 |\n| Enterprises Value | 2,00,000 | 2,00,000 | 2,00,000 |\n| EBIT | 30,000 | 30,000 | 30,000 |\n| Applicable Interest Rate is 9% |  |  |  |\n| Applicable Tax Rate is 25% |  |  |  |\n\nCompany A trades at a lower P/E Multiple than its peers Company B and Company C. The management of Company A believes that the lower P/E of the Company is not justified. The management team believes the market just doesn't understand its strategy or performance.\n\n**Required:**\nAssuming book values are representative of market values **calculate** the P/E and EV/EBIT of each Company and **assess** whether the management is right in their thought process.",
+    "parent_ref": "6",
+    "explanation_md": "| Particulars | Company-A | Company-B | Company-C |\n|---|---|---|---|\n| P/E | 7.35 | 8.84 | 9.89 |\n| EV / EBIT | 7.19 | 7.30 | 7.42 |\n\nThe management's belief that the markets doesn't understand the reason for lower P/E of Company A is incorrect. The EV/EBITDA multiple of Company A is in line with the peers. The reason for the difference is that Company A has much more debt relative to equity than the other companies. Possibly, if Company A has the same level of D/E Ratio, the P/E would be higher and in line with peers. Except for very high growth companies, a company with higher debt relative to peers has a lower P/E Ratio because more debt translates to higher risk for shareholders and a higher cost of equity. Therefore, each rupee of earnings (and cash flow to shareholders) is worth less to an investor.\n\nSince Price-to-earnings ratio mixes capital structure and non-operating items with expectations of operating performance, a comparison of P/Es is less reliable guide to companies' relative value than a comparison of enterprise value (EV) to EBIT.",
+    "reference_solution_md": "| Particulars | Company-A | Company-B | Company-C |\n|---|---|---|---|\n| P/E | 7.35 | 8.84 | 9.89 |\n| EV / EBIT | 7.19 | 7.30 | 7.42 |\n\nThe management's belief that the markets doesn't understand the reason for lower P/E of Company A is incorrect. The EV/EBITDA multiple of Company A is in line with the peers. The reason for the difference is that Company A has much more debt relative to equity than the other companies. Possibly, if Company A has the same level of D/E Ratio, the P/E would be higher and in line with peers. Except for very high growth companies, a company with higher debt relative to peers has a lower P/E Ratio because more debt translates to higher risk for shareholders and a higher cost of equity. Therefore, each rupee of earnings (and cash flow to shareholders) is worth less to an investor.\n\nSince Price-to-earnings ratio mixes capital structure and non-operating items with expectations of operating performance, a comparison of P/Es is less reliable guide to companies' relative value than a comparison of enterprise value (EV) to EBIT.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.65,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Radha Limited is intending to acquire Krishna Limited by merger and the following information is available in respect of both the companies:\n\n| Particulars | Radha Limited | Krishna Limited |\n|---|---|---|\n| No. of equity shares | 6,00,000 | 2,00,000 |\n| Profit after tax | INR 20,00,000 | INR 10,00,000 |\n| Market Price Per Share | INR 20 | INR 15 |\n\n**Required:**\n**Compute** the following:\n(i) EPS of both the companies\n(ii) Exchange Ratio",
+    "parent_ref": "7",
+    "explanation_md": "(i) EPS of both the companies :\nEPS of Radha Limited = INR 3.33\nEPS of Krishna Limited = INR 5.00\n(ii) Exchange Ratio\nExchange ratio based on EPS = 1.5",
+    "reference_solution_md": "(i) EPS of both the companies :\nEPS of Radha Limited = INR 3.33\nEPS of Krishna Limited = INR 5.00\n(ii) Exchange Ratio\nExchange ratio based on EPS = 1.5",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.27,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A Ltd. is considering the acquisition of B Ltd. with stock. Relevant financial information is given below:\n\n| Particulars | A Ltd. | B Ltd. |\n|---|---|---|\n| Present earnings | ₹ 7.5 lakhs | ₹ 2.5 lakhs |\n| Equity (No. of shares) | 4.0 lakhs | 2.0 lakhs |\n| EPS | ₹ 1.875 | ₹ 1.25 |\n| P/E ratio | 10 | 5 |\n\n**Required:**\n**Answer** the following questions:\n(i) What is the market price of each company?\n(ii) What is the market capitalization of each company?\n(iii) If the P/E of A Ltd. changes to 7.5, what is the market price of A Ltd.?\n(iv) Does market value of A Ltd. change?",
+    "parent_ref": "7",
+    "explanation_md": "(i) A Ltd.'s Market Price = ₹18.75\nB Ltd.'s Market Price = ₹ 6.25\n(ii) A Ltd.'s Market cap = ₹75 Lakhs\nB Ltd.'s market cap = ₹12.5 Lakhs\n(iii) Market price of A Ltd.'s = ₹14.0625\n(iv) Yes. The market value decreases. i.e., = ₹56.25 Lakhs.",
+    "reference_solution_md": "(i) A Ltd.'s Market Price = ₹18.75\nB Ltd.'s Market Price = ₹ 6.25\n(ii) A Ltd.'s Market cap = ₹75 Lakhs\nB Ltd.'s market cap = ₹12.5 Lakhs\n(iii) Market price of A Ltd.'s = ₹14.0625\n(iv) Yes. The market value decreases. i.e., = ₹56.25 Lakhs.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.67,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The following information is provided relating to the acquiring company X Ltd. and the target company Y Ltd.\n\n| X Ltd. | Y Ltd. |  |\n|---|---|---|\n| No. of shares (F.V. ₹ 10 each) | 10.00 lakhs | 7.50 lakhs |\n| Market capitalization (in ₹) | 500.00 lakhs | 750.00 lakhs |\n| P/E ratio (times) | 10 | 5 |\n| Reserve and surplus (in ₹) | 300.00 lakhs | 165.00 lakhs |\n| Promoter's holding (No. of shares) | 4.75 lakhs | 5.00 lakhs |\n\nBoard of Directors of both the companies have decided to give a fair deal to the shareholders and accordingly for swap ratio the weights are decided as 40%, 25% and 35% respectively for Earnings, Book value and Market price of share of each company:\n\n**Required:**\n(i) **Calculate** the swap ratio and also calculate Promoter's holding percentage after acquisition.\n(ii) **What** is the EPS of X Ltd. after acquisition of Y Ltd?\n(iii) **What** is the expected market price per share and market capitalization of X Ltd. after acquisition, assuming P/E ratio of firm X Ltd. remains unchanged?\n(iv) **Calculate** free float market capitalization of the merged firm.",
+    "parent_ref": "8",
+    "explanation_md": "(i) Swap ratio is for every one share of Y Ltd. to issue 2.5 shares of X Ltd. Hence total no. of shares to be issued = 18.75 lakh shares.\nPromoters holding = 17.25 lakh shares\nSo, parameters holding percentage = 60%.\nTotal no. of shares = 28.75 lakhs\n(ii) EPS = ₹6.956\n(iii) Expected market price = ₹ 69.56\nMarket capitalization = ₹1999.85 lakh\n(iv) Free float of market capitalization = ₹799.94 lakh",
+    "reference_solution_md": "(i) Swap ratio is for every one share of Y Ltd. to issue 2.5 shares of X Ltd. Hence total no. of shares to be issued = 18.75 lakh shares.\nPromoters holding = 17.25 lakh shares\nSo, parameters holding percentage = 60%.\nTotal no. of shares = 28.75 lakhs\n(ii) EPS = ₹6.956\n(iii) Expected market price = ₹ 69.56\nMarket capitalization = ₹1999.85 lakh\n(iv) Free float of market capitalization = ₹799.94 lakh",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.79,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "XY Ltd., a retail florist, is for sale at an asking price of ₹ 62,00,000. You have been contacted for a potential buyer who has asked you to give him opinion as to whether the asking price is reasonable. The potential buyer has only limited information about XY Ltd. And potential buyer does not know that annual gross sales of XY Ltd. is about ₹ 82,00,000 and that last year's tax return reported an annual profit of ₹ 8,40,000 before tax. You have collected the following information from the financial details of several retail florists that were up for sale in the past:\n\nTable 1\n\n| Particulars | Price-to-sale (P/S) ratio | Price-to-earnings (P/E) ratio |\n|---|---|---|\n| Number of firms | 38 | 33 |\n| Mean ratio | 0.55 | 3.29 |\n| Coefficient of Variation | 0.65 | 1.52 |\n| Maximum ratio | 2.35 | 6.29 |\n\nTable 2: Top 10 players in descending P/S order:\n\n| Firm | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| (P/S) ratio | 2.35 | 1.76 | 1.32 | 1.17 | 1.09 | 1.01 | 0.96 | 0.85 | 0.72 | 0.68 |\n| (P/E) Multiple | 5.65 | 6.29 | 5.31 | 4.6 | 3.95 | 3.25 | 3.1 | 2.96 | 2.9 | 2.75 |\n\n**Required:**\nOffer your opinion on the reasonableness of the asking price.",
+    "parent_ref": "8",
+    "explanation_md": "Asking price of XY Ltd. INR 62,00,000\nAnnual sales of XY Ltd. INR 82,00,000\nAsking P/S ratio of XY Ltd. = 0.76\n\nP/S ratio of XY Ltd. 0.76 is much higher than industry average 0.55, it is far below than the maximum P/S ratio of 2.35. The ratio of XY Ltd. is lying between 8th and 9th highest of the top ten players of the industry. In other words, XY Ltd. would need to be among the 22%* $(8.5/38 \\times 100)$ most desirable florist business to justify the asking price of ₹ 62,00,000 with annual gross sales of ₹ 82,00,000. If the sales are likely to hold in the coming years, the price may be $(0.85 + 0.72)/2 \\times \\text{₹ }82\\text{ Lakhs} = \\text{₹ }64.37\\text{ Lakhs}$.\nProvided the buyer believes that XY Ltd. is a superior retail florist (among the top quartile), and the future sales are not likely to fall, the asking price of ₹ 62 lakhs appears to be reasonable. However, the buyer should make sure that the florist's accounts reflect a true and fair view of the business before he arrives at a final decision.",
+    "reference_solution_md": "Asking price of XY Ltd. INR 62,00,000\nAnnual sales of XY Ltd. INR 82,00,000\nAsking P/S ratio of XY Ltd. = 0.76\n\nP/S ratio of XY Ltd. 0.76 is much higher than industry average 0.55, it is far below than the maximum P/S ratio of 2.35. The ratio of XY Ltd. is lying between 8th and 9th highest of the top ten players of the industry. In other words, XY Ltd. would need to be among the 22%* $(8.5/38 \\times 100)$ most desirable florist business to justify the asking price of ₹ 62,00,000 with annual gross sales of ₹ 82,00,000. If the sales are likely to hold in the coming years, the price may be $(0.85 + 0.72)/2 \\times \\text{₹ }82\\text{ Lakhs} = \\text{₹ }64.37\\text{ Lakhs}$.\nProvided the buyer believes that XY Ltd. is a superior retail florist (among the top quartile), and the future sales are not likely to fall, the asking price of ₹ 62 lakhs appears to be reasonable. However, the buyer should make sure that the florist's accounts reflect a true and fair view of the business before he arrives at a final decision.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.13,
+    "mapping_state": "pending",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(vii)": [
+   "Print reads 'P = 24 – 1/2√q'; typeset as 24 minus (1/2)·sqrt(q), the reading consistent with the layout (1/2 before the root sign).",
+   "Suggested answer prints '(A/B/C/D) Any'; no key stored, none changed."
+  ],
+  "4(a)": [
+   "Institute text kept as printed: 'Metcalf Ltd.' and year labels 2022-23/2023-24 differ from the question (Surya Textiles, FY 2020-2023).",
+   "Stem balance sheet/P&L tables unchanged (plain figures)."
+  ],
+  "4(b)": [
+   "Restored 'Cash at Bank' (flattened text had 'Cash Bank').",
+   "Suggested answer prints two values (2.35978 Or 2.36078); kept as printed."
+  ],
+  "8(b)": [
+   "Print shows '22%*' with no footnote; kept as printed.",
+   "Stem tables unchanged."
+  ]
+ },
+ "review_decisions": {
+  "1(vii)": {
+   "verdict": "hold",
+   "reason": "The suggested answers print '(A/B/C/D) Any' for 1(vii), so no single key exists and the part cannot be keyed; no answer text is printed.",
+   "fixes": [
+    "Removed the duplicated option list from the stem (the options appeared twice)"
+   ],
+   "printed_issues": [
+    "Suggested answer prints '(A/B/C/D) Any' instead of a single key"
+   ],
+   "by": "claude-review"
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Answer prints only the final profit.",
+   "fixes": [],
+   "printed_issues": [
+    "Question gives no cost function although the suggested answer assumes c = 3000 + 50Q"
+   ],
+   "by": "claude-review"
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Both statements and the DuPont table agree digit for digit.",
+   "fixes": [
+    "converted pipe-less tables to standard Markdown tables"
+   ],
+   "printed_issues": [
+    "Suggested answer refers to 'Metcalf Ltd.' and to years 2022-23 / 2023-24 whereas the question concerns Surya Textiles, FY 2020-2023"
+   ],
+   "by": "claude-review"
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. 'Cash at Bank' confirmed in the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints two Z values: 2.35978 Or 2.36078"
+   ],
+   "by": "claude-review"
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says the value of Rs.30 is 'calculated above' for part (ii) while stating the constant growth value Rs.21.52 as the comparison"
+   ],
+   "by": "claude-review"
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer text mentions 'EV/EBITDA' while the question asks for EV/EBIT",
+    "Company-C debt is printed as '-'"
+   ],
+   "by": "claude-review"
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints 'parameters holding percentage' for promoters' holding percentage"
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [
+  "1(vii)"
+ ],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 28
+ }
+}

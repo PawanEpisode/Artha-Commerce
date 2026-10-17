@@ -1,0 +1,110 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p14-2025-06",
+ "items": {
+  "1(vi)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the question paper, but the printed suggested answer for 1(vi) is 'A/B' (two options accepted), so no single key can be given.",
+   "fixes": [],
+   "printed_issues": [
+    "Key printed as (A/B)."
+   ]
+  },
+  "1(xiii)": {
+   "verdict": "hold",
+   "reason": "Stem table and options match the question paper, but the printed suggested answer for 1(xiii) is 'A/B/C/D' (no single key), so no key can be given.",
+   "fixes": [],
+   "printed_issues": [
+    "Key printed as (A/B/C/D)."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem and both printed solutions compared with the question paper and suggested-answer pages; all figures match. The alternative solution repeats the net initial cash outflow table in print, now restored.",
+   "fixes": [
+    "Restored the net initial cash outflow table in the alternative solution (stored as 'as above')."
+   ],
+   "printed_issues": [
+    "Two alternative solutions (NPV 79739 and 107482) printed; 'beginning of year and' printed without a year number in the stem."
+   ],
+   "answer_md": "(i) Calculation of Net Initial Cash Outflow\n| Particulars | (₹) |\n|---|---|\n| Cost of New Machine | 1200000 |\n| Less: Sale Proceeds of existing machine (240000 - 40000) | 200000 |\n| Net Purchase Price | 1000000 |\n| Paid in year 0 | 800000 |\n| Paid in year 1 | 200000 |\n\nCalculation of Additional Depreciation\n| Year | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| Opening WDV of Machine | 1000000 | 800000 | 640000 | 512000 |\n| Depreciation on new machine @ 20 % | 200000 | 160000 | 128000 | 102400 |\n| Closing WDV | 800000 | 640000 | 512000 | 409600 |\n| Depreciation on old machine (480000 / 8) | 60000 | 60000 | 60000 | 60000 |\n| Incremental depreciation | 140000 | 100000 | 68000 | 42400 |\n\nCalculation of Annual Profit before Depreciation and Tax (PBDT)\nSales 1225000; Contribution 612500; Less : Indirect Cost 118750; PBDT 493750\n\nCalculation of Incremental NPV\n| Year | PVF @ 12 % (1) | PBDT (2) | Incremental Depreciation (3) | PBT (4) | Tax @ 30% (5) = (4) x 0.30 | Cash Inflows (6) = (4) – (5) + (3) | PV of Cash Inflows (7) = (6) x (1) |\n|---|---|---|---|---|---|---|---|\n| 1 | 0.893 | 493750 | 140000 | 353750 | 106125 | 387625 | 346149 |\n| 2 | 0.797 | 493750 | 100000 | 393750 | 118125 | 375625 | 299373 |\n| 3 | 0.712 | 493750 | 68000 | 425750 | 127725 | 366025 | 260610 |\n| 4 | 0.636 | 493750 | 42400 | 451350 | 135405 | 358345 | 227907 |\n| | | | | | | | 1134039 |\n\nAdd: PV of Salvage- Year 4 (₹ 100000 x 0.636) 63600\nLess: Initial Cash Outflow – Year 0 800000\nYear 1 (₹ 200000 x 0.893) 178600\nLess: Working Capital – Year 0 250000\nYear 2 (₹ 300000 x 0.797) 239100\nAdd: Working Capital released – Year 4 (₹ 550000 x 0.636) 349800\nIncremental Net Present Value 79739\n\n(ii) Advice:\nSince the Incremental Net Present Value (NPV) is positive (₹ 79739), the company should replace the existing machine with a new machine.\n\nAlternative solution:\n\nCalculation of Net Initial Cash Outflow\n\n| Particulars | (₹) |\n|---|---|\n| Cost of New Machine | 1200000 |\n| Less: Sale Proceeds of existing machine (240000 - 40000) | 200000 |\n| Net Purchase Price | 1000000 |\n| Paid in year 0 | 800000 |\n| Paid in year 1 | 200000 |\n\nCalculation of Additional Depreciation\n| Year | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| Opening WDV of Machine | 1200000 | 960000 | 768000 | 614400 |\n| Depreciation on new machine @ 20 % | 240000 | 192000 | 153600 | 122880 |\n| Closing WDV | 960000 | 768000 | 614400 | 491520 |\n| Depreciation on old machine (480000 / 8) | 60000 | 60000 | 60000 | 60000 |\n| Incremental depreciation | 180000 | 132000 | 93600 | 62880 |\n\nPBDT = 493750 each year\n| Year | PVF @ 12 % | PBDT | Incremental Depreciation | PBT | Tax @ 30% | Cash inflows | PV of Cash Inflows |\n|---|---|---|---|---|---|---|---|\n| 1 | 0.893 | 493750 | 180000 | 313750 | 94125 | 399625 | 356865 |\n| 2 | 0.797 | 493750 | 132000 | 361750 | 108525 | 385225 | 307024 |\n| 3 | 0.712 | 493750 | 93600 | 400150 | 120045 | 373705 | 266078 |\n| 4 | 0.636 | 493750 | 62880 | 430870 | 129261 | 364489 | 231815 |\n| | | | | | | | 1161782 |\n\nAdd: PV of Salvage- Year 4 (₹ 100000 x 0.636) 63600\nLess: Initial Cash Outflow – Year 0 800000; Year 1 (₹ 200000 x 0.893) 178600\nLess: Working Capital – Year 0 250000; Year 2 (₹ 300000 x 0.797) 239100\nAdd: Working Capital released – Year 4 (₹ 550000 x 0.636) 349800\nIncremental Net Present Value 107482\n\n(ii) Advice:\nSince the Incremental Net Present Value (NPV) is positive (₹ 107482), the company should replace the existing machine with a new machine."
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer table/working compared with the printed pages (2(b) answer runs onto the next page); all figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Stem, probability tables, expected NPV, standard deviation tables, CV and recommendation match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Recommendation hedged: Orion riskier, yet Titan 'may be preferred'; Expected NPV summary table has no header in print."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem, dividends, PV tables and both solutions match the printed pages.",
+   "fixes": [],
+   "printed_issues": [
+    "Two alternative solutions with different stable growth rates (15% and 16%); main solution prints 'Then = 130.95'."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem, PV table and the four parts match the print, including the put strike of ₹ 80,000.",
+   "fixes": [],
+   "printed_issues": [
+    "Print writes (l+r)^n; the advice in (iv) (hold to maturity because of lowest present value) is as printed."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and answer parts (i)-(iv) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Alpha effective yield cell printed as '₹ 10.80%'.",
+    "Total yield computed on 700000 and as 11061 / 700000 as printed."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the beta, residual variance and Markowitz variance working match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the main answer (i)-(iv) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Beta of Govt. Securities printed as letter 'O'; stored as 0."
+   ]
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem, probability table and answer (i)-(iv) with alternatives match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer to (ii) printed twice: Nil and alternatively ₹ 7."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem, market data and answer (i)-(iv) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Cross-currency step divides the INR/USD forward by EUR/USD 1.12, giving ₹ 33521874.89, as printed; recommendation follows from it."
+   ]
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and answer (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "US inflation '2.4% (full year)' cell spans both inflation rows in print; PPP line printed with '*' for multiplication."
+   ]
+  }
+ }
+}

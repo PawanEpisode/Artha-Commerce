@@ -1,0 +1,55 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p13-2026-06",
+ "items": {
+  "1(i)": {
+   "verdict": "approve",
+   "reason": "Case study, question and options match the print; stored key C equals printed key (i) C.",
+   "fixes": [],
+   "printed_issues": [
+    "\"Bases on above facts\" printed for \"Based on above facts\"."
+   ]
+  },
+  "1(ii)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key B equals printed key (ii) B. The shared ABC Ltd. case study was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case study printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "stem_md": "Case study\nABC Ltd., incorporated in Mumbai, with the object of manufacturing pharmaceutical products, faced the following issues:\n- One director, Mr. X, entered into a contract on behalf of the company to invest in real estate, which was not covered under the objects clause of the Memorandum of Association.\n- Mr. X also borrowed ₹50 lakh from a bank in company’s name without obtaining the required Board approval as per the Articles of Association. The bank had no knowledge of this internal restriction.\n- During the issue of prospectus, the company falsely stated that it had secured government approval for a new drug, inducing investors to subscribe for shares.\n- Minority shareholders holding 12% alleged that majority shareholders were diverting company funds for personal use and approached the Tribunal.\nBases on above facts, answer the following MCQs (i) to (iv) :\n\nIs the company liable to repay the ₹50 lakh loan taken by Mr. X?"
+  },
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key C equals printed key (iii) C. The shared ABC Ltd. case study was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case study printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "stem_md": "Case study\nABC Ltd., incorporated in Mumbai, with the object of manufacturing pharmaceutical products, faced the following issues:\n- One director, Mr. X, entered into a contract on behalf of the company to invest in real estate, which was not covered under the objects clause of the Memorandum of Association.\n- Mr. X also borrowed ₹50 lakh from a bank in company’s name without obtaining the required Board approval as per the Articles of Association. The bank had no knowledge of this internal restriction.\n- During the issue of prospectus, the company falsely stated that it had secured government approval for a new drug, inducing investors to subscribe for shares.\n- Minority shareholders holding 12% alleged that majority shareholders were diverting company funds for personal use and approached the Tribunal.\nBases on above facts, answer the following MCQs (i) to (iv) :\n\nWhat is the liability for misstatement in the prospectus?"
+  },
+  "1(iv)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key B equals printed key (iv) B. The shared ABC Ltd. case study was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case study printed before (i) to the stem."
+   ],
+   "printed_issues": [
+    "Option (C) (Tribunal permission under Section 244) is arguably also plausible; key B kept as printed."
+   ],
+   "stem_md": "Case study\nABC Ltd., incorporated in Mumbai, with the object of manufacturing pharmaceutical products, faced the following issues:\n- One director, Mr. X, entered into a contract on behalf of the company to invest in real estate, which was not covered under the objects clause of the Memorandum of Association.\n- Mr. X also borrowed ₹50 lakh from a bank in company’s name without obtaining the required Board approval as per the Articles of Association. The bank had no knowledge of this internal restriction.\n- During the issue of prospectus, the company falsely stated that it had secured government approval for a new drug, inducing investors to subscribe for shares.\n- Minority shareholders holding 12% alleged that majority shareholders were diverting company funds for personal use and approached the Tribunal.\nBases on above facts, answer the following MCQs (i) to (iv) :\n\nCan minority shareholders (12%) apply for relief against oppression?"
+  },
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key D equals printed key (vii) D.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(xiv)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key D equals printed key (xiv) D.",
+   "fixes": [],
+   "printed_issues": []
+  }
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p14-2023-12",
+ "items": {
+  "1(vi)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key B equals printed key (B).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key B (250) does not reconcile with the data as printed (about 1.6 contracts by the usual formula)."
+   ]
+  },
+  "1(ix)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (A).",
+   "fixes": [],
+   "printed_issues": [
+    "'Marke' and 'Volatality' are misspelt in the print."
+   ]
+  },
+  "1(xii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key D equals printed key (D).",
+   "fixes": [],
+   "printed_issues": [
+    "Option (A) Digital Printing also arguably fits the stem; key D kept as printed."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem reads '10% bonus shares at 1:10' as printed; equity amount 80,00,000 differs from 25,000 x 320 as printed."
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed answer gives the same SML for both funds (0.07 + 0.05 beta)."
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer for (iii) printed as '13 or 14 contracts'."
+   ]
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem table matches the print; answer text had an equals sign the print does not have before the rupee figures, removed.",
+   "fixes": [
+    "Removed '=' before ₹ 302.39 Billion and ₹ 311.7000 Billion to match the print."
+   ],
+   "printed_issues": [],
+   "answer_md": "(i) If Investment is made in Index Fund (GBP):\nValue of Investment after 6 months in ₹ @ GBP / INR ₹ 302.39 Billion\n(ii) If Investment is made in Treasury Bills (Europe):\nValue of Investment after 6 months in ₹ @ EURO / INR 0.011 ₹ 311.7000 Billion\nSuggestion:\nTotal amount of Second Option i.e. investment in Treasury Bills (EURO) is higher than that of the First Option i.e. investment in Index Fund (GBP) and Treasury Bills (EURO) is Risk Free also. So investment in Treasury Bills (EURO) is suggested."
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem tables match the print; the printed answer is a table, restored as a Markdown table with the same figures.",
+   "fixes": [
+    "Answer receipts rendered as a table as printed."
+   ],
+   "printed_issues": [],
+   "answer_md": "Receipts Using Currency Futures:\n\nThe number of contracts needed is = 30\n\n| Receipts under different methods of Hedging | ₹ |\n|---|---|\n| Forward contract | 19512195 |\n| Futures | 19031044 |\n| No hedge | 19047619 |\n\nThe most advantageous option would have been to hedge with forward contract."
+  }
+ }
+}

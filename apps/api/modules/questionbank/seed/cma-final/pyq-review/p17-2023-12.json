@@ -1,0 +1,60 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p17-2023-12",
+ "items": {
+  "1(x)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper; stored key A equals printed key (x) (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (A) Information for 'backbone of any organisation' looks doubtful (Employee would be expected); kept as printed"
+   ]
+  },
+  "1(xiii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper; stored key B equals printed key (xiii) (B).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (B) Self-Help Group looks doubtful against option D (Cooperative Societies); kept as printed"
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; suggested answer prints only the final figure ₹ 4,15,200 and the stored answer is the same.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only the final figure without working",
+    "Opening bracket in the stem is never closed, as printed"
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem and expenditure table match the print digit for digit; answer is the printed final figure ₹ 2,675 lakh.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only the final figure without working"
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem with transactions (i)-(vi) matches the print; answer is the printed final figure ₹ 41,08,200.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only the final figure without working"
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; the five printed results match the suggested answer, only the stored layout (indented lines that would render as code) was rebuilt.",
+   "fixes": [
+    "Removed the leading spaces/tabs so each printed result is its own paragraph; figures unchanged"
+   ],
+   "answer_md": "(i) Net Profit Margin = 10.46%\n\n(ii) Return on Assets = 9.10%\n\n(iii) Return on Equity = 18.20%\n\n(iv) Asset Turnover = 0.87 Times\n\n(v) Inventory Turnover = 33.33%",
+   "printed_issues": [
+    "Suggested answer gives only final figures",
+    "Inventory Turnover printed as 33.33% instead of times; kept as printed",
+    "Printed label 'Return on Equity' where the question says return on owner's equity"
+   ]
+  }
+ }
+}

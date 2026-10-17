@@ -1,0 +1,20 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p16-2023-12",
+ "items": {
+  "8(a)": {
+   "stem_md": "ZOXIN Ltd., a manufacturing company is planning to market a new model of a doll. Rather than setting the selling price of the doll based only on production cost estimation, management polls the retailers of the doll to see how many dolls they will buy for various prices. From this survey, it is determined that the unit demand function is $x = 1500 - 75p$, and the cost function is given by $C = 4x + 1400$, for the doll, where $p$ is the price per unit and $x$ is the number of units demanded.\n\nRequired:\n(i) Evaluate how many number of dolls are sold to the retailers to maximize the profit of the company.\n(ii) Identify the price the company should charge to retailers in order to obtain maximum profit.\n(iii) Assess the maximum profit available to ZOXIN Ltd.",
+   "answer_md": "(i) Dolls = 600\n(ii) Price = ₹ 12\n(iii) Profit (Maximum) = ₹ 3400",
+   "confidence": "high",
+   "review": []
+  },
+  "8(b)": {
+   "answer_md": "(i) Straight Line Trend $Y_c = 42 + 0.20\\,X$\n(ii) Sales (₹ in Million) for:\nYear 2019 = ₹ 42.20 Million\nYear 2025 = ₹ 43.40 Million",
+   "confidence": "medium",
+   "review": [
+    "Printed trend symbol is Y with subscript c and X in italic; typeset as Y_c and X",
+    "Stem table already matches print"
+   ]
+  }
+ }
+}

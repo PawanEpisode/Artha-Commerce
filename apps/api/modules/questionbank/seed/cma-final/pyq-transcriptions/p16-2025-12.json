@@ -1,0 +1,666 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p16",
+ "term_code": "2025-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "8(a) answer missing in suggested-answer text.",
+  "Q1(x) key A (Value Engineering) kept as printed."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Answer to Question No. 1 in Section-A is compulsory. Further answer any five from Question No. 2 to Question No. 8 in Section-B.",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct option from the given alternatives:  2×15=30  (Answer all the questions. Each question carries two marks.)",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "RIM Ltd. has estimated the demand level of its product:\n\n| Sales (units) | 5,000 | 10,000 | 15,000 | 20,000 |\n|---|---|---|---|---|\n| Probability | 0.10 | 0.20 | 0.40 | 0.30 |\n\nIt has estimated contribution of ₹ 4 per unit and total fixed costs of ₹ 60,000. What is the probability that the company will make a profit of at least ₹ 15,000?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "40 %"
+        },
+        {
+         "key": "B",
+         "body_md": "30 %"
+        },
+        {
+         "key": "C",
+         "body_md": "20 %"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "SM Ltd., a manufacturing company produces a product which is sold at a price of ₹ 80 p.u. Its break even sales is ₹ 15 lakhs, while its fixed cost is ₹ 6 lakhs. What will be its desired quantity of sales to earn a profit of ₹ 4 lakhs?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "18,750 units"
+        },
+        {
+         "key": "B",
+         "body_md": "31,250 units"
+        },
+        {
+         "key": "C",
+         "body_md": "32,320 units"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "BOS Ltd., a manufacturing company, requires ₹ 90 lakhs in sales to meet target net profit of ₹ 15 lakhs. The company’s contribution margin is 30%. What will be its fixed cost?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 15 lakhs"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 12 lakhs"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 10 lakhs"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 20 lakhs"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "TONZ Ltd. manufactures two products BX and BZ using common material handling facility. The total budgeted material handling cost is ₹ 80,000. The other details are:\n\n| | Product BX | Product BZ |\n|---|---|---|\n| Number of units produced | 20 | 40 |\n| Material moves per product line | 15 | 5 |\n| Direct Labour hour per unit | 100 | 100 |\n\nUnder Activity Based Costing System the material handling cost to be allocated to product BZ (per unit) would be",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 400"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 500"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 1,500"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "YEN Ltd., adopting Standard Costing System in its factory, budgets for fixed overhead of ₹ 50,000 and production of 10,000 units for a month of year 2025. Actual production is 9,500 units. If the fixed overhead cost is increased to ₹ 52,000, the fixed overhead volume variance will be",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 1,000 (Adv.)"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 2,000 (Fav.)"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 2,500 (Fav.)"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 2,500 (Adv.)"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "If (50, 0), (50, 14), (25, 50) and (13, 50) are the Corner Points of the feasible region of the Linear Programming problem, Maximize Z = 2x1 + 3x2, then maximum value of the objective function will be",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 200"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 270"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 240"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 120"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The pay-off matrix of a game for the Company S and Company T is given below:\n\nCompany T\n\n| Company S | | | | |\n|---|---|---|---|---|\n| | 25 | 12 | 10 | 30 |\n| | 15 | 13 | 6 | 8 |\n| | 30 | 5 | 8 | 6 |\n\nUsing Maximin-Minimax principle what will be the value of the game?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "15"
+        },
+        {
+         "key": "B",
+         "body_md": "12"
+        },
+        {
+         "key": "C",
+         "body_md": "10"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "An operation of KON Ltd. has a Learning Curve 90% and the first unit produced took 30 minutes. The labour cost is ₹ 120 per hour. How much should the second unit labour cost?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "None of the below options"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 60"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 54"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 48"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is / are feature(s) of Zoho Analytics Tools?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "BI and Analytics platform"
+        },
+        {
+         "key": "B",
+         "body_md": "Deployable in the cloud as well as on premises server"
+        },
+        {
+         "key": "C",
+         "body_md": "Both (A) and (B) of the above"
+        },
+        {
+         "key": "D",
+         "body_md": "Rich Accounting Solution for small business"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which one of the following, simply answers the question “What else will accomplish the purpose of the product, service or process we are studying?”",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Value Engineering"
+        },
+        {
+         "key": "B",
+         "body_md": "Value Analysis"
+        },
+        {
+         "key": "C",
+         "body_md": "Business Process Re-engineering"
+        },
+        {
+         "key": "D",
+         "body_md": "Supply Chain Strategy"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key (A) Value Engineering; the question wording is classically associated with Value Analysis, kept as printed"
+       ]
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The shadow price of skilled labour for SD Ltd. is currently ₹ 10 per hour. What does this mean?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The cost of obtaining additional skilled labour is ₹ 10 per hour."
+        },
+        {
+         "key": "B",
+         "body_md": "There is a hidden cost of ₹ 10 for each hour of skilled labour actively worked."
+        },
+        {
+         "key": "C",
+         "body_md": "Contribution will be increased by ₹ 10 per hour for each extra hour of skilled labour that can be obtained."
+        },
+        {
+         "key": "D",
+         "body_md": "The total costs will be reduced by ₹ 10 for each additional hour of skilled labour that can be obtained."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Kanban Japanese System under JIT Approach ensures",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "continuous supply of inventory or product."
+        },
+        {
+         "key": "B",
+         "body_md": "minimum and maximum level of stock to be maintained."
+        },
+        {
+         "key": "C",
+         "body_md": "inventory valuation."
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Standard Cost and Budgeted Cost are",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "interrelated but not interdependent."
+        },
+        {
+         "key": "B",
+         "body_md": "interdependent but not interrelated."
+        },
+        {
+         "key": "C",
+         "body_md": "interrelated and interdependent."
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is not a principle of Business Process Re-engineering?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Organise work around outcomes, not tasks."
+        },
+        {
+         "key": "B",
+         "body_md": "Capture information once and at the source."
+        },
+        {
+         "key": "C",
+         "body_md": "Empower workers who use the process."
+        },
+        {
+         "key": "D",
+         "body_md": "Rely heavily on hierarchy and supervision."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The product of XYZ company is sold at a fixed price of ₹ 1,500 per unit. As per company’s estimate, 500 units of the product are expected to be sold in the coming year. If the value of investments of the company is ₹ 15 lakhs and it has a target ROI of 15%, the target cost would be",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 930"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 950"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 1,050"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 1,130"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "(Answer any Five Questions.) Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "",
+       "kind": "long_form",
+       "marks": 14,
+       "stem_md": "BNR Ltd. has spare capacity in two of its manufacturing departments — Department 4 and Department 5. A five-day week of 40 hours is worked, but there is only enough internal work for 3 days per week so that 2 days per week (16 hours) could be available in each department. BNR Ltd. has sold this time to another manufacturer, but there is some concern about the profitability of this work.\n\nThe accountant has prepared a table given the hourly operating cost in each department. The summarized figures are as follows:\n\n| | Department 4 (₹) | Department 5 (₹) |\n|---|---|---|\n| Power Costs | 40 | 60 |\n| Labour Costs | 40 | 20 |\n| Overhead Costs | 40 | 40 |\n| | 120 | 120 |\n\nThe labour is paid on a time basis and there is no change in the weekly wage bill whether or not the plant is working at full capacity. The overhead figures are based on firm’s current overhead absorption rates (fixed and variable) when the departments are operating at 90% of full capacity (assume a 50 weeks year). The budgeted fixed overhead attributed to Department 4 is ₹ 36,000 p.a. and that for Department 5 ₹ 50,400 p.a.\n\nAs a short term measure, the company has been selling processing time to another manufacturer @ ₹ 70 per hour in either departments. The customer is willing to continue this arrangement and to purchase any spare time available, but BNR Ltd., is considering the introduction of a new product on a minor scale to absorb the spare capacity.\n\nEach unit of the new product would require 45 minutes in Department 4 and 20 minutes in Department 5. The variable cost of the required input material is ₹ 10 per unit. The market study indicated as follows:\n(I) With a selling price of ₹ 100, the demand would be 1,500 units p.a.\n(II) With a selling price of ₹ 110, the demand would be 1,000 units p.a.\n(III) With a selling price of ₹ 120, the demand would be 500 units p.a.\n\nRequired:\n(i) Analyze relevant cost per unit for producing the new product.\n(ii) Assess the best price per unit to be charged for the new product to achieve optimum profit.\n(iii) Prepare the best weekly programme for the spare time in two manufacturing departments.\n(iv) Analyze and quantify the weekly gain that this programme and price should yield.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) The relevant cost of producing the new product is the variable cost plus the lost contribution from selling the processing time to another manufacturer. It is given that, the main product will absorb 3 days per week.\n\nCalculation of Variable Overhead rates\n\n| | Dept. 4 | Dept. 5 |\n|---|---|---|\n| Normal Hrs. per annum (0.9 x 40 hr x 50 wks.) | 1,800 hrs | 1,800 hrs |\n| Fixed O.H. rate/hr. (₹) | 20 (36,000/1,800) | 28 (50,400/1800) |\n| Total O.H. rate/hr. (given) (₹) | 40 | 40 |\n| Thus, Variable OH rate /hr. (₹) | 20 | 12 |\n\nThe variable costs per hour are:\nDepartment 4: Power Cost ₹ 40 + Variable Cost ₹ 20 = ₹ 60\nDepartment 5: Power Cost ₹ 60 + Variable Cost ₹ 12 = ₹ 72\nNote: It is given that Labour Costs are fixed\n\nIf the new product is not developed, Department 4 shall sell unused processing time at ₹ 70 per hour. It is not profitable for Department 5 to sell processing time at ₹ 70 per hour because its variable costs itself is ₹ 72 per hour.\n\nTherefore, the relevant cost per processing hour is:\nDepartment 4: ₹ 70 (₹ 60 variable cost + ₹ 10 lost contribution for not selling processing time)\nDepartment 5: ₹ 72.\n\nCalculation of Relevant cost for producing the new product\n\n| | ₹ |\n|---|---|\n| Direct Material (Given) | 10.00 |\n| Department 4, Variable Operating Cost (0.75 hr. x ₹ 70) | 52.50 |\n| Department 5, Variable Operating Cost (0.333 hr. x ₹ 72) | 24.00 |\n| Relevant Cost | 86.50 |\n\nAlternative Presentation:\n(i) The relevant cost of producing the new product is the variable cost plus the lost contribution from selling the processing time to another manufacturer. It is given that, the main product will absorb 3 days per week.\n\nCalculation of Variable Overhead rates\n\n| | Dept. 4 | Dept. 5 |\n|---|---|---|\n| Normal Hrs. per annum (0.9 x 40 hr x 50 wks.) | 1,800 hrs | 1,800 hrs |\n| Fixed O.H. rate/hr. (₹) | 20 (36,000/1,800) | 28 (50,400/1800) |\n| Total O.H. rate/hr. (given) (₹) | 40 | 40 |\n| Thus variable OH rate /hr. (₹) | 20 | 12 |\n\nCalculation of Relevant cost for producing the new product\n\n| | ₹ |\n|---|---|\n| Direct Material (Given) | 10.00 |\n| Power Cost - Department 4 (0.75 hr. x ₹ 40) | 30.00 |\n| Department 5 (0.333 hr. x ₹ 60) | 20.00 |\n| Variable Overhead - Department 4 (0.75 hr. x ₹ 20) | 15.00 |\n| Department 5 (0.333 hr. x ₹ 12) | 4.00 |\n| Opportunity Costs for not selling processing time* (0.75 hr. X ₹ 10) | 7.50 |\n| Relevant Cost | 86.50 |\n\nNote: Labour Costs are fixed (given)\n* If the new product is not developed, Department 4 shall sell unused processing time at ₹ 70 per hour. Therefore, opportunity costs for not selling the processing time is ₹ 70 - ₹ 60 = ₹ 10\nIt is not profitable for Department 5 to sell processing time at ₹ 70 per hour because its variable costs itself is ₹ 72 per hour.\n\n(ii) Additional Contribution for various selling price / demand levels\n\n| | ₹ | ₹ | ₹ |\n|---|---|---|---|\n| Selling Price (Given) | 100 | 110 | 120 |\n| Restricted Demand (Units) | 1067 | 1000 | 500 |\n| Relevant cost (₹) | 86.50 | 86.50 | 86.50 |\n| Contribution (₹) | 13.50 | 23.50 | 33.50 |\n| Total Contribution (₹) | 14,404.50 | 23,500 | 16,750 |\n\nDecision: Hence selling 1,000 units @ ₹ 110 per unit will achieve optimum contribution\n\nNote:\nMaximum units that can be produced in Dept 4 & Dept 5 in 800 hrs are:\nDepartment 4 (800 Hrs. / 0.75 hr.) = 1,067 units\nDepartment 5 (800 Hrs. / 0.333 hr.) = 2,400 units\nRestriction exists in Dept 4 only.\n\n(iii) Computation of Spare time for production of 1,000 units p.a.\n\n| | Department 4 | Department 5 |\n|---|---|---|\n| Time required per unit (Hours) | 3/4 | 1/3 |\n| Total time for producing 1,000 units (Hours) | 750 | 334 |\n| Time available (Hours) | 800 | 800 |\n| Spare time (Hours) | 50 | 466 |\n| Spare time per week (Hours) | 1 | 9.32 |\n\nConclusion:\nTherefore Department 4 can sell 1 hr. per week at ₹ 70 per hour. It is not profitable to sell spare capacity of 9.32 hrs. / week at the existing rate of ₹ 70 per hour, because its relevant cost is ₹ 72 per hour.\n\n(iv) Weekly gain from this programme\n\n| | ₹ |\n|---|---|\n| Selling price | 110 |\n| Variable Cost | |\n| Direct Materials | 10 |\n| Department 4 variable operating cost 0.75 x 60 | 45 |\n| Department 5 variable operating cost 0.333 x 72 | 24 |\n| Total Variable Cost | 79 |\n| Contribution / unit | 31 |\n| Weekly sales (1,000 ÷ 50) | 20 units |\n| Additional contribution / week | ₹ 620 |\n| Plus contribution of selling 1 hr. (selling price – variable cost = 70 – 60) | 10 |\n| Total contribution | 630 |\n| Without the new product, the weekly contribution 16 hours x ₹ 10 per hr. | 160 |\n| Additional gain for introducing the new product | 470 |",
+       "confidence": "high",
+       "review": [
+        "Printed 14 marks for whole question (no split among (i)-(iv))",
+        "Answer-key row 'Time required per unit' shows 3/4 and 1/3 as stacked fractions in aid text (rendered as 3/4, 1/3)"
+       ]
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "KAPN Ltd., has two manufacturing divisions. Each division operates as an independent profit centre. Division A is the only source of a component that is used in Division B in manufacturing of a final product UBEKA. For each unit of UBEKA, one component manufactured by Division A is used. Demand for UBEKA is not steady. Division B can increase sell of UBEKA by spending on sales promotion and / or by reducing selling price. The Manager of Division B has prepared the following forecast:\n\n| Sales in units per day | 1,000 | 2,000 | 3,000 | 4,000 | 5,000 | 6,000 |\n|---|---|---|---|---|---|---|\n| Average selling price per unit of UBEKA (₹) | 52.50 | 39.80 | 33.00 | 27.80 | 24.00 | 20.10 |\n\nThe manufacturing cost of UBEKA in Division B is ₹ 37,500 on first 1,000 units and additional ₹ 7.50 per unit for every additional 1,000 units manufactured. Division A incurs a total cost of ₹ 15,000 per day, for an output of 1,000 components and the total costs will increase by ₹ 9,000 per day for every additional 1,000 components manufactured.\n\nManager of Division A states that operating results of his Division will be optimized if the transfer price is set at ₹ 12 per component and accordingly he has set the above transfer price.\n\nRequired:\n(i) Analyze the profitability at each level of Division A and Division B.\n(ii) Assess the profitability of company as a whole at the output level\n (a) when the net profit of Division A is maximum.\n (b) when the net profit of Division B is maximum.\n(iii) If the company is not organized on profit centre basis what level of output will be chosen to yield maximum profit?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Statement Showing Profitability of Division – A (under different levels)\n\n| Sales per day (units) | Rate ₹ | Total Value ₹ | Total Cost | Profit / (Loss) ₹ |\n|---|---|---|---|---|\n| 1,000 | 12.00 | 12,000 | 15,000 | (3,000) |\n| 2,000 | 12.00 | 24,000 | 24,000 | -- |\n| 3,000 | 12.00 | 36,000 | 33,000 | 3,000 |\n| 4,000 | 12.00 | 48,000 | 42,000 | 6,000 |\n| 5,000 | 12.00 | 60,000 | 51,000 | 9,000 |\n| 6,000 | 12.00 | 72,000 | 60,000 | 12,000 |\n\nStatement Showing Profitability of Division - B (Under different Levels):\n\n| No of Units | Selling Price | Sale Value | Transfer Price ₹ | Other Mfg. Cost ₹ | Total | PROFIT / LOSS |\n|---|---|---|---|---|---|---|\n| 1,000 | 52.50 | 52,500 | 12,000 | 37,500 | 49,500 | 3,000 |\n| 2,000 | 39.80 | 79,600 | 24,000 | 45,000 | 69,000 | 10,600 |\n| 3,000 | 33.00 | 99,000 | 36,000 | 52,500 | 88,500 | 10,500 |\n| 4,000 | 27.80 | 1,11,200 | 48,000 | 60,000 | 1,08,000 | 3,200 |\n| 5,000 | 24.00 | 1,20,000 | 60,000 | 67,500 | 1,27,500 | (7,500) |\n| 6,000 | 20.10 | 1,20,600 | 72,000 | 75,000 | 1,47,000 | (26,400) |\n\n(ii) (a) PROFITABILITY OF THE COMPANY AT THE OUTPUT LEVEL WHERE DIVISION A'S NET PROFIT IS MAXIMUM:\n\n| | ₹ |\n|---|---|\n| PROFIT OF DIVISION A AT 6,000 UNITS | 12,000 |\n| PROFIT OF DIVISION B AT 6,000 UNITS | (26,400) |\n| PROFIT / LOSS | (14,400) |\n\n(b) PROFITABILITY OF THE COMPANY AT THE OUTPUT LEVEL WHERE DIVISION B’S NET PROFIT IS MAXIMUM:\n\n| | ₹ |\n|---|---|\n| PROFIT OF DIVISION B AT 2,000 UNITS | 10,600 |\n| PROFIT OF DIVISION A AT 2,000 UNITS | -- |\n| PROFIT / (LOSS) | 10,600 |\n\n(iii) When the Company is not organised on Profit Centre Basis:\nProfit at Different Levels of Output\n\n| Units | Division – A ₹ | Division – B ₹ | Total Profit / Loss ₹ |\n|---|---|---|---|\n| 1,000 | (3,000) | 3,000 | Nil |\n| 2,000 | -- | 10,600 | 10,600 |\n| 3,000 | 3,000 | 10,500 | 13,500 |\n| 4,000 | 6,000 | 3,200 | 9,200 |\n| 5,000 | 9,000 | (7,500) | 1,500 |\n| 6,000 | 12,000 | (26,400) | (14,400) |\n\nProfit Maximisation Output:\nBest Output Level for maximization of profit is 3,000 units.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "RRS International Ltd. has developed a new product ‘Meu’ which is to be launched soon. The company anticipates to sell 1,25,000 of these units at a sale price of ₹ 400 per unit over the product life cycle of three years. The other data pertaining to the product ‘Meu’ are as under:\n\n| | |\n|---|---|\n| Research & Development cost | ₹ 32,50,000 |\n| Manufacturing cost per unit | ₹ 175 |\n| Fixed Manufacturing cost per year | ₹ 12,75,000 |\n| Marketing cost per unit (including 4% commission on sales) | ₹ 90 |\n| Fixed Marketing cost per year | ₹ 6,72,000 |\n| Administration cost per year | ₹ 6,60,000 |\n| Warranty expenses | 4 replacements parts per 50 units @ ₹ 30 per part |\n\nRequired:\n(i) Analyze and assess the life cycle cost of the product ‘Meu’.\n(ii) Evaluate the revised life cycle cost if the company increases sales by 12% through 5% reduction in sales price along with increase in fixed manufacturing cost by ₹ 1,20,000 per year.\n(iii) Advise whether the company should go for reduction in sale price.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Statement showing Meu’s Life Cycle Cost (1,25,000 units):\n\n| Particulars | Amount (₹) |\n|---|---|\n| Research & Development Cost | 32,50,000 |\n| Manufacturing Costs (₹ 175 X 1,25,000 + ₹ 12,75,000 X 3) | 2,57,00,000 |\n| Marketing Costs [(₹ 74 + ₹ 16) x 1,25,000 + ₹ 6,72,000 X 3] | 1,32,66,000 |\n| Administration Cost (₹ 6,60,000 X 3) | 19,80,000 |\n| Warranty (1,25,000 units / 50 units X 4 parts X ₹ 30) | 3,00,000 |\n| Total Cost | 4,44,96,000 |\n\nCommission on sales = 4% of ₹ 400 = ₹ 16;\nMarketing cost excluding commission = ₹ 90 - ₹ 16 = ₹ 74\n\n(ii) Statement showing Meu’s Revised Life Cycle Cost (1,40,000 units):\nRevised Sales units = 1,25,000 X 1.12 = 1,40,000\nRevised Selling Price per unit = ₹ 400 X 95% = ₹ 380\nFixed Manufacturing cost = ₹ 12,75,000 + ₹ 1,20,000 = ₹ 13,95,000\n\n| Particulars | Amount (₹) |\n|---|---|\n| Research & Development Cost | 32,50,000 |\n| Manufacturing Costs (₹ 175 X 1,40,000 + ₹ 13,95,000 X 3) | 2,86,85,000 |\n| Marketing Costs [(₹ 74 + ₹ 380 X 4%) x 1,40,000 + ₹ 6,72,000 X 3] | 1,45,04,000 |\n| Administration Cost (₹ 6,60,000 X 3) | 19,80,000 |\n| Warranty (1,40,000 units / 50 units X 4 parts X ₹ 30) | 3,36,000 |\n| Total Cost | 4,87,55,000 |\n\n(iii) Decision:\nStatement Showing Meu’s Life Time Profit:\n\n| Particulars | Amount (₹) 1,25,000 units | Amount (₹) 1,40,000 units |\n|---|---|---|\n| Sales | 5,00,00,000 (1,25,000 X ₹ 400) | 5,32,00,000 (1,40,000 X ₹ 380) |\n| Less: Total Cost | 4,44,96,000 | 4,87,55,000 |\n| Profit | 55,04,000 | 44,45,000 |\n\nReducing the price by 5% will decrease profit by ₹ 10,59,000 (i.e. 19.24%). Therefore, the company should not go for price reduction.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A factory of MOBN Ltd. a manufacturing company using Throughput Accounting System produces products S and T for a month in 2025 details of which are presented below:\n\n| Particulars | Product S | Product T |\n|---|---|---|\n| Selling price per unit (₹) | 110 | 120 |\n| Direct Material cost per unit (₹) | 50 | 76 |\n| Direct Labour cost p.u. (₹) | 12 | 10 |\n| Variable Overheads p.u. (₹) | 20 | 15 |\n| Production (units) | 20,000 | 30,000 |\n| Time required on the bottleneck resources (Hrs. p.u.) | 5 | 4 |\n\nTotal fixed overhead is ₹ 4,50,000 each month. There are 2,30,000 bottleneck hours available each month.\n\nRequired:\nCalculate the following:\n(i) Total Factory Cost (TFC)\n(ii) Cost per factory hour\n(iii) Return per bottleneck hour for both Product S and Product T\n(iv) Throughput Accounting (TA) ratios for both Product S and Product T\n(v) Throughput cost per month\n(vi) Efficiency Ratio",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Total Factory Cost (TFC)\n[20,000 x (12 + 20) + 30,000 x (10 + 15) + 4,50,000]\n= 13,90,000 + 4,50,000 = ₹ 18,40,000\n\n(ii) Cost per factory hour:\n18,40,000 ÷ 2,30,000 = ₹ 8\n\n(iii) Return per bottleneck hour for both products:\nProduct S: (110 − 50) / 5 = 60 / 5 = ₹ 12\nProduct T: (120 − 76) / 4 = 44 / 4 = ₹ 11\n\n(iv) Throughput Accounting (TA) Ratio for both Products: Return per hr. / Cost per hr\nProduct S: ₹ 12 / ₹ 8 = 1.5\nProduct T: 11 / 8 = 1.375\n\n(v) Throughput cost per month:\n(20,000 x 5 + 30,000 x 4) = 2,20,000 hours\n2,20,000 x ₹ 8 = ₹ 17,60,000\n\n(vi) Efficiency Ratio:\n(Throughput Cost ÷ Actual TFC) x 100\n= (₹ 17,60,000 ÷ ₹ 18,40,000) x 100\n= 0.9565 i.e. 95.65 %",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "“Lean Accounting is the application of Lean Philosophy to all accounting and finance processes and systems”— In this context, Align the Principles and Practices of Lean Accounting.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The principles and practices of Lean Accounting are appended in the following table:\n\n| SL. | Principles | Practices |\n|---|---|---|\n| 1. | Lean & Simple Business Accounting | Continuously eliminates waste from the transactions, processes, reports, and other accounting methods. |\n| 2. | Accounting process that supports lean transformation | Management Control & Continuous improvement. Cost Management. Customer & supplier value and Cost Management. |\n| 3. | Clear & Timely Communication of information | Financial reporting. Visual reporting of financial & non-financial performance measurements. Decision making |\n| 4. | Planning from a lean perspective | Planning & Budgeting. Impact of lean improvement. Capital planning. Invest in people |\n| 5. | Strengthen internal accounting control | Internal control based on Lean Operational Controls. Inventory Valuation. |",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "DOXIN Ltd., a manufacturing company operating the Budgetary Control and Standard Costing System, has furnished the following information:\n\n| Particulars | Product P | Product R |\n|---|---|---|\n| Standard price per unit (₹) | 24 | 30 |\n| Actual price per unit (₹) | 30 | 40 |\n| Standard input (kg.) | 50 | ? |\n| Actual input (kg.) | 40 | 70 |\n| Material Price Variance (₹) | ? | ? |\n| Material Usages Variance (₹) | ? | 600 (Adv.) |\n| Material Cost Variance (₹) | ? | ? |\n\nMaterial Mix Variance for both products together was ₹ 90 (Adv.).\n\nRequired:\nAssess the following which includes missing variances as indicated by Question Marks in the above table:\n(i) Material Mix Variance (Product P and R)\n(ii) Material Usage Variance (Product P)\n(iii) Material Price Variance (Product P and R)\n(iv) Material Cost Variance (Product P and R)",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Material Mix Variance = Standard Price per unit X (Revised Standard Quantity – Actual Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| P | 24 X (55* – 40) | 360 (F) |\n| R | 30 X (55* – 70) | 450 (A) |\n| TOTAL | | 90 (A) |\n\n*RSQ has been calculated by the following formula: Total Actual Quantity / Total Standard Quantity X Individual Standard Quantity.\nMaterial P: (50/100 X 110) = 55\nMaterial R: (50/100 X 110) = 55\n\n(ii) Material Usage Variance = Standard Price per unit X (Standard Quantity - Actual Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| P | 24 (50 – 40) | 240 (F) |\n\nCalculation of Standard Input of Material R:\nMaterial Usage Variance = Standard Price per unit X (Standard Quantity - Actual Quantity)\nWe have, 30 (a – 70) = 600 (A), where a is the Standard Input of Material R.\n30a = 2,100 – 600 = 1,500\nOr, a = 1,500 / 30 = 50\n\n(iii) Material Price Variance = Actual Quantity X (Standard Price per unit - Actual Price per unit)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| P | 40 (24 – 30) | 240 (A) |\n| R | 70 (30 – 40) | 700 (A) |\n| TOTAL | | 940 (A) |\n\n(iv) Material Cost Variance = Standard Price per unit X Standard Quantity – Actual Price per unit X Actual Quantity\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| P | 24 X 50 – 30 X 40 | NIL |\n| R | 30 X 50 – 40 X 70 | 1,300 (A) |\n| TOTAL | | 1,300 (A) |\n\nAlternative:\nLet SQ for Material R = Q units\nMaterial Usage Variance for R:\n= (SQ x SP) – (AQ x SP)\n600 (A) = (SQ x 30) – (70 x 30)\n600 (A) = 30 SQ – 2,100\n30 SQ = 2,100 – 600\nSQ = 1500 / 30 = 50 units\n\nVariance Computation Chart:\n\n| Materials | (1) SQ x SP | (2) RSQ x SP | (3) AQ x SP | (4) AQ x AP |\n|---|---|---|---|---|\n| P | 50 x 24 = 1,200 | 55 x 24 = 1,320 | 40 x 24 = 960 | 40 x 30 = 1,200 |\n| R | 50 x 30 = 1,500 | 55 x 30 = 1,650 | 70 x 30 = 2,100 | 70 x 40 = 2,800 |\n| | 2,700 | 2,970 | 3,060 | 4,000 |\n\nMaterial wise Break-up of Variances:\n\n| Particulars | Product P | Product R | Total |\n|---|---|---|---|\n| I. Mix Variance [(2) – (3)] | 360 (Fav.) | 450 (Adv.) | 90 (Adv.) |\n| II. Usage Variance [(1) – (3)] | 240 (Fav.) | 600 (Adv.) | 360 (Adv.) |\n| III. Price Variance [(3) – (4)] | 240 (Adv.) | 700 (Adv.) | 940 (Adv.) |\n| IV. Total Material Cost Variance [(1) – (4)] | 0 | 1300 (Adv.) | 1300 (Adv.) |",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following are the information regarding overheads of a company:\n\nOverhead Cost Variance = ₹ 2,800 (A)\nOverhead Volume Variance = ₹ 2,000 (A)\nBudgeted overheads = ₹ 12,000\nActual overhead recovery rate = ₹ 8 per hour\nBudgeted hours for the period = 2,400 hours\n\nRequired:\nAssess the following:\n(i) Overhead Expenditure Variance\n(ii) Actual incurred overheads\n(iii) Actual hours for actual production\n(iv) Overhead Capacity Variance\n(v) Overhead Efficiency Variance\n(vi) Standard hours for actual production\n(vii) Standard Rate per hour",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Overheads Expenditure Variance\n= Overheads Cost Variance (–) Overheads Volume Variance\n= ₹ 2,800 (A) – ₹ 2,000 (A)\n= ₹ 800 (A)\n\n(ii) Actual incurred overheads\nOverheads Expenditure Variance = Budgeted Overheads (–) Actual Overheads\n₹ 800 (A) = ₹ 12,000 (–) Actual Overheads\nTherefore, Actual Overheads = ₹ 12,800\n\n(iii) Actual hours for actual production\n= Actual Overhead / Actual Overhead Recovery Rate\n= ₹ 12800 / 8 = 1,600 Hrs.\n\n(iv) Overheads Capacity Variance\nBudgeted Overheads for Actual Hours (–) Budgeted Overheads\n= ₹ 5 × 1,600 hrs. – ₹ 12,000\n= ₹ 8,000 – ₹ 12,000\n= ₹ 4,000 (A)\n\n(v) Overheads efficiency variance\n= Absorbed Overheads (–) Budgeted Overheads for Actual Hours\n= ₹ 10,000 – ₹ 5 × 1,600 hours\n= ₹ 2,000 (F)\n\n(vi) Standard hours for actual production\n= Absorbed Overhead / Standard rate per hour\n= ₹ 10,000 / ₹ 5\n= 2,000 hrs\n\n(vii) Calculation of Standard Rate/Hour\nOverhead Cost Variance = Absorbed Overheads (–) Actual Overheads\n₹ 2,800 (A) = Absorbed Overheads (–) ₹ 12,800\nAbsorbed Overheads = ₹ 10,000\nStandard Rate per Hour = Budgeted Overhead / Budgeted Hours\n= ₹ 12,000 / 2,400 hrs\n= ₹ 5 /hr",
+       "confidence": "high",
+       "review": [
+        "Stem prints 'Budgeted hours for the period ₹2,400 hours' in OCR; image reads 2,400 hours"
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "LM Company has the option of producing two products in its plant. The costs and selling prices per unit of two products are detailed below:\n\n| Product | Alfa (₹) | Beta (₹) |\n|---|---|---|\n| Selling Price | 1,000 | 900 |\n| Direct Materials @ ₹ 50 per kg | 200 | 200 |\n| Direct Labour @ ₹ 40 per hour | 160 | 80 |\n| Painting @ ₹ 60 per hour | 60 | 120 |\n| Variable Overheads | 380 | 350 |\n| Fixed costs @ ₹ 35/D.L. hour | 140 | 70 |\n| Total costs | 940 | 820 |\n| Profit | 60 | 80 |\n\nIn any month the maximum availability of inputs is limited to the following:\n\n| | |\n|---|---|\n| Direct Materials | 960 kgs |\n| Direct Labour hours | 800 hours |\n| Painting hours | 400 hours |\n\nRequired:\n(i) Formulate a Linear Programming Problem to determine the production plan which maximizes the contributions. (You are not required to solve the LPP)\n(ii) Prepare the DUAL to the problem formulated in (i).",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Contribution made by product Alfa = 1000 – [200+160+60+380] = ₹ 200\nContribution made by product Beta = 900 – [200+80+120+350] = ₹ 150\nDirect Material per unit of product Alfa = 200/50 = 4 kgs; Direct Material per unit of product Beta = 200/50 = 4 kgs\nDirect Labour hour per unit of product Alfa = 160/40 = 4 hrs; Direct Labour hour per unit of product Beta = 80/40 = 2 hrs\nPainting hour per unit of product Alfa = 60/60 = 1 hr; Painting hour per unit of product Beta = 120/60 = 2 hrs\nLet the decision variables x1 and x2 denote the number of units of product Alfa and product Beta to be produced respectively.\n\nThe appropriate mathematical formulation of the given problem as LP model is:\nMaximize (contribution) Z = 200 x1 + 150 x2\n\nSubject to the constraints\n4x1 + 4x2 ≤ 960 (Raw material constraint)\n4x1 + 2x2 ≤ 800 (Direct Labour hour constraint)\nx1 + 2x2 ≤ 400 (Painting hour constraint)\nx1 ≥ 0, x2 ≥ 0 (Non negativity constraint)\n\n(ii) DUAL problem is expressed as follows:\nMinimize Zy = 960 y1 + 800 y2 + 400 y3\nSubject to the constraints\n4y1 + 4y2 + y3 ≥ 200\n4y1 + 2y2 + 2y3 ≥ 150\ny1, y2, y3 ≥ 0",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A State Municipal Corporation has decided to carry out road repairs on four main roads in the city and you have been asked to advise them the least cost allocation.\n\nIt is learnt that the State Government has agreed to make a special grant of ₹ 114 lakhs towards the cost with the condition that the repairs should be carried at the lowest cost. Five contractors have sent their bids. Only one road will be awarded to one contractor. The bids are given below:\n\n| Contractors \\ Road | R1 | R2 | R3 | R4 |\n|---|---|---|---|---|\n| C1 | 18 | 28 | 38 | 30 |\n| C2 | 14 | 34 | 40 | 39 |\n| C3 | 18 | 36 | 42 | 38 |\n| C4 | 20 | 24 | 36 | 36 |\n| C5 | 20 | 30 | 42 | 32 |\n\n(Cost of Repairs (₹ in Lakhs))\n\nYou are also informed that contractor C1 should get R1 and C5 should get R2 to minimise costs.\n(i) By applying the principles of Assignment, assess the minimum cost of allocation.\n(ii) Calculate the minimum discount that the eliminated contractor should offer for meriting a contract.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) There are 5 rows and 4 columns, hence a dummy column is to be inserted. Further, assigning C1 → R1 and C5 → R2, we have the cost table:\n\nCost of Repairs (₹ in Lakhs)\n\n| Contractors \\ Road | R3 | R4 | Dummy |\n|---|---|---|---|\n| C2 | 40 | 39 | 0 |\n| C3 | 42 | 38 | 0 |\n| C4 | 36 | 36 | 0 |\n\nAs there is ZERO in each row, we go straight to the column reduction:\n\n| Contractors \\ Road | R3 | R4 | Dummy |\n|---|---|---|---|\n| C2 | 4 | 3 | 0 |\n| C3 | 6 | 2 | 0 |\n| C4 | 0 | 0 | 0 |\n\nThe minimum number of lines to cover all zeroes is 2, which is less than 3, the order of the matrix. Hence, optimum solution has not been reached and the solution needs to be improved.\n\nTo improve the solution, the minimum uncovered element (i.e. 2) is deducted from all the uncovered elements and added with the covered elements at the junction. The new matrix will be as under:\n\n| Contractors \\ Road | R3 | R4 | Dummy |\n|---|---|---|---|\n| C2 | 2 | 1 | 0 |\n| C3 | 4 | 0 | 0 |\n| C4 | 0 | 0 | 2 |\n\nThe minimum number of lines to cover all zeroes is 3, which is equal to the order of the matrix, hence optimum solution has been reached. The assignment is made below:\n[Assignment marking image not available in text]\n\nThe optimal assignment is:\n\n| Contractor | Road | Cost (₹ in lakhs) |\n|---|---|---|\n| C1 | R1 | 18 |\n| C2 | No assignment | X |\n| C3 | R4 | 38 |\n| C4 | R3 | 36 |\n| C5 | R2 | 30 |\n| Total | | 122 |\n\nHence, total minimum cost of the repair project is ₹ 122 lakhs.\n\n(ii) Minimum Discount for eliminated contractor:\nThe eliminated contractor is C2, as they were not assigned any road in the optimal plan.\nTo \"merit a contract\" C2 must offer a price lower than the current winning bids for the roads they are most competitive in (R3 or R4)\nCurrent cost for R4: 38 lakhs (assigned to C3)\nC2's current bid for R4: ₹ 39 lakhs.\nRequired discount: C2 must at least match the current assignment: ₹ (39 - 38) = ₹ 1 lakh.\nC2 must offer a minimum Discount of ₹ 1 lakh to equal C3 from R4.\nOR: The minimum discount of ₹ 4 lakhs (40 - 36) must offer by C2 to get/ equal C4 from R3",
+       "confidence": "medium",
+       "review": [
+        "Assignment marking figure is an image not in aid.txt"
+       ]
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A computer service centre services laptops. It is proposed to study the arrival and servicing pattern of the service centre. The following information was collected over 100 days.\n\n| No. of laptops | Frequency of arrival | Frequency of service |\n|---|---|---|\n| 8 | 10 | 15 |\n| 9 | 25 | 20 |\n| 10 | 20 | 25 |\n| 11 | 15 | 16 |\n| 12 | 18 | 14 |\n| 13 | 12 | 10 |\n\nSimulate the arrival and servicing pattern for 7 days and analyze and assess the average number of laptops held for more than one day for service. Assume FIFO method is followed for service and there is one laptop held from previous day for service at the beginning of the first day.\n\nUse the following series of random numbers:\n\n| Arrivals | 69 | 45 | 46 | 10 | 82 | 16 | 35 |\n|---|---|---|---|---|---|---|---|\n| Service | 52 | 36 | 62 | 49 | 68 | 77 | 55 |",
+       "options": [],
+       "correct": null,
+       "answer_md": "Random No. coding for Arrival:\n\n| No. of laptops | Probability | Cumulative Probability | Random Number |\n|---|---|---|---|\n| 8 | 0.10 | 0.10 | 00 - 09 |\n| 9 | 0.25 | 0.35 | 10 - 34 |\n| 10 | 0.20 | 0.55 | 35 - 54 |\n| 11 | 0.15 | 0.70 | 55 - 69 |\n| 12 | 0.18 | 0.88 | 70 - 87 |\n| 13 | 0.12 | 1.00 | 88 - 99 |\n\nRandom No. coding for Service:\n\n| No. of laptops | Probability | Cumulative Probability | Random Number |\n|---|---|---|---|\n| 8 | 0.15 | 0.15 | 00 – 14 |\n| 9 | 0.20 | 0.35 | 15 - 34 |\n| 10 | 0.25 | 0.60 | 35 - 59 |\n| 11 | 0.16 | 0.76 | 60 - 75 |\n| 12 | 0.14 | 0.90 | 76 – 89 |\n| 13 | 0.10 | 1.00 | 90 - 99 |\n\nSimulation Sheet:\nLet us simulate the arrival and service of laptops for the next seven days using the given random numbers:\n\n| Day | R No. of Arrival | No. of laptops arrived | Opening Job | R No. of Service | No. of Laptops serviced* | Closing Job |\n|---|---|---|---|---|---|---|\n| 1 | 69 | 11 | 1 | 52 | 10 | 2 |\n| 2 | 45 | 10 | 2 | 36 | 10 | 2 |\n| 3 | 46 | 10 | 2 | 62 | 11 | 1 |\n| 4 | 10 | 9 | 1 | 49 | 10 | 0 |\n| 5 | 82 | 12 | 0 | 68 | 11 | 1 |\n| 6 | 16 | 9 | 1 | 77 | 12 | 0 |\n| 7 | 35 | 10 | 0 | 55 | 10 | 0 |\n\n* This represents the service capacity of service centre.\nAverage No. of laptops held for more than one day = Total Closing Jobs / No. of days = 6 laptops / 7 days = 0.86 laptops per day.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Gamma Electronics which has just developed 100 units of a new type of fire alarm has been asked to quote for a prospective contract. The customer requires separate price quotations for each of the following possible orders:\n\n| Order | Number of fire-alarms |\n|---|---|\n| First | 60 |\n| Second | 40 |\n\nThe firm had incurred the following costs per unit for the first 100 units, which it has just developed:\n\nDirect Materials: ₹ 500\nDirect Labour:\n Department A (Highly automatic): 20 hours @ ₹ 10 per hour\n Department B (Skilled Labour): 40 hours @ ₹ 15 per hour\nVariable Overheads absorbed: 20% of Direct Labour\nFixed Overheads absorbed:\n Department A: ₹ 8 per hour\n Department B: ₹ 5 per hour\n\nRequired:\nCalculate the price per unit for each of the two orders, assuming the firm uses a markup of 25% on total costs and allows for an 80% learning curve.\n\nExtract from 80% Learning Curve table is given below:\n\n| X | 1.0 | 1.3 | 1.4 | 1.5 | 1.6 | 1.7 | 1.8 | 1.9 | 2.0 |\n|---|---|---|---|---|---|---|---|---|---|\n| Y (%) | 100.0 | 91.7 | 89.5 | 87.6 | 86.1 | 84.4 | 83 | 81.5 | 80.0 |\n\nX represents the cumulative total volume produced to date expressed as a multiple of the initial production of 100 units and Y is the Learning Curve factor for a given X value, expressed as a % of the cost of initial 100 units.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Calculation of price per unit for 1st order of 60 units:\nLearning will be applicable only in Dept. B\nCumulative output becomes 100 units + 60 units = 160 units i.e. 1.6 times.\nFrom the table, learning rate is 86.1% for 1.6 times.\nTherefore, total hours for 160 units = 160 X 40 X 0.861 = 5,510.40 hrs\nHours for 60 units = Hrs for 160 units – Hrs for 100 units = 5,510.40 – 4,000 = 1,510.40 Hrs\nTherefore, hours per unit = 1,510.40 / 60 = 25.17\n\nCalculation of Selling Price per unit:\n\n| Particulars | Calculation | Amount (₹) |\n|---|---|---|\n| Direct Materials | | 500.00 |\n| Direct Labour | | |\n| Dept. A: 20 hrs @ ₹ 10 | 200.00 | |\n| Dept. B: 25.17 hrs @ ₹ 15 | 377.55 | 577.55 |\n| Variable Overhead 20% of ₹ 577.55 | | 115.51 |\n| Fixed Overhead | | |\n| Dept. A: 20 hrs @ ₹ 8 | 160.00 | |\n| Dept. B: 25.17 hrs @ ₹ 5 | 125.85 | 285.85 |\n| Total Cost | | 1478.91 |\n| Profit | | 369.73 |\n| Selling Price per unit | | 1848.64 |\n\nCalculation of price per unit for 2nd order of 40 units:\nCumulative output becomes 100 units + 60 units + 40 units = 200 units i.e. 2 times.\nFrom the table, learning rate is 80% for 2 times.\nTherefore, total hours for 200 units = 200 X 40 X 0.80 = 6,400 hrs\nHours for 40 units = Hrs for 200 units – Hrs for 160 units = 6,400 - 5,510.40 = 889.60 Hrs\nTherefore, hours per unit = 889.60 / 40 = 22.24\n\nCalculation of Selling Price per unit:\n\n| Particulars | Calculation | Amount (₹) |\n|---|---|---|\n| Direct Materials | | 500.00 |\n| Direct Labour | | |\n| Dept. A: 20 hrs @ ₹ 10 | 200.00 | |\n| Dept. B: 22.24 hrs @ ₹ 15 | 333.60 | 533.60 |\n| Variable Overhead 20% of ₹ 533.60 | | 106.72 |\n| Fixed Overhead | | |\n| Dept. A: 20 hrs @ ₹ 8 | 160.00 | |\n| Dept. B: 22.24 hrs @ ₹ 5 | 111.20 | 271.20 |\n| Total Cost | | 1411.52 |\n| Profit | | 352.88 |\n| Selling Price per unit | | 1764.40 |",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "SUTON Ltd. (SL) a manufacturing company can sell ‘X’ items of a product (X≥0) at a price of (3X² – 3X + 656) each, the total cost C(X) of producing ‘X’ items is, X³ + 60X² + 8X, (X being the output)\n\nRequired:\n(i) Analyze the number of items SUTON Ltd., should sell to make maximum profit.\n(ii) Analyze and assess the maximum profit SUTON Ltd., can earn from the product.",
+       "options": [],
+       "correct": null,
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer for 8(a) is missing from aid.txt (the answer page appears to be an image/blank); answer_md left empty"
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The production of TURMERIC Powder by SONT Ltd., for the years 2022, 2023 and 2024 are given below:\n\n| Months \\ Years | 2022 | 2023 | 2024 |\n|---|---|---|---|\n| | (Production in Thousand Tonnes) | | |\n| January | 15 | 23 | 25 |\n| February | 16 | 22 | 25 |\n| March | 18 | 28 | 35 |\n| April | 18 | 27 | 36 |\n| May | 23 | 31 | 36 |\n| June | 23 | 28 | 30 |\n| July | 20 | 22 | 30 |\n| August | 28 | 28 | 34 |\n| September | 29 | 32 | 38 |\n| October | 33 | 37 | 47 |\n| November | 33 | 34 | 41 |\n| December | 38 | 44 | 53 |\n\nRequired:\nAssess the Seasonal Indices (monthly) for January to December by Trend Ratio Method assuming a linear trend for the data.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Fit a Linear Trend Equation\nFirst, we tabulate the monthly production data (Y) for the 36 months (n = 36) covering 2022, 2023 and 2024. We assign X is the time variable (X = 1 for Jan. 2022, X = 36 for Dec. 2024).\n\n| Month | 2022 | 2023 | 2024 |\n|---|---|---|---|\n| Jan | 15 | 23 | 25 |\n| Feb | 16 | 22 | 25 |\n| Mar | 18 | 28 | 35 |\n| Apr | 18 | 27 | 36 |\n| May | 23 | 31 | 36 |\n| Jun | 23 | 28 | 30 |\n| Jul | 20 | 22 | 30 |\n| Aug | 28 | 28 | 34 |\n| Sep | 29 | 32 | 38 |\n| Oct | 33 | 37 | 47 |\n| Nov | 33 | 34 | 41 |\n| Dec | 38 | 44 | 53 |\n| Total | 294 | 356 | 430 |\n\nTotals:\nΣY = 1080\nn = 36\nMean Y = 1080 / 36 = 30\n\nCompute Trend Equation (Least Squares)\nGiven:\nΣX = 666\nΣX² = 16206\nΣXY = 22377\nb = [nΣXY − (ΣX)(ΣY)] / [nΣX² − (ΣX)²]\nb = [36(22377) − 666(1080)] / [36(16206) − 666²]\nb = (805572 − 719280) / (583416 − 443556)\nb = 86292 / 139860 = 0.617\na = Ȳ − bX̄\na = 30 − 0.617(666/36) = 18.58\nTrend Equation\nY = 18.58 + 0.617X\n\nCalculate Trend Values (T) and Ratios (A/T × 100)\nExample calculations\nJanuary\n• Jan 2022 (X=1): T = 18.58 + 0.617(1) = 19.197; Ratio = 15 / 19.197 × 100 = 78.14\n• Jan 2023 (X=13): T = 18.58 + 0.617(13) = 26.601; Ratio = 23 / 26.601 × 100 = 86.46\n• Jan 2024 (X=25): T = 34.005; Ratio = 25 / 34.005 × 100 = 73.52\nAverage (Jan): (78.14 + 86.46 + 73.52)/3 = 79.37\n\nRepeating for all months we have:\n\n| MONTH | Avg Ratio (2022) | Avg Ratio (2023) | Avg Ratio (2024) | Average Ratio |\n|---|---|---|---|---|\n| JAN | 78.14 | 86.46 | 73.52 | 79.37 |\n| FEB | 80.75 | 80.83 | 72.21 | 77.93 |\n| MAR | 88.10 | 100.59 | 99.32 | 96.00 |\n| APR | 85.52 | 94.90 | 100.40 | 93.61 |\n| MAY | 106.16 | 106.64 | 98.70 | 103.83 |\n| JUNE | 103.22 | 94.35 | 80.88 | 92.82 |\n| JULY | 87.34 | 72.57 | 79.56 | 79.82 |\n| AUG | 119.07 | 90.54 | 88.72 | 99.44 |\n| SEPT | 120.17 | 101.47 | 97.58 | 106.41 |\n| OCT | 133.33 | 115.07 | 118.81 | 122.40 |\n| NOV | 130.09 | 103.75 | 102.05 | 111.96 |\n| DEC | 146.24 | 131.78 | 129.93 | 135.98 |\n| TOTAL | | | | 1199.57 |\n\nFinal Seasonal Index:\nThe sum of the average ratios is 1199.57. Since the sum of Seasonal ratios for 12 months should be exactly 1200, a minor correction factor (1200/11199.57 = 1.00036) is applied.\n\n| Month | Seasonal Index | Month | Seasonal Index |\n|---|---|---|---|\n| JAN | 79.40 | JULY | 79.85 |\n| FEB | 77.96 | AUG | 99.48 |\n| MAR | 96.03 | SEPT | 106.45 |\n| APR | 93.64 | OCT | 122.44 |\n| MAY | 103.87 | NOV | 112.00 |\n| JUNE | 92.85 | DEC | 136.03 |\n\n[Calculation of final seasonal index has been made by multiplying correction factor with each calculated seasonal index]\n\nConclusion:\nThe production of Turmeric Powder peaks significantly in DECEMBER (136.03) and reaches its lowest point in FEBRUARY (77.96).\n\nALTERNATIVE SOLUTION (if calculation is made up to 3 decimal places)\nMethod: Trend Ratio Method (Multiplicative Model)\nFit a Linear Trend Equation y = a + bx\n\nTable 1: Monthly Data and Calculations of Ratio\n\n| Month | x | Production (Y) | x² | xy | Trend T = 18.59 + 0.617x | Ratio (Y/T) x 100 |\n|---|---|---|---|---|---|---|\n| Jan – 22 | 1 | 15 | 1 | 15 | 19.207 | 78.10 |\n| Feb – 22 | 2 | 16 | 4 | 32 | 19.824 | 80.71 |\n| Mar – 22 | 3 | 18 | 9 | 54 | 20.441 | 88.06 |\n| Apr – 22 | 4 | 18 | 16 | 72 | 21.058 | 85.48 |\n| May – 22 | 5 | 23 | 25 | 115 | 21.675 | 106.11 |\n| Jun – 22 | 6 | 23 | 36 | 138 | 22.292 | 103.18 |\n| Jul – 22 | 7 | 20 | 49 | 140 | 22.909 | 87.30 |\n| Aug – 22 | 8 | 28 | 64 | 224 | 23.526 | 119.02 |\n| Sep – 22 | 9 | 29 | 81 | 261 | 24.143 | 120.12 |\n| Oct – 22 | 10 | 33 | 100 | 330 | 24.760 | 133.28 |\n| Nov – 22 | 11 | 33 | 121 | 363 | 25.377 | 130.04 |\n| Dec – 22 | 12 | 38 | 144 | 456 | 25.994 | 146.19 |\n| Jan – 23 | 13 | 23 | 169 | 299 | 26.611 | 86.43 |\n| Feb – 23 | 14 | 22 | 196 | 308 | 27.228 | 80.80 |\n| Mar – 23 | 15 | 28 | 225 | 420 | 27.845 | 100.56 |\n| Apr – 23 | 16 | 27 | 256 | 432 | 28.462 | 94.86 |\n| May – 23 | 17 | 31 | 289 | 527 | 29.079 | 106.61 |\n| Jun – 23 | 18 | 28 | 324 | 504 | 29.696 | 94.29 |\n| Jul – 23 | 19 | 22 | 361 | 418 | 30.313 | 72.58 |\n| Aug – 23 | 20 | 28 | 400 | 560 | 30.930 | 90.53 |\n| Sep – 23 | 21 | 32 | 441 | 672 | 31.547 | 101.44 |\n| Oct – 23 | 22 | 37 | 484 | 814 | 32.164 | 115.04 |\n| Nov – 23 | 23 | 34 | 529 | 782 | 32.781 | 103.72 |\n| Dec – 23 | 24 | 44 | 576 | 1056 | 33.398 | 131.74 |\n| Jan – 24 | 25 | 25 | 625 | 625 | 34.015 | 73.50 |\n| Feb – 24 | 26 | 25 | 676 | 650 | 34.632 | 72.19 |\n| Mar – 24 | 27 | 35 | 729 | 945 | 35.249 | 99.29 |\n| Apr – 24 | 28 | 36 | 784 | 1008 | 35.866 | 100.37 |\n| May – 24 | 29 | 36 | 841 | 1044 | 36.483 | 98.68 |\n| Jun – 24 | 30 | 30 | 900 | 900 | 37.100 | 80.86 |\n| Jul – 24 | 31 | 30 | 961 | 930 | 37.717 | 79.54 |\n| Aug – 24 | 32 | 34 | 1024 | 1088 | 38.334 | 88.69 |\n| Sep – 24 | 33 | 38 | 1089 | 1254 | 38.951 | 97.56 |\n| Oct – 24 | 34 | 47 | 1156 | 1598 | 39.568 | 118.78 |\n| Nov – 24 | 35 | 41 | 1225 | 1435 | 40.185 | 102.03 |\n| Dec – 24 | 36 | 53 | 1296 | 1908 | 40.802 | 129.90 |\n| TOTAL | ΣX = 666 | ΣY = 1080 | ΣX² = 16206 | ΣXY = 22377 | | |\n\nCalculation of Slope (b):\nFormula: b = [nΣXY − (ΣX)(ΣY)] / [nΣX² − (ΣX)²]\nSubstitution: b = [(36 x 22377) − (666 x 1080)] / [36 x 16206 − (666)²]\nCalculation: b = (805572 − 719280) / (583416 − 443556)\nResult: b = 86292 / 139860 = 0.6170\n\nCalculation of Intercept (a):\nFormula: a = (ΣY / n) − b (ΣX / n)\nSubstitution: a = (1080 / 36) − 0.6170 (666 / 36)\nCalculation: a = 30 − 11.41 = 18.59\nTrend Equation: Y = 18.59 + 0.617x\n\nAverage of Ratios and Final Indices\nThe ratios for each specific month across the three years are averaged to find the Seasonal Index.\nCorrection Factor and Adjusted Seasonal Indices\nCorrection Factor = 1200 / 1199.19 = 1.00068\nAdjusted Seasonal Index (Adjusted SI) = Raw Seasonal Index x 1.00068\n\n| Month | 2022 Ratio | 2023 Ratio | 2024 Ratio | Raw SI (Average) | Adjusted SI |\n|---|---|---|---|---|---|\n| Jan | 78.10 | 86.43 | 73.50 | 79.34 | 79.39 |\n| Feb | 80.71 | 80.80 | 72.19 | 77.90 | 77.95 |\n| Mar | 88.06 | 100.56 | 99.29 | 95.97 | 96.03 |\n| Apr | 85.48 | 94.86 | 100.37 | 93.57 | 93.64 |\n| May | 106.11 | 106.61 | 98.68 | 103.80 | 103.87 |\n| Jun | 103.18 | 94.29 | 80.86 | 92.78 | 92.84 |\n| Jul | 87.30 | 72.58 | 79.54 | 79.81 | 79.87 |\n| Aug | 119.02 | 90.53 | 88.69 | 99.41 | 99.48 |\n| Sep | 120.12 | 101.44 | 97.56 | 106.37 | 106.44 |\n| Oct | 133.28 | 115.04 | 118.78 | 122.37 | 122.45 |\n| Nov | 130.04 | 103.72 | 102.03 | 111.93 | 112.01 |\n| Dec | 146.19 | 131.74 | 129.90 | 135.94 | 136.03 |\n| Total | 1277.59 | 1178.60 | 1141.39 | 1199.19 | 1200.00 |\n\nConclusion: The production of Turmeric Powder peaks significantly in DECEMBER (136.03) and reaches its lowest point in FEBRUARY (77.95).",
+       "confidence": "medium",
+       "review": [
+        "Answer contains internal inconsistencies as printed (e.g. correction factor '1200/11199.57'); kept verbatim"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

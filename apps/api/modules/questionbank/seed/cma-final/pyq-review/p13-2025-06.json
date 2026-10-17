@@ -1,0 +1,71 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p13-2025-06",
+ "items": {
+  "1(i)": {
+   "verdict": "approve",
+   "reason": "Shared case paragraph, question and four options match the print; stored key D equals printed key (i) D.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(ii)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key B equals printed key (ii) B. The shared NHL case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case paragraph printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "stem_md": "New Horizon Limited (NHL) is a company with paid up capital of INR 50 crore and turnover of INR 340 crore. Mr. Uttam Kumar (UK), who is the promoter and MD of the company, wants to run the company complying with all laws and regulations. The Chairman is non-executive and is an eminent academician; he is not an independent director. There are two more directors, one is Director (Finance), Mr. Verma and the other, Director (Commercial) Mr. Raman Kumar, who is related to the promoter. The company is in the process of taking substantial loan for capital investment from SBI, whereby SBI will nominate a woman director on the Board of Directors (BOD). Based on these facts, UK wants to clarify the following issues from you [MCQs (i) to (iv)]:\n\nCan Mr. Raman Kumar be considered as independent director?"
+  },
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key A equals printed key (iii) A. The shared NHL case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case paragraph printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "stem_md": "New Horizon Limited (NHL) is a company with paid up capital of INR 50 crore and turnover of INR 340 crore. Mr. Uttam Kumar (UK), who is the promoter and MD of the company, wants to run the company complying with all laws and regulations. The Chairman is non-executive and is an eminent academician; he is not an independent director. There are two more directors, one is Director (Finance), Mr. Verma and the other, Director (Commercial) Mr. Raman Kumar, who is related to the promoter. The company is in the process of taking substantial loan for capital investment from SBI, whereby SBI will nominate a woman director on the Board of Directors (BOD). Based on these facts, UK wants to clarify the following issues from you [MCQs (i) to (iv)]:\n\nIs there any need of woman director?"
+  },
+  "1(iv)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key C equals printed key (iv) C. The shared NHL case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case paragraph printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "stem_md": "New Horizon Limited (NHL) is a company with paid up capital of INR 50 crore and turnover of INR 340 crore. Mr. Uttam Kumar (UK), who is the promoter and MD of the company, wants to run the company complying with all laws and regulations. The Chairman is non-executive and is an eminent academician; he is not an independent director. There are two more directors, one is Director (Finance), Mr. Verma and the other, Director (Commercial) Mr. Raman Kumar, who is related to the promoter. The company is in the process of taking substantial loan for capital investment from SBI, whereby SBI will nominate a woman director on the Board of Directors (BOD). Based on these facts, UK wants to clarify the following issues from you [MCQs (i) to (iv)]:\n\nWhat will be the status of the director nominated by SBI? Can she be treated as woman director?"
+  },
+  "1(vi)": {
+   "verdict": "approve",
+   "reason": "Stem list and options match the print; stored key C equals printed key (vi) C.",
+   "fixes": [],
+   "printed_issues": [
+    "\"activates\" printed for \"activities\" in item 3."
+   ]
+  },
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key B equals printed key (vii) B.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(xiv)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (xiv) A.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem has both sub-parts; answer (i) cyber crimes against persons and (ii) Section 15 SARFAESI compared with suggested-answer pages 6-7 and is complete and in print order.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem has both sub-parts; answer (i) MSME classification and (ii) IRDA objectives compared with suggested-answer pages 9-10 and is complete and as printed.",
+   "fixes": [],
+   "printed_issues": []
+  }
+ }
+}

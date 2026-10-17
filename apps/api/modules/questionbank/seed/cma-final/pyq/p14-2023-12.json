@@ -1,0 +1,1123 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "14",
+ "source_file": "pyq-transcriptions/p14-2023-12.json",
+ "paper_review": [
+  "Q8 sub-marks 5+5+4 as printed; (b) any five and (c) any four as printed. Scan has 'SJC Institute' watermark overlaying text."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p14:2023-12",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-financial-management",
+  "term_code": "2023-12",
+  "title": "CMA Final December 2023: Strategic Financial Management (Paper 14)",
+  "paper_code": "P14",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct option from the four alternatives given: 2x15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A project of ROBN Ltd. has a Net Present Value (base case NPV) of ₹ 1,50,000. This project has one financial side effect; it expands the firm's borrowing power by ₹ 5,00,000. The project lasts indefinitely so it is treated as supporting perpetual debt. If the borrowing rate is 10 per cent and the net tax-shield is 35 per cent, the Adjusted Net Present Value (ANPV) of the project will be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 3,25,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 3,10,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 2,88,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.65,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "ABON Ltd.'s earning per share is ₹ 15 and growth rate of earning is 5%. The earnings growth rate is expected to stay at this level in the near future. If its payout ratio is 50% and costs of capital is 15%, what will be the market price of the share after three years? (Calculation upto two decimal places)",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 95·50",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 91·16",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 90·20",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.55,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The expected return from a portfolio is 16% and its variance of return (Risk Squard) is 285%. If the investor's tolerance is 60; the Risk penalty will be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "5·80%",
+      "is_correct": false
+     },
+     {
+      "body_md": "4·95%",
+      "is_correct": false
+     },
+     {
+      "body_md": "4·90%",
+      "is_correct": false
+     },
+     {
+      "body_md": "4·75%",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "portfolio-theory-and-practice",
+    "mapping_confidence": 0.34,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The following particulars relate to a mutual fund scheme:\n\n| Sector | Investment in shares (at cost) ₹ lakh | Index on Purchase date | Index on Valuation date |\n|---|---|---|---|\n| IT and ITES | 28 | 1,750 | 2,950 |\n| Infrastructure | 15 | 1,375 | 2,475 |\n\nThe outstanding number of units is 1.25 lakhs. What will be the Net Asset Value (NAV) per unit?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 59·36",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 55·30",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 54·31",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 53·29",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "mutual-funds",
+    "mapping_confidence": 0.52,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "If the director of COMTECH Ltd. who has access to inside information is unable to use this information to make Supernormal Profits, it is a sign of",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "weak form of Efficient Market hypothesis.",
+      "is_correct": false
+     },
+     {
+      "body_md": "semi-strong form of Efficient Market hypothesis.",
+      "is_correct": false
+     },
+     {
+      "body_md": "strong form of Efficient Market hypothesis.",
+      "is_correct": true
+     },
+     {
+      "body_md": "incompetence of the Director.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "evaluation-of-risky-proposals-for-investment-decisions",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "EYAN Ltd. (EL) has a Beta of 0.80 with BSE 300. Each BSE 300 Futures contract is worth 100 units. BINUA Anticipates a bearish market for the next three months and has gone short on Shares of 25000 Shares of EL in the Spot Market. EL shares are traded at ₹ 100. 3 months' Future BSE 300 is quoted at 15500. What are the numbers of BSE 300 Futures contract to be taken by BINUA if she wants to hedge price risk to the extent of 125%?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "300",
+      "is_correct": false
+     },
+     {
+      "body_md": "250",
+      "is_correct": true
+     },
+     {
+      "body_md": "240",
+      "is_correct": false
+     },
+     {
+      "body_md": "200",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.04,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Buying and Selling a call and a put option with same strike prices and same expiry date is called",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Straddle",
+      "is_correct": true
+     },
+     {
+      "body_md": "Box spread",
+      "is_correct": false
+     },
+     {
+      "body_md": "Strip",
+      "is_correct": false
+     },
+     {
+      "body_md": "Butterfly spread",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.73,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "When the trade open on 01.03.2023 the stock price of Rolex Ltd., is ₹ 250. It rises to ₹ 260. The March 2023, call option on Rolex Ltd. started at ₹ 25. It moved to ₹ 29. The Delta of call option of Rolex Ltd. would be ________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "0·50",
+      "is_correct": false
+     },
+     {
+      "body_md": "0·40",
+      "is_correct": true
+     },
+     {
+      "body_md": "0·35",
+      "is_correct": false
+     },
+     {
+      "body_md": "Insufficient information",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.93,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The Slope of the Security Marke Line (SML) denotes",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "The Risk Premium required",
+      "is_correct": true
+     },
+     {
+      "body_md": "Beta of the Security",
+      "is_correct": false
+     },
+     {
+      "body_md": "Market Volatality",
+      "is_correct": false
+     },
+     {
+      "body_md": "The influence of the unsystematic",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "mutual-funds",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is/are the benefit(s) of Unified Payment Interface (UPI) to the merchants?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Round the clock availability",
+      "is_correct": false
+     },
+     {
+      "body_md": "Single click authentication",
+      "is_correct": false
+     },
+     {
+      "body_md": "Safer, secured and innovative",
+      "is_correct": false
+     },
+     {
+      "body_md": "In-App Payments (IAP)",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "digital-finance",
+    "mapping_confidence": 0.18,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In Porter's structural analysis, which of the following is not considered as an entry barrier?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Product differentiation",
+      "is_correct": false
+     },
+     {
+      "body_md": "Switching costs",
+      "is_correct": false
+     },
+     {
+      "body_md": "Capital requirements",
+      "is_correct": false
+     },
+     {
+      "body_md": "Low value addition",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluation-of-risky-proposals-for-investment-decisions",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which one of the following is not a Digital Asset?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Digital Printing",
+      "is_correct": false
+     },
+     {
+      "body_md": "Website",
+      "is_correct": false
+     },
+     {
+      "body_md": "Stable Coin",
+      "is_correct": false
+     },
+     {
+      "body_md": "Fintech",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "digital-finance",
+    "mapping_confidence": 0.81,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The 90-day interest rate is 1.85% in USA and 1.35% in the UK and the current spot exchange rate is $ 1.6/1£. The 90-day forward rate is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "$ 0.62808",
+      "is_correct": false
+     },
+     {
+      "body_md": "$ 1.592145",
+      "is_correct": false
+     },
+     {
+      "body_md": "$ 1.607893",
+      "is_correct": true
+     },
+     {
+      "body_md": "$ 1.342132",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.32,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "ZONS Ltd. Shares are traded in the Stock Market. The Standard Deviations of ZONS'S Shares and the Market are 6% and 4% respectively. If the Correlation Co-efficient for the shares with the market is 0.8, what will be Beta Co-efficient of the Company's Shares based on the CAPM?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "0.90",
+      "is_correct": false
+     },
+     {
+      "body_md": "1.00",
+      "is_correct": false
+     },
+     {
+      "body_md": "1.20",
+      "is_correct": true
+     },
+     {
+      "body_md": "1.50",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "efficient-market-hypothesis",
+    "mapping_confidence": 0.09,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "RTZ Ltd. wishes to earn real rate of 10% from its project. When the inflation recorded is 7%, what is the normal rate the company would earn?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "16.60%",
+      "is_correct": false
+     },
+     {
+      "body_md": "17.70%",
+      "is_correct": true
+     },
+     {
+      "body_md": "18.20%",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "PRANTICK Ltd. is considering the replacement of its existing machine with a new machine. The purchase price of the new machine is ₹ 36,40,000 and its expected life is 8 years. The company follows straight line method of depreciation on the original investment (Scrap value is not considered for the purpose). The other expenses to be incurred for the New Machine are as under:\n\n(i) Installation charges ₹ 14,000\n(ii) Consultant fees paid for his advice to buy new machine ₹ 7000\n(iii) Additional working capital required (will be released after 8 years) ₹ 23,800\n\nThe written down value of the existing machine is ₹ 1,06,400 and its cash salvage value is ₹ 17,500. The dismantling of the existing machine would cost ₹ 6,300. The annual earnings (before tax but after depreciation) from the new machine would amount to ₹ 4,41,000. The company's marginal tax rate applicable is 35%. Its cost of capital is 13%.\n\n[Given: PVIF (13%, 8 yrs) = 0.376 and PVIFA (13%, 8 yrs) = 4.80] Present figures nearest to rupee.\n\nRequired:\n(i) Analyse the annual cash savings and present value of cash inflows.\n(ii) Advise on the viability of the proposal.",
+    "parent_ref": "2",
+    "explanation_md": "(i) Annual Cash Savings = ₹ 744275\nPresent Value of Cash inflows = ₹ 3625989\nNPV of the Proposal = ₹ (58811)\n(ii) Advice:\nSince Net present Value (NPV) of Project is Negative (-₹ 58811), it is not viable. So the replacement of the existing Machine with a new replacement should not be considered.",
+    "reference_solution_md": "(i) Annual Cash Savings = ₹ 744275\nPresent Value of Cash inflows = ₹ 3625989\nNPV of the Proposal = ₹ (58811)\n(ii) Advice:\nSince Net present Value (NPV) of Project is Negative (-₹ 58811), it is not viable. So the replacement of the existing Machine with a new replacement should not be considered.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.34,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ROTN Ltd. has decided to go in for a new model of Mercedes Car. The cost of the vehicle is 40 lakhs. The company has two alternatives: (i) taking the car on finance lease or (ii) borrowing and purchasing the car.\n\nBMN Limited is willing to provide the car on finance lease to ROTN Ltd. for five years at an annual rental of ₹ 8.75 lakhs, payable at the end of the year.\n\nThe vehicle is expected to have useful life of 5 years, and it will fetch a net salvage value of 10 lakhs at the end of year five. The depreciation rate for tax purpose is 40% on written down value basis. The applicable tax rate for the company is 35%. The applicable before tax borrowing rate for the company is 13.8462%.\n\nThe present value interest factor at different rates of discount are as under:\n\n| Rate of Discount | Y-1 | Y-2 | Y-3 | Y-4 | Y-5 |\n|---|---|---|---|---|---|\n| 0.138462 | 0.8784 | 0.7715 | 0.6777 | 0.5953 | 0.5229 |\n| 0.09 | 0.9174 | 0.8417 | 0.7722 | 0.7084 | 0.6499 |\n\nRequired:\n(i) Assess the Net present value of cash out flows if car is acquired on Financial lease.\n(ii) Justify the Net advantage of leasing for ROTN Ltd. (Present figures nearest to rupee).",
+    "parent_ref": "2",
+    "explanation_md": "(i) Net Present Value of Cash Outflows = ₹ 3790482\n(ii) Justification:\nSince the Net present Value (NPV) of Leasing is lower than the cost of purchase and Net Benefit of Leasing amounts to ₹ 209518, ROTN Ltd. should opt for Leasing.",
+    "reference_solution_md": "(i) Net Present Value of Cash Outflows = ₹ 3790482\n(ii) Justification:\nSince the Net present Value (NPV) of Leasing is lower than the cost of purchase and Net Benefit of Leasing amounts to ₹ 209518, ROTN Ltd. should opt for Leasing.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "leasing-decisions",
+    "mapping_confidence": 0.14,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "PONS Ltd., an Indian Company is trying to decide which of the 3 mutually exclusive projects to undertake. Each of the projects could lead to varying net profits which are classified as outcomes 1, 2 and 3. It has constructed the following pay-off table or matrix (a conditional profit table).\n\nNet profit if outcomes turns out to be:\n\n| Outcomes | Probability | Project X Net Profit ₹ | Project Y Net Profit ₹ | Project Z Net Profit ₹ |\n|---|---|---|---|---|\n| 1 (worst) | 0.2 | 40,000 | 60,000 | 80,000 |\n| 2 (most likely) | 0.5 | 65,000 | 55,000 | 80,000 |\n| 3 (best) | 0.3 | 90,000 | 1,10,000 | 1,00,000 |\n\nRequired:\n(i) Evaluate the expected value (EV) of the three projects. X, Y and Z.\n(ii) Which project should be undertaken?\n(iii) If the minimax regret rule is applicable, identify the profitable project.",
+    "parent_ref": "3",
+    "explanation_md": "(i) Expected Value of the Project:\nX = ₹ 67500\nY = ₹ 72500\nZ = ₹ 86000\n(ii) Since Expected Value (EV) of Profit of Project Z ( ₹ 86000) is higher than the other Project X with EV of Profit (₹ 67500) and Project Y with EV of Profit (₹ 72500) Project Z should be undertaken.\n(iii) Project Z should be identified if the Minimax regret rule is applicable.",
+    "reference_solution_md": "(i) Expected Value of the Project:\nX = ₹ 67500\nY = ₹ 72500\nZ = ₹ 86000\n(ii) Since Expected Value (EV) of Profit of Project Z ( ₹ 86000) is higher than the other Project X with EV of Profit (₹ 67500) and Project Y with EV of Profit (₹ 72500) Project Z should be undertaken.\n(iii) Project Z should be identified if the Minimax regret rule is applicable.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.79,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "FIZZLE Limited's earnings and dividends have been growing at a rate of 18 per cent per annum. This growth rate is expected to continue for 4 years. After that the growth rate will fall to 12 per cent for the next 4 years. Thereafter, the growth rate is expected to be 6 per cent forever. The last dividend per share was ₹ 2.00 and the investors' required rate of return on FIZZLE's equity is 15 per cent.\n\nRequired:\nAssess the value of Equity share using a 3-step procedure.",
+    "parent_ref": "3",
+    "explanation_md": "Value of Equity Share is = ₹ 40.32",
+    "reference_solution_md": "Value of Equity Share is = ₹ 40.32",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "equity-and-bond-valuation-and-evaluation-of-performance",
+    "mapping_confidence": 0.1,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Following information is related to the Convertible Bond of SONTA Ltd. which is currently priced at ₹ 1060 per Bond:\n\n- Conversion Parity Price = ₹ 53\n- Conversion Premium = 10.41667%\n- Percentage of Downside Risk with respect to Straight Value of Bond = 12.766%\n\nRequired:\n(i) Calculate No. of shares on Conversion.\n(ii) Analyse Current Market Price Per Share of SONTA Ltd.\n(iii) Assess the Straight Value of Bond.",
+    "parent_ref": "4",
+    "explanation_md": "(i) No. of Shares on Conversion = 20\n(ii) The current market price of Share of SONTA Ltd. shall be = ₹ 48 per share\n(iii) Straight Value of Bond = ₹ 940 per Bond",
+    "reference_solution_md": "(i) No. of Shares on Conversion = 20\n(ii) The current market price of Share of SONTA Ltd. shall be = ₹ 48 per share\n(iii) Straight Value of Bond = ₹ 940 per Bond",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "equity-and-bond-valuation-and-evaluation-of-performance",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "MAX (P) a mutual fund made an issue of new fund offer on 01.01.2022 of 10,00,000 units of ₹ 10 each. No entry load was charged. It made the following investments:\n\n| Particulars | ₹ |\n|---|---|\n| 25,000 equity shares of PQR Ltd., ₹ 100 each @ ₹ 320 | 80,00,000 |\n| 5% Government Securities | 4,00,000 |\n| 10% Non-Convertible Debentures Unlisted | 5,00,000 |\n| 8% Listed Debentures | 10,00,000 |\n\nDuring the year, dividends of ₹ 8,00,000 were received on equity shares and interest on all types of debt securities were received. On 31st December 2022 equity shares were appreciated by 15% while listed debentures were quoted at 20% premium.\n\nPQR Ltd. on 15th December 2022 in its AGM declared the interim dividend of 10% bonus shares at 1:10 with the record date of 28th December 2022.\n\nRequired:\n(i) Calculate the Net Asset Value (NAV) as on 31st December 2022 given that the operating expenses paid during the year amounting to ₹ 3,00,000.\n(ii) Assess the NAV, if the mutual fund had distributed a dividend of ₹ 0.50 per unit during the year to the investors.\n(iii) Analyze the annualised return.",
+    "parent_ref": "4",
+    "explanation_md": "(i) NAV per Unit = ₹ 13.22\n(ii) NAV, if dividend of ₹ 0.50 is paid = ₹ 12.72\n(iii) Annualized Return = 32.20 %",
+    "reference_solution_md": "(i) NAV per Unit = ₹ 13.22\n(ii) NAV, if dividend of ₹ 0.50 is paid = ₹ 12.72\n(iii) Annualized Return = 32.20 %",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "mutual-funds",
+    "mapping_confidence": 0.58,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "MS. AHONA, an investor, has made investments in two mutual funds. The following information is available:\n\n| Mutual Fund | Smart | Growth |\n|---|---|---|\n| Jensen Alpha | 1·32% | 1·80% |\n| Treynor's Ratio | 0·086 | 0·093 |\n| Actual Return | 10·20% | 10·92% |\n| Risk Premium | 5% | 5% |\n\nRequired:\n(i) Assess the Beta ($\\beta$) for both the funds\n(ii) Determine the Risk Free Rate\n(iii) Identify the Security Market Line",
+    "parent_ref": "5",
+    "explanation_md": "(i) Beta for Smart M. Fund = 0.37\nBeta for Growth M. Fund = 0.42\n(ii) Risk Free Rate = 0.07 i.e. 7%\n(iii) Security Market Line for Smart = $0.07 + 0.05\\beta$\nSecurity Market Line for Growth = $0.07 + 0.05\\beta$",
+    "reference_solution_md": "(i) Beta for Smart M. Fund = 0.37\nBeta for Growth M. Fund = 0.42\n(ii) Risk Free Rate = 0.07 i.e. 7%\n(iii) Security Market Line for Smart = $0.07 + 0.05\\beta$\nSecurity Market Line for Growth = $0.07 + 0.05\\beta$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "mutual-funds",
+    "mapping_confidence": 0.39,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Following are the details of a portfolio of BOI Ltd. consisting of three shares:\n\n| Share | Portfolio Weight | Beta | Expected return in % | Total Variance |\n|---|---|---|---|---|\n| BG | 0·30 | 0·40 | 12% | 0·015 |\n| BZ | 0·30 | 1·20 | 18% | 0·035 |\n| DN | 0·40 | 0·50 | 10% | 0·020 |\n\nStandard Deviation of Market Portfolio Returns = 14%\nCovariance (BG, BZ) = 0·030\nCovariance (BZ, DN) = 0·050\nCovariance (DN, BG) = 0·020\n\nRequired:\nDetermine the following:\n(i) The Portfolio Beta,\n(ii) Residual Variance of each of the three Shares,\n(iii) Portfolio Variance using Sharpe Index Model,\n(iv) Portfolio Variance (on the basis of Modern Portfolio Theory given by Markowitz).",
+    "parent_ref": "5",
+    "explanation_md": "(i) The Portfolio Beta = 0.68\n(ii) Residual Variances:\nBG = 0.01186\nBZ = 0.00678\nDN = 0.0151\n(iii) Portfolio Variance Using Sharpe Index Method = 0.01315\n(iv) Portfolio Variance on the basis of Markowitz Theory = 0.0299",
+    "reference_solution_md": "(i) The Portfolio Beta = 0.68\n(ii) Residual Variances:\nBG = 0.01186\nBZ = 0.00678\nDN = 0.0151\n(iii) Portfolio Variance Using Sharpe Index Method = 0.01315\n(iv) Portfolio Variance on the basis of Markowitz Theory = 0.0299",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "portfolio-theory-and-practice",
+    "mapping_confidence": 0.27,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "On January 1, 2023 MR. DEVAL an investor has a portfolio of 5 shares as given below:\n\n| Security | Price | No. of Shares | Beta |\n|---|---|---|---|\n| A | 349.30 | 5,000 | 1.15 |\n| B | 480.50 | 7,000 | 0.40 |\n| C | 593.52 | 8,000 | 0.90 |\n| D | 734.70 | 10,000 | 0.95 |\n| E | 824.85 | 2,000 | 0.85 |\n\nThe cost of capital to the investor is 10.5% per annum.\n\nRequired:\nAnalyze and calculate the following:\n(i) The beta of his portfolio.\n(ii) The theoretical value of the NIFTY futures for February 2023.\n(iii) The number of contracts of NIFTY the investor needs to sell to get a full hedge until February for his portfolio if the current value of NIFTY is 5900 and NIFTY futures have a minimum trade lot requirement of 200 units. Assume that the futures are trading at their fair value.\n(iv) The number of future contracts the investor should trade if he desires to reduce the beta of his portfolios to 0.6.\n\nNo. of days in a year be treated as 365.\n[Given: $\\ln(1.105) = 0.0998$, $\\ln(1.12) = 0.1133$, $e^{0.01641} = 1.01658$, $e^{0.015858} = 1.01598$.]\n(calculation upto four decimal points)",
+    "parent_ref": "6",
+    "explanation_md": "(i) Portfolio Beta = 0.849\n(ii) Theoretical Value of Future Contract = ₹ 5994.28\n(iii) 13 or 14 contracts\n(iv) 4 contracts",
+    "reference_solution_md": "(i) Portfolio Beta = 0.849\n(ii) Theoretical Value of Future Contract = ₹ 5994.28\n(iii) 13 or 14 contracts\n(iv) 4 contracts",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "portfolio-performance-evaluation-and-portfolio-revision",
+    "mapping_confidence": 0.04,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The shares of GOXIN Ltd. are presently trading at a price of ₹ 540. After 3 months, the prices will either be ₹ 600 or ₹ 480 with respective probabilities 60% and 40%. There is a call option on the shares of GOXIN Ltd. that can be exercised only at the end of three months at an exercise price of ₹ 510. The Risk-Free Rate of interest is 6% per annum continuous compounding.\n\nAssume no dividends in the interim period.\n\nRequired:\n(i) Determine the value of three months call option using the Binomial Model (Delta Method).\n(ii) Assess the value of the put-option under put-call parity.\n(iii) Analyze the expected values of the option and the stock price at the end of three months.\n\n[Given: $e^{-0.015} = 0.985112$, $e^{-0.03} = 0.980446$, $e^{0.015} = 1.015113$, $e^{0.03} = 1.030455$]\n(calculation upto two decimal points)",
+    "parent_ref": "6",
+    "explanation_md": "(i) Value of Call Option= ₹ 50.36\n(ii) Value of Put Option = ₹ 12.77\n(iii) Expected Value of Option = ₹ 54\nExpected Value of Stock Price at the end of three months = ₹ 552",
+    "reference_solution_md": "(i) Value of Call Option= ₹ 50.36\n(ii) Value of Put Option = ₹ 12.77\n(iii) Expected Value of Option = ₹ 54\nExpected Value of Stock Price at the end of three months = ₹ 552",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.84,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ZISTON Ltd., and Indian MNC is executing a plant in Nepal. It has raised ₹ 600 Billion. Half of the amount will be required after six months' time. ZISTON Ltd. is looking for an opportunity to invest this amount for a period of six months. It is considering following two options:\n\n| Market | UK | Europe |\n|---|---|---|\n| Nature of Investment | Index Fund (GBP) | Treasury Bills (Euro) |\n| Dividend (GBP in Billions) | 0.1365 | - |\n| Income from stock lending (GBP in Billions) | 0.0065 | - |\n| Discount on the investment value at the end | 3% | - |\n| Interest | - | 7.8 percent per annum |\n| Exchange Rate (Spot) | GBP/INR 0.0099 | EUR/INR 0.011 |\n| Exchange Rate (6 month Forward) | GBP/INR 0.0100 | EUR/INR 0.011 |\n\nRequired:\nYou as an investment manager suggest a suitable option to be considered which is economical to the company.",
+    "parent_ref": "7",
+    "explanation_md": "(i) If Investment is made in Index Fund (GBP):\nValue of Investment after 6 months in ₹ @ GBP / INR ₹ 302.39 Billion\n(ii) If Investment is made in Treasury Bills (Europe):\nValue of Investment after 6 months in ₹ @ EURO / INR 0.011 ₹ 311.7000 Billion\nSuggestion:\nTotal amount of Second Option i.e. investment in Treasury Bills (EURO) is higher than that of the First Option i.e. investment in Index Fund (GBP) and Treasury Bills (EURO) is Risk Free also. So investment in Treasury Bills (EURO) is suggested.",
+    "reference_solution_md": "(i) If Investment is made in Index Fund (GBP):\nValue of Investment after 6 months in ₹ @ GBP / INR ₹ 302.39 Billion\n(ii) If Investment is made in Treasury Bills (Europe):\nValue of Investment after 6 months in ₹ @ EURO / INR 0.011 ₹ 311.7000 Billion\nSuggestion:\nTotal amount of Second Option i.e. investment in Treasury Bills (EURO) is higher than that of the First Option i.e. investment in Index Fund (GBP) and Treasury Bills (EURO) is Risk Free also. So investment in Treasury Bills (EURO) is suggested.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.27,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Swadeshi Ltd. an export-oriented unit invoices in the currency of the importer. It is expecting a receipt of USD 2,40,000 on 1st August 2023 for the goods exported on 1st May 2023.\n\nThe following information is available as on 1st May 2023:\nContract Size: ₹ 6,40,000\n\n| Exchange Rates | USD/INR | Currency Futures | USD/INR |\n|---|---|---|---|\n| Spot | 0.0125 | May | 0.0126 |\n| 1 Month Forward | 0.0124 | June | 0.0125 |\n| 3 Months Forward | 0.0123 | | |\n\n| | Initial Margin | Interest Rates in India |\n|---|---|---|\n| May | ₹ 15,000 | 9% p.a. |\n| August | ₹ 26,000 | 8.5% p.a. |\n\nOn 1st August 2023, the spot rate in USD/INR is 0.0126 and currency future rate is 0.0125\n\nRequired:\nSuggest a suitable approach to Swadeshi Ltd. that would be most advantageous out of the following methods:\n(i) Forward Contract\n(ii) Currency Futures\n(iii) No hedge\n\nAssume that the variation in margin would be settled on the maturity of the futures contract.",
+    "parent_ref": "7",
+    "explanation_md": "Receipts Using Currency Futures:\n\nThe number of contracts needed is = 30\n\n| Receipts under different methods of Hedging | ₹ |\n|---|---|\n| Forward contract | 19512195 |\n| Futures | 19031044 |\n| No hedge | 19047619 |\n\nThe most advantageous option would have been to hedge with forward contract.",
+    "reference_solution_md": "Receipts Using Currency Futures:\n\nThe number of contracts needed is = 30\n\n| Receipts under different methods of Hedging | ₹ |\n|---|---|\n| Forward contract | 19512195 |\n| Futures | 19031044 |\n| No hedge | 19047619 |\n\nThe most advantageous option would have been to hedge with forward contract.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.01,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "5",
+    "kind": "long_form",
+    "stem_md": "Briefly append the different variants of Stablecoin.",
+    "parent_ref": "8",
+    "explanation_md": "The variants of Stable coins are appended as follows:\n(i) Flat-collateralized stable coins\nThis type of stable coin is linked to the sovereign legal tenders of countries. Some of the most well-known flat-collateralized stable coins, for instance, include Tether and TUSD (True USD) However, these stable coins are not created by the central authority. The issuer issues these tokens by depositing an equal amount of fiat in its reserves.\nSimply put, the stable coin's value is based on the premise that the issuer behind it has the equivalent amount in hand.\n(ii) Commodity-backed stable coins\nThese are backed by reserved assets other than fiat currencies — by commodities. Real estate, gold, silver, and various other precious metals are examples of commodities. Kitco Gold, for example, is backed by the company's gold reserves, and the token itself is based on the Ethereum - backed ERC-20 block chain ecosystem.\n(iii) Crypto-backed Stable coins\nThis type of stable coins is backed by any other crypto currency. Due to the volatile nature of crypto currencies, these stable coins must be overcompensated in order to be collateralized. For example, to buy $500 worth of the crypto-backed stable coin, Maker DAO's Dai, one needs to deposit $ 1,000 in ETH.\n(iv) Algorithmic stable coins\nThese are primarily non-backed stable coins in which prices, token numbers, and other variables are manipulated with the help of special algorithms, software, and code in order to better manage supply and demand. This strategy allows the company to maintain the reserve peg in the event of price fluctuations.",
+    "reference_solution_md": "The variants of Stable coins are appended as follows:\n(i) Flat-collateralized stable coins\nThis type of stable coin is linked to the sovereign legal tenders of countries. Some of the most well-known flat-collateralized stable coins, for instance, include Tether and TUSD (True USD) However, these stable coins are not created by the central authority. The issuer issues these tokens by depositing an equal amount of fiat in its reserves.\nSimply put, the stable coin's value is based on the premise that the issuer behind it has the equivalent amount in hand.\n(ii) Commodity-backed stable coins\nThese are backed by reserved assets other than fiat currencies — by commodities. Real estate, gold, silver, and various other precious metals are examples of commodities. Kitco Gold, for example, is backed by the company's gold reserves, and the token itself is based on the Ethereum - backed ERC-20 block chain ecosystem.\n(iii) Crypto-backed Stable coins\nThis type of stable coins is backed by any other crypto currency. Due to the volatile nature of crypto currencies, these stable coins must be overcompensated in order to be collateralized. For example, to buy $500 worth of the crypto-backed stable coin, Maker DAO's Dai, one needs to deposit $ 1,000 in ETH.\n(iv) Algorithmic stable coins\nThese are primarily non-backed stable coins in which prices, token numbers, and other variables are manipulated with the help of special algorithms, software, and code in order to better manage supply and demand. This strategy allows the company to maintain the reserve peg in the event of price fluctuations.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.13,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "5",
+    "kind": "long_form",
+    "stem_md": "Identify the major initiatives taken by the World Bank (any five).",
+    "parent_ref": "8",
+    "explanation_md": "The major initiatives taken by the World Bank are as follows:\n(i) Proverty Reduction :\nThe Bank's assistance plans are based on proverty reduction strategies, by combining an analysis of local groups with an analysis of the country's financial and economic situation.\n(ii) Global Partnerships:\nTogether with the World Health Organization, the World Bank administers the International Health Partnership (IHP+).\n(iii) Protect from the Adversities of Climate Change:\nThe World Bank doubled its aid for climate change adaptation from $2.3bn (£1.47bn) in 2011 to $4.6 bn in 2012.\n(iv) Food Security:\nThe World Bank also took slew of measures including Global Food Security Program in 2010and also launched Global Food Crisis Response Program.\n(v) Clean Air Initiative (CAI):\nIt is a World Bank initiative to advance innovative ways to improve air quality in cities through partnerships in selected regions of the world by sharing knowledge and experiences.\n(vi) Open Data Initiatives (ODI) :\nThe World Bank collects and process Large amounts of data and generate them on the basis of economic model.\n(vii) Open Knowledge Repository (OKR) :\nThe World Bank hosts the open knowledge Repository (OKR) as an official open access repository for its research outputs and knowledge products.",
+    "reference_solution_md": "The major initiatives taken by the World Bank are as follows:\n(i) Proverty Reduction :\nThe Bank's assistance plans are based on proverty reduction strategies, by combining an analysis of local groups with an analysis of the country's financial and economic situation.\n(ii) Global Partnerships:\nTogether with the World Health Organization, the World Bank administers the International Health Partnership (IHP+).\n(iii) Protect from the Adversities of Climate Change:\nThe World Bank doubled its aid for climate change adaptation from $2.3bn (£1.47bn) in 2011 to $4.6 bn in 2012.\n(iv) Food Security:\nThe World Bank also took slew of measures including Global Food Security Program in 2010and also launched Global Food Crisis Response Program.\n(v) Clean Air Initiative (CAI):\nIt is a World Bank initiative to advance innovative ways to improve air quality in cities through partnerships in selected regions of the world by sharing knowledge and experiences.\n(vi) Open Data Initiatives (ODI) :\nThe World Bank collects and process Large amounts of data and generate them on the basis of economic model.\n(vii) Open Knowledge Repository (OKR) :\nThe World Bank hosts the open knowledge Repository (OKR) as an official open access repository for its research outputs and knowledge products.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-international-financial-environment",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8(c)",
+    "number_label": "8(c)",
+    "ref_suffix": "q8c",
+    "depth": 1,
+    "sort_order": 38,
+    "is_leaf": true,
+    "marks": "4",
+    "kind": "long_form",
+    "stem_md": "Briefly append primary participants in the process of securitization (any four).",
+    "parent_ref": "8",
+    "explanation_md": "The following are the Primary participants in the process of Securitization:\n(i) Originator:\nAn originator actually creates a Securitized assets.\n(ii) Arranger:\nAn originator usually appoints a financial Institution to design and set up the Securitization Structure. It is known as arranger.\n(iii) Special purpose Vehicle (SPV):\nThis is an entity established by the originator to specifically purchase the assets.\n(iv) Investor:\nIn a Securitization process, typically, financial Institution, Insurance companies, Pension Funds, Hedge Funds, companies are the investor.\n(v) Services :\nSPV appoints the Services to administer and collect the underlying receivables.\n(vi) Rating Agencies:\nRating Agencies rate Securities.\n(vii) Enhancement Provider:\nThey provide credit enhancement to the asset – backed securities.\n(viii) Regulators :\nThe Regulators issue various regulations that guides securitization process.",
+    "reference_solution_md": "The following are the Primary participants in the process of Securitization:\n(i) Originator:\nAn originator actually creates a Securitized assets.\n(ii) Arranger:\nAn originator usually appoints a financial Institution to design and set up the Securitization Structure. It is known as arranger.\n(iii) Special purpose Vehicle (SPV):\nThis is an entity established by the originator to specifically purchase the assets.\n(iv) Investor:\nIn a Securitization process, typically, financial Institution, Insurance companies, Pension Funds, Hedge Funds, companies are the investor.\n(v) Services :\nSPV appoints the Services to administer and collect the underlying receivables.\n(vi) Rating Agencies:\nRating Agencies rate Securities.\n(vii) Enhancement Provider:\nThey provide credit enhancement to the asset – backed securities.\n(viii) Regulators :\nThe Regulators issue various regulations that guides securitization process.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "securitization",
+    "mapping_confidence": 0.53,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "5(a)": [
+   "Printed answer gives the same SML for both funds (0.07 + 0.05 beta); kept as printed. Middle-dot decimals (1·32%) kept as printed."
+  ],
+  "5(b)": [
+   "Plain tables/text match the print; no typesetting needed. Middle-dot decimals kept as printed."
+  ],
+  "6(a)": [
+   "Answer is plain figures matching the print (13 or 14 contracts kept)."
+  ],
+  "6(b)": [
+   "Answer is plain figures matching the print."
+  ]
+ },
+ "review_decisions": {
+  "1(vi)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key B equals printed key (B).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key B (250) does not reconcile with the data as printed (about 1.6 contracts by the usual formula)."
+   ],
+   "by": "claude-review"
+  },
+  "1(ix)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (A).",
+   "fixes": [],
+   "printed_issues": [
+    "'Marke' and 'Volatality' are misspelt in the print."
+   ],
+   "by": "claude-review"
+  },
+  "1(xii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key D equals printed key (D).",
+   "fixes": [],
+   "printed_issues": [
+    "Option (A) Digital Printing also arguably fits the stem; key D kept as printed."
+   ],
+   "by": "claude-review"
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem reads '10% bonus shares at 1:10' as printed; equity amount 80,00,000 differs from 25,000 x 320 as printed."
+   ],
+   "by": "claude-review"
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed answer gives the same SML for both funds (0.07 + 0.05 beta)."
+   ],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer for (iii) printed as '13 or 14 contracts'."
+   ],
+   "by": "claude-review"
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed final figures with the question paper and suggested answers; text matches the print.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem table matches the print; answer text had an equals sign the print does not have before the rupee figures, removed.",
+   "fixes": [
+    "Removed '=' before ₹ 302.39 Billion and ₹ 311.7000 Billion to match the print."
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem tables match the print; the printed answer is a table, restored as a Markdown table with the same figures.",
+   "fixes": [
+    "Answer receipts rendered as a table as printed."
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 30,
+  "draft_parts": 0,
+  "answered": 30
+ }
+}

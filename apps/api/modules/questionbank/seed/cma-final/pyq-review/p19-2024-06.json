@@ -1,0 +1,46 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p19-2024-06",
+ "items": {
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Stem, four statements and options match the print and the stored key B equals the printed key (B).",
+   "fixes": [],
+   "printed_issues": [
+    "Statement (III) (turnover below ₹20 lakh, ₹15,500 per month) is arguably also not covered, yet only (II) is keyed."
+   ]
+  },
+  "1(x)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print and the stored key B equals the printed key (B).",
+   "fixes": []
+  },
+  "1(xi)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print and the stored key C equals the printed key (C).",
+   "fixes": [],
+   "printed_issues": [
+    "Stem prints 'Import of goods from India'."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and requirements match the print apart from one punctuation mark; the printed answer with both day counts and both interest figures matches.",
+   "fixes": [
+    "Restored the printed 'January ,2024'."
+   ],
+   "stem_md": "Avni Limited filed GST return (under section 39) for the month of January ,2024 on 11th April 2024. Original due date for the said return was 20th February 2024. Details of tax assessed as payable for the said month are given below:\n\n| Particulars | CGST (₹) | SGST (₹) |\n|---|---|---|\n| Output tax payable | 1,80,000 | 1,80,000 |\n| Tax payable under reverse charge | 40,000 | 40,000 |\n| Input tax credit available for utilization | 70,000 | 70,000 |\n\n(i) Assess the net tax payable in cash while filing the said return as well as the interest payable for the delayed remittance of tax.\n(ii) Assuming that the concern has an ITC balance of ₹ 2,50,000 each under CGST and SGST for the said month, compute the interest payable, if the entire tax due for the said month was paid through the Electronic Credit Ledger to the extent possible as per the provisions of Act.",
+   "printed_issues": [
+    "Answer gives alternative day counts (51 or 50) and two interest figures for each tax."
+   ]
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the printed answer match; the answer states 62 days and interest without showing the working.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer does not show the working of the interest on the balance duty."
+   ]
+  }
+ }
+}

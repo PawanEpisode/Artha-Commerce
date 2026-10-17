@@ -1,0 +1,14 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p19-2024-06",
+ "items": {
+  "5(b)": {
+   "answer_md": "Determination of value under rule 32(2)(b) of the CGST Rules, 2017\nThird proviso to rule 32(2)(a) stipulates that a person supplying the services in relation to the purchase or sale of foreign currency, including money changing may exercise the option to ascertain the value in terms of rule 32(2)(b) for a financial year and such option shall not be withdrawn during the remaining part of that financial year.\n\nRule 32(2)(b) provides that value in relation to the supply of foreign currency, including money changing shall be deemed to be\n\n| S. No. | Currency exchanged | Value of supply |\n|---|---|---|\n| 1. | Upto ₹ 1,00,000 | 1% of the gross amount of currency exchanged OR ₹ 250, whichever is higher |\n| 2. | Exceeding ₹ 1,00,000 and upto ₹ 10,00,000 | ₹ 1,000 + 0.50% of the (gross amount of currency exchanged - ₹ 1,00,000) |\n| 3. | Exceeding ₹ 10,00,000 | ₹ 5,500 + 0.1% of the (gross amount of currency exchanged - ₹ 10,00,000) OR ₹ 60,000 whichever is lower |\n\nThus, the value of supply in the given cases would be computed as under:\nGross amount of currency exchanged $= 77 \\times 250 = \\text{₹ }19{,}250$. Since the gross amount of currency exchanged is less than 1,00,000, value of supply is 1% of the gross amount of currency exchanged [1% of 19250] ie 192.50 or ₹ 250, whichever is higher. $= \\text{₹ }250$\n\nGross amount of currency exchanged $= 76.50 \\times 2{,}300 = 175950$. Since the gross amount of currency exchanged exceeds 1,00,000, but less than ₹ 10,00,000, value of supply is $1{,}000 + 0.50\\%\\text{ of }(1{,}75{,}950 - 1{,}00{,}000)$. $= \\text{₹ }1379.75$ or say ₹ 1380\nRBI rate is irrelevant for this purpose",
+   "confidence": "high",
+   "review": [
+    "Stem is prose with plain numbers; left as is.",
+    "Print has a stray gap before '1,00,000' in 'exceeds  1,00,000' (rupee sign missing in print); kept as printed."
+   ]
+  }
+ }
+}

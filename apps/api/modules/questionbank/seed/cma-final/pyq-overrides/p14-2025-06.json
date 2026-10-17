@@ -1,0 +1,102 @@
+{
+ "schema": "artha.qboverride.v1",
+ "paper": "14",
+ "term_code": "2025-06",
+ "note": "Direct edits made to the seed JSON by the owner. Applied last by build_pyq_seed so a rebuild never loses them.",
+ "parts": {
+  "1(iii)": {
+   "mapping_state": "confirmed"
+  },
+  "1(vi)": {
+   "stem_md": "A buy signal provided by moving average analysis of Stock price is when the stock price line",
+   "options": [
+    {
+     "body_md": "falls below a rising moving average line.",
+     "is_correct": false
+    },
+    {
+     "body_md": "rises above a falling moving average line.",
+     "is_correct": true
+    },
+    {
+     "body_md": "falls below a flattening moving average line.",
+     "is_correct": false
+    },
+    {
+     "body_md": "falls below a falling moving average line.",
+     "is_correct": false
+    }
+   ],
+   "kind": "mcq_single",
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true,
+   "mapping_state": "confirmed"
+  },
+  "1(vii)": {
+   "mapping_state": "confirmed"
+  },
+  "1(viii)": {
+   "mapping_state": "confirmed"
+  },
+  "1(xi)": {
+   "mapping_state": "confirmed"
+  },
+  "1(xii)": {
+   "mapping_state": "confirmed"
+  },
+  "1(xiii)": {
+   "stem_md": "Closing prices of the Stock of MONX Ltd., is given below:\n\n| Day | Closing Price (₹) |\n| :---: | :---: |\n| 1 | 125.45 |\n| 2 | 135.25 |\n| 3 | 132.75 |\n| 4 | 142.75 |\n| 5 | 145.25 |\n\nWhat would be the relative strength of the Stock of MONX. Ltd.?",
+   "options": [
+    {
+     "body_md": "0.9875",
+     "is_correct": false
+    },
+    {
+     "body_md": "1.0255",
+     "is_correct": false
+    },
+    {
+     "body_md": "1.0628",
+     "is_correct": true
+    },
+    {
+     "body_md": "1.1185",
+     "is_correct": false
+    }
+   ],
+   "kind": "mcq_single",
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true,
+   "mapping_state": "confirmed"
+  },
+  "1(xv)": {
+   "mapping_state": "confirmed"
+  },
+  "2(a)": {
+   "mapping_state": "confirmed"
+  },
+  "2(b)": {
+   "mapping_state": "confirmed"
+  },
+  "5(a)": {
+   "mapping_state": "confirmed"
+  },
+  "5(b)": {
+   "mapping_state": "confirmed"
+  },
+  "6(a)": {
+   "mapping_state": "confirmed"
+  },
+  "7(a)": {
+   "mapping_state": "confirmed"
+  },
+  "7(b)": {
+   "mapping_state": "confirmed"
+  },
+  "8(c)": {
+   "mapping_state": "confirmed"
+  }
+ }
+}

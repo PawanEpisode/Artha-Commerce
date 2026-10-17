@@ -1,0 +1,11 @@
+{
+ "schema": "artha.qboverride.v1",
+ "paper": "19",
+ "term_code": "2026-06",
+ "note": "Direct edits made to the seed JSON by the owner. Applied last by build_pyq_seed so a rebuild never loses them.",
+ "parts": {
+  "1(vii)": {
+   "publish": true
+  }
+ }
+}

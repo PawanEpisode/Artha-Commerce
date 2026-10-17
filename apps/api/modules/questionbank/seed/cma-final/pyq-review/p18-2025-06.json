@@ -1,0 +1,74 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p18-2025-06",
+ "items": {
+  "1(ix)": {
+   "verdict": "approve",
+   "reason": "Stem and four options compared with the print; stored key D equals printed key (ix) D.",
+   "fixes": [],
+   "printed_issues": [
+    "Keyed option D (all of the above) conflicts with Ind AS 110 as to significant influence and joint control; kept as printed."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem, working table and all printed journals (including the alternative revaluation entry and the 2023-24 entries) compared with the print; all match, including the blank Dr. marker on the Revaluation Surplus row.",
+   "fixes": [],
+   "printed_issues": [
+    "Revaluation Surplus A/c row in the 2023-24 journal has no Dr. marker.",
+    "Revaluation arithmetic (Machinery 10,000 / Provision 1,85,000) and the 1/5th transfer are as printed."
+   ]
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the printed answer tables and allocations (15,882; 2,118; 9,118) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Discount Vouchers row of the standalone price table has no closing bracket after ₹ 2,400."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Balance sheet, notes, additional information and every printed working table match the print; goodwill 2,32,540 as printed.",
+   "fixes": [],
+   "printed_issues": [
+    "Simple-average line uses ₹ 3,75,000 where the table shows 3,75,200.",
+    "Total assets relevant for goodwill (28,28,000) does not include the investment of 2,24,000.",
+    "Authorized capital printed as '?' in Note 1."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem, PV table and both printed answers (primary and alternative) including liability, equity, finance cost tables and journals match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Liability component table prints '11,0,088' for the first present value (digits 110088).",
+    "Stem says 25000 shares per debenture while the answer first reads it as 25,000 shares for the whole lot.",
+    "Alternative case uses equity component of 50,00,00,000 not given in the stem."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Balance sheet, notes, scheme items and the nine printed journal entries match the print; the final entry debit 18,60,000 equals the credits.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem tables, additional information and the printed workings, journal and balance sheet match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Balance sheet total on the equity and liabilities side is labelled 'Total Liabilities'."
+   ]
+  },
+  "6": {
+   "verdict": "approve",
+   "reason": "Balance sheets, additional information (i)-(vii) and all printed workings, the consolidated balance sheet and the proposed dividend note match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Last row of the PPE working table is labelled 'Inventories for Consolidated Balance Sheet' instead of PPE.",
+    "Dividend of ₹ 1,500 lakh is described as an Other Equity deduction for pre-acquisition dividend."
+   ]
+  }
+ }
+}

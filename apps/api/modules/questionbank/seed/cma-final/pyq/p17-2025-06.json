@@ -1,0 +1,1028 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "17",
+ "source_file": "pyq-transcriptions/p17-2025-06.json",
+ "paper_review": [
+  "Q1 has (a) 10 MCQs (2×10=20) and (b) 5 MCQs (2×5=10) on ABC Ltd. data; part labels '(a)(i)'.. '(b)(xi)'..; shared data table in intro_md. Page 8 of qp.pdf is blank."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p17:2025-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "cost-and-management-audit",
+  "term_code": "2025-06",
+  "title": "CMA Final June 2025: Cost and Management Audit (Paper 17)",
+  "paper_code": "P17",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "(a) Choose the correct option from the four alternatives given: 2×10=20\n\n(b) Choose the correct option: 2×5=10\n\nABC Ltd., which is manufacturing consumer products, has two divisions: Assembling and Fi",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(a)(i)",
+    "number_label": "1(a)(i)",
+    "ref_suffix": "q1ai",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The Cost Audit Report prepared in pursuance of a direction under Sub-Section(2) of Sec.148 of the Companies Act,2013, is to be furnished by the Company to the Central Government along with full information and explanation on every reservation or qualification contained therein, within ____________ of the date of receipt.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "30 days",
+      "is_correct": true
+     },
+     {
+      "body_md": "60 days",
+      "is_correct": false
+     },
+     {
+      "body_md": "90 days",
+      "is_correct": false
+     },
+     {
+      "body_md": "120 days",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "operational-audit-and-internal-audit-under-companies-act-2013",
+    "mapping_confidence": 0.3,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(ii)",
+    "number_label": "1(a)(ii)",
+    "ref_suffix": "q1aii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "As per Companies (Cost Records and Audit) Rules, 2014, the Cost of Secondary packing materials shall form part of",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Cost of Production",
+      "is_correct": false
+     },
+     {
+      "body_md": "Finance Cost",
+      "is_correct": false
+     },
+     {
+      "body_md": "Raw Material Cost",
+      "is_correct": false
+     },
+     {
+      "body_md": "Distribution Overheads",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(iii)",
+    "number_label": "1(a)(iii)",
+    "ref_suffix": "q1aiii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "As per Rule 8, of the Companies (Audit and Auditors) Rules, 2014, the auditor who has resigned from the company, shall file with the Company and Registrar, within a period of 30 days from the date of his resignation, a statement in the form",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "ADT - 3",
+      "is_correct": true
+     },
+     {
+      "body_md": "ADT - 4",
+      "is_correct": false
+     },
+     {
+      "body_md": "ADT - 2",
+      "is_correct": false
+     },
+     {
+      "body_md": "ADT - 1",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "cost-auditor",
+    "mapping_confidence": 0.11,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(iv)",
+    "number_label": "1(a)(iv)",
+    "ref_suffix": "q1aiv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Sugar and Industrial Alcohol belong to ____________ sector for the purpose of Application of Cost Records.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Regulated",
+      "is_correct": true
+     },
+     {
+      "body_md": "Non-Regulated",
+      "is_correct": false
+     },
+     {
+      "body_md": "Both depending on circumstances",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+    "mapping_confidence": 0.73,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(v)",
+    "number_label": "1(a)(v)",
+    "ref_suffix": "q1av",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following contains the properties and interrelationships of all the cost elements for the purposes of capturing the required reporting data in XBRL format?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Audit Program",
+      "is_correct": false
+     },
+     {
+      "body_md": "Costing Taxonomy",
+      "is_correct": true
+     },
+     {
+      "body_md": "Checklist",
+      "is_correct": false
+     },
+     {
+      "body_md": "Audit Plan",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "preparation-and-filing-of-cost-audit-report",
+    "mapping_confidence": 0.67,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(vi)",
+    "number_label": "1(a)(vi)",
+    "ref_suffix": "q1avi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following particulars relating to wages and salaries is/are to be included in Cost Auditor's Report to the Director of the company?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Total wages and salaries paid",
+      "is_correct": false
+     },
+     {
+      "body_md": "Total man days of direct labour available and actually worked",
+      "is_correct": false
+     },
+     {
+      "body_md": "A brief explanation of variances in items",
+      "is_correct": false
+     },
+     {
+      "body_md": "All of the above",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "preparation-and-filing-of-cost-audit-report",
+    "mapping_confidence": 0.18,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(vii)",
+    "number_label": "1(a)(vii)",
+    "ref_suffix": "q1avii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "CAS 5 deals with",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "equalized cost of transportation.",
+      "is_correct": true
+     },
+     {
+      "body_md": "captive consumption.",
+      "is_correct": false
+     },
+     {
+      "body_md": "capacity determination.",
+      "is_correct": false
+     },
+     {
+      "body_md": "cost classification.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "basics-of-cost-audit",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(viii)",
+    "number_label": "1(a)(viii)",
+    "ref_suffix": "q1aviii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Internal Audit is conducted",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "periodically.",
+      "is_correct": false
+     },
+     {
+      "body_md": "throughout the year.",
+      "is_correct": false
+     },
+     {
+      "body_md": "once in a year.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Both (A) and (B)",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "internal-control-and-internal-audit",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(ix)",
+    "number_label": "1(a)(ix)",
+    "ref_suffix": "q1aix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Operational Audit can lead to better management with the focus on",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "transaction-based analysis for fraud prevention.",
+      "is_correct": false
+     },
+     {
+      "body_md": "compliance of rules.",
+      "is_correct": false
+     },
+     {
+      "body_md": "risk identification, process improvement.",
+      "is_correct": true
+     },
+     {
+      "body_md": "budget monitoring.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "operational-audit-and-internal-audit-under-companies-act-2013",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(a)(x)",
+    "number_label": "1(a)(x)",
+    "ref_suffix": "q1ax",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is not prescribed in the provision of the Prevention of Money Laundering Act, 2002?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Seizure of Property",
+      "is_correct": false
+     },
+     {
+      "body_md": "Attachment of Property",
+      "is_correct": false
+     },
+     {
+      "body_md": "Confiscation of Property",
+      "is_correct": false
+     },
+     {
+      "body_md": "Life Imprisonment",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "anti-money-laundering",
+    "mapping_confidence": 0.59,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(b)(xi)",
+    "number_label": "1(b)(xi)",
+    "ref_suffix": "q1bxi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (b)(xi) to (b)(xv)\n>\n> ABC Ltd., which is manufacturing consumer products, has two divisions: Assembling and Finishing.\n> The two divisions are operating as Cost Centres.\n> Present activities and costs involved in the Assembling Division and Finishing Division in a year are as under:\n>\n> | Particulars | Amount |\n> |---|---|\n> | Number of Sets Assembled | 14,000 |\n> | Cost of Manufacturing of parts (including material) | ₹ 9,00,000 |\n> | Parts purchased from the market | ₹ 5,00,000 |\n> | Other variable overhead: | |\n> | Welding Cost | ₹ 6,50,000 |\n> | Assembling Cost | ₹ 9,50,000 |\n> | Fixed Cost for the unit | ₹ 12,00,000 |\n>\n> 25% of the production of the Assembling Division is sold in the market for ₹ 400 per set and 75% is transferred to Finishing Division at ₹ 370.\n>\n> The Cost incurred in Finishing Division:\n> Painting Cost — ₹ 6,00,000\n> Polishing Cost — ₹ 1,50,000\n> Fixed Cost — ₹ 4,50,000\n> The selling price per set ₹ 550\n>\n> Find out the correct option in respect of the following items:\n\nTotal Sales Value for the Assembly Division:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 52,85,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 14,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 38,85,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 82,85,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluation-of-corporate-image",
+    "mapping_confidence": 0.45,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(b)(xi)-1(b)(xv)"
+   },
+   {
+    "ref": "1(b)(xii)",
+    "number_label": "1(b)(xii)",
+    "ref_suffix": "q1bxii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (b)(xi) to (b)(xv)\n>\n> ABC Ltd., which is manufacturing consumer products, has two divisions: Assembling and Finishing.\n> The two divisions are operating as Cost Centres.\n> Present activities and costs involved in the Assembling Division and Finishing Division in a year are as under:\n>\n> | Particulars | Amount |\n> |---|---|\n> | Number of Sets Assembled | 14,000 |\n> | Cost of Manufacturing of parts (including material) | ₹ 9,00,000 |\n> | Parts purchased from the market | ₹ 5,00,000 |\n> | Other variable overhead: | |\n> | Welding Cost | ₹ 6,50,000 |\n> | Assembling Cost | ₹ 9,50,000 |\n> | Fixed Cost for the unit | ₹ 12,00,000 |\n>\n> 25% of the production of the Assembling Division is sold in the market for ₹ 400 per set and 75% is transferred to Finishing Division at ₹ 370.\n>\n> The Cost incurred in Finishing Division:\n> Painting Cost — ₹ 6,00,000\n> Polishing Cost — ₹ 1,50,000\n> Fixed Cost — ₹ 4,50,000\n> The selling price per set ₹ 550\n>\n> Find out the correct option in respect of the following items:\n\nProfit for Assembly Division:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 7,85,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 10,85,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 15,80,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 20,00,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluation-of-corporate-image",
+    "mapping_confidence": 0.45,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(b)(xi)-1(b)(xv)"
+   },
+   {
+    "ref": "1(b)(xiii)",
+    "number_label": "1(b)(xiii)",
+    "ref_suffix": "q1bxiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (b)(xi) to (b)(xv)\n>\n> ABC Ltd., which is manufacturing consumer products, has two divisions: Assembling and Finishing.\n> The two divisions are operating as Cost Centres.\n> Present activities and costs involved in the Assembling Division and Finishing Division in a year are as under:\n>\n> | Particulars | Amount |\n> |---|---|\n> | Number of Sets Assembled | 14,000 |\n> | Cost of Manufacturing of parts (including material) | ₹ 9,00,000 |\n> | Parts purchased from the market | ₹ 5,00,000 |\n> | Other variable overhead: | |\n> | Welding Cost | ₹ 6,50,000 |\n> | Assembling Cost | ₹ 9,50,000 |\n> | Fixed Cost for the unit | ₹ 12,00,000 |\n>\n> 25% of the production of the Assembling Division is sold in the market for ₹ 400 per set and 75% is transferred to Finishing Division at ₹ 370.\n>\n> The Cost incurred in Finishing Division:\n> Painting Cost — ₹ 6,00,000\n> Polishing Cost — ₹ 1,50,000\n> Fixed Cost — ₹ 4,50,000\n> The selling price per set ₹ 550\n>\n> Find out the correct option in respect of the following items:\n\nTotal Sales Value for Finishing Division:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 42,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 38,85,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 57,75,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 42,85,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluation-of-corporate-image",
+    "mapping_confidence": 0.45,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(b)(xi)-1(b)(xv)"
+   },
+   {
+    "ref": "1(b)(xiv)",
+    "number_label": "1(b)(xiv)",
+    "ref_suffix": "q1bxiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (b)(xi) to (b)(xv)\n>\n> ABC Ltd., which is manufacturing consumer products, has two divisions: Assembling and Finishing.\n> The two divisions are operating as Cost Centres.\n> Present activities and costs involved in the Assembling Division and Finishing Division in a year are as under:\n>\n> | Particulars | Amount |\n> |---|---|\n> | Number of Sets Assembled | 14,000 |\n> | Cost of Manufacturing of parts (including material) | ₹ 9,00,000 |\n> | Parts purchased from the market | ₹ 5,00,000 |\n> | Other variable overhead: | |\n> | Welding Cost | ₹ 6,50,000 |\n> | Assembling Cost | ₹ 9,50,000 |\n> | Fixed Cost for the unit | ₹ 12,00,000 |\n>\n> 25% of the production of the Assembling Division is sold in the market for ₹ 400 per set and 75% is transferred to Finishing Division at ₹ 370.\n>\n> The Cost incurred in Finishing Division:\n> Painting Cost — ₹ 6,00,000\n> Polishing Cost — ₹ 1,50,000\n> Fixed Cost — ₹ 4,50,000\n> The selling price per set ₹ 550\n>\n> Find out the correct option in respect of the following items:\n\nProfit for Finishing Division:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 7,20,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 5,90,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 10,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 6,90,000",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluation-of-corporate-image",
+    "mapping_confidence": 0.45,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(b)(xi)-1(b)(xv)"
+   },
+   {
+    "ref": "1(b)(xv)",
+    "number_label": "1(b)(xv)",
+    "ref_suffix": "q1bxv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (b)(xi) to (b)(xv)\n>\n> ABC Ltd., which is manufacturing consumer products, has two divisions: Assembling and Finishing.\n> The two divisions are operating as Cost Centres.\n> Present activities and costs involved in the Assembling Division and Finishing Division in a year are as under:\n>\n> | Particulars | Amount |\n> |---|---|\n> | Number of Sets Assembled | 14,000 |\n> | Cost of Manufacturing of parts (including material) | ₹ 9,00,000 |\n> | Parts purchased from the market | ₹ 5,00,000 |\n> | Other variable overhead: | |\n> | Welding Cost | ₹ 6,50,000 |\n> | Assembling Cost | ₹ 9,50,000 |\n> | Fixed Cost for the unit | ₹ 12,00,000 |\n>\n> 25% of the production of the Assembling Division is sold in the market for ₹ 400 per set and 75% is transferred to Finishing Division at ₹ 370.\n>\n> The Cost incurred in Finishing Division:\n> Painting Cost — ₹ 6,00,000\n> Polishing Cost — ₹ 1,50,000\n> Fixed Cost — ₹ 4,50,000\n> The selling price per set ₹ 550\n>\n> Find out the correct option in respect of the following items:\n\nTotal Profit for the Company:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 17,75,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 10,85,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 6,90,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 12,00,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluation-of-corporate-image",
+    "mapping_confidence": 0.43,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(b)(xi)-1(b)(xv)"
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What are the General Objectives of Cost Audit?",
+    "parent_ref": "2",
+    "explanation_md": "The General Objectives of Cost Audit:\n 1.    Verification of cost accounts with a view to ascertaining that these have been properly maintained and\n       compiled according to the cost accounting system followed by the enterprise.\n 2.    Ensuring that prescribed procedures of the cost accounting records rules are duly adhered to.\n 3.    Detection of errors and fraud\n 4.    Verification of the cost of each “Cost unit” and “Cost Centre” to ensure that these have been properly\n       ascertained.\n 5.    Determination of inventory valuation\n 6.    Facilitating the fixation of prices of goods and services\n 7.    Periodical reconciliation between cost accounts and financial accounts\n 8.    Ensuring optimum utilization of human, physical and financial resources of the enterprise.\n 9.    Detection and correction of abnormal loss of material and time.\n 10.   Advising management, based on inter-unit/inter-firm comparison of cost records, as regards the areas\n       where performance calls for improvement.\n 11.   Promoting corporate governance through various operational disclosures to the directors.\n 12.   Helping the entity in matters of Anti-Dumping Duty, valuation of cost of production of goods and\n       services, anti-profiteering (e.g. GST), price controls (e.g. Pharma industry in the past), etc.\n\n                                                Page 1 of 12",
+    "reference_solution_md": "The General Objectives of Cost Audit:\n 1.    Verification of cost accounts with a view to ascertaining that these have been properly maintained and\n       compiled according to the cost accounting system followed by the enterprise.\n 2.    Ensuring that prescribed procedures of the cost accounting records rules are duly adhered to.\n 3.    Detection of errors and fraud\n 4.    Verification of the cost of each “Cost unit” and “Cost Centre” to ensure that these have been properly\n       ascertained.\n 5.    Determination of inventory valuation\n 6.    Facilitating the fixation of prices of goods and services\n 7.    Periodical reconciliation between cost accounts and financial accounts\n 8.    Ensuring optimum utilization of human, physical and financial resources of the enterprise.\n 9.    Detection and correction of abnormal loss of material and time.\n 10.   Advising management, based on inter-unit/inter-firm comparison of cost records, as regards the areas\n       where performance calls for improvement.\n 11.   Promoting corporate governance through various operational disclosures to the directors.\n 12.   Helping the entity in matters of Anti-Dumping Duty, valuation of cost of production of goods and\n       services, anti-profiteering (e.g. GST), price controls (e.g. Pharma industry in the past), etc.\n\n                                                Page 1 of 12",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "management-audit-in-different-functions",
+    "mapping_confidence": 0.11,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "As per Companies (Cost Records and Audit) Rules, 2014, summarise what are the various CRA forms to be submitted by any Company, for which Cost Audit/ Maintenance of Cost Records are mandatory. Briefly explain.",
+    "parent_ref": "2",
+    "explanation_md": "CRA-1: Forms in which cost records The form CRA-1 prescribes the form in which cost records shall\n  shall be maintained                be maintained. The form categorises the requirement of\n  (Pursuant to rule 5(1)             maintaining proper details as per 31 headings.\n                                     Inserted by the Notification Dated 3rd December 2018\n                                     (i) in Form CRA-1, paragraph number 31 shall be inserted,\n                                     namely: -\n                                     \"31. Unit of Measurement (UOM).\n                                     The Unit of Measurement (UOM) for each Customs Tariff Act\n                                     Heading, wherever applicable, shall be the same as provided for\n                                     in the Customs Tariff Act, 1975 (51 of 1975) corresponding to that\n                                     particular Customs Tariff Act Heading.\"\n\n CRA-2: Form of intimation of (1)              Corporate Identity Number (CIN) or Foreign Company\n appointment of cost auditor by the            Registration Number (FCRN) of the company\n company to Central Government.     (2)        General Information\n (Pursuant to rule 6(2) and 3(A)    (3)        Product(s)/Service(s) to which Cost Audit relates\n                                    (4)        Details of all the Cost Auditor(s) appointed\n                                    (5)        Financial year to be covered under the Cost Audit\n                                    (6)        Details of previous Cost Auditor who has not been\n                                               reappointed\n                                         (7)   Attachments:\n                                         -     Copy of the Board Resolutions of the company\n                                         -     Optional attachment – if any\n\n CRA-3 Form of Cost Audit Report         Clause (vii) have been added to auditor’s report as under:\n (Pursuant to rule 6(4)                  Detailed unit-wise and product/service-wise cost statements and\n                                         schedules thereto. In respect of the product/services under\n                                         reference of the company duly audited and certified by me/us\n                                         are/are not kept in the company.\n CRA-4 Form for filing Cost Audit (1)          Corporate Identity Number (CIN) or Foreign Company\n Report with the Central Government            Registration Number (FCRN) of the company\n (Pursuant to Rule 6(6)             (2)        General Information\n                                    (3)        Details of Industries/Sectors/Product(s)/Service(s) (CTA\n                                               heading level, wherever applicable as per Rules for\n                                               Regulated and Non-Regulated sector) for which the Cost\n                                               Audit Report is being submitted\n                                         (4)   Details of Industries/Sectors/ Products(s) Services(s) (CTA\n                                               heading level, wherever applicable as per Rules for\n                                               Regulated and Non-Regulated sector) not covered in the\n                                               Cost Audit Report.\n                                         (5)   Details of the cost auditor(s) appointed\n                                         (6)   Details of the observation of the Cost Audit Report\n                                         (7)   Attachment:\n                                               -XBRL document in respect of the cost audit report and\n                                               Company’s information and explanation on every\n                                               Qualification and reservation contained therein.\n                                               -Optional attachment, if any\n\n                                               Page 2 of 12",
+    "reference_solution_md": "CRA-1: Forms in which cost records The form CRA-1 prescribes the form in which cost records shall\n  shall be maintained                be maintained. The form categorises the requirement of\n  (Pursuant to rule 5(1)             maintaining proper details as per 31 headings.\n                                     Inserted by the Notification Dated 3rd December 2018\n                                     (i) in Form CRA-1, paragraph number 31 shall be inserted,\n                                     namely: -\n                                     \"31. Unit of Measurement (UOM).\n                                     The Unit of Measurement (UOM) for each Customs Tariff Act\n                                     Heading, wherever applicable, shall be the same as provided for\n                                     in the Customs Tariff Act, 1975 (51 of 1975) corresponding to that\n                                     particular Customs Tariff Act Heading.\"\n\n CRA-2: Form of intimation of (1)              Corporate Identity Number (CIN) or Foreign Company\n appointment of cost auditor by the            Registration Number (FCRN) of the company\n company to Central Government.     (2)        General Information\n (Pursuant to rule 6(2) and 3(A)    (3)        Product(s)/Service(s) to which Cost Audit relates\n                                    (4)        Details of all the Cost Auditor(s) appointed\n                                    (5)        Financial year to be covered under the Cost Audit\n                                    (6)        Details of previous Cost Auditor who has not been\n                                               reappointed\n                                         (7)   Attachments:\n                                         -     Copy of the Board Resolutions of the company\n                                         -     Optional attachment – if any\n\n CRA-3 Form of Cost Audit Report         Clause (vii) have been added to auditor’s report as under:\n (Pursuant to rule 6(4)                  Detailed unit-wise and product/service-wise cost statements and\n                                         schedules thereto. In respect of the product/services under\n                                         reference of the company duly audited and certified by me/us\n                                         are/are not kept in the company.\n CRA-4 Form for filing Cost Audit (1)          Corporate Identity Number (CIN) or Foreign Company\n Report with the Central Government            Registration Number (FCRN) of the company\n (Pursuant to Rule 6(6)             (2)        General Information\n                                    (3)        Details of Industries/Sectors/Product(s)/Service(s) (CTA\n                                               heading level, wherever applicable as per Rules for\n                                               Regulated and Non-Regulated sector) for which the Cost\n                                               Audit Report is being submitted\n                                         (4)   Details of Industries/Sectors/ Products(s) Services(s) (CTA\n                                               heading level, wherever applicable as per Rules for\n                                               Regulated and Non-Regulated sector) not covered in the\n                                               Cost Audit Report.\n                                         (5)   Details of the cost auditor(s) appointed\n                                         (6)   Details of the observation of the Cost Audit Report\n                                         (7)   Attachment:\n                                               -XBRL document in respect of the cost audit report and\n                                               Company’s information and explanation on every\n                                               Qualification and reservation contained therein.\n                                               -Optional attachment, if any\n\n                                               Page 2 of 12",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+    "mapping_confidence": 0.08,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Identify the duties of the Cost Auditor to report Fraud as per provisions of the Companies Act, 2013.",
+    "parent_ref": "3",
+    "explanation_md": "The cost auditor is not subordinate to the financial auditor. Cost audit has its own scope, standards, and statutory\nbacking under Section 148 of the Companies Act. Therefore, failure by the financial auditor does not relieve the\ncost auditor from performing their own due diligence. (Cost Audit happens post conclusion of Financial Audit).\nCost Auditing Standard (CAS) 103 – Planning an Audit stipulates:\nThe cost auditor should design audit procedures to detect material misstatements due to fraud or error.\n    •    According to Section 143(12) of the Companies Act 2013, if an auditor of a company, including a Cost\n         Auditor, in the course of the performance of his duties as auditor, has reason to believe that an offence\n         of fraud involving such amount or amounts as may be prescribed, is being or has been committed in the\n         company by its officers or employees, the auditor shall report the matter to the Central Government\n         within such time and in such manner as may be prescribed:\n\n   •     Provided that in case of a fraud involving lesser than the specified amount, the auditor shall report the\n         matter to the audit committee constituted under section 177 or to the Board in other cases within such\n         time and in such manner as may be prescribed:\n\n   •     Provided further that the companies, whose auditors have reported frauds under this sub-section to the\n         audit committee or the Board but not reported to the Central Government, shall disclose the details about\n         such frauds in the Board's report in such manner as may be prescribed.”\n\n   •     It does not apply if the Auditor has acted in good faith.\n\n   •     If the Cost auditor, among others, does not comply with the provisions of sub-section (12),\n (a)     in case of a listed company, be liable to a penalty of five lakh rupees; and\n (b)     in case of any other company, be liable to a penalty of one lakh rupees\n\n   •     Matters are required to be reported immediately but not later than 2 days of his knowledge specifying:\n (a)     Nature of Fraud with description;\n (b)     Approximate amount involved; and\n (c)     Parties involved.\n\n   •     Following disclosures are required to be made in Board’s Report:\n (a)     Nature of Fraud with description;\n (b)     Approximate Amount involved;\n (c)     Parties involved, if remedial action not taken; and\n (d)     Remedial actions taken.\n\nAlternative solution:\nAlternatively, if read with the rule 13:\n   •    According to Section 143(12) of the Companies Act 2013, in the course of the performance of his duties\n        as auditor, has reason to believe that an offence of fraud which involves or is expected to involve\n        individually an amount of rupees one crore or above, is being or has been committed in the company by\n        its officers or employees, the auditor shall report the matter to the Central Government within such time\n        and in such manner as may be prescribed:\n\n   •     The auditor shall report the matter to the Central Government as under:-\n\n (a)     the auditor shall report the matter to the Board or the Audit Committee, as the case may be, immediately\n         but not later than two days of his knowledge of the fraud, seeking their reply or observations within\n         forty-five days;\n                                                    Page 3 of 12\n (b)     on receipt of such reply or observations, the auditor shall forward his report and the reply or observations\n         of the Board or the Audit Committee along with his comments (on such reply or observations of the\n         Board or the Audit Committee) to the Central Government within fifteen days from the date of receipt\n         of such reply or observations;\n (c)     in case the auditor fails to get any reply or observations from the Board or the Audit Committee within\n         the stipulated period of forty-five days, he shall forward his report to the Central Government along with\n         a note containing the details of his report that was earlier forwarded to the Board or the Audit Committee\n         for which he has not received any reply or observations\n\n •       Provided that in case of a fraud involving lesser than the specified amount, the auditor shall report the\n         matter to the audit committee constituted under section 177 or to the Board in other cases immediately\n         but not later than 2 days of his knowledge specifying:\n (a)      Nature of Fraud with description;\n (b)     Approximate amount involved; and\n (c)     Parties involved.\n\n •       The following details of each of the fraud reported to the Audit Committee or the Board under sub-rule\n         (3) of rule 13 during the year shall be disclosed in the Board’s Report\n  (a)    Nature of Fraud with description;\n  (b)    Approximate Amount involved;\n  (c)    Parties involved, if remedial action not taken; and\n  (d)    Remedial actions taken.\n\n •       Provided further that the companies, whose auditors have reported frauds under this sub-section to the\n         audit committee or the Board but not reported to the Central Government, shall disclose the details about\n         such frauds in the Board's report in such manner as may be prescribed.\n\n •       It does not apply if the Auditor has acted in good faith.\n\n •       If the Cost auditor, among others, does not comply with the provisions of sub-section (12),\n\n (a)     in case of a listed company, be liable to a penalty of five lakh rupees; and\n (b)     in case of any other company, be liable to a penalty of one lakh rupees.",
+    "reference_solution_md": "The cost auditor is not subordinate to the financial auditor. Cost audit has its own scope, standards, and statutory\nbacking under Section 148 of the Companies Act. Therefore, failure by the financial auditor does not relieve the\ncost auditor from performing their own due diligence. (Cost Audit happens post conclusion of Financial Audit).\nCost Auditing Standard (CAS) 103 – Planning an Audit stipulates:\nThe cost auditor should design audit procedures to detect material misstatements due to fraud or error.\n    •    According to Section 143(12) of the Companies Act 2013, if an auditor of a company, including a Cost\n         Auditor, in the course of the performance of his duties as auditor, has reason to believe that an offence\n         of fraud involving such amount or amounts as may be prescribed, is being or has been committed in the\n         company by its officers or employees, the auditor shall report the matter to the Central Government\n         within such time and in such manner as may be prescribed:\n\n   •     Provided that in case of a fraud involving lesser than the specified amount, the auditor shall report the\n         matter to the audit committee constituted under section 177 or to the Board in other cases within such\n         time and in such manner as may be prescribed:\n\n   •     Provided further that the companies, whose auditors have reported frauds under this sub-section to the\n         audit committee or the Board but not reported to the Central Government, shall disclose the details about\n         such frauds in the Board's report in such manner as may be prescribed.”\n\n   •     It does not apply if the Auditor has acted in good faith.\n\n   •     If the Cost auditor, among others, does not comply with the provisions of sub-section (12),\n (a)     in case of a listed company, be liable to a penalty of five lakh rupees; and\n (b)     in case of any other company, be liable to a penalty of one lakh rupees\n\n   •     Matters are required to be reported immediately but not later than 2 days of his knowledge specifying:\n (a)     Nature of Fraud with description;\n (b)     Approximate amount involved; and\n (c)     Parties involved.\n\n   •     Following disclosures are required to be made in Board’s Report:\n (a)     Nature of Fraud with description;\n (b)     Approximate Amount involved;\n (c)     Parties involved, if remedial action not taken; and\n (d)     Remedial actions taken.\n\nAlternative solution:\nAlternatively, if read with the rule 13:\n   •    According to Section 143(12) of the Companies Act 2013, in the course of the performance of his duties\n        as auditor, has reason to believe that an offence of fraud which involves or is expected to involve\n        individually an amount of rupees one crore or above, is being or has been committed in the company by\n        its officers or employees, the auditor shall report the matter to the Central Government within such time\n        and in such manner as may be prescribed:\n\n   •     The auditor shall report the matter to the Central Government as under:-\n\n (a)     the auditor shall report the matter to the Board or the Audit Committee, as the case may be, immediately\n         but not later than two days of his knowledge of the fraud, seeking their reply or observations within\n         forty-five days;\n                                                    Page 3 of 12\n (b)     on receipt of such reply or observations, the auditor shall forward his report and the reply or observations\n         of the Board or the Audit Committee along with his comments (on such reply or observations of the\n         Board or the Audit Committee) to the Central Government within fifteen days from the date of receipt\n         of such reply or observations;\n (c)     in case the auditor fails to get any reply or observations from the Board or the Audit Committee within\n         the stipulated period of forty-five days, he shall forward his report to the Central Government along with\n         a note containing the details of his report that was earlier forwarded to the Board or the Audit Committee\n         for which he has not received any reply or observations\n\n •       Provided that in case of a fraud involving lesser than the specified amount, the auditor shall report the\n         matter to the audit committee constituted under section 177 or to the Board in other cases immediately\n         but not later than 2 days of his knowledge specifying:\n (a)      Nature of Fraud with description;\n (b)     Approximate amount involved; and\n (c)     Parties involved.\n\n •       The following details of each of the fraud reported to the Audit Committee or the Board under sub-rule\n         (3) of rule 13 during the year shall be disclosed in the Board’s Report\n  (a)    Nature of Fraud with description;\n  (b)    Approximate Amount involved;\n  (c)    Parties involved, if remedial action not taken; and\n  (d)    Remedial actions taken.\n\n •       Provided further that the companies, whose auditors have reported frauds under this sub-section to the\n         audit committee or the Board but not reported to the Central Government, shall disclose the details about\n         such frauds in the Board's report in such manner as may be prescribed.\n\n •       It does not apply if the Auditor has acted in good faith.\n\n •       If the Cost auditor, among others, does not comply with the provisions of sub-section (12),\n\n (a)     in case of a listed company, be liable to a penalty of five lakh rupees; and\n (b)     in case of any other company, be liable to a penalty of one lakh rupees.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "cost-auditor",
+    "mapping_confidence": 0.09,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Discuss the steps to be taken for filing the Cost Audit Report with the Central Government.",
+    "parent_ref": "3",
+    "explanation_md": "Sec. 148(3) of the Companies Act, 2013 states that cost audit shall be conducted by a Cost Accountant who shall\nbe appointed by the Board. The steps for filing a cost audit report are:\n •      The cost auditor has to submit the report to the company within 180 days of the financial year's closure.\n •      The company submits the report to the Ministry of Corporate Affairs (MCA) within 30 days of receiving\n        it from the cost auditor.\n •      The company must include full details and explanations for any reservations or qualifications made by\n        the auditor. The company must submit the report with the cost auditor's digital signature.\n •      The cost audit report is filed in e-form CRA-4, which is an electronic form for filing the cost audit report\n        with MCA. Requisite fees as per Rules are to be paid by the company.\n •      In case the company has got extension of time of holding AGM may file form CRA 4 within extended\n        period filing.\n\n                                                    Page 4 of 12\nExecution of Audit:\n (a)    Performing the audit checks and procedures, as planned\n (b)    Collecting all required audit evidence enabling the auditor to form his opinion.\n (i)    Validating their relevance and reliability\n (ii)   Checking their accuracy, completeness and sufficiency\n (iii) Checking the source and consistency\n (c)    Preparing draft observations and discussing with key management personnel\n (d)    Preparing final audit report",
+    "reference_solution_md": "Sec. 148(3) of the Companies Act, 2013 states that cost audit shall be conducted by a Cost Accountant who shall\nbe appointed by the Board. The steps for filing a cost audit report are:\n •      The cost auditor has to submit the report to the company within 180 days of the financial year's closure.\n •      The company submits the report to the Ministry of Corporate Affairs (MCA) within 30 days of receiving\n        it from the cost auditor.\n •      The company must include full details and explanations for any reservations or qualifications made by\n        the auditor. The company must submit the report with the cost auditor's digital signature.\n •      The cost audit report is filed in e-form CRA-4, which is an electronic form for filing the cost audit report\n        with MCA. Requisite fees as per Rules are to be paid by the company.\n •      In case the company has got extension of time of holding AGM may file form CRA 4 within extended\n        period filing.\n\n                                                    Page 4 of 12\nExecution of Audit:\n (a)    Performing the audit checks and procedures, as planned\n (b)    Collecting all required audit evidence enabling the auditor to form his opinion.\n (i)    Validating their relevance and reliability\n (ii)   Checking their accuracy, completeness and sufficiency\n (iii) Checking the source and consistency\n (c)    Preparing draft observations and discussing with key management personnel\n (d)    Preparing final audit report",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "preparation-and-filing-of-cost-audit-report",
+    "mapping_confidence": 0.24,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "TR Ltd., a manufacturing unit, produces two products AB and AC. The following information is extracted from the Books of the Company for the year ended on 31st March, 2025:\n\n| Particulars | Product AB | Product AC |\n|---|---|---|\n| Units Produced (Qty.) | 2,20,000 | 1,78,000 |\n| Units Sold (Qty.) | 1,78,000 | 1,46,000 |\n| Machine Hours utilised | 1,36,000 | 86,000 |\n| Design Charges (₹) | 1,68,000 | 1,90,000 |\n| Software Development Charges (₹) | 2,82,000 | 3,87,000 |\n\nRoyalty paid on Sales ₹ 8,10,000 (₹ 2.50 per unit sold for both the products)\n(i) Royalty paid on units produced ₹ 4,97,500 (₹ 1.25 per unit produced for both the products).\n(ii) Hire Charges of equipment used in the manufacturing process of Product AB only ₹ 60,000.\n\nNote: No adjustments are to be made relating to units held i.e. Closing Stock.\n\nYou are required to calculate the Direct Expenses - keeping in view of Cost Accounting Standard - 10.",
+    "parent_ref": "4",
+    "explanation_md": "TR LTD.\n                           COMPUTATION OF DIRECT EXPENSES (As per CAS-10)\n                                                                       Amount in ₹\n                                 Particulars                    Product AB Product AC\n                     Royalty paid on Sale                          4,45,000       3,65,000\n                     Add: Royalty paid on Units Produced           2,75,000       2,22,500\n                     Add: Hire Charges of equipment used in the      60,000              -\n                     manufacturing process of product - AB\n                     Add Design Charges                            1,68,000       1,90,000\n                     Add: Software development Charges related\n                     to production                                 2,82,000       3,87,000\n                     Direct Expenses (Total)                      12,30,000     11,64,500",
+    "reference_solution_md": "TR LTD.\n                           COMPUTATION OF DIRECT EXPENSES (As per CAS-10)\n                                                                       Amount in ₹\n                                 Particulars                    Product AB Product AC\n                     Royalty paid on Sale                          4,45,000       3,65,000\n                     Add: Royalty paid on Units Produced           2,75,000       2,22,500\n                     Add: Hire Charges of equipment used in the      60,000              -\n                     manufacturing process of product - AB\n                     Add Design Charges                            1,68,000       1,90,000\n                     Add: Software development Charges related\n                     to production                                 2,82,000       3,87,000\n                     Direct Expenses (Total)                      12,30,000     11,64,500",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+    "mapping_confidence": 0.1,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "PQR Ltd., a company manufacturing a single product, has the following cost structure for the year ended 31.3.2025:\n\nFY 2024-25 (₹ In lakhs)\n\n| Cost Information | Amount |\n|---|---|\n| Cost of Material purchased including of ₹ 320 for railway demurrages | 5622 |\n| Material from sister concern at cost | 1460 |\n| Cost of Utilities | 3628 |\n| Direct Employee cost | 1450 |\n| Direct Expenses | 860 |\n| Consumable Stores Spares | 1425 |\n| Repairs & Maintenance (including abnormal breakdown cost of ₹ 140) | 550 |\n| Depreciation/Amortization | 1280 |\n| Other Overheads | 1420 |\n| Admn. overheads related to cost of production | 660 |\n| Working Capital Interest to Bank | 225 |\n| WIP Adjustments | (-)360 |\n| Packing costs | 540 |\n| Misc. subsidy received for Operations | 325 |\n| Output ( in M.Ton) | 1430 |\n\nCalculate the unit cost of production as per CAS 4 for the year 2024-25.",
+    "parent_ref": "4",
+    "explanation_md": "Cost of Production (As per CAS 4\n\n| FY 2024-25 | ₹ in lakhs | |\n|---|---|---|\n| Cost Information | Amount (₹) | Cost per M. Ton (₹) |\n| Output 1430 MT | | |\n| Cost of Material purchased less ₹ 320 for railway demurrage charges | 5302 (\\*1) | 3.71 |\n| Material from sister concern at cost | 1606 \\*(2) | 1.12 |\n| Cost of Utilities | 3628 | 2.54 |\n| Direct Employee cost | 1450 | 1.01 |\n| Direct Expenses | 860 | 0.60 |\n| Consumable Stores Spares | 1425 | 1.00 |\n| Repairs & Maintenance (less abnormal breakdown cost of ₹ 140) | 410 \\*(3) | 0.29 |\n| Depreciation/Amortization | 1280 | 0.90 |\n| Other Overheads | 1420 | 0.99 |\n| Admn overheads related to cost of production | 660 | 0.46 |\n| Working Capital Interest to Bank | Nil \\*(4) | Nil |\n| WIP Adjustments | (-)360 | -0.25 |\n| Misc subsidy received for Operations | (-)325 | -0.23 |\n| Net Amount | 17356 | 12.13 |\n| Packing costs | 540 | 0.38 |\n| Total Cost of Production | 17896 | 12.51 |\n\nNote : \\*(1) Demurrage charges shall not form part of cost as per CAS 4\n\n\\*(2) Rule 30 of CGST Rules states that cost of goods from related persons shall be 110% of cost of supplier.\n\n\\*(3) Abnormal breakdown cost shall not form part of product cost.\n\n\\*(4) Interest and other finance cost shall not form part of cost.\n\n\\* Subsidy received is deducted from cost.",
+    "reference_solution_md": "Cost of Production (As per CAS 4\n\n| FY 2024-25 | ₹ in lakhs | |\n|---|---|---|\n| Cost Information | Amount (₹) | Cost per M. Ton (₹) |\n| Output 1430 MT | | |\n| Cost of Material purchased less ₹ 320 for railway demurrage charges | 5302 (\\*1) | 3.71 |\n| Material from sister concern at cost | 1606 \\*(2) | 1.12 |\n| Cost of Utilities | 3628 | 2.54 |\n| Direct Employee cost | 1450 | 1.01 |\n| Direct Expenses | 860 | 0.60 |\n| Consumable Stores Spares | 1425 | 1.00 |\n| Repairs & Maintenance (less abnormal breakdown cost of ₹ 140) | 410 \\*(3) | 0.29 |\n| Depreciation/Amortization | 1280 | 0.90 |\n| Other Overheads | 1420 | 0.99 |\n| Admn overheads related to cost of production | 660 | 0.46 |\n| Working Capital Interest to Bank | Nil \\*(4) | Nil |\n| WIP Adjustments | (-)360 | -0.25 |\n| Misc subsidy received for Operations | (-)325 | -0.23 |\n| Net Amount | 17356 | 12.13 |\n| Packing costs | 540 | 0.38 |\n| Total Cost of Production | 17896 | 12.51 |\n\nNote : \\*(1) Demurrage charges shall not form part of cost as per CAS 4\n\n\\*(2) Rule 30 of CGST Rules states that cost of goods from related persons shall be 110% of cost of supplier.\n\n\\*(3) Abnormal breakdown cost shall not form part of product cost.\n\n\\*(4) Interest and other finance cost shall not form part of cost.\n\n\\* Subsidy received is deducted from cost.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "information-systems-security-audit",
+    "mapping_confidence": 0.02,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "In the Financial Accounts of C & F Ltd., for the year ended on March 31, 2025, the profit was ₹ 8,78,06,000. The profit as per Cost Accounting records for the same period was different. The following details are extracted from the Accounting schedules and Cost Accounting records of the company, showing the difference of amounts appearing between those:\n\n| Particulars | Financial Accounts ₹ '000 | Cost Accounts ₹ '000 |\n|---|---|---|\n| Opening: Semi Finished Goods | 32,700 | 36,210 |\n| Opening: Finished Goods | 84,220 | 79,590 |\n| Closing: Semi Finished Goods | 36,720 | 40,120 |\n| Closing: Finished Goods | 89,230 | 81,450 |\n| Urea and Transport subsidy | 358 | NIL |\n| Expenses on CSR | 66 | NIL |\n| Profit on sale of Fixed Assets | 160 | NIL |\n| Chemical used internally | 392 | 375 |\n| Favourable Exchange Rate Variation | 304 | NIL |\n| Post-retirement Medical grant | 594 | NIL |\n| Purchase Tax Refund | 463 | NIL |\n| Litigation Recovery-prior year | 135 | NIL |\n\nYou are required to prepare a Reconciliation Statement and arrive at the Profit as per Cost Records for the year ended on March 31,2025.",
+    "parent_ref": "5",
+    "explanation_md": "Chemicals And Fertilizers Ltd.,\n\nReconciliation of financial profit and costing profit for the year ended March 31, 2025\n\nAmount in ₹ thousand\n\n| Particulars | ₹ thousand | ₹ thousand |\n|---|---|---|\n| Profit or Loss as per Financial Accounts | | 87,806 |\n| A. Less: Income not considered in Cost Accounts: | | |\n| (i) Profit on sale of Fixed Assets | 160 | |\n| (ii) Urea & Transport Subsidy | 358 | |\n| (iii) Litigation Recovery - Prior year | 135 | |\n| (iv) Favourable Exch. Rate Variation | 304 | |\n| (v) Purchase Tax Refund | 463 | (1,420) |\n| | | 86,386 |\n| B. Add: Expenses not considered in Cost Accounts | | |\n| (i) Expenses on CSR | 66 | |\n| (ii) Post-retirement medical grant | 594 | |\n| (iii) Own consumption (chemicals) valuation difference (392-375) | 17 | 677 |\n| C. Less: Difference in Valuation of stock between Financial Accounts and Cost Accounts (9,030 - 5,770) | | (3,260) |\n| Profit as per Cost Accounts | | 83,803 |\n\nWorkings:\n\nAmount in ₹ thousand\n\n| Current Year 2024-25: | Financial Accounts | Cost Accounts |\n|---|---|---|\n| Opening: Semi finished | 32,700 | 36,210 |\n| Opening: Finished | 84,220 | 79,590 |\n| Total | 1,16,920 | 1,15,800 |\n| Closing: Semi Finished | 36,720 | 40,120 |\n| Closing: Finished | 89,230 | 81,450 |\n| Total | 1,25,950 | 1,21,570 |\n| Variation in Inventory | 9,030 | 5,770 |\n| Increase in Difference of Stock valuation towards financial accounts | | 3,260 |",
+    "reference_solution_md": "Chemicals And Fertilizers Ltd.,\n\nReconciliation of financial profit and costing profit for the year ended March 31, 2025\n\nAmount in ₹ thousand\n\n| Particulars | ₹ thousand | ₹ thousand |\n|---|---|---|\n| Profit or Loss as per Financial Accounts | | 87,806 |\n| A. Less: Income not considered in Cost Accounts: | | |\n| (i) Profit on sale of Fixed Assets | 160 | |\n| (ii) Urea & Transport Subsidy | 358 | |\n| (iii) Litigation Recovery - Prior year | 135 | |\n| (iv) Favourable Exch. Rate Variation | 304 | |\n| (v) Purchase Tax Refund | 463 | (1,420) |\n| | | 86,386 |\n| B. Add: Expenses not considered in Cost Accounts | | |\n| (i) Expenses on CSR | 66 | |\n| (ii) Post-retirement medical grant | 594 | |\n| (iii) Own consumption (chemicals) valuation difference (392-375) | 17 | 677 |\n| C. Less: Difference in Valuation of stock between Financial Accounts and Cost Accounts (9,030 - 5,770) | | (3,260) |\n| Profit as per Cost Accounts | | 83,803 |\n\nWorkings:\n\nAmount in ₹ thousand\n\n| Current Year 2024-25: | Financial Accounts | Cost Accounts |\n|---|---|---|\n| Opening: Semi finished | 32,700 | 36,210 |\n| Opening: Finished | 84,220 | 79,590 |\n| Total | 1,16,920 | 1,15,800 |\n| Closing: Semi Finished | 36,720 | 40,120 |\n| Closing: Finished | 89,230 | 81,450 |\n| Total | 1,25,950 | 1,21,570 |\n| Variation in Inventory | 9,030 | 5,770 |\n| Increase in Difference of Stock valuation towards financial accounts | | 3,260 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+    "mapping_confidence": 0.44,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What do you mean by Forensic Audit of Finance? What are the Forensic Audit Techniques?",
+    "parent_ref": "5",
+    "explanation_md": "Financial Forensics:\nFinancial forensics and cost accounting/cost audit are closely interrelated—they both deal with examining,\nvalidating, and interpreting financial and operational data, but with different purposes. Moreover, Financial\nforensics and cost accounting/audit are complementary. Cost audit is about verifying operational efficiency and\ncost integrity, while financial forensics uses such data to investigate and prove wrongdoing. Hence, good cost\nsystems enable effective forensic investigations.\n\nFinancial Forensics is a field that combines accounting and investigation. One of the main purposes of financial\nforensics is discovering and gathering evidence of criminal activity involving money. They investigate\nindividuals’ and organisations’ finances to determine the truth about how they manage them. Financial forensics\nprofessionals help prevent financial crime and recover lost assets.\n\nIn recent years, there have been considerable changes in the business landscape. The increasing globalisation,\nfree movement of people, easy communication, technological advancements, and the shrinking of the world have\nhelped change the business environment. These factors have led to the rapid growth of established businesses and\nthe sprouting of new ones. However, this growth of companies has also increased in financial crimes and frauds.\nMany businesses keep a separate department of in-house accountants who keep an eye on all the business\nactivities and strive to minimize any irregularities in the business’s recordings. However, there are still cases of\nnew and innovative fraudulent activities that can only be uncovered after an in-depth analysis of all the records\nand books of the business.\n\nThis situation has led to the growth of a niche field known as forensic accounting, which can be explained as the\nintegration of accounting and investigative skills. To understand more about forensic accounting and the various\ntechniques which help in uncovering any financial fraud.\n\nForensic Accounting/Auditing is a type of accounting that cross-checks a business’s various financial records to\nfind any indication of fraud being committed. It also provides an in-depth analysis of all the businesses financial\nbooks, which could be presented in the court of law as evidence. Forensic accountants can be considered\ndetectives in the economic and business field. These people go through every recorded transaction and try to find\nany fraudulent or illegal activity within the industry.\n\nForensic accounting not only helps the business minimize its losses but will also help improve the efficiency of\nthe business, ultimately leading to greater profitability. Furthermore, it can help the management keep track of\nthe various business activities and prevent any fraud from happening in the future.\n\nForensic Audit Techniques:\nThe investigative techniques for forensic accounting:\n (i)     Reviewing Public Documents and Conducting Background checks\n (ii)    Conducting Detailed Interviews\n (iii)   Gathering Information from Trustworthy Sources\n (iv)    Analysing Evidence Gathered\n (v)     Conducting Surveillance\n (vi)    Going Undercover\n (vii)   Analysing the Financial statements.\n\n                                                    Page 7 of 12",
+    "reference_solution_md": "Financial Forensics:\nFinancial forensics and cost accounting/cost audit are closely interrelated—they both deal with examining,\nvalidating, and interpreting financial and operational data, but with different purposes. Moreover, Financial\nforensics and cost accounting/audit are complementary. Cost audit is about verifying operational efficiency and\ncost integrity, while financial forensics uses such data to investigate and prove wrongdoing. Hence, good cost\nsystems enable effective forensic investigations.\n\nFinancial Forensics is a field that combines accounting and investigation. One of the main purposes of financial\nforensics is discovering and gathering evidence of criminal activity involving money. They investigate\nindividuals’ and organisations’ finances to determine the truth about how they manage them. Financial forensics\nprofessionals help prevent financial crime and recover lost assets.\n\nIn recent years, there have been considerable changes in the business landscape. The increasing globalisation,\nfree movement of people, easy communication, technological advancements, and the shrinking of the world have\nhelped change the business environment. These factors have led to the rapid growth of established businesses and\nthe sprouting of new ones. However, this growth of companies has also increased in financial crimes and frauds.\nMany businesses keep a separate department of in-house accountants who keep an eye on all the business\nactivities and strive to minimize any irregularities in the business’s recordings. However, there are still cases of\nnew and innovative fraudulent activities that can only be uncovered after an in-depth analysis of all the records\nand books of the business.\n\nThis situation has led to the growth of a niche field known as forensic accounting, which can be explained as the\nintegration of accounting and investigative skills. To understand more about forensic accounting and the various\ntechniques which help in uncovering any financial fraud.\n\nForensic Accounting/Auditing is a type of accounting that cross-checks a business’s various financial records to\nfind any indication of fraud being committed. It also provides an in-depth analysis of all the businesses financial\nbooks, which could be presented in the court of law as evidence. Forensic accountants can be considered\ndetectives in the economic and business field. These people go through every recorded transaction and try to find\nany fraudulent or illegal activity within the industry.\n\nForensic accounting not only helps the business minimize its losses but will also help improve the efficiency of\nthe business, ultimately leading to greater profitability. Furthermore, it can help the management keep track of\nthe various business activities and prevent any fraud from happening in the future.\n\nForensic Audit Techniques:\nThe investigative techniques for forensic accounting:\n (i)     Reviewing Public Documents and Conducting Background checks\n (ii)    Conducting Detailed Interviews\n (iii)   Gathering Information from Trustworthy Sources\n (iv)    Analysing Evidence Gathered\n (v)     Conducting Surveillance\n (vi)    Going Undercover\n (vii)   Analysing the Financial statements.\n\n                                                    Page 7 of 12",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "forensic-audit",
+    "mapping_confidence": 0.3,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Prepare a statement showing the Responsibility and Powers of Enforcement Directorate (ED) as per the provisions of Prevention of Money Laundering Act.",
+    "parent_ref": "6",
+    "explanation_md": "Responsibility of Enforcement Directorate:\nEnforcement Directorate has been given the responsibility to enforce the provisions of the PMLA, by conducting\ninvestigation to trace the assets derived from proceeds of crime, to provisionally attach the property to ensure\nprosecution of the offenders and confiscation of the property by the Special Court.\n\nPowers of Enforcement Directorate:\n 1.    ED has powers to impose penalty on reporting entities for non-compliance with the PMLA.\n 2.    It has the power of\n •     Provisional attachment of property\n •     Survey\n •     Search and Seizure\n •     Search persons\n •     Arrest\n •     Retention of property\n •     Retention of Record",
+    "reference_solution_md": "Responsibility of Enforcement Directorate:\nEnforcement Directorate has been given the responsibility to enforce the provisions of the PMLA, by conducting\ninvestigation to trace the assets derived from proceeds of crime, to provisionally attach the property to ensure\nprosecution of the offenders and confiscation of the property by the Special Court.\n\nPowers of Enforcement Directorate:\n 1.    ED has powers to impose penalty on reporting entities for non-compliance with the PMLA.\n 2.    It has the power of\n •     Provisional attachment of property\n •     Survey\n •     Search and Seizure\n •     Search persons\n •     Arrest\n •     Retention of property\n •     Retention of Record",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "anti-money-laundering",
+    "mapping_confidence": 0.49,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Who is Qualified to conduct Management Audit? Explain.",
+    "parent_ref": "6",
+    "explanation_md": "Who is qualified to Conduct Management Audit?\nManagement Audit is not covered by any statute in India. Hence, no qualification bar can exist. Any person,\npossessing certain qualities can perform management audit. Not the qualifications, but qualities are important.\n\nThe management auditor should have the following qualities:\n •     A management auditor should have good knowledge and experience of all Managerial Functions.\n •     An Auditor should have good knowledge of financial, cost statements analysis techniques.\n •     He who knows about economics and business laws, etc.\n •     Understanding of Organization structure and decisions taken by management, the working of the\n       organization and its problems is also required.\n •     Thorough understanding of all processes and control aspects.\n •     He should know and understand the objectives of the organization very well.\n •     He should understand planning, budgets, rules, and procedures to be applied in management reviews.\n •     He should be well-versed with the entire production process.\n •     He should have enough knowledge and experience to understand the reason behind the lack of\n       coordination between different departments.\n •     He should have the quality of giving practical and achievable solutions to the problems in the\n       organization.\n\n        Cost Accountant, by virtue of his closer and more intimate association with the industrial environment,\n        would be in a better position to undertake successfully the management audit.\n\n        Moreover, he is clearly associated with the entire supply chain management.\n\n        Another question that requires an answer is Whether the management audit should be conducted by\n        independent practising cost accountant or companies own cost accountants specially charged with this\n        responsibility?\n\n •      It is obvious that a company’s own cost accountant howsoever exalted he may be, cannot act with a full\n        sense of independence, as an external auditor will be able to do.\n                                                  Page 8 of 12\n •       But he will have an advantage over his external colleague, in that, having worked with the company, he\n         has a better grasp over the company’s activities.\n •        So long as the management audit is not prescribed by law, a company will have to make its own decision\n         in this regard.\n\n         To the question-who should conduct a management audit? There can be another answer.\n\n         Instead of entrusting it entirely to a cost accountant – internal or external- we can as well think of a team\n         consisting of – An industrial or production engineer, a social scientist, an economist and a practising/own\n         cost accountant. This proposal has the merit that it will collect the experience and expertise under one\n         roof and this collective wisdom will make a better job of management audit.",
+    "reference_solution_md": "Who is qualified to Conduct Management Audit?\nManagement Audit is not covered by any statute in India. Hence, no qualification bar can exist. Any person,\npossessing certain qualities can perform management audit. Not the qualifications, but qualities are important.\n\nThe management auditor should have the following qualities:\n •     A management auditor should have good knowledge and experience of all Managerial Functions.\n •     An Auditor should have good knowledge of financial, cost statements analysis techniques.\n •     He who knows about economics and business laws, etc.\n •     Understanding of Organization structure and decisions taken by management, the working of the\n       organization and its problems is also required.\n •     Thorough understanding of all processes and control aspects.\n •     He should know and understand the objectives of the organization very well.\n •     He should understand planning, budgets, rules, and procedures to be applied in management reviews.\n •     He should be well-versed with the entire production process.\n •     He should have enough knowledge and experience to understand the reason behind the lack of\n       coordination between different departments.\n •     He should have the quality of giving practical and achievable solutions to the problems in the\n       organization.\n\n        Cost Accountant, by virtue of his closer and more intimate association with the industrial environment,\n        would be in a better position to undertake successfully the management audit.\n\n        Moreover, he is clearly associated with the entire supply chain management.\n\n        Another question that requires an answer is Whether the management audit should be conducted by\n        independent practising cost accountant or companies own cost accountants specially charged with this\n        responsibility?\n\n •      It is obvious that a company’s own cost accountant howsoever exalted he may be, cannot act with a full\n        sense of independence, as an external auditor will be able to do.\n                                                  Page 8 of 12\n •       But he will have an advantage over his external colleague, in that, having worked with the company, he\n         has a better grasp over the company’s activities.\n •        So long as the management audit is not prescribed by law, a company will have to make its own decision\n         in this regard.\n\n         To the question-who should conduct a management audit? There can be another answer.\n\n         Instead of entrusting it entirely to a cost accountant – internal or external- we can as well think of a team\n         consisting of – An industrial or production engineer, a social scientist, an economist and a practising/own\n         cost accountant. This proposal has the merit that it will collect the experience and expertise under one\n         roof and this collective wisdom will make a better job of management audit.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "management-reporting-issues-and-analysis",
+    "mapping_confidence": 0.09,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Analyse the role of Cyber Security in protecting data used in an organization.",
+    "parent_ref": "7",
+    "explanation_md": "Cybersecurity is the practice of protecting computer systems, networks, and data from unauthorized access, use,\ndisclosure, disruption, modification, for businesses, organizations, and individuals to maintain operational\ncontinuity, protect sensitive information, and prevent financial and reputational damage.\n\nCyber security is a professional discipline that is about creating defensive measures to protect against cyber-\nattacks. One important note about cyber security is that it is almost entirely about prevention.\n\nTo keep “cyber hygiene” in good condition, Cyber security encompasses many protocols that are used in the real\nworld to protect data vital for the organization. There are the basics which will drastically improve the online\nsafety. These cybersecurity basics apply to both individuals and organization. Examples are:\n\n •       Things like using strong passwords, updating software setting, user permissions, establishing file transfer\n         protocols (FTP).\n •       Requiring secure, frequently changing passwords, turning on multi-factor authentication are all vital\n         elements of cyber security.\n •       It’s not just up to one individual, everyone in an organization needs to be trained for thinking before\n         click on suspicious links, data backups, and incident management, while also considering VPNs,\n         firewalls, and Zero Trust architecture for safe computer usage for security.",
+    "reference_solution_md": "Cybersecurity is the practice of protecting computer systems, networks, and data from unauthorized access, use,\ndisclosure, disruption, modification, for businesses, organizations, and individuals to maintain operational\ncontinuity, protect sensitive information, and prevent financial and reputational damage.\n\nCyber security is a professional discipline that is about creating defensive measures to protect against cyber-\nattacks. One important note about cyber security is that it is almost entirely about prevention.\n\nTo keep “cyber hygiene” in good condition, Cyber security encompasses many protocols that are used in the real\nworld to protect data vital for the organization. There are the basics which will drastically improve the online\nsafety. These cybersecurity basics apply to both individuals and organization. Examples are:\n\n •       Things like using strong passwords, updating software setting, user permissions, establishing file transfer\n         protocols (FTP).\n •       Requiring secure, frequently changing passwords, turning on multi-factor authentication are all vital\n         elements of cyber security.\n •       It’s not just up to one individual, everyone in an organization needs to be trained for thinking before\n         click on suspicious links, data backups, and incident management, while also considering VPNs,\n         firewalls, and Zero Trust architecture for safe computer usage for security.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "information-systems-security-audit",
+    "mapping_confidence": 0.75,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Identify the role of Capacity Utilization Analysis as a tool of Management Audit.",
+    "parent_ref": "7",
+    "explanation_md": "Capacity utilization refers to the extent a company or economy uses its productive resources (like equipment, labour, and facilities) to generate output, expressed as a percentage of potential output. It's calculated by dividing the actual output by the potential output and multiplying by 100 to express it as a percentage.\n\nFormula: $(\\text{Actual Output} / \\text{Maximum possible Output}) \\times 100 = \\text{Capacity Utilization Rate}$.\n\nThe capacity utilization rate is an important indicator for companies because it can be used to assess operating efficiency and provides an insight into cost structure. It can be used to determine the level at which costs per unit go up or down. When there is a rise in output, the average cost of production will decrease.\n\nIt is one of the Key Performance Areas of Operational Efficiency which Management Auditor should focus on. In general terms, Capacity utilization indicates how well the resources available to the Management have been utilized. The resources may include Plant & Machinery, Building, Land, Raw Materials, Manpower, Utilities etc. Understanding capacity utilization helps businesses assess their operational efficiency, identify areas for improvement, and make informed decisions about resource allocation and investment. For Higher capacity utilization, reduced cost of production adds to profitability. For lower capacity utilization, the reasons may be identified as to\n\n1) Machine Break Down- Better maintenance required.\n2) Loss of Market share- To focus on product quality or renovation.\n3) Non-availability of key raw materials- To develop new vendors, alternately look for in-house material production\n4) Non-availability of power- Arrange for captive power plant.",
+    "reference_solution_md": "Capacity utilization refers to the extent a company or economy uses its productive resources (like equipment, labour, and facilities) to generate output, expressed as a percentage of potential output. It's calculated by dividing the actual output by the potential output and multiplying by 100 to express it as a percentage.\n\nFormula: $(\\text{Actual Output} / \\text{Maximum possible Output}) \\times 100 = \\text{Capacity Utilization Rate}$.\n\nThe capacity utilization rate is an important indicator for companies because it can be used to assess operating efficiency and provides an insight into cost structure. It can be used to determine the level at which costs per unit go up or down. When there is a rise in output, the average cost of production will decrease.\n\nIt is one of the Key Performance Areas of Operational Efficiency which Management Auditor should focus on. In general terms, Capacity utilization indicates how well the resources available to the Management have been utilized. The resources may include Plant & Machinery, Building, Land, Raw Materials, Manpower, Utilities etc. Understanding capacity utilization helps businesses assess their operational efficiency, identify areas for improvement, and make informed decisions about resource allocation and investment. For Higher capacity utilization, reduced cost of production adds to profitability. For lower capacity utilization, the reasons may be identified as to\n\n1) Machine Break Down- Better maintenance required.\n2) Loss of Market share- To focus on product quality or renovation.\n3) Non-availability of key raw materials- To develop new vendors, alternately look for in-house material production\n4) Non-availability of power- Arrange for captive power plant.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "management-reporting-issues-and-analysis",
+    "mapping_confidence": 0.58,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Briefly explain the Structure of Internal Control. What are the factors to be considered while designing an internal control system to ensure successful internal control system?",
+    "parent_ref": "8",
+    "explanation_md": "Structure of Internal Control:\nThere is no uniform or identical approach of internal control in all organizations. It often varies in concept and\napplications, having regard to the following:\n\n(a)    Type of business\n(b)    Magnitude of the business\n(c)    Infrastructure available in the organization\n(d)    Potentiality of human resources and their outlook.\n\nFactors to be considered while designing an Internal Control System to ensure greater chances of a successful\ninternal control system:\n  1.      Segregation of duties\n          It is very necessary for a successful internal control system that no one person handles the complete\n          transaction.\n          Similarly, the people responsible for authorizing these transactions or reconciling the records should also\n          be different.\n\n 2.      Rotation of Duties\n         It is also sometimes more desirable to rotate the duties of various officers and staff in an attempt to\n         ensure that fraud or error, if any, may not remain undetected for a very long time.\n\n 3.      Competence and Integrity of People\n         The controls to be successful and effective necessitate the need for competent people to enforce such\n         controls.\n\n 4.      Appropriate Levels of Authority\n         Controls to be effective require the authority to be granted on a need to have basis only.\n\n 5.      Accountability\n         The mere presence of these controls may have no meaning or may give a false sense of security, unless\n         strict action is taken every time, a discrepancy is noticed.\n\n 6.      Adequate Resources\n         It is very necessary that minimum resources to enforce the controls must always be present to enable the\n         controls to be successful and effective.\n\n 7.      Supervision and Periodical updation\n         It is very necessary for the controls to be adequately supervised and periodically updated in line with\n         changing environment to be effective and successful.\n\n                                                   Page 10 of 12",
+    "reference_solution_md": "Structure of Internal Control:\nThere is no uniform or identical approach of internal control in all organizations. It often varies in concept and\napplications, having regard to the following:\n\n(a)    Type of business\n(b)    Magnitude of the business\n(c)    Infrastructure available in the organization\n(d)    Potentiality of human resources and their outlook.\n\nFactors to be considered while designing an Internal Control System to ensure greater chances of a successful\ninternal control system:\n  1.      Segregation of duties\n          It is very necessary for a successful internal control system that no one person handles the complete\n          transaction.\n          Similarly, the people responsible for authorizing these transactions or reconciling the records should also\n          be different.\n\n 2.      Rotation of Duties\n         It is also sometimes more desirable to rotate the duties of various officers and staff in an attempt to\n         ensure that fraud or error, if any, may not remain undetected for a very long time.\n\n 3.      Competence and Integrity of People\n         The controls to be successful and effective necessitate the need for competent people to enforce such\n         controls.\n\n 4.      Appropriate Levels of Authority\n         Controls to be effective require the authority to be granted on a need to have basis only.\n\n 5.      Accountability\n         The mere presence of these controls may have no meaning or may give a false sense of security, unless\n         strict action is taken every time, a discrepancy is noticed.\n\n 6.      Adequate Resources\n         It is very necessary that minimum resources to enforce the controls must always be present to enable the\n         controls to be successful and effective.\n\n 7.      Supervision and Periodical updation\n         It is very necessary for the controls to be adequately supervised and periodically updated in line with\n         changing environment to be effective and successful.\n\n                                                   Page 10 of 12",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "internal-control-and-internal-audit",
+    "mapping_confidence": 0.8,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Prepare an Audit Programme for the Audit of Non-Government Organisations (NGOs).",
+    "parent_ref": "8",
+    "explanation_md": "The audit program should include in a sequential order all assets, liabilities, income, and expenditure ensuring\nthat no material item is omitted:\n\n i)      Corpus fund:\n         The contributions/grants received towards corpus be vouched with reference to the letters from the\n         donor(s). The interest income be checked with the investment Register and physical investments in hand.\n\n ii)     Reserves:\n         Vouch transfers from projects/programmes with donors’ letters and board resolutions of NGO. Also\n         check transfers and adjustments made during the year.\n\n iii)    Ear-marked funds:\n         Check requirements of donors’ institutions, board resolution of NGO, rules and regulations of the\n         schemes of the ear-marked funds.\n\n iv)     Project/Agency Balances:\n         Vouch disbursements and expenditures as per agreements with donors for each of the balances.\n\n v)      Loans:\n         Vouch loans with loan agreements, receipt counter- foil issued.\n\n vi)     Fixed Assets:\n         Vouch all acquisitions/sales or disposal of assets including depreciation and the authorizations for the\n         same. Also check donor’s letters/agreements for the grants. For immovable property, check title, etc.\n\n vii)    Investments:\n         Check Investment Register and the investments physically ensuring that investments are in the name of\n         the NGO. Verify further investments and dis-investments for approval by the appropriate authority and\n         reference in the bank accounts for the principal amount and interest.\n\n viii)   Cash-in-hand:\n         Physically verify the cash in hand and imprest balance, at the close of the year and whether it tallies with\n         the books of accounts.\n\n ix)     Bank balance:\n         Check the bank reconciliation statements and ascertain details for old outstanding and unadjusted\n         amounts.\n\n x)      Stock in Hand:\n         Verify stock in hand and obtain certificate from the management for the quantities and valuation of the\n         same.\n\n xi)     Programme and Project Expenses:\n         Verify agreement with donor/contributor (s) supporting the particular programme or project to ascertain\n         the conditions with respect to undertaking the programme/project and accordingly, in the case of\n         programmes/projects involving contracts, ensure that income tax is deducted, deposited and returns filed\n         and verify the terms of the contract.\n\n                                                   Page 11 of 12\nxii)   Establishment expenses:\n       Verify that provident fund, life insurance and their administrative charges are deducted, contributed and\n       deposited within the prescribed time. Also check other office and administrative expenses such as\n       postage, stationery, travelling, etc.\n\nThe receipt of income of NGO may be checked on the following lines:\n\ni)     Contribution and Grants for projects and programmes:\n       Check agreements with donors and grants letters to ensure that funds received have been accounted for.\n       Check that all foreign contribution receipts are deposited in the foreign contribution bank account as\n       notified under the Foreign Contribution (Regulation) Act, 1976\n\nii)    Receipts from Fund Raising programmes:\n       Verify in detail the internal control system and ascertain who are the persons responsible for collection\n       of funds and mode of receipt. Ensure that collections are counted and deposited in the bank daily.\n\niii)   Membership fees:\n       Check fees received with membership register, ensure proper classification is made between entrance\n       and annual fees and life membership fees. Reconcile fees received with fees to be received during the\n       year.\n\niv)    Subscription:\n       Check with subscription register and receipts issued. Reconcile subscription received with printing and\n       dispatch of corresponding magazine/circulars/periodicals. Check the receipts with subscription rate\n       schedule.\n\nv)     Interest and Dividends:\n       Check the interest and dividends received and receivable with the investments held during the year.\n\n                                   ______________________________\n\n                                                Page 12 of 12",
+    "reference_solution_md": "The audit program should include in a sequential order all assets, liabilities, income, and expenditure ensuring\nthat no material item is omitted:\n\n i)      Corpus fund:\n         The contributions/grants received towards corpus be vouched with reference to the letters from the\n         donor(s). The interest income be checked with the investment Register and physical investments in hand.\n\n ii)     Reserves:\n         Vouch transfers from projects/programmes with donors’ letters and board resolutions of NGO. Also\n         check transfers and adjustments made during the year.\n\n iii)    Ear-marked funds:\n         Check requirements of donors’ institutions, board resolution of NGO, rules and regulations of the\n         schemes of the ear-marked funds.\n\n iv)     Project/Agency Balances:\n         Vouch disbursements and expenditures as per agreements with donors for each of the balances.\n\n v)      Loans:\n         Vouch loans with loan agreements, receipt counter- foil issued.\n\n vi)     Fixed Assets:\n         Vouch all acquisitions/sales or disposal of assets including depreciation and the authorizations for the\n         same. Also check donor’s letters/agreements for the grants. For immovable property, check title, etc.\n\n vii)    Investments:\n         Check Investment Register and the investments physically ensuring that investments are in the name of\n         the NGO. Verify further investments and dis-investments for approval by the appropriate authority and\n         reference in the bank accounts for the principal amount and interest.\n\n viii)   Cash-in-hand:\n         Physically verify the cash in hand and imprest balance, at the close of the year and whether it tallies with\n         the books of accounts.\n\n ix)     Bank balance:\n         Check the bank reconciliation statements and ascertain details for old outstanding and unadjusted\n         amounts.\n\n x)      Stock in Hand:\n         Verify stock in hand and obtain certificate from the management for the quantities and valuation of the\n         same.\n\n xi)     Programme and Project Expenses:\n         Verify agreement with donor/contributor (s) supporting the particular programme or project to ascertain\n         the conditions with respect to undertaking the programme/project and accordingly, in the case of\n         programmes/projects involving contracts, ensure that income tax is deducted, deposited and returns filed\n         and verify the terms of the contract.\n\n                                                   Page 11 of 12\nxii)   Establishment expenses:\n       Verify that provident fund, life insurance and their administrative charges are deducted, contributed and\n       deposited within the prescribed time. Also check other office and administrative expenses such as\n       postage, stationery, travelling, etc.\n\nThe receipt of income of NGO may be checked on the following lines:\n\ni)     Contribution and Grants for projects and programmes:\n       Check agreements with donors and grants letters to ensure that funds received have been accounted for.\n       Check that all foreign contribution receipts are deposited in the foreign contribution bank account as\n       notified under the Foreign Contribution (Regulation) Act, 1976\n\nii)    Receipts from Fund Raising programmes:\n       Verify in detail the internal control system and ascertain who are the persons responsible for collection\n       of funds and mode of receipt. Ensure that collections are counted and deposited in the bank daily.\n\niii)   Membership fees:\n       Check fees received with membership register, ensure proper classification is made between entrance\n       and annual fees and life membership fees. Reconcile fees received with fees to be received during the\n       year.\n\niv)    Subscription:\n       Check with subscription register and receipts issued. Reconcile subscription received with printing and\n       dispatch of corresponding magazine/circulars/periodicals. Check the receipts with subscription rate\n       schedule.\n\nv)     Interest and Dividends:\n       Check the interest and dividends received and receivable with the investments held during the year.\n\n                                   ______________________________\n\n                                                Page 12 of 12",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "audit-of-different-service-organisations",
+    "mapping_confidence": 0.44,
+    "mapping_state": "pending",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "7(b)": [
+   "Formula typeset as math; the page-footer text 'Page 9 of 12' that had leaked into the stored answer removed (page break joined)."
+  ]
+ },
+ "review_decisions": {
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem table matches the print digit for digit; the answer statement was rebuilt as a Markdown table from the suggested answer image, with every figure and note matching (columns sum to 17,356 and 17,896).",
+   "fixes": [
+    "Rebuilt the cost of production statement and notes from the OCR layout text into a table and separate note paragraphs"
+   ],
+   "printed_issues": [
+    "Heading 'Cost of Production (As per CAS 4' has an unclosed bracket",
+    "Cost per M. Ton figures are in ₹ lakhs per tonne but the column is headed ₹"
+   ],
+   "by": "claude-review"
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem and data table match the print; the reconciliation statement and workings were rebuilt as tables from the suggested answer image and all figures and subtotals match.",
+   "fixes": [
+    "Rebuilt the reconciliation statement and the workings table from the OCR layout text"
+   ],
+   "printed_issues": [
+    "Stock valuation difference is described as an 'Increase in Difference of Stock valuation towards financial accounts' under Workings, as printed"
+   ],
+   "by": "claude-review"
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer text compared with suggested answer pages 9-10; the stored text is complete and faithful (page-footer text already removed).",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [
+  "1(b)(xi)",
+  "1(b)(xii)",
+  "1(b)(xiii)",
+  "1(b)(xiv)",
+  "1(b)(xv)"
+ ],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 29
+ }
+}

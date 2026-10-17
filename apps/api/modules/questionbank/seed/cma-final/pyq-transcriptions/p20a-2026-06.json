@@ -1,0 +1,682 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p20a",
+ "term_code": "2026-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Q1 has no separate '(a)' label before parts (i)-(x) as printed; part (b) scenario covers (xi)-(xv). Scenario repeated in the stems of (xi)-(xv).",
+  "qp.pdf page 12 is blank.",
+  "Q7(a) has no explicit 'Required' line in the paper."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Answer Question No.1 which is compulsory. (Page 1 header: All sections are compulsory. Each section contains instructions regarding the number of questions to be answered within the section.)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct answer from the given alternatives: 2×10=20 [parts (i)-(x)]\n(b) Read the following scenario and answer the following questions: parts (xi)-(xv), 2×5=10 (scenario repeated in each of those parts' stems).",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "____________ refers to systemized reduction of time within the production cycle including response times of suppliers and customers.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Lean System Management"
+        },
+        {
+         "key": "B",
+         "body_md": "Lean Manufacturing"
+        },
+        {
+         "key": "C",
+         "body_md": "Benchmarking"
+        },
+        {
+         "key": "D",
+         "body_md": "Six Sigma"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Six Sigma is a business-driven, multi-dimensional structured approach to____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Reducing process variability"
+        },
+        {
+         "key": "B",
+         "body_md": "Lowering Defects"
+        },
+        {
+         "key": "C",
+         "body_md": "Improving Processes"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In order to maximize profits, a firm should produce at the output level for which:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Average cost is minimized"
+        },
+        {
+         "key": "B",
+         "body_md": "Marginal revenue equals marginal cost"
+        },
+        {
+         "key": "C",
+         "body_md": "Marginal cost is minimized"
+        },
+        {
+         "key": "D",
+         "body_md": "Price minus average cost is as large as possible"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The goal of ERM as provided in Committee of Sponsoring Organisation's (COSO) ERM – Integrated Framework is to provide companies with ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Key principles and concepts"
+        },
+        {
+         "key": "B",
+         "body_md": "Common language"
+        },
+        {
+         "key": "C",
+         "body_md": "Clear direction and guidance regarding the management enterprise"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Market value Added (MVA) is the difference between the current market value of a firm and the ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Net Worth of the Company"
+        },
+        {
+         "key": "B",
+         "body_md": "Total Value of the Assets of the Company"
+        },
+        {
+         "key": "C",
+         "body_md": "Capital Employed in the Company"
+        },
+        {
+         "key": "D",
+         "body_md": "Total Outsider's Liabilities of the Company"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Key inputs of Discounted Cash Flow (DCF) Method are ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Cashflow"
+        },
+        {
+         "key": "B",
+         "body_md": "Terminal Value"
+        },
+        {
+         "key": "C",
+         "body_md": "Discount Rate"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The rate of return required by the bond holders from the bond is known as the ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Bond Price"
+        },
+        {
+         "key": "B",
+         "body_md": "Call Option"
+        },
+        {
+         "key": "C",
+         "body_md": "Bond Yield"
+        },
+        {
+         "key": "D",
+         "body_md": "Coupon"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which is not a human-capital related intangible asset?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Trained workforce"
+        },
+        {
+         "key": "B",
+         "body_md": "Employment agreements"
+        },
+        {
+         "key": "C",
+         "body_md": "Union Contracts"
+        },
+        {
+         "key": "D",
+         "body_md": "Design patent"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Synergy expected from merger = ₹40 crore, price paid= ₹360 crore, target value =₹320 crore. Acquirer's gain = ?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹0 crore"
+        },
+        {
+         "key": "B",
+         "body_md": "₹5 crore"
+        },
+        {
+         "key": "C",
+         "body_md": "₹10 crore"
+        },
+        {
+         "key": "D",
+         "body_md": "₹15 crore"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under the market approach, a firm with EPS ₹25 and industry P/E of 15 would have an estimated equity value of:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 200"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 375"
+        },
+        {
+         "key": "C",
+         "body_md": "₹167"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 60"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Zenith Pharmaceuticals Ltd. is a mid-sized pharmaceutical firm with 3 strategic business units (SBUs):\n- Formulations Division (FD)\n- Active Pharmaceutical Ingredients (API) Division\n- Research & Development (R&D) Division\n\nManagement introduced a Balanced Scorecard (BSC) framework aligned with their cost leadership and innovation strategies. Key metrics and data from the latest fiscal year are as follows:\n\nDivision | Operating Profit (₹ lakhs) | Capital Employed (₹ lakhs) | WACC (%) | Customer satisfaction (out of 100) | Employee training hours / year\n---|---|---|---|---|---\nFD | 1,800 | 9,000 | 12 | 86 | 22\nAPI | 1,400 | 7,000 | 11 | 78 | 18\nR&D | -300 | 5,000 | 14 | 90 | 50\n\nAdditional Info:\n- The firm uses EVA, Residual Income, and BSC perspectives to evaluate performance.\n- Industry benchmark ROI for similar divisions is 18%.\n- R&D division is not expected to generate immediate profits; its performance is assessed using non-financial indicators and value creation potential.\n\nAnswer the following questions based on the above scenario and choose the correct answer from given four alternatives. 2×5=10\n\nWhat is the EVA of the API Division?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹630 lakhs"
+        },
+        {
+         "key": "B",
+         "body_md": "₹1,400 lakhs"
+        },
+        {
+         "key": "C",
+         "body_md": "₹620 lakhs"
+        },
+        {
+         "key": "D",
+         "body_md": "₹1,330 lakhs"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Zenith Pharmaceuticals Ltd. is a mid-sized pharmaceutical firm with 3 strategic business units (SBUs):\n- Formulations Division (FD)\n- Active Pharmaceutical Ingredients (API) Division\n- Research & Development (R&D) Division\n\nManagement introduced a Balanced Scorecard (BSC) framework aligned with their cost leadership and innovation strategies. Key metrics and data from the latest fiscal year are as follows:\n\nDivision | Operating Profit (₹ lakhs) | Capital Employed (₹ lakhs) | WACC (%) | Customer satisfaction (out of 100) | Employee training hours / year\n---|---|---|---|---|---\nFD | 1,800 | 9,000 | 12 | 86 | 22\nAPI | 1,400 | 7,000 | 11 | 78 | 18\nR&D | -300 | 5,000 | 14 | 90 | 50\n\nAdditional Info:\n- The firm uses EVA, Residual Income, and BSC perspectives to evaluate performance.\n- Industry benchmark ROI for similar divisions is 18%.\n- R&D division is not expected to generate immediate profits; its performance is assessed using non-financial indicators and value creation potential.\n\nAnswer the following questions based on the above scenario and choose the correct answer from given four alternatives. 2×5=10\n\nWhich divisions have outperformed the industry benchmark ROI of 18%?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "FD and R&D"
+        },
+        {
+         "key": "B",
+         "body_md": "API and R&D"
+        },
+        {
+         "key": "C",
+         "body_md": "FD& API"
+        },
+        {
+         "key": "D",
+         "body_md": "API"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Zenith Pharmaceuticals Ltd. is a mid-sized pharmaceutical firm with 3 strategic business units (SBUs):\n- Formulations Division (FD)\n- Active Pharmaceutical Ingredients (API) Division\n- Research & Development (R&D) Division\n\nManagement introduced a Balanced Scorecard (BSC) framework aligned with their cost leadership and innovation strategies. Key metrics and data from the latest fiscal year are as follows:\n\nDivision | Operating Profit (₹ lakhs) | Capital Employed (₹ lakhs) | WACC (%) | Customer satisfaction (out of 100) | Employee training hours / year\n---|---|---|---|---|---\nFD | 1,800 | 9,000 | 12 | 86 | 22\nAPI | 1,400 | 7,000 | 11 | 78 | 18\nR&D | -300 | 5,000 | 14 | 90 | 50\n\nAdditional Info:\n- The firm uses EVA, Residual Income, and BSC perspectives to evaluate performance.\n- Industry benchmark ROI for similar divisions is 18%.\n- R&D division is not expected to generate immediate profits; its performance is assessed using non-financial indicators and value creation potential.\n\nAnswer the following questions based on the above scenario and choose the correct answer from given four alternatives. 2×5=10\n\nBased on Balanced Scorecard's Learning & Growth perspective, which division is performing best?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "RD"
+        },
+        {
+         "key": "B",
+         "body_md": "API"
+        },
+        {
+         "key": "C",
+         "body_md": "FD"
+        },
+        {
+         "key": "D",
+         "body_md": "All are performing at the same level"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Zenith Pharmaceuticals Ltd. is a mid-sized pharmaceutical firm with 3 strategic business units (SBUs):\n- Formulations Division (FD)\n- Active Pharmaceutical Ingredients (API) Division\n- Research & Development (R&D) Division\n\nManagement introduced a Balanced Scorecard (BSC) framework aligned with their cost leadership and innovation strategies. Key metrics and data from the latest fiscal year are as follows:\n\nDivision | Operating Profit (₹ lakhs) | Capital Employed (₹ lakhs) | WACC (%) | Customer satisfaction (out of 100) | Employee training hours / year\n---|---|---|---|---|---\nFD | 1,800 | 9,000 | 12 | 86 | 22\nAPI | 1,400 | 7,000 | 11 | 78 | 18\nR&D | -300 | 5,000 | 14 | 90 | 50\n\nAdditional Info:\n- The firm uses EVA, Residual Income, and BSC perspectives to evaluate performance.\n- Industry benchmark ROI for similar divisions is 18%.\n- R&D division is not expected to generate immediate profits; its performance is assessed using non-financial indicators and value creation potential.\n\nAnswer the following questions based on the above scenario and choose the correct answer from given four alternatives. 2×5=10\n\nIf Asterix plans to benchmark non-financial performance, which combination of metrics below would be MOST appropriate for the R&D division?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Operating profit, ROI"
+        },
+        {
+         "key": "B",
+         "body_md": "Capital Employed, WACC"
+        },
+        {
+         "key": "C",
+         "body_md": "EVA, Training hours"
+        },
+        {
+         "key": "D",
+         "body_md": "Customer Satisfaction, Employee Training Hours"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Question refers to 'Asterix' while the scenario names 'Zenith Pharmaceuticals Ltd.' (as printed)."
+       ]
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Zenith Pharmaceuticals Ltd. is a mid-sized pharmaceutical firm with 3 strategic business units (SBUs):\n- Formulations Division (FD)\n- Active Pharmaceutical Ingredients (API) Division\n- Research & Development (R&D) Division\n\nManagement introduced a Balanced Scorecard (BSC) framework aligned with their cost leadership and innovation strategies. Key metrics and data from the latest fiscal year are as follows:\n\nDivision | Operating Profit (₹ lakhs) | Capital Employed (₹ lakhs) | WACC (%) | Customer satisfaction (out of 100) | Employee training hours / year\n---|---|---|---|---|---\nFD | 1,800 | 9,000 | 12 | 86 | 22\nAPI | 1,400 | 7,000 | 11 | 78 | 18\nR&D | -300 | 5,000 | 14 | 90 | 50\n\nAdditional Info:\n- The firm uses EVA, Residual Income, and BSC perspectives to evaluate performance.\n- Industry benchmark ROI for similar divisions is 18%.\n- R&D division is not expected to generate immediate profits; its performance is assessed using non-financial indicators and value creation potential.\n\nAnswer the following questions based on the above scenario and choose the correct answer from given four alternatives. 2×5=10\n\nWhat strategic insight does the negative EVA and ROI of the R&D division provide in the context of long-term strategic performance management?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "R&D should be shut down due to poor returns."
+        },
+        {
+         "key": "B",
+         "body_md": "Financial metrics alone are insufficient to evaluate R&D"
+        },
+        {
+         "key": "C",
+         "body_md": "R&D is underperforming due to capital misallocation"
+        },
+        {
+         "key": "D",
+         "body_md": "EVA is not applicable for R&D"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Section – B, Business Valuation. Answer any five questions from Question No.2 to Question No.8 in Section B. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "**Briefly** define Customer Relationship Management (CRM) and state its primary objective in a business context. **Explain** the five misrepresentations of CRM.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Customer Relationship Management (CRM) & its Objective :\nCustomer Relationship Management (CRM) is a strategy and technology used by businesses to manage interactions with current and potential customers.\n\nIts primary objective is to improve customer satisfaction, enhance customer retention, and drive sales growth by understanding and addressing customer needs more effectively.\n\nFive misrepresentations of CRM:\nCRM is often misunderstood or misrepresented in business contexts. These misrepresentations can lead to poor implementation, wasted involvement and unmet expectations. Here are five common misrepresentations of CRM:\n\n(i) CRM is merely a database marketing - The scope of CRM is much broader than database marketing. Though the success of CRM depends much on the database, strategic and operational CRM is not merely database marketing.\n(ii) CRM is a marketing process - The scope of CRM extends beyond the nuances of marketing activities of market segmentation, customer acquisition, customer retention and customer development. CRM extends into selling and service functions.\n(iii) CRM is an information technology (IT) issue - Without the advent of IT, CRM would not be possible. IT may be said to be an enabler of CRM. However, the two other important parts of most CRM projects are people and process while the architecture on which it is developed is IT.\n(iv) CRM can be implemented by any company - Though strategic CRM and operational CRM can be implemented in any company, implementation of analytical CRM is not possible in all companies. Analytical CRM is based on customer-related data and in smaller companies or companies in which such customer related data are not readily available implementation of the same is not possible.\n(v) CRM is a technical name of loyalty schemes- in order to acquire new customers or retain old customers, business houses often offer loyalty schemes like air miles and lunch coupons and free train fare passages. These are redeemed by the customer in future. These are distributed to loyal customers. Some CRM implementations are linked to loyalty schemes, not all of them are and it would not be wise to intermingle the two concepts. Rather loyalty schemes are a subset of the CRM implemented company wide.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A manufacturing company, Prime Auto Components Ltd., is facing frequent production delays, poor workplace organization, rising defects, low employee morale, and reduced equipment availability. The management believes that Lean manufacturing is only about waste reduction and has little wider relevance. The Cost Accountant has suggested implementation of the 5S technique of Lean to improve visual control, workplace discipline, and production efficiency.\n\n**Required:**\n(i) **Analyze** why the view that Lean is only about waste management is a myth, and mention the three focus areas of Lean manufacturing.\n(ii) Explain the five elements of 5S.\n(iii) **Align** any four benefits of implementing a Lean 5S programme.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Evaluation of Management's View\nThe management's proposition that Lean is exclusively about waste management is a myth. The fundamental aspect of lean manufacturing is to create highly efficient production processes rather than just managing waste.\n\nThe three core areas of lean manufacturing are :\n• Eliminating waste\n• Minimizing inconsistencies\n• Taking a reasonable approach\n\n(ii) The '5S' Methodology Framework\nThe 5S methodology utilizes five Japanese terms to assist in the organization of manufacturing and create a workplace suited for visual control. The components are :\n• Seiri (Sort) : To separate needed tools, parts, and instructions from unneeded materials and to remove the unneeded ones.\n• Seiton (Set in Order) : To neatly arrange and identify parts and tools for ease of use.\n• Seiso (Shine) : To conduct a rigorous clean-up campaign across the workspace.\n• Seiketsu (Standardize) : To conduct seiri, seiton, and seiso daily to maintain a workplace in perfect condition.\n• Shitsuke (Sustain) : To form the discipline and habit of always following the first four S's.\n\n(iii) Benefits of the Lean 5S Program\nBy implementing the 5S program, Prime Auto Components Ltd. can achieve several operational and strategic advantages :\n• Improved workplace safety\n• Higher equipment availability\n• Lower defect rates\n• Reduced operational costs\n• Increased production agility and flexibility\n• Improved employee morale\n• Better asset utilization\n• Enhanced enterprise image to customers, suppliers, employees, and management.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Aarav Tech Solutions Ltd. manufactures a specialized industrial component. The company's market research department has determined that the selling price per unit (p) is dependent on the quantity sold (x) and is given by the demand function: p = 1,200–2x (where x ≥ 0)\nThe total cost (C) of producing x components is given by the cost function: C = 3x² + 200x + 15,000\n\n**Required:**\n**Analyze** the following:\n(i) The optimum number of components the company should produce and sell to maximize its profit.\n(ii) The selling price per component at this optimum output level.\n(iii) The maximum profit the company can achieve.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Selling Price per unit (p) = 1,200 − 2x\nOutput = x units\nTotal Revenue (R) = P x x\nR = (1200 − 2x) x = 1200x − 2x²\nTotal Cost (C) = 3x² + 200x + 15000\nProfit (Z) = Total Revenue (R) – Total Cost (C)\nZ = (1200x − 2x²) − (3x² + 200x + 15000)\nZ = 1000x − 5x² – 15000\n\nTo find the optimum output, the first derivative of the profit function with respect to x must be zero\ndz/dx = d/dx (1000x − 5x² − 15000) = 1000 − 10x\nSetting dz/dx = 0\n1000 – 10x = 0\n10x = 1000\nx = 100 units\nd²z/dx² = − 10\nSince d²z/dx² is negative, the profit is maximized at x = 100 units.\n\n(i) Optimum number of components :\nThe company should produce and sell 100 units.\n\n(ii) Selling price at optimum level :\nSubstitute x = 100 into the demand function.\np = 1200 – 2 (100)\np = 1200 – 200 = ₹ 1000 per unit\n\n(iii) Maximum Profit :\nSubstitute x = 100 into the profit function (Z).\nZ = 1000 (100) – 5 (100)² − 15000\nZ = 100000 − 50000 − 15000\nZ = ₹ 35000\n\nAlternative Solution :\nGiven : Total Cost (C) = 3x² + 200x + 15000\n(i) Selling price per unit (P)\nThe demand function : P = 1200 – 2x\nThe Quantity produced / Sold = x units.\nTotal Revenue (R) = P x x = (1200 – 2x) x = 1200x – 2x²\nMarginal Revenue (MR) = dR/dx = d/dx (1200x − 2x²) = 1200 – 4x\nMarginal Cost (MC) = dC/dx = d/dx (3x² + 200x + 15000) = 6x + 200\n\nProfit Maximum at MC = MR\nSo, MC = MR\n6x + 200 = 1200 – 4x\nOr, 10x = 1000\nOr, x = 1000/10 = 100 Units\n\nThe Optimum number of Components should produce and sell to Maximize its Profit is 100 units.\n\n(ii) Selling price at optimum Level :\nSubstitute x = 100 into the demand function : P\nP = 1200 – 2 (100) = ₹ 1000\n\n(iii) Maximum Profit :\nSubstitute x = 100 into (1200x – 2x² – 3x² – 200x – 15000)\n(1000x – 5x² – 15000)\nSo, 1000 x 100 – 5 (100)² – 15000\n= 100000 – 50000 – 15000\n= ₹ 35000",
+       "confidence": "medium",
+       "review": [
+        "Math notation in suggested answer was garbled in text extraction (chi symbols); re-typed with x. Values (100 units, ₹1000, ₹35000) consistent."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "\"Risk management is a more realistic term than safety. It implies that future uncertainty and threats are ever-present, that they must be identified, analyzed, evaluated and controlled or rationally accepted.\" **In the light of this statement, define** risk management and mention the steps to be undertaken by a firm in the process of risk management.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Risk Management is much more than mere safety, it also provides opportunity to grow. It is the process of identifying, evaluating, and prioritizing risks followed by integrated and economical application of resources to reduce, observe, and control the probability or impact of unforeseen events or to maximize the realization of opportunities.\n\nThe process of risk management embrace five specific steps ;\n(i) Identification of Risk – risk should be identified before it is managed. For the purpose, the risk of the enterprise needs to be Categorised in Silos.\n(ii) Analyse the Risk – after identification of the risk the task of the risk manager is to look into the nature, magnitude and consequence of the risk. During this step, the risk management team will examine the probability of occurrence and consequence of each risk in order to identify the focus area. Factors such as possible financial loss, time lost, and severity of impact play a part in precisely analyzing each risk. By placing each risk under the microscope, the risk manager exposes any common issues across a project and further improve the risk management process for future projects.\n(iii) Prioritize the risk – an organisation is exposed to various forms of risk. On the basis of the analysis undertaken in step 2 the risk manager has to prioritize which risk to focus when. This step gives the risk manager a comprehensive view of the task at hand and pinpoints where the team's focus should lie. This helps identification of useful solutions for each risk.\n(iv) Mitigate the risk – after prioritization of the risk, which assist risk manager to focus which risk to target upon, he attempts mitigating the particular risk. Starting with the highest priority risk first, the risk management team under the guidance of the risk manager delves in eliminating the risk or at least reducing the risk so that the negative impact is minimised and the strategic goal can be accomplished.\n(v) Monitor the risk – risk management is a continuous process and it is very important that risk along with the measures adopted in step four is monitored. For this transparent communication among the risk manager and the stakeholders is crucial.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "**Give** a detailed note on the importance of the 5-Component Dupont Analysis.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The 5-Component DuPont analysis is an improvement over the three component analysis which separates operating preference from financing and tax impacts. In this case, the ROE is segregated into five components which provide information on five aspects of profitability. Thus this analysis helps in determining the true source of company's profitability.\n\nThe identity is presented as;\nROE = Operational Efficiency x Interest Burden on Earnings x Tax burden on earnings x Asset Utilization x Equity Multiplier (Financial leverage).\n\nThe impact of operational efficiency (measured in terms of net margin), asset utilization (measured in terms of asset turnover) and financial leverage (measured in terms of the equity multiplier) is comprehended through the 3-component analysis. Two additional aspects, the effect of interest on earning and the effect of tax on earnings, which are also the components of ROE, are deliberated in the 5-Component Analysis.\n\nThe above identity is represented through five ratios, given below :\nROE = (EBIT / Sales) x (EBT / EBIT) x (EAT / EBT) x (Sales / Total Assets) x (Total Assets / Equity)\n\n(EBIT / Sales) = This is approximation of the net margin. Here earnings before interest and taxed (EBIT) is used as an approximation of the net profit, used in the 3-Component framework EBIT is calculated by adjusting net profit. This shows the operational efficiency of the firm.\n\n(EBT / EBIT) = This component is an addition in the 5-component framework. Earnings before taxes (EBT) is mapped against the EBIT. This component shows the impact of interest burden on the earnings of the firm, if this ratio is one, it implies zero interest burden which further implies that there is no debt in the capital structure (All Equity Firm).\n\n(EAT / EBT) = This is the third component in the 5-Component framework. Earnings after taxes (EAT) is mapped against EBT. This component shows the impact of tax burden on the earnings of the firm.\n\n(Sales / Total Assets) = This component was previously dealt with, in the discourse on the 3-component framework. This shows the return generated in terms of the asset base of the firm. The issue of asset utilization is addressed in this ratio.\n\n(Total Assets / Equity) = This component was also previously dealt with, in the discourse on the 3-component frame. This ratio is referred as the equity multiplier and is an approximation of the financial leverage. If the ratio is one, it implies that all of the assets is sourced from equity and there is no debt component.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. Hajime is considering investing in bonds of two companies Lotus Inc. and Woodex Inc. He has recently received a sum of ₹ 35,50,000 from sale of a market related insurance product which he invested in 10 years back. He is nearing retirement age and desire to undertake minimal risk in his investment. He is also worried about default risk associated with his investment and desire to assess the chance of the company (in which he invests) going bust. For the purpose of the financial assessment, he recalls his childhood friend who is currently into financial consultancy. He requests you to assess the bankruptcy risk associated with the Two Companies, Lotus Inc and Woodex Inc. For the purpose, he provides the financial statements of the two companies which are extracted from the annual reports as are given below:\n\nRelevant particulars from Annual Report of Lotus Inc.\n\nParticulars | Amount\n---|---\nWorking Capital | ₹10,00,000\nRetained Earnings | ₹ 5,00,000\nEarnings Before Interest and Taxes | ₹ 7,50,000\nMarket Value of Equity | ₹ 15,00,000\nSales | ₹ 12,00,000\nTotal Assets | ₹ 10,00,000\nTotal Liabilities | ₹ 10,00,000\n\nRelevant particulars from Annual Report of Woodex Inc.\n\nParticulars | Amount\n---|---\nWorking Capital | ₹ 20,00,000\nRetained Earnings | ₹ 9,50,000\nEarnings Before Interest and Taxes | ₹ 7,50,000\nMarket Value of Equity | ₹ 18,00,000\nSales | ₹ 15,00,000\nTotal Assets | ₹ 12,00,000\nTotal Liabilities | ₹ 12,00,000\n\n**Required:**\nFrom the above particulars **calculate** the Altman Z-Score for both Lotus Inc. and Woodex Inc. and **advise** to Mr. Hajime as if you are a consultant.",
+       "options": [],
+       "correct": null,
+       "answer_md": "From the given Particulars the Altman Z-Score for Lotus Inc. is as follows:\nZ = 1.2 X1 + 1.4 X2 + 3.3 X3 + 0.6 X4 + 0.999 X5\n\nWhere :\nX1 = (Working Capital / Total Assets) = (10,00,000 / 10,00,000) = 1\nX2 = (Retained Earnings / Total Assets) = (5,00,000 / 10,00,000) = 0.5\nX3 = (Earnings before Interest and Taxes / Total Assets) = (7,50,000 / 10,00,000) = 0.75\nX4 = (Market Value of Equity / Book Value of Total Liabilities) = (15,00,000 / 10,00,000) = 1.5\nX5 = (Sales / Total Assets) = (12,00,000 / 10,00,000) = 1.2\n\nTherefore, Altman Z-Score (Z) is given as:\nZ = 1.2 X1 + 1.4 X2 + 3.3 X3 + 0.6 X4 + 0.999 X5\nZ = 1.2 x 1 + 1.4 x 0.5 + 3.3 x 0.75 + 0.6 x 1.5 + 0.999 x 1.2\nZ = 6.4738\n\nThe inference of the model which states that Z Score above three indicates that the company under consideration is financially healthy.\n\nFrom the given particulars the Altman Z-Score for Woodex Inc. is as follows:\nZ = 1.2 X1 + 1.4 X2 + 3.3 X3 + 0.6 X4 + 0.999 X5\n\nWhere :\nX1 = (Working Capital / Total Assets) = (20,00,000 / 12,00,000) = 1.67\nX2 = (Retained Earnings / Total Assets) = (9,50,000 / 12,00,000) = 0.79\nX3 = (Earnings before Interest and Taxes / Total Assets) = (7,50,000 / 12,00,000) = 0.625\nX4 = (Market Value of Equity / Book Value of Total Liabilities) = (18,00,000 / 12,00,000) = 1.5\nX5 = (Sales / Total Assets) = (15,00,000 / 12,00,000) = 1.25\n\nTherefore, Altman Z-Score (Z) is given as:\nZ = 1.2 X1 + 1.4 X2 + 3.3 X3 + 0.6 X4 + 0.999 X5\nZ = 1.2 X 1.67 + 1.4 X 0.79 + 3.3 X 0.625 + 0.6 X 1.5 + 0.999 X 1.25\nZ = 7.32125\n\nThe inference of the model which states that Z Score above three indicates that the company under consideration is financially healthy.\n\nAdvice :\nComparing the Z Scores of Two Companies Lotus Inc. and Woodex Inc. the advice to Mr. Hajime is that both the companies have pretty good scores and are considered to be financially healthy since Z score of both the companies under consideration is substantially higher than three.\nZ Lotus Inc. = 6.4738\nZ Woodex Inc. = 7.32125\nHowever, there is a slight difference in the scores and from the above it is clear that Z Woodex Inc. > Z Lotus Inc. Thus, advice to Mr. Hajime is that though both the companies are in the safe zone as regards to bankruptcy risk it may be stated that Woodex Inc. is slightly safer company to invest than Lotus Inc. as projected by Altman Z Score.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Sumangal Developer, a leading promoter and land developer, intends to construct luxury apartments this year or a year hence. The company has already acquired a vacant land in a residential area. Mr. Munna, the technical director, along with Mr. Sonu, the finance director, has worked out the following data to decide on when to construct the apartments:\nCurrent interest rate = 12%\nCurrent value of an apartment = ₹ 20 lakh\nValue of an apartment a year from now:\n₹ 26 lakh under favorable conditions (probability of being favourable is 70%);\n₹ 16 lakh under unfavorable conditions\nConstruction costs (this year as well as next year):\nFor an 8-unit building = ₹ 90 lakh:\nFor a 12-unit building = ₹ 120 lakh.\n\n**You are required to estimate** the value of land and decide whether Sumangal Developer has to construct in the current year or next year, an 8-unit building or a 12-unit building.",
+       "options": [],
+       "correct": null,
+       "answer_md": "If construction is done this year :\n\n | 8-unit Building | 12-unit Building\n---|---|---\nValue of apartment @ ₹20 lakh each | ₹ 160 lakh | ₹ 240 lakh\nCost of construction | ₹ 90 lakh | ₹ 120 lakh\nNet Value | ₹ 70 lakh | ₹ 120 lakh\n\nSince Net Value of 12-unit building is more, the same is preferable.\n\nIf construction is done after one year\nExpected selling price next year = (26 X 0.70 + 16 X 0.30) = ₹ 23 lakh per apartment.\n\nCalculation of present value of Cash flow :\n\n | 8-unit Building | 12-unit Building\n---|---|---\nValue of apartment @ ₹23 lakh each | ₹ 184 lakh | ₹ 276 lakh\nCost of construction | ₹ 90 lakh | ₹ 120 lakh\nNet Value | ₹ 94 lakh | ₹ 156 lakh\nPV of Cashflow @ 12% discounting rate | ₹ 94 / 1.12 = ₹ 83.93 lakh | ₹ 156 / 1.12 = ₹ 139.29 lakh\n\nSince PV of Cash flow of 12-unit building is more, the same is preferable.\n\nEstimated Value of Land and Decision :\nWith a 70% probability of favourable market conditions, the expected present value of constructing a 12-unit building next year (₹139.29 lakh) exceeds immediate construction. Hence, the value of land is ₹139.29 lakh, and Sumangal Developer should defer construction by one year and build a 12-unit apartment complex.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Two Companies A Ltd. and B Ltd. paid Dividend of ₹ 3.50 per Share. Both are anticipating that Dividend shall grow @ 8%. The Beta of A Ltd. and B Ltd. are 0.95 and 1.42 respectively. The yield on GOI Bond is 7 % and it is expected that stock Market Index shall Increase at an annual rate of 13%.\n\nYou are required to Analyze:\n(i) Intrinsic Value of share of Both Companies\n(ii) Why there is a difference in the value of share of the two Companies?\n(iii) If the Current Market Price of share of A Ltd. and B Ltd. are ₹ 74 and ₹ 56 respectively **What course** of action should be followed?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Intrinsic Value of Share :\n\nShares of | A Ltd. | B Ltd.\n---|---|---\n(a) Cost of Capital as per CAPM | 7 % + 0.95 x (13 – 7) = 12.70 % | 7 % + 1.42 x (13 – 7) = 15.52 %\nIntrinsic Value = D1 / (Ke − g) | 3.50 x 1.08 / (0.127 − 0.08) = ₹ 80.43 | 3.50 x 1.08 / (0.1552 − 0.08) = ₹ 50.27\nActual Market Price. | ₹ 74.00 | ₹ 55.00\n | Buy | Sell\n\n(ii) The value of shares of A Ltd. is higher than that of B Ltd. as its cost of equity capital is lower at 12.70% than B Ltd. which is 15.52%. The dividend of both companies is the same but the higher cost of Capital of B Ltd. reduces its intrinsic Value.\n\n(iii) The market price of A Ltd shares ₹ 74 is lower than its intrinsic value of ₹ 80.43 per share hence it is likely to increase in future & shares may be bought in market. The market price of shares of B Ltd. Is ₹ 55/- and its intrinsic value is ₹ 50.27. the share price is likely to fall in future hence shares may be sold in market.",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer uses g = 0.08 in denominator and shows B Ltd. market price as ₹55 although the question states ₹56 (printed discrepancy in the answer; kept verbatim)."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "From the following details, **Analyze** the total value of human resources for employee groups – skilled and unskilled as per Lev & Schwartz model\n\nParticulars | Skilled | Unskilled\n---|---|---\nAnnual average earning of an employee till retirement | ₹1,00,000 | ₹60,000\nAge of retirement | 65 years | 62 years\nDiscount Rate | 20% | 20%\nNo. of employees in the group | 25 | 20\nAverage Age | 62 years | 60 years\n\n**It may be assumed** that employees will leave the organisation only on retirement.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Valuation of Human Resources :\nValue of Skilled employees :\n100,000 / (1+ 0.20)^(65-62) + 100,000 / (1+ 0.20)^(65-63) + 100,000 / (1+ 0.20)^(65-64)\n= 57,870.37 + 69,444.44 + 83,333.33 = ₹ 2,10,648.14\nTotal value of this group = ₹ 2,10,648.14 × 25 = ₹ 52,66,203.50\n\nValue of Unskilled employees:\n60,000 / (1+ 0.20)^(62-60) + 60,000 / (1+ 0.20)^(62-61)\n= 60,000 / (1.20)² + 60,000 / (1.20)¹\n= 41,666.67 + 50,000 = ₹ 91,666.67\nTotal value of this group = ₹ 91,666.67 × 20 = ₹ 18,33,333\nTotal value of human resources of both the groups = ₹ 52,66,203.50 + ₹ 18,33,333 = ₹ 70,99,536.50\n\nNote :\n(1.2)³ = 1.2 × 1.2 × 1.2 = 1.728\n(1.2)² = 1.2 × 1.2 = 1.440\n(1.2)¹ = 1.200",
+       "confidence": "medium",
+       "review": [
+        "Exponent notation in suggested answer was flattened in extraction; re-typed with ^(…) based on the visible exponents."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The summarized financial extracts and related information of M/s X Ltd. for the years ended 31st March 2025 and 2026 are presented below:\n\nFinancial Extracts & Additional Data (₹ in lakh)\n\nParticulars | 2025 | 2026\n---|---|---\n**Profit & Loss Extracts:** | |\nTurnover | 1,304 | 1,520\nPre-tax Profit | 268 | 336\nLess: Taxation | (92) | (116)\n**Profit after Tax (PAT)** | 176 | 220\nLess: Dividends | (60) | (72)\nRetained Earnings | 116 | 148\n**Balance Sheet Extracts:** | |\nFixed Assets | 480 | 624\nNet Current Assets | 520 | 640\n**Total Capital Employed** | 1,000 | 1,264\n*Financed by:* | |\nEquity Shareholders' Funds | 780 | 944\nMedium & Long-term Debt | 220 | 320\n**Cost of Capital & Other Data:** | |\nPre-tax Cost of Debt | 9% | 10%\nCost of Equity | 15% | 17%\nInterest Expense | 16 | 24\n\nNote: The applicable corporate tax rate for both years is 35%.\n\n*Requirements:*\n(i) **Compute** the Economic Value Added (EVA) for both years.\n(ii) **Examine** whether the company has created shareholder value despite the increase in turnover and profits, with reasons.",
+       "options": [],
+       "correct": null,
+       "answer_md": "1. Statement Showing Computation of Economic Value Added (EVA) (₹ In lakh)\n\nParticulars | Ref. | 2025 | 2026\n---|---|---|---\nNet Operating Profit After Tax (NOPAT) | WN-1 | 184.60 | 234.00\nTotal Capital Employed | WN-2 | 1,000.00 | 1,264.00\nWeighted Average Cost of Capital (WACC) | WN-3 | 12.98 % | 14.342 %\nLess: Capital Charge (Capital Employed × WACC) | WN-3 | (129.87) | (181.28)\nEconomic Value Added (EVA) | | 54.73 | 52.72\n\nWorking Notes\n1. Calculation of Net Operating Profit After Tax (NOPAT)\n\nParticulars | 2025 (₹ lakh) | 2026 (₹ lakh)\n---|---|---\nPre-tax Profit (given) | 268.00 | 336.00\nAdd: Interest Expense | 16.00 | 24.00\nEBIT (Operating Profit) | 284.00 | 360.00\nLess : Taxes @ 35% | (99.40) | (126.00)\nNOPAT (EBIT × 65%) | 184.60 | 234.00\n\n2. Calculation of Total Capital Employed\n\nParticulars | 2025 (₹ lakh) | 2026 (₹ lakh)\n---|---|---\nEquity Shareholders' Funds | 780.00 | 944.00\nMedium & Long-term Debt | 220.00 | 320.00\nTotal Capital Employed | 1,000.00 | 1,264.00\n\n3. Calculation of WACC and Capital Charge\nTo ensure absolute mathematical precision (avoiding decimal rounding errors), the capital charge is computed by applying specific costs directly to the respective capital components.\n\nParticulars | 2025 | 2026\n---|---|---\nCost of Equity (Ke) | 15.00% | 17.00%\nCost of Debt (Kd) post-tax [Pre-tax × (1 - 0.35)] | 9% × 0.65 = 5.85% | 10% × 0.65 = 6.50%\nCapital Charge on Equity (Equity × Ke) | 780 × 15% = 117.00 | 944 × 17% = 160.48\nCapital Charge on Debt (Debt × Kd) | 220 × 5.85% = 12.87 | 320 × 6.50% = 20.80\nTotal Capital Charge (₹ lakh) | 129.87 | 181.28\nEffective WACC (Total Charge ÷ Capital Employed) | 12.987% | 14.342%\n\nAnalytical Conclusion :\nHas the company created shareholder value ?\n\nYes, the company has created shareholder value in both years, as evidenced by a positive Economic Value Added (EVA) in both 2025 (₹ 54.73 lakh) and 2026 (₹ 52.72 lakh).\n\nHowever, despite the aggressive growth in Turnover (up 16.56 %) and Profit After Tax (up 25 %), the rate of value creation has declined.\n\nPrimary Reasons for the decline in EVA :\n1. Surge in Cost of Capital :\nThe WACC increased significantly from 12.987 % to 14.342 %, driven by a higher cost of equity (15 % to 17 %) and higher borrowing costs (9 % to 10%).\n2. Capital Efficiency Stagnation :\nThe Return on Operating Capital (ROOC = NOPAT / Capital Employed) remained virtually flat (18.46 % in 2025 vs. 18.51 % in 2026).\n3. Spread Compression :\nBecause WACC rose faster than ROOC, the economic spread (ROOC - WACC) compressed from 5.47 % to 4.17 %. Consequently, the incremental operating profits were insufficient to cover the higher capital charge on the expanded capital base.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Yasmin has been **assigned to evaluate** the acquisition price of HBR Limited. The information about HBR Limited is given below:\n\nParticulars | Value\n---|---\nPrice per share (₹) | 11\nShares (₹ Million) | 50\nDebt (₹ Million) | 500\nRevenue LTM (₹ Million) | 700\nEBITDA (₹ Million) | 125\nEPS (₹) | 0.9\n\nYasmin has assessed some recent comparable transactions.\n\nAcquirer | Target | Equity (₹ Million) | EV (₹ Million) | EV / LTM Sales | EV / LTM EBITDA | Equity / LTMPE\n---|---|---|---|---|---|---\nA | P | 200 | 500 | 1.0 | 9.0 | 17.0\nB | Q | 125 | 250 | 1.7 | 12.0 | 15.0\nC | R | 700 | 100 | 2.2 | 14.5 | 20.0\nD | S | 1200 | 1000 | 0.9 | 8.5 | 14.0\nE | T | 200 | 400 | 2.5 | 11.0 | 22.0",
+       "options": [],
+       "correct": null,
+       "answer_md": "Calculating of Average Multiples.\n\nAcquirer | Target | EV / LTM Sales | EV / LTM EBITDA | Equity / LTM PE\n---|---|---|---|---\nA | P | 1.0 | 9.0 | 17.0\nB | Q | 1.7 | 12.0 | 15.0\nC | R | 2.2 | 14.5 | 20.0\nD | S | 0.9 | 8.5 | 14.0\nE | T | 2.5 | 11.0 | 22.0\n | Average | 1.7 | 11.0 | 17.6\n\nParticulars | EBITDA Multiple (EBITDA) | Sales Multiple (Revenue) | Earnings Multiple (EPS)\n---|---|---|---\nReported Value | 125.0 | 700.0 | 0.9\nValue Multiplier | 11.0 | 1.7 | 17.6\nEnterprise Value | 1,375.0 | 1,162.0 |\nLess: Debt | 500.0 | 500.0 |\nEquity Value | 875.0 | 662.0 |\nNo. of Shares | 50 | 50 |\nValue per Share | 17.5 | 13.2 | 15.8\nCurrent Price per share | 11.00 | 11.00 | 11.00\n*Premium over Current Price | 59% | 20% | 44%",
+       "confidence": "medium",
+       "review": [
+        "Question has no explicit 'Required' line (only the instruction to evaluate the acquisition price); 7 marks printed after the comparable-transactions table.",
+        "Comparable-transactions table row R/Q numbers (e.g. Equity 700 vs EV 100) read as printed; verify against image.",
+        "Stem unit labels 'Shares (₹ Million)' kept as printed (shares are in million)."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Horizon Enterprises Ltd. is studying the possible acquisition of Vertex Solutions Ltd. by way of a merger. The following data are available in respect of both the companies:\n\nParticulars | Horizon Enterprises Ltd. | Vertex Solutions Ltd.\n---|---|---\nEarnings after tax (₹) | 1,20,00,000 | 36,00,000\nNumber of equity shares | 15,00,000 | 3,00,000\nMarket value per share (₹) | 240 | 180\n\n(i) If the merger goes through by an exchange of equity and the exchange ratio is based on the current market price, **what is** the new earnings per share (EPS) for Horizon Enterprises Ltd.?\n(ii) The Board of Vertex Solutions Ltd. wants to be absolutely sure that the earnings available to its shareholders will not be diminished by the merger. **What should be** the exchange ratio in that case?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Working Note : Computation of Pre-Merger EPS\nFormula : EPS = Earnings After Tax (EAT) ÷ Number of equity shares\n\nParticulars | Horizon Enterprises (Acquirer) | Vertex Solutions (Target)\n---|---|---\nEarnings After Tax (₹) | 1,20,00,000 | 36,00,000\nNumber of Equity Shares | 15,00,000 | 3,00,000\nPre-merger EPS (₹) | 8.00 | 12.00\nMarket Value per Share (MPS) (₹) | 240.00 | 180.00\n\n(i) Post-merger EPS if the exchange ratio is based on current market price\nCalculation of Exchange Ratio (ER)\n• Exchange Ratio = MPS of Target Company ÷ MPS of Acquiring Company\n• Exchange Ratio = ₹ 180 ÷ ₹ 240 = 0.75 : 1\n• (Horizon Enterprises Ltd. will issue 0.75 shares for every 1 share of Vertex Solutions Ltd.)\n\nComputation of Post-Merger EPS\n\nParticulars | Value\n---|---\nCombined Earnings (₹ 1,20,00,000 + ₹ 36,00,000) (₹) | 1,56,00,000\nHorizon's existing shares | 15,00,000\nNew shares issued to Vertex (3,00,000 × 0.75) | 2,25,000\nTotal Post-Merger Shares | 17,25,000\nPost-Merger EPS (₹ 1,56,00,000 ÷ 17,25,000) (₹) | 9.04\n\n(ii) Exchange ratio to ensure no earnings dilution for Vertex Solutions Ltd.\nFor Vertex Solutions Ltd.'s shareholders to suffer absolutely no dilution in their earnings, their equivalent post-merger EPS must be strictly equal to their pre-merger EPS of ₹ 12.00.\n\nMethod 1 : EPS Ratio Method\nTo maintain identical earnings per share for the target company, the maximum exchange ratio is derived using the respective pre-merger Earnings Per Share of both companies.\n• Exchange Ratio = EPS of Target Company ÷ EPS of Acquiring Company\n• Exchange Ratio = ₹ 12.00 ÷ ₹ 8.00 = 1.50 : 1\n\nAlternative :\nMethod 2 :\n• Let the required Exchange Ratio be 'ER'.\n• Target's Equivalent EPS = Post-Merger EPS × ER\n• Target's Equivalent EPS = [Combined EAT ÷ (Horizon's Shares + New Shares)] × ER\n• 12.00 = [1,56,00,000 ÷ (15,00,000 + 3,00,000 × ER)] × ER\n• 12.00 × (15,00,000 + 3,00,000 ER) = 1,56,00,000 ER\n• 1,80,00,000 + 36,00,000 ER = 1,56,00,000 ER\n• 1,56,00,000 ER - 36,00,000 ER = 1,80,00,000\n• 1,20,00,000 ER = 1,80,00,000\n• ER = 1,80,00,000 ÷ 1,20,00,000 = 1.50\n• Exchange Ratio = 1.50 : 1\n\nThe Post Merger EPS will be 15600000 ÷ (1500000 + 300000 x 1.5)\n(15600000 ÷ 1950000) = ₹ 8.00.\n\nThe earnings of Vertex Solutions shareholder Post Merger will be (450,000 shares × ₹ 8.00) i.e. ₹ 36,00,000 which will be maintained & not diminished by merger.\n\nConclusion :\nHorizon Enterprises Ltd. must offer an exchange ratio of 1.50 shares for every 1 share of Vertex Solutions Ltd. to ensure that the target's shareholders face zero dilution in their available earnings.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. Ramesh runs Shamala Appliances, a mid-sized home appliance manufacturing company in Pune. Over the last three financial years, the company has faced growing competition, raw material cost fluctuations, and pressure on margins. Mr. Ramesh is concerned about declining profitability and wants a comprehensive financial performance analysis.\n\nHere's Shamala Appliances summary financial data (in ₹ lakhs):\n\nIncome Statement Highlights:\n\nparticulars | 2022 | 2023 | 2024\n---|---|---|---\nRevenue | 12,000 | 13,500 | 14,400\nCOGS | 7800 | 9000 | 10,200\nOperating Expenses | 2400 | 2700 | 3000\nEBIT | 1800 | 1800 | 1200\nInterest | 200 | 250 | 300\n\n**Required:**\n(i) **Perform** a year-over-year trend analysis of key financial metrics (Revenue growth, EBIT margin, Net Profit margin, etc.).\n(ii) If Mr. Ramesh is considering investing ₹1500 lakhs in automation to improve margins by 4% from 2025 onward, **assess** the financial viability and strategic justification for the investment (assume a 5-year benefit period and 12% cost of capital). **Ignore depreciation** and taxation. Given PV factor @12% for 5 years is 3.605.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Year-over-Year Trend Analysis:\n\n(₹ in lakhs) | 2022 | 2023 | 2024 | YOY Change (22-23) (%) | YOY Change (23-24) (%)\n---|---|---|---|---|---\nRevenue | 12000 | 13500 | 14400 | 12.5 | 6.67\nEBIT | 1800 | 1800 | 1200 | 0 | -33.33\nNet Profit | 1600 | 1550 | 900 | -3.13 | -41.94\nGross Profit | 4200 | 4500 | 4200 | 7.14 | -6.67\nOperating Expenses | 2400 | 2700 | 3000 | 12.5 | 11.11\n\nKey Observations:\n• Revenue is growing but growth rate is slowing down.\n• EBIT remains flat from 2022 to Year 2023 but drops sharply in 2024 (-33%).\n• Net profit declines, especially in 2024, reflecting margin pressures.\n• Operating expenses are increasing consistently.\n• Gross profit increased in 2023 but decreased in 2024 indicating margin pressure from rising COGS.\n\n(ii) Financial Viability of ₹ 1500 lakhs Automation Investment:\nAssuming revenue growth continues at 6.67% from 2024 to 2025, revenue in 2025 = 14400 X 1.0667 = ₹ 15360 lakhs\nCurrent net profit margin = 6.25 % (in 2024) (900 / 14400)\nIf improved by 4%, the new margin is 10.25%.\nNow net profit for 2025 = 10.25 % X ₹15360 = ₹ 1574.4 lakhs\nOld Net Profit for 2025 = 6.25 % X ₹15360 = ₹ 960 lakhs\nIncremental profit due to automation = ₹ 1574.4 - ₹ 960 = ₹ 614.40 lakhs.\nNPV of the investment = ₹ 614.40 X 3.605 - ₹ 1500 = ₹ 714.91 lakhs.\n\nDecision :\nSince NPV is positive, the automation project is financially viable and should be accepted.\n\nAlternative Answer :\n(ii) Financial Viability of ₹ 1500 Lakhs Automation Investment :\nSince no future revenue forecast has been provided in the question, the latest available revenue (2024) is considered for evaluating the benefit of automation.\nAutomation is expected to improve profit margin by 4 %\nAnnual Benefit = ₹ 14400 x 4 % = ₹ 576 Lakh\nPV Factor (12 %, 5 years) = 3.605\nPV = ₹ 576 x 3.605 = ₹ 2076.48 Lakh\nNet Present Value (NPV)\nNPV = ₹ 2076.48 – ₹ 1500 = ₹ 576.48 Lakh\n\nDecision :\nSince NPV is positive, the automation project is financially viable and should be accepted.",
+       "confidence": "medium",
+       "review": [
+        "Stem table: COGS 2024 printed '10,200' and others without comma separators (as printed); EBIT row read as printed (1800, 1800, 1200).",
+        "Suggested answer treats Gross Profit 4200/4500/4200 and Net Profit 1600/1550/900 (derived, not in stem); the second ('alternative') answer uses revenue of 2024."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "RIL is considering a merger with SIL. The data below are in the hands of both the Board of Directors. The issue at hand is how many shares of RIL should be exchanged for SIL. Both boards are considering three possibilities: 20,000, 25,000 and 30,000 shares. **You are required to Design** a table demonstrating the potential impact of each scheme on each set of shareholders and **advise** as to which option would be fair to shareholders of both the companies.\n\n | RIL | SIL | Post-merger RIL\n---|---|---|---\nCurrent Earnings (₹) | 2,00,000 | 1,00,000 | 3,50,000\nShares Outstanding | 50,000 | 10,000 | ?\nEPS (₹) | 4 | 2 | ?\nPrice per share (₹) | 40 | 100 | ?\nP/E Ratio | 10 | 10 | 10\nValue of Firm | 20,00,000 | 10,00,000 | 35,00,000\nAnnual growth rate in earnings in foreseeable future | NIL | NIL | NIL",
+       "options": [],
+       "correct": null,
+       "answer_md": "The current market value of shares of RIL is ₹20,00,000 & SIL is ₹10,00,000\n\nScheme I : Issue of 20,000 shares of RIL\n\nParticulars | RIL | SIL | Total\n---|---|---|---\nNo. of shares | 50,000 | 20,000 | 70,000\nEPS | | | 5 (3,50,000 /70,000)\nMarket price (₹) | | | 50\nMarket value (₹) | 25,00,000 | 10,00,000 | 35,00,000\nGain / (Loss) (₹) | 5,00,000 | Nil | 5,00,000\n\nInference : Entire gain accrues to RIL shareholders.\n\nScheme II : Issue of 25,000 shares of RIL\n\nParticulars | RIL | SIL | Total\n---|---|---|---\nNo. of shares | 50,000 | 25,000 | 75,000\nEPS | | | 4.6666 (3,50,000 / 75,000)\nMarket price (₹) | | | 46.667\nMarket value (₹) | 23,33,333 | 11,66,667 | 35,00,000\nGain / (Loss) (₹) | 3,33,333 | 1,66,667 | 5,00,000\n\nInference: Both RIL and SIL shareholders benefit.\n\nScheme III : Issue of 30,000 shares of RIL\n\nParticulars | RIL | SIL | Total\n---|---|---|---\nNo. of shares | 50,000 | 30,000 | 80,000\nEPS | | | 4.375 (3,50,000 / 80,000)\nMarket price (₹) | | | 43.75\nMarket value (₹) | 21,87,500 | 13,12,500 | 35,00,000\nGain / (Loss) (₹) | 1,87,500 | 3,12,500 | 5,00,000\n\nInference : SIL shareholders gain at the expense of RIL shareholders.\n\nConclusion:\nSince both set of shareholders gain, issue of 25,000 shares is recommended as that will be fair to shareholder of both companies & will be most acceptable.",
+       "confidence": "medium",
+       "review": [
+        "Stem: SIL 'Shares Outstanding 10,000' and 'Price per share 100' as printed; the table in the answer uses 20,000-30,000 new RIL shares issued to SIL (numbers shown as printed)."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

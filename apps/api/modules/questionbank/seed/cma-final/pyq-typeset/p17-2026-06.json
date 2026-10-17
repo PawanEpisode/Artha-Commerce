@@ -1,0 +1,14 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p17-2026-06",
+ "items": {
+  "4(a)": {
+   "answer_md": "**COST SHEET**\n\n| Particulars | Calculation | ₹ Lakh p.m. |\n|---|---|---:|\n| Material cost | | |\n| Coal | $450\\text{ mt} \\times \\text{₹ }26{,}000\\text{ per month}$ | 117.00 |\n| Oil | $10\\text{ mt} \\times \\text{₹ }1{,}35{,}000\\text{ per month}$ | 13.50 |\n| Water | $9\\text{ lakh ltr} \\times \\text{₹ }2.75\\text{ /ltr}$ | 24.75 |\n| Total Material Cost | | 155.25 |\n| Wages for Generator Plant | $(120 \\times \\text{₹ }34{,}000) + (180 \\times \\text{₹ }24{,}000)$ | 84.00 |\n| Wages for Boiler plant | $(90 \\times \\text{₹ }29{,}000) + (140 \\times \\text{₹ }22{,}000)$ | 56.90 |\n| Depreciation - Generating Plant | $(150\\text{ lakh} \\times 0.10) / 12$ | 1.25 |\n| Depreciation- boiler plant | $(80-8) / 12 = \\text{₹ }6\\text{ lakh} / 12$ | 0.50 |\n| Repair & Maintenance of generating plant & boiler | | 8.00 |\n| Administrative Exp | | 25.00 |\n| Total Cost | | 330.90 |\n| Less: Sale of Ash | | 3.00 |\n| Net Cost | | 327.90 |\n\n**Units Flow:**\n\na) Units generated = 160 lakh\n\nb) Auxiliary consumption = $160\\times 5\\%=8$ lakh\n\nc) Units supplied to factory = $160-8=152$ lakh\n\nCost Per Unit Generated = $\\text{₹ }327.90 /152\\text{ lakh} = \\text{₹ }2.157$",
+   "confidence": "high",
+   "review": [
+    "Table rebuilt from the print; the Calculation column typeset as inline math.",
+    "Kept as printed: 'mt' and 'per month' in the coal/oil calculations, 'Cost Per Unit Generated' dividing by 152 lakh supplied units (units supplied, not generated), figure 2.157."
+   ]
+  }
+ }
+}

@@ -1,0 +1,497 @@
+{
+ "schema": "artha.qbreview.v1",
+ "paper": "p19",
+ "items": {
+  "workbook:cma-final:p19:ch1:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem and working note/tax lines with page 14; all lines, figures and order match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch1:q15": {
+   "verdict": "approve",
+   "reason": "Compared stem, answer and statement table with pp. 29-30; table cells match. Moved the solution out of stem_md into explanation_md at the print split.",
+   "fixes": [
+    "Split stem/solution: \"Answer (1):\" onward moved from stem_md to explanation_md"
+   ],
+   "printed_issues": [],
+   "stem_md": "XYZ Pvt. Ltd., a registered supplier under GST, is engaged in the supply of goods and services. The company sells Printers, Printer Cartridges, and also provides Annual Maintenance Contracts (AMC) for printers. It offers the following two types of supply packages:\n\n1. Package A (Printer Bundle Offer)\n\n• A laser printer (Taxable at 18% GST)\n\n• A black ink cartridge (Taxable at 12% GST)\n\n• Total price of the package: ₹15,000\n\n2. Package B (AMC for Printers)\n\n• Annual Maintenance Contract (AMC) for a printer, which includes:\n\n• Routine maintenance services (Taxable at 18% GST)\n\n• Free replacement of minor spare parts (Taxable at 12% GST).\n\n(i) Total price of the AMC package: ₹10,000.\n\nNote: supply of AMC and spare parts are not naturally bundled.\n\nDetermine the Following:\n\n1. Identify whether each package constitutes Composite or Mixed Supply.\n\n2. Compute the applicable GST rate and total GST liability for both packages.",
+   "explanation_md": "Answer (1):\n\nPackage A (Printer Bundle Offer)\n\n• The printer and cartridge are naturally bundled and supplied together in the ordinary course of business.\n\n• The printer is the principal supply, as it is the main item that drives the demand.\n\nConclusion: Composite Supply (Principal Supply = Printer).\n\nPackage B (AMC for Printers)\n\n• The AMC includes both services and goods (spare parts) but they are not naturally bundled.\n\nConclusion: Mixed Supply (Highest tax rate applies).\n\n(2) Statement showing total GST liability for both packages:\n\n| Package | Type of Supply | Tax Rate Applied | GST Amount (₹) | Total Price (Including GST) (₹) |\n|---|---|---|---|---|\n| Package A (Printer + Cartridge) | Composite Supply | 18% (Printer is Principal Supply) | ₹2,700 | ₹17,700 |\n| Package B (AMC for Printer - Service + Spare Parts) | Mixed Supply | 18% (Highest Rate) | ₹1,800 | ₹11,800 |"
+  },
+  "workbook:cma-final:p19:ch1:q16": {
+   "verdict": "approve",
+   "reason": "Compared with pp. 30-32; independent cases (i) and (ii) belong to one Illustration; question (ii) was sitting in the explanation and has been moved to the stem, answers kept in printed order.",
+   "fixes": [
+    "Moved question (ii) text (cheque bounce charge) from explanation_md to stem_md"
+   ],
+   "printed_issues": [],
+   "stem_md": "Answer the following independent cases as per the GST Law:\n\n(i) A customer books a hotel room for ₹8,000 but cancels the booking before the stay. The hotel charges ₹2,000 as a cancellation fee. Should the hotel charge GST on the cancellation fee? Applicable rate of GST for hotel room is @12%. Find the GST if any?\n\n(ii) XYZ Pvt. Ltd. has a contractual clause that imposes a cheque bounce charge of ₹2,500 on a customer if the cheque provided is dishonored. The management of XYZ Pvt. Ltd. is reviewing whether this cheque bounce charge should attract GST.\n\nBased on the provisions under GST and the guidance provided in the CBIC Circular on refraining from an act or tolerating an act, determine whether the cheque bounce charge of ₹2,500 is subject to GST. Provide a detailed explanation supporting your answer.",
+   "explanation_md": "Answer:\n\nAccording to CBIC Circular, cancellation charges are subject to GST because:\n\n• The hotel is providing a facility to book a room, and cancellation fees are a part of the service contract.\n\n• Cancellation fees are considered as a taxable supply under “Accommodation Services”.\n\nConclusion: GST at the same rate as hotel services (12%) is applicable on cancellation charges.\n\n$\\text{GST Payable} = \\text{₹}2{,}000 \\times 12\\% = \\text{₹}240$.\n\nAnswer: Nature of Cheque Bounce Charges:\n\nCheque bounce charges are imposed as a penalty for non-performance of a contractual obligation (i.e., failure to honor the cheque).\n\nThese charges are not levied as a consideration for a supply of goods or services; instead, they act as a compensatory penalty.\n\n• The relevant CBIC Circular clarifies that charges which are imposed as a penalty for failing to perform an act (it means not for tolerating an act) and do not form part of the consideration for a supply are not taxable under GST.\n\nSince the cheque bounce charge of ₹2,500 is a penalty imposed for non-performance (i.e., the dishonor of the cheque) and does not represent consideration for a supply, it is not subject to GST."
+  },
+  "workbook:cma-final:p19:ch2:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem table and full solution incl. both tables with pp. 39-41; all figures and rows match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says 2,40,000 printed tickets sold but solution uses 3,00,000 tickets; kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch2:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem tables and solution tables (room tariff, GST computation, conclusion) with pp. 41-42; cell-by-cell match.",
+   "fixes": [],
+   "printed_issues": [
+    "Total GST 2,760 printed although 120+216+1,584+840 = 2,760 (consistent); no change"
+   ]
+  },
+  "workbook:cma-final:p19:ch4:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem table and solution table, working note and days block with pp. 79-81; the print has a misaligned merged Payment Date header and the transcriber realigned it logically; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Table shows interest 810 but working note totals 812",
+    "Arrow glyph printed as \"è\"",
+    "Misaligned Payment Date header in stem table"
+   ]
+  },
+  "workbook:cma-final:p19:ch4:q15": {
+   "verdict": "approve",
+   "reason": "Compared stem, event tables and full solution (pp. 83-85) with print; figures match. Only a rendering fix: consecutive bullet lines were separated by blank lines so they do not merge.",
+   "fixes": [
+    "Separated bullet lines with blank lines"
+   ],
+   "printed_issues": [
+    "Print says \"last date to issue invoice April 12\" and similar internal inconsistencies; kept"
+   ],
+   "explanation_md": "Answer:\n\n**Step 1:** Time of supply for goods is to be determined under Section 12(2)(a) (i.e., based on invoice or due date of invoice, whichever is earlier).\n\n• This means that for suppliers who are not under composition scheme, advance received does not trigger tax liability before supply.\n\nTime of supply = April 5, 2025\n\n(Date of invoice April 5, 2025 or last date to issue invoice April 12, 2025 whichever is earlier)\n\n**Step 2:** Apply Rules to Each Event\n\n| Event | Date | Tax Rate Decision |\n|---|---|---|\n| Advance Payment of ₹50,000 | March 25, 2025 (Before Rate Change) | Under Notification No. 66/2017, time of supply for goods is based on invoice. No tax liability on advance. |\n| Invoice Issued for ₹1,00,000 | April 5, 2025 (After Rate Change) | Since invoice is after rate change, new rate (28%) applies to the entire amount. |\n| Balance Payment of ₹50,000 | April 10, 2025 (After Rate Change) | Since invoice was already issued, time of supply remains April 5, 2025. GST at 28% applies. |\n| Goods Supplied | April 12, 2025 | Last date to issue invoice |\n\n**Step 3:** Compute GST Liability\n\n| Particulars | Value (₹) | Tax Rate | GST (₹) |\n|---|---|---|---|\n| Full Invoice Amount | 1,00,000 | 28% (New Rate) | 28,000 |\n\nTotal IGST Payable by Sharma Traders = ₹28,000.\n\n**Advance Payment Before Rate Change Does Not Determine Tax Rate**\n\n• Due to **Notification No. 66/2017**, advance received before the change **is not liable for GST** at that point.\n\n• GST is applicable **only at the time of issuance of the invoice**.\n\n**Note**: Section 12(2)(a) of the CGST Act determines the time of supply of goods as the earlier of the date of issue of the invoice or the last date on which the invoice is required to be issued. Section 14 addresses the determination of the time of supply in cases where there is a change in the effective rate of tax. Therefore, Notification No. 66/2017-Central Tax is applicable to both Section 12(2) and Section 14 of the CGST Act, 2017.\n\n**Notification No. 66/2017-Central Tax, not applicable to Reverse Charge u/s 12(3):**\n\nNotification No. 66/2017-Central Tax, dated November 15, 2017, specifically addresses the time of supply concerning advances received for the supply of goods under the forward charge mechanism. This notification exempts all taxpayers from paying tax on advances received in such cases, meaning GST is payable only upon the issuance of the invoice or the last date on which the invoice is required to be issued, whichever is earlier.\n\nSection 12(3) of the CGST Act, 2017, pertains to the time of supply for goods under the reverse charge mechanism (RCM). Under RCM, the recipient of goods is liable to pay GST, and the time of supply is determined as the earliest of:\n\n• The date of receipt of goods;\n\n• The date of payment; or\n\n• The day immediately following 30 days from the date of issue of the invoice or any other document by the supplier.\n\nIt’s important to note that Notification No. 66/2017-Central Tax does not extend to transactions under the reverse charge mechanism. Therefore, the provisions of Section 12(3) remain unaffected by this notification, and the recipient must determine the time of supply based on the earliest of the events mentioned above."
+  },
+  "workbook:cma-final:p19:ch6:q1": {
+   "verdict": "approve",
+   "reason": "Compared with pp. 106-107; stem and solution complete and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says Rs 45 lakh but solution works on Rs 60,00,000"
+   ]
+  },
+  "workbook:cma-final:p19:ch6:q9": {
+   "verdict": "approve",
+   "reason": "Compared with pp. 114-115. Item asks for GST liability on job work and a reasoned explanation, solution gives two amounts (1,26,000 and 7,200); the auto key 7,200 is only the scrap line, so converted to long_form.",
+   "fixes": [
+    "numeric_key removed (several quantities asked)"
+   ],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p19:ch6:q10": {
+   "verdict": "approve",
+   "reason": "Compared with pp. 115-116. Question has two parts (value under Rule 27(a), and value if price unavailable) so a single numeric key is wrong; converted to long_form.",
+   "fixes": [
+    "numeric_key removed (two-part question)"
+   ],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p19:ch6:q14": {
+   "verdict": "approve",
+   "reason": "Compared stem tables and the full solution table (incl. repeated header row) cell by cell with pp. 120-121; figures match. Only separated three printed lines into paragraphs.",
+   "fixes": [
+    "Added blank lines between \"Additional Information & GST Rates:\", \"All amounts are exclusive of GST.\" and \"Applicable GST rates:\""
+   ],
+   "printed_issues": [
+    "Totals (CGST 3,83,300) and Pune advance not reconciled in print; missing spaces after full stops; kept"
+   ],
+   "stem_md": "Medisynth Pharma Ltd., a registered supplier of bulk drugs, is headquartered in Mumbai, Maharashtra. The company manufactures bulk drugs and supplies them in both domestic and international markets.\n\nBulk drugs are supplied within Mumbai and to the overseas market directly from the company’s warehouse located in South Mumbai.For supplies to other States in India, Medisynth Pharma Ltd. has appointed consignment agents in each such State.However, supplies to Pune (Maharashtra) and Surat (Gujarat) are made directly from the South Mumbai warehouse.The bulk drugs for consignment agents are also sent from the South Mumbai warehouse.\n\nAdditionally, Medisynth Pharma Ltd. provides drug development services to drug manufacturers across India, including testing of new drugs in its laboratory located in Mumbai.\n\n**Details of Transactions for February 20XX**\n\n| Particulars | Amount (₹) |\n|---|---|\n| Advance received for drug development services (to be provided to Genova Biotech Ltd., a drug manufacturer located in Mumbai) [Services provided in March 20XX, invoice issued on 31.03.20XX] | ₹6,50,000 |\n| Advance received for bulk drugs (to be supplied to Biovista Pharmaceuticals, a wholesale dealer of drugs in Pune, Maharashtra) [Invoice issued at the time of delivery in April 20XX] | ₹7,20,000 |\n| Supply of bulk drugs to wholesale dealers in Mumbai | ₹72,00,000 |\n| Bulk drugs supplied to Helix Pharma Inc., USA under bond [Consideration received in convertible foreign exchange] | ₹1,10,00,000 |\n| Drug development services provided to Invotek Ltd., a drug manufacturer located in Mumbai | ₹7,20,000 |\n\nBulk drug consignments were sent to Sterling Pharma Pvt. Ltd., the agent of Medisynth Pharma Ltd. in Punjab and Quantum Medicos, the agent of Medisynth Pharma Ltd. in Gujarat. These agents supplied the drugs to medical stores in their respective states for ₹72,00,000 and ₹60,00,000\n\nBulk drugs were supplied to Mediwise Healthcare Pvt. Ltd., a wholesale dealer of bulk drugs in Pune, Maharashtra, for a consideration of ₹18,00,000. Medisynth Pharma Ltd. owns 60% of Mediwise Healthcare Pvt. Ltd. Open market value of the bulk drugs supplied = ₹36,00,000.Mediwise Healthcare Pvt. Ltd. is NOT eligible for full input tax credit (ITC).\n\nAdditional Information & GST Rates:\n\nAll amounts are exclusive of GST.\n\nApplicable GST rates:\n\n| Category | CGST | SGST | IGST |\n|---|---|---|---|\n| Bulk Drugs | 2.5% | 2.5% | 5% |\n| Drug Development Services | 9% | 9% | 18% |\n\nDetermine the GST liability (CGST & SGST or IGST, as applicable) of Medisynth Pharma Ltd. for the month of February, 20XX.Apply the correct tax treatment for related party transactions and advance payments. Consider the impact of the agents supplying bulk drugs in other states."
+  },
+  "workbook:cma-final:p19:ch6:q19": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution with the page image; both complete and exact. The stray word 'not' after 'Answer:' is the institute's print.",
+   "fixes": [
+    "Separated the stray 'not' line from the solution paragraph with a blank line as in the print (separate paragraphs)"
+   ],
+   "printed_issues": [
+    "Stray word 'not' printed after 'Answer:'"
+   ],
+   "explanation_md": "not\n\nThe value of taxable supply made by the principal shall be ₹6200 or where he exercises the option, the value shall be ₹6120 (i.e. 90% of 6800) per quintal."
+  },
+  "workbook:cma-final:p19:ch6:q25": {
+   "verdict": "approve",
+   "reason": "Stem and both rule-wise computations match the print figure for figure; Illustration 26 not leaked.",
+   "fixes": [],
+   "printed_issues": [
+    "'less than ₹1,00,000' used for gross amount ₹1,12,500 and value ₹1,125 as printed",
+    "Sale of 2,500 USD under 32(2)(a) printed as ₹1,850"
+   ]
+  },
+  "workbook:cma-final:p19:ch6:q31": {
+   "verdict": "approve",
+   "reason": "Stem and both tables (a) and (b) compared cell by cell with the print; all figures and remarks match.",
+   "fixes": [],
+   "printed_issues": [
+    "'14000 x128%' printed without grouping comma"
+   ]
+  },
+  "workbook:cma-final:p19:ch6:q35": {
+   "verdict": "approve",
+   "reason": "Stem and the one-row table match the print; Illustration 36 not leaked.",
+   "fixes": [
+    "Separated the two date lines into separate paragraphs as printed"
+   ],
+   "printed_issues": [],
+   "stem_md": "**Apex Global Imports Pvt. Ltd.**, a **registered importer of industrial machinery**, has provided the following details for a recent import: Assessable value of the equipment: **US\\$ 12,500**\n\nDate of Bill of Entry: **15 March 2025** (exchange rate notified by CBIC: US\\$ 1 = ₹78)\n\nDate of Entry Inwards: **25 March 2025** (exchange rate notified by CBIC: US\\$ 1 = ₹79)\n\nDetermine the **taxable value of the imported goods** under the Customs Act, 1962."
+  },
+  "workbook:cma-final:p19:ch6:q40": {
+   "verdict": "approve",
+   "reason": "Both stem tables and the solution table compared cell by cell with the print; all figures match and chapter 7 banner is not included.",
+   "fixes": [],
+   "printed_issues": [
+    "Total taxable value ₹23,22,50,000 does not equal the sum of rows (24,22,50,000)",
+    "'Asssume' typo in the stem"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q11": {
+   "verdict": "approve",
+   "reason": "Stem, data table, notes, ITC table and net GST payable table compared with the print cell by cell; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Requirement says 'month of November 20XX' while data and solution are December 20XX",
+    "Audit fee ₹0.60 lakh appears in the solution but not in the data",
+    "Opening CGST balance (18,000) etc. as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q14": {
+   "verdict": "hold",
+   "reason": "The printed Illustration 14 has no requirement line, and the print has no solution directly under it: the only 'Answer:' (ITC table and net GST liability) comes after Illustration 15's question and is printed as the joint answer for both illustrations (output tax uses Illustration 15's receipts). Needs a human to decide how to pair/merge Illustrations 14 and 15.",
+   "fixes": [],
+   "printed_issues": [
+    "No 'Required' line printed for Illustration 14",
+    "Answer printed only after Illustration 15 question"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q23": {
+   "verdict": "approve",
+   "reason": "Stem tables (including the M2 row across the page break) and all four solution tables match the print cell by cell.",
+   "fixes": [],
+   "printed_issues": [
+    "Requirement says 'month of October, 20XX' while data is November 20XX",
+    "'Zentra’.On' spacing"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q24": {
+   "verdict": "approve",
+   "reason": "All stem tables (turnover, stock, 9 sales bills, services, capital goods) and both solution tables compared with the print cell by cell; all figures and notes match.",
+   "fixes": [],
+   "printed_issues": [
+    "'between11th to 20thday' and '10thday' spacing",
+    "Air Conditioner note says 'Purchased after 02.11.20XX' although purchased 15.10.20XX"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q29": {
+   "verdict": "approve",
+   "reason": "Stem, stock table and solution table match the print; Illustration 28 table text and Illustration 30 are not included.",
+   "fixes": [],
+   "printed_issues": [
+    "Working note '1,000 units × ₹120' while value is ₹22,80,000 for 19,000 units",
+    "Lower-case 'on 23rd August'"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q37": {
+   "verdict": "approve",
+   "reason": "Stem and solution compared with pages 186-187; all text, figures and bullets are present in order. Printed check symbols are unreadable boxes in the PDF; kept the stored emoji.",
+   "fixes": [],
+   "printed_issues": [
+    "Check-mark glyphs render as boxes in the print"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q39": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution with pp.190-191 line by line; all present, no leakage.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch7:q40": {
+   "verdict": "approve",
+   "reason": "Compared stem and both solution tables cell by cell with pp.191-193; all figures match; Illustration 40 not included.",
+   "fixes": [],
+   "printed_issues": [
+    "\"30-11-205\" printed for 30-11-2025 in the Total ITC row",
+    "Import of Services row says time-barred ITC of ₹36,000 while GST amount column shows nil"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q46": {
+   "verdict": "approve",
+   "reason": "Compared stem table, input details and answer table with pp.202-204 cell by cell; column placement and totals match.",
+   "fixes": [],
+   "printed_issues": [
+    "Less: 50% line says \"availed in October\" while period is December 2024"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q47": {
+   "verdict": "approve",
+   "reason": "Compared stem and (A)/(B) workings with pp.204; all oddities kept as printed.",
+   "fixes": [],
+   "printed_issues": [
+    "\"Raj & Co .,\", \"₹100, 000\", unbalanced bracket in (5000-2,000)*18%*31/365)"
+   ]
+  },
+  "workbook:cma-final:p19:ch7:q48": {
+   "verdict": "approve",
+   "reason": "Compared stem working table and answer table cell by cell with the page image (p.205 zoomed); all 11 columns/4 rows and interest workings match.",
+   "fixes": [],
+   "printed_issues": [
+    "\"uitilization\" header spelling",
+    "stem says 2025 but payment dated 31st August 2024",
+    "backtick rupee glyph in \"Output tax liability\" header"
+   ]
+  },
+  "workbook:cma-final:p19:ch8:q9": {
+   "verdict": "approve",
+   "reason": "Compared stem and all three parts plus final table with pp.220-222; content matches. Only fix was paragraph breaks so bullet lines do not run together.",
+   "fixes": [
+    "inserted blank lines between bullet/list lines (stem GST Rates, solution) so they render as separate lines"
+   ],
+   "printed_issues": [
+    "\"supplier side ECO is himself is not the supplier\""
+   ],
+   "stem_md": "Sapphire Digital Services Pvt. Ltd. (SDSPL) is registered under GST in the State of Tamil Nadu as an Electronic Commerce Operator (ECO). It owns and operates a web portal through which various goods and services are supplied on behalf of multiple sellers/service providers to their ultimate customers.\n\nThe following supplies were undertaken through SDSPL in the month of May 2025:\n\n1. Sale of goods worth ₹ 1,77,000 (inclusive of GST) by M/s Orion Traders, registered under GST in Punjab, to M/s Beta Distributors, registered in Haryana. Additionally, goods worth ₹ 1,70,000 (taxable value) sold by M/s Orion Traders in November 2024 to M/s Beta Distributors were returned in May 2025.\n\n2. Passenger transport services were provided from 15.05.2025 to 25.05.2025 by Galaxy Transport Services Pvt. Ltd., registered under GST in Tamil Nadu, to M/s Zenith Enterprises, also registered in Tamil Nadu. The total value of services was ₹ 6,60,000, which includes ₹ 1,80,000 towards transportation services provided by omnibus.\n\n3. Mr. Rohan, residing in Delhi, booked a room for 2 nights and 3 days at Emerald Heritage Resort, located in Udaipur, Rajasthan, through Regal Stays Ltd. (RSL), an ECO registered under GST in Tamil Nadu. RSL is integrated with SDSPL, which has an agreement with Emerald Heritage Resort. The resort, registered under GST in Rajasthan, raised an invoice of ₹ 1,80,000 to Mr. Rohan and received ₹ 1,74,000 from SDSPL for the same.\n\nGST Rates:\n\n• CGST: 9%\n\n• SGST: 9%\n\n• IGST: 18%\n\nYou are required to compute the amount of TCS to be collected by SDSPL for May 2025.",
+   "explanation_md": "(i) Supply of Goods by M/s Orion Traders (Punjab to Haryana) through SDSPL\n\n• Nature of Supply:\n\nInter-State taxable supply of goods (Punjab to Haryana) made through an ECO.\n\n• TCS Applicability:\n\no Section 52 of CGST Act, TCS @0.5% IGST applies on net taxable supplies (i.e., outward supplies – returns).\n\no Net Value:\n\n▪ $\\text{Outward supply in May 2025} = \\text{₹ }1{,}77{,}000 \\times 100/118 = \\text{₹ }1{,}50{,}000$\n\n▪ Less: Sales return = ₹ 1,70,000\n\n▪ $\\text{Net taxable value} = -\\text{₹ }20{,}000$ (Negative value)\n\n• TCS Collection:\n\no Since net value is negative, no TCS applicable.\n\n• TCS = Nil\n\n(ii) Passenger Transport Services by Galaxy Transport Services Pvt. Ltd. (Tamil Nadu) to Zenith Enterprises (Tamil Nadu) through SDSPL\n\n• Nature of Supply:\n\no Intra-State supply of passenger transport services.\n\n• TCS Applicability:\n\no For omnibus services (₹ 1,80,000):\n\n▪ TCS applicable, since tax on omnibus services by a company is NOT paid by ECO under section 9(5).\n\no For other motor vehicle services (₹ 4,80,000):\n\n▪ ECO pays tax itself under section 9(5) → TCS not applicable.\n\n• TCS Collection for Omnibus:\n\no Value = ₹ 1,80,000\n\no TCS = CGST @0.25% + SGST @0.25% on ₹1,80,000\n\no CGST = ₹ 450, SGST = ₹ 450\n\n(iii) Hotel Accommodation Services by Emerald Heritage Resort (Rajasthan) through SDSPL\n\n• Nature of Supply:\n\no Intra-State taxable supply of accommodation services.\n\n• TCS Applicability:\n\no Section 52 of CGST Act → TCS = CGST @0.25% + SGST @0.25%.\n\n• TCS Collection:\n\no Value = ₹ 1,80,000\n\no TCS = CGST @0.25% and SGST 0.25% on ₹1,80,000\n\no CGST = ₹ 450, SGST = ₹ 450\n\nNote: supplier side ECO is himself is not the supplier and hence, TCS is applicable to supplier side ECO (i.e. SDSPL).\n\nComputation of TCS to be collected by SDSPL for May 2025\n\n| S.No. | Particulars | CGST (₹) | SGST (₹) | IGST (₹) |\n|---|---|---|---|---|\n| 1 | M/s Orion Traders (Goods supply) | Nil | Nil | Nil |\n| 2 | Galaxy Transport (Omnibus services) | 450 | 450 | Nil |\n| 3 | Emerald Heritage Resort (Hotel stay) | 450 | 450 | nil |\n| Total | | 900 | 900 | nil |"
+  },
+  "workbook:cma-final:p19:ch9:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem (i)-(v) and the statement table with pp.226; all figures match as printed.",
+   "fixes": [
+    "inserted blank lines between stem lines (i)-(v) so they render separately"
+   ],
+   "printed_issues": [
+    "Row 2 value 80,000 vs stem 8,00,000; refund 90,000 printed"
+   ],
+   "stem_md": "X Ltd., a unit in SEZ, received services from various service providers in relation to authorized operations in SEZ during the month April 2025. The following details are furnished for the month April 2025\n\n(i) Value of Taxable services used exclusively for authorised operations within SEZ: ₹5,00,000 (exemption from GST availed).\n\n(ii) Value of Taxable Services used by SEZ units and DTA units: ₹8,00,000. GST paid @18%.\n\n(iii) Value of Taxable Service used wholly for DTA units: ₹3,00,000. GST paid @18%.\n\n(iv) Export Turnover of SEZ Unit: ₹1,00,00,000\n\n(v) Turnover of DTA Unit: ₹60,00,000\n\nCompute the ITC and amount of refund if any?\n\nNote: All input services used by SEZ for its authorized operations only."
+  },
+  "workbook:cma-final:p19:ch10:q14": {
+   "verdict": "approve",
+   "reason": "Compared stem (A)/(B) and the whole solution including four tables with pp.264-266; complete and in order, split between stem and solution is correct.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch11:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem and the three-row solution table with p.268 (printed 260); matches.",
+   "fixes": [
+    "inserted blank lines between stem lines so they render separately"
+   ],
+   "printed_issues": [],
+   "stem_md": "Zentronix Technologies Pvt. Ltd. received a notice under Section 65(3) of the CGST Act, 2017 on 10th May 2025.\n\nDate on which documents were required to be submitted: 25th May 2025\n\nDate on which documents were actually made available to the Department: 4th June 2025\n\nDate of actual institution of audit at Zentronix Technologies Pvt. Ltd. premises: 18th June 2025\n\nFind the following:\n\n(a) What is the date of commencement of audit?\n\n(b) What is the date by which audit should be completed in normal course?\n\n(c) What is the date by which audit should be completed (including extended period)?"
+  },
+  "workbook:cma-final:p19:ch11:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem, legal provisions, all tables, totals and conclusion with pp.268-271 (printed 260-263); figures match and no banner leakage.",
+   "fixes": [
+    "inserted blank lines between bullet/list lines in stem and solution so they render separately"
+   ],
+   "printed_issues": [
+    "interest on ITC at 24% p.a. while stem says 18%"
+   ],
+   "stem_md": "M/s TechnoMotive Pvt. Ltd., registered in Tamil Nadu, engaged in manufacturing auto components, files its GST returns regularly. However, during the FY 2023-24, certain anomalies were noticed by the GST department, leading to the initiation of both audit under Section 65 and subsequently a special audit under Section 66.\n\nAudit under Section 65 (initiated on 1st July 2024):\n\n• Turnover reported in GSTR-3B: ₹12 crore.\n\n• Turnover as per audited financials: ₹13 crore.\n\n• Difference in turnover: ₹1 crore (unexplained by the taxpayer).\n\n• Applicable GST rate: 18%.\n\n• Taxpayer’s argument: Difference due to unaccounted export incentives, which are zero-rated.\n\n• Outcome: The department disregards this explanation and considers it taxable supply.\n\n• Audit concluded on: 31st August 2024.\n\nSpecial Audit under Section 66 (ordered on 15th September 2024):\n\nDue to complex records, the Commissioner orders a special audit to be conducted by a Cost Accountant nominated by the department. Key findings:\n\n1. Unaccounted Input Tax Credit (ITC):\n\na. ITC claimed: ₹1.5 crore.\n\nb. ITC eligible as per special audit: ₹1.2 crore.\n\nc. Excess ITC availed: ₹30 lakh.\n\n2. Non-reversal of ITC under Rule 42 (exempt supplies):\n\na. Exempt supplies: ₹2 crore.\n\nb. Common ITC attributable to exempt supplies: ₹8 lakh (as per Rule 42).\n\n3. Additional GST liability on turnover discrepancy (₹1 crore):\n\na. GST payable @18%: ₹18 lakh.\n\n4. Interest under Section 50(1) @18% p.a.:\n\na. For turnover discrepancy (from 21-04-2024 to 15-09-2024): 148 days.\n\nb. For excess ITC availed (from 21-04-2024 to 15-09-2024): 148 days.\n\nRequired:\n\n1. Explain the provisions of Section 65 and Section 66 of CGST Act, 2017.\n\n2. Compute total GST liability, including interest, arising from the audit and special audit.\n\n3. Discuss the eligibility of the Cost Accountant to conduct the special audit and time limits for submission.",
+   "explanation_md": "1. Legal Provisions:\n\nSection 65 – Audit by Tax Authorities:\n\n• The Commissioner or an authorized officer can conduct an audit of any registered person.\n\n• Prior notice of at least 15 working days must be given.\n\n• Audit must be completed within 3 months (extendable to 6 months).\n\n• Purpose: Verify correctness of turnover, ITC, tax paid, refunds, compliance with law.\n\nSection 66 – Special Audit:\n\n• Ordered by Commissioner during any stage of proceedings, if:\n\no Complexity of accounts or\n\no Revenue interest requires examination by a cost accountant or chartered accountant.\n\n• Conducted by a nominated CA/CMA (not engaged by taxpayer).\n\n• Audit report submission: Within 90 days (extendable to 180 days).\n\n2. Computation of GST Liability & Interest:\n\n(A) GST on Turnover Discrepancy:\n\n| Particulars | Amount (₹) |\n|---|---|\n| Turnover discrepancy | ₹1 crore |\n| GST rate | 18% |\n| GST liability on turnover difference | ₹18 lakh |\n\n(B) Reversal of Excess ITC:\n\n| Particulars | Amount (₹) |\n|---|---|\n| Excess ITC availed | ₹30 lakh |\n| ITC to be reversed for exempt supplies (Rule 42) | ₹8 lakh |\n| Total ITC reversal required | ₹38 lakh |\n\n(C) Interest Calculation @18% p.a.:\n\nOn GST liability (turnover discrepancy):\n\n| Particulars | Amount (₹) |\n|---|---|\n| Tax amount | ₹18 lakh |\n| Interest rate | 18% p.a. |\n| Interest period (148 days) | $\\frac{148}{365}$ |\n| Interest payable | ₹1,31,375 |\n\nOn Excess ITC (₹38 lakh):\n\n| Particulars | Amount (₹) |\n|---|---|\n| Reversal Amount | ₹38,00,000 |\n| Interest Rate | 24% p.a. |\n| Period (148 days) | $\\frac{148}{365}$ |\n| Interest Payable | ₹3,69,797 |\n| Total GST liability and interest: | Amount (₹) |\n|---|---|\n| GST on turnover discrepancy | ₹18,00,000 |\n| Total ITC reversal | ₹38,00,000 |\n| Interest on turnover discrepancy | ₹1,31,375 |\n| Interest on ITC reversal | ₹3,69,797 |\n| Total payable | ₹61,01,172 |\n\n3. Eligibility & Time Limits for Special Audit:\n\n• Special auditor must be a CA/CMA nominated by the Commissioner (cannot be the taxpayer’s auditor).\n\n• Audit report must be submitted within 90 days from appointment (extendable to 180 days with approval).\n\nConclusion:\n\n• Total liability for M/s TechnoMotive Pvt. Ltd.: ₹61,01,172 (including GST, ITC reversal, and interest).\n\n• Special audit facilitated detection of revenue leakage, ensuring compliance with Sections 65 and 66."
+  },
+  "workbook:cma-final:p19:ch12:q1": {
+   "verdict": "approve",
+   "reason": "Stem asks for a single quantity (interest payable); printed final answer is ₹21,644 which equals the key.",
+   "fixes": [
+    "inserted blank lines between stem/solution lines so they render separately"
+   ],
+   "printed_issues": [],
+   "stem_md": "M/s Vision Equipments Pvt. Ltd., registered in Delhi, supplies solar panels with uncertainty about the applicable GST rate:\n\n• Possible rates: 5% (under concessional notification) or 12% (general rate).\n\n• Turnover (April 2025): ₹30,00,000.\n\nProvisional Assessment Application:\n\n• Date of application (ASMT-01): 10th April 2025.\n\n• Provisional tax paid @ 5%: $\\text{₹ } 30{,}00{,}000 \\times 5 \\% = \\text{₹ } 1{,}50{,}000$\n\nFinal Assessment Outcome:\n\n• The Assistant Commissioner, after review, determines that 12% GST applies.\n\n• Final tax liability: $\\text{₹ } 30{,}00{,}000 \\times 12 \\% = \\text{₹ } 3{,}60{,}000$\n\n• Tax shortfall: $\\text{₹ } 3{,}60{,}000 - \\text{₹ } 1{,}50{,}000 = \\text{₹ } 2{,}10{,}000$\n\n• Date of final payment of ₹2,10,000: 15th December 2025\n\nFind the interest payable by M/s Vision Equipments Pvt. Ltd?",
+   "explanation_md": "Interest Computation (18% p.a.):\n\n• Original due date: 20th May 2025 (for April 2025 liability).\n\n• Date of final payment: 15th December 2025.\n\n• Delay period: 209 days (from 21st May 2025 to 15th December 2025).\n\n$$\\text{Interest } = \\text{₹ } 2{,}10{,}000 \\times 18 \\% \\times \\frac{209}{365} = \\text{₹ } 21{,}644$$",
+   "numeric_key": {
+    "numeric_value": "21644",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Taken from the last line of the Institute's worked solution: Interest = ₹2,10,000 x 18% x 209 / 365 = ₹21,644"
+   }
+  },
+  "workbook:cma-final:p19:ch12:q3": {
+   "verdict": "approve",
+   "reason": "Compared stem and full solution (both interest calculations, refund bullets, note) against printed pp. 265-267; all dates and figures match. The printed box glyph bullets are kept as the arrow bullet.",
+   "fixes": [],
+   "printed_issues": [
+    "Print shows glyph boxes for the arrow bullets (kept as 👉)"
+   ]
+  },
+  "workbook:cma-final:p19:ch12:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem, both calculations, three tables and summary against printed pp. 267-269; all figures and table cells match.",
+   "fixes": [],
+   "printed_issues": [
+    "Interest for ITC case printed as 'x 1349 x 365' (not divided), kept as printed",
+    "Penalty line 'Higher of ₹6,000 or ₹10,000' kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch12:q5": {
+   "verdict": "approve",
+   "reason": "Compared stem, steps 1-5, statutory references and summary table against printed pp. 269-270; text and table cells match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch12:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem, timeline table and interest working against printed p. 271; figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Interest printed as 'x 90 x 365' instead of divided by 365, kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch12:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem, five answers, GST table and calculations against printed pp. 271-273; figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Interest printed as 'x 108 x 365' instead of divided by 365, kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch12:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem, five answers and summary table against printed pp. 275-277; matches, no leaked text.",
+   "fixes": [],
+   "printed_issues": [
+    "Wording 'supply excludes' and 'CA / CMA' spacing kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch12:q11": {
+   "verdict": "approve",
+   "reason": "Compared stem, all three tables and interest working (270 crore x 6% x 179/365 = 7,94,46,575) against printed pp. 277-279; matches.",
+   "fixes": [],
+   "printed_issues": [
+    "Text says 20% of disputed tax but table uses 10% (printed that way)",
+    "Stray brace in 'Interest}' kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch12:q15": {
+   "verdict": "approve",
+   "reason": "Compared stem, five answers and summary table against printed pp. 284-286; banner for next chapter correctly excluded.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch12:q21": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution against printed pp. 290-291; figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Typos 'marlet', 'Shall', 'option,in' kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch12:q22": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution against printed p. 291; matches.",
+   "fixes": [],
+   "printed_issues": [
+    "Typos 'non-congnisable', 'arenoticed' kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch14:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem table, legal acceptability bullets, all five computation steps and tables against printed pp. 324-326; every figure matches, and Illustration 8 is not included.",
+   "fixes": [],
+   "printed_issues": [
+    "Heading says 18% of FOB while working uses 20%",
+    "'5,550 USD' printed where AUD is meant",
+    "Quote marks printed as “X’"
+   ]
+  },
+  "workbook:cma-final:p19:ch14:q8": {
+   "verdict": "approve",
+   "reason": "Compared stem table and the computation table cell by cell with pages 334-335; all figures, rows and totals match. Stray dot before 1,89,000 and stray rupee accent are print artefacts.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch14:q13": {
+   "verdict": "approve",
+   "reason": "Compared stem, comparable-imports table, assumptions and the three step tables with pages 340-341; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Step 2 table prints CIF Value (USD) as 3,20,000 while the calculation uses 3,00,000; left as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch15:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem bullets, differential duty table and interest working with pages 351-352; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stray closing brace after 365 in the interest lines kept as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch17:q1": {
+   "verdict": "approve",
+   "reason": "Stem and bullet solution match the print (pages 361 and 363). The question asks for both assessable value and total customs duty, so a single numeric key is unsuitable; converted to long_form.",
+   "fixes": [
+    "numeric_key set to null: question asks for two quantities (assessable value and total duty)"
+   ],
+   "numeric_key": null,
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch17:q8": {
+   "verdict": "approve",
+   "reason": "Stem and bullet solution match the print (pages 361 and 363). The question asks for both assessable value and total customs duty, so a single numeric key is unsuitable; converted to long_form.",
+   "fixes": [
+    "numeric_key set to null: question asks for two quantities (assessable value and total duty)"
+   ],
+   "numeric_key": null,
+   "printed_issues": [
+    "Illustration 8 repeats Illustration 1 of the chapter"
+   ]
+  },
+  "workbook:cma-final:p19:ch17:q5": {
+   "verdict": "approve",
+   "reason": "Stem and solution bullets match page 362 (Answer 5 label omitted, the stem/solution split is correct); figures 60, 365, 22,192 verified.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch19:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem, legal framework, step-wise table, note, interest line, conclusion, professional note and both tables with pages 378-380; all present in order.",
+   "fixes": [],
+   "printed_issues": [
+    "Interest line prints '₹3,00,000 x 6% x 44 x 365 = ₹2,170' (division intended); left as printed"
+   ]
+  },
+  "workbook:cma-final:p19:ch20:q1": {
+   "verdict": "approve",
+   "reason": "Stem and solution match page 383; single quantity asked and key 34,50,000 equals the printed final answer.",
+   "fixes": [],
+   "numeric_key": {
+    "numeric_value": "3450000",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Taken from the last line of the Institute's worked solution: Minimum FOB value of exports = ₹34,50,000"
+   },
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch20:q2": {
+   "verdict": "approve",
+   "reason": "Stem and solution match page 383, but the key was 6 (years) whereas the question asks for the specific export obligation, printed as ₹2,40,00,000; corrected the key.",
+   "fixes": [
+    "numeric_key changed from 6 (years) to 24000000 (the specific export obligation in rupees)"
+   ],
+   "numeric_key": {
+    "numeric_value": "24000000",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Specific Export Obligation = ₹2,40,00,000 (printed final answer)"
+   },
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch20:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem bullets and questions (1)-(3), the Answer 1 table, Answers 2 and 3 and Result with pages 385-386; all match and the split is right.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p19:ch20:q10": {
+   "verdict": "approve",
+   "reason": "Stem and the exemption table match pages 388-389 cell by cell; page 389 has nothing further, so the print ends with that table.",
+   "fixes": [],
+   "printed_issues": [
+    "The question also asks about exceptions for deemed export supplies, which the printed answer does not address"
+   ]
+  }
+ }
+}

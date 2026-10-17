@@ -1,0 +1,14 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p17-2024-12",
+ "items": {
+  "1(a)(ii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper word for word; stored key D equals printed key 1(a)(ii) (D).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (D) describes an act bringing disrepute, which reads as a misconduct although the question asks which is not; kept as printed"
+   ]
+  }
+ }
+}

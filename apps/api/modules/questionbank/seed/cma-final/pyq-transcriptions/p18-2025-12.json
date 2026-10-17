@@ -1,0 +1,673 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p18",
+ "term_code": "2025-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Printed header: Time Allowed 3 Hours, Full Marks 100. Q8 carries 5+5+4 = 14 marks."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "The figures in the margin on the right side indicate full marks. Where considered necessary, suitable assumptions may be made and clearly indicated in the answer. All working notes should form part of your answer. Answer to Question No.1 in Section-A is compulsory. Further answer any five from Question No. 2 to Question No.8 in Section-B.",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct alternative: 2x15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "MEGHNA Ltd. provides you the following information relating to 5,25,225 units of intermediate component held by it on 31.03.2025:\n\nPurchase cost per unit ₹ 100\nEstimated selling price ₹ 130\nCost to sell ₹ 10\nCost of conversion ₹ 5\n\nWhat should be the value of inventory as per the requirements of Ind AS 2, Inventories?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 5,25,22,500"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 6,30,27,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 5,51,48,625"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key (C) = 5,25,225 x ₹105 (cost + conversion); on the stem as printed, cost ₹100 is below NRV ₹115 so (A) ₹5,25,22,500 might be expected. Printed key retained."
+       ]
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "VENUS Ltd. has equity capital of ₹ 40,00,000 consisting of fully paid equity shares of ₹ 10 each. The net profit after tax for the year 2024-25 was ₹ 60,00,000. It has also issued 36,000, 10% convertible debentures of ₹ 50 each. Each debenture is convertible into five equity shares. The tax rate applicable is 30%. The amount of diluted earnings is:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 60,00,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 61,26,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 61,80,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 43,26,000"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "CORE Ltd. operates a production line which is treated as a cash generating unit for impairment review purposes. As at 31st March 2025, the carrying amounts of assets are as follows:\n\nGoodwill ₹ 50,000\nPlant & Machinery ₹ 2,00,000\nTotal ₹ 2,50,000\n\nThe recoverable amount is estimated at ₹ 1,75,000. Calculate the revised carrying amount of assets in accordance with Ind AS 36.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Goodwill ₹ 50,000 and Plant & Machinery ₹ 1,25,000"
+        },
+        {
+         "key": "B",
+         "body_md": "Goodwill ₹ 35,000 and Plant & Machinery ₹ 1,40,000"
+        },
+        {
+         "key": "C",
+         "body_md": "Goodwill ₹ Nil and Plant & Machinery ₹ 1,75,000"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Changes in accounting estimates under Ind AS 8 are applied:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Prospectively"
+        },
+        {
+         "key": "B",
+         "body_md": "Retrospectively"
+        },
+        {
+         "key": "C",
+         "body_md": "Both retrospectively and prospectively"
+        },
+        {
+         "key": "D",
+         "body_md": "At manager's discretion"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "ROCK Ltd. had earned net income of ₹ 72,000 on an average in last four years. Net assets and capital employed in the business were ₹ 4,80,000 and ₹ 5,00,000 respectively. Similar firms earn 12% net return p.a. normally. The value of Goodwill under 'capitalization of profit' and 'capitalization of super profit' are:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 6,00,000 and ₹ 1,20,000 respectively"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 1,20,000 and ₹ 12,000 respectively"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 72,000 and ₹ 1,00,000 respectively"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 1,20,000 and ₹ 1,00,000 respectively"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Given, Net assets at their realizable value = ₹ 274.40 lakhs; Equity shares of ₹ 10 each, fully called-up = ₹ 140 lakhs; and Calls-in-arrear @ ₹ 2 per equity share = ₹ 5.60 lakhs. Based on the above pieces of information, the value of a partly paid up equity share of Mohan Ltd. on net assets basis is:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 20"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 18"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 10"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 8"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Mahesh Ltd. acquired 80% of Suresh Ltd. by paying cash consideration of ₹ 500 lakhs. The fair value of non-controlling interest on the date of acquisition is ₹ 125 lakhs. The fair value of subsidiary's identifiable net assets on the date of acquisition is ₹ 650 lakhs. NCI is measured at proportionate fair value of identifiable net assets method. The value of Gain on bargain purchase/Goodwill is:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Goodwill of ₹ 25 lakhs"
+        },
+        {
+         "key": "B",
+         "body_md": "Gain on bargain purchase of ₹ 25 lakhs"
+        },
+        {
+         "key": "C",
+         "body_md": "Gain on bargain purchase of ₹ 20 lakhs"
+        },
+        {
+         "key": "D",
+         "body_md": "Goodwill of ₹ 20 lakhs"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "On October 1, 2024 URANUS Ltd. acquired 80% of JUPITER Ltd.'s equity shares by means of a share exchange of two shares in URANUS for every three acquired shares in JUPITER. In addition, URANUS would make deferred cash payment of 88 paise per acquired share on 1 October 2025. Cost of capital is 10%. URANUS has 5,00,00,000 shares outstanding and JUPITER has 90,00,000 shares outstanding. The market value of URANUS's shares at 1st October 2024 was ₹ 6. The amount of purchase consideration for 80% stake is:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 5,40,00,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 4,12,80,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 3,30,24,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 3,45,60,000"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Business combinations involving entities or businesses under common control shall be accounted for using the ___________ method.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Purchase of Assets"
+        },
+        {
+         "key": "B",
+         "body_md": "Pooling of Interest"
+        },
+        {
+         "key": "C",
+         "body_md": "Amalgamation"
+        },
+        {
+         "key": "D",
+         "body_md": "Assets Acquisition"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Company P Ltd. acquires 20% of the voting power of Company Q Ltd. for ₹ 46,000. During the financial year, Q Ltd. makes a profit of ₹ 20,000 and has other comprehensive income of ₹ 10,000. Under the equity method, what is the value of the investment account in the consolidated accounts of P Ltd. at the end of the year?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 46,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 52,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 40,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 30,000"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Anant Ltd. is one of the parties to a joint operation holding 60% interest in the joint operation and the balance 40% interest is held by another joint operator. Anant Ltd. has contributed an asset held by it to the joint operation for the activities to be conducted in the joint operation. The carrying value of the asset was ₹ 30 lakhs and the asset was actually sold for ₹ 24 lakhs i.e., at a loss of ₹ 6 lakhs. The amount of loss on sale to be accounted for by Anant Ltd. is:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 6 lakhs;"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 2.40 lakhs;"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 3.60 lakhs;"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "When a parent company loses control of a subsidiary, what is the accounting treatment for any investment retained in the former subsidiary?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "It is derecognized from the consolidated balance sheet."
+        },
+        {
+         "key": "B",
+         "body_md": "It is recognized at its fair value when control is lost."
+        },
+        {
+         "key": "C",
+         "body_md": "It is measured at cost plus the parent's share of post-acquisition profits."
+        },
+        {
+         "key": "D",
+         "body_md": "It is accounted for as a gain on bargain purchase."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "___________ report is an analytical tool for displaying human resources-related facts, insights, and metrics to improve workforce performance, recruiting procedures, and other important HR operations.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Environmental, Social and Governance"
+        },
+        {
+         "key": "B",
+         "body_md": "Corporate Social Responsibility"
+        },
+        {
+         "key": "C",
+         "body_md": "Human Resources"
+        },
+        {
+         "key": "D",
+         "body_md": "Integrated"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "IGAS 2 is related to ___________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Accounting and Classification of Grants-in-aid"
+        },
+        {
+         "key": "B",
+         "body_md": "Guarantees given by Governments: Disclosure Requirements"
+        },
+        {
+         "key": "C",
+         "body_md": "Government Investments in Equity"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "External benefits of sustainability reporting can include:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Enhanced link between financial and non-financial performance"
+        },
+        {
+         "key": "B",
+         "body_md": "Improving reputation and brand loyalty"
+        },
+        {
+         "key": "C",
+         "body_md": "Enhanced perception on organisation's value"
+        },
+        {
+         "key": "D",
+         "body_md": "Both (B) and (C)"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from the following. Each question carries 14 marks. 14x5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Ketan Ltd. has a block of assets with a written down value of ₹ 15,00,000 on 1st April, 2023 for tax purposes. The carrying amount of the assets for accounting purposes is also ₹ 15,00,000. Depreciation is charged @ 20% p.a. as per Diminishing Balance Method for accounting purposes and at the same rate p.a. on written down value for tax purposes. Of the entire block, assets with the carrying amount of ₹ 1,50,000 (for both accounting and tax purpose) on 1st April, 2023 were sold for ₹ 3,00,000 on 31st March, 2025.\n\nBased on the above details, you are required to compute the deferred tax asset/liability as per Ind AS 12 assuming tax rate of 35%.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of the carrying amount and tax base of the assets on 31st March, 2025\n\n| Particulars | Carrying amount (₹) | Tax base (₹) |\n|---|---|---|\n| (A) Balance on 1st April, 2023 | 15,00,000 | 15,00,000 |\n| (B) Less: Depreciation for the year 2023-24 | (3,00,000) | (3,00,000) |\n| (C) Balance as at 31st March, 2024 | 12,00,000 | 12,00,000 |\n| (D) Temporary difference on 31st March, 2024 | Nil | Nil |\n| (E) Less: Carrying amount of the asset disposed of deducted for accounting purposes | (96,000) | - |\n| (F) Less: Sale proceeds of the asset to be deducted for tax purposes | - | (3,00,000) |\n| (G) Less: Depreciation for accounting purposes for 2024-25 (C x 20%) | (2,40,000) | - |\n| (H) Less: Depreciation for tax purposes = [(C-F) x 20%] | - | (1,80,000) |\n| (I) Balance of the asset on 31st March, 2025 | 8,64,000 | 7,20,000 |\n\nComputation of the Deferred tax asset/liability\nSince the carrying amount of the asset for Balance Sheet purposes (₹ 8,64,000) is greater than the tax base of the asset (₹ 7,20,000), there is a taxable temporary difference of ₹ 1,44,000 (₹ 8,64,000 - ₹ 7,20,000).\n\nHence, deferred tax liability = ₹ 50,400 (₹ 1,44,000 x 35%).\n\nWorking Note:\nComputation of the carrying amount of the asset sold on 31st March, 2025\n\n| Particulars | ₹ |\n|---|---|\n| (A) Cost of the asset on 1st April, 2023 | 1,50,000 |\n| (B) Depreciation for 2023-24 (₹ 1,50,000 x 20%) | 30,000 |\n| (C) Carrying amount on 31st March, 2024 (A-B) | 1,20,000 |\n| (D) Depreciation for 2024-25 (₹ 1,20,000 x 20%) | 24,000 |\n| (E) Carrying amount on 31st March, 2025 (C-D) | 96,000 |\n\nNote: The above figure of ₹ 96,000 may also be alternatively computed as ₹ 1,50,000 x 80% x 80% = ₹ 96,000.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "On 30th January, 2024, Raju Ltd. purchased a machinery for $ 15,000 from an USA supplier on credit basis. The functional currency of Raju Ltd. is Indian rupee. The exchange rate on 30th January, 2024 is 1 $ = ₹ 60. The fair value of the machinery determined on 31st March, 2024 is $ 16,500. The exchange rate on 31st March, 2024 is 1 $ = ₹ 65. The payment to the USA supplier is made on 31st March, 2025 and the exchange rate on that date is 1 $ = ₹ 67. The fair value of the machinery remains unchanged for the year ended on 31st March, 2025. The tax rate is 30%. Raju Ltd. allows revaluation in respect of plant and machinery.\n\nBased on the above, you are required to pass the journal entries (narration not required) for the years ended on 31st March, 2024 and on 31st March, 2025 as per the Ind AS 21.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Journal entries in the books of Raju Ltd. for the year ended on 31st March, 2024\n\n| Date | Particulars | | Dr. (₹) | Cr. (₹) |\n|---|---|---|---|---|\n| 30.01.2024 | Machinery A/c (15,000 x 60) | Dr. | 9,00,000 | |\n| | To Vendor/Creditor for Machinery A/c | | | 9,00,000 |\n| 31.03.2024 | Profit and Loss A/c [15,000 (65-60)] | Dr. | 75,000 | |\n| | To Vendor/Creditor for Machinery A/c | | | 75,000 |\n| 31.03.2024 | Machinery A/c [16,500 x 65 -15,000 x 60] | Dr. | 1,72,500 | |\n| | To Revaluation Surplus A/c (OCI) | | | 1,72,500 |\n| 31.03.2024 | Revaluation Surplus (OCI) A/c | Dr. | 51,750 | |\n| | To Deferred Tax Liability A/c (1,72,500 x 30%) | | | 51,750 |\n\nNote: In the second journal entry above, instead of debiting \"Profit and Loss A/c\", \"Exchange Difference A/c\" or \"Loss on Exchange Fluctuation A/c\" may also be alternatively debited.\n\nJournal entries in the books of Raju Ltd. for the year ended on 31st March, 2025\n\n| Date | Particulars | | Dr. (₹) | Cr. (₹) |\n|---|---|---|---|---|\n| 31.03.2025 | Vendor/Creditor for Machinery A/c | Dr. | 9,75,000 | |\n| | Profit and Loss A/c [15,000 (67-65)] | Dr. | 30,000 | |\n| | To Bank A/c (15,000 x 67) | | | 10,05,000 |\n| 31.03.2025 | Machinery A/c [16,500 (67-65)] | Dr. | 33,000 | |\n| | To Revaluation Surplus A/c (OCI) | | | 33,000 |\n| 31.03.2025 | Revaluation Surplus (OCI) A/c | Dr. | 9,900 | |\n| | To Deferred Tax Liability A/c (33,000 x 30%) | | | 9,900 |\n\nNote: In the first journal entry above, instead of debiting \"Profit and Loss A/c\", \"Exchange Difference A/c\" or \"Loss on Exchange Fluctuation A/c\" may also be alternatively debited.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "An enterprise operates through eight segments, namely, A, B, C, D, E, F, G and H. The relevant information about these segments is given in the following table (amounts in ₹'000):\n\n| | A | B | C | D | E | F | G | H |\n|---|---|---|---|---|---|---|---|---|\n| **1. Segment Revenue** | | | | | | | | |\n| (i) External Sales | - | 255 | 15 | 10 | 15 | 50 | 20 | 35 |\n| (ii) Inter Segment Sales | 100 | 60 | 30 | 5 | - | - | 5 | - |\n| **2. Segment Results Profit/(Loss)** | 5 | (90) | 15 | (5) | 8 | (5) | 5 | 7 |\n| **3. Segment Assets** | 15 | 47 | 5 | 11 | 3 | 5 | 5 | 9 |\n\nNo additional segment has been identified by the management as per their discretion.\n\nIdentify the reportable segments as per Ind AS 108.",
+       "options": [],
+       "correct": null,
+       "answer_md": "| Particulars | A | B | C | D | E | F | G | H | Total (₹ in '000) |\n|---|---|---|---|---|---|---|---|---|---|\n| 1. Segment Revenue | | | | | | | | | |\n| (i) External Sales | - | 255 | 15 | 10 | 15 | 50 | 20 | 35 | 400 |\n| (ii) Inter Segment Sales | 100 | 60 | 30 | 5 | - | - | 5 | - | 200 |\n| 2. Segment Results: Profit | 5 | | 15 | | 8 | | 5 | 7 | 40 |\n| (Loss) | | (90) | | (5) | | (5) | | | (100) |\n| 3. Segment Assets | 15 | 47 | 5 | 11 | 3 | 5 | 5 | 9 | 100 |\n\n(i) Segment Revenue Criterion:\nThreshold = 10% of total revenue = 10% of (₹ 400 thousands + ₹ 200 thousands) = ₹ 60 thousands\nReportable Segments are A and B.\n\n(ii) Result Criterion:\nThreshold = 10% of total profit (₹ 40 thousands) or total loss (₹ 100 thousands) whichever is higher i.e., ₹ 10 thousands\nReportable Segments are B and C\n\n(iii) Asset Criterion:\nThreshold = 10% of total assets = 10% of ₹ 100 thousands = ₹ 10 thousands\nReportable Segments are A, B and D.\nTotal external revenue of A, B, C and D = Nil + 255 + 15 + 10 = 280 which is lower than 75% of total external revenue of ₹ 400 i.e. ₹ 300.\n\nHence, the enterprise should identify any one or more segment(s) by considering which, the total external revenue should be reach minimum 75% of total external revenue.\n\nHence, the reportable segments may be any one of the following six combinations of segments:\n(i) A, B, C, D and F; or\n(ii) A, B, C, D and H; or\n(iii) A, B, C, D and G; or\n(iv) A, B, C, D, E and F; or\n(v) A, B, C, D, E and G; or\n(vi) A, B, C, D, E and H.",
+       "confidence": "medium",
+       "review": [
+        "Segment Results profit/(loss) row layout in the answer table partly reconstructed (profit and loss shown on separate rows as in the suggested answer)."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following is the Balance Sheet of ABC Ltd. as at 31st March, 2025:\n\n| Particulars | Note No. | ₹ in lakhs |\n|---|---|---|\n| **I ASSETS** | | |\n| (1) Non-current assets | | |\n| (a) Property, plant and equipment | - | 61.60 |\n| (b) Financial assets (Investments) | - | 11.20 |\n| (2) Current assets | | |\n| (a) Inventories (Stock-in-trade) | - | 22.40 |\n| (b) Financial assets | | |\n| (i) Trade receivables (Trade debtors) | - | 11.20 |\n| (ii) Cash and cash equivalents (Cash at bank) | - | 11.20 |\n| Total assets | - | 117.60 |\n| **II EQUITY AND LIABILITIES** | | |\n| (1) Equity | | |\n| (a) Equity share capital | 1 | 75.60 |\n| (b) Other equity | 2 | (36.40) |\n| (2) Non-current liabilities | | |\n| (a) Financial liabilities | | |\n| Borrowings (18% term loan) | - | 39.20 |\n| (b) Other financial liabilities (1,68,000, 9% cumulative pref. shares of ₹ 10 each) | - | 16.80 |\n| (3) Current liabilities | | |\n| Financial liabilities | | |\n| Trade payables (Trade creditors) | - | 22.40 |\n| Total equity and liabilities | - | 117.60 |\n\nNotes to accounts (₹ in lakhs)\n\n1. Equity share capital\nAuthorized: Rs. (blank)\nIssued, subscribed, and fully paid: 4,20,000 equity shares of ₹ 10 each 42.00\nIssued, subscribed but not fully paid: 5,60,000 equity shares of ₹ 10 each, ₹ 6 paid 33.60\nTotal 75.60\n\n2. Other equity\nRetained earnings (Deficit balance in statement of profit and loss) (36.40)\n\nThe other pieces of information are as under:\n(i) Current cost of Property, Plant and Equipment is ₹ 104.16 lakhs and that of stock is ₹ 28 lakhs.\n(ii) Investments could fetch only ₹ 2.80 lakhs.\n(iii) 50% of the trade debtors are doubtful.\n(iv) Preference dividend was in arrear for the last 5 years.\n\nBased on the above details, you are required to compute the value of an equity share of ABC Ltd. on net assets basis.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of the value of an equity share based on the net assets (based on the assets side of the Balance sheet)\n\nComputation of total assets\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| (i) Property, Plant and Equipment | 104.16 |\n| (ii) Investments | 2.80 |\n| (iii) Stock | 28.00 |\n| (iv) Trade debtors [₹ 11.20 lakhs - 50% of ₹ 11.20 lakhs] | 5.60 |\n| (v) Cash and bank | 11.20 |\n| (vi) Notional calls on 5,60,000 equity shares @ ₹ 4 each | 22.40 |\n| Total assets at their currently realizable amounts | 174.16 |\n\nComputation of total liabilities\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| (i) 18% term loan | 39.20 |\n| (ii) Trade creditors | 22.40 |\n| Total liabilities at their currently payable amounts | 61.60 |\n\nComputation of the value of an equity share\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| (A) Net assets available for shareholders (174.16-61.60) | 112.56 |\n| (B) Claims of preference shareholders (16.80 + 16.80 x 9% x 5) | 24.36 |\n| (C) Net assets available for equity shareholders (A-B) | 88.20 |\n| (D) Total number of equity shares of ₹ 10 each = 9.80 lakhs | - |\n| (E) Value of an equity share of ₹ 10 each fully paid (C/D) = ₹ 9.00 | - |\n| (F) Value of an equity share of ₹ 10 each, ₹ 6 paid = ₹ 9 - ₹ 4 = ₹ 5.00 | - |\n\nAlternative\n\nStatement showing computation of the value of an equity share on net Asset basis (based on the equity and liabilities side of the balance sheet)\n\nComputation of Net Assets available for Shareholders\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| (A) Paid-up equity share capital (₹ 42 lakhs + ₹ 33.60 lakhs) | 75.60 |\n| (B) Paid-up preference share capital | 16.80 |\n| (C) Reserves and surplus (i.e., other equity) | (36.40) |\n| (D) Net profit on valuation of property, plant and equipment (₹ 104.16 lakhs - ₹ 61.60 lakhs) | 42.56 |\n| (E) Net profit on valuation of inventories (stock-in-trade) (₹ 28 lakhs - ₹ 22.40 lakhs) | 5.60 |\n| (F) Net loss on valuation of investments (₹ 11.20 lakhs - ₹ 2.80 lakhs) | (8.40) |\n| (G) Net loss on the valuation of trade debtors (₹ 11.20 lakhs/2) | (5.60) |\n| (H) Notional calls on 5,60,000 equity shares @ ₹ 4 each | 22.40 |\n| (I) Net assets available for shareholders | 112.56 |\n\nComputation of the value of an equity share\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| (A) Net assets available for shareholders | 112.56 |\n| (B) Claims of preference shareholders [₹ 16.80 lakhs + (₹ 16.80 lakhs x 9% x 5)] | 24.36 |\n| (C) Net assets available for equity shareholders (A-B) | 88.20 |\n| (H) Total number of equity shares of ₹ 10 each (fully paid) = 9.80 lakhs | - |\n| (I) Value of a fully paid equity share of ₹ 10 (G/H) = ₹ 9 | - |\n| (J) Value of a partly paid equity share of ₹ 6 (I- ₹ 4) = ₹ 5 | - |",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Rakesh Ltd. borrowed ₹ 18,75,00,000 from Central Bank of India on 1st January, 2024. The terms of the loan were as under:\n\n(i) Interest rate: 11% p.a.;\n(ii) Repayment of principal in 5 equal annual instalments;\n(iii) Payment of interest annually on accrual basis; and\n(iv) Upfront processing fees: ₹ 22,01,286.\n\nThe effective interest rate on the loan is 11.50% p.a.\n\nBased on the above details, you are required to:\n(i) Prepare a statement showing the amortisation of loan based on effective interest rate for a period of 5 years of the term of the loan; and\n(ii) Pass the journal entries (narration not required) in the books of Rakesh Ltd. for availing of loan from bank on 1st January, 2024 and for payment of first instalment of loan and interest on 31st December, 2024.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Statement showing the amortization of loan based on effective interest rate (₹)\n\n| Date | Cash flows (Principal) | Cash flows (Interest and fee) | Opening amortized cost + Interest at EIR - Cash flow towards principal repaid - cash flow toward interest paid | Interest at the effective interest rate of 11.50% p.a. |\n|---|---|---|---|---|\n| 1st January, 2024 | (18,75,00,000) | 22,01,286 | 18,52,98,714 | 0 |\n| 31st December, 2024 | 3,75,00,000 | 2,06,25,000 | 14,84,83,066 | 2,13,09,352 |\n| 31st December, 2025 | 3,75,00,000 | 1,65,00,000 | 11,15,58,619 | 1,70,75,553 |\n| 31st December, 2026 | 3,75,00,000 | 1,23,75,000 | 7,45,12,860 | 1,28,29,241 |\n| 31st December, 2027 | 3,75,00,000 | 82,50,000 | 3,73,31,839 | 85,68,979 |\n| 31st December, 2028 | 3,75,00,000 | 41,25,000 | 0 | 42,93,161 |\n\nJournal entries in the books of Rakesh Ltd.\n\n| Date | Particulars | | Dr. (₹) | Cr. (₹) |\n|---|---|---|---|---|\n| 01.01.2024 | Bank A/c | Dr. | 18,52,98,714 | |\n| | Transaction Cost A/c | Dr. | 22,01,286 | |\n| | To Loan from Central Bank of India A/c | | | 18,75,00,000 |\n| 31.12.2024 | Interest Expense A/c | Dr. | 2,13,09,352 | |\n| | To Loan from Central Bank of India A/c | | | 6,84,352 |\n| | To Bank A/c | | | 2,06,25,000 |\n| 31.12.2024 | Loan from Central Bank of India A/c | Dr. | 3,75,00,000 | |\n| | To Bank A/c | | | 3,75,00,000 |",
+       "confidence": "medium",
+       "review": [
+        "Amortisation table columns are garbled in aid.txt; column mapping reconstructed as printed (Cash flows principal / interest and fee / closing amortised cost / interest at EIR)."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The summarized Balance Sheet of BEAS Ltd. as on 31st March, 2025 was as follows:\n\n| Particulars | Note No. | Amount (₹) | Amount (₹) |\n|---|---|---|---|\n| **A. Asset** | | | |\n| 1. Non-current assets | | | |\n| (a) Property, Plant & Equipment | | | |\n| (i) Tangible assets | 5 | 10,10,000 | |\n| (ii) Intangible assets | 6 | 95,000 | 11,05,000 |\n| 2. Current Assets | | | |\n| (a) Inventories | | | 13,00,000 |\n| (b) Financial Assets | | | |\n| (i) Trade Receivables | | 12,00,000 | |\n| (ii) Loans & Advances | | 77,000 | 12,77,000 |\n| Total | | | 36,82,000 |\n| **B. Equity and Liabilities** | | | |\n| 1. Equity | | | |\n| (a) Share Capital | 1 | 26,00,000 | |\n| (b) Other Equity | 2 | (7,18,000) | 18,82,000 |\n| 2. Non-current Liabilities | | | |\n| (a) Long Term Borrowings | 3 | | 10,00,000 |\n| 3. Current Liabilities | | | |\n| (a) Short Term Borrowings | 4 | 1,80,000 | |\n| (b) Trade Payables | | 6,20,000 | 8,00,000 |\n| Total | | | 36,82,000 |\n\nNotes to Accounts:\n\n| No. | Particulars | Amount (₹) | Amount (₹) |\n|---|---|---|---|\n| 1 | Share Capital: Authorized, issued & fully paid | | |\n| | 1,80,000 equity shares of ₹ 10 each | 18,00,000 | |\n| | 8,000, 8% preference shares of ₹ 100 each | 8,00,000 | 26,00,000 |\n| 2 | Other Equity: Retained Earnings (i.e. Profit and Loss balance) | | (7,18,000) |\n| 3 | Long Term Borrowings: 8% A Debentures (Secured by assets of Uttarakhand Factory) (Face value ₹ 100) | 9,00,000 | |\n| | 10% B Debentures (Unsecured) (Face value ₹ 100) | 1,00,000 | 10,00,000 |\n| 4 | Short Term Borrowings: Loan from Directors | 1,15,000 | |\n| | Bank overdraft | 65,000 | 1,80,000 |\n| 5 | Tangible Assets: Property, Plant & Equipment of Uttarakhand Factory | 8,50,000 | |\n| | Furniture at Head Office | 1,60,000 | 10,10,000 |\n| 6 | Intangible Assets: Goodwill | 35,000 | |\n| | Patents & Copyrights | 60,000 | 95,000 |\n\nDue to heavy losses and overvaluation of assets, the following scheme of internal reconstruction was framed:\n\n(i) Preference shareholders would sacrifice 20% of their claim, and they would be allotted 9% (new) preference shares for remaining amount.\n(ii) A class Debenture holders having a charge on plant and machinery of Uttarakhand Factory would accept plant and machinery in full settlement. Unsecured Debenture holders agreed for 20% reduction and the remaining amount is to be converted into 9% (new) preference shares of ₹ 100 each.\n(iii) Trade creditors agreed to take over the stock up to the value of ₹ 6,20,000.\n(iv) The paid-up value of equity shares would be reduced to ₹ 6 per share.\n(v) An amount of ₹ 60,000 was receivable against Loans & Advances.\n(vi) Trade Receivables and remaining stock would be valued at 90% of their book value.\n(vii) Directors would forgo their loan in full.\n(viii) Patents and copyrights and Goodwill had no value.\n\nPass necessary Journal entries (narration not required) in the books of BEAS Ltd. assuming that all the legal formalities have been completed.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Journal entries in the books of Beas Ltd.\n\n| Particulars | | Dr. (₹) | Cr. (₹) |\n|---|---|---|---|\n| 8% Preference Share Capital (₹ 100 each) A/c | Dr. | 8,00,000 | |\n| To 9% Preference Share Capital (₹ 100 each) A/c | | | 6,40,000 |\n| To Capital Reduction/Reconstruction A/c | | | 1,60,000 |\n| 8% A Debentures A/c | Dr. | 9,00,000 | |\n| To PPE of Uttarakhand A/c | | | 8,50,000 |\n| To Capital Reduction/Reconstruction A/c | | | 50,000 |\n| 10% B Debentures A/c | Dr. | 1,00,000 | |\n| To Capital Reduction/Reconstruction A/c | | | 20,000 |\n| To 9% Preference Share Capital (₹ 100 each) A/c | | | 80,000 |\n| Trade Payables A/c | Dr. | 6,20,000 | |\n| To Inventories A/c | | | 6,20,000 |\n| Equity Share Capital (₹ 10 each) A/c | Dr. | 18,00,000 | |\n| To Capital Reduction/Reconstruction A/c | | | 7,20,000 |\n| To Equity Share Capital (₹ 6 each) A/c | | | 10,80,000 |\n| Capital Reduction/Reconstruction A/c | Dr. | 17,000 | |\n| To Loans and Advances A/c | | | 17,000 |\n| Capital Reduction/Reconstruction A/c | Dr. | 1,88,000 | |\n| To Trade Receivables A/c | | | 1,20,000 |\n| To Inventories A/c | | | 68,000 |\n| Loan from Directors A/c | Dr. | 1,15,000 | |\n| To Capital Reduction/Reconstruction A/c | | | 1,15,000 |\n| Capital Reduction/Reconstruction A/c | Dr. | 95,000 | |\n| To Patents and Copyright A/c | | | 60,000 |\n| To Goodwill A/c | | | 35,000 |\n| Capital Reduction/Reconstruction A/c | Dr. | 7,65,000 | |\n| To Retained Earnings A/c | | | 7,18,000 |\n| To Capital Reserve A/c | | | 47,000 |\n\nWorking Note:\nCapital Reduction/Reconstruction A/c\n\n| Dr. Particulars | ₹ | Cr. Particulars | ₹ |\n|---|---|---|---|\n| To Loans and Advances A/c | 17,000 | By 8% Pref. Share Capital (₹ 100 each) A/c | 1,60,000 |\n| To Trade Receivables A/c | 1,20,000 | By 8% A Debentures A/c | 50,000 |\n| To Inventories A/c | 68,000 | By 10% B Debentures A/c | 20,000 |\n| To Patents and Copyrights A/c | 60,000 | By Equity Share Capital (₹ 10 each) A/c | 7,20,000 |\n| To Goodwill A/c | 35,000 | By Loan from Directors A/c | 1,15,000 |\n| To Retained Earnings A/c | 7,18,000 | | |\n| To Capital Reserve A/c (Bal. fig.) | 47,000 | | |\n| Total | 10,65,000 | Total | 10,65,000 |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer entry for B debentures: 20% reduction on 1,00,000 = 20,000 credited to reconstruction; 80,000 to 9% preference shares (matches stem).",
+        "Suggested answer treats 'Loans & Advances' write-off as 17,000 (77,000 - 60,000), as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "",
+       "kind": "long_form",
+       "marks": 14,
+       "stem_md": "On 1st April 2025, Alpha Ltd. acquired 100% equity shares of Beta Ltd. The consideration was discharged by issue of equity shares of Alpha Ltd. The summarized Balance Sheets of the companies as at 31st March 2025 were as follows (₹ in lakhs):\n\n| Particulars | Alpha Ltd. (₹) | Beta Ltd. (₹) |\n|---|---|---|\n| **Assets** | | |\n| Property, Plant & Equipment (PPE) | 1,500 | 800 |\n| Investments | 400 | 200 |\n| Inventories | 600 | 300 |\n| Trade Receivables | 350 | 200 |\n| Cash & Bank | 150 | 100 |\n| Total Assets | 3,000 | 1,600 |\n| **Equity & Liabilities** | | |\n| Equity Share Capital (₹ 10 each) | 1,200 | 600 |\n| Other Equity (Retained Earnings) | 1,200 | 500 |\n| Trade Payables | 600 | 500 |\n| Total Equity & Liabilities | 3,000 | 1,600 |\n\nAdditional Information:\n\n1. Purchase consideration was settled by issuing 80,00,000 equity shares of ₹ 10 each, issued at a premium of ₹ 2 per share, to the shareholders of Beta Ltd.\n2. Alpha Ltd. also agreed to pay contingent consideration of ₹ 50 lakhs (payable after 2 years). The fair value of the contingent consideration at acquisition date is estimated at ₹ 40 lakhs.\n3. Fair values of Beta Ltd.'s assets and liabilities are as follows:\n(i) PPE: ₹ 950 lakhs\n(ii) Inventories: ₹ 280 lakhs\n(iii) Trade Receivables: ₹ 190 lakhs (₹ 10 lakhs considered doubtful)\n(iv) Trade Payables: ₹ 500 lakhs\n(v) Investments: Nil\n4. There were inter-company balances: Alpha Ltd. had a receivable of ₹ 20 lakhs from Beta Ltd. (appearing in Alpha's Trade Receivables).\n5. Expenses related to issue of shares amounted to ₹ 12 lakhs (debited to Bank A/c).\n\nYou are required to:\n(a) Compute the Purchase Consideration.\n(b) Compute the Net Assets of Beta Ltd. at fair value.\n(c) Calculate the Goodwill or Gain from bargain purchase arising on acquisition.\n(d) Pass Journal Entries (narration not required) in the books of Alpha Ltd. to record the business combination.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(a) Purchase Consideration\n• Equity Shares issued: 80,00,000 shares × (₹ 10 + ₹ 2) = ₹ 960,00,000 = ₹ 960 lakhs\n• Contingent Consideration (fair value) = ₹ 40 lakhs\nTotal Purchase Consideration = ₹ 960 + ₹ 40 = ₹ 1000 lakhs\n\n(b) Net Assets of Beta Ltd. at Fair Value\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| PPE (Fair value) | 950 |\n| Inventories | 280 |\n| Trade Receivables (190 – 10 doubtful) | 180 |\n| Cash & Bank | 100 |\n| Total Assets | 1,510 |\n| Less: Trade Payables | (500) |\n| Net Assets (Fair Value) | 1,010 |\n\n(c) Goodwill / Gain from bargain purchase\nPurchase Consideration = ₹ 1,000 lakhs\nFair Value of Net Assets acquired = ₹ 1,010 lakhs; Non-controlling Interest (NCI) = ₹ Nil\nAs (P.C + NCI) < Fair Value of Net Assets\nGain from Bargain Purchase = 1,010 – 1,000 = ₹ 10 lakhs\n\n(d) Journal Entries in the Books of Alpha Ltd. (₹ in lakhs)\n\n| Particulars | | Dr. | Cr. |\n|---|---|---|---|\n| Business Purchase A/c | Dr. | 1,000 | |\n| To Liquidator of Beta Ltd. A/c | | | 1,000 |\n| PPE A/c | Dr. | 950 | |\n| Inventories A/c | Dr. | 280 | |\n| Trade Receivables A/c | Dr. | 180 | |\n| Cash & Bank A/c | Dr. | 100 | |\n| To Trade Payables A/c | | | 500 |\n| To Business Purchase A/c | | | 1,000 |\n| To Gain from Bargain Purchase A/c | | | 10 |\n| Liquidator of Beta Ltd. A/c | Dr. | 1000 | |\n| To Equity Share Capital A/c | | | 800 |\n| To Securities Premium A/c | | | 160 |\n| To Contingent Consideration Payable A/c | | | 40 |\n| Trade Payables A/c | Dr. | 20 | |\n| To Trade Receivables A/c | | | 20 |\n| Share Issue Expenses A/c | Dr. | 12 | |\n| To Bank A/c | | | 12 |\n| Securities Premium A/c | Dr. | 12 | |\n| To Share Issue Expenses A/c | | | 12 |\n\nAlternative\n\n(a) Purchase Consideration\n• Equity Shares issued: 80,00,000 shares × (₹ 10 + ₹ 2) = ₹ 960,00,000 = ₹ 960 lakhs\n• Contingent Consideration (fair value) = ₹ 40 lakhs\nTotal Purchase Consideration = ₹ 960 + ₹ 40 = ₹ 1000 lakhs\n\n(b) Net Assets of Beta Ltd. at Fair Value\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| PPE (Fair value) | 950 |\n| Inventories | 280 |\n| Trade Receivables (200 – 10 doubtful) | 190 |\n| Cash & Bank | 100 |\n| Total Assets | 1,520 |\n| Less: Trade Payables | (500) |\n| Net Assets (Fair Value) | 1,020 |\n\n(c) Goodwill / Gain from bargain purchase\nPurchase Consideration = ₹ 1,000 lakhs\nFair Value of Net Assets acquired = ₹ 1,020 lakhs; Non-controlling Interest (NCI) = ₹ Nil\nAs (P.C + NCI) < Fair Value of Net Assets\nGain from Bargain Purchase = 1,020 – 1,000 = ₹ 20 lakhs\n\n(d) Journal Entries in the Books of Alpha Ltd. (₹ in lakhs)\n\n| Particulars | | Dr. | Cr. |\n|---|---|---|---|\n| Business Purchase A/c | Dr. | 1,000 | |\n| To Liquidator of Beta Ltd. A/c | | | 1,000 |\n| PPE A/c | Dr. | 950 | |\n| Inventories A/c | Dr. | 280 | |\n| Trade Receivables A/c | Dr. | 190 | |\n| Cash & Bank A/c | Dr. | 100 | |\n| To Trade Payables A/c | | | 500 |\n| To Business Purchase A/c | | | 1,000 |\n| To Gain from Bargain Purchase A/c | | | 20 |\n| Liquidator of Beta Ltd. A/c | Dr. | 1000 | |\n| To Equity Share Capital A/c | | | 800 |\n| To Securities Premium A/c | | | 160 |\n| To Contingent Consideration Payable A/c | | | 40 |\n| Trade Payables A/c | Dr. | 20 | |\n| To Trade Receivables A/c | | | 20 |\n| Share Issue Expenses A/c | Dr. | 12 | |\n| To Bank A/c | | | 12 |\n| Securities Premium A/c | Dr. | 12 | |\n| To Share Issue Expenses A/c | | | 12 |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives two alternatives (net assets 1,010 vs 1,020; gain 10 vs 20); reproduced both. Journal layout in aid.txt was scrambled; amounts re-aligned from the printed sequence.",
+        "The suggested answer's treatment of Beta's investments (200, fair value nil) and the 20 lakh inter-company balance is internally inconsistent between alternatives."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "",
+       "kind": "long_form",
+       "marks": 14,
+       "stem_md": "The balance sheets of H Ltd. and S Ltd. as on 31.03.2025 were as follows:\n\n| Particulars | H Ltd. Carrying Amount (₹ in lakh) | S Ltd. Carrying Amount (₹ in lakh) |\n|---|---|---|\n| **Assets** | | |\n| Non-current Assets | | |\n| PPE | 29,600 | 12,000 |\n| Investment in Shares of S Ltd. | 11,600 | -- |\n| Investment in Debentures of S Ltd. | 2,500 | -- |\n| Current Assets | | |\n| Inventories | 5,200 | 8,000 |\n| Trade Receivables | 4,140 | 2,000 |\n| Cash and Cash Equivalent | 2,000 | 2,000 |\n| Total | 55,040 | 24,000 |\n| **Equity & Liabilities** | | |\n| Equity | | |\n| Share Capital (₹ 10) | 20,000 | 8,000 |\n| Other Equity (Retained Earnings) | 32,640 | 10,000 |\n| Non-current Liabilities | | |\n| 10% Debentures (₹ 100) | -- | 4,000 |\n| Current Liabilities | | |\n| Trade Payables | 2,400 | 2,000 |\n| Total | 55,040 | 24,000 |\n\nAdditional Information:\n(a) On 01.04.2024, S Ltd. had 800 lakh shares of ₹ 10 each and ₹ 6,000 lakh in its Retained Earnings in Other Equity. H Ltd. acquired 80% share of S Ltd. on 01.04.2024 at a consideration of ₹ 11,600 lakh payable in cash. In addition, H Ltd. also acquired 60% of debentures issued by S Ltd. in cash on 01.04.2024.\n(b) The aggregate identifiable net assets of S Ltd. as on 01.04.2024 included PPE and inventory standing in the books of S Ltd. at ₹ 5,000 lakh and ₹ 1,000 lakh having fair value of ₹ 5,600 lakh and ₹ 400 lakh respectively. The rate of depreciation on PPE is 10% p.a.\n(c) NCI was to be measured at fair value at par value basis.\n(d) Goodwill was impaired by ₹ 200 lakh.\n(e) H Ltd. sold goods worth ₹ 200 lakh to S Ltd. on credit at a profit of 20% on sales. 50% of the goods were still laying unsold.\n(f) On 01.04.2024, H Ltd. sold an item of PPE worth ₹ 400 lakh to S Ltd. at a profit of 25% on cost. This PPE is still included in the balance of PPE of S Ltd. on 31.03.2025.\n(g) Interest on debentures is payable quarterly. Last quarter's interest is still outstanding.\n\nPrepare the Consolidated Balance Sheet of the Group on 31.03.2025.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Consolidated Balance Sheet of H Ltd. and its subsidiary, S Ltd., as at 31st March, 2025\n\n| Particulars | Note No. | ₹ in lakhs |\n|---|---|---|\n| **I ASSETS** | | |\n| (1) Non-current assets | | |\n| (a) Property, plant and equipment | 1 | 42,068 |\n| (b) Goodwill | 2 | 300 |\n| (2) Current assets | | |\n| (a) Inventories | 3 | 13,180 |\n| (b) Financial assets | | |\n| (i) Trade receivables | 4 | 6,140 |\n| (ii) Cash and cash equivalents | 5 | 4,000 |\n| (iii) Other financial assets (Accrued interest) | 6 | Nil |\n| Total assets | | 65,688 |\n| **II EQUITY AND LIABILITIES** | | |\n| (1) Equity | | |\n| (A) Equity attributable to the owners of the parent | | |\n| (i) Equity share capital | | 20,000 |\n| (ii) Other equity | 7 | 35,898.40 |\n| Sub-total | | 55,898.40 |\n| (B) Non-controlling interest | 8 | 3,749.60 |\n| Total equity | | 59,648 |\n| (2) Non-current liabilities | | |\n| Financial liabilities | | |\n| Borrowings | 9 | 1,600 |\n| (3) Current liabilities | | |\n| Financial liabilities | | |\n| (a) Trade payables: Total outstanding dues of creditors other than micro and small enterprises | 10 | 4,400 |\n| (b) Outstanding interest | 11 | 40 |\n| Total equity and liabilities | | 65,688 |\n\nNotes to accounts (₹ in lakhs)\n\n1. Property, plant and equipment\nCombined value (29,600 + 12,000) 41,600\nAdd: Fair value gain 600\nLess: Fair value adjustment 60\nLess: Unrealized profit on sale of PPE (400 x 25/125) 80\nAdd: Depreciation overcharged on unrealized profit on PPE 8\nTotal 42,068\n\n2. Goodwill\nGoodwill on the date of acquisition 500\nLess: impairment of goodwill (200)\nBalance 300\n\n3. Inventories\nCombined value (5,200+8,000) 13,200\nLess: unrealised profit on unsold inventories (20)\nBalance 13,180\n\n4. Trade receivables\nCombined value (4,140+2,000) 6,140\n\n5. Cash and cash equivalents\nCombined amount (2,000+2,000) 4,000\n\n6. Other financial assets (Accrued interest)\nAccrued interest 60\nLess: intra group adjustment (60)\nBalance Nil\n\n7. Other equity (Retained earnings)\nH Ltd.'s balance of Retained Earnings 32,640.00\nAdd: Share of post-acquisition profit (4,448 x 80%) 3,558.40\nLess: Share of impairment loss on goodwill (200 x 80%) 160.00\nLess: unrealized profit on stock (200 x 50% x 20%) [downstream] 20.00\nLess: unrealized profit on sale of PPE (400 x 25/125) 80.00\nAdd: Accrued interest on debenture [(4000 x 60%) x 10% x ¼)] 60.00\nLess: Difference between cost and face value of inter-co. debentures (2,500 – 4,000 x 60%) 100.00\nTotal 35898.40\n\n8. Non-controlling interest\nAcquisition date NCI 2,900.00\nAdd: Share of post-acquisition profit (4,448 x 20%) 889.60\nLess: Share of impairment loss on goodwill (200 x 20%) 40.00\nTotal 3,749.60\n\n9. Borrowings\n10% debentures (of S Ltd) 4,000\nLess: 60% debentures held by H Ltd. (2,400)\nBalance 1,600\n\n10. Total outstanding dues of creditors other than micro and small enterprises\nCombined amount (2,400+2,000) 4,400\n\n11. Outstanding interest\nOutstanding interest on 10% debentures of S Ltd. (4,000 x 10% x 3/12) 100\nLess: outstanding interest due to H Ltd. (60) \nBalance 40\n\nWorking Notes (₹ in lakhs)\n\n1. Calculation of Goodwill on the acquisition date (i.e., on 01.04.2024)\nFair value of identifiable net assets (represented by equity) = Equity Share Capital + Other Equity ± Fair value changes = 8,000 + 6,000 + (5,600 – 5,000) – (1,000 – 400) = ₹ 14,000\nPurchase consideration (for 80% share) = 11,600\nNCI (at fair value) = 11,600 x 20%/80% = ₹ 2,900\nGoodwill = Purchase Consideration + NCI – Fair value of identifiable net assets = 11,600 + 2,900 – 14,000 = ₹ 500\n\n2. Post-acquisition profit\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| Closing balance – Opening balance (10,000 – 6,000) | 4,000 |\n| Add: Reversion of loss on current items (1,000 – 400) | 600 |\n| Less: Fair value adjustment (600 x 10%) | 60 |\n| | 4,540 |\n| Add: Depreciation overcharged on unrealized profit on PPE (400 x 25/125 x 10%) | 8 |\n| Less: Debenture interest outstanding (4,000 x 10% x ¼) | 100 |\n| | 4,448 |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer contains internal oddities as printed (e.g. PPE fair-value gain 600 but depreciation add-back; equity add-back of accrued interest 60 and debenture cost difference 100 treated as deduction though the 'Less' sign vs arithmetic 35,898.40 not independently reconciled).",
+        "Stem (c) 'fair value at par value basis' is as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "ALAKANANDA Ltd., a listed company, seeks to evaluate its financial performance using the Economic Value Added (EVA) metric for the year ended March 31, 2025. The following financial and market data are available (all figures are in ₹ Lakhs):\n\n| Particulars | Amount (₹ in Lakhs) |\n|---|---|\n| **I. Income Statement Extract (for the year 2024-25)** | |\n| Net Sales | 4,000 |\n| Operating Expenses (excluding Depreciation, Interest and R&D) | 1,800 |\n| Depreciation (Accounting) | 400 |\n| Research & Development (R&D) Expensed | 200 |\n| Interest on 10% Term Loan | 300 |\n| Tax @ 30% | 390 |\n| Profit After Tax (PAT) | 910 |\n| **II. Balance Sheet Extract (as on 31.03.2025)** | |\n| Equity Share Capital (₹ 10 paid up) | 500 |\n| Other Equity | 1,500 |\n| Total Equity | 2,000 |\n| 10% Term Loan | 1,000 |\n| Non-Interest-Bearing Current Liabilities (NIBCL) | 200 |\n| Total Liabilities and Equity | 3,200 |\n| Net Fixed Assets | 1,300 |\n| Net Working Capital | 1,700 |\n| Total Assets | 3,200 |\n\nIII. Additional Information:\n1. Cost of Capital Data:\n• Risk-free Rate (Rf): 6%\n• Market Return (Rm): 14%\n• Beta (β) of the company: 1.25\n• Tax Rate: 30%\n2. The entire R&D expenditure of ₹ 200 Lakhs is considered a capital investment (Asset) with an estimated economic life of 4 years. The closing balance of the capitalised R&D asset should be included in the invested capital. (Assume the opening balance of the R&D asset was Nil).\n3. The Economic Depreciation (true decline in value of fixed assets) for the year is ₹ 300 Lakhs, as against the accounting depreciation of ₹ 400 Lakhs.\n\nRequired:\nCalculate the Economic Value Added (EVA) for ALAKANANDA Ltd. for the year ended March 31, 2025.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The Economic Value Added (EVA) is calculated using the formula:\nEVA = Adjusted NOPAT − (WACC × Adjusted Invested Capital)\n\nCalculation of Economic Value Added (EVA)\nEVA = NOPAT − (WACC × IC)\nEVA = 1,370 − (13.00% × 3,150)\nEVA = 1,370 − 409.50\nEVA = ₹ 960.50 Lakhs\n\nWorking Notes\n(A) Cost of Equity (Ke) using CAPM:\nKe = Rf + β(Rm − Rf)\nKe = 6% + 1.25(14% − 6%) = 6% + 1.25(8%) = 6% + 10% = 16%\n\n(B) After-tax Cost of Debt (Kd):\nKd = Pre-tax Cost of Debt × (1 − t)\nKd = 10% × (1 − 0.30) = 10% × 0.70 = 7%\n\n(C) WACC Calculation (Based on Book Value Weights):\n\n| Source of Capital | Amount | Weight (Wi) | Cost (Ki) | Ki x Wi |\n|---|---|---|---|---|\n| Equity (Share Capital + Reserves) | 2,000 | 2,000/3,000 = 0.6667 | 16% | 10.67% |\n| Debt (10% Term Loan) | 1,000 | 1,000/3,000 = 0.3333 | 7% | 2.33% |\n| Total | 3,000 | 1.00 | | 13.00% |\n\nWACC = 13.00%\n\n(D) Calculation of Adjusted Net Operating Profit After Tax (NOPAT)\nEVA adjustments are made to NOPAT to reflect economic reality.\n\n| Particulars | Calculation | Amount (₹ Lakhs) |\n|---|---|---|\n| PAT (Profit After Tax) | | 910 |\n| Add: Interest (Net of Tax) → To reverse the effect of financing costs on operating profit. | 300 × (1−0.30) | 210 |\n| NOPAT (Unadjusted) | | 1,120 |\n| Add: EVA Adjustment 1: R&D Expensed (Add back R&D, as it is an investment) | | 200 |\n| Add: EVA Adjustment 2: Accounting Depreciation (Add back) | | 400 |\n| Deduct: EVA Adjustment 3: Amortization of R&D ₹ 200/4 years (Economic Amortization) | | (50) |\n| Deduct: EVA Adjustment 4: Economic Depreciation (Charge) | | (300) |\n| Adjusted NOPAT | | 1,370 |\n\n(E) Calculation of Adjusted Invested Capital (IC)\nAdjusted Invested Capital includes all capital employed, plus the cumulative effect of capitalized expenses (like R&D).\n(1) Unadjusted Invested Capital (IC):\nIC = Total Assets − Non-Interest-Bearing Current Liabilities (NIBCL)\nIC = ₹ (3,200 − 200) Lakhs = ₹ 3,000 Lakhs\n(Alternatively, IC = Equity + Debt = 2,000 + 1,000 = ₹ 3,000 Lakhs)\n(2) Closing Balance of Capitalized R&D Asset:\nClosing R&D Asset = Opening Balance + R&D Expenditure − Amortization\nClosing R&D Asset = ₹ (0 + 200 − 50) Lakhs = ₹ 150 Lakhs\nAdjusted Invested Capital (IC) = Unadjusted IC + Closing R&D Asset\nIC = ₹ (3,000 + 150) Lakhs = ₹ 3,150 Lakhs",
+       "confidence": "medium",
+       "review": [
+        "Income statement figures read from image (Net Sales 4,000; PAT 910; Tax 390); suggested answer NOPAT adds back accounting depreciation 400 and deducts economic depreciation 300 as printed.",
+        "Suggested answer title text 'Amortization of R&₹ 200/4 years' OCR slip corrected to 'R&D ₹ 200/4 years'."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Briefly explain the various categories of capital as mentioned in the Integrated Reporting Framework issued by the IIRC.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The IIRC framework used the term \"capitals\" to denote various resources, with six capitals identified as: financial; manufactured; intellectual, human, social and relationship; and natural. A brief explanation of six capitals identified in the IIRC framework is given below.\n\n(i) Financial Capital: It is broadly understood as the pool of funds available to an organization. This includes both debt and equity finance. This description of financial capital focuses on the source of funds, rather than its application which result in the acquisition of manufactured or other forms of capital.\n\n(ii) Manufactured Capital: It is seen as human-created, production-oriented equipment and tools. A distinction is drawn between inventory (as a short-term asset) and plant and equipment (tangible capital). Although the identification of these items is generally agreed, their accounting treatment, particularly in terms of valuation, depreciation and taxation, is more contentious.\n\n(iii) Intellectual Capital: It refers to organizational, knowledge-based intangibles, including intellectual property such as patent and copyrights and organizational capital such as tacit knowledge, systems, procedures and protocols.\n\n(iv) Human Capital: It includes people's competencies, capabilities and experience as well as their motivations to innovate.\n\n(v) Social and Relationship Capital: it refers to the institutions and the relationship within and between communities, groups of stakeholders and other networks, and the ability to share information to enhance individual and collective well-being. For example, shared norms, key stakeholder relationships, social license to operate etc.\n\n(vi) Natural Capital: It includes all renewable and non-renewable environmental resources and processes that provide goods or services.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 5,
+       "stem_md": "Briefly discuss the role of Public Accounts Committee.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The role of Public Accounts Committee (P.A.C) is discussed below:\n\n1. Role regarding examination of the C&AG report: The chief function of P.A.C. is to examine the audit report of Comptroller and Auditor General (C&AG) after it is laid in the Parliament. C&AG assists the Committee during the course of investigation.\n\n2. Role regarding unauthorized expenditures or excess expenditures: In examining the report of the Comptroller and Auditor General of India (C&AG), the committee has to satisfy itself that:\ni. the expenditures made by the government, were authorized by the Parliament; and\nii. the expenditure under any head has not crossed the limits of parliamentary authorization.\nIt is to be noted that, every expenditure made by the government must be sanctioned by the Parliament- Thus, it is the role of the committee to bring to the notice of the Parliament instances of unauthorized expenditures or expenditures beyond sanctioned limits.\n\n3. Role regarding spending of money by ministries: The committee not only ensures that ministries spend money in accordance with parliamentary grants, it also brings to the notice of the Parliament instances of extravagance, loss, in fructuous expenditure and lack of financial integrity in public services. However, the committee cannot question the polices of the government. It only concerns itself with the execution of policy on its financial aspects.\n\n4. Scrutinizing the audit reports of public corporations: A new dimension has been added to the function of the PAC by entrusting it with the responsibility of scrutinizing the audit report of public corporations.\n\n5. Scrutinizing the working process of ministries and public corporations: In examining the accounts and audits of the ministries and public corporations, the Committee gets the opportunity to scrutinize the process of their working. It points out the weakness and shortcomings of the administration of ministries and public corporations Criticisms of the PAC draw national attention. This keeps the ministries and public corporations sensitive to the criticisms of the P.A.C. Thus, it is wrong to suppose that the P.A.C. is only an instrument of financial control, it is as well an instrument of administrative control.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 5,
+       "stem_md": "How was Government Accounting Standards Advisory Board (GASAB) constituted in India? Explain its structure.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Constitution of GASAB\nThe Government Accounting Standards Advisory Board (GASAB) was constituted by the Comptroller and Auditor General of India (C&AG) with the support of Government of India through a notification dated August 12, 2002. This Board was constituted to establish and improve the standards of governmental accounting and financial reporting, and enhance the accountability mechanisms. The decision to set-up GASAB was taken in the backdrop of the new priorities emerging in the Public Finance Management and to keep pace with international trends. The new priorities focus on good governance, fiscal prudence, efficiency & transparency in public spending.\n\nStructure of GASAB\nThe Board has high level representation from the important accounting heads in Government, Ministry of Finance, Department of Post, Finance Secretaries of states, RBI and heads of premier accounting & research organizations. The board consists of the following members:\n\n1. Deputy Comptroller and Auditor General (Government Accounts) as Chairperson\n2. Financial Commissioner, Railways\n3. Member (Finance) Telecom Commission, Department of Telecom\n4. Secretary, Department of Post\n5. Controller General of Defence Accounts\n6. Controller General of Accounts\n7. Additional/ Joint Secretary (Budget), Ministry of Finance, Government of India\n8. Deputy Governor, Reserve Bank of India, or his nominee\n9-12. Principal Secretary (Finance) of four States, by rotation\n13. Director General, National Council of Applied Economic Research (NCAER), New Delhi\n14. President, Institute of Chartered Accountants of India (ICAI), or his nominee\n15. Principal Director in GASAB, as Member secretary.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(c)",
+       "kind": "long_form",
+       "marks": 4,
+       "stem_md": "On 01.04.2024, A Ltd. acquired 90% shares of D Ltd. for ₹ 10,80,000 when the fair value of D Ltd.'s net assets was ₹ 10,00,000. During the period from 01.04.2024 to 31.03.2025, D Ltd. made total comprehensive income (TCI) of ₹ 2,00,000. On 31.03.2025, A Ltd. sold 15% holding to outsiders for ₹ 2,20,000 but retained control. Pass the necessary journal entries (narration not required) in the consolidated financial statements (group books) for the sale of partial holding retaining control.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Journal entry\n\n| Particulars | | Debit (₹) | Credit (₹) |\n|---|---|---|---|\n| Bank A/c (Cash inflow) | Dr. | 2,20,000 | |\n| To Non-Controlling Interest A/c (Increase in NCI's claim on Net Assets) | | | 1,80,000 |\n| To Other Equity (Gain transferred to Parent's Reserves) | | | 40,000 |\n\nWorking Note\n\n| Particulars | Calculation | Amount (₹) |\n|---|---|---|\n| Net Assets of Delta Ltd. at 31.03.2025 | ₹ 10,00,000 + ₹ 2,00,000 | ₹ 12,00,000 |\n| Carrying value of 15% interest sold (to be transferred to NCI) | 15% × ₹ 12,00,000 | ₹ 1,80,000 |\n| Sale proceeds received | Given | ₹ 2,20,000 |\n| Difference (Gain to Parent's Equity) | ₹ 2,20,000 – ₹ 1,80,000 | ₹ 40,000 |",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer refers to 'Delta Ltd.' while stem says 'D Ltd.'; copied as printed.",
+        "Suggested answer ignores goodwill in the carrying amount attributable to the 15% sold (net assets only)."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

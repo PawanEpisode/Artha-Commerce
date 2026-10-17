@@ -1,0 +1,1068 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "20A",
+ "source_file": "pyq-transcriptions/p20a-2025-12.json",
+ "paper_review": [
+  "Q1 split into 1(a) (i)-(x) 2x10=20 and 1(b) (xi)-(xv) 2x5=10 with common scenario (repeated in stems).",
+  "qp.pdf page 12 is blank. Q1(iii) and Q1(vii) keys flagged as not independently verifiable."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p20a:2025-12",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-performance-management-and-business-valuation",
+  "term_code": "2025-12",
+  "title": "CMA Final December 2025: Strategic Performance Management and Business Valuation (Paper 20A)",
+  "paper_code": "P20A",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "(a) Choose the correct answer from the given alternatives. 2×10=20 [parts (i)-(x)]\n(b) Parts (xi)-(xv) are based on a common scenario (Extended DuPont, Tata Steel Limited), 2×5=10 (scenario repeated i",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Performance management is a key concept in the field of ____________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Human Resource Management",
+      "is_correct": true
+     },
+     {
+      "body_md": "Financial Management",
+      "is_correct": false
+     },
+     {
+      "body_md": "Technical Analysis",
+      "is_correct": false
+     },
+     {
+      "body_md": "Marketing Management",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.45,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The ____________ ratios are used to compare financial statements of different size companies or the same company over different periods.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Common size",
+      "is_correct": true
+     },
+     {
+      "body_md": "DuPont",
+      "is_correct": false
+     },
+     {
+      "body_md": "Liquidity",
+      "is_correct": false
+     },
+     {
+      "body_md": "P/E",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "laws-and-compliance-in-business-valuation",
+    "mapping_confidence": 0.15,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "What is one of the very basic parameters of the financial performance of a company?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Employee satisfaction",
+      "is_correct": false
+     },
+     {
+      "body_md": "Customer profitability",
+      "is_correct": true
+     },
+     {
+      "body_md": "Production efficiency",
+      "is_correct": false
+     },
+     {
+      "body_md": "Innovation rate",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.35,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The elements of ERM includes ____________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Risk identification",
+      "is_correct": false
+     },
+     {
+      "body_md": "Risk assessment",
+      "is_correct": false
+     },
+     {
+      "body_md": "Risk response",
+      "is_correct": false
+     },
+     {
+      "body_md": "All of the above",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "An investment is risk free when actual returns are always ______ the expected results.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "equal to",
+      "is_correct": true
+     },
+     {
+      "body_md": "less than",
+      "is_correct": false
+     },
+     {
+      "body_md": "more than",
+      "is_correct": false
+     },
+     {
+      "body_md": "depends upon circumstances",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.91,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A bond with a face value of ₹ 1,000, coupon 9% and maturity of 10 years is trading in a bond market. Its current yield is 8.18%. Then, the bond is trading in the market at ____________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "premium",
+      "is_correct": true
+     },
+     {
+      "body_md": "discount",
+      "is_correct": false
+     },
+     {
+      "body_md": "par",
+      "is_correct": false
+     },
+     {
+      "body_md": "Nothing can be said about it",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which valuation method is primarily used to value franchise agreements and certain licenses?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Relief-from-royalty method",
+      "is_correct": false
+     },
+     {
+      "body_md": "Multi period excess earning method",
+      "is_correct": false
+     },
+     {
+      "body_md": "Greenfield method",
+      "is_correct": true
+     },
+     {
+      "body_md": "With and without method",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.28,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "On April 1, 2024, \"Zenith Logistics\" entered into a lease agreement for a specialized piece of warehouse equipment. An analyst is tasked with determining the initial value of the Right-of-Use (ROU) Asset to be recognized on Zenith's balance sheet as per Ind AS 116.\n\nThe following data has been gathered:\n- Present Value of Lease Payments: ₹ 1,75,400\n- Initial Direct Costs (e.g., legal fees to draft the lease): ₹ 12,000\n- Lease Incentives received from Lessor: (₹ 5,000)\n- Estimated Cost to Dismantle & Restore at end of lease (PV): ₹ 8,500\n\nBased on the information provided, which of the following calculations correctly determines the value of the Right-of-Use (ROU) Asset that Zenith Logistics should recognize?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "ROU Asset Value: ₹ 1,75,400",
+      "is_correct": false
+     },
+     {
+      "body_md": "ROU Asset Value: ₹ 1,95,900",
+      "is_correct": false
+     },
+     {
+      "body_md": "ROU Asset Value: ₹ 1,90,900",
+      "is_correct": true
+     },
+     {
+      "body_md": "ROU Asset Value: ₹ 1,82,400",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.61,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "\"Titan Innovations\" is planning to acquire \"Synergy Tech\". You are provided with the following financial data and transaction details:\n- Combined Net Profit After Tax (PAT) post-merger (including synergies): ₹ 3,500 crores\n- 'Titan Innovations' pre-merger PAT: ₹ 2,000 crores\n- 'Titan Innovations' pre-merger shares outstanding: 400 crores\n- New shares to be issued by Titan to acquire Synergy Tech: 100 crores\n\nBased on the data, match the financial metrics in List-I with their corresponding values in List-II.\n\n| List-I (Financial Metric) | List-II (Value) |\n|---|---|\n| (P) Pre-Merger EPS of \"Titan Innovations\" | (1) ₹ 7.00 |\n| (Q) Post-Merger EPS of the combined entity | (2) 40% Accretion |\n| (R) The impact on \"Titan Innovations\" EPS | (3) ₹ 5.00 |",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "P-3, Q-1, R-2",
+      "is_correct": true
+     },
+     {
+      "body_md": "P-1, Q-3, R-2",
+      "is_correct": false
+     },
+     {
+      "body_md": "P-3, Q-2, R-1",
+      "is_correct": false
+     },
+     {
+      "body_md": "P-2, Q-1, R-3",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.55,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "An acquisition is being considered where the acquirer would pay ₹ 200 million for a target company that has a standalone value of ₹ 150 million. The acquirer has estimated ₹ 60 million in synergies, but expects the cost of integration to be ₹ 20 million. What is the net gain or loss?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 10 million net loss",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 10 million net gain",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 30 million net loss",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 30 million net gain",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.91,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Mr. S. Bose is a financial analyst working for an investment advisory firm. While going through the Annual Report 2024-25 of Tata Steel Limited, he noticed that there was a sharp decline in Profit for the Year of the Company for FY 2024-25 by about ₹ 3,700 crores. He was wondering why there is decline and what are the drivers behind the same. Assume that you are his friend and have happily agreed to solve this mystery for him using the DuPont Analysis.\n>\n> Extracts from the Statement of Profit and Loss for the years ended March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | Revenue from operations | ₹ 1,40,932.65 | ₹ 1,32,516.66 |\n> | Other income | ₹ 3,113.49 | ₹ 246.90 |\n> | **Total income** | ₹ 1,44,046.14 | ₹ 1,32,763.56 |\n> | Expenses: |  |  |\n> | Total operating expenses | ₹ 57,608.40 | ₹ 53,470.63 |\n> | Employee benefits expenses | ₹ 7,472.52 | ₹ 8,010.08 |\n> | Finance costs | ₹ 4,100.52 | ₹ 4,238.35 |\n> | Depreciation and amortization expense | ₹ 6,008.95 | ₹ 6,253.16 |\n> | Other expenses | ₹ 45,863.02 | ₹ 43,170.46 |\n> | **Total expenses** | ₹ 1,21,053.41 | ₹ 1,15,142.68 |\n> | **Profit before exceptional items and tax** | ₹ 22,992.73 | ₹ 17,620.88 |\n> | Exceptional items | (₹ 3,488.02) | (₹ 902.04) |\n> | **Profit before tax** | ₹ 19,504.71 | ₹ 16,718.84 |\n> | Tax expense | ₹ 3,842.86 | ₹ 4,749.14 |\n> | **Profit for the year** | ₹ 15,661.85 | ₹ 11,969.70 |\n>\n> Extract from the Balance Sheet as on March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | **Assets** |  |  |\n> | Non-Current Assets | 2,05,372.60 | 2,15,666.57 |\n> | Current Assets | 35,486.29 | 35,362.98 |\n> | **Total Assets** | 2,40,858.89 | 2,51,029.55 |\n> | **Equity and Liabilities** |  |  |\n> | Share Capital | 1,235.50 | 1,248.60 |\n> | Other Equity | 1,36,777.99 | 1,32,732.11 |\n> | Non-Current Liabilities | 54,679.53 | 64,860.16 |\n> | Current Liabilities | 48,165.87 | 52,188.68 |\n> | **Total Equity and Liabilities** | 2,40,858.89 | 2,51,029.55 |\n>\n> Using the Extended DuPont Model, **answer** the following questions based on the above financial information and choose **the correct answer from the given four alternatives.** (All the calculations are upto 2 places of decimals) (2×5=10)\n\nThe Net Profit Margins for the financial years 2023-24 and 2024-25 are",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "10.77% and 8.85% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "10.87% and 9.02% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": true
+     },
+     {
+      "body_md": "8.85% and 10.87% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "8.87% and 8.85% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.56,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Mr. S. Bose is a financial analyst working for an investment advisory firm. While going through the Annual Report 2024-25 of Tata Steel Limited, he noticed that there was a sharp decline in Profit for the Year of the Company for FY 2024-25 by about ₹ 3,700 crores. He was wondering why there is decline and what are the drivers behind the same. Assume that you are his friend and have happily agreed to solve this mystery for him using the DuPont Analysis.\n>\n> Extracts from the Statement of Profit and Loss for the years ended March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | Revenue from operations | ₹ 1,40,932.65 | ₹ 1,32,516.66 |\n> | Other income | ₹ 3,113.49 | ₹ 246.90 |\n> | **Total income** | ₹ 1,44,046.14 | ₹ 1,32,763.56 |\n> | Expenses: |  |  |\n> | Total operating expenses | ₹ 57,608.40 | ₹ 53,470.63 |\n> | Employee benefits expenses | ₹ 7,472.52 | ₹ 8,010.08 |\n> | Finance costs | ₹ 4,100.52 | ₹ 4,238.35 |\n> | Depreciation and amortization expense | ₹ 6,008.95 | ₹ 6,253.16 |\n> | Other expenses | ₹ 45,863.02 | ₹ 43,170.46 |\n> | **Total expenses** | ₹ 1,21,053.41 | ₹ 1,15,142.68 |\n> | **Profit before exceptional items and tax** | ₹ 22,992.73 | ₹ 17,620.88 |\n> | Exceptional items | (₹ 3,488.02) | (₹ 902.04) |\n> | **Profit before tax** | ₹ 19,504.71 | ₹ 16,718.84 |\n> | Tax expense | ₹ 3,842.86 | ₹ 4,749.14 |\n> | **Profit for the year** | ₹ 15,661.85 | ₹ 11,969.70 |\n>\n> Extract from the Balance Sheet as on March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | **Assets** |  |  |\n> | Non-Current Assets | 2,05,372.60 | 2,15,666.57 |\n> | Current Assets | 35,486.29 | 35,362.98 |\n> | **Total Assets** | 2,40,858.89 | 2,51,029.55 |\n> | **Equity and Liabilities** |  |  |\n> | Share Capital | 1,235.50 | 1,248.60 |\n> | Other Equity | 1,36,777.99 | 1,32,732.11 |\n> | Non-Current Liabilities | 54,679.53 | 64,860.16 |\n> | Current Liabilities | 48,165.87 | 52,188.68 |\n> | **Total Equity and Liabilities** | 2,40,858.89 | 2,51,029.55 |\n>\n> Using the Extended DuPont Model, **answer** the following questions based on the above financial information and choose **the correct answer from the given four alternatives.** (All the calculations are upto 2 places of decimals) (2×5=10)\n\nThe Returns on Equity (ROE) for the financial years 2023-24 and 2024-25 are",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "11.53% and 8.85% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "10.87% and 8.58% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "11.35% and 8.93% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": true
+     },
+     {
+      "body_md": "10.77% and 8.75% for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.57,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Mr. S. Bose is a financial analyst working for an investment advisory firm. While going through the Annual Report 2024-25 of Tata Steel Limited, he noticed that there was a sharp decline in Profit for the Year of the Company for FY 2024-25 by about ₹ 3,700 crores. He was wondering why there is decline and what are the drivers behind the same. Assume that you are his friend and have happily agreed to solve this mystery for him using the DuPont Analysis.\n>\n> Extracts from the Statement of Profit and Loss for the years ended March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | Revenue from operations | ₹ 1,40,932.65 | ₹ 1,32,516.66 |\n> | Other income | ₹ 3,113.49 | ₹ 246.90 |\n> | **Total income** | ₹ 1,44,046.14 | ₹ 1,32,763.56 |\n> | Expenses: |  |  |\n> | Total operating expenses | ₹ 57,608.40 | ₹ 53,470.63 |\n> | Employee benefits expenses | ₹ 7,472.52 | ₹ 8,010.08 |\n> | Finance costs | ₹ 4,100.52 | ₹ 4,238.35 |\n> | Depreciation and amortization expense | ₹ 6,008.95 | ₹ 6,253.16 |\n> | Other expenses | ₹ 45,863.02 | ₹ 43,170.46 |\n> | **Total expenses** | ₹ 1,21,053.41 | ₹ 1,15,142.68 |\n> | **Profit before exceptional items and tax** | ₹ 22,992.73 | ₹ 17,620.88 |\n> | Exceptional items | (₹ 3,488.02) | (₹ 902.04) |\n> | **Profit before tax** | ₹ 19,504.71 | ₹ 16,718.84 |\n> | Tax expense | ₹ 3,842.86 | ₹ 4,749.14 |\n> | **Profit for the year** | ₹ 15,661.85 | ₹ 11,969.70 |\n>\n> Extract from the Balance Sheet as on March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | **Assets** |  |  |\n> | Non-Current Assets | 2,05,372.60 | 2,15,666.57 |\n> | Current Assets | 35,486.29 | 35,362.98 |\n> | **Total Assets** | 2,40,858.89 | 2,51,029.55 |\n> | **Equity and Liabilities** |  |  |\n> | Share Capital | 1,235.50 | 1,248.60 |\n> | Other Equity | 1,36,777.99 | 1,32,732.11 |\n> | Non-Current Liabilities | 54,679.53 | 64,860.16 |\n> | Current Liabilities | 48,165.87 | 52,188.68 |\n> | **Total Equity and Liabilities** | 2,40,858.89 | 2,51,029.55 |\n>\n> Using the Extended DuPont Model, **answer** the following questions based on the above financial information and choose **the correct answer from the given four alternatives.** (All the calculations are upto 2 places of decimals) (2×5=10)\n\nThe Equity Multiplier (Leverage) for the financial years 2023-24 and 2024-25 are",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "1.75 and 1.87 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": true
+     },
+     {
+      "body_md": "1.85 and 1.87 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "1.87 and 1.75 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "1.65 and 1.47 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.57,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Mr. S. Bose is a financial analyst working for an investment advisory firm. While going through the Annual Report 2024-25 of Tata Steel Limited, he noticed that there was a sharp decline in Profit for the Year of the Company for FY 2024-25 by about ₹ 3,700 crores. He was wondering why there is decline and what are the drivers behind the same. Assume that you are his friend and have happily agreed to solve this mystery for him using the DuPont Analysis.\n>\n> Extracts from the Statement of Profit and Loss for the years ended March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | Revenue from operations | ₹ 1,40,932.65 | ₹ 1,32,516.66 |\n> | Other income | ₹ 3,113.49 | ₹ 246.90 |\n> | **Total income** | ₹ 1,44,046.14 | ₹ 1,32,763.56 |\n> | Expenses: |  |  |\n> | Total operating expenses | ₹ 57,608.40 | ₹ 53,470.63 |\n> | Employee benefits expenses | ₹ 7,472.52 | ₹ 8,010.08 |\n> | Finance costs | ₹ 4,100.52 | ₹ 4,238.35 |\n> | Depreciation and amortization expense | ₹ 6,008.95 | ₹ 6,253.16 |\n> | Other expenses | ₹ 45,863.02 | ₹ 43,170.46 |\n> | **Total expenses** | ₹ 1,21,053.41 | ₹ 1,15,142.68 |\n> | **Profit before exceptional items and tax** | ₹ 22,992.73 | ₹ 17,620.88 |\n> | Exceptional items | (₹ 3,488.02) | (₹ 902.04) |\n> | **Profit before tax** | ₹ 19,504.71 | ₹ 16,718.84 |\n> | Tax expense | ₹ 3,842.86 | ₹ 4,749.14 |\n> | **Profit for the year** | ₹ 15,661.85 | ₹ 11,969.70 |\n>\n> Extract from the Balance Sheet as on March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | **Assets** |  |  |\n> | Non-Current Assets | 2,05,372.60 | 2,15,666.57 |\n> | Current Assets | 35,486.29 | 35,362.98 |\n> | **Total Assets** | 2,40,858.89 | 2,51,029.55 |\n> | **Equity and Liabilities** |  |  |\n> | Share Capital | 1,235.50 | 1,248.60 |\n> | Other Equity | 1,36,777.99 | 1,32,732.11 |\n> | Non-Current Liabilities | 54,679.53 | 64,860.16 |\n> | Current Liabilities | 48,165.87 | 52,188.68 |\n> | **Total Equity and Liabilities** | 2,40,858.89 | 2,51,029.55 |\n>\n> Using the Extended DuPont Model, **answer** the following questions based on the above financial information and choose **the correct answer from the given four alternatives.** (All the calculations are upto 2 places of decimals) (2×5=10)\n\nThe Assets Turnover Ratios for the financial years 2023-24 and 2024-25 are",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "0.53 and 0.60 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.56 and 0.66 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.68 and 0.57 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.60 and 0.53 for the financial years 2023-24 and 2024-25 respectively.",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.58,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Mr. S. Bose is a financial analyst working for an investment advisory firm. While going through the Annual Report 2024-25 of Tata Steel Limited, he noticed that there was a sharp decline in Profit for the Year of the Company for FY 2024-25 by about ₹ 3,700 crores. He was wondering why there is decline and what are the drivers behind the same. Assume that you are his friend and have happily agreed to solve this mystery for him using the DuPont Analysis.\n>\n> Extracts from the Statement of Profit and Loss for the years ended March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | Revenue from operations | ₹ 1,40,932.65 | ₹ 1,32,516.66 |\n> | Other income | ₹ 3,113.49 | ₹ 246.90 |\n> | **Total income** | ₹ 1,44,046.14 | ₹ 1,32,763.56 |\n> | Expenses: |  |  |\n> | Total operating expenses | ₹ 57,608.40 | ₹ 53,470.63 |\n> | Employee benefits expenses | ₹ 7,472.52 | ₹ 8,010.08 |\n> | Finance costs | ₹ 4,100.52 | ₹ 4,238.35 |\n> | Depreciation and amortization expense | ₹ 6,008.95 | ₹ 6,253.16 |\n> | Other expenses | ₹ 45,863.02 | ₹ 43,170.46 |\n> | **Total expenses** | ₹ 1,21,053.41 | ₹ 1,15,142.68 |\n> | **Profit before exceptional items and tax** | ₹ 22,992.73 | ₹ 17,620.88 |\n> | Exceptional items | (₹ 3,488.02) | (₹ 902.04) |\n> | **Profit before tax** | ₹ 19,504.71 | ₹ 16,718.84 |\n> | Tax expense | ₹ 3,842.86 | ₹ 4,749.14 |\n> | **Profit for the year** | ₹ 15,661.85 | ₹ 11,969.70 |\n>\n> Extract from the Balance Sheet as on March 31,\n>\n> | Particulars | 2024 | 2025 |\n> |---|---|---|\n> | **Assets** |  |  |\n> | Non-Current Assets | 2,05,372.60 | 2,15,666.57 |\n> | Current Assets | 35,486.29 | 35,362.98 |\n> | **Total Assets** | 2,40,858.89 | 2,51,029.55 |\n> | **Equity and Liabilities** |  |  |\n> | Share Capital | 1,235.50 | 1,248.60 |\n> | Other Equity | 1,36,777.99 | 1,32,732.11 |\n> | Non-Current Liabilities | 54,679.53 | 64,860.16 |\n> | Current Liabilities | 48,165.87 | 52,188.68 |\n> | **Total Equity and Liabilities** | 2,40,858.89 | 2,51,029.55 |\n>\n> Using the Extended DuPont Model, **answer** the following questions based on the above financial information and choose **the correct answer from the given four alternatives.** (All the calculations are upto 2 places of decimals) (2×5=10)\n\nWhich is the most important and significant driver behind pulling down the profitability of Tata Steel Limited during the financial year 2024-25?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Profit Margin",
+      "is_correct": true
+     },
+     {
+      "body_md": "Assets Utilization",
+      "is_correct": false
+     },
+     {
+      "body_md": "Leverage",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.57,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "\"A supply chain and its management create an identification of the company and the market it serves.\"\n**In the context of the above statement, elaborate** on the five key decision-making areas that are integral to effective Supply Chain Management (SCM). **Explain** how an Original Equipment Manufacturer (OEM) would tailor its supply chain strategy differently when targeting a mass market versus a niche market.",
+    "parent_ref": "2",
+    "explanation_md": "Effective SCM requires critical decisions in five specific areas to balance customer satisfaction with internal operating efficiencies. These are elaborated as under:\n\n(i) Production: Producing as per requirements of the market is the primary requirement of supply chain management. It needs immaculate planning. Master production schedules have to be in place which takes into account plant capacities, workload balancing, quality control and equipment maintenance scheduling.\n(ii) Inventory: In supply chain management, decisions regarding inventory to be held at each stage of the supply chain is crucial as a wrong decision has a cascading effect. Inventory often acts as a buffer against uncertainty in the supply chain. However higher the inventory, higher is the cost of holding. Thus optimal inventory levels need to be fixed which will have a positive impact on all the links of the supply chain.\n(iii) Location: The next important decision making issue, in supply chain management, is the selection of location for production and storage of inventory. The underlying issue is cost efficiency. These decisions facilitate products to flow through the supply to the final customer.\n(iv) Transportation: Decision regarding inventory, discussed previously, is related to the mode of transportation. Cost effective mode of transportation results in delayed movement of products and uncertainty in transportation. The uncertainty may be countered with higher stock levels which will increase the cost of investment in inventory. Thus deciding upon the mode of transportation is critical to the success of the supply chain.\n(v) Information: Smooth flow of information is the key to successful implementation of supply chain and its management. With good information, people can make effective decisions about what to produce and how much, about where to locate inventory, and how best to transport it.\n\nAn OEM's supply chain strategy directly reflects its market positioning.\n(i) An OEM - targeting cost leadership to address the mass market - would create and manage a supply chain, based on optimization of cost.\n(ii) If the OEM targets a niche market, it would have created a supply chain optimized on the basis of customer satisfaction and responsiveness.\nThus, a supply chain and its management creates an identification of the company and the market it serves.",
+    "reference_solution_md": "Effective SCM requires critical decisions in five specific areas to balance customer satisfaction with internal operating efficiencies. These are elaborated as under:\n\n(i) Production: Producing as per requirements of the market is the primary requirement of supply chain management. It needs immaculate planning. Master production schedules have to be in place which takes into account plant capacities, workload balancing, quality control and equipment maintenance scheduling.\n(ii) Inventory: In supply chain management, decisions regarding inventory to be held at each stage of the supply chain is crucial as a wrong decision has a cascading effect. Inventory often acts as a buffer against uncertainty in the supply chain. However higher the inventory, higher is the cost of holding. Thus optimal inventory levels need to be fixed which will have a positive impact on all the links of the supply chain.\n(iii) Location: The next important decision making issue, in supply chain management, is the selection of location for production and storage of inventory. The underlying issue is cost efficiency. These decisions facilitate products to flow through the supply to the final customer.\n(iv) Transportation: Decision regarding inventory, discussed previously, is related to the mode of transportation. Cost effective mode of transportation results in delayed movement of products and uncertainty in transportation. The uncertainty may be countered with higher stock levels which will increase the cost of investment in inventory. Thus deciding upon the mode of transportation is critical to the success of the supply chain.\n(v) Information: Smooth flow of information is the key to successful implementation of supply chain and its management. With good information, people can make effective decisions about what to produce and how much, about where to locate inventory, and how best to transport it.\n\nAn OEM's supply chain strategy directly reflects its market positioning.\n(i) An OEM - targeting cost leadership to address the mass market - would create and manage a supply chain, based on optimization of cost.\n(ii) If the OEM targets a niche market, it would have created a supply chain optimized on the basis of customer satisfaction and responsiveness.\nThus, a supply chain and its management creates an identification of the company and the market it serves.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.23,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "**Discuss** the steps for implementation of Total Quality Management (TQM).",
+    "parent_ref": "2",
+    "explanation_md": "Steps for implementation of Total Quality Management (TQM) are as follows:\n\nStage 1: Identification of Customers / customer groups:\nThrough a team approach (a technique called multi-voting), the firm should identify major customer groups. This helps in generating priorities in the identification of customers and critical issues in the provision of decision-support information.\n\nStage 2: Identifying customer expectations:\nOnce the major customer groups are identified, their expectations are listed. The question to be answered is – What does the customer expect from the Firm?\n\nStage 3: Identifying customer decision-making requirements and product utilities:\nBy identifying the need to stay close to the customers and follow their suggestions, a decision – support system can be developed, incorporating both financial and non-financial information, which seeks to satisfy user requirements. Hence, the Firm finds out the answer to – What are the customer's decision-making requirements and product utilities? The answer is sought by listing out managerial perceptions and not by actual interaction with the customers.\n\nStage 4: Identifying perceived problems in decision-making process and product utilities:\nUsing participative processes such as brainstorming and multi-voting, the firm seeks to list out its perception of problem areas and shortcomings in meeting customer requirements. This will list out areas of weakness where the greatest impact could be achieved through the implementation of improvements. The firm identifies the answer to the question – What problem areas do we perceive in the decision-making process?\n\nStage 5: Comparison with other Firms and benchmarking:\nDetailed and systematic internal deliberations allow the Firm to develop a clear idea of their own strengths and weaknesses and of the areas of most significant deficiency. Benchmarking exercise allows the Firm to see how other Companies are coping with similar problems and opportunities.\n\nStage 6: Customer Feedback:\nStages 1 to 5 provide a information base developed without reference to the customer. This is rectified at Stage 6 with a survey of representative customers, which embraces their views on perceived problem areas. Interaction with the customers and obtaining their views helps the Firm in correcting its own perceptions and refining its process.\n\nStage 7& 8: Identification of improvement opportunities and implementation of Quality Improvement Process:\nThe outcomes of the customer survey, benchmarking and internal analysis, provides the inputs for stages 7 and 8 i.e., the identification of improvement opportunities and the implementation of a formal improvement process.",
+    "reference_solution_md": "Steps for implementation of Total Quality Management (TQM) are as follows:\n\nStage 1: Identification of Customers / customer groups:\nThrough a team approach (a technique called multi-voting), the firm should identify major customer groups. This helps in generating priorities in the identification of customers and critical issues in the provision of decision-support information.\n\nStage 2: Identifying customer expectations:\nOnce the major customer groups are identified, their expectations are listed. The question to be answered is – What does the customer expect from the Firm?\n\nStage 3: Identifying customer decision-making requirements and product utilities:\nBy identifying the need to stay close to the customers and follow their suggestions, a decision – support system can be developed, incorporating both financial and non-financial information, which seeks to satisfy user requirements. Hence, the Firm finds out the answer to – What are the customer's decision-making requirements and product utilities? The answer is sought by listing out managerial perceptions and not by actual interaction with the customers.\n\nStage 4: Identifying perceived problems in decision-making process and product utilities:\nUsing participative processes such as brainstorming and multi-voting, the firm seeks to list out its perception of problem areas and shortcomings in meeting customer requirements. This will list out areas of weakness where the greatest impact could be achieved through the implementation of improvements. The firm identifies the answer to the question – What problem areas do we perceive in the decision-making process?\n\nStage 5: Comparison with other Firms and benchmarking:\nDetailed and systematic internal deliberations allow the Firm to develop a clear idea of their own strengths and weaknesses and of the areas of most significant deficiency. Benchmarking exercise allows the Firm to see how other Companies are coping with similar problems and opportunities.\n\nStage 6: Customer Feedback:\nStages 1 to 5 provide a information base developed without reference to the customer. This is rectified at Stage 6 with a survey of representative customers, which embraces their views on perceived problem areas. Interaction with the customers and obtaining their views helps the Firm in correcting its own perceptions and refining its process.\n\nStage 7& 8: Identification of improvement opportunities and implementation of Quality Improvement Process:\nThe outcomes of the customer survey, benchmarking and internal analysis, provides the inputs for stages 7 and 8 i.e., the identification of improvement opportunities and the implementation of a formal improvement process.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A producer sells a product in two distinct markets: Market X and Market Y. The demand functions in each market are given by:\nMarket X : $Q_1 = 21 - 0.1P_1$\nMarket Y : $Q_2 = 50 - 0.4P_2$\nThe total cost of production is given by $\\text{TC} = 2000 + 10Q$ where $Q = Q_1 + Q_2$.\nThe producer must charge the same price in both markets.\n\n**Required :**\n**Analyze** the price that the producer will charge in order to maximize profits and also **Assess** the maximum profit.",
+    "parent_ref": "3",
+    "explanation_md": "Calculation of profit maximization price and associated profit\nWhen the producer does not discriminate between market X & market Y and charges the same price, the two demand functions can be aggregated and $P_1$ and $P_2$ may be replaced by a uniform price, say $P$.\n\nThus, we have $Q = Q_1 + Q_2 = (21 - 0.1P) + (50 - 0.4P) = 71 - 0.5P$\nOr, $P = 142 - 2Q$\nThe total revenue is given by\n$\\text{TR} = P \\times Q = (142 - 2Q) \\times Q = 142Q - 2Q^2$\n$\\text{MR} = d/dQ\\,(142Q - 2Q^2) = 142 - 4Q$\n\n$\\text{Marginal Cost} = d/dQ\\,(2000 + 10Q) = 10$\nFor maximization of profit, $\\text{MR} = \\text{MC}$\n$142 - 4Q = 10$\n$Q = 33$\n\nPutting $Q = 33$ in the equation $P = 142 - 2Q$, we get $P = 76$\nTherefore, the profit maximizing price is 76.\n\nAssessment of Maximum Profit (Rs)\n$\\text{Profit} = \\text{TR} - \\text{TC} = P \\times Q - (2000 + 10Q)$\n$= 33 \\times 76 - (2000 + 10 \\times 33) = 178$\nThe associated profit is 178",
+    "reference_solution_md": "Calculation of profit maximization price and associated profit\nWhen the producer does not discriminate between market X & market Y and charges the same price, the two demand functions can be aggregated and $P_1$ and $P_2$ may be replaced by a uniform price, say $P$.\n\nThus, we have $Q = Q_1 + Q_2 = (21 - 0.1P) + (50 - 0.4P) = 71 - 0.5P$\nOr, $P = 142 - 2Q$\nThe total revenue is given by\n$\\text{TR} = P \\times Q = (142 - 2Q) \\times Q = 142Q - 2Q^2$\n$\\text{MR} = d/dQ\\,(142Q - 2Q^2) = 142 - 4Q$\n\n$\\text{Marginal Cost} = d/dQ\\,(2000 + 10Q) = 10$\nFor maximization of profit, $\\text{MR} = \\text{MC}$\n$142 - 4Q = 10$\n$Q = 33$\n\nPutting $Q = 33$ in the equation $P = 142 - 2Q$, we get $P = 76$\nTherefore, the profit maximizing price is 76.\n\nAssessment of Maximum Profit (Rs)\n$\\text{Profit} = \\text{TR} - \\text{TC} = P \\times Q - (2000 + 10Q)$\n$= 33 \\times 76 - (2000 + 10 \\times 33) = 178$\nThe associated profit is 178",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "economic-efficiency-of-the-firm-performance-analysis",
+    "mapping_confidence": 0.33,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "**Discuss** the essentials of Risk Management. **What** are the features of various types of risk?",
+    "parent_ref": "3",
+    "explanation_md": "Risk Management:\nRisk has significant implications in the world of finance. Conceptualising the term is the first and foremost task for every manager before any attempt is made to measure and manage it. Risk is a condition where there exists a quantifiable dispersion in the possible outcomes from any activity, it can be classified in a number of ways. For monitoring the performance of an organization with respect to corporate objectives, it is imperative to form control mechanisms that enable the identification of risks and which meet the predefined objectives.\n\nThus, in business world, risk connotes the extent to which any selected action or inaction leads to some impact on desirable outcome. In finance, risk is categorised from various perspectives.\n\nFeatures of various Types of Risk:\nIn the following lines brief categorisation of the types of financial risk is classified and its features are given :\n1) Systematic Risk: It occurs due to macro economic factors. It is also called market risk or non-diversifiable risk or volatility risk. It is beyond the control of a specific company. It is categorised as follows:\n(i) Interest risk\n(ii) Market risk\n(iii) Purchasing power risk\n(iv) Foreign Exchange risk\n(v) Political risk\n2) Unsystematic Risk: It is that portion of total risk which results from known and controllable factors. It refers to that portion of the financial risk of an entity which is caused due to factors unique or related to an entity rather than the industry. It is categorised as:\n(i) Liquidity risk\n(ii) Credit risk\n(iii) Operational risk",
+    "reference_solution_md": "Risk Management:\nRisk has significant implications in the world of finance. Conceptualising the term is the first and foremost task for every manager before any attempt is made to measure and manage it. Risk is a condition where there exists a quantifiable dispersion in the possible outcomes from any activity, it can be classified in a number of ways. For monitoring the performance of an organization with respect to corporate objectives, it is imperative to form control mechanisms that enable the identification of risks and which meet the predefined objectives.\n\nThus, in business world, risk connotes the extent to which any selected action or inaction leads to some impact on desirable outcome. In finance, risk is categorised from various perspectives.\n\nFeatures of various Types of Risk:\nIn the following lines brief categorisation of the types of financial risk is classified and its features are given :\n1) Systematic Risk: It occurs due to macro economic factors. It is also called market risk or non-diversifiable risk or volatility risk. It is beyond the control of a specific company. It is categorised as follows:\n(i) Interest risk\n(ii) Market risk\n(iii) Purchasing power risk\n(iv) Foreign Exchange risk\n(v) Political risk\n2) Unsystematic Risk: It is that portion of total risk which results from known and controllable factors. It refers to that portion of the financial risk of an entity which is caused due to factors unique or related to an entity rather than the industry. It is categorised as:\n(i) Liquidity risk\n(ii) Credit risk\n(iii) Operational risk",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.89,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "**What** is Return on Net Assets (RONA)? **Explain** its implications.",
+    "parent_ref": "4",
+    "explanation_md": "Return On Net Assets (RONA):\nReturn On Net Assets (RONA) is measure of profitability which calculates net profit as a proportion of the sum of fixed assets and net working capital. Thus RONA is yet another variation of the return on investment which considers the investment in the working capital, as well. The net profit, considered is after interest and taxes. Thus,\n\nRONA= Net Profits/ Fixed Assets+ Net Working capital\nWhere, NWC= Net Working Capital= Current Assets- Current Liabilities\nRONA= Return on Net Assets\n\nRONA ratio shows how well a company and its management are deploying assets in in economically valuable ways; a high ratio result indicates that management squeezing more earnings out of each rupee invested in assets. RONA is also used to assess how well a company is performing compared to others in its industry.\n\nImplications of RONA:\nRONA provides a comparison between a firm's income and its assts (fixed assets and excess of its current assets over current liabilities). This provides assistance to financial analysts to define how well company is generating profits from its assets.\n\nRONA is an especially important metric for capital intensive companies, which have fixed assets as their major asset component.",
+    "reference_solution_md": "Return On Net Assets (RONA):\nReturn On Net Assets (RONA) is measure of profitability which calculates net profit as a proportion of the sum of fixed assets and net working capital. Thus RONA is yet another variation of the return on investment which considers the investment in the working capital, as well. The net profit, considered is after interest and taxes. Thus,\n\nRONA= Net Profits/ Fixed Assets+ Net Working capital\nWhere, NWC= Net Working Capital= Current Assets- Current Liabilities\nRONA= Return on Net Assets\n\nRONA ratio shows how well a company and its management are deploying assets in in economically valuable ways; a high ratio result indicates that management squeezing more earnings out of each rupee invested in assets. RONA is also used to assess how well a company is performing compared to others in its industry.\n\nImplications of RONA:\nRONA provides a comparison between a firm's income and its assts (fixed assets and excess of its current assets over current liabilities). This provides assistance to financial analysts to define how well company is generating profits from its assets.\n\nRONA is an especially important metric for capital intensive companies, which have fixed assets as their major asset component.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.36,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Mr. Gopal is considering investing in bonds of two companies— RIL and SIL. He is nearing retirement age and desires to undertake minimal risk in his investment. He is also worried about the default risk associated with his investment and wants to assess the chance of the company (in which he invests) going bust.\nHe seeks your advice to assess the bankruptcy risk associated with the aforesaid two companies— RIL and SIL. For this purpose, the relevant extracts of the financial statements which are extracted from the latest annual reports of the two companies are given below:\n\n| Particulars | RIL Amount (₹) | SIL Amount (₹) |\n|---|---|---|\n| Working Capital | 10,00,000 | 20,00,000 |\n| Retained Earnings | 5,00,000 | 9,50,000 |\n| Earnings before Interest and Taxes | 7,50,000 | 7,50,000 |\n| Market Value of Equity | 15,00,000 | 18,00,000 |\n| Sales | 12,00,000 | 15,00,000 |\n| Total Assets | 10,00,000 | 12,00,000 |\n| Total Liabilities | 10,00,000 | 12,00,000 |\n\n**Required :**\n**Advise** which company is safer to invest by using Altman Z score.",
+    "parent_ref": "4",
+    "explanation_md": "Calculation of Altman Z-Score:\n\n| Predictor Variable | Formula | RIL | SIL |\n|---|---|---|---|\n| X1 | Working Capital/Total Assets | 1.00 | 1.67 |\n| X2 | Retained Earnings / Total Assets | 0.50 | 0.79 |\n| X3 | EBIT/Total Assets | 0.75 | 0.63 |\n| X4 | MV of Equity / Book Value of Total Liability | 1.50 | 1.50 |\n| X5 | Sales/Total assets | 1.20 | 1.25 |\n| Altman Z Score | 1.2X1 +1.4X2 +3.3X3 +0.6X4 +0.999X5 | 6.47 | 7.34 |\n\nAdvice:\nFrom the above, it can be inferred that both the companies have pretty good scores and considered to be financially healthy since the Z-Score of the companies under consideration is substantially higher than three.\n\nHowever, the score of SIL is slightly better than that of RIL. Thus, it is advised that though both the companies are safe as regards to bankruptcy risk, SIL is a slightly safer company to invest than RIL as projected by the Altman Z-Score.",
+    "reference_solution_md": "Calculation of Altman Z-Score:\n\n| Predictor Variable | Formula | RIL | SIL |\n|---|---|---|---|\n| X1 | Working Capital/Total Assets | 1.00 | 1.67 |\n| X2 | Retained Earnings / Total Assets | 0.50 | 0.79 |\n| X3 | EBIT/Total Assets | 0.75 | 0.63 |\n| X4 | MV of Equity / Book Value of Total Liability | 1.50 | 1.50 |\n| X5 | Sales/Total assets | 1.20 | 1.25 |\n| Altman Z Score | 1.2X1 +1.4X2 +3.3X3 +0.6X4 +0.999X5 | 6.47 | 7.34 |\n\nAdvice:\nFrom the above, it can be inferred that both the companies have pretty good scores and considered to be financially healthy since the Z-Score of the companies under consideration is substantially higher than three.\n\nHowever, the score of SIL is slightly better than that of RIL. Thus, it is advised that though both the companies are safe as regards to bankruptcy risk, SIL is a slightly safer company to invest than RIL as projected by the Altman Z-Score.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.67,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Super Shakti Ltd. is trying to buy Beta India Ltd. Beta India Ltd. is a small biotechnology firm that develops products that are licensed to major pharmaceutical firms. The development costs are expected to generate negative cash flows of ₹ 10 lakh during the first year of the forecast period. Licensing fee is expected to generate positive cash flows of ₹ 5, ₹ 10, ₹ 15 and ₹ 20 lakhs during 2-5 years respectively. Due to the emergence of competitive products cash flows are expected to grow annually at a modest 5% after the fifth year. The discount rate for the first five years is estimated to be 15% and then drop to 8% beyond the fifth year.\n\n| Discount Rate | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 | Year 6 |\n|---|---|---|---|---|---|---|\n| 8% | 0.9259 | 0.8573 | 0.7938 | 0.7350 | 0.6805 | 0.6301 |\n| 15% | 0.8696 | 0.7562 | 0.6576 | 0.5718 | 0.4972 | 0.4324 |\n\n**Required :**\nAssess the Value of the Firm.",
+    "parent_ref": "5",
+    "explanation_md": "Computation of Present Value (PV) of Cash Flows\n\nYEAR | Cashflows (₹ in Lakh) | Discount Rate PVIF (15%) | Present Value ₹ in Lakh\n---|---|---|---\n1 | (10) (Negative) | 0.8696 | (8.696)\n2 | 5 | 0.7562 | 3.781\n3 | 10 | 0.6576 | 6.576\n4 | 15 | 0.5718 | 8.577\n5 | 20 | 0.4972 | 9.944\nTOTAL | | | 20.182\n\nAssessment of Value of Firm:\n(i) Total sum of present value = ₹ 20.18\n(ii) $\\text{Terminal Value}_t = (\\text{Cash Flow}_{t+1} / r - g_{\\text{stable}})$\n$\\text{Cash Flow}_{t+1} = \\text{Cash Flow}_t(1 + g)$\n$= \\text{₹ }20(1 + 0.05) = 21$ Lakhs.\n$\\text{Terminal Value} = 21 / (0.08 - 0.05)$\n$= \\text{₹ }700$ Lakhs.\n$\\text{Present Value of Terminal Value} = \\text{₹ }700 \\times (0.4972) = \\text{₹ }348.04$ Lakh\n$\\text{Value of the Firm} = \\text{₹ }(20.18 + 348.04) = \\text{₹ }368.22$ Lakh",
+    "reference_solution_md": "Computation of Present Value (PV) of Cash Flows\n\nYEAR | Cashflows (₹ in Lakh) | Discount Rate PVIF (15%) | Present Value ₹ in Lakh\n---|---|---|---\n1 | (10) (Negative) | 0.8696 | (8.696)\n2 | 5 | 0.7562 | 3.781\n3 | 10 | 0.6576 | 6.576\n4 | 15 | 0.5718 | 8.577\n5 | 20 | 0.4972 | 9.944\nTOTAL | | | 20.182\n\nAssessment of Value of Firm:\n(i) Total sum of present value = ₹ 20.18\n(ii) $\\text{Terminal Value}_t = (\\text{Cash Flow}_{t+1} / r - g_{\\text{stable}})$\n$\\text{Cash Flow}_{t+1} = \\text{Cash Flow}_t(1 + g)$\n$= \\text{₹ }20(1 + 0.05) = 21$ Lakhs.\n$\\text{Terminal Value} = 21 / (0.08 - 0.05)$\n$= \\text{₹ }700$ Lakhs.\n$\\text{Present Value of Terminal Value} = \\text{₹ }700 \\times (0.4972) = \\text{₹ }348.04$ Lakh\n$\\text{Value of the Firm} = \\text{₹ }(20.18 + 348.04) = \\text{₹ }368.22$ Lakh",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.39,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ZNB Ltd. provides the following information pertaining to its Business:\n\n| Approach | Valuation Method | Value (INR) | Weight |\n|---|---|---|---|\n| Market | Comparative Business Sales | 10,00,000 | 30% |\n| Income | Discounted Cash Flow | 15,00,000 | 20% |\n| Income | Multiple of Discretionary Earnings | 20,00,000 | 10% |\n| Asset | Asset Accumulation | 25,00,000 | 40% |\n\nAdditional Information :\nDiscount rate is 30% and the forecast suggests that the business profits would be growing at a steady rate of 5% per year.\n\n**Required :**\n**Assess** the following:\n(i) Business value\n(ii) Capitalisation rate",
+    "parent_ref": "5",
+    "explanation_md": "(i) Business Value:\n\n| Approach | Valuation Method | Value (₹) | Weight | Weighted Value (₹) |\n|---|---|---|---|---|\n| Market | Comparative business sales | 10,00,000 | 30% | 3,00,000 |\n| Income | Discounted Cash Flow | 15,00,000 | 20% | 3,00,000 |\n| Income | Multiple of Discretionary Earnings | 20,00,000 | 10% | 2,00,000 |\n| Asset | Asset Accumulation | 25,00,000 | 40% | 10,00,000 |\n|  | Total | 100% | 18,00,000 |  |\n\nThus, business value is the sum total of weighted values = ₹ 18,00,000\n\n(ii) Capitalisation Rate: Capitalisation rate = 30% – 5%= 25%",
+    "reference_solution_md": "(i) Business Value:\n\n| Approach | Valuation Method | Value (₹) | Weight | Weighted Value (₹) |\n|---|---|---|---|---|\n| Market | Comparative business sales | 10,00,000 | 30% | 3,00,000 |\n| Income | Discounted Cash Flow | 15,00,000 | 20% | 3,00,000 |\n| Income | Multiple of Discretionary Earnings | 20,00,000 | 10% | 2,00,000 |\n| Asset | Asset Accumulation | 25,00,000 | 40% | 10,00,000 |\n|  | Total | 100% | 18,00,000 |  |\n\nThus, business value is the sum total of weighted values = ₹ 18,00,000\n\n(ii) Capitalisation Rate: Capitalisation rate = 30% – 5%= 25%",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.49,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Mr. Anand, the current Copyright holder of the Book \"Performance Management\" is willing to sell the copyrights of his book to a publisher who is keen to buy the copyright. The following are the assumptions:\nCurrently, 2,500 copies of the book are sold annually at a price of ₹ 1,750 per book. The cost of production, distribution and author royalties amount to 70% of Sales. The book is becoming popular and the publisher estimates that the sales of the book may increase by 5% every year for the next 5 years and by 2% from year 6 to 10. This is including the newer editions of the same book. However, after this, given the introduction of other books on the same subject, dilution of exclusivity, violation of copyrights and plagiarism, there may not be any special advantage from the book beyond year 10. Assuming a discount rate of 10%.\n\n**Required :**\n**Analyze** the value of Copyright if the author wishes to sell the same.",
+    "parent_ref": "6",
+    "explanation_md": "The copyrights valuation can be done using the Market or Income or even Cost Approach. By applying the Income approach the value of Copyrights are as follows:\n(Amount in ₹ Lakh)\n\n| Year | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Annual Increase | -- | 5% | 5% | 5% | 5% | 5% | 2% | 2% | 2% | 2% | 2% |\n| Book Price (₹) | 1,750 |  |  |  |  |  |  |  |  |  |  |\n| Unit Sales per Year | 2,500 |  |  |  |  |  |  |  |  |  |  |\n| Revenue\\* | 43.75 |  |  |  |  |  |  |  |  |  |  |\n| Less: Costs\\* @70% | 30.63 |  |  |  |  |  |  |  |  |  |  |\n| Cash Flows\\* | 13.13 | 13.78 | 14.47 | 15.19 | 15.95 | 16.75 | 17.09 | 17.43 | 17.78 | 18.13 | 18.49 |\n| PV Factor @ 10% |  | 0.909 | 0.826 | 0.751 | 0.683 | 0.621 | 0.564 | 0.513 | 0.467 | 0.424 | 0.386 |\n| PV of Future Cash Flows\\* |  | 12.53 | 11.95 | 11.41 | 10.90 | 10.40 | 9.64 | 8.94 | 8.30 | 7.69 | 7.14 |\n\nValue of Copyrights (Year 1 To 10) (₹ In Lakh):\n12.53 + 11.95 + 11.41 + 10.90 + 10.40 + 9.64 + 8.94 + 8.30 + 7.69 + 7.14 = ₹ 98.90 Lakh",
+    "reference_solution_md": "The copyrights valuation can be done using the Market or Income or even Cost Approach. By applying the Income approach the value of Copyrights are as follows:\n(Amount in ₹ Lakh)\n\n| Year | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Annual Increase | -- | 5% | 5% | 5% | 5% | 5% | 2% | 2% | 2% | 2% | 2% |\n| Book Price (₹) | 1,750 |  |  |  |  |  |  |  |  |  |  |\n| Unit Sales per Year | 2,500 |  |  |  |  |  |  |  |  |  |  |\n| Revenue\\* | 43.75 |  |  |  |  |  |  |  |  |  |  |\n| Less: Costs\\* @70% | 30.63 |  |  |  |  |  |  |  |  |  |  |\n| Cash Flows\\* | 13.13 | 13.78 | 14.47 | 15.19 | 15.95 | 16.75 | 17.09 | 17.43 | 17.78 | 18.13 | 18.49 |\n| PV Factor @ 10% |  | 0.909 | 0.826 | 0.751 | 0.683 | 0.621 | 0.564 | 0.513 | 0.467 | 0.424 | 0.386 |\n| PV of Future Cash Flows\\* |  | 12.53 | 11.95 | 11.41 | 10.90 | 10.40 | 9.64 | 8.94 | 8.30 | 7.69 | 7.14 |\n\nValue of Copyrights (Year 1 To 10) (₹ In Lakh):\n12.53 + 11.95 + 11.41 + 10.90 + 10.40 + 9.64 + 8.94 + 8.30 + 7.69 + 7.14 = ₹ 98.90 Lakh",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A company has investments in the unlisted bonds of XYZ Limited. These bonds have a coupon of 9.5%, face value of ₹ 1,000 and the maturity of 5 years. The company has decided to hold these bonds till maturity. These bonds are rated as A⁺ and the current Yield to Maturity (YTM) on A⁺ bonds is 8.50%.\n\n| Year | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Discounting Factor @ 8.50% | 0.9217 | 0.8495 | 0.7829 | 0.7216 | 0.6650 |\n| Discounting Factor @ 9.50% | 0.9132 | 0.8340 | 0.7617 | 0.6956 | 0.6352 |\n\n**You are required to determine** the fair value of these bonds.",
+    "parent_ref": "6",
+    "explanation_md": "Computation of Present Value of Cashflow from Bonds:\n\n| Year | Cash flows from Bond (₹) | PVIF (8.50%) | PV of cash flows (₹) |\n|---|---|---|---|\n| 1 | 95.00 | 0.9217 | 87.56 |\n| 2 | 95.00 | 0.8495 | 80.70 |\n| 3 | 95.00 | 0.7829 | 74.38 |\n| 4 | 95.00 | 0.7216 | 68.55 |\n| 5 | 1,095.00 | 0.6650 | 728.18 |\n|  | Total | ₹ 1,039.37 |  |\n\nThe fair value of the bond is ₹ 1,039.37",
+    "reference_solution_md": "Computation of Present Value of Cashflow from Bonds:\n\n| Year | Cash flows from Bond (₹) | PVIF (8.50%) | PV of cash flows (₹) |\n|---|---|---|---|\n| 1 | 95.00 | 0.9217 | 87.56 |\n| 2 | 95.00 | 0.8495 | 80.70 |\n| 3 | 95.00 | 0.7829 | 74.38 |\n| 4 | 95.00 | 0.7216 | 68.55 |\n| 5 | 1,095.00 | 0.6650 | 728.18 |\n|  | Total | ₹ 1,039.37 |  |\n\nThe fair value of the bond is ₹ 1,039.37",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.22,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The following information is provided in relation to the acquiring firm RAJ Ltd. and the target firm PREET Ltd.:\n\n| RAJ Ltd. | PREET Ltd. |  |\n|---|---|---|\n| Earnings after tax (₹) | 2,000 lakh | 400 lakh |\n| No. of Outstanding Shares | 200 lakh | 100 lakh |\n| P/E | 10 | 5 |\n\n**Required :**\n(i) **What** is the swap ratio in terms of current market prices?\n(ii) **What** is the expected market price per share of RAJ Ltd. after acquisition assuming that P/E ratio of RAJ Ltd. remains unchanged?\n(iii) **Analyze** gain/loss for shareholders of the two independent companies after acquisition.",
+    "parent_ref": "7",
+    "explanation_md": "(i) Calculation of Swap Ratio:\n\nParticulars | RAJ Ltd. | PREET Ltd.\n---|---|---\nEAT (₹) | 2000 lakh | 400 lakh\nNo of shares outstanding | 200 lakh | 100 lakh\nP/E Ratio | 10 | 5\nEPS (₹) | $2000/200 = 10$ | $400/100 = 4$\nMarket Price /Share $(\\text{EPS} \\times \\text{P/E})$ (₹) | 100 | 20\n\nTherefore, swap ratio in terms of market prices $= \\text{MPS of target firm} / \\text{MPS of acquiring firm} = 20/100 = 0.20$ i.e. 1 share of RAJ Ltd for 5 Shares of Preet Ltd.\n\n(ii) Calculation of Market Price after acquisition:\nEPS of Raj Ltd. after acquisition $= (2000 + 400) / (200 + 0.2 \\times 100)$\n$= 2400 / 220 = \\text{₹ }10.91$\n\nTherefore, expected market price per share of RAJ Ltd. with the same P/E Ratio of 10 will be $= \\text{EPS} \\times \\text{P/E} = \\text{₹ }10.91 \\times 10 = \\text{₹ }109.10$\n\n(iii) Calculation of Gain / Loss to the shareholders:\n\n | Total | RAJ Ltd. | PREET Ltd.\n---|---|---|---\nNo. of shares after acquisition | 220 lakhs | 200 lakhs | 20 lakhs\nMPS after acquisition | ₹ 109.10 | ₹ 109.10 | ₹ 109.10\nTotal Market Value | ₹ 24002 lakhs | ₹ 21820 lakhs | ₹ 2182 lakhs\nExisting Market Value | ₹ 22000 lakhs | ₹ 20000 lakhs | ₹ 2000 lakhs\nGain to shareholders | ₹ 2002 lakhs | ₹ 1820 lakhs | ₹ 182 lakhs",
+    "reference_solution_md": "(i) Calculation of Swap Ratio:\n\nParticulars | RAJ Ltd. | PREET Ltd.\n---|---|---\nEAT (₹) | 2000 lakh | 400 lakh\nNo of shares outstanding | 200 lakh | 100 lakh\nP/E Ratio | 10 | 5\nEPS (₹) | $2000/200 = 10$ | $400/100 = 4$\nMarket Price /Share $(\\text{EPS} \\times \\text{P/E})$ (₹) | 100 | 20\n\nTherefore, swap ratio in terms of market prices $= \\text{MPS of target firm} / \\text{MPS of acquiring firm} = 20/100 = 0.20$ i.e. 1 share of RAJ Ltd for 5 Shares of Preet Ltd.\n\n(ii) Calculation of Market Price after acquisition:\nEPS of Raj Ltd. after acquisition $= (2000 + 400) / (200 + 0.2 \\times 100)$\n$= 2400 / 220 = \\text{₹ }10.91$\n\nTherefore, expected market price per share of RAJ Ltd. with the same P/E Ratio of 10 will be $= \\text{EPS} \\times \\text{P/E} = \\text{₹ }10.91 \\times 10 = \\text{₹ }109.10$\n\n(iii) Calculation of Gain / Loss to the shareholders:\n\n | Total | RAJ Ltd. | PREET Ltd.\n---|---|---|---\nNo. of shares after acquisition | 220 lakhs | 200 lakhs | 20 lakhs\nMPS after acquisition | ₹ 109.10 | ₹ 109.10 | ₹ 109.10\nTotal Market Value | ₹ 24002 lakhs | ₹ 21820 lakhs | ₹ 2182 lakhs\nExisting Market Value | ₹ 22000 lakhs | ₹ 20000 lakhs | ₹ 2000 lakhs\nGain to shareholders | ₹ 2002 lakhs | ₹ 1820 lakhs | ₹ 182 lakhs",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.78,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "As a finance manager of DODON Ltd., you are investigating the acquisition of BODON Ltd. The following facts are given:\n\n| DODON Ltd. | BODON Ltd. |  |\n|---|---|---|\n| Earnings per share (₹) | 6.75 | 2.50 |\n| Dividend per share (₹) | 3.25 | 1.00 |\n| Price per share (₹) | 48 | 15 |\n| No. of Outstanding shares | 60 lakhs | 20 lakhs |\n\nInvestors currently expect that the dividends and earnings of BODON Ltd. to grow at a steady rate of 7%. After acquisition, this growth rate would increase to 8% without any additional investment.\n\n**Required :**\n(i) **Analyze** the benefit of this acquisition\n(ii) **Analyze** the cost of this acquisition to DODON Ltd., if it\nI. pays Compensation @ ₹ 17 per share in cash to BODON Ltd.\nII. offers one share for every three shares of BODON Ltd.",
+    "parent_ref": "7",
+    "explanation_md": "(i) Calculation of post-acquisition benefit:\nRate of Return required by the investors of BODON Ltd. is given by\n$K_e = (D_1 / P) + g = 1/15 + 0.07 = 0.1367$ or 13.67%\nIf $g = 8\\%$, market price per share of BODON Ltd. $= 1 \\times 1.08 / (0.1367 - 0.08)$\n$= \\text{₹ }19.05$\n$\\text{Benefits of acquisition} = \\text{PV of BODON Ltd. with merger} - \\text{PV of BODON Ltd. without merger}$\n$= (19.05 - 15) \\times 20{,}00{,}000 = \\text{₹ }81{,}00{,}000$\n\n(ii) Cost of acquisition to DODON Ltd.:\n1. If it pays cash compensation of ₹ 17 per share:\n$\\text{Cost of acquisition} = \\text{Cash Compensation} - \\text{PV of BODON Ltd.}$\n$= (17 \\times 20{,}00{,}000) - (15 \\times 20{,}00{,}000)$\n$= \\text{₹ }40$ lakh\n\n2. If offers one share for every three shares:\nIn this case share of BODON Ltd. in the combined entity will be\n$= (1/3 \\times 20{,}00{,}000) / (60{,}00{,}000 + 1/3 \\times 20{,}00{,}000) = 0.10$\n$\\text{Value of the merged entity} = \\text{Value of DODON Ltd.} + \\text{Value of BODON Ltd} + \\text{Synergy}$\n$= (60\\text{ lakh} \\times \\text{₹ }48) + (20\\text{ lakh} \\times \\text{₹ }15) + 81\\text{ lakh}$\n$= \\text{₹ }3{,}261\\text{ lakh}$\nCost of acquisition to DODON Ltd. given the exchange ratio,\n$= \\text{The value of what BODON's shareholder's get} - \\text{the value what they give up}$\n$= 0.10 \\times 3{,}261 - 300 = \\text{₹ }26.10\\text{ lakh}$",
+    "reference_solution_md": "(i) Calculation of post-acquisition benefit:\nRate of Return required by the investors of BODON Ltd. is given by\n$K_e = (D_1 / P) + g = 1/15 + 0.07 = 0.1367$ or 13.67%\nIf $g = 8\\%$, market price per share of BODON Ltd. $= 1 \\times 1.08 / (0.1367 - 0.08)$\n$= \\text{₹ }19.05$\n$\\text{Benefits of acquisition} = \\text{PV of BODON Ltd. with merger} - \\text{PV of BODON Ltd. without merger}$\n$= (19.05 - 15) \\times 20{,}00{,}000 = \\text{₹ }81{,}00{,}000$\n\n(ii) Cost of acquisition to DODON Ltd.:\n1. If it pays cash compensation of ₹ 17 per share:\n$\\text{Cost of acquisition} = \\text{Cash Compensation} - \\text{PV of BODON Ltd.}$\n$= (17 \\times 20{,}00{,}000) - (15 \\times 20{,}00{,}000)$\n$= \\text{₹ }40$ lakh\n\n2. If offers one share for every three shares:\nIn this case share of BODON Ltd. in the combined entity will be\n$= (1/3 \\times 20{,}00{,}000) / (60{,}00{,}000 + 1/3 \\times 20{,}00{,}000) = 0.10$\n$\\text{Value of the merged entity} = \\text{Value of DODON Ltd.} + \\text{Value of BODON Ltd} + \\text{Synergy}$\n$= (60\\text{ lakh} \\times \\text{₹ }48) + (20\\text{ lakh} \\times \\text{₹ }15) + 81\\text{ lakh}$\n$= \\text{₹ }3{,}261\\text{ lakh}$\nCost of acquisition to DODON Ltd. given the exchange ratio,\n$= \\text{The value of what BODON's shareholder's get} - \\text{the value what they give up}$\n$= 0.10 \\times 3{,}261 - 300 = \\text{₹ }26.10\\text{ lakh}$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.88,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Every company wants to have a larger market share and as such more and more customers. But of late, it is being realized that every customer is not a value-creator for the company and therefore, it is imperative on the part of the management of a company to understand the true economic value contributed by each customer— not just their top-line contribution. This will help the management of the companies to prioritize high-value customers for marketing, support and retention efforts. For this purpose, a company should undertake Customer Profitability Analysis that would help it to see beyond revenue, guide smarter decisions that balance financial performance with strategic value.\nRealizing the importance of Customer Profitability Analysis (CPA), XYZ Limited has decided to analyze the profitability of 4 customers A, B, C and D. The Company sells products at a list price of ₹ 2,000 per unit and has a manufacturing cost of ₹ 800 per unit. The Company collects GST @ 8% from the customers. Data pertaining to the four customers are:\n\n| A | B | C | D |  |\n|---|---|---|---|---|\n| Units sold | 60,000 | 35,000 | 20,000 | 15,000 |\n| List price | ₹ 2,000 | ₹ 2,000 | ₹ 2,000 | ₹ 2,000 |\n| Price discount(%) | 5% | 3% | 1% | — |\n| Number of purchase orders | 3,600 | 3,000 | 1,800 | 1,200 |\n| Number of sales visits | 900 | 750 | 600 | 450 |\n| Number of deliveries | 6,000 | 3,000 | 2,000 | 1,500 |\n| Set up and Inspection | 3,000 | 2,400 | 1,440 | 240 |\n| Kilometers travelled for delivery | 650 | 1,560 | 2,600 | 790 |\n| Number of expedited deliveries | 160 | 0 | 320 | 0 |\n\nCustomer-Level Costs\n\n| Particulars | Amount |\n|---|---|\n| Purchase orders | ₹ 6,40,000 |\n| Sales visits | ₹ 2,16,000 |\n| Deliveries | ₹ 37,500 |\n| Set up and Inspection cost | ₹ 3,54,000 |\n| Total Delivery cost for km travelled | ₹ 8,960 |\n| Expedited deliveries cost | ₹ 1,44,000 |\n\n**You are required to prepare** a Customer-Profitability Analysis Statement and rank the customers in terms of the total profitability. **Also comment** on possibility of increasing overall profitability using the analysis.",
+    "parent_ref": "8",
+    "explanation_md": "**CUSTOMER-PROFITABILITY ANALYSIS**\n\n|  | A | B | C | D |\n|---|---|---|---|---|\n| Units Sold | 60,000 | 35,000 | 20,000 | 15,000 |\n| List Price | Rs.2,000 | Rs.2,000 | Rs.2,000 | Rs.2,000 |\n| Price Discount (%) | 5% | 3% | 1% | 0 |\n| Price Discount (Rs.) | Rs.100 | Rs.60 | Rs.20 | 0 |\n| Invoice Price | Rs.1,900 | Rs.1,940 | Rs.1,980 | Rs.2000 |\n| **Revenue** | **Rs.11,40,00,000** | **Rs.6,79,00,000** | **Rs.3,96,00,000** | **Rs.3,00,00,000** |\n| Less: Cost of Goods Sold @ Rs. 800 per unit | Rs.4,80,00,000 | Rs.2,80,00,000 | Rs.1,60,00,000 | Rs.1,20,00,000 |\n| **GROSS MARGIN** | **Rs.6,60,00,000** | **Rs.3,99,00,000** | **Rs.2,36,00,000** | **Rs.1,80,00,000** |\n| **CUSTOMER-LEVEL COSTS : [WN : (I) & (II)]** |  |  |  |  |\n| Number of purchase orders @ Rs. 66.67 | Rs.2,40,000 | Rs.2,00,000 | Rs.1,20,000 | Rs.80,000 |\n| Number of sales visits @ Rs. 80 | Rs.72,000 | Rs.60,000 | Rs.48,000 | Rs.36,000 |\n| Number of deliveries @ Rs. 3 | Rs.18,000 | Rs.9,000 | Rs.6,000 | Rs.4,500 |\n| Set Up and Inspection @ 50 | Rs.1,50,000 | Rs.1,20,000 | Rs.72,000 | Rs.12,000 |\n| Kilometres travelled per delivery @ Rs. 1.60 | Rs.1,040 | Rs.2,496 | Rs.4,160 | Rs.1,264 |\n| Number of expedited deliveries @ Rs. 300 | Rs.48,000 | Rs.0 | Rs.96,000 | Rs.0 |\n| **TOTAL CUSTOMER-LEVEL COST** | **Rs.5,29,040** | **Rs.3,91,496** | **Rs.3,46,160** | **Rs.1,33,764** |\n| **CUSTOMER-LEVEL OPERATING PROFIT** | **Rs.6,54,70,960** | **Rs.3,95,08,504** | **Rs.2,32,53,840** | **Rs.1,78,66,236** |\n|  | **A** | **B** | **C** | **D** |\n| Units sold | 60,000 | 35,000 | 20,000 | 15,000 |\n| Customer level per unit operating profit | Rs.1091.18 | Rs.1128.81 | Rs.1162.69 | Rs.1191.08 |\n\nWORKING NOTES:\n\n(I) CUSTOMER-LEVEL COSTS:\n\n | Total Cost (₹) | Total Number | Cost Per Unit or Activity (₹)\n---|---|---|---\nPurchase orders | 6,40,000 | 9,600 | 66.67\nSales visits | 2,16,000 | 2,700 | 80.00\nDeliveries | 37,500 | 12,500 | 3\nSet Up and Inspection | 3,54,000 | 7,080 | 50\nDelivery for Km travelled | 8,960 | 5,600 | 1.60\nExpedited deliveries | 1,44,000 | 480 | 300.00\n\n(II) Customers | A | B | C | D\n---|---|---|---|---\nNumber of Purchase orders | 3,600 | 3,000 | 1,800 | 1,200\nNumber of Sales Visits | 900 | 750 | 600 | 450\nNumber of Deliveries | 6,000 | 3,000 | 2,000 | 1,500\nSet Up and Inspection | 3,000 | 2,400 | 1,440 | 240\nKilometres travelled per delivery | 650 | 1,560 | 2,600 | 790\nNumber of expedited deliveries | 160 | 0 | 320 | 0\n\nComment:\nIt is seen that in terms of total customer level profitability the net operating profit from customers is highest for A, followed by B, then C & finally D. However, it is seen that in terms of per unit sold customer level operating profit D is most profitable at ₹ 1191.08 per unit, followed by C at ₹ 1162.69, B at ₹ 1128.81 and A at ₹ 1091.18. In terms of total profitability, the rank is A, B, C & D. however considering that per unit profitability is higher for D followed by C, B & A attempt should be made to increase sales volumes of D & C to earn higher profitability.",
+    "reference_solution_md": "**CUSTOMER-PROFITABILITY ANALYSIS**\n\n|  | A | B | C | D |\n|---|---|---|---|---|\n| Units Sold | 60,000 | 35,000 | 20,000 | 15,000 |\n| List Price | Rs.2,000 | Rs.2,000 | Rs.2,000 | Rs.2,000 |\n| Price Discount (%) | 5% | 3% | 1% | 0 |\n| Price Discount (Rs.) | Rs.100 | Rs.60 | Rs.20 | 0 |\n| Invoice Price | Rs.1,900 | Rs.1,940 | Rs.1,980 | Rs.2000 |\n| **Revenue** | **Rs.11,40,00,000** | **Rs.6,79,00,000** | **Rs.3,96,00,000** | **Rs.3,00,00,000** |\n| Less: Cost of Goods Sold @ Rs. 800 per unit | Rs.4,80,00,000 | Rs.2,80,00,000 | Rs.1,60,00,000 | Rs.1,20,00,000 |\n| **GROSS MARGIN** | **Rs.6,60,00,000** | **Rs.3,99,00,000** | **Rs.2,36,00,000** | **Rs.1,80,00,000** |\n| **CUSTOMER-LEVEL COSTS : [WN : (I) & (II)]** |  |  |  |  |\n| Number of purchase orders @ Rs. 66.67 | Rs.2,40,000 | Rs.2,00,000 | Rs.1,20,000 | Rs.80,000 |\n| Number of sales visits @ Rs. 80 | Rs.72,000 | Rs.60,000 | Rs.48,000 | Rs.36,000 |\n| Number of deliveries @ Rs. 3 | Rs.18,000 | Rs.9,000 | Rs.6,000 | Rs.4,500 |\n| Set Up and Inspection @ 50 | Rs.1,50,000 | Rs.1,20,000 | Rs.72,000 | Rs.12,000 |\n| Kilometres travelled per delivery @ Rs. 1.60 | Rs.1,040 | Rs.2,496 | Rs.4,160 | Rs.1,264 |\n| Number of expedited deliveries @ Rs. 300 | Rs.48,000 | Rs.0 | Rs.96,000 | Rs.0 |\n| **TOTAL CUSTOMER-LEVEL COST** | **Rs.5,29,040** | **Rs.3,91,496** | **Rs.3,46,160** | **Rs.1,33,764** |\n| **CUSTOMER-LEVEL OPERATING PROFIT** | **Rs.6,54,70,960** | **Rs.3,95,08,504** | **Rs.2,32,53,840** | **Rs.1,78,66,236** |\n|  | **A** | **B** | **C** | **D** |\n| Units sold | 60,000 | 35,000 | 20,000 | 15,000 |\n| Customer level per unit operating profit | Rs.1091.18 | Rs.1128.81 | Rs.1162.69 | Rs.1191.08 |\n\nWORKING NOTES:\n\n(I) CUSTOMER-LEVEL COSTS:\n\n | Total Cost (₹) | Total Number | Cost Per Unit or Activity (₹)\n---|---|---|---\nPurchase orders | 6,40,000 | 9,600 | 66.67\nSales visits | 2,16,000 | 2,700 | 80.00\nDeliveries | 37,500 | 12,500 | 3\nSet Up and Inspection | 3,54,000 | 7,080 | 50\nDelivery for Km travelled | 8,960 | 5,600 | 1.60\nExpedited deliveries | 1,44,000 | 480 | 300.00\n\n(II) Customers | A | B | C | D\n---|---|---|---|---\nNumber of Purchase orders | 3,600 | 3,000 | 1,800 | 1,200\nNumber of Sales Visits | 900 | 750 | 600 | 450\nNumber of Deliveries | 6,000 | 3,000 | 2,000 | 1,500\nSet Up and Inspection | 3,000 | 2,400 | 1,440 | 240\nKilometres travelled per delivery | 650 | 1,560 | 2,600 | 790\nNumber of expedited deliveries | 160 | 0 | 320 | 0\n\nComment:\nIt is seen that in terms of total customer level profitability the net operating profit from customers is highest for A, followed by B, then C & finally D. However, it is seen that in terms of per unit sold customer level operating profit D is most profitable at ₹ 1191.08 per unit, followed by C at ₹ 1162.69, B at ₹ 1128.81 and A at ₹ 1091.18. In terms of total profitability, the rank is A, B, C & D. however considering that per unit profitability is higher for D followed by C, B & A attempt should be made to increase sales volumes of D & C to earn higher profitability.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "In the textile industry, C and D companies are operating their business. You are the director of C company. Due to some personal reasons, Mr. Ramesh, the director of D company decided to sell his company and made an offer to C company at the purchase consideration of ₹ 1 crore. As director of the C company, you are required to consider the viability of the proposal of acquisition of D company as per stipulated purchase consideration. The project estimates that the purchase of D company will generate the following after-tax cash flow:\n\n| Year | Cash Flow (₹) |\n|---|---|\n| 1 | 20,00,000 |\n| 2 | 25,00,000 |\n| 3 | 28,00,000 |\n| 4 | 30,00,000 |\n| 5 | 40,00,000 |\n\nIf you decide to go ahead with this acquisition, it will be funded with C company's standard mix of debt and equity in its capital structure at the weighted average (after-tax) cost of capital of 9%. Corporate tax rate for the C company is 30 percent. Present value of ₹ 1 @9% for the five years is 0.917, 0.842, 0.772, 0.708 and 0.650 respectively.\n\n**You are required to comment** on the proposal of acquisition of D company and also recommend whether D company should be acquired or not.",
+    "parent_ref": "8",
+    "explanation_md": "Computation of Value of D Company:\n\n| Year | Cash Flow after tax (₹) | PV Factor @ 9% | PV of cash flow after tax (₹) |\n|---|---|---|---|\n| 1 | 20,00,000 | 0.917 | 18,34,000 |\n| 2 | 25,00,000 | 0.842 | 21,05,000 |\n| 3 | 28,00,000 | 0.772 | 21,61,600 |\n| 4 | 30,00,000 | 0.708 | 21,24,000 |\n| 5 | 40,00,000 | 0.650 | 26,00,000 |\n|  | Total value | ₹ 1,08,24,600 |  |\n\nRECOMMENDATION:\nSince the value of D company, is ₹ 1,08,24,600 which is higher than purchase consideration of ₹ 1 crore to be paid to D Company, it is recommended that C company may consider to acquire D company at the purchase consideration of ₹ 1 crore.",
+    "reference_solution_md": "Computation of Value of D Company:\n\n| Year | Cash Flow after tax (₹) | PV Factor @ 9% | PV of cash flow after tax (₹) |\n|---|---|---|---|\n| 1 | 20,00,000 | 0.917 | 18,34,000 |\n| 2 | 25,00,000 | 0.842 | 21,05,000 |\n| 3 | 28,00,000 | 0.772 | 21,61,600 |\n| 4 | 30,00,000 | 0.708 | 21,24,000 |\n| 5 | 40,00,000 | 0.650 | 26,00,000 |\n|  | Total value | ₹ 1,08,24,600 |  |\n\nRECOMMENDATION:\nSince the value of D company, is ₹ 1,08,24,600 which is higher than purchase consideration of ₹ 1 crore to be paid to D Company, it is recommended that C company may consider to acquire D company at the purchase consideration of ₹ 1 crore.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.73,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(xi)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xii)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xiii)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xiv)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xv)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "3(a)": [
+   "Print shows 'Q1', 'P1' etc. without subscript formatting; typeset as Q_1, P_1 (same meaning)."
+  ],
+  "5(a)": [
+   "Print shows 'Terminal Value t', 'Cash Flow t+1' with the t / t+1 as plain text (not visibly subscripted); typeset as subscripts."
+  ],
+  "7(a)": [
+   "Stem table unchanged."
+  ],
+  "7(b)": [
+   "Printed 'shareholder's' (apostrophe) kept as printed. Stem table unchanged."
+  ]
+ },
+ "review_decisions": {
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the printed question; stored key B equals the printed key (iii) (B) in the suggested answers.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the printed question; stored key C equals the printed key (vii) (C) in the suggested answers.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem data table and requirement match the question paper; the Z-score table and advice match the printed answer, including figures 6.47 and 7.34.",
+   "fixes": [],
+   "printed_issues": [
+    "Question gives Total Assets equal to Total Liabilities (10,00,000 and 12,00,000), as printed."
+   ],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print. The year-wise working table, an image in the stored text, was read from the printed page and inserted; the PV row sums to 98.90 as printed.",
+   "fixes": [
+    "Inserted the printed year-wise working table (years 0 to 10) in place of the missing-table placeholder."
+   ],
+   "printed_issues": [
+    "Book price, unit sales, revenue and cost cells for years 1 to 10 are blank in the print; cash flow row begins at 13.78 for year 1."
+   ],
+   "by": "claude-review"
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print. The main Customer-Profitability Analysis Statement, an image in the suggested answer and missing from the stored text, was read from the page and prepended; working notes and comment match the print.",
+   "fixes": [
+    "Added the printed Customer-Profitability Analysis Statement table before the working notes."
+   ],
+   "printed_issues": [
+    "Statement prints amounts with 'Rs.' rather than the rupee sign, and shows D's invoice price as Rs.2000 and discount as 0."
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [
+  "1(xi)",
+  "1(xii)",
+  "1(xiii)",
+  "1(xiv)",
+  "1(xv)"
+ ],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 29
+ }
+}

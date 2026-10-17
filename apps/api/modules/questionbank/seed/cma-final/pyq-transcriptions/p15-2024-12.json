@@ -1,0 +1,673 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p15",
+ "term_code": "2024-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Page 12 of qp.pdf is a blank show-through page (reverse of page 11); no content.",
+  "Page 1 header instructions: figures in margin indicate full marks; assumptions may be made; all workings must form part of the relevant answer."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section – A (Answer Question No.1 which is compulsory.)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct alternative from the four alternatives given: 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Ganesh (P) Ltd. is engaged in manufacturing activity. It is covered by section 115BA. For the assessment year 2024-25, its total income computed as per section 115BA is ₹ 24 lakhs and its book-profit computed as per the provisions of section 115JB is ₹ 45 lakhs. How much is the final tax liability of Ganesh (P) Ltd. (including Surcharge and HEC)?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 6,24,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 3,74,400"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 7,02,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 9,36,000"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key (C) = 15% of book profit + HEC (MAT); a section 115BA company would ordinarily pay 25% on total income (option A). Key kept as printed."
+       ]
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "What is the maximum time limit for rectification of any mistake which is apparent from the record in an order passed by the Assessing Officer?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "4 years from the end of the financial year in which the order was passed."
+        },
+        {
+         "key": "B",
+         "body_md": "2 years from the end of the financial year in which the order was passed."
+        },
+        {
+         "key": "C",
+         "body_md": "1 year from the end of the financial year in which the order was passed."
+        },
+        {
+         "key": "D",
+         "body_md": "There is no time limit."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under which section interest shall be charged for deferment of advance tax?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Section 234A"
+        },
+        {
+         "key": "B",
+         "body_md": "Section 234B"
+        },
+        {
+         "key": "C",
+         "body_md": "Section 234C"
+        },
+        {
+         "key": "D",
+         "body_md": "Section 234D"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Chaitanya, a resident is employed in a multinational company as General Manager. He paid for his residence ₹ 60,000 as monthly rent throughout the financial year 2023-24. Which of the following statement is correct?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Liable to deduct TDS @ 10% since the annual rent exceeds ₹ 2,40,000."
+        },
+        {
+         "key": "B",
+         "body_md": "Liable to deduct TDS @ 5% every month, since rent exceeded ₹ 50,000 per month."
+        },
+        {
+         "key": "C",
+         "body_md": "Rent payment being a personal expenditure, it is not liable for tax deduction at source."
+        },
+        {
+         "key": "D",
+         "body_md": "Liable to deduct tax at source @ 5% on the total rent paid during the year in the month of March, 2024."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Naveen employed in a FMCG company constructed a residential house property meant for self-occupation. He availed a bank loan of ₹ 60 lakhs. The loan was sanctioned on 01.04.2021. Interest on loan for the financial year 2023-24 amounts to ₹ 3,50,000. Naveen actually paid ₹ 2,50,000 towards interest up to 31st March, 2024. How much of the amount of interest is eligible for deduction for the assessment year 2024-25 in case he has opted out of default regime contained in section 115BAC (1A)?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 2,00,000 under section 24"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 2,50,000 under section 24"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 2,00,000 under section 24 and ₹ 1,50,000 under section 80EEA"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 2,00,000 under section 24 and ₹ 50,000 under section 80EE"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following cannot be adjusted in computation of total income while processing the return of income (ITR) under section 143(1)?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "An incorrect claim made which is apparent from any information in the ITR"
+        },
+        {
+         "key": "B",
+         "body_md": "An arithmetical error in the ITR"
+        },
+        {
+         "key": "C",
+         "body_md": "Any income appearing in Form 26AS which has not been included in total income"
+        },
+        {
+         "key": "D",
+         "body_md": "Any expenditure disallowed in audit report but not adjusted while filing return of income"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key (C) appears to conflict with the stem: adding income appearing in Form 26AS is a permitted adjustment under 143(1)(a). Key kept as printed."
+       ]
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In the assessment of X Co (P) Ltd., the Assessing Officer made an addition of ₹ 12 lakhs. The tax payable was ₹ 3,12,000 and interest payable was ₹ 98,000 for the addition made. The addition is covered by misreporting of income contained in section 270A(9). How much is the penalty leviable under section 270A in respect of the misreported income?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 6,24,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 3,12,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 4,10,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 1,56,000"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Dave Ltd., an Indian company, deducts TDS from salary of its employees. To avoid interest and penalty, it always deposits the TDS to the credit of the Central Government 5 days before the prescribed ‘due date’. What would you call this act of remittance of TDS amount?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Tax Planning"
+        },
+        {
+         "key": "B",
+         "body_md": "Tax Evasion"
+        },
+        {
+         "key": "C",
+         "body_md": "Tax Avoidance"
+        },
+        {
+         "key": "D",
+         "body_md": "Tax Management"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Ketan a resident individual acquired an apartment in Singapore during the financial year 2020-21 and only 50% of its acquisition price was disclosed to the Income-tax authorities in India. The fact of non-disclosure of the asset’s full acquisition price came to the notice of the Assessing Officer in April, 2023 and a notice under section 10 of the Black Money Act, 2015 was issued in June, 2023. What is the time limit for passing the order to tax the undisclosed foreign asset under the Black Money Act, 2015?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "31st March, 2024"
+        },
+        {
+         "key": "B",
+         "body_md": "31st March, 2025"
+        },
+        {
+         "key": "C",
+         "body_md": "31st March, 2026"
+        },
+        {
+         "key": "D",
+         "body_md": "31st December, 2024"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Income tax assessment under section 143(3) in the case of Mohit (P) Ltd. for the assessment year 2022-23 was completed with ALP adjustment of ₹ 200 lakhs being added to its total income. Mohit (P) Ltd. accepted the ALP adjustment in the assessment but does not want to make secondary adjustment. How much is the additional income-tax payable by Mohit (P) Ltd. to avoid making secondary adjustment in the books of account?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 62,40,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 52,00,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 41,93,280"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 37,44,000"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The Assessing Officer (AO) referred an international transaction for ₹ 3 crores entered into by Anuj (P) Ltd. with HIJ Inc., an associated enterprise (AE). In the same financial year, Anuj (P) Ltd. has entered into similar transactions with AST LLP of Singapore, [an AE] for ₹ 4 crores, and with RST LLP of Hong Kong [also an AE], for ₹ 12 crores. What is the scope of power of the Transfer Pricing Officer (TPO) as regards determination of ALP in respect of international transactions entered into by Anuj (P) Ltd.?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The TPO can determine ALP only in respect of the transaction which was referred to him by the AO."
+        },
+        {
+         "key": "B",
+         "body_md": "The TPO can determine ALP in respect of any other international transaction whose value exceeded ₹ 5 crores, even though it was not referred to him."
+        },
+        {
+         "key": "C",
+         "body_md": "The TPO can determine the ALP of any other international transaction whose value exceeded ₹ 10 crores, even though it was not referred to him."
+        },
+        {
+         "key": "D",
+         "body_md": "The TPO can determine the ALP in respect of any other international transaction also, which comes to his knowledge, regardless of the value."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Robert (non-resident), a famous tennis player, came to India to play in a tennis tournament. He stayed in India for 31 days during the financial year 2023-24. He earned ₹ 10,00,000 as participation fee from the organizers of the tournament. He earned no other income in India during the financial year 2023-24. How much is the tax deductible at source under section 194E for the income earned by Robert in India?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 3,12,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 2,08,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 1,04,000"
+        },
+        {
+         "key": "D",
+         "body_md": "No tax is deductible on such payment to non-resident sportsman."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The order of the Transfer Pricing Officer in determining the arm’s length price of an international transaction is binding on which of the following?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Assessing Officer"
+        },
+        {
+         "key": "B",
+         "body_md": "Commissioner of Income-tax"
+        },
+        {
+         "key": "C",
+         "body_md": "Commissioner of Income-tax (Appeals)"
+        },
+        {
+         "key": "D",
+         "body_md": "Both Assessing Officer and Commissioner of Income-tax"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Lekha & Co LLP having entered into international transactions did not obtain and furnish report from the accountant for the assessment year 2024-25. How much is the penalty leviable under section 271BA of the Act?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 10,00,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 5,00,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 1,50,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 1,00,000"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which Model of DTAA is generally followed by India when it enters into double taxation avoidance agreements with other countries?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "UN Model"
+        },
+        {
+         "key": "B",
+         "body_md": "UK Model"
+        },
+        {
+         "key": "C",
+         "body_md": "US Model"
+        },
+        {
+         "key": "D",
+         "body_md": "OECD Model"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key (A) UN Model; OECD Model (D) is also commonly cited. Key kept as printed."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from Question No.2 to Question No.8. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "",
+       "kind": "long_form",
+       "marks": 14,
+       "stem_md": "M/s Devi (P) Limited is engaged in the business of manufacturing of leather goods and articles. Its Net Profit as per Statement of Profit and Loss was ₹ 43,45,000 for the year ended 31st March, 2024 after considering the following items:\n\n(i) Raw material purchase includes a purchase from WS & Co LLP for ₹ 15 lakhs on 12th March, 2024. WS & Co LLP is a micro enterprise as per MSMED Act, 2006. A sum of ₹ 8 lakhs was paid on 20th March, 2024 and the balance was paid on 10th July, 2024. There is no agreement or valid reason for the delayed payment made.\n(ii) One Senior Manager of the company Atul went on a business trip to foreign country and he died there in road accident. The company paid gratuity voluntarily to his dependent amounting to ₹ 10 lakhs. It was claimed as business expenditure.\n(iii) Advertisement expenditure paid ₹ 2·50 lakhs to Surya LLP, in which one of its directors is a designated partner. Similar advertisement expenditure was incurred for ₹ 1,90,000 being the payment to Moon LLP an unrelated party. For both the expenses, tax was deducted and remitted promptly.\n(iv) Late fee for delayed filing of TDS quarterly statement under section 234 E ₹ 10,000 and interest under section 201(1A) ₹ 25,000 debited as general expenses.\n(v) Employees Provident Fund recovered from salary of the month of August 2023 ₹ 60,000 was remitted on 16th October, 2023 and of March 2024 ₹ 40,000 was remitted on 20th August, 2024. Such recoveries shown as credit in Statement of Profit and Loss.\n(vi) Employer’s contribution to provident fund of similar amounts were also remitted on the same date as stated in (v) above. These amounts are debited in the Statement of Profit and Loss.\n(vii) On the occasion of New Year (i.e.01.01.2024), the company gave one laptop to each of its 10 distributors. The cost of laptops was ₹ 60,000 each. The company did not deduct any amount by way of tax deduction at source for the laptops given to the distributors. The cost of laptops were debited to the Statement of Profit and Loss under the head ‘sales promotion expenses’.\n(viii) One machinery was acquired on 10th September, 2023 for ₹ 15·50 lakhs for which payment was made through banking channels and ₹ 1,50,000 was incurred by way of expenses for its installation by making payment through UPI. The said machinery was previously used by a foreign company outside India for six years. The machinery was put to use from 25th September, 2023 and the company had claimed depreciation @15% and additional depreciation @20%.\n(ix) Annual bonus debited to Statement of Profit and Loss ₹ 15 lakhs. The same was unpaid till the date of filing of ITR [which actually was filed on 3rd December, 2024 for the assessment year 2024-25].\n(x) Donation to registered political party by net banking ₹ 1,80,000 and by cash ₹ 20,000 debited in the Statement of Profit and Loss.\n(xi) A sum of ₹ 5 lakhs was waived by an NBFC, compromising ₹ 3·80 lakhs towards principal and ₹ 1·20 lakhs for interest as part of one-time settlement. Interest amount waived is credited to Statement of Profit and Loss. The principal amount waived was credited to Capital Reserve. The said loan was originally obtained for acquiring a vacant site.\n\nYou are required to compute the total income of M/s Devi (P) Limited for the assessment year 2024-25. Give brief reasons for treatment of each item given above.\n\nNote: Ignore provisions of sections 115BA / 115BAA / 115BAB.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of total income of M/s Devi (P) Ltd for the assessment year 2024-25 (₹)\nNet profit as per Statement of Profit and Loss: 43,45,000\nAdd:\ni) Raw material purchase from WS & Co LLP for ₹ 15 lakhs on 12.03.2024. WS & Co LLP being a micro enterprise as per the MSMED Act, 2005, the amount paid on 10th July, 2024 is liable for disallowance under section 43B: 7,00,000\nii) Gratuity voluntarily paid to dependents of senior manager: NIL. No adjustment is required since it is already debited to profit and loss account; it is an expenditure incurred wholly and exclusively for business purposes and not being capital expenditure, it is an allowable expenditure.\niii) Advertisement expenditure to Surya LLP: 60,000. In a LLP, where director is a designated partner it becomes a relative within meaning of section 40A(2), ₹ 60,000 being excess payment made to the specified person shall be disallowed.\niv) TDS late fee is allowed since it is not in the nature of penalty: NIL. Interest on late payment of TDS is not allowed: 25,000\nv) Belated remittance of EPF recovered from employees for the month of August, 2023 and March, 2024 - disallowed. Employees contribution disallowed since it was remitted late thus not eligible for deduction u/s 36(1)(va): 1,00,000\nvi) Belated remittance of EPF contribution of employer is allowed under section 43B. So, no adjustment is required: NIL\nvii) Incentives to dealers and distributors without deduction of TDS (₹ 60,000 X 10) @ 30% = ₹ 1,80,000 (being 30% of such expenditure on which TDS is not made is disallowed): 1,80,000\nviii) Additional depreciation - disallowed. Since such machine has been in used outside India, additional depreciation shall not be allowed: 3,40,000\nix) Bonus declared but remained unpaid till the date of filing return on income - Disallowed. Bonus shall be allowed in the year in which it will be actually paid, as per section 43B: 15,00,000\nx) Donation to registered political party by net banking ₹ 1,80,000 and by cash ₹ 20,000. Not being an expenditure related to business, the same is disallowed u/s 37; will be considered for deduction u/s 80GGB: 2,00,000\nTotal additions: 31,05,000\nSub-total: 74,50,000\nLess:\nxi) Waiver of principal on bank loan for acquiring capital asset - no adjustment required (NIL). If the loan was taken for acquiring a capital asset (vacant land), waiver thereof would be a capital receipt and not amount to taxability of the same.\nWaiver of interest on bank loan: 1,20,000. Interest is allowed on actual payment as per section 43B. As the same would not have been allowed in any earlier previous year, the write back cannot be considered as income. Therefore, the same is to be deducted.\nTotal deduction: 1,20,000\nSub-total: 73,30,000\nLess: Deduction u/s 80GGB - paid by net banking: 1,80,000\nTotal income: 71,50,000",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer printed as column table; transcribed as list, figures unchanged. Printed answer cites 'MSMED Act, 2005' while question says 2006; and shows donation disallowance 2,00,000 and 80GGB 1,80,000 as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Anand, an Indian resident, aged 52 years, gives the following information for the year ended 31st March, 2024:\n(i) Income from manufacturing business (as per Profit and Loss Account) ₹ 10,60,000\n(ii) Depreciation as per Books ₹ 56,000\n(iii) Depreciation as per Income Tax Act ₹ 77,000 (includes additional depreciation of ₹ 11,000)\n(iv) Loss from speculation business ₹ 1,25,000\n(v) Public Provident Fund investment ₹ 1,50,000\n(vi) Medical insurance premium paid for self and spouse ₹ 35,000\n\nCompute the total income of Anand both as per default regime and normal provisions of the Act. Decide which option is better for Anand.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of income of Anand as per default regime for the Asst. Year 2024-25 (₹)\nProfits and gains from business or profession\nIncome as per Profit and Loss Account: 10,60,000\nAdd: Depreciation as per books: 56,000\n= 11,16,000\nLess: Depreciation as per IT Act (excluding additional depreciation. Additional depreciation is not allowable under the new regime): 66,000\n= 10,50,000\nLess: Loss from Speculation business – not eligible for set off: Nil\nPGBP income: 10,50,000\nLess: Deduction under chapter VI-A – not allowed under default regime: Nil\nTotal income: 10,50,000\nTax on total income as per default regime: 67,500\nAdd: Cess @ 4%: 2,700\nTotal tax payable: 70,200\n\nComputation of total income of Anand as per old regime for the asst. year 2024-25\nProfits and gains from business or profession\nIncome as per default regime: 10,50,000\nLess: Additional depreciation: 11,000\nGross total income: 10,39,000\nLess Deduction under Chapter VI-A\nu/s 80C PPF Max 1,50,000: 1,50,000\nU/s 80D: 25,000\n= 1,75,000\nTotal income: 8,64,000\nTax on total income as per old regime: 85,300\nAdd: HEC @4%: 3,412\nTax payable: 88,712\nTax payable (round off): 88,710\nDecision: It is beneficial for Anand to pay tax as per default regime – Sec.115BAC(1A)\n\nAlternative Presentation- 1:\nComputation of income of Anand as per Old regime for the Asst. Year 2024-25\nIncome as per Profit and Loss Account: 10,60,000\nAdd: Depreciation as per books: 56,000\n= 11,16,000\nLess: Depreciation as per IT Act (including additional depreciation): 77,000\n= 10,39,000\nLess: Loss from Speculation business – not eligible for set off: Nil\nPGBP income: 10,39,000\nLess: Deduction under chapter VI-A\nu/s 80C PPF Max 1,50,000: 1,50,000\nu/s 80D: 25,000\n= 1,75,000\nTotal income: 8,64,000\nTax on total income as per old regime: 85,300\nAdd: Cess @ 4%: 3,412\nTotal tax payable: 88,712\nTax payable (round off): 88,710\nComputation of total income of Anand as per Default regime for the asst. year 2024-25\nIncome as per old regime: 8,64,000\nAdd: Additional depreciation (not allowable under the new regime): 11,000\nAdd: Deduction under Chapter VI-A– not allowed under default regime\nu/s 80C PPF Max 1,50,000: 1,50,000\nU/s 80D: 25,000\n= 1,75,000\nTotal income: 10,50,000\nTax on total income as per default regime: 67,500\nAdd: HEC @4%: 2,700\nTax payable: 70,200\nDecision: It is beneficial for Anand to pay tax as per default regime – Sec.115BAC(1A)\n\nAlternative Presentation- 2:\n| | New regime (₹) | Old regime (₹) |\n|---|---|---|\n| Income as per Profit and Loss Account | 10,60,000 | 10,60,000 |\n| Add: Depreciation as per books | 56,000 | 56,000 |\n| | 11,16,000 | 11,16,000 |\n| Less: Depreciation as per IT Act (excluding additional depreciation) [Additional depreciation is not allowable under the new regime/allowable under old regime.] | 66,000 | 77,000 |\n| | 10,50,000 | 10,39,000 |\n| Less: Loss from Speculation business – not eligible for set off | Nil | Nil |\n| PGBP income | 10,50,000 | 10,39,000 |\n| Less: Deduction under chapter VI-A – not allowed under default regime | Nil | |\n| u/s 80C PPF Max 1,50,000 | | 1,50,000 |\n| U/s 80D | | 25,000 |\n| Total income | 10,50,000 | 8,64,000 |\n| Tax on total income as per New regime/ old regime | 67,500 | 85,300 |\n| Add: HEC @4% | 2,700 | 3,412 |\n| Total tax payable | 70,200 | 88,712 |\n| Tax payable (round off) | 70,200 | 88,710 |\nDecision: It is beneficial for Anand to pay tax as per default regime – Sec.115BAC(1A)",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Palam Ltd., Delhi is a domestic company engaged in the manufacturing activity. The following details relate to financial year 2023-24:\n(i) Gross Revenue from operations: ₹ 80,00,000\n(ii) Manufacturing expenses (excluding depreciation): ₹ 30,00,000\n(iii) Normal Depreciation (as per Income Tax Act): ₹ 7,00,000\n(iv) Additional Depreciation (as per Income Tax Act): ₹ 2,00,000\n(v) The company is eligible for deduction section 80-IA: ₹ 5,00,000\n(vi) The company is eligible for deduction section 80-JJAA: ₹ 4,00,000\n(vii) The turnover of the company never exceeded ₹ 400 crores in its lifetime.\n\nYou are required to suggest the company as to whether it should opt for the regular provisions or provisions of section 115BAA in order to minimise its tax liability on the assumption that it has satisfied all the applicable conditions.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of total income and tax payable by Ms. Palam Ltd. as per regular provisions of the Act (₹)\nGross revenue: 80,00,000\nLess: Manufacturing expenses (excluding depreciation): 30,00,000\nNormal Depreciation (as per the Income-tax Act): 7,00,000\nAdditional Depreciation (as per the Income-tax Act): 2,00,000\n= 39,00,000\nGross total income: 41,00,000\nLess: Deduction u/s 80-IA: 5,00,000\nDeduction under section 80JJAA: 4,00,000\n= 9,00,000\nTotal income: 32,00,000\nTax on above @ 25%: 8,00,000\nAdd: Cess @ 4%: 32,000\nTotal tax payable: 8,32,000\n\nComputation of total income and tax payable by Ms. Palam Ltd. as per section 115 BAA of the Act\nTotal income as per normal provisions: 32,00,000\nAdd: Deductions not allowed\nAdditional Depreciation: 2,00,000\nDeduction U/s 80-IA – not allowed as per Sec.115BAA: 5,00,000\nDeduction U/s.80JJAA - allowed under section 115BAA: Nil\n= 7,00,000\nTotal income: 39,00,000\nTax on ₹ 39,00,000 @22%: 8,58,000\nAdd: Surcharge @10%: 85,800\nAdd: Cess @4%: 37,752\nTotal tax payable: 9,81,552\nTax liability rounded off: 9,81,550\nConclusion: It is beneficial for the company to pay tax as per regular provisions of the Act",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer's 115BAA computation used 22% on 39,00,000 and 'Ms.' prefix; transcribed as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Patel Co (P) Ltd. consisted of 4 individual shareholders Arun, Bimal, Chirag and Dhaval having equal shareholding. It was decided to convert the company into an LLP by name Patel LLP. The company has brought forward depreciation of ₹ 5 lakhs and business loss (of assessment year 2023-24) of ₹ 10 lakhs. Shareholder Bimal does not want to continue in the business and wants to transfer his shareholding to Arun. You are the tax counsel of the company.\n\nExplain briefly the conditions to be satisfied by the company to have relief from capital gain on conversion into an LLP. Also, state how timing of the exit of shareholder Bimal be made from Patel LLP so that it does not lose the benefit of set off of unabsorbed depreciation and brought forward business loss.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Conditions to be satisfied by a company on conversion into an LLP:\nSection 47 (xiiib) says that any transfer of a capital asset or intangible asset by a private company or a unlisted public company to a limited liability partnership or any transfer of a share or shares held in the company by a shareholder as a result of conversion of the company into a limited liability partnership in accordance with the provisions of section 56 or section 57 of the Limited Liability Partnership Act, 2008 shall not be regarded as transfer if the following conditions are satisfied:\n(i) All the assets and liabilities of the company before the conversion become the assets and liabilities of the limited liability partnership;\n(ii) All the shareholders of the company immediately before the conversion become the partners of the limited liability partnership and profit-sharing ratio in the limited liability partnership are in the same proportion as their shareholding in the company on the date of conversion;\n(iii) The shareholders of the company do not receive any consideration or benefit, directly or indirectly, in any form or manner, other than by way of share in profit and capital contribution in the limited liability partnership;\n(iv) The aggregate of the profit-sharing ratio of the shareholders of the company in the limited liability partnership shall not be less than 50% at any time during the period of 5 years from the date of conversion;\n(v) The total sales, turnover or gross receipt in the business of the company in any of the 3 previous years preceding the previous year in which the conversion takes place does not exceed ₹ 60 lakhs;\n(vi) The total value of assets as appearing in the books of account of the company in any of the 3 previous years preceding the previous year in which the conversion takes place does not exceed ₹ 5 crore; and\n(vii) No amount is paid, either directly or indirectly, to any partner out of balance of accumulated profit standing in the accounts of the company on the date of conversion for a period of 3 years from the date of conversion.\n\nIn this case, the company has brought forward loss and unabsorbed depreciation:\nSection 72A(6A) says that where there has been reorganization of business whereby a private company is succeeded by an LLP fulfilling the conditions of clause (xiiib) of section 47, then the accumulated loss and unabsorbed depreciation of the predecessor company shall be deemed to be the loss or allowance of depreciation of the successor LLP of the previous year in which the business organization was effected and other provisions of the Act relating to set off and carry forward of loss and depreciation shall apply accordingly.\n\nIn case Bimal does not want to become a partner in the LLP, he must cease to be a shareholder in the company. He can transfer his shares to some other shareholder before conversion in to LLP so that the unabsorbed depreciation and business loss on the date of conversion would remain intact and could be set off by the successor LLP.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Paul Ltd., a foreign company, is engaged in India in the activity of civil construction at various locations in West Bengal in connection with turnkey power projects approved by the Central Government. Also, it is engaged in provision of consultancy services which is done through a branch office located at Chennai. There is no administrative or financial nexus between branch office at Chennai and civil construction activity of Paul Ltd. which was managed from outside India. For the financial year 2023-24, it furnishes you the following information:\n(i) Gross amount received in India from civil construction projects in India (referred above) ₹ 60,00,000\n(ii) Gross amount received outside India from civil construction projects in India (referred above) ₹ 30,00,000\n(iii) Amount spent in relation to civil construction projects in India (referred above) ₹ 4,60,000\n(iv) Gross amount received in India as fee for technical services in relation to providing consultancy to Indian companies ₹ 2,00,000\n(v) Amount spent in relation to providing technical consultancy to Indian companies ₹ 70,000\n\nYou are required to compute the total income of Paul Ltd. liable to tax in India for the assessment year 2024-25.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of total income of Paul Ltd. (₹)\nI Income from civil construction business:\nReceipts in India: 60,00,000\nReceipts outside India: 30,00,000\nAs per section 44BBB, even amount received outside India in respect of civil construction projects in India, will be taxable in India\nTotal receipts: 90,00,000\nPresumptive Income u/s 44BBB @10% of gross receipts: 9,00,000\nLess: Expenses: Nil (Expenses are not allowed/s 44BBB)\nTaxable income from civil construction business: 9,00,000\nII Income from fee for technical services:\nGross amount received as fee for technical services: 2,00,000\nLess: Expenses relating to provision of such consultancy: 70,000\nTaxable income from technical consultancy: 1,30,000\nTotal income chargeable to tax: 10,30,000",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The Assessing Officer (AO) of Dheeraj (P) Ltd. passed an assessment order under section 143(3) on 7th July, 2023 in respect of assessment year 2022-23 where he disallowed certain expenses to the extent of ₹ 5,00,000. However, he enhanced depreciation claim in respect of one of the assets. Dheeraj (P) Ltd. filed an appeal with the CIT (Appeals) against the disallowance of expenses. The CIT wants to revise the order under section 263 to withdraw allowance of enhanced depreciation made by the AO. Can the CIT exercise his revisionary power under section 263? Will your answer change if the CIT (Appeals) has disposed of the appeal without passing the order? Your answer should explain the relevant provisions of the Income-tax Act.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Doctrine of partial merger\nSection 263 of the Income-tax Act gives the power to Pr. CCIT or CCIT or PCIT or CIT to revise an order which is prejudicial to the interests of the Revenue; or which is erroneous and which was passed by an authority subordinate to him.\nRevision under 263 of an order cannot be made when it is the subject matter of appeal.\nHowever, the doctrine of partial merger is applicable in case of section 263 which means that the Commissioner can revise that part of the order which is not in the appeal.\nIn the present case, the assessee has preferred an appeal for the disallowance of business expenditure of ₹ 5,00,000 but the second point about the enhancement of depreciation is not a subject matter of the appeal filed by the assessee. As per the doctrine of partial merger, the Commissioner may at his own motion revise the assessment order of the Assessing Officer on the point of enhancement of depreciation.\n\nWhere the CIT (A) has disposed off the appeal without passing an order:\nAn assessment order cannot be said to have been made subject of an appeal if the appeal has been disposed of by the appellate authority without passing an order.\nSince, in the present case, the Commissioner wants to revise the matter which is not taken up in appeal by the assessee, there will not be any change in the answer even if the appeal is disposed of by the Appellate Authority.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Briefly answer the following by applying relevant legal provisions:\n(i) Laxmi a resident Indian has undisclosed foreign deposit of ₹ 30 lakhs. How much is the amount of tax payable under Black Money Act, 2015?\n(ii) Narain Ltd. received ₹ 10 lakhs as subsidy to meet 20% of the cost of machinery which was meant to reduce air pollution in the factory. How would the subsidy be dealt with as per ICDS VII?\n(iii) On 10th December, 2023 Ramesh (age 82) sold a vacant land for ₹ 40 lakhs and the resultant long-term capital gain (computed) was ₹ 12 lakhs. He has no other income chargeable to income-tax. How much Ramesh must have paid as advance tax instalments for the financial year 2023-24 to avoid interest levy, if any?\n(iv) Hari (age 67), a pensioner retired from SBI, has monthly pension of ₹ 82,000 throughout the previous year 2023-24. His only other income was savings bank account interest of ₹ 32,000. He filed his ITR on 29th October, 2024. No tax was deducted on pension paid to him. How much is payable by way of interest by Hari for non-payment of advance tax and delay in filing ITR?",
+       "options": [],
+       "correct": null,
+       "answer_md": "BM Act, 2015 / ICDS / Advance tax and interest U/s.234A\n(i) Since the entire foreign deposit of ₹ 30 lakhs is undisclosed foreign asset, it is liable to tax @ 30% under the Black Money Act, 2015.\n(ii) Where the grant or subsidy is related to depreciable fixed asset, it would go to reduce the actual cost of the asset or the written down value of block of assets. In case the asset has already been put to use the receipt of subsidy would be reduced from the WDV of the block of assets to which the asset pertains. In case the asset has not been put to use, the grant or subsidy would be deducted from the actual cost and on the resultant depreciation and additional depreciation would be computed.\n(iii) Senior citizens not having any income chargeable under the head “Profits and gains of business or profession”, need not pay advance tax.\nIn the present case, Ramesh is a senior citizen aged 82 years and having income only under capital gains. Thus, he is not liable to pay advance tax instalments and is allowed to discharge is tax liability by payment of self-assessment tax.\n(iv) His total pension income would be ₹ 9,34,000 after standard deduction of ₹ 50,000. His income from bank SB interest when added his total income would be ₹ 9.66 lakhs.\nHe is liable to pay interest under section 234A for the delay in filing of ITR. The delay being 3 months (August, September and October) and interest @ 3% on tax liability (including cess) of ₹ 57,100 (rounded off) being ₹ 1,713. Alternative view: Since the regime to be followed is not mentioned in the question, a student may assume that the assesse has opted to pay tax as per the old regime. In that case, his total income after deduction u/s 80TTB ₹ 32,000 would be ₹ 9.34 lakhs. His tax liability (including cess) would be ₹ 1,00,670 (rounded off) and the interest @1% p.m. for 3 months would be ₹ 3,020.\nHe is not liable to pay advance tax and hence no interest is attracted under section 234B.",
+       "confidence": "medium",
+       "review": [
+        "Q5(b) has four independent sub-questions (i)-(iv) with a single printed mark of 7 for (b); kept as one leaf."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Thirst Ltd. (TL), is an Indian company, engaged in international transactions, for the past 2 decades. It has been having international transactions with GH Inc., of Sweden for the past 8 years. On 23rd October, 2024, it entered into an Advance Pricing Agreement (APA) with the Department.\n\nThe details relating to the last five assessment years are as under:\n\n| Asst. year | Date of filing ITR | ALP determined by assessee (per unit) | ALP determined as per APA (per unit) |\n|---|---|---|---|\n| 2020-21 | 12-11-2020 | ₹ 12,000 | ₹ 12,200 |\n| 2021-22 | 18-10-2021 | ₹ 12,500 | ₹ 12,400 |\n| 2022-23 | 13-03-2023 | ₹ 13,000 | ₹ 13,200 |\n| 2023-24 | 29-11-2023 | ₹ 13,600 | ₹ 13,800 |\n| 2024-25 | 30-09-2024 | ₹ 14,000 | ₹ 14,300 |\n\nYou are required to advise TL about the following, with clear reasons: (i) Number of years for which APA will apply (assessment years may be stated); and (ii) Assessment years for which roll back will apply by giving supporting reasons.",
+       "options": [],
+       "correct": null,
+       "answer_md": "APA and rollback applicability\nThe benefit of APA can be applied for the assessment year relevant to the previous year in which the APA was entered into and four subsequent financial years. Thus, it will apply for the FY 2024-25 (date of APA 23.10.2024) and 4 subsequent financial years being F.Ys 2025-26, 2026-27, 2027-28 and 2028-29.\nThe roll back provisions will apply for four preceding assessment years only, preceding the assessment year 2025-26. Hence it cannot be applied for the AY 2020-21.\nRoll back provisions will not apply in the following cases:\nWhere the ROI is not submitted within the “due date” stipulated in section 139(1)., or\nWhere the APA has the effect of reducing the total income already determined.\nFor the assessment year 2021-22, the ALP as per APA is less than ALP as per ITR. Therefore, rollback would not apply.\nThe ROI has been filed belatedly for AY 2022-23, hence rollback will not apply for that year.\nFor the assessment year 2023-24 and assessment year 2024-25 the ITR was filed before the due date and therefore the rollback provision would apply for both the years.",
+       "confidence": "medium",
+       "review": [
+        "Table column header 'ALP determined by assessee (per unit)' read from image; OCR garbled."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Rahul, a resident individual and a cricketer (aged 30 years), derived income of ₹ 15,25,000 from matches played in Country X. Income in Country X was taxed @10% with no basic exemption limit. There is no DTAA between India and Country X. His income from matches in India amounted to ₹ 4,90,000. He deposited ₹ 1,50,000 in Public Provident Fund; paid premium on his Life Insurance policy ₹ 35,000. He also deposited ₹ 50,000 in National Pension Scheme. He paid ₹ 30,000 towards his Health Insurance premium and ₹ 38,000 for Health Insurance premium of his parents who are non-residents and dependent on him.\n\nCompute the total income and tax liability of Rahul for assessment year 2024-2025 on the assumption that he opted out of default regime and is eligible for relief under section 91.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of total income and tax liability of Rahul for the AY 2024-25 (₹)\nIndian Income: 4,90,000\nForeign income: 15,25,000\nGross total income: 20,15,000\nLess: Deduction Under chapter VI-A\nPPF: 1,50,000\nLIC: 35,000\nInvestments U/s 80C, 80CCC and 80CCD restricted to ₹ 150000: 1,50,000\nDeduction for NPS: 50,000\n= 2,00,000\nContribution to Health insurance premium shall be allowable as deduction. The amount eligible is ₹ 25000: 25,000\nHe shall also be entitled to deduction of health insurance premium of parents u/s 80D, subject to premium paid. Since they are non-residents, he cannot claim higher deduction and shall be limited to ₹ 25000: 25,000\n= 50,000\nTotal income: 17,65,000\nTax on total income: 3,42,000\nAdd: Health and education cess: 13,680\nTOTAL TAX PAYABLE: 3,55,680\n(Average rate of tax in India 3,55,680/1765000*100): 20.15%\nAverage rate of tax in foreign country 1,52,500/15,25,000*100: 10.00%\nDeduction u/s 91 on ₹15,25,000 @ 10% (Lower of average Indian tax rate and foreign tax rate): 1,52,500\nTax payable in India: 2,03,180",
+       "confidence": "medium",
+       "review": [
+        "Age printed as '3U years' in scan (likely 30); transcribed as 30.",
+        "Suggested answer's total income 17,65,000 shown as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Tan Ltd., an Indian company, is a part of a multi-national group by name Colours Inc. of USA. During the financial year 2022-23, it entered into various transactions with its group companies spread in different countries. All the transactions are denominated in Indian Rupee. It gives you the following information:\n\n| Particulars | Blue LLC | Pink Inc. | Green GmbH |\n|---|---|---|---|\n| Transaction price declared by Tan Ltd. | ₹ 3 crores | ₹ 5 crores | ₹ 10 crores |\n| Transaction price computed by the Transfer Pricing Officer | ₹ 3·5 crores | ₹ 4·5 crores | ₹ 12 crores |\n| Date of order of the AO | 31st October 2023 | 31st October 2023 | 31st October 2023 |\n| Date of repatriation of amount lying with the AE | 31st December 2023 | Not done so far | 31st March 2024 |\n\nAssume\n(i) 1-year marginal cost of fund lending rate of State Bank of India as on the relevant date is 7%.\n(ii) 6 months London Interbank Offered Rate (LIBOR) as on the relevant date is 5%.\n\nYou are required to discuss the tax implication of the above in the hands of Tan Ltd. as regards primary and secondary adjustment, assuming Tan Ltd. has accepted all the adjustments made by the Assessing Officer.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Tax implication of transfer pricing adjustment in the hands of Tan Ltd\nIn respect of transaction with Blue LLC\n(i) The income of Tan Ltd will increase by ₹ 50 lakhs by way of Primary adjustment.\n(ii) There is no need for secondary adjustment as the amount of primary adjustment is less than ₹ 1 crore.\nIn respect of transaction with Pink Inc\n(i) There is no need for primary adjustment as it will result in reduction of total income of Tan Ltd.\n(ii) Secondary adjustment is also not applicable.\nIn respect of transaction with Green GmbH\n(i) The income of Tan Ltd will increase by ₹ 2 crores by way of Primary adjustment\n(ii) The excess amount lying with Green GmbH (₹ 2 crores) will be treated as deemed loan.\n(iii) Green GmbH needs to repatriate the excess money back to Tan Ltd within 90 days (30+31+29) of the assessment order, i.e., on or before 29th January 2024.\n(iv) Since, the foreign AE did not repatriate the amount within the time limit, Tan Ltd. will have to add imputed interest income to its total income for the financial year 2024-25.\n(v) The rate of interest will be 7% + 3.25% = 10.25%\n(vi) There is no need for Tan Ltd. to pay additional income tax since the amount is repatriated by the foreign AE.",
+       "confidence": "medium",
+       "review": [
+        "Table: 'Date of order of the AO' printed once spanning all three columns (31st October 2023); expanded per column here.",
+        "Suggested answer is internally inconsistent (says not repatriated in time yet 'no additional tax since repatriated'); copied as printed."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Netra (P) Ltd. is a resident Indian company having registered office in Hyderabad. On 1st April, 2023 it borrowed a sum of ₹ 25 crores from a company Z Ltd. incorporated in UK, which is the holding company of Netra (P) Ltd. at an interest rate of 10·5% per annum. There were no other borrowings made by Netra (P) Ltd. The net profit reported by Netra (P) Ltd. was ₹ 347·50 lakhs after debiting interest on borrowed funds, depreciation of ₹ 80 Lakhs, provision for income-tax ₹ 70 lakhs and amortization of expenses ₹ 20 lakhs.\n\nYou are required to calculate the amount of interest eligible for deduction. Also explain the legal provisions to support your conclusion.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of interest to be allowed as per section 94B for M/s Netra Ltd (₹ in lakhs)\nNet Profit – as reported: 347.50\nAdd: Expenses already debited\nInterest (2500 @10.5%): 262.50\nDepreciation: 80.00\nProvision for income tax: 70.00\nAmortization expenses: 20.00\n= 432.50\nEBITDA: 780\nLower of the following shall be disallowed\nInterest paid or payable by Netra Ltd to AE: 262.50\nTotal interest paid or payable in excess of 30% of EBITDA [₹ 262.50 – ₹ 234 (₹ 780 @ 30%)]: 28.50\n= 28.50\nInterest allowable as deduction: 234.00\nAmount of interest liable for disallowance: 28.50\nWorking note:\n1. Where an Indian company pays interest on borrowings from its associated enterprise or from third party and such borrowing is guaranteed by an associated enterprise, and where such interest expenditure exceeds ₹ 1 crore, then the interest paid or payable by such company in excess of 30% of its EBITDA is liable for disallowance.\n2. Disallowed interest of ₹ 28.50 lakhs is eligible for carry forward to the subsequent 8 assessment years and will be allowed as deduction while computing Profits and gains of business or profession, to the extent it is allowable under section 94B.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "Present your answer for the following situations under the headings (i) Issue involved; (ii) Provisions applicable; (iii) Analysis of the issue and (iv) Conclusion.",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Yarns (P) Ltd., could not succeed in the appeal filed before the CIT(A), for deletion of the addition of ₹ 75 lakhs made by the Assessing Officer (AO) in the scrutiny assessment under section 143(3). The company filed an appeal before the ITAT and also sought stay of collection of tax. The ITAT granted stay, initially for 180 days and subsequently extended the stay for 365 days. Even after the 365 days, the appeal was not disposed of, by the ITAT. The AO served a notice of demand and asked the company to pay the tax, citing that the stay granted by ITAT got vacated immediately after the expiry of 365 days. Is the action of the AO valid in law?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Stay granted by the Tribunal after the expiry of 365 days\nIssue involved\nThe issue under consideration is whether the stay order can be automatically vacated upon the expiry of extended period of stay of 365 days, where the delay in disposing of the appeal is not attributable to the assessee.\n(OR)\nThe issue under consideration is whether the action of the AO in asking the assesseee to pay the tax on the ground that the stay granted by the ITAT automatically got vacated after the expiry of extended period of stay of 365 days.\n\nProvisions applicable\nWhere the appeal filed by an assessee before the Appellate Tribunal is not disposed of within the period of stay or extended period of stay granted by the Tribunal, the order of stay shall stand vacated after the expiry of 365 days, even if the delay in disposing of the appeal is not attributable to the assessee. [Third proviso to sec 254(2A)]\n\nAnalysis of the issue\nThe vacation of stay in favour of the Department would lead to a scenario where even if the Department is itself responsible for the delay in hearing the appeal and there is no fault on the assessee, the assessee is liable to pay tax demand.\nThis will cause undue hardship to the assessee, even where the assessee is not at fault.\nIn this sense, the provision is arbitrary and disproportionate so far as the assesse is concerned.\n\nConclusion\nHence the action of the AO is not valid in law.\nThe Apex Court in Dy. CIT v. Pepsi Foods Ltd (2021) 433 ITR 295 (SC) pointed out that the proviso would lead to automatic vacation of stay upon the expiry of 365 days and even if the tribunal could not take up of the appeal in time for no fault of the assessee. Further vacation of stay in favour of the Department would ensue even if the Department is itself responsible for the delay in hearing the appeal. In this sense, the proviso is manifestly arbitrary being a provision which is capricious, irrational and disproportionate so far as the assessee is concerned.\nAccordingly, the apex court held that the third proviso to section 254(2A) has to be read without the word ‘even’ and the word ‘not’ appearing after the words ‘delay in disposing of the appeal’. It would be “the order of stay shall stand vacated after the expiry of such period or periods, if the delay in disposing of the appeal is attributable to the assessee”. Thus, any order of stay shall stand vacated after the expiry of the period or periods mentioned in the section, only if the delay in disposing of the appeal is attributable to the assessee.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "EE (P) Ltd. is engaged in distribution of computer software and hardware. It procured copyrighted software from foreign companies and sold the same to its customers. No value addition was made. The softwares were “ready to use” softwares. Also, it procured computers in which softwares were affixed as an integrated unit. In the assessment, the amount paid for purchase of software was subjected to disallowance since no tax was deducted at source on the payments made to foreign companies supplying “ready to use softwares”. The company wants to know the correct legal position. Also, it wants clarity as regards hardware purchased and software affixed therein. You are the tax consultant for EE (P) Ltd. You are requested to give your opinion in this regard.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Whether the impugned payment is ‘royalty’ and hence liable for TDS\nIssue involved:\nThe company is procuring softwares which are ready to use for redistribution in India and procuring computer hardwares with softwares inbuilt therein. The issue is whether such acquisition and payment is ‘royalty’ and hence liable for tax deduction under section 195.\n\nProvisions applicable\nUnder section 195, TDS would be attracted only if the impugned payments to the non-resident are chargeable to tax in India.\nExplanation 2(v) to section 9(1)(vi) says ‘royalty’ means consideration for transfer of all or any rights (including the granting of licence) in respect of any copyright, literary, artistic or scientific work.\nAs per Explanation 4, transfer of all or any rights includes transfer of all or any right for use or right to use computer software is also covered by the term ‘royalty’.\n\nAnalysis\nThe Apex court in the case of Engineering Analysis Centre of Excellence (P) Ltd v. CIT (2021) 432 ITR 1 (SC) observed that the following would not amount to use of or right to use any copyright and that the amount paid by Indian resident to foreign company is not royalty for use of copyright in the computer software.:\n(i) Where computer software is purchased directly by end user resident in India, from a foreign, non-resident supplier or manufacturer;\n(ii) Where resident Indian concerns acting as distributors or resellers, purchase computer software from foreign, non-resident suppliers or manufacturers and then, resell the same to resident Indian end users;\n(iii) Where the distributor happens to be a foreign, non-resident vendor, who, after purchasing software from a foreign, non-resident seller, resells the same to resident Indian distributors or end users;\n(iv) Where computer software is affixed on to hardware and is sold as an integrated unit / equipment by foreign, non-resident suppliers to resident Indian distributors or end users;\nIt is not a case of use of copyright and it is a case of use of copyrighted article being the software by the end users in India.\n\nConclusion\nTherefore, the amount paid for purchase of software or the hardware in which the software is affixed is not royalty and hence not liable for tax deduction under section 195.\nTherefore, EE (P) Ltd need not apprehend TDS provisions being applicable in its case as it is involved in purchase and sale of copyrighted article and not empowering the buyers to use the copyright as such.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,671 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p17",
+ "term_code": "2026-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Q1 has (a) 10 MCQs (2×10=20) and (b) 5 MCQs (2×5=10) on a common domestic/export order case (in intro_md); labels '(a)(i)'.. '(b)(xi)'... Page 8 of qp.pdf is blank."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Where considered necessary, suitable assumptions may be made and clearly indicated in the respective answer. All workings should form part of the answer. The figures in the margin on the right side indicate full marks. Section - A (Compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "(a) Choose the correct option from the four alternatives given: 2×10=20\n\n(b) Choose the Correct Option: 2×5=10\n\nA company is operating at 60% capacity with a Turnover of ₹ 90 lakhs.\n(I) Prime Cost — 60% of Sales Value\n(II) Administrative and Selling Expenses — ₹ 10 lakhs\n(III) Factory Overhead will vary according to operating capacity as given below:\n\n| Operating Capacity | 60% | 80% | 100% |\n|---|---|---|---|\n| Factory Overhead (₹ Lakh) | 17.00 | 21.50 | 24.50 |\n\nThe Company has received an export order with some modifications and the execution of the same will involve 40% of the capacity resulting in utilisation of 100% of capacity. The prime cost of the Export Order is estimated as ₹ 14 lakh. Shipping expenses will be ₹ 2.50 lakh.\n\nThe profit percentage for the Export Order is same as the Profit Percentage of Domestic Sale.\n\nYou are required to indicate the correct option for the following:",
+     "parts": [
+      {
+       "label": "(a)(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The Cost Audit Report on the audit of cost records is submitted by the Cost Auditor to",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Managing Director"
+        },
+        {
+         "key": "B",
+         "body_md": "Finance Director"
+        },
+        {
+         "key": "C",
+         "body_md": "Audit Committee"
+        },
+        {
+         "key": "D",
+         "body_md": "Board of Directors"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The applicability of cost audit under Companies (Cost Records & Audit) Rules, 2014 for regulated industries having overall annual turnover during immediate preceding financial year is ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 25.00 crore or more"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 35.00 crore"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 50.00 crore or more"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 100.00 crores"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following Cost Accounting Standards, explains the treatment of Cost of Service Cost Centre?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "CAS-1"
+        },
+        {
+         "key": "B",
+         "body_md": "CAS-12"
+        },
+        {
+         "key": "C",
+         "body_md": "CAS-13"
+        },
+        {
+         "key": "D",
+         "body_md": "CAS-14"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "CAS 8 deals with Cost Accounting Standard related to",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Material Cost"
+        },
+        {
+         "key": "B",
+         "body_md": "Cost of Utilities"
+        },
+        {
+         "key": "C",
+         "body_md": "Packaging Cost"
+        },
+        {
+         "key": "D",
+         "body_md": "Employee Cost"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "As per CAS 23, the activity of Overburden Removal that benefits the identified component of an ore to be mined by the entity is called as ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Mining Activity"
+        },
+        {
+         "key": "B",
+         "body_md": "Overburden Removal"
+        },
+        {
+         "key": "C",
+         "body_md": "Stripping Activity"
+        },
+        {
+         "key": "D",
+         "body_md": "Advance Stripping"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following documents is not included as the working papers to be obtained and retained by the cost auditor in connection with the performance of the audit or compliance function?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Production schedule"
+        },
+        {
+         "key": "B",
+         "body_md": "Quantitative data"
+        },
+        {
+         "key": "C",
+         "body_md": "Market competition trends"
+        },
+        {
+         "key": "D",
+         "body_md": "Statistical data"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Form CRA 3 pertains to",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Form of Filing Cost Audit Report."
+        },
+        {
+         "key": "B",
+         "body_md": "Cost Accounting Records."
+        },
+        {
+         "key": "C",
+         "body_md": "Form of Cost Audit Report."
+        },
+        {
+         "key": "D",
+         "body_md": "Form of intimation of appointment of Cost Auditor."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Internal controls and internal checks are",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "one and the same."
+        },
+        {
+         "key": "B",
+         "body_md": "different."
+        },
+        {
+         "key": "C",
+         "body_md": "internal control includes internal checks."
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is not a feature of Operational Audit?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Risk Identification, Process improvement objective"
+        },
+        {
+         "key": "B",
+         "body_md": "Transaction Based"
+        },
+        {
+         "key": "C",
+         "body_md": "Process Based"
+        },
+        {
+         "key": "D",
+         "body_md": "Accountability for performance improvement results"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The primary objective of anti-money laundering regulations is to",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "reduce marketing costs."
+        },
+        {
+         "key": "B",
+         "body_md": "prevent the conversion of illegal funds into legal assets."
+        },
+        {
+         "key": "C",
+         "body_md": "increase production efficiency."
+        },
+        {
+         "key": "D",
+         "body_md": "minimise tax payment only."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A company is operating at 60% capacity with a Turnover of ₹ 90 lakhs.\n(I) Prime Cost — 60% of Sales Value\n(II) Administrative and Selling Expenses — ₹ 10 lakhs\n(III) Factory Overhead will vary according to operating capacity as given below:\n\n| Operating Capacity | 60% | 80% | 100% |\n|---|---|---|---|\n| Factory Overhead (₹ Lakh) | 17.00 | 21.50 | 24.50 |\n\nThe Company has received an export order with some modifications and the execution of the same will involve 40% of the capacity resulting in utilisation of 100% of capacity. The prime cost of the Export Order is estimated as ₹ 14 lakh. Shipping expenses will be ₹ 2.50 lakh.\n\nThe profit percentage for the Export Order is same as the Profit Percentage of Domestic Sale.\n\nYou are required to indicate the correct option for the following:\n\nTotal Cost of Sales for the Domestic Sale at 60% Capacity:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 81 lakh"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 72 lakh"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 90 lakh"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 85 lakh"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A company is operating at 60% capacity with a Turnover of ₹ 90 lakhs.\n(I) Prime Cost — 60% of Sales Value\n(II) Administrative and Selling Expenses — ₹ 10 lakhs\n(III) Factory Overhead will vary according to operating capacity as given below:\n\n| Operating Capacity | 60% | 80% | 100% |\n|---|---|---|---|\n| Factory Overhead (₹ Lakh) | 17.00 | 21.50 | 24.50 |\n\nThe Company has received an export order with some modifications and the execution of the same will involve 40% of the capacity resulting in utilisation of 100% of capacity. The prime cost of the Export Order is estimated as ₹ 14 lakh. Shipping expenses will be ₹ 2.50 lakh.\n\nThe profit percentage for the Export Order is same as the Profit Percentage of Domestic Sale.\n\nYou are required to indicate the correct option for the following:\n\nProfit Percentage on Sales at 60% capacity for the Domestic Sale:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "10%"
+        },
+        {
+         "key": "B",
+         "body_md": "11%"
+        },
+        {
+         "key": "C",
+         "body_md": "12%"
+        },
+        {
+         "key": "D",
+         "body_md": "13%"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A company is operating at 60% capacity with a Turnover of ₹ 90 lakhs.\n(I) Prime Cost — 60% of Sales Value\n(II) Administrative and Selling Expenses — ₹ 10 lakhs\n(III) Factory Overhead will vary according to operating capacity as given below:\n\n| Operating Capacity | 60% | 80% | 100% |\n|---|---|---|---|\n| Factory Overhead (₹ Lakh) | 17.00 | 21.50 | 24.50 |\n\nThe Company has received an export order with some modifications and the execution of the same will involve 40% of the capacity resulting in utilisation of 100% of capacity. The prime cost of the Export Order is estimated as ₹ 14 lakh. Shipping expenses will be ₹ 2.50 lakh.\n\nThe profit percentage for the Export Order is same as the Profit Percentage of Domestic Sale.\n\nYou are required to indicate the correct option for the following:\n\nTotal Cost of Sales for the Export Order:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 24.50 lakh"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 24.00 lakh"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 38.50 lakh"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 41.00 lakh"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A company is operating at 60% capacity with a Turnover of ₹ 90 lakhs.\n(I) Prime Cost — 60% of Sales Value\n(II) Administrative and Selling Expenses — ₹ 10 lakhs\n(III) Factory Overhead will vary according to operating capacity as given below:\n\n| Operating Capacity | 60% | 80% | 100% |\n|---|---|---|---|\n| Factory Overhead (₹ Lakh) | 17.00 | 21.50 | 24.50 |\n\nThe Company has received an export order with some modifications and the execution of the same will involve 40% of the capacity resulting in utilisation of 100% of capacity. The prime cost of the Export Order is estimated as ₹ 14 lakh. Shipping expenses will be ₹ 2.50 lakh.\n\nThe profit percentage for the Export Order is same as the Profit Percentage of Domestic Sale.\n\nYou are required to indicate the correct option for the following:\n\nProfit for the Export Order:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 2.40 lakh"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 2.67 lakh"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 3.00 lakh"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 3.50 lakh"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A company is operating at 60% capacity with a Turnover of ₹ 90 lakhs.\n(I) Prime Cost — 60% of Sales Value\n(II) Administrative and Selling Expenses — ₹ 10 lakhs\n(III) Factory Overhead will vary according to operating capacity as given below:\n\n| Operating Capacity | 60% | 80% | 100% |\n|---|---|---|---|\n| Factory Overhead (₹ Lakh) | 17.00 | 21.50 | 24.50 |\n\nThe Company has received an export order with some modifications and the execution of the same will involve 40% of the capacity resulting in utilisation of 100% of capacity. The prime cost of the Export Order is estimated as ₹ 14 lakh. Shipping expenses will be ₹ 2.50 lakh.\n\nThe profit percentage for the Export Order is same as the Profit Percentage of Domestic Sale.\n\nYou are required to indicate the correct option for the following:\n\nMinimum Price to be quoted for the Export Order:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 24.00 lakh"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 27.00 lakh"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 26.67 lakh"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 28.00 lakh"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "(Answer any five questions out of 7 questions given below. Each question carries 14 Marks) 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Define Cost Audit and specify the Scope and Social Objectives of Cost Audit.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Definition of Cost Audit:\nAccording to Chartered Institute of Management Accountants, London (CIMA), cost audit is “the verification\nof the correctness of cost accounts and of the adherence to the cost accounting plan”. In other words, cost audit\nis the verification of the cost of production of any product, service or activity on the basis of accounts\nmaintained by an enterprise in accordance with the accepted principles of cost accounting.\n\nThe Institute of Cost Accountants of India, defines cost audit as “a system of audit for the review, examination\nand appraisal of the cost accounting records and attendant information, required to be maintained by specified\nindustries, as mandated by the applicable Companies Act and Rules framed thereunder.”\n\nCost Audit is an independent examination of cost statements, cost records and other related information of an\nentity, with a view to express an opinion thereon. Standards on Cost Auditing provide guidance to the cost\nauditor through each step of the audit process with regard to the audit procedures to be followed;\nresponsibilities of the cost auditor; and cost reporting.                                                \\\n\nScope of Cost Audit\nThe primary objective of ‘Cost Audit’ is ensuring accuracy of cost data, accumulation and exact computation\nof the cost of a product. However, the vast scope of Cost Audit works as a mirror of entity’s performance. The\ntune is perfectly captured in the definition of ‘Cost Audit’ propagated by the professional bodies entrusted\nwith the responsibility of regulating and monitoring Cost Audit.\n\nSocial Objectives:\n (i) Verifying whether the pricing of the products is justified as per the product and quality are concerned.\n (ii) Removing the disparities, if any, in the pricing of products and/or services.\n (iii) Ensuring that no cost based economic imbalance occurs in product and /or services.\n (iv) Facilitating the global market cost competitiveness of the products.\n (v) Ensuring the efficient utilization of resources.\n (vi) Providing reliable cost data for tariff fixation, subsidies, anti-dumping measures, and public\n       procurement.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Enumerate the items of Finance Costs that should be included in Cost Records as per the Companies (Cost Records and Audit) Rules, 2014 specifying the principle of how the Finance Costs are assigned to the cost objects.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Finance Costs:\nAs per the Companies (Cost Records and Audit) Rules, 2014 and Cost Accounting Standard (CAS-17) on\nInterest and Financing Charges, Finance Costs should be separately identified and recorded.\n\n (a)    Finance costs are costs incurred by an enterprise in connection with the borrowing of fund or other\n        costs which in effect represent payment for the use of non-equity fund.\n (b) Finance costs incurred shall be identified for-\n   (i) acquisition or construction or production of qualifying assets including fixed assets; and\n   (ii) other finance costs for production of goods or operations or services rendered which cannot be\n        classified as qualifying assets.\n (c) Finance costs directly attributable to the acquisition or construction or production of a qualifying asset\n        shall be included in the cost of the asset.\n (d) Finance costs shall not include imputed costs.\n (e) Subsidy or grant or incentive and any such payment received or receivable with respect to finance costs\n        shall be reduced from the cost object in the financial year when such subsidy or grant or incentive and\n        any such payment is recognised as income.\n (f) Penal Interest for delayed payment, fines, penalties, damages and similar levies paid to statutory\n        authorities or other third parties shall not form part of the finance costs. In case the company delays\n        the payment of statutory dues beyond the stipulated date, interest paid for delayed payment shall not\n        be treated as penal interest.\n (g) Interest paid for or received on investment shall not form part of the other financing charges for\n        production of goods or operations or services rendered;\n (h) Items of Finance Costs include Interest on Term Loans, Interest on Working Capital Loans, Debenture\n        Interest, Bank Charges Related to Borrowings, Finance Charges on Lease Liabilities, Discounting\n        Charges, Commitment Charges, Other Borrowing Costs, etc.\n (i) Assignment of finance costs to the cost objects shall be based on either of the following two principles;\n        namely: -\n   1. Cause and Effect - Cause is the process or operation or activity and effect is the incurrence of cost and\n   2. Benefits received - to be apportioned to the various cost objects in proportion to the benefits received\n        by them.\n (j) Consistency Principle - The basis of assignment should be applied consistently from period to period.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Prepare a list of the activities of a Cost Accountant in practice, which are considered as Professional misconduct as per the Part I of the First Schedule of the Cost and Works Accountants Act, 1959, in relation to Cost Accountants in Practice.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Professional Misconduct in relation to Cost Accountants in Practice:\nAs per Part I of the First Schedule of the Cost and Works Accountants Act, 1959, shall be deemed to be guilty\nof professional misconduct, if he:\n\n 1)    Allows any person to practice in his name as a cost accountant unless such person is also a cost\n       accountant in practice and is in partnership with or employed by himself;\n 2)     Pays or allows or agrees to pay or allow, directly or indirectly, any share, commission or brokerage in\n        the fees or profits of his professional work, to any person other than a member of the Institute or a\n        partner or a retired partner or the legal representative of a deceased partner;\n\n 3)     Accepts or agrees to accept any part of the profits of the professional work of a person who is not a\n        member of the Institute;\n\n        Provided that nothing contained shall be construed as prohibiting a member from entering into profit\n        sharing or other similar arrangements, including receiving any share, commission or brokerage in the\n        fees with a member of such professional body or other person having qualifications, as is referred to in\n        item (2) of this Part.\n\n 4)     Enters into partnership, in or outside India, with any person other than a cost accountant in practice or\n        such other person who is a member of any other professional body having such qualifications as may\n        be prescribed, including a resident who but for his residence abroad would be entitled to be registered\n        as a member under clause (iv) of sub-section (1) of section 4 or whose qualifications are recognised by\n        the Central Government or the Council for the purpose of permitting such partnerships;\n\n 5)     Secures, either through the services of a person who is not an employee of such cost accountant or who\n        is not his partner or by means which are not open to a cost accountant, any professional business;\n\n        Provided that nothing herein contained shall be construed as prohibiting any arrangement permitted in\n        terms of items (2), (3) and (4) of this Part;\n\n 6)     Solicits clients or professional work, either directly or indirectly, by circular, advertisement, personal\n        communication or interview or by any other means:\n\n        Provided that nothing herein contained shall be construed as preventing or prohibiting-\n (i)    Any cost accountant from applying or requesting for or inviting or securing professional work from\n        another cost accountant in practice;\n (ii)   A member from responding to tenders or enquiries issued by various users of professional services or\n        organisation from time to time and securing professional work as a consequence;\n (7)    Advertises his professional attainments or services, or uses any designation or expressions other than\n        cost accountant on professional documents, visiting cards, letter heads or sign boards, unless it be a\n        degree of a University established by law in India or recognised by the Central Government or a title\n        indicating membership of the Institute of Cost Accountants of India or of any other institution that has\n        been recognised by the Central Government or may be recognised by the Council;\n\n        Provided that a member in practice may advertise through a write up, setting out the services provided\n        by him or his firm and particulars of the firm subject to such guidelines as may be issued by the Council.\n\n (8)    Charges Contingent Fees: i.e. accepts fees dependent upon findings or results except where permitted\n        by law.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "You have been appointed as a Cost Auditor. Identify the factors which will be taken into consideration in planning the audit assignment.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Factors in Planning Cost Audit Assignment:\nIn planning the audit assignment certain important factors are taken into consideration viz.\n  (a) Requirement of audit personnel for the assignment\n  (b) Documentation of the audit procedures and of evidence\n  (c) Quality Control exercises over performance of the assignment etc.,\n\nRequirement of audit personnel for the assignment:\nExperience and training of audit personnel engaged for the assignment should be considered particularly\nkeeping in view of the relevant industry. Prior practical experience of the industry helps in carrying out the\nstudy of the system and procedures in vogue.\n\nThe cost audit team to whom the assignment is to be delegated need appropriate direction and supervision. It\nis therefore, essential that they accomplish all the relevant tasks relating to the same.\n\nThe audit personnel should be asked to collect the documentary evidence and fill in the relevant cost audit file\nfor future reference.\n\nDocumentation of the audit procedures and of evidence:\nThe cost auditor should document all matters which are important in providing evidence to support the opinion\ngiven in the report. It is important to remember that the documents may include issues beyond accounting data\nas other information such as production schedule, quantitative and statistical data etc. may be required for\npreparation of performance analysis.\n\nThe daily worksheets should include all queries raised, with whom it was discussed and how, and if they were\nsatisfied.\n\nWorking paper management improves the productivity of the audit assignment undertaken. The essentiality is\nthat of quick retrieval of information from the files of working papers. Working paper file contains details\nrelating to the financial year under reference. This file should be properly indexed and divided into convenient\nsections.\n\nThe cost auditor and his team should adopt appropriate procedures for maintaining the confidentiality and safe\ncustody of the working papers and for retaining them for a period sufficient to meet the needs of the practice\nand in accordance with legal and professional requirements of retention of records.\n\nQuality Control over performance of the assignment:\nSupervision and control involve direction, review and monitoring of the audit assignment in hand. The\npersonnel carrying out these responsibilities generally perform the functions like monitoring progress, modify\nplan and programme, and review individual progress of work of Audit Assistant during course of Audit.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A manufacturing company operates its own captive power plant for its own use.\nThe following data relates to one month:\n(i) Actual units generated: 160 lakh units\n(ii) Units consumed by generating plant (auxiliary consumption): 5% of actual units generated\n(iii) Coal: 450 MT @ ₹ 26,000 per MT\n(iv) Furnace Oil: 10 MT @ ₹ 1,35,000 per MT\n(v) Water extraction: 9 lakh litres @ ₹ 2.75 per litre\nOther information are:\n(vi) Boiler cost: ₹ 80 lakh, residual value ₹ 8 lakh, life 12 years\n(vii) Generating plant: ₹ 1.5 crore, depreciation 10% p.a. (SLM)\n(viii) Generating plant: 120 skilled workers @ ₹ 34,000 pm and 180 helpers @ ₹ 24,000 pm\n(ix) Boiler plant: 90 semi-skilled workers @ ₹ 29,000 pm and 140 helpers @ ₹ 22,000 pm\n(x) Repairs & Maintenance: ₹ 8 lakh\n(xi) Administrative overhead: ₹ 25 lakh (share)\n(xii) Sale of ash: ₹ 3 lakh\n\nYou are required to work out the Cost per unit of Power generated for captive use.",
+       "options": [],
+       "correct": null,
+       "answer_md": "COST SHEET\n                                                                                                    ₹ Lakh\n                                                                      Calculation\n                                                                                                     p.m.\n Material cost\n Coal                                                        450 mt × ₹ 26,000 per month               117.00\n Oil                                                         10 mt × ₹ 1,35,000 per month               13.50\n Water                                                          9 lakh ltr × ₹ 2.75 /ltr                24.75\n Total Material Cost                                                                                   155.25\n                                                                  (120 × ₹ 34,000) +\n Wages for Generator Plant                                                                               84.00\n                                                                    (180 × ₹ 24,000)\n                                                                   (90 × ₹ 29,000) +\n Wages for Boiler plant                                                                                  56.90\n                                                                    (140 × ₹ 22,000)\n Depreciation - Generating Plant                                 (150 lakh × 0.10) / 12                   1.25\n Depreciation- boiler plant                                    (80-8) / 12 = ₹ 6 lakh / 12                0.50\n Repair & Maintenance of generating plant & boiler                                                        8.00\n Administrative Exp                                                                                      25.00\n Total Cost                                                                                             330.90\n Less: Sale of Ash                                                                                        3.00\n Net Cost                                                                                               327.90\n\nUnits Flow:\n a)    Units generated = 160 lakh\n b)    Auxiliary consumption = 160×5%=8 lakh\n c)    Units supplied to factory = 160−8=152 lakh\n       Cost Per Unit Generated = ₹ 327.90 /152 lakh = ₹ 2.157",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer is an OCR-layout cost sheet; check column alignment."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "ABC Ltd. Manufactures two products X and Y. The following information is provided for the two products for the year ended March 31, 2026:\n\n| Particulars | Product X | Product Y |\n|---|---|---|\n| Units Produced (Qty. Nos.) | 2,50,000 | 1,75,000 |\n| Units Sold (Qty. Nos.) | 1,75,000 | 1,50,000 |\n| Design Charges (₹) | 1,60,000 | 1,90,000 |\n| Software Development Charges (₹) | 2,00,000 | 2,50,000 |\n\nProduct X and Y\nRoyalty paid on Sales of ₹ 9,75,000 — Units – 3,25,000 (@ ₹ 3 per unit)\nRoyalty paid on Production ₹ 4,25,000 — Units – 4,25,000 (@ ₹ 1 per unit)\nHire Charges of a special equipment used in manufacturing product Y ₹ 75,000.\nYou are required to Assess the Direct Expenses (as per CAS-10).\nNo adjustment has to be made for closing stock.",
+       "options": [],
+       "correct": null,
+       "answer_md": "ABC Ltd.\n                              Compilation of Direct Expenses (as per CAS 10)\n                                   Particulars              Product X Product Y\n                      Royalty paid on Sales                   5,25,000    4,50,000\n                      Add: Royalty paid on Units produced     2,50,000    1,75,000\n                      Add: Hire charges of Equipment             Nil       75,000\n                      used in producing of product Y\n                      Add: Design Charges                     1,60,000    1,90,000\n                      Add: Software Development charges       2,00,000    2,50,000\n                      Direct Expenses (Total)                11,35,000 11,40,000",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer table is OCR-layout text."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following figures are obtained from the Cost Accounting Records of a single product manufacturing company:\n\n| Year ended 31st March | 2026 | 2025 |\n|---|---|---|\n| | Amount in ₹ lakh | |\n| Net Sales | 4,800 | 3,840 |\n| Other Income | 300 | 200 |\n| Increase in Value of Stock of Finished Goods | 20 | 10 |\n| Raw Materials Consumed | 1,760 | 1,440 |\n| Direct Wages, Salaries, Bonus, Gratuity etc. | 440 | 352 |\n| Power and Fuel | 240 | 192 |\n| Stores and Spares | 160 | 140 |\n| Cess and Local Taxes | 120 | 100 |\n| Other manufacturing Overheads | 430 | 370 |\n| Administrative Overheads: | | |\n| Audit fees | 36 | 30 |\n| Salaries and Commission to Directors | 48 | 40 |\n| Other Overheads | 260 | 220 |\n| Selling and Distribution Overheads: | | |\n| Salaries and Wages | 36 | 30 |\n| Packing and Forwarding | 20 | 16 |\n| Other Overheads | 250 | 200 |\n| Total Depreciation | 120 | 120 |\n| Interest Charges: | | |\n| On Working Capital Loans from Bank | 60 | 25 |\n| On Fixed Loans from IDBI | 90 | 70 |\n| On Debentures | 30 | 30 |\n| Provision for Taxes | 316 | 200 |\n| Proposed Dividends | 420 | 230 |\n\nYou are required to calculate the value addition as stipulated PART-D, PARA-3 of the Annexure to Cost Audit Report under the Companies (Cost Records and Audit) Rules, 2014 for the year ended March 31, 2026 and March 31, 2025.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Calculation of Value Addition:\n                                      st\n                       Year ended 31 March                        2026   2025\n                                                                  Amount in ₹ lakh\n                       VALUE ADDITION:\n                       Net Sales                                    4800       3840\n                       Add: Export Incentives                          -           -\n                       Add/Less: Adjustment in Finished stocks        20         10\n                                                                    4820       3850\n                       Less: Cost of bought out input:\n                       i) Cost of Raw materials consumed            1760       1440\n                       ii) Consumption of stores and spares          160        140\n                       iii) Power & Fuel                             240        192\n                       iv) Other overheads                         1,056        861\n                       (430+36+260+20+250+60) = 1,056\n                       (370+30+220+16+200+25) = 861\n                       Total cost of bought out input:              3216       2633\n                       VALUE ADDED                                 1,604      1,217",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer table is OCR-layout text."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the meaning of corporate fraud and discuss th.e major causes leading to corporate fraud in modern business organisations.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Corporate Frauds: Corporate fraud consists of illegal or unethical and deceptive actions committed either by\na company or an individual acting in their capacity as an employee of the company. Corporate fraud schemes\nare often extremely complicated and, therefore, difficult to identify. It often takes an office full of forensic\naccountants’ months to unravel a corporate fraud scheme in its entirety.\nWhen corporate fraud is perpetrated by the top executives of a large corporation, the fraud often extends to\nbillions of dollars in scale. The victims of corporate fraud are consumers or clients, creditors, investors, other\nbusinesses, and eventually, the company that is the source of the fraud and its employees. When it is finally\ndiscovered, the company committing the fraud is often left in ruins and forced to declare bankruptcy.\n\n      Corporate fraud consists of illegal, deceptive actions committed either by a company or an individual\n       who is an employee of the company.\n\n      Many corporate fraud schemes are highly complicated accounting schemes used to inflate a company’s\n       apparent profits and may take years to detect.\n\n      When massive corporate fraud is eventually discovered, it can take down even huge multinational\n       companies with billions in annual revenues.\n\n       Much of the money illegally obtained through corporate fraud is often never recovered, after being\n       spent long ago by the perpetrators.\n\nThe major causes leading to corporate fraud in modern business organisation:\n   (a) The Desire or Perceived need to attract or retain Investors: Corporate fraud commonly occurs for\n       the same reason as any other fraud scheme-greed. However, amid the highly competitive global\n       business environment of the modern world, it may also occur for other reasons. Many corporate fraud\n       schemes consist of fraudulent accounting schemes used to make a company appear more profitable\n       than it is. The impetus behind such schemes is the desire or perceived need to attract or retain investors.\n\n   (b) Problems or defects with a Company’s Products: Another cause of corporate fraud may be problems\n       or defects with a company’s products, which it tries to hide. Several recent corporate fraud cases have\n       occurred with pharmaceutical companies that attempted to hide certain side effects or dangers\n       associated with using certain medicines they manufactured and sold.\n       Government regulatory authorities, the Securities Exchange Board of India (SEBI) and the Securities\n       and Exchange Commission (SEC) in the United States, use laws and regulations to try to prevent,\n       detect and punish corporate frauds. However, fraud may go undetected for many years before it\n       becomes apparent to authorities, especially if the guilty company is a private company that is not\n       required to publicly disclose its financial records.",
+       "confidence": "high",
+       "review": [
+        "Stem printed with typo \"th.e\" (kept as printed)."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Discuss the objectives and key functions of the Financial Intelligence Unit–India (FIU-IND) in combating money laundering.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Objectives: Financial Intelligence Unit (FIU-IND), the national agency is responsible:\n a)    for receiving, processing, analysing and disseminating information relating to suspect financial\n       transactions.\n       FIN-IND is also responsible for coordinating and strengthening efforts of\n b)    National and international intelligence\n c)    Investigation and enforcement agencies\n       In pursuing global efforts against money laundering and related crimes.\n\n       FIU-IND is an independent body that reports directly to the Economic Intelligence Council (EIC),\n       headed by the Finance Minister of India.\n\nFunctions of FIU-IND:\n (i) The main function of FIU-IND is to receive cash/suspicious transaction reports, analyse them and, as\n      appropriate, disseminate valuable financial information to intelligence/enforcement agencies and\n      regulatory authorities.\n\n (ii)    Collection of Information: Act as the central reception point for receiving Cash Transaction reports\n         (CTRs), Non-Profit Organisation Transaction Report (NTRs), Cross Border Wire Transfer Reports\n         (CBWTRs), Reports on Purchase or Sale of Immovable Property (IPRs) and Suspicious Transaction\n         Reports (STRs) from various reporting entities.\n\n (iii) Analysis of Information: Analyze received information in order to uncover patterns of transactions\n       suggesting suspicion of money laundering and related crimes.\n\n (iv) Sharing of Information: Share information with national intelligence/law enforcement agencies,\n      national regulatory authorities and foreign Financial Intelligence Units.\n\n (v)     Act as Central Repository: Establish and maintain national database on the basis of reports received\n         from reporting entities.\n\n (vi) Coordination: Coordinate and strengthen collection and sharing of financial intelligence through an\n      effective national, regional and global network to combat money laundering and related crimes.\n\n (vii) Research and Analysis: Monitor and identify strategic key areas on money laundering trends,\n       typologies and developments.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the Management Audit Report and the characteristics of a good Management Audit Report?",
+       "options": [],
+       "correct": null,
+       "answer_md": "A management audit report is a formal, objective document summarizing the evaluation of an organization's\nleadership, policies, and operational procedures. It details whether a company's managers are efficiently\nutilizing resources and effectively achieving corporate goals, and provides actionable recommendations for\nimprovement.\n\nUnlike a traditional financial audit (which focuses strictly on accounting accuracy), a management audit\nassesses the overarching quality of management. Its core purpose is to identify operational bottlenecks,\nstrategic misalignments, and leadership weaknesses.\n\nManagement Audit Report (MAR) is the reflection of the quality of review performed in various areas. It is\nimportant to prepare a good MAR. A good MAR can motivate the management and get the required results.\n\nCharacteristics of a good management audit report:\n (i)      Pertinence\n (ii)     Comprehensiveness\n (iii)    Brevity\n (iv)     Timeliness\n (v)      Motivating\n (vi)     Appropriate\n (vii)    Data based to support outcome\n\nManagement Audit reports are often labelled as ‘exception reporting’. The deviations from laid down\nprocesses, unauthorized activities, performance deterioration, value destruction are normally dealt with in\nreports. Benchmarking of activities, industry norms and practices are also highlighted as ‘scope of\nimprovement’. Fraudulent activities, reputational risk, system and control lapses are also forming part of\nreports. Corrective measures are suggested to rectify the position and address management concerns. The top\npolicy executive is generally interested in four factors in operating statements – facts, the person responsible,\ndeviations in actual performance from standards, and the effect of the result on the financial or physical status\nof the organisation.\n\nThe report must allow management to study comparisons, review organisation, and appraise the effectiveness\nof the executives. Departmental weakness can be quickly seen by the management, if the report is properly\nprepared.\n\nThe management audit report should create awareness among the management of prudent management\npractices that can make the organisation come alive. It is a very important function of management audit to\nhelp the change management mindset.\n\nReport discussion with management and buying in of suggestions for implementation in time bound manner\nimproves governance and a hallmark of progressive management and Organisation.\n\nA management audit report should also be discussed with the people concerned in various areas before\nreporting. Every point that is raised in the report should have the acceptance of the people involved in the\nconcerned function. A report that indicates suggestions that had come from the people themselves would have\na better than coming as a suggestion from the auditor.\n\nThe report should be drafted and structured so that it makes a logical presentation to the management and\nmakes it easily readable. The report should contain not only the problems and defects in the working, but also\nshould come out with solutions, as if given by the operational people themselves, so that it gains immediate\nacceptance for implementation. A management audit report relies heavily on accepted managerial practices\nand feasible solutions.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is Corporate Image? Develop strategy regarding how to build a positive image.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Corporate image is the overall perception, feelings, and reputation of a company held by the public,\nstakeholders, and customers. It is the \"face\" of an organization—how it is seen, understood, and remembered,\nencompassing both internal and external views. Key components include logos, branding, employee behavior,\nand company values.\n\nA positive corporate image enhances the overall accessibility of the organization in all spheres of society. To\nbuild a positive image, many methods are used, to quote a few below:\n\n i)      advertising in various media and forum\n ii)     television is available in remotest part of the country and the use of this platform reach the\n         stakeholders in visual form.\n iii)    quality products and customer service is a method which develops loyalty to the product and entity.\n iv)     provision of social amenities like CSR activities, community support, social bonding are helpful.\n v)      in situations of disaster, the support given to society are immensely helpful in building image.\n vi)     BCM Marketing have the knowledge and the necessary tools to make the most of the corporate image.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain Performance Analysis and list out the specific metrics or goals, a company might consider during a Performance Analysis.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Performance Analysis:\nA performance Analysis is an evaluation of how a business or individual has performed within the limited\ntimeframe against set parameters. Any variations from projected metrics, need to be under focus to understand\nthe next course of action to pre-empt the possibility of any future/shortcoming.\n\nHere are some specific metrics or goals a company might consider during a performance analysis:\n   •    Parameters against which performance to be measured\n   •    Past parameters and measuring yardstick\n   •    Ensuring no change in parameters and yardstick\n   •    Measurement of actual delivery\n   •    Assumptions used for both micro and macro conditions with impact thereon.\n   •    Adjustment at base level for the actuals at different points of time\n   •    Process of monitoring and review of parameters and actuals against the same\n   •    Equal period or timeframe for evaluation and period of appraisal\n   •    ‘root cause’ analysis for deviations from expected performance\n   •    Feedback to employees on business performance improvement.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Describe the objectives of Operational Audit. Analyse the advantages and disadvantages of Operational Audit.",
+       "options": [],
+       "correct": null,
+       "answer_md": "OBJECTIVES OF OPERATIONAL AUDIT:\nOperational Audit objective has been coined here after the name of the connoisseur of TQM (Total Quality\nManagement) W.E. Deming. To define the objective the work ‘DEMING’ is used, where each of the word\nstands for a definitive objective accomplishment.\n        D–      Detailed understanding of existing process to suggest improvements\n        E–      Eliminate Waste, Duplication of Work\n        M – Merge Operations/Processes to reduce Turn Around Time\n        I–      Improve/Increase Quality, Volume, Revenue\n        N–      New Methods, Techniques, Devices for better result/throughput\n        G–      Govern Man, Machine, Methods and Money\nTo carry out the heightened expectations of ‘stakeholders’ on their shoulder, Auditors can no longer spend\ntheir time looking down at financial controls and compliances, rather to spend much more time in operational\nreviews.\n\nGone are the days of ‘pushing the pencil’. ‘Brain power’ is taking place of ‘brawn power’. To support the\naccomplishment of aforesaid objective, the audit process should lend appropriate support. Process provides a\nmethodology for intelligently and efficiently integrating People, Tools, Procedures and Technology for the\nbest results/outcome.\n\nAdvantages of Operational Audit:\n  •    Going through the operational audit process provides a company with objective opinions. These\n       opinions often generate quicker production by lowering TAT (Turn Around Time), pointing process\n       inefficiencies, the location of areas of delay/tapes, cost rationalization/reduction.\n  •    Move towards operational excellence.\n  •    Improves efficiency and productivity.\n  •    Enhances resource utilization.\n  •    Identifies operational weaknesses.\n  •    Strengthens internal control systems.\n  •    Reduces costs and wastage.\n   •     Improves risk management.\n   •     Facilitates better decision-making.\n   •     Encourages accountability and responsibility.\n   •     Improves service quality and customer satisfaction.\n   •     Supports achievement of organizational objectives.\n\nDisadvantages of Operational Audit:\n   •   Time-consuming process.\n   •   May involve high audit costs.\n   •   Mental fear of Resistance to change from employees and management.\n   •   Difficult to measure qualitative aspects.\n   •   Recommendations may not always be implemented.\n   •   Requires skilled and experienced auditors.\n   •   Possibility of subjective judgments.\n   •   Can disrupt normal operations during audit activities.\n   •   Benefits may not be immediately visible.\n   •   Limited effectiveness if management support is lacking.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Develop an Audit Programme for the Audit of Hospitals.",
+       "options": [],
+       "correct": null,
+       "answer_md": "AUDIT OF HOSPITALS:\nThe following points are to be considered necessary for conducting an audit of Hospital.\n (i)     Check the letter of appointment to ascertain the scope of responsibilities.\n (ii)    Ownership and control of the institution.\n (iii) Process (e.g. admission, release, outdoor check-up, pathology and other test facilities, Operation\n         Theatre facility, vaccination etc.) and related controls till revenue generation. Normally facilities\n         not provided for other than cash terms.\n (iv)    Donation, Special Grant, Interest and/or dividend income etc. to be validated through necessary\n         supporting documents. E.g. Dividend/ Interest Income should be vouched with reference to the\n         Investment Register and Interest and Dividend Warrants.\n (v)     Ensure that purposive donations, grants etc. spent for the particular purpose only.\n (vi)    Clear distinction should be made between the items of capital and revenue nature.\n (vii) Adherence to Standard Operating Procedure w.r.t. Expenses (Capex and Opex).\n (viii) verify the system of internal check as regards purchases and issue of stores, medicines, medical\n         equipment, etc.\n (ix)    Examine the appointments of the staff, visiting specialist doctors, payment of salaries etc. for\n         expenditure, booking validation.\n (x)     Physically verify the investments, fixed assets and inventories.\n (xi)    Check appropriateness of capitalization and depreciation rates charged and value in books.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

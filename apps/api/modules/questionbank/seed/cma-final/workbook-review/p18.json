@@ -1,0 +1,81 @@
+{
+ "schema": "artha.qbreview.v1",
+ "paper": "p18",
+ "items": {
+  "workbook:cma-final:p18:ch1:q12": {
+   "verdict": "approve",
+   "reason": "Compared stem, exchange-rate table, journal entries, working note and part (b) with printed pages 13-14; all figures and order match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p18:ch1:q13": {
+   "verdict": "approve",
+   "reason": "Compared stem, rate table, three sub-parts and the three-point solution with the print; faithful.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p18:ch1:q14": {
+   "verdict": "approve",
+   "reason": "Compared stem, rates, both journal entries and the working table with the print; omitted rule lines are not data.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p18:ch5:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem table and every cell of the deferred tax table (incl. -925/-950, DTL -1,950 under fair value), net assets, goodwill and journal tables with the print; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "DTL row shows -1,950 under Fair value column as printed",
+    "Journal entry table header shows 'in lakhs' twice as printed",
+    "Employee entitlement book value -925 vs liability 950 as printed"
+   ]
+  },
+  "workbook:cma-final:p18:ch5:q3": {
+   "verdict": "approve",
+   "reason": "Compared both balance sheets, other information, DTA/DTL table, net assets, consideration, NCI, goodwill, consolidated balance sheet and WN III against the print cell by cell; the preceding illustration's journal table is correctly excluded.",
+   "fixes": [],
+   "printed_issues": [
+    "'Deferred consideration ... 23.13' and long-term provisions '23.81' in the build-up (183.13) as printed",
+    "'Security Premium Reserve' and 'ratio of 2:1' wording as printed",
+    "'₹ 35, lakhs' as printed",
+    "Buyer/Seller roles reversed in solution opening text as printed",
+    "'Share capital - Equity shares of 100 each' as printed"
+   ]
+  },
+  "workbook:cma-final:p18:ch5:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem balance sheet, redrafted balance sheet, notes 1-2 and working notes (i)-(iii) with the print; amounts sit under the correct columns (61.00, 126.00, 128.20, 1,10,000, 13,20,000).",
+   "fixes": [],
+   "printed_issues": [
+    "Stem lists 'Debenture Redemption Reserve Investments' as one line as printed"
+   ]
+  },
+  "workbook:cma-final:p18:ch5:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem balance sheets, revaluation table, balance sheet of Pink Ltd., notes, W1-W4 against the print; headers repeated at page breaks are correctly merged and the W4 fractions match.",
+   "fixes": [],
+   "printed_issues": [
+    "'Authorised share capital' note lists 1,80,000 shares under it as printed",
+    "'Op balance' and 'B Ltd.' style labels as printed"
+   ]
+  },
+  "workbook:cma-final:p18:ch6:q5": {
+   "verdict": "approve",
+   "reason": "Compared stem balance sheet, narrative, consolidated balance sheet and WN1-WN8 against the print including the 3,000 placement and journals; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "'(₹,142,000 – ₹1,20,000)' in WN4 as printed",
+    "Provision of 50,000 for a 60% likely loss as printed"
+   ]
+  },
+  "workbook:cma-final:p18:ch6:q11": {
+   "verdict": "approve",
+   "reason": "Compared stem tables, consolidated balance sheet, P&L/OCI and WN1-WN7 on printed pages 112-115 (PDF 118-121); all figures match and the 'Notes' page is excluded.",
+   "fixes": [],
+   "printed_issues": [
+    "NCI '₹ 13 L × 10% = ₹ 1.31' (elsewhere 1.30) as printed",
+    "'A Ltd'/'B Ltd' labels in solution vs H Ltd/S Ltd in question as printed"
+   ]
+  }
+ }
+}

@@ -1,0 +1,677 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p20a",
+ "term_code": "2025-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Q1 split into 1(a) (i)-(x) 2x10=20 and 1(b) (xi)-(xv) 2x5=10 with a common scenario (repeated in stems).",
+  "qp.pdf has 14 pages; page 14 is blank. Q8(b) is on page 13.",
+  "Q1(vi) keyed B (Risk Avoidance) as the non-COSO component per printed key."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Answer to Question No. 1 which is compulsory. (Page 1 header: All sections are compulsory. Each section contains instructions regarding the number of questions to be answered within the section.)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "(a) Choose the correct answer from the given alternatives. 2×10=20 [parts (i)-(x)]\n(b) Parts (xi)-(xv) are based on a common scenario, 2×5=10 (scenario repeated in each of those parts' stems).",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "EVA is ___________ related to shareholder's value.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "directly"
+        },
+        {
+         "key": "B",
+         "body_md": "inversely"
+        },
+        {
+         "key": "C",
+         "body_md": "not related"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The merger of one or more companies with another company or the merger of two or more companies to form one company is called ___________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Demerger"
+        },
+        {
+         "key": "B",
+         "body_md": "Acquisition"
+        },
+        {
+         "key": "C",
+         "body_md": "Amalgamation"
+        },
+        {
+         "key": "D",
+         "body_md": "Slump sale"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is not a method of risk management strategy?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Avoidance"
+        },
+        {
+         "key": "B",
+         "body_md": "Retention"
+        },
+        {
+         "key": "C",
+         "body_md": "Asset"
+        },
+        {
+         "key": "D",
+         "body_md": "Transfer"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A colour coded version of the risk map is known as",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Red–Blue risk map"
+        },
+        {
+         "key": "B",
+         "body_md": "Red–Yellow map"
+        },
+        {
+         "key": "C",
+         "body_md": "Heat map"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "If a company has a P/E ratio of 20 and a ROE (Return on Equity) of 15% then the Market to Book Value Ratio is",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "3 times"
+        },
+        {
+         "key": "B",
+         "body_md": "0.03"
+        },
+        {
+         "key": "C",
+         "body_md": "Cannot be calculated from the given information"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The COSO Framework of ERM (Enterprise Risk Management) advocates eight interrelated components of an ERM. Which one of the following is not a component of the said framework?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Risk Response"
+        },
+        {
+         "key": "B",
+         "body_md": "Risk Avoidance"
+        },
+        {
+         "key": "C",
+         "body_md": "Risk Assessment"
+        },
+        {
+         "key": "D",
+         "body_md": "Monitoring"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Market price per share of a firm having Return on Equity (ROE) of 10.50%, EPS of ₹ 8.50 and P/B (Price to Book Value) Ratio of 0.75 is (Answer is up to 2 places of decimals.)",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 60.71"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 66.71"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 71.60"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A _______ is an option issued by a company to buy a stated number of shares of stock at a specified price.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Warrant"
+        },
+        {
+         "key": "B",
+         "body_md": "Bond"
+        },
+        {
+         "key": "C",
+         "body_md": "Puttable Bond"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following is a financial liability for a company?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "X Ltd. has issued 10 crore equity shares of ₹ 10 each."
+        },
+        {
+         "key": "B",
+         "body_md": "X Ltd. has issued 10 crore cumulative redeemable preference shares of ₹ 10 each."
+        },
+        {
+         "key": "C",
+         "body_md": "X Ltd. has issued 10 crore non-cumulative compulsorily convertible preference shares of ₹ 10 each."
+        },
+        {
+         "key": "D",
+         "body_md": "Both (B) and (C)"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which category of risks are measured by Beta?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Management"
+        },
+        {
+         "key": "B",
+         "body_md": "Inflation"
+        },
+        {
+         "key": "C",
+         "body_md": "Financing"
+        },
+        {
+         "key": "D",
+         "body_md": "Market"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions: 2×5=10\n\nKrishna Inks, a leading manufacturer of fountain pen inks, is striving to enhance product quality, process efficiency and financial performance. The company integrates Statistical Quality Control (SQC), Total Productive Maintenance (TPM) and financial performance measurement to improve operational effectiveness.\n\nPhase 1: Quality Control & Defect Rate Monitoring (SQC Implementation)\nThe Quality Assurance (QA) team at Krishna Inks employs p-charts to monitor defect rates. A sample of 10 production batches, each containing 200 ink bottles, was tested for nonconforming units. The recorded defects per batch were:\n\nBatch No. | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10\n---|---|---|---|---|---|---|---|---|---|---\nDefects | 12 | 7 | 9 | 15 | 10 | 5 | 6 | 13 | 8 | 9\n\nThe quality control manager is responsible for calculating the fraction defective (p) and determining control limits (UCL & LCL) to check if the production process is statistically stable.\n\nPhase 2: Total Productive Maintenance (TPM) & OEE Calculation\nKrishna Inks has three production machines (M1, M2, M3), each producing ink bottles.\nThe data for the machines is:\n\nMachine | Availability (%) | Performance (%) | Quality (%)\n---|---|---|---\nM1 | 88 | 90 | 98\nM2 | 92 | 85 | 97\nM3 | 95 | 88 | 95\n\nPhase 3: Financial Performance Analysis & Decision Making\nThe company is also evaluating its financial performance using Data Envelopment Analysis (DEA) to assess the efficiency of four plants (P1, P2, P3, P4) in terms of output per unit of input cost.\n\nPlant | Production Output (units) | Total Cost (₹ million)\n---|---|---\nP1 | 110,000 | 18\nP2 | 130,000 | 20\nP3 | 100,000 | 15\nP4 | 125,000 | 19\n\nChoose the correct answer from the four alternatives given based from the above scenario:\n\nWhat is the calculated fraction nonconforming (p) in the production process?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "0.043"
+        },
+        {
+         "key": "B",
+         "body_md": "0.047"
+        },
+        {
+         "key": "C",
+         "body_md": "0.050"
+        },
+        {
+         "key": "D",
+         "body_md": "0.055"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions: 2×5=10\n\nKrishna Inks, a leading manufacturer of fountain pen inks, is striving to enhance product quality, process efficiency and financial performance. The company integrates Statistical Quality Control (SQC), Total Productive Maintenance (TPM) and financial performance measurement to improve operational effectiveness.\n\nPhase 1: Quality Control & Defect Rate Monitoring (SQC Implementation)\nThe Quality Assurance (QA) team at Krishna Inks employs p-charts to monitor defect rates. A sample of 10 production batches, each containing 200 ink bottles, was tested for nonconforming units. The recorded defects per batch were:\n\nBatch No. | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10\n---|---|---|---|---|---|---|---|---|---|---\nDefects | 12 | 7 | 9 | 15 | 10 | 5 | 6 | 13 | 8 | 9\n\nThe quality control manager is responsible for calculating the fraction defective (p) and determining control limits (UCL & LCL) to check if the production process is statistically stable.\n\nPhase 2: Total Productive Maintenance (TPM) & OEE Calculation\nKrishna Inks has three production machines (M1, M2, M3), each producing ink bottles.\nThe data for the machines is:\n\nMachine | Availability (%) | Performance (%) | Quality (%)\n---|---|---|---\nM1 | 88 | 90 | 98\nM2 | 92 | 85 | 97\nM3 | 95 | 88 | 95\n\nPhase 3: Financial Performance Analysis & Decision Making\nThe company is also evaluating its financial performance using Data Envelopment Analysis (DEA) to assess the efficiency of four plants (P1, P2, P3, P4) in terms of output per unit of input cost.\n\nPlant | Production Output (units) | Total Cost (₹ million)\n---|---|---\nP1 | 110,000 | 18\nP2 | 130,000 | 20\nP3 | 100,000 | 15\nP4 | 125,000 | 19\n\nChoose the correct answer from the four alternatives given based from the above scenario:\n\nWhat is the OEE for Machine M1?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "78.2%"
+        },
+        {
+         "key": "B",
+         "body_md": "81.5%"
+        },
+        {
+         "key": "C",
+         "body_md": "85.1%"
+        },
+        {
+         "key": "D",
+         "body_md": "77.6%"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions: 2×5=10\n\nKrishna Inks, a leading manufacturer of fountain pen inks, is striving to enhance product quality, process efficiency and financial performance. The company integrates Statistical Quality Control (SQC), Total Productive Maintenance (TPM) and financial performance measurement to improve operational effectiveness.\n\nPhase 1: Quality Control & Defect Rate Monitoring (SQC Implementation)\nThe Quality Assurance (QA) team at Krishna Inks employs p-charts to monitor defect rates. A sample of 10 production batches, each containing 200 ink bottles, was tested for nonconforming units. The recorded defects per batch were:\n\nBatch No. | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10\n---|---|---|---|---|---|---|---|---|---|---\nDefects | 12 | 7 | 9 | 15 | 10 | 5 | 6 | 13 | 8 | 9\n\nThe quality control manager is responsible for calculating the fraction defective (p) and determining control limits (UCL & LCL) to check if the production process is statistically stable.\n\nPhase 2: Total Productive Maintenance (TPM) & OEE Calculation\nKrishna Inks has three production machines (M1, M2, M3), each producing ink bottles.\nThe data for the machines is:\n\nMachine | Availability (%) | Performance (%) | Quality (%)\n---|---|---|---\nM1 | 88 | 90 | 98\nM2 | 92 | 85 | 97\nM3 | 95 | 88 | 95\n\nPhase 3: Financial Performance Analysis & Decision Making\nThe company is also evaluating its financial performance using Data Envelopment Analysis (DEA) to assess the efficiency of four plants (P1, P2, P3, P4) in terms of output per unit of input cost.\n\nPlant | Production Output (units) | Total Cost (₹ million)\n---|---|---\nP1 | 110,000 | 18\nP2 | 130,000 | 20\nP3 | 100,000 | 15\nP4 | 125,000 | 19\n\nChoose the correct answer from the four alternatives given based from the above scenario:\n\nWhat does a process being \"out of control\" in SQC indicate?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Defects are present in every sample."
+        },
+        {
+         "key": "B",
+         "body_md": "The process is stable but shows minor deviations."
+        },
+        {
+         "key": "C",
+         "body_md": "A single data point lies outside the control limits."
+        },
+        {
+         "key": "D",
+         "body_md": "All defect rates are within normal variation."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions: 2×5=10\n\nKrishna Inks, a leading manufacturer of fountain pen inks, is striving to enhance product quality, process efficiency and financial performance. The company integrates Statistical Quality Control (SQC), Total Productive Maintenance (TPM) and financial performance measurement to improve operational effectiveness.\n\nPhase 1: Quality Control & Defect Rate Monitoring (SQC Implementation)\nThe Quality Assurance (QA) team at Krishna Inks employs p-charts to monitor defect rates. A sample of 10 production batches, each containing 200 ink bottles, was tested for nonconforming units. The recorded defects per batch were:\n\nBatch No. | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10\n---|---|---|---|---|---|---|---|---|---|---\nDefects | 12 | 7 | 9 | 15 | 10 | 5 | 6 | 13 | 8 | 9\n\nThe quality control manager is responsible for calculating the fraction defective (p) and determining control limits (UCL & LCL) to check if the production process is statistically stable.\n\nPhase 2: Total Productive Maintenance (TPM) & OEE Calculation\nKrishna Inks has three production machines (M1, M2, M3), each producing ink bottles.\nThe data for the machines is:\n\nMachine | Availability (%) | Performance (%) | Quality (%)\n---|---|---|---\nM1 | 88 | 90 | 98\nM2 | 92 | 85 | 97\nM3 | 95 | 88 | 95\n\nPhase 3: Financial Performance Analysis & Decision Making\nThe company is also evaluating its financial performance using Data Envelopment Analysis (DEA) to assess the efficiency of four plants (P1, P2, P3, P4) in terms of output per unit of input cost.\n\nPlant | Production Output (units) | Total Cost (₹ million)\n---|---|---\nP1 | 110,000 | 18\nP2 | 130,000 | 20\nP3 | 100,000 | 15\nP4 | 125,000 | 19\n\nChoose the correct answer from the four alternatives given based from the above scenario:\n\nWhich plant is the most efficient based on DEA?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "P1"
+        },
+        {
+         "key": "B",
+         "body_md": "P2"
+        },
+        {
+         "key": "C",
+         "body_md": "P3"
+        },
+        {
+         "key": "D",
+         "body_md": "P4"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions: 2×5=10\n\nKrishna Inks, a leading manufacturer of fountain pen inks, is striving to enhance product quality, process efficiency and financial performance. The company integrates Statistical Quality Control (SQC), Total Productive Maintenance (TPM) and financial performance measurement to improve operational effectiveness.\n\nPhase 1: Quality Control & Defect Rate Monitoring (SQC Implementation)\nThe Quality Assurance (QA) team at Krishna Inks employs p-charts to monitor defect rates. A sample of 10 production batches, each containing 200 ink bottles, was tested for nonconforming units. The recorded defects per batch were:\n\nBatch No. | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10\n---|---|---|---|---|---|---|---|---|---|---\nDefects | 12 | 7 | 9 | 15 | 10 | 5 | 6 | 13 | 8 | 9\n\nThe quality control manager is responsible for calculating the fraction defective (p) and determining control limits (UCL & LCL) to check if the production process is statistically stable.\n\nPhase 2: Total Productive Maintenance (TPM) & OEE Calculation\nKrishna Inks has three production machines (M1, M2, M3), each producing ink bottles.\nThe data for the machines is:\n\nMachine | Availability (%) | Performance (%) | Quality (%)\n---|---|---|---\nM1 | 88 | 90 | 98\nM2 | 92 | 85 | 97\nM3 | 95 | 88 | 95\n\nPhase 3: Financial Performance Analysis & Decision Making\nThe company is also evaluating its financial performance using Data Envelopment Analysis (DEA) to assess the efficiency of four plants (P1, P2, P3, P4) in terms of output per unit of input cost.\n\nPlant | Production Output (units) | Total Cost (₹ million)\n---|---|---\nP1 | 110,000 | 18\nP2 | 130,000 | 20\nP3 | 100,000 | 15\nP4 | 125,000 | 19\n\nChoose the correct answer from the four alternatives given based from the above scenario:\n\nIf Krishna Inks wants to improve its financial efficiency while maintaining quality, which strategy is optimal?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Reduce input costs in the least efficient plant"
+        },
+        {
+         "key": "B",
+         "body_md": "Increase production without adjusting costs"
+        },
+        {
+         "key": "C",
+         "body_md": "Lower quality control inspections to save time"
+        },
+        {
+         "key": "D",
+         "body_md": "Expand investment in the highest cost plant"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Section – B. Answer any five questions from Question No.2 to Question No.8 in Section B. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Decision Grid Analysis is a powerful tool used to develop strategies where customer profitability database is large. **What** are the components of the Decision Grid Analysis (DGA)? **Illustrate** the four segments of a decision grid along with explanation.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Decision Grid Analysis:\nThe components of the Decision Grid Analysis (DGA) are as follows:\n1. Identify the Decision Problem: This involves clearly defining the decision problem and its alternatives.\n2. Build the Decision Grid: This involves constructing a decision grid that includes the decision problem, criteria, and alternatives.\n3. Evaluate the Alternatives: This involves assessing each alternative against each criterion and assigning weights to each criterion.\n4. Score the Alternatives: This involves scoring each alternative on each criterion, based on the weights assigned.\n5. Make a Decision: This involves making a final decision by choosing the alternative with the highest score.\n\nThe four segments of Decision Grid Analysis (DGA) are as follows :\n1. Loser - this is a segment where the sales volume generated by a customer is low and along with this the contribution as a percentage of sales is also negative. This is the segment identified as the least profitable and the strategy is surely elimination of customers who fall in this segment.\n2. Problem - this segment comprises customers who generate negative percentage contribution but the sales volume is on the higher side and thus a turnaround strategy may be recommended. But the customers also destroy value and the company sometimes prefer a elimination strategy especially when the company is optimistic about acquisition of new customers.\n3. Potential - this segment comprises of group of customers who generate positive contribution and are thus classified as profitable but their contribution to the total sales volume is low and thus, they are referred as potential as various promotional schemes including loyalty programmes would help increase the volume of sales to these customers which would make them winners.\n4. Winner - this segment comprises customers who generate positive contribution as well the sales volume is the highest. These are the top profitable customers and the company strategy is to retain these customers.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "**Explain** with examples the main features of performance, productively and efficiency.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Main features of Performance, Productivity and Efficiency are explained as follows:\n\nThe concepts of productivity and efficiency have received a great deal of attention in many countries and organizations and by individuals in recent years. In an organizational context, productivity and efficiency reflects overall performance. This could lead to increase or decrease in stakeholder's wealth. Hence, all the stakeholders of a business organisation are concerned with the concepts of productivity and efficiency vis-à-vis performance.\n\nAt a basic level, productivity examines the relationship between input and output in a given production process. Thus, productivity is expressed in an output versus input formula for measuring production activities. It does not merely define the volume of output, but output obtained in relation to the resources employed. In this context, the productivity of the firm can be defined as a ratio as given below:\n\nProductivity = Output(s) / Input(s)\n\nThe concept of productivity is closely related with that of efficiency. While the terms productivity and efficiency are often used interchangeably.\n\nEfficiency does not have the same precise meaning as does productivity. While efficiency is also defined in terms of a comparison of two components (inputs and outputs), the highest productivity level from each input level is recognized as the efficient situation. Further suggest that efficiency reflects the ability of a firm to obtain maximum output from a given set of inputs. If a firm is obtaining maximum output from a set of inputs, it is said to be an efficient firm.\n\nAlternative ways of improving the productivity of the firm, for example, are by producing goods and services with fewer inputs or producing more output from the same quantity of inputs. Thus, increasing productivity implies either more output is produced with the same number of inputs or that fewer inputs are required to produce the same level of output. The highest productivity (efficient point) is achieved when maximum output is obtained for a particular input level. Hence, productivity growth encompasses changes in efficiency, and increasing efficiency definitely raises productivity. Consequently, if the productivity growth of an organization is higher than that of its competitors, or other firms, that firm performs better and is considered to be more efficient.\n\nOn the other hand, performance is much bigger and more inclusive. In the business sector it is about improving all the factors that increase the profit —factors that reduce expenditure, increase income, and result in more output per unit input. In the public sector it is about how you maximise the quality, scope and timeliness (waiting times) of your service delivery while minimising the inputs that are required. Ultimately, performance is a maximising the amount of output emerging from a system. Hence, Performance will be product of efficiency, utilisation and productivity.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "ABC Ltd., a manufacturing firm, operates in a competitive market and aims to maximize its profit. The company's Total Revenue (TR) and Total Cost (TC) functions are given as follows:\nTR = 4000Q – 33Q²\nTC = 2Q³ –3Q² + 400Q + 5000\nWhere Q represents the quantity of goods produced and sold. The management seeks to determine the maximum possible profit the firm can achieve, assuming Q > 0.\n\n**Required:**\n**At what** level of output does ABC Ltd. achieve maximum profit, and what is the maximum profit value?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Profit = TR – TC\nSubstituting the given functions:\nProfit = (4000 Q – 33 Q²) − (2 Q³ − 3 Q² + 400 Q + 5000)\n= 3600Q − 30Q² − 2Q³ – 5000\nChange in profit (dp) due to change in output (dQ)\ndp/dQ = d/dQ x (3600Q − 30Q² − 2Q³ − 5000)\ndp/dQ = (3600 − 60Q − 6Q²)\n\nSetting this to zero to find the critical points:\n3600 − 60Q − 6Q² = 0\nDividing by 6:\n600 − 10Q – Q² = 0\n\nRearrange :\nQ² +10Q – 600 = 0\n\nThe quadratic equation is:\nQ² +10Q – 600 = 0\nOr, Q (Q + 30) – 20 (Q + 30) = 0\nOr, (Q – 20) (Q + 30) = 0\nEither, Q = 20, or Q = – 30\nQ = 20 or – 30\nSince Q > 0, we take Q = 20\nd² profit / dQ² = d / dQ x (3600 − 60Q − 6Q²)\nd² profit / dQ² = (− 60 − 12Q)\nSubstituting Q = 20\nd² profit / dQ² = − 60 − 12 (20) = − 60 − 240 = − 300\nd² profit / dQ² < 0, the function is concave, confirming a maximum profit at Q = 20\n\n(ii) Calculation of Maximum Profit :\nP(20) = 3600(20) − 30(20)² − 2(20)³ – 5000\n= 72000 − 12000 − 16000 – 5000\n= 39000 (₹)",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "**What** is Risk Enabled Performance Management?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Risk Enabled Performance Management (REPM)\nFor the purpose of handling uncertainties and opportunities at the same time, business leaders need to incorporate risk exposure, what-if scenarios, uncertainty, best case / worst case forecast, earned value models, risk drivers and contingency plans etc. in their business plans. They cannot afford the traditional set up where risk is something handled independently by risk managers once a quarter. They need access to the insights, tools and models on a continuous basis. Thus, there is a need for a more comprehensive Risk Enabled Performance Management which grows out of the traditional ERM Model.\n\nRisk Management to Business Advisory:\nFor REPM : to succeed there need to be a change in the role and objective of the risk function. Risk and Performance Management would have to be integrated at all levels, and the risk managers need to become business advisors for line managers. This often requires a change of management principals, mental models and governance set up. In addition, management processes at strategic, tactical and operational level need to get sufficient risk support to goal setting, planning, performing and evaluating efforts. New risk enabled management processes often results in changes to existing meeting structure and new requirements for management information related to progress and forecast on key value and risk drivers. In addition, the process has to be supported with simple tools to measure risk exposure towards the companies' risk appetite along with the effectiveness of their control activities.\n\nExtension of Risk Management to Strategy and Governance (REPM):\nThus, REPM have evolved from the traditional ERM because of the challenges of the ever-emerging Volatility, Uncertainty, Complexity and Ambiguity (VUCA) environment. It encompasses the data analytics and every possible tool and technique to broaden the traditional ERM. It is based on the basic issue that risk taking is fundamental to economic reward. The key to the future is linking risk and performance management. This linkage often takes the route of data analytics. In the VUCA world, data availability is infinite. These issues make effective risk management process imperative for the strategic and long-term success of an organization. To cope with the changing dynamics businesses need to shift from ERM to REPM. In REPM, the initial issue is identifying the business drivers that are crucial and map them to the objectives which help stakeholders identify relevant emerging risk trends and metrices for its effective monitoring. The effectiveness of this approach lies in formulating business drivers into key strategies and takes, without losing focus on macro perspective.\nIncorporating data analytics in risk management is key to the REPM. The risk management approach much entrench technologies across the entire risk management process. Thus, it is obvious that leveraging the power of analytics is crucial to REPM.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The followings are the financial data of JKL Ltd.:\n\nParticulars | 2024-25 (₹ '000) | 2024-25 (₹ '000) | 2023-24 (₹ '000) | 2023-24 (₹ '000)\n---|---|---|---|---\n**Non-current Assets** | | | |\nPlant & Machinery | | 260 | | 278\n**Current Assets** | | | |\nInventory | 84 | | 74 |\nTrade receivables | 58 | | 46 |\nBank | 6 | 148 | 50 | 170\n**Total** | | 408 | | 448\n**Capital and Reserves** | | | |\nOrdinary Share Capital @ ₹ 50 each | | 70 | | 70\n8% Preference Shares | | 50 | | 50\nSecurities Premium | | 34 | | 34\nRevaluation Reserve | | 20 | | —\nProfit and Loss Account | | 62 | | 84\n | | 236 | | 238\n**Non-current Liabilities** | | | |\n5% Secured Loan Stock | | 80 | | 80\n**Current Liabilities** | | | |\nTrade Payables | 72 | | 110 |\nProvision for Taxation | 20 | 92 | 20 | 130\n | | 408 | | 448\n\nSummarized Income Statement for the year ended 31st March, 2025 and 31st March, 2024:\n\n | 2024-25 (₹ '000) | 2024-25 (₹ '000) | 2023-24 (₹ '000) | 2023-24 (₹ '000)\n---|---|---|---|---\nSales | | 418 | | 392\nOpening Inventory | 74 | | 58 |\nPurchases | 324 | | 318 |\n | 398 | | 376 |\nClosing Inventory | (84) | (314) | (74) | (302)\n**Gross Profit** | | 104 | | 90\nInterest | 4 | | 4 |\nDepreciation | 18 | | 18 |\nSundry Expenses | 28 | (50) | 22 | (44)\nProfit before Tax | | 54 | | 46\nProvision for Taxation | | (20) | | (20)\n**Profit after Tax** | | 34 | | 26\nEquity Dividend | 12 | | 10 |\nPreference Dividend | 4 | (16) | 4 | (14)\n**Retained Profit** | | 18 | | 12\nThe market price per share | | ₹ 240 | | ₹ 170\n\n**Calculate** the following ratios and comment on the financial position of JKL Ltd.:\n(i) Return on Capital Employed (ROCE)\n(ii) Asset Turnover Ratio (ATR)\n(iii) Current Ratio (CR)\n(iv) Inventory Turnover Ratio (ITR)\n(v) Capital Gearing Ratio (CGR)\n(vi) Dividend Coverage Ratio (DCR)\n(vii) Price/Earnings Ratio (P/E Ratio)",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Return on Capital Employed (ROCE):\nProfit before Interest & Taxes (PBIT) / Capital Employed (CE)\n= ₹ (54 + 4) / ₹ (236 + 80) x 100 = 18.4% for 2024 – 25\n₹ (46 + 4)/ ₹ (238 + 80) x 100 = 15.7% for 2023 – 24\nThe return on capital employed has increased over the year from 15.7% to 18.4%. The profit has increased which may have resulted in the increase.\n\nAternative Answer :\n₹ (54 + 4) / ₹ (236 – 20 + 80) x 100 = 19.59% for 2024 – 25\n₹ (46 + 4)/ ₹ (238 + 80) x 100 = 15.7% for 2023 – 24\nThe return on capital employed has increased over the year from 15.7% to 19.59%. The profit has increased which may have resulted in the increase.\n\n(ii) Asset Turnover Ratio (ATR)\nTurnover/Total Assets = ₹ 418 / ₹ 408 = 1.02 times for 2024 – 25 and\n₹ 392 / ₹ 448 = 0.88 times for 2023 – 24\nThe asset turnover has increased indicating that the company is using its assets more effectively.\n\n(iii) Current Ratio (CR)\n₹ 148 / ₹ 92 = 1.61 for 2024 – 25\n₹ 170 / ₹ 130 = 1.31 for 2023 – 24\nThe current ratio has increased, meaning that the organization is more liquid. This is due to the fact that inventory and trade receivables have increased (which are nonproductive assets), and trade payables have been reduced. Although this may be better for the current ratio, it may not necessarily mean that the company is operating more efficiently.\n\n(iv) Inventory Turnover Ratio (ITR)\n₹ 314 / ₹ (74 + 84) x 0.5= 4.0 times for 2024 – 25\n₹ 302 / ₹ (58 + 74) 0.5 = 4.6 times for 2023 – 24\nThis ratio shows how quickly the inventory is being sold. In 2023 – 24 it was being sold at a much higher rate than in 2024-25\nThe nature of the business needs to be known to see whether these turnover times are in line with the normal industry standards.\n\n(v) Equity Gearing Ratio (EGR) :\n= Preference shares capital + loans / Ordinary Share Capital + reserves\n₹ (50 + 80) / ₹ (236 – 50) = 69.9% for 2024 – 25\n₹ (50 + 80) / ₹ (238 – 50) = 69.1% for 2023 – 24\nLow geared = less than 100%, highly geared = more than 100% and neutrally geared if ratio is 100%. The gearing remains at almost similar levels. The company is not highly geared.\n\n(vi) Dividend Coverage Ratio (DCR) :\n= Profit after tax and after preference dividend / dividend paid\n₹ (34 – 4) / ₹ 12 = 2.5 times for 2024 – 25\n₹ (26 – 4) / ₹ 10 = 2.2 times for 2023 – 24\nThe dividend cover is after allowing for preference dividends. There is a reasonably comfortable cover.\n\n(vii) Price / Earnings Ratio (P/E Ratio):\n= Market price / EPS\n240 / 21.42 = 11.20 times for 2024 – 25\n170 / 15.71 = 10.82 times for 2023 – 24\nThe PE ratio is quite high, indicating that the market has confidence in the company's future growth. However, this needs to be compared with industry or similar companies.\n\nWith all the ratios it would be useful to compare against the industry averages.",
+       "confidence": "medium",
+       "review": [
+        "Balance sheet and income statement tables (two-column layout with sub-totals) reconstructed from image; verify cell placement. Balance-sheet total 408/448 as printed.",
+        "Suggested answer calls item (v) 'Equity Gearing Ratio' while the question says 'Capital Gearing Ratio (CGR)' (as printed)."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. Sharma, a Cost Accountant by profession, is an independent financial analyst. He extracted the respective ratios (Note 1) and calculated the overall Altman Z-score for Y-Connection, an Indian firm engaged in the manufacture of electronics products during the period 2020 to 2024, which is given as under:\n\nYears | 2020 | 2021 | 2022 | 2023 | 2024\n---|---|---|---|---|---\nX1 | 0.020 | 0.010 | – 0.010 | 0.020 | 0.040\nX2 | 0.174 | 0.110 | 0.110 | 0.110 | 0.070\nX3 | 0.253 | 0.080 | 0.180 | 0.200 | 0.130\nX4 | 0.565 | 0.469 | 0.663 | 0.922 | 0.724\nX5 | 0.823 | 0.900 | 1.060 | 1.200 | 1.540\nScore | 1.840 | 1.580 | 2.000 | 2.450 | 2.490\n\nNote 1:\nX1 = Working Capital to Total Assets\nX2 = Retained Earnings to Total Assets\nX3 = EBIT to Total Assets\nX4 = Market Value of Equity to Total Debts\nX5 = Sales to Total Assets\n\nYou, as a new recruit, have been asked by Mr. Sharma to **interpret** the above results and **comment** on the financial position of the firm. **What** would be your response?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Interpretation of Z-score of Y-Connection :\nThe Altman Z-Score is a financial model used to predict the likelihood of a company entering bankruptcy. It is based on five key financial ratios, and the final score is used to assess the financial health of a firm. Let's analyze the results of Y-Connection for the period 2020-2024, based on the Altman Z-Score formula and the individual components provided.\n\nComment on Individual Ratios:\n\nRatio | Comments\n---|---\nX1: Working Capital to Total Assets | There is an improvement in this ratio from 2020 (0.020) to 2024 (0.040), which indicates an increase in the company's liquidity position. This is a positive sign, suggesting better short-term financial health.\nX2: Retained Earnings to Total Assets | This ratio has generally declined from 2020 (0.174) to 2024 (0.070). This decline indicates a reduction in the firm's retained earnings as a proportion of total assets, which could be a sign of lower profitability or higher dividend payouts.\nX3: EBIT to Total Assets | There is a decline in this ratio from 2020 (0.253) to 2023 (0.200), followed by a further drop in 2024 (0.130). This indicates lower operational efficiency and return on assets, and in the light of reduced retained earnings to total assets the decline upto 2024 warrants attention.\nX4: Market Value of Equity to Total Debts | This ratio shows significant improvement from 2020 (0.565) to 2023 (0.922), followed by a slight decline in 2024 (0.724). A high and improving ratio indicates that the firm is becoming less reliant on debt and improving its financial structure.\nX5: Sales to Total Assets | This ratio has consistently improved from 2020 (0.823) to 2024 (1.540), indicating that the firm has become more efficient in generating sales from its assets. This is a positive sign of growth and effective asset utilization. Although this may be at the cost of lower realization and lower profitability per unit.\n\nZ-Score Interpretation:\nThe Z-Score for Y-Connection has shown an improving trend over the five years, from 1.840 in 2020 to 2.490 in 2024.\n\nA Z-Score below 1.8 generally indicates a high risk of bankruptcy.\nA Z-Score between 1.8 and 3.0 suggests a \"gray area\" of potential financial distress, with the firm at some risk but not yet at a crisis level.\nA Z-Score above 3.0 generally suggests the company is financially healthy with a low risk of bankruptcy.\n\nThe Z-Score of Y - Connection is consistently in the \"gray area\" (between 1.8 and 3.0), though it has been improving year over year. This suggests that the company has been managing its financial risks effectively, but it is still in a position where caution is required.\n\nThe improvement from 1.840 to 2.490 is encouraging, indicating that the company is gradually strengthening its financial position and is moving towards greater stability and if the progress continues it will become financially healthy.\n\nConclusion\nThe firm is still in the gray zone, meaning it is not in immediate danger of bankruptcy but should continue to focus on improving profitability, maintaining strong operational performance, and strengthening its equity base. The improving trend in the Z-Score is encouraging, but vigilance is necessary to ensure that the company does not fall into a riskier financial position in the future.",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer says 2021 and 2022 scores 1.580 and 2.000 are within 'gray area'; 2021 score 1.580 is below 1.8 - answer text kept verbatim."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The Balance Sheet of ABC Ltd. as on 31.12.2024 is as follows:\n\nEquity and Liability | ₹ | Assets | ₹\n---|---|---|---\n**(1) Shareholders Fund:** | | **(1) Non-Current Assets:** |\n(I) Share Capital (₹ 100 each) | | (I) Fixed Assets |\n(i) 4,500 Equity Shares | 4,50,000 | (i) Tangible Assets: |\n(ii) 1,500 6% Preference Shares | 1,50,000 | Freehold Properties | 3,75,000\n(II) Reserve & Surplus | 7,50,000 | Plant and Machinery | 1,50,000\n**(2) Non-Current Liabilities:** | | (ii) Intangible Assets: |\nLong-term Borrowings— 5% Debenture | 3,00,000 | Goodwill | 1,50,000\n**(3) Current Liabilities:** | | (II) Non-Current Investments |\nTrade Payables – Sundry Creditors | 2,39,250 | Quoted (Return 10% on cost) | 3,00,000\n | | **(2) Current Assets:** |\n | | (I) Inventories | 2,70,000\n | | (II) Trade Receivables – Sundry Debtors | 2,99,250\n | | (III) Cash and Cash Equivalents | 3,45,000\n**Total ₹** | 18,89,250 | **Total ₹** | 18,89,250\n\nProfits for the three years 2022,2023,2024 after charging the debenture interest but before providing for preference dividend, were ₹ 2,20,500, ₹ 3,22,500 and ₹ 2,40,000 respectively.\n\n1. Preference shares are payable on Liquidation.\n2. The purchaser wants to acquire all the 4,500 Equity Shares.\n3. The price for Equity Shares is to be based on the following assumptions:\n(i) Normal return of 12% on Net Asset (at revised valuation) attributable to Equity Shares.\n(ii) Goodwill to be calculated at 4 times the adjusted average super profits of the 3 years referred above.\n(iii) Debentures will be redeemed at a discount of 25% prior to the sale of the business; and in order to provide fund for this purpose, investments will be sold out.\n(iv) Value of Freehold Property is agreed to be ascertained on the basis 8% return. The current rental value is ₹ 50,400.\n(v) A claim of ₹ 8,250 was omitted to be provided in the year 2024.\n(vi) Market Value of Quoted Investments was ₹ 3,75,000.\n(vii) Non-recurring profits are to be eliminated. 10% of the profits for 2023 referred to above arose from a transaction of non-recurring nature.\n(viii) A Provision of 5% on Sundry Debtors made in 2024 is no longer required (the provision when made was taken into account for purpose of Income Tax at 50%).\n\n**Required:**\n**Prepare** a statement showing valuation for the Company's Shares (from the point of view of the purchaser) after taking into account the revised valuation of goodwill based on 4 years purchase of super profits based on the average profits of the three years.",
+       "options": [],
+       "correct": null,
+       "answer_md": "1. Computation of Future Maintainable Equity Earnings\n\nParticulars | 2022 | 2023 | 2024\n---|---|---|---\nProfit After Tax | 2,20,500 | 3,22,500 | 2,40,000\nLess: Profit on Non- recurring Item (10% x 3,22,500) | - | (32,250) | --\nClaims unaccounted, now accounted | -- | --- | (8,250)\nAdd: Provision for Bad Debts not required (2,99,250 x 5/95) | --- | --- | 15,750\nLess: Tax Provision at 50% on the above (15,750 - 8,250) x 50% | -- | --- | (3,750)\nAdjusted Profits after Tax | 2,20,500 | 2,90,250 | 2,43,750\n\nAverage Profits (2,20,500 + 2,90,250 + 2,43,750) ÷ 3 = 2,51,500\nAdd: Interest on Debentures (No Longer Payable) (₹ 3,00,000 x 5% x 50%) (after tax) = 7,500\nLess: Income from Investments (No Longer receivable) (₹ 3,00,000 x 10% x 50%) (after tax) = (15,000)\nFuture Maintainable Profits before Preference Dividend = 2,44,000\nLess: Preference Dividend = (9,000)\nFuture Maintainable Equity Earnings = 2,35,000\n\nNote :\n• Sundry Debtors as per Balance Sheet reflects the net balance after deducting 5% provision. Since Net Debtors of ₹ 2,99,250 reflect 95% of the Total Debtors Amount, Provision = ₹ 2,99,250 x 5/95 = ₹ 15,750.\n• Simple Average is taken due to fluctuating / oscillating trend of profits.\n\n2. Computation of Capital Employed\n\nParticulars | ₹\n---|---\nFreehold Property (Capitalization of Rental Value of ₹ 50,400 at 8%) | 6,30,000\nPlant & Machinery | 1,50,000\nStock | 2,70,000\nSundry Debtors [ ₹ 2,99,250 ÷ (100 % - Provision at 5%) | 3,15,000\nBank [Balance 345000 + Investment Sale 375000 – Debenture Redemption 225000] | 4,95,000\nTotal Assets | 18,60,000\nLess : Outside Liabilities (excluding Equity Shareholders' Funds) |\nSundry Creditors [ ₹ 2,39,250 + Unaccounted Claim of ₹ 8,250] | 2,47,500\nPreference Shareholders [Share Capital + Dividend Due] | 1,59,000\nAdditional Tax Liability due to unaccounted claim & provision w/back | 3,750\n | (4,10,250)\nNet Worth of Equity Share Holders on B/s date | 14,49,750\n\nNote :\n• Since Normal Return is 12% on the Net Assets available to Equity Shares (given), Future Maintainable Equity Earnings should be compared with the Expected Equity Earnings. Hence, Net Worth of Equity Shareholders (i.e after deducting Preference Shareholders dues) is considered.\n• Goodwill in the Balance Sheet should not be considered for computing net worth for Goodwill computation.\n• Redemption value of debentures = face Value ₹ 3,00,000 – 25% Discount = ₹ 2,25,000\n\n3. Computation of Super profits and Goodwill\n\nParticulars | ₹\n---|---\nFuture Maintainable Equity Earnings | 2,35,000\nLess: Normal Earnings = Normal Return x Capital Employed = 12% x 14,49,750 | (1,73,970)\nSuper Profit i.e Excess Earnings available for Equity Shareholders | 61,030\nGoodwill at 4 years purchase of Super Profits = ₹ 61,030 x 4 years | 2,44,120\n\nNote :\nAlternatively, Average Capital Employed can be considered as Proxy for Future Capital Employed to determine normal earnings.\n\n4. Valuation of Shares\n\nParticulars | ₹\n---|---\na. Net Worth attributable to Equity Holders (calculated above) | 14,49,750\nb. Goodwill | 2,44,120\nc. Total Net Assets of Equity Shareholders | 16,93,870\nd. Number of Equity Shares | 4,500 shares\ne. Value per Equity Share | ₹ 376.42",
+       "confidence": "medium",
+       "review": [
+        "Balance sheet two-sided table reconstructed from image; line layout (sub-heading rows) best-effort, figures clear.",
+        "Suggested answer statement of outside liabilities is laid out irregularly in text; kept as printed."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "XENON Ltd. reported a profit of ₹ 100.32 lakhs after 34% tax for the financial year 2024-25. An analysis of the accounts reveals that the income included extraordinary items of ₹ 14 lakhs and an extraordinary loss of ₹ 5 lakhs. The existing operations, except for the extraordinary items, are expected to continue in future. Further, a new product is launched and the expectations are as under:\n\nParticulars | Amount ₹ in lakhs\n---|---\nSales | 70\nMaterial Costs | 20\nLabour Costs | 16\nFixed Costs | 10\n\nThe company has 50,00,000 Equity Shares of ₹ 10 each and 80,000 9% Preference Shares of ₹ 100 each with P/E Ratio being 6 times. Cost of capital is 12% (post tax).\n\nYou are required to\n(i) compute the value of the business.\n(ii) determine the market price per equity share.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Computation of Value of XENON Ltd.:\n\nParticulars | (₹ in Lakhs) | (₹ in Lakhs)\n---|---|---\nProfit before Tax (100.32/0.66) | | 152.00\nless: Extraordinary income | | 14.00\nAdd: Extraordinary Losses | | 5.00\nNormal Profit | | 143.00\nProfit from New product | |\nSales | 70 |\nLess : Material costs | 20 |\nLabour costs | 16 |\nFixed Costs | 10 |\n | | 24.00\nProfit Before Tax | | 167.00\nLess: Tax | | 56.78\nFuture Maintainable Profit after taxes | | 110.22\nRelevant Capitalization rate | | 0.12\nValue of business | | 918.50\n\n(ii) Determination of Market Price per share\n\nParticulars | Amount\n---|---\nFuture Maintainable Profit after taxes (₹) | 1,10,22,000.00\nless: Preference Share Dividend 80,000 shares of 100 @ 9% (₹) | 7,20,000.00\nEarnings available for Equity Shareholders (₹) | 1,03,02,000.00\nNo. of Equity Shares | 50,00,000.00\nEPS (₹) | 2.06\nP/E Ratio (in times) | 6\nMarket price of share (₹) | 12.36",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Panda Limited holds 4,00,000 shares of AMGI Limited at cost of ₹ 48,00,000.\n\nThe following is the latest available Balance Sheet of AMGI Limited:\n\nParticulars | ₹\n---|---\nEquity Share Capital | 1,00,00,000\nOther Equity | 2,40,47,110\nNon-Current Liabilities | 22,30,898\n**Total Liabilities and Equity** | 3,62,78,008\nNon-Current Assets | 2,40,13,129\nNet Working Capital | 1,22,64,879\n**Total Assets** | 3,62,78,008\n\nAdditional Information includes:\n(I) The Face Value per share is ₹ 10/-.\n(II) Non-Current Asset of AMGI Ltd includes Land at Cost of ₹ 1,00,00,000. The Fair Value of such Land is estimated at ₹ 1,75,00,000.\n(III) AMGI Ltd. has a contingent liability of ₹ 12,00,000 which is not reflected in the Balance Sheet. As a Valuer, you believe that this contingent liability is likely to be incurred.\n\nYou are required to\n(i) estimate the fair value per share of AMGI Ltd.\n(ii) estimate the fair value of investments in AMGI Ltd. in the books of Panda Limited.\n(iii) estimate the Compounded Annual Growth Rate (CAGR) Change in value of investment if the investment was made 4 Years ago.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Calculation of fair Value per Share of AMGI Limited using Cost Approach.\nTotal Asset 3,62,78,008\nLess: Total Liability 22,30,898\nNet Asset Value 3,40,47,110\nLess: Book Value of Land 1,00,00,000\nAdd: Fair Value of Land 1,75,00,000\nLess: Contingent Liability 12,00,000\nAdjusted Net Asset Value 4,03,47,110\nNo. of Share (Note - 1) 10,00,000\nValue Per Share 40.35\n\nNote : 1\nThe Number of shares of AMGI Ltd = 1,00,00,000 / 10 = 10,00,000 Shares.\n\n(ii) The Fair Value of Investments in AMGI Limited in the Books of Panda Limited.\nNumber of Shares x Fair Value Per Share.\n4,00,000 x 40.35 = ₹ 1,61,40,000\n\n(iii) Cost of Investment = ₹ 48,00,000\nFair Value of Investment = ₹ 1,61,40,000\nCompounded Annual Growth Rate = (FV / Cost)^(1/4) − 1 = (16140000 / 4800000)^(1/4) − 1\n= (3.3625)^(1/4) − 1 = 1.35415 − 1\n= 0.35 i.e. 35 %",
+       "confidence": "medium",
+       "review": [
+        "CAGR formula in the suggested answer is garbled in aid.txt (root notation lost); re-typed as (FV/Cost)^(1/4) - 1 from the visible numbers."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following information has been extracted from the Annual Report 2024-25 of ABC Limited:\n\nBALANCE SHEET AS AT 31ST MARCH, 2025 (₹ in lakhs)\n\nParticulars | ABC LTD\n---|---\n**ASSETS** |\n**NON-CURRENT ASSETS** |\nProperty, Plant and Equipment | 3,535.67\nCapital work-in-progress | 898.83\nIntangible assets | 550.00\nFinancial Assets |\nNon-current investments | 1,664.30\nLong-term loans and advances | 891.97\nOther non-current financial assets | 3.03\nTotal Non-Current Assets | 7,543.80\n**CURRENT ASSETS** |\nInventories | 1,389.92\nFinancial Assets |\nCurrent investments | 142.50\nTrade receivables | 585.77\nCash and bank balances | 38.41\nShort-term loans and advances | 115.00\nTotal Current Assets | 2,271.60\n**TOTAL** | 9,815.40\n**EQUITY AND LIABILITIES:** |\n**EQUITY** |\nShare Capital (Face Value — ₹ 10 each) | 36.35\nOther Equity | 2,225.66\nTotal Equity | 2,262.01\n**NON-CURRENT LIABILITIES** |\n12% Redeemable Non-Convertible Preference Shares | 2,717.18\n8% Long-term Borrowings from Bank | 3,007.09\nTotal Non-Current Liabilities | 5,724.27\n**CURRENT LIABILITIES** |\nTrade payables | 1,797.88\nOther current liabilities | 12.24\nShort-term provisions | 19.00\nTotal Current Liabilities | 1,829.12\n**TOTAL** | 9,815.40\n\nSTATEMENT OF PROFIT AND LOSS FOR THE YEAR ENDING ON 31ST MARCH, 2025 (₹ in lakhs)\n\nParticulars | ABC LTD\n---|---\nRevenue from operations | 1,995.00\nOther Operating Income | 0.75\nInterest and Dividend Income on Non-Current Financial Investments | 250.00\nOther Non-Operating Income | 1.25\n**Total Revenue** | 2,247.00\n**EXPENSES** |\nRaw materials consumed | 732.79\nPower & Fuel Cost | 41.37\nChanges in inventories of finished goods, work-in-progress, and stock-in-trade | (1.63)\nEmployee benefits expense | 15.97\nDepreciation and amortization expense | 80.77\nOther operating expenses | 54.23\n**Total Expenses** | 923.50\n**Profit before Interest, Exceptional Items and Tax** | 1,323.50\nLess: Interest | 240.57\n**Profit before Exceptional Items and Tax** | 1,082.93\nLess: Exceptional Items | 35.00\n**PROFIT/(LOSS) BEFORE TAX** | 1,047.93\nLess: Tax Paid @ 30% | 314.38\n**PROFIT/(LOSS) AFTER TAX** | 733.55\n\n**Required:**\nFrom the above information, **determine** the Economic Value Added (EVA) of ABC Limited for the FY 2024-25 if its Weighted Average Cost of Capital is 12.50%.",
+       "options": [],
+       "correct": null,
+       "answer_md": "CALCULATION OF NOPAT: (₹ In Lakhs)\nProfit before Interest, Exceptional Items and Tax 1,323.50\nLess: Non-Operating Income:\nInterest and Dividend Income on Non - Current Financial Investments 250.00\nOther Non-Operating Income 1.25\n251.25\nOperating EBIT 1,072.25\nLess: Tax @ 30% 321.67\nNOPAT 750.58\n\nCALCULATION OF OPERATING CAPITAL : (₹ In Lakhs)\nShare Capital (Face Value - ₹ 10 each) 36.35\nOther Equity 2,225.66\n12% Redeemable Non-Convertible Preference Shares 2,717.18\n8% Long-Term Borrowings from Bank 3,007.09\nTotal 7,986.28\nLess : Non-Operating Non-Current Assets\nNon-current investments 1,664.30\nLong- term loans and advances 891.97\nOther non-current financial assets 3.03\nOperating Capital 5,426.98\nReturn on Capital Employed = NOPAT/Operating Capital ……. 13.83%\nCost of Capital 12.50%\nEVA (Return on Operating Capital Employed - WACC) x Operating Capital = ₹ 72.18 Lakh\n(0.1383 – 0.125) (5426.98)\nAlternatively, EVA (NOPAT – (Operating Capital Employed x WACC) = ₹ 72.21 Lakh\n(750.58) – (5426.98 x 0.125)",
+       "confidence": "medium",
+       "review": [
+        "Answer gives EVA as 72.18 (ratio method) or 72.21 (alternative); both kept."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Two firms RAJJAN and REKHA Corporation operate independently and have the following financial statements:\n\nParticulars | Rajjan | Rekha\n---|---|---\nRevenues (₹) | 8,00,000 | 4,00,000\nCost of Goods Sold (COGS) (₹) | 6,00,000 | 2,40,000\nEBIT (₹) | 2,00,000 | 1,60,000\nExpected Growth Rate | 6% | 8%\nCost of Capital | 10% | 12%\n\nBoth firms are in steady state, with capital spending offset by depreciation. No working capital is required, and both firms face a tax rate of 40%. Combining the two firms will create economies of scale in the form of shared distribution and advertising cost, which will reduce the cost of goods sold from 70% of revenues to 65% of revenues. Assume that the firm has no debt capital.\n\n**Estimate:**\n(i) The value of the two firms before the merger\n(ii) The value of the combined firm with synergy effect",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Value of the Firms before the Merger\nCalculation of Free Cash Flow to each of the Firm\nFree cash flow to RAJJAN = EBIT (1 – tax rate) = 2,00,000 (1 – 0.4) = ₹ 1,20,000\nFree cash flow to REKHA = EBIT (1 – tax rate) = 1,60,000 (1 – 0.4) = ₹ 96,000\nValue of the two firms independently\nValue of RAJJAN = [1,20,000 (1.06)] / (0.10 – 0.06) = ₹ 31,80,000\nValue of REKHA = [96,000 (1.08)] / (0.12 – 0.08) = ₹ 25,92,000\nTotal of the two firms = ₹ 57,72,000\n\n(ii) Value of the Firm with Synergy\nOn combining the two firms the cost of goods sold is reduced firm 70% to 65% of revenues. The revenue of the combined firm = 8,00,000 + 4,00,000 = ₹12,00,000\nCost of goods sold = 65% of revenues = 0.65 × 12,00,000 = ₹7,80,000\nWeighted average cost of capital for the combined firm\n= 10% [31,80,000 / 57,72,000] + 12% [ 25,92,000 / 57,72,000]\n= 0.0551 + 0.0539 = 0.109\nOr 11% approximately\nWeighted average expected growth rate for the combined firm\n= 6% [31,80,000 / 57,72,000] + 8% [ 25,92,000 / 57,72,000]\n= 0.033 + 0.0359 = 0.0689\nOr 7% approximately\n\nParticulars | Firm with No Synergy | Firm with Synergy\n---|---|---\nRevenues | 12,00,000 | 12,00,000\nCost of Goods Sold (COGS) | 8,40,000 | 7,80,000\nEBIT | 3,60,000 | 4,20,000\nGrowth Rate | 7% | 7%\nCost of Capital | 11% | 11%\nFCF = EBIT (1-T) | 2,16,000 | 2,52,000\n\nValue of the Firm without Synergy\n[2,16,000 (1.07)] / (0.11 – 0.07) = ₹ 57,78,000\nValue of the firm with Synergy\n= [2,52,000 (1.07)] / (0.11 – 0.07) = ₹ 67,41,000",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Preetam Ltd. is considering acquisition of Soham & Co. which has 3.10 crore shares issued and outstanding. The market price per share of Soham & Co is ₹ 440 at present. Preetam Ltd.'s average cost of capital is 12%. The cash inflows of Soham & Co. for the next three years are as under:\n\nYear | ₹ Crore\n---|---\n1 | 460\n2 | 600\n3 | 740\n\n**You are required to** calculate the range of valuation that Preetam Ltd. has to consider. P.V.F. @12% for 3 years are 0.893, 0.797 and 0.712 respectively.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Valuation Based on market price\nMarket Price per share ₹ 440\nThus, value of total business is (₹ 440 × 3.1Cr.) ₹ 1,364 Cr.\n\nValuation based on discounted cashflow\nPresent Value of Cashflows\n(460 Cr × 0.893) + (600 Cr × 0.797) + (740 Cr. × 0.712) = ₹ 1,415.86 Cr.\nValue per share (₹ 1415.86 / 3.1 Cr) = ₹ 456.73\n\nRange of Valuation\n\n | Per Share (₹) | Total (₹ in Cr)\n---|---|---\nMinimum based on Market Value | 440.00 | 1364\nMaximum based on Discounted cashflow | 456.73 | 1415.86",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Last year, Mr. Sandeep was engaged as a consultant to the Expert Electricals and prepared some analysis of its cost-volume-profit relationships. Among his findings was that the profit volume ratio was 40% at the firm's planned selling price of ₹ 50. The firm expected to sell 8,000 units at the price of ₹ 50, which would result in an income of ₹ 96,000. Sandeep stressed the point in his report to the chief executive of the Company that profits would change at the rate of ₹ 0.40 per rupee change in sales.\n\nThe chief executive called Sandeep to tell him that the result did not come out as were told to him. The firm earned profits of ₹ 1,26,400 on sales volume of ₹ 4,53,600. Although variable costs per unit were incurred as expected, the firm had higher fixed costs than expected because of ₹ 4,000 advertising campaign during the year. The campaign was coupled with an increase in selling price and the chief executive was very pleased with the results. However, Sandeep is asked to explain why profits did not increase by 40% of the added sales volume of ₹ 53,600 but rather somewhat more.\n\n**You are required to do the following:**\n(i) Reconstruct the income statement for the year based on the actual results.\n(ii) Determine (I) the number of units sold and (II) the selling price per unit.\n**Explain** to the chief executive why the results were at variance with the planned results.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Income Statement based on actual results :\n(i) Income statement contains sales revenue, variable costs, fixed costs and profit (loss). In the problem, sales and income are known. We are required to determine variable costs and fixed costs. Given the P/V ratio of 40%, the expected contribution margin is ₹ 1,60,000 i.e. (40% x 8,000 x ₹ 50) and the expected profit is ₹ 96,000. Hence expected fixed costs would be ₹ 64,000 (i.e. ₹ 1,60,000 – ₹ 96,000). The actual fixed costs were higher by the amount of advertisement expenditure of ₹ 4,000 i.e. actual fixed costs would be ₹ 68,000. Since actual income was ₹ 1,26,400 and fixed costs were ₹ 68,000, total actual contribution must have been ₹ 1,94,400 (₹ 1,26,400 + ₹ 68,000), Variable costs, then should be ₹ 2,59,200 i.e. (₹ 4,53,600 – ₹ 1,94,400).\n\nThe income statement for the year would be as follows:\n\n | Amount (₹)\n---|---\nSales | 4,53,600\nLess : Variable costs | 2,59,200\nContribution | 1,94,400\nLess : Fixed costs | 68,000\nNet Income | 1,26,400\n\n(ii) (I) Since variable costs per unit were as expected, variable costs per unit were (60% x ₹ 50) i.e. ₹ 30. Total actual variable costs were ₹ 2,59,200.\nUnits sold were (₹ 2,59,200 ÷ ₹ 30) = 8,640 units\n(II) Sales price per unit = Total sales revenue / No. of units sold = ₹ 4,53,600 / 8,640 = ₹ 52.50\n\nExplanation to Chief Executive :\nMr. Sandeep's answer to the chief executive should highlight the changes in the selling price and fixed costs. In the cost-volume-profit-relationship, assumptions are critical. If they vary, the planned and actual results are bound to differ. Here, selling price has gone up causing higher P/V ratio (variable cost per unit remains constant) and hence, more profit rate than ₹ 0.40 per rupee of additional sales. Revised P/V ratio is 42.86% (9/21 per rupee of sales). Furthermore, additional fixed costs have been incurred. These two factors distorted the cost-volume profit relationship stipulated by Mr. Sandeep.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following information is relating to Fortune India Ltd. having two division Pharma division and FMCG division. Paid up share capital of Fortune India Ltd. is consisting of 3,000 lakhs equity shares of ₹ 1 each. Fortune India Ltd. decided to de-merge Pharma Division as Fortune Pharma Ltd. w.e.f. 1.4.2024. Details of Fortune India Ltd. as on 31.3.2024 and of Fortune Pharma Ltd. as on 1.4.2024 are given below:\n\nParticulars | Fortune Pharma Ltd. (₹ in lakh) | Fortune India Ltd. (₹ in lakh)\n---|---|---\n**Other Liabilities** | |\nSecured Loans | 400 | 3,000\nUnsecured Loan | 2,400 | 800\nCurrent Liabilities | 1,300 | 21,200\n**Total Liabilities** | 4,100 | 25,000\n**Assets** | |\nFixed Assets | 7,740 | 20,400\nInvestments | 7,600 | 12,300\nCurrent Assets | 8,000 | 30,200\nLoan & Advances | 1,700 | 7,300\nDeferred Tax / Misc. Exp. | 60 | (200)\n**Total Assets** | 25,100 | 70,000\n\nBoard of directors of the company have decided to issue necessary equity shares of Fortune Pharma Ltd. of ₹ 1 each, without any consideration to the shareholders of Fortune India Ltd. For that purpose, following points are to be considered:\n- Transfer of Liabilities and Assets at Book value\n- Estimated profit for the year 2024-25 is ₹ 11,400 lakh for Fortune India Ltd. and ₹ 1,470 lakh for Fortune Pharma Ltd.\n- Estimated Market price of Fortune Pharma Ltd. is ₹ 24.50 per share.\n- Average P/E ratio of FMCG sector is 42 and Pharma sector is 25, which is to be expected for both the companies.\n\n**Calculate:**\n(i) The Ratio in which shares of Fortune Pharma are to be issued to the shareholders of Fortune India Ltd.\n(ii) Expected Market price of Fortune India Ltd.\n(iii) Book value per share of both the companies after demerger.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Shareholder's Fund:\n\nParticulars | Fortune India Ltd. (31.03.2024) (A) | Fortune Pharma Ltd. (01.04.2024) (B) | Fortune India (FMCG) Ltd. (01.04.2024) (A-B)\n---|---|---|---\nAssets | 70,000 | 25,100 | 44,900\nOutside Liabilities | 25,000 | 4,100 | 20,900\nNet Worth | 45,000 | 21,000 | 24,000\n\nFigures of Fortune India (FMCG) India Ltd is balancing figure (A – B).\n\nCalculation of Shares of Fortune Pharma Ltd. to be issued to shareholders of Fortune India Ltd:\n\nFortune Pharma Ltd. |\n---|---\nEstimated Profit (₹ in lakhs) | 1470\nEstimated Market Price (₹) | 24.50\nEstimated P/E | 25\nEstimated EPS (₹) (24.50 / 25) | 0.98\nNo. of shares (Lakhs) (1,470 / 0.98) | 1500\n\nHence, Ratio is 1 shares of Fortune Pharma Ltd. for 2 shares of Fortune India Ltd.\n\n(ii) Expected Market Price of Fortune India Limited:\n\nFortune India (FMCG) Ltd. |\n---|---\nEstimated Profit (₹ in lakhs) | 11,400\nNo. of Equity Share ( in Lakhs) | 3,000\nEstimated EPS (₹) | 3.8\nEstimated P/E | 42\nEstimated Market Price (₹) | 159.6\n\n(iii)\n | Fortune Pharma Ltd. | Fortune India (FMCG) Ltd.\n---|---|---\nNet Worth (₹ in Lakhs) | 21,000 | 24,000\nNo. of Shares (In Lakhs) | 1,500 | 3,000\nBook Value of Share (₹) | 14 | 8",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,673 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p17",
+ "term_code": "2024-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Q1 has sub-questions (a) 10 MCQs (2×10=20) and (b) 5 MCQs on T Ltd. data (2×5=10); labels are '(a)(i)'.. and '(b)(i)'..; shared T Ltd. table is in intro_md and flagged in each (b) stem."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Where considered necessary, suitable assumptions may be made and clearly indicated in the respective answer. All workings should form part of the answer. The figures in the margin on the right side indicate full marks. SECTION-A (Compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "(a) Choose the correct option from the four alternatives given: 2×10=20\n\n(b) T Ltd., is a newly started company. It has the following forecast figures for its first year of trading: 2×5=10\n\n| Particulars | Amount |\n|---|---|\n| Sales | ₹40,00,000 |\n| Purchases | ₹32,00,000 |\n| Average Receivables | ₹3,20,000 |\n| Average Inventory | ₹4,50,000 |\n| Average Payables | ₹2,50,000 |\n| Average Overdraft | ₹4,50,000 |\n| Gross Profit Margin | 30% |\n| Industry Average Data: | |\n| Inventory Days | 53 |\n| Receivables Days | 23 |\n| Payables Days | 47 |\n| Current Ratio | 1·33 |\n\nAssume there are 365 days in the year.\n\nChoose the correct option based on above information:",
+     "parts": [
+      {
+       "label": "(a)(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "As per Rule-4(3) of Companies (Cost Records & Audit) Rules, 2014, the requirement for cost audit shall not apply to a company whose revenue from exports, in foreign exchange, exceeds ____________ per cent of its total revenue even though it is covered in Rule 3.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "50%"
+        },
+        {
+         "key": "B",
+         "body_md": "60%"
+        },
+        {
+         "key": "C",
+         "body_md": "75%"
+        },
+        {
+         "key": "D",
+         "body_md": "80%"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "As per Section 141(3) read with Rule 10 of Company (Audit and Auditor) Rule, 2014, a person who has been convicted by a court of an offence involving fraud and a period of ____________ years has not elapsed from the date of such conviction, is disqualified and not eligible for appointment as a Cost Auditor of a company.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "10"
+        },
+        {
+         "key": "B",
+         "body_md": "5"
+        },
+        {
+         "key": "C",
+         "body_md": "7"
+        },
+        {
+         "key": "D",
+         "body_md": "2"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Cost of Repairs and Maintenance is measured as per principles and methods defined under ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Cost Accounting Standard 17"
+        },
+        {
+         "key": "B",
+         "body_md": "Cost Accounting Standard 12"
+        },
+        {
+         "key": "C",
+         "body_md": "Cost Accounting Standard 13"
+        },
+        {
+         "key": "D",
+         "body_md": "Cost Accounting Standard 8"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "As per Cost Accounting Standard -2, the difference between installed capacity and normal capacity is ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Normal Idle Capacity"
+        },
+        {
+         "key": "B",
+         "body_md": "Abnormal Idle Capacity"
+        },
+        {
+         "key": "C",
+         "body_md": "Normal Capacity"
+        },
+        {
+         "key": "D",
+         "body_md": "Actual Capacity"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The susceptibility of an assertion about the measurement, assignment or disclosure of cost to a misstatement that could be material, either individually or when aggregated with other misstatements, before consideration of any related controls, is called as ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Inherent Risk"
+        },
+        {
+         "key": "B",
+         "body_md": "Control Risk"
+        },
+        {
+         "key": "C",
+         "body_md": "Detection Risk"
+        },
+        {
+         "key": "D",
+         "body_md": "Material Risk"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Cost Auditing Standard 103 deals with ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "planning an Audit of Cost Statements."
+        },
+        {
+         "key": "B",
+         "body_md": "documentation of Audit of Cost Statements, Records etc."
+        },
+        {
+         "key": "C",
+         "body_md": "overall objectives of the Independent Cost Auditor and the Conduct of an Audit."
+        },
+        {
+         "key": "D",
+         "body_md": "Knowledge of Business, its processes and the Business Environment."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Cost of Self-generation Utilities for own consumption shall comprise of ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Administrative Overheads"
+        },
+        {
+         "key": "B",
+         "body_md": "Distribution Cost"
+        },
+        {
+         "key": "C",
+         "body_md": "Factory Overheads"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Several Checks and Controls exercised in a business to ensure its efficient working is known as ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Internal Check"
+        },
+        {
+         "key": "B",
+         "body_md": "Internal Control"
+        },
+        {
+         "key": "C",
+         "body_md": "Internal Audit"
+        },
+        {
+         "key": "D",
+         "body_md": "Interim Check"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key (A) Internal Check looks doubtful (definition matches Internal Control, option B); kept as printed."
+       ]
+      },
+      {
+       "label": "(a)(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In planning a cost audit, the Cost Auditor's knowledge about the design of internal control activities should be used to ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "identify the types of possible misstatements that could occur."
+        },
+        {
+         "key": "B",
+         "body_md": "assess the operational proficiency of internal control."
+        },
+        {
+         "key": "C",
+         "body_md": "determine whether controls can be circumvented by collusion."
+        },
+        {
+         "key": "D",
+         "body_md": "document the assessed level of control risk."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(a)(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Whoever commits the offence of money-laundering shall be punishable with rigorous imprisonment for a term which shall not be less than three years but which may extend to ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "three years."
+        },
+        {
+         "key": "B",
+         "body_md": "five years."
+        },
+        {
+         "key": "C",
+         "body_md": "seven years."
+        },
+        {
+         "key": "D",
+         "body_md": "ten years."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "T Ltd., is a newly started company. It has the following forecast figures for its first year of trading:\n\n| Particulars | Amount |\n|---|---|\n| Sales | ₹40,00,000 |\n| Purchases | ₹32,00,000 |\n| Average Receivables | ₹3,20,000 |\n| Average Inventory | ₹4,50,000 |\n| Average Payables | ₹2,50,000 |\n| Average Overdraft | ₹4,50,000 |\n| Gross Profit Margin | 30% |\n| Industry Average Data: | |\n| Inventory Days | 53 |\n| Receivables Days | 23 |\n| Payables Days | 47 |\n| Current Ratio | 1·33 |\n\nAssume there are 365 days in the year.\n\nChoose the correct option based on above information:\n\nThe Cash operating cycle for T Ltd., is ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "65 days"
+        },
+        {
+         "key": "B",
+         "body_md": "59 days"
+        },
+        {
+         "key": "C",
+         "body_md": "29 days"
+        },
+        {
+         "key": "D",
+         "body_md": "88 days"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "T Ltd., is a newly started company. It has the following forecast figures for its first year of trading:\n\n| Particulars | Amount |\n|---|---|\n| Sales | ₹40,00,000 |\n| Purchases | ₹32,00,000 |\n| Average Receivables | ₹3,20,000 |\n| Average Inventory | ₹4,50,000 |\n| Average Payables | ₹2,50,000 |\n| Average Overdraft | ₹4,50,000 |\n| Gross Profit Margin | 30% |\n| Industry Average Data: | |\n| Inventory Days | 53 |\n| Receivables Days | 23 |\n| Payables Days | 47 |\n| Current Ratio | 1·33 |\n\nAssume there are 365 days in the year.\n\nChoose the correct option based on above information:\n\nCurrent Ratio of T Ltd. is ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "1·10 times"
+        },
+        {
+         "key": "B",
+         "body_md": "1·25 times"
+        },
+        {
+         "key": "C",
+         "body_md": "1·00 times"
+        },
+        {
+         "key": "D",
+         "body_md": "1·30 times"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "T Ltd., is a newly started company. It has the following forecast figures for its first year of trading:\n\n| Particulars | Amount |\n|---|---|\n| Sales | ₹40,00,000 |\n| Purchases | ₹32,00,000 |\n| Average Receivables | ₹3,20,000 |\n| Average Inventory | ₹4,50,000 |\n| Average Payables | ₹2,50,000 |\n| Average Overdraft | ₹4,50,000 |\n| Gross Profit Margin | 30% |\n| Industry Average Data: | |\n| Inventory Days | 53 |\n| Receivables Days | 23 |\n| Payables Days | 47 |\n| Current Ratio | 1·33 |\n\nAssume there are 365 days in the year.\n\nChoose the correct option based on above information:\n\nQuick Ratio of T Ltd. is ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "1·00 times"
+        },
+        {
+         "key": "B",
+         "body_md": "0·46 times"
+        },
+        {
+         "key": "C",
+         "body_md": "0·60 times"
+        },
+        {
+         "key": "D",
+         "body_md": "1·20 times"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "T Ltd., is a newly started company. It has the following forecast figures for its first year of trading:\n\n| Particulars | Amount |\n|---|---|\n| Sales | ₹40,00,000 |\n| Purchases | ₹32,00,000 |\n| Average Receivables | ₹3,20,000 |\n| Average Inventory | ₹4,50,000 |\n| Average Payables | ₹2,50,000 |\n| Average Overdraft | ₹4,50,000 |\n| Gross Profit Margin | 30% |\n| Industry Average Data: | |\n| Inventory Days | 53 |\n| Receivables Days | 23 |\n| Payables Days | 47 |\n| Current Ratio | 1·33 |\n\nAssume there are 365 days in the year.\n\nChoose the correct option based on above information:\n\nSales to Working Capital Ratio is ____________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "5·60 times"
+        },
+        {
+         "key": "B",
+         "body_md": "6·30 times"
+        },
+        {
+         "key": "C",
+         "body_md": "7·69 times"
+        },
+        {
+         "key": "D",
+         "body_md": "5·75 times"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "T Ltd., is a newly started company. It has the following forecast figures for its first year of trading:\n\n| Particulars | Amount |\n|---|---|\n| Sales | ₹40,00,000 |\n| Purchases | ₹32,00,000 |\n| Average Receivables | ₹3,20,000 |\n| Average Inventory | ₹4,50,000 |\n| Average Payables | ₹2,50,000 |\n| Average Overdraft | ₹4,50,000 |\n| Gross Profit Margin | 30% |\n| Industry Average Data: | |\n| Inventory Days | 53 |\n| Receivables Days | 23 |\n| Payables Days | 47 |\n| Current Ratio | 1·33 |\n\nAssume there are 365 days in the year.\n\nChoose the correct option based on above information:\n\nFrom the above calculations and the given scenario, which one of the statements is most correct?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The length of the Cash Operating Cycle is longer than the industry average, which is 45 days, and is likely to lead to liquidity problems."
+        },
+        {
+         "key": "B",
+         "body_md": "Liquidity position is favourable."
+        },
+        {
+         "key": "C",
+         "body_md": "Liquidity position is better than the industry standard."
+        },
+        {
+         "key": "D",
+         "body_md": "Resources are efficiently utilized."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "(Answer any five questions out of seven questions given. Each question carries 14 marks) 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is the Scope of Cost Audit? Explain.",
+       "options": [],
+       "correct": null,
+       "answer_md": "SCOPE OF COST AUDIT:\nThe primary objective of „Cost Audit‟ is ensuring accuracy of cost data, accumulation and exact computation of\nthe cost of a product. However, the vast scope of Cost Audit works as a mirror of entity‟s performance.\nThe Institute of Cost and Works Accountants of India defines a cost audit as: “An audit of efficiency of minute\ndetails of expenditure….Cost audit is mainly a preventive measure, a guide for management policy and decision\n… and a barometer of performance”.\nThe Institute of Cost and Management UK defined cost audits as “the verification of the correctness of cost\naccounts and a check on the adherence to the cost accounting plan”.\nIn today‟s dynamic business world, to become competitive in every product or services of the entity is of\nparamount importance. Hence, the prime mover of pricing and attached quality can only be ensured through\nappropriate cost structure. In view of this, „cost audit‟ refers to the detailed verification of the correctness of\ncosting techniques, costing systems, and cost accounts. It is necessary to ensure that records maintained for the\npurpose are accurate and correct to drive entity‟s decision making process.\nBeyond propriety, Cost Audit scope encompasses overall „efficiency‟ and its improvement. The wider scope of\nCost Audit can help-\n    a. Control over element-wise cost\n    b. Help in determining Sales price and margin\n    c. Assist Management in decision-making\n    d. Necessity and results from each of the activity performed\n    e. Setting of Standards and budgetary controls\n    f. Minimizing wastages, if any\n    g. Accuracy of inventory valuation\n    h. Overall efficiency improvement of the entity\nHence, Cost Audit not only to be considered as a Compliance Tool (Where the same is mandatory), the outcome is\nfar reaching to go „beyond compliance‟.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is meant by 'Normal Price' with respect to Related Party Transactions in CRA-1? State the basis adopted to determine the 'Normal Price'.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Normal Price and the basis adopted to determine Normal Price:\n“Normal” price means price charged for comparable and similar products in the ordinary course of trade and\ncommerce where the price charged is the sole consideration of sale and such sale is not made to a related party.\nNormal price can be construed to be a price at which two unrelated and non-desperate parties would agree to a\ntransaction and where such transaction is not clouded due to the proximity of the parties to the transaction and free\nfrom influence, though the parties may have shared interest.\nIn respect of related party transactions or supplies made or services rendered by a company to a company termed\n“related party relationship” and vice-a-versa, records shall be maintained showing contracts entered into,\nagreements or understanding reached in respect of -\n(i)     purchase and sale of raw materials, finished good(s), rendering of service(s), process materials and rejected\n        goods including scraps, etc. ;\n(ii)    utilisation of plant facilities and technical know-how;\n(iii) supply of utilities and any other services;\n(iv)    administrative, technical, managerial or any other consultancy services;\n(v)     purchase and sale of capital goods including plant and machinery; and\n(vi)    any other payment related to the production of goods or rendering of services under reference.\n\nThese records shall also indicate the basis followed for arriving at the rates charged or paid for such goods or\nservices so as to enable determination of the reasonableness of such rates in so far as they are in any way related to\ngoods or services under reference.\n\nThe basis adopted to determine Normal price should be classified as under:\n(i)   Comparable uncontrolled price method;\n(ii)  Resale price method;\n(iii) Cost plus method;\n(iv)  Profit split method;\n(v)   Transactional net margin method; or\n(vi)  Any other method, to be specified.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Can a Cost Accountant be appointed\n(i) as a Key Managerial Person; or\n(ii) as an Independent Director; as per the provisions of the Companies Act, 2013. Explain.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Cost Accountant as a Key Managerial Person:\nSection 203 provides for the appointment of Key Managerial Person\n     Managing Director or Chief Executive Officer or manager and in their absence, a whole time director;\n     Company Secretary; and\n     Chief Financial Officer\nBy virtue of qualification and experience, a Cost Accountant can become Key Managerial Person in the Company.\n\nCost Accountant as an Independent Director:\nSection 149(4) provides that every listed public company shall have at least one third of the total number     of\ndirectors as independent directors.\nRule 5 of the Companies (Appointment and Qualification of Directors) Rules, 2014 prescribes the qualification of\nan independent director who shall possess appropriate skills, experience and knowledge in one or more field of\nfinance, law, management, sales, marketing, administration, research, Corporate Governance, technical operations\nor other disciplines related to the company‟s business.\nThe Cost Accountant having expertise in most of the above fields can become independent director as stipulated in\nthe Companies Act, 2013.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What process is to be followed to file the reports in XBRL format?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Process to be followed to file the reports in XBRL Format:\nThe following steps have to be followed in sequence:\n     Mapping the individual cost elements of the company to the elements of the costing taxonomy.\n     Populating the relevant data in the software/filing tool.\n     Creating an XBRL instance document.\n     Download XBRL validation tool\n     Validating the Instance Document with the Validation Tool of MCA.\n     Pre-scrutiny of the instance document.\n     Use available tool to convert the Instance document to a human readable format and check correctness of\n       data.\n     Attaching the Instance Document to the e-Form and filing on MCA Portal",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "| Particulars | Amount |\n|---|---|\n| Opening Stock of Raw Materials (5,000 units) | ₹3,60,000 |\n| Purchase of Raw Materials (17,500 units) | ₹14,00,000 |\n| Closing Stock of Raw Materials (3,500 units) | |\n| Freight Inward | ₹1,05,000 |\n| Self Manufactured Packing Material for purchased raw materials only (including share of administrative overheads related to marketing sales ₹12,000) | ₹1,00,000 |\n| Demurrage charges levied by transporter for delay in collection | ₹14,000 |\n\nNormal loss of materials due to shrinkage in transit is 1% of materials purchased\nAbnormal loss due to absorption of moisture before receipt of materials - 100 units\n\nCalculate the value of Closing Stock (Average Cost Method).",
+       "options": [],
+       "correct": null,
+       "answer_md": "Value of Closing Stock under Average Cost Method ₹ 3,04,833\nCost of Raw materials Consumed ₹ 16,39,567",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives only final figures/working summary; check against stem.",
+        "Table cell for Closing Stock amount is blank as printed."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following particulars pertaining to production of yarn are extracted from the records of BT Ltd., for the year ended on March 31,2024:\n\n| Particulars | ₹ '000 |\n|---|---|\n| Direct Material Cost per unit | 3,650 |\n| Direct Wages and Salaries | 1,740 |\n| Direct Expenses | 550 |\n| Indirect Materials | 730 |\n| Factory Overheads | 970 |\n| Administrative Overheads (40% relating to production activities) | 1,400 |\n| Quality Control Cost | 675 |\n| Research and Development Cost | 700 |\n| Interest on Working Capital | 450 |\n| Sale of Scrap Realised | 570 |\n\nYou are required to determine the Cost of Production for the purpose of captive consumption in terms of the Rule 30 of the Central Goods and Service Tax Rules, 2017 and as per the CAS-4 (Revised) and the Assessable Value for the purpose of paying GST on applicable transactions.",
+       "options": [],
+       "correct": null,
+       "answer_md": "According to the Rule 30 of the Central Goods & Services Tax Rules, 2017, the Assessable Value of goods used\nfor captive consumption is 110% of cost of production of such goods.\n            Cost of production as per CAS-4 ₹ 90,05,000\n            Assessable value as per Rule 30 of CGST Rules, 2017 is ₹ 99,05,500",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives only final figures/working summary; check against stem.",
+        "Stem prints 'Direct Material Cost per unit 3,650' (₹ '000) as printed; possible printing ambiguity."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The Financial Profit of RST Mills Ltd., for the year ended on March 31,2024 is ₹ 33,18,100.\n\nAs a Cost Auditor, you find the following differences between the Financial Accounts and Cost Accounts, representing items not considered in Cost Accounts:\n\n| S. No. | Particulars | ₹ |\n|---|---|---|\n| 1. | Profit on Sale of Fixed Assets | 3,05,000 |\n| 2. | Loss on Sale of Investments | 45,600 |\n| 3. | Voluntary Retirement Compensation included in Salary & Wages in Financial Accounts | 56,25,000 |\n| 4. | Donation Paid | 80,000 |\n| 5. | Insurance Claim relating to previous year received during the year | 5,28,700 |\n| 6. | Profit from Retail trading activity | 30,00,600 |\n| 7. | Interest Income from Inter-Corporate Deposits | 7,25,000 |\n| 8. | Decrease in value of closing WIP and Finished goods inventory | |\n| | As per Financial Accounts | 3,92,06,480 |\n| | As per Cost Accounts | 3,98,15,200 |\n\nYou are required to prepare a Reconciliation Statement between the two Accounts for the year ended on 31st March, 2024, showing Profit as per Cost Accounts.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Reconciliation of Profit between Cost and Financial Accounts for the year ended March 31, 2024\n\n                                                                                    ₹           ₹\n   Profit as per Financial Accounts                                                             33,18,100\n   Add: Loss on Sale of Investments                                                45,600\n   Add: Voluntary Retirement Compensation included in\n   salary-not included in Cost Accounts                                          56,25,000\n   Add: Donation paid                                                              80,000       57,50,600\n   Less: Profit on Sale of Fixed Assets- not considered in                                      90,68,700\n            Cost Accounts                                                         3,05,000\n   Less: Receipts of insurance claim related to previous year                     5,28,700\n   Less: Profit from Retailing Activity                                          30,00,600\n   Less: Interest income from inter-corporate deposit-\n            -not considered in cost accounts                                      7,25,000\n   Less: Difference in valuation of stock:\n\n            Decrease in inventories as per cost accounts           398,15,200\n            Decrease in inventories as per financial accounts    (392,06,480)     6,08,720      51,68,020\n   PROFIT AS PER COST ACCOUNTS                                                                  39,00,680",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer table is OCR-layout text; check column alignment."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is the need for Forensic Audit? Explain the Forensic Audit Procedures.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Need for Forensic Audit:\nAs of now, forensic auditing has emerged as a specialized field in the industry that requires a specific skill set to\ndetect the fraud, leaving no scope for overlap, but to determine an organisation‟s needs, forensic auditing is\nsignificant in dealing with early warning signals of fraud.\n\nThus, there are a few instances on the occurrence of which an entity should direct for forensic Audit, like:\n(i)    Theft of business information or where business systems have been hacked.\n(ii)   Issues identified by Whistle-Blowers\n(iii) Reconciliations resulted in unidentified material differences\n(iv)   Suspicious of fraud or illegal activity.\n(v)    Turnover has occurred and balances are showing negative results.\n\nForensic Audit Procedures:\nSince the forensic audit is more of an investigation and collection of evidence, it is of great importance that the\naudit should be conducted with an attitude of professions scepticism.\nHowever, a scientific approach involving the use of forensic audit procedures should be used to conduct the\nassignments. These procedures are more towards detecting possible material misstatements in the financial records\nthat result in fraudulent activities. Besides, forensic data analysis and fraud investigation techniques, a tool named\n„triangle‟ also are used for addressing the presence of three-element that are common to any fraud being\ncommitted:\n       Incentives – a motive that drives a person to commit fraud.\n       Attitude – an ability to rationalize fraudulent behaviour.\n       Opportunity – that enables a person to commit fraud.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain how Money Laundering works and enumerate the offences of Money Laundering as per Prevention of Money-Laundering Act, (PMLA), 2002.",
+       "options": [],
+       "correct": null,
+       "answer_md": "How Money Laundering Works:\nTo identify and report potential money laundering and address compliance requirements, financial institutions\nmust have a deep understanding of how the crime works. Money laundering involves three steps:\n(i)    Placement\n(ii)   Layering and\n(iii) Integration\n\nThese are a complex series of transactions that start with depositing funds, then gradually moving them into what\nappear to be legitimate assets.\nPlacement refers to how and where illegally obtained funds are placed. Money is often placed via Payments to\ncash based businesses; payments for false invoices; „smurfing‟ which means putting small amounts of money\n(below the AML threshold) into bank accounts or credit cards; moving money into trusts and offshore companies\nthat hide beneficial owners‟ identities; using foreign bank accounts; and aborting transactions shortly after funds\nare lodged with a lawyer or accountant.\nLayering refers to separating criminal funds from their source. It involves converting the illicit proceeds into\nanother form and creating complex layers of financial transactions to disguise the funds‟ origin and ownership.\nCriminals do this to obfuscate the trail of their illicit funds. So, it will be hard for AML investigators to trace the\ntransactions.\nIntegration refers to the re-entry of the laundered funds into the economy in what appears to be normal, legitimate\nbusiness of personal transactions. This is sometimes done by investing in real estate or luxury assets. It allows\nlaunderers and criminals to increase their wealth.\n\nThe offense of Money Laundering:\nMoney-Laundering has been defined in the Prevention of Money Laundering Act,2002 under Section 3, wherein a\nperson shall be guilty of the offences of money-laundering, if such person is found to have directly or indirectly:\n      Attempted to indulge or\n      Knowingly assisted or\n      Knowingly is a party or\n\nIs involved in one or more of the following processes or activities connected with proceeds of crime, namely:\n       Concealment; or\n       Possession; or\n       Acquisition; or\n       Use; or\n       Projecting as untainted property; or\n       Claiming as untainted property.\nSection 2(u) of PMLA defines “Proceeds of Crime” as any property derived or obtained, directly or indirectly, by\nany person as a result of criminal activity relating to a scheduled offense or the value of any such property, or\nwhere such property is taken or held outside the country, then the property equivalent in value held within the\ncountry or abroad.\n“Proceeds of Crime” include property not only derived or obtained from a scheduled offense, but also any property\nwhich may directly or indirectly be derived or obtained as a result of any criminal activity relatable to the\nscheduled offense.\nThe Schedule to PMLA lists all offenses which have been defined as scheduled offenses. As per Section 2(1) (y)\nof PMLA, Scheduled Offence means:\n       The offenses specified under Part A of the Schedule; or\n       The offenses specified under Part B of the Schedule, if the total value involved in such offenses is one\n        crore rupees or more; or\n       The offences are specified under Part C of the Schedule\nAn offense of money laundering cannot exist independently. It is evident that money laundering comprises a\npredicate offense well and is usually the result of the commission of a predicate offense is the sine qua non for the\nexistence of an offense under PMLA that the money in question is „proceeds of crime‟ derived from the\ncommission of a predicate offense. In the absence of a predicate offense, there can be no offense of money\nlaundering.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What are the top objectives of having a Management Audit?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Top Objectives of having a Management Audit are:\n(i)    Clearly defined prime objectives of the organisation\n(ii)   Ensuring a clear, lean and thin Organisational reporting structure. The setting of a well-defined\n       organisational structure with clear-cut lines of reporting.\n(iii) Goal setting process aligned with business objectivity\n(iv)   Process benchmarking for improving effectiveness. Challenge existing rules and regulations to work out on\n       effectiveness level.\n(v)    Suggesting improvement measures for giving an impetus to business performance in the forthcoming\n       months/periods.\n(vi)   Suggesting ways to restructure the organisation and ensure high-quality service at all quarters.\n(vii) More effective resource utilization planning.\n(viii) Incorporating management information systems to reach production and work efficiency goals.\n(ix)   Identification of weak points or managerial inefficiencies with respect to core functional areas of the\n       business, namely finance, sales and production.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Enumerate and explain the Information System Audit Approaches.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Information Systems Audit Approaches:\nThere are three approaches for conducting Information Systems Audit viz. Auditing around the computer,\nAuditing through the computer and Auditing with the computer.\n\nAuditing around the computer:\nUnder this approach, the emphasis is on checking the correctness of the output data/documents concerning the\ninput of a process without going into the details of the processing involved. This approach is preferred, where\nauditors themselves do not have the desired level of technical skills to adopt the other approaches. This is also\npreferred, when high reliance is placed on the users rather than the computer controls to safeguard the assets,\nmaintain data integrity and attain effectiveness and efficiency objectives. The focus is on procedural controls\nrather than computer controls. This approach can be used in the following circumstances:\nWhen an application system is simple, logic is straightforward, and a clear audit trail exists, this approach can be\nadopted. The process generates the audit trails such as the generation of exception reports along with the main\nreports. Such systems have very low inherent risk i.e. they are unlikely to be susceptible to material errors or\nirregularities or to be associated with significant ineffectiveness or inefficiencies in operations. Input transactions\nin such systems are in batch mode and control is maintained using traditional methods like the separation of duties\nand management supervision. Further, the task environment in such systems is relatively constant and the system\nitself is rarely modified.\nThis approach may be used when an application system uses a generalized package that is well tested and used by\nmany users as its software platform. If the package has been provided by a reputed vendor, has received\nwidespread use, and appears error-free, the auditors may decide to adopt this approach. Auditors should ensure\nthat the organisation has not modified the package and adequate controls exist over the source code and\ndocumentation to prevent unauthorized modification of the package.\nWhen high reliance is placed on the users rather than the computer controls to safeguard the assets maintain data\nintegrity and attain effectiveness and efficiency objectives, this approach can be adopted.\nAuditing around the computer is a simple approach. It does not provide any information about the system‟s ability\nto cope with the changes. Systems can be designed and programs can be written in certain ways to inhibit their\ndegradation when user requirements change. Further, this method cannot be used for complex systems. Otherwise,\nthe auditors might fail to understand some aspects of a system that could have a significant effect on the audit\napproach.\n\nAuditing through the Computer:\nAuditing through the computer requires a fair knowledge of the operating system, hardware being used, and\ncertain technical expertise in systems development. Under this approach, the computer programs and the data\nconstitute the target of IS audit. Compliance and substantive tests are performed on the computer system, its\nsoftware (both operating system and application system) and the data. The IS auditors can test the application\nsystem effectively using this approach. The IS auditors can use a computer to test logic and controls existing\nwithin the system and also records produced by the system. The approach increases the IS auditor‟s confidence in\nthe reliability and applicability of the evidence/information collected and evaluated. This approach is time-\nconsuming, as it needs an understanding of the internal working of an application system. It also needs some\ntechnical expertise.\n\nAuditing with the Computer:\nUnder this approach, the computer system and its programs are used as tools in the audit process. The objective is\nto perform substantive tests using the computers and their programs. The data from the auditee‟s computer system\nare retrieved in an independent environment. Audit interrogation and the query are carried out on such data, using\nspecial programs designed for the purpose. This method is used where:\n(a)     Application system consists of a large volume of inputs, producing a large volume of outputs and where the\n        direct examination of the inputs/outputs is difficult.\n(b)     Logic of the system is complex\n(c)     There are substantial gaps in the visible trails.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is Productive Efficiency? How does it work and how is it different from Allocative Efficiency?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Productive Efficiency:\nProductive Efficiency, also known as production efficiency, is the economic concept of producing the largest\npossible output from the available resources. Productivity enhancement and/or efficiency improvement are\npositives for growth and profitability.\n\nHow Productive Efficiency Works:\nProductive efficiency often comes into play when a production process relies on scarce resources. In\nmicroeconomics, this could involve two industries competing for the same raw materials and ending up limited by\nsimilar externalities.\nAs an example, consider the production of most rechargeable batteries, which require a steady supply of the\nmineral lithium and cobalt. When companies allocate these minerals toward the maximum production efficiency of\ncar batteries, they reduce the available resources for other types of batteries that rely on the same core materials. If\nthe car battery manufacturing process has reached its maximum productive efficiency, there will be higher\nmarginal costs for any additional unit produced. In competitive companies may be able to evade and situations by\nimproving workflows, technical efficiency, and exploiting economies of scale. In the short run, they bump up\nagainst the limits of production efficiency.\n\nProductive vs Allocative Efficiency: What is the Difference?\nProductive efficiency and allocative efficiency measure common characteristics, but the two terms are not\nsynonyms.\nProductive efficiency represents the maximum output of a product given scarce resources. The production of any\nadditional units results in opportunity costs-one which is the reduced output of another product. This metric\nfocuses entirely on monetary costs and resources.\nAllocative efficiency measures the distribution of goods and services. Allocative efficiency is state of market\nequilibrium where both producer and consumer benefit. Specifically, it means the marginal cost of production for\neach unit sold will equal the marginal benefit to the customer buying that good. To have true allocative efficiency,\nboth producers and buyers must benefit from the overall condition of the market. On a macroeconomic level, this\napplies to entire societies such that producers benefit in an open market and consumers pay reasonable prices for\nan enhanced quality of life.\nBoth efficiencies are limited by externalities. A corporation or small business can do a great deal to improve its\nproductive efficiency levels and reduce inefficiency. This includes ramping up its level of production, performing\npreventive maintenance on equipment, reducing factory downtime, tracking key performance indicators (KPIs),\nreimaging production lines, and incentivizing higher productivity levels among its workforce. However, even\nwhen a company streamlines and optimizes in every possible way, it can still be hampered by the production of\nanother product that taps into its same supply chain.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain briefly about the Adequacy of Internal Controls.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Adequacy of Internal Controls\nAs per SA 200 read with SA 315, the auditor should obtain an understanding of the accounting system sufficient to\nidentify and understand major classes of transactions, manner of initiation of transactions, significant accounting\nrecords, supporting documents and specific accounts in the financial statements and the accounting and financial\nreporting process. Accounting control comprises the plan of an organisation and the procedures and records that\nare concerned with the safeguarding of assets and the reliability of financial controls. Internal control so far as\nfinancial and accounting aspects are concerned, aims at the following:\n(i)     Providing the flow of work through various stages.\n(ii)    There should be proper segregation of personnel duties so that no single person can be in a position to\n        handle whole of the work from its beginning to its end.\n(iii)   Adequate documentation should be made at each stage of work.\n(iv)    The transactions are recorded with appropriate amounts and in timely manner and that too as per the\n        applicable accounting policies and practices.\n(v)    The assets should be properly safeguarded.\n(vi)   The access to the assets should be restricted to only authorised persons.\n(vii)  Existence of organisational chart would help in fixing responsibilities.\n(viii) Building up of a system to locate the deviations and departures from the prescribed procedures and to\n       detect the frauds and errors automatically without mush loss of time.\n(ix)   Standardized records and formats should be evolved. It would ensure availability of right information at\n       right time.\n(x)    There should be an efficient Management Information System.\n(xi)   Minimization of loss and wastages.\n(xii) Employees should be encouraged to do good work and comply with the procedures. Special attention\n       should be given to the disgruntled employees.\n(xiii) Adequate cut off procedures should be formulated so that the transactions of one period can be separated\n       from the transactions of other period.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Discuss Audit Procedure for conducting the Audit of Self-Help Group.",
+       "options": [],
+       "correct": null,
+       "answer_md": "AUDIT OF SELF-HELP GROUPS:\nSelf Help Group (SHG) Movement in India has been recognized as an effective strategy for mobilization and\nempowerment of rural people, particularly poor women and other marginalized groups. In India, Self\nHelpGroupsorSHGsrepresentauniqueapproachtofinancialintermediation.Theapproachcombinesaccessto low-cost\nfinancial services involving a process of self-management, with an objective of social and economic development\nfor the women SHG members. Formations of SHGs are facilitated by the Government or by NGOs. SHGs are\nlinked not only to banks but also to wider development programs, SHGs are seen to confer many benefits, both\neconomic and social.\nAs expert accounting professionals are hardly available at Gram Panchayat level, the need of the hour is\n“Community Audit” and it is necessary to develop sufficient number of “Community Auditors” for the sake of\nfinancial transparency.\nThe Institute of Cost Accountants of India and WBSRLM have entered into an MOU to enable the undertaking of\nvarious collaborative activities for establishing a “Community Audit” system for Self Help Groups in West Bengal\nby developing a sufficient number of qualities “Community Auditors” for meeting the audit needs of SHGs in the\nstate.\n\nApplying the Field Balance Sheet Approach to Audit:\n1.    Background Review:\n      During a background review, a preliminary examination of the group-level records, including the cash\n      book, is conducted. The auditor also does a general review of the group-level records and member\n      passbooks to verify/ cross-check data entries for their accuracy and correct posting.\n2.    Prepare Field Balance Sheet:\n      The auditor prepares the Field Balance Sheet for the group, as on the audit date, based on the SHG‟s\n      internal records, and then cross-checks the correctness of balance sheet items. The primary objective is to\n      ascertain the retained earnings of the SHG.\n                                              Amount                                             Amount\n          Sl. No.           Assets                         Sl. No.             Liabilities\n                                                ₹                                                 ₹\n             1      Cash in Hand                             1       Voluntary Savings\n             2      Cash at Bank                             2       External loan Outstanding\n                    Loan Outstanding with\n             3                                               3       Equity:\n                    Members\n             4      Fixed Deposit                            a       Compulsory Saving\n             5      Fixed Asset                              b       Retained Earning\n                    Total                                            Total\n\n3.   Private Meetings with Members:\n     The auditor conducts private interviews with 25% of the total members to triangulate information collected\n     from the background review, as well as from the Field Balance Sheet, and to ascertain the decision-making\n     pattern in the group.\n4.   Meeting with the SHG Group:\n     If serious issues are raised during the course of the audit, the auditor will meet with the entire group for\n     further discussion.\n5.   Reporting:\n     Once the auditing is complete, the auditor summarizes any weak practices that put savings at risk or make\n     records unreliable, and recommends any better methods. The auditor submits the Field Balance Sheet,\n     along with a summary report to the MFI/bank, to all group members and adds relevant comments to enable\n     decision-making regarding the provision of credit.\n\n                                     _____________________________",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

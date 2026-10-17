@@ -1,0 +1,984 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "16",
+ "source_file": "pyq-transcriptions/p16-2024-06.json",
+ "paper_review": [
+  "Scan is skewed with margin shading but fully readable.",
+  "Q1(xii) revenue equation rendered from image (1/3 x^3 - x^2 + 10x + 5)."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p16:2024-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-cost-management",
+  "term_code": "2024-06",
+  "title": "CMA Final June 2024: Strategic Cost Management (Paper 16)",
+  "paper_code": "P16",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct option from the four alternatives given:  2×15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which one of the following is true for Blue Ocean Strategy?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Beat the competition",
+      "is_correct": false
+     },
+     {
+      "body_md": "Exploit existing demand",
+      "is_correct": false
+     },
+     {
+      "body_md": "Make the competition irrelevant",
+      "is_correct": true
+     },
+     {
+      "body_md": "Make the value-cost trade off",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following Quality Cost is incurred in the process of uncovering defects?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Appraisal Costs",
+      "is_correct": true
+     },
+     {
+      "body_md": "Prevention Costs",
+      "is_correct": false
+     },
+     {
+      "body_md": "Internal Failure Costs",
+      "is_correct": false
+     },
+     {
+      "body_md": "External Failure Costs",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "quality-cost-management",
+    "mapping_confidence": 0.83,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "BONAS Ltd. adopting a Standard Costing System provides the following information pertaining to Direct Materials for the month of April, 2024.\n\n| | |\n|---|---|\n| Standard price per unit | ₹ 7·20 |\n| Actual quantity purchased in units | 3200 |\n| Standard quantity allowed for actual production in units | 2900 |\n| Material Price Variance on purchase (FAV) | ₹ 960 |\n\nWhat will be the actual purchase price per unit?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 8·50",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 7·80",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 6·90",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 6·50",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.9,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The Break Even Sales of GXT Ltd., a manufacturing company, is ₹ 3,75,000, while its fixed cost is ₹ 1,12,500. If the Margin of Safety is 40%, what will be its Profit?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 80,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 75,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 64,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "Insufficient information",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The Pay-off Matrix of a game is given below:\n\nPlayer B\n\n| Player A | | | |\n|---|---|---|---|\n| | 3 | –1 | 4 |\n| | –1 | 8 | 2 |\n| | 16 | 8 | 6 |\n\nWhat is the value of Game to Player A(using Maximin–Minimax Principle)?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "6",
+      "is_correct": true
+     },
+     {
+      "body_md": "8",
+      "is_correct": false
+     },
+     {
+      "body_md": "16",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "game-theory",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "BENT Ltd., a manufacturer of components for VCD, has a capacity to produce 4 Lakh units. The market demand is sensitive to the sale price and the company could sell 1 Lakh units at a price of ₹ 5,000 each. The demand thereafter would double for each ₹ 500 per unit fall in the selling price. If the company expects a minimum margin of 25%, what would be the Target Cost per unit for the company to sell at full capacity utilization?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 4,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 3,200",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 3,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 2,900",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.62,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "DOXT Ltd., a manufacturing company, is preparing a quotation for a new product-D. The time taken for the first unit is 30 hours. The company expects 85% learning curve (Index is $-0{\\cdot}2345$). The company desires that the quotation should be based on the time taken for the final output within the Learning period which is expected to end after the company has produced 200 units. What will be the time per unit of product to be used for the quotation?\n\n[Given: $199^{-0{\\cdot}2345} = 0{\\cdot}28901$, $200^{-0{\\cdot}2345} = 0{\\cdot}28867$ and $201^{-0{\\cdot}2345} = 0{\\cdot}28834$]",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "6·63 hours",
+      "is_correct": true
+     },
+     {
+      "body_md": "10·34 hours",
+      "is_correct": false
+     },
+     {
+      "body_md": "11·50 hours",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.03,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Production overheads of XYZ Ltd. for 500 units of product X are:\n\nMachine oriented activity cost: ₹ 1,35,400\n\nMaterial ordering overheads: ₹ 69,570\n\nMachine hours are 1·50 hours per unit and No. of material orders are 6 per unit.\n\nWhat is the Machine Oriented Cost per unit and Material Ordering Cost per unit respectively?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 270·80 & ₹ 139·14",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 180·53 & ₹ 23·19",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 23·19 & ₹ 180·53",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 139·14 & ₹ 270·80",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.69,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is/are not the features of Jedox tool?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Deployable in the cloud as well as on premise server or Hybrid.",
+      "is_correct": false
+     },
+     {
+      "body_md": "BI and Analytics platform.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Allows users to easily create and share powerful reports within minutes.",
+      "is_correct": false
+     },
+     {
+      "body_md": "(B) and (C) only",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-tools-for-data-analytics",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Analysis of a dataset has revealed the fact that profit of a business has reduced for the financial year 2022-23. What category of data analytics it comes under?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Descriptive Analytics",
+      "is_correct": true
+     },
+     {
+      "body_md": "Predictive Analytics",
+      "is_correct": false
+     },
+     {
+      "body_md": "Diagnostic Analytics",
+      "is_correct": false
+     },
+     {
+      "body_md": "Prescriptive Analytics",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-tools-for-data-analytics",
+    "mapping_confidence": 0.16,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A particular job MB requires 800 kgs. of a material. 500 kgs. of the particular material is currently in stock. The original price of the material was ₹ 300 but current resale value of the same has been determined as ₹ 200. The current replacement price of the material is Re. 0·80 per kg., what will be the relevant cost of material for job MB?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 640",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 440",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 300",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.73,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Total Revenue of ZOM Ltd., from the Sales of the quantity (units) is given by the equation $R = \\frac{1}{3}x^{3} - x^{2} + 10x + 5$. If the Marginal revenue is 25, what will be number of quantity (in units)?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "6",
+      "is_correct": false
+     },
+     {
+      "body_md": "4",
+      "is_correct": false
+     },
+     {
+      "body_md": "5",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "quality-cost-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "When a maximisation assignment problem is converted to minimisation problem, the resultant matrix is called:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Profit Matrix.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Regret Matrix.",
+      "is_correct": true
+     },
+     {
+      "body_md": "Cost Matrix.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Dummy Matrix.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "assignment",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The important step(s) required for simulation approach in solving a problem is/are:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Test and validate the Model",
+      "is_correct": false
+     },
+     {
+      "body_md": "Design the experiment",
+      "is_correct": false
+     },
+     {
+      "body_md": "Conduct the experiment",
+      "is_correct": false
+     },
+     {
+      "body_md": "All of the above",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "simulation",
+    "mapping_confidence": 0.19,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The expected time for an activity of Project LM is 20 days. If the most likely and pessimistic time are 19 days and 28 days, what will be the variance of the activity?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "1·36",
+      "is_correct": false
+     },
+     {
+      "body_md": "1·78",
+      "is_correct": false
+     },
+     {
+      "body_md": "4",
+      "is_correct": true
+     },
+     {
+      "body_md": "0",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.22,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "ref_suffix": "q2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "ZOYAN Limited is currently manufacturing 5000 units of the product ‘ZN 100’ annually making full use of its machine capacity. The selling price and total costs per unit associated with ‘ZN 100’ are as follows:\n\n| | ₹ | ₹ |\n|---|---|---|\n| Selling price per unit | | 900 |\n| Costs per unit : | | |\n| Direct material | 200 | |\n| Variable machine operating cost (₹ 100 per machine hour) | 150 | |\n| Manufacturing overhead cost | 180 | |\n| Marketing and administrative cost | 200 | 730 |\n| Operating income per unit of ‘ZN 100’ | | 170 |\n\nZOYAN Limited can sell additional 3000 units of ‘ZN 100’, if it can outsource those additional units.\n\nAOB Limited, a supplier of quality products, has agreed to supply up to 6000 units of ‘ZN 100’ per year at a price of ₹ 650 per unit delivered at ZOYAN’s factory.\n\nZOYAN Limited can use its facility to produce an alternative product ‘ZN 200’. It can sell up to 12000 units of ‘ZN 200’ annually. Estimated selling price and total costs per unit to manufacture and sell 12000 units of ‘ZN 200’ are as follows:\n\n| | ₹ | ₹ |\n|---|---|---|\n| Selling price per unit | | 600 |\n| Costs per unit : | | |\n| Direct material | 200 | |\n| Variable machine operating cost (₹ 100 per machine hour) | 50 | |\n| Manufacturing overhead cost | 60 | |\n| Marketing and administrative cost | 110 | 420 |\n| Operating income per unit of ‘ZN 200’ | | 180 |\n\nOther information pertaining to the operation of Zoyan Limited is as follows:\n(i) ZOYAN Ltd., use machine hours as the basis for assigning fixed manufacturing overhead. The fixed manufacturing overhead for the current year is ₹ 3,00,000. These costs will not be affected by the product-mix decision.\n(ii) Variable marketing and administrative cost per unit for various products are as follows:\n\n| | | |\n|---|---|---|\n| Manufactured | ‘ZN 100’ | ₹ 80 |\n| Purchased | ‘ZN 100’ | ₹ 40 |\n| Manufactured | ‘ZN 200’ | ₹ 60 |\n\nFixed marketing and administrative costs for the current year is ₹ 6,00,000. These costs will be affected by the product mix decision.\n\nRequired :\n(a) Analyse the Contribution per unit between manufactured ‘ZN 100’ and manufactured ‘ZN 200’.\n(b) Analyse the Contribution per unit between manufactured ‘ZN 100’ and purchased ‘ZN 100’.\n(c) Calculate the quantity of each product that ZOYAN Limited should manufacture and/or purchase to maximize operating income.",
+    "choice_group_ref": "secB",
+    "explanation_md": "(a) Contribution per unit\nManufactured “ZN 100” = ₹ 350\nManufactured “ZN 200” = ₹ 255\n(b) Contribution per unit\nManufactured “ZN 100” = ₹ 350\nPurchased “ZN 100” = ₹ 210\n(c) Quantity of each product that ZOYAN Limited should manufacture and / or purchase to maximize operating income.\n\n| | Units |\n|---|---|\n| Manufactured “ZN 200” | 12,000 |\n| Manufactured “ZN 100” | 1,000 |\n| Purchased “ZN 100” | 6,000 |",
+    "reference_solution_md": "(a) Contribution per unit\nManufactured “ZN 100” = ₹ 350\nManufactured “ZN 200” = ₹ 255\n(b) Contribution per unit\nManufactured “ZN 100” = ₹ 350\nPurchased “ZN 100” = ₹ 210\n(c) Quantity of each product that ZOYAN Limited should manufacture and / or purchase to maximize operating income.\n\n| | Units |\n|---|---|\n| Manufactured “ZN 200” | 12,000 |\n| Manufactured “ZN 100” | 1,000 |\n| Purchased “ZN 100” | 6,000 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.35,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 18,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "MN Co. has profit centre divisions EXE and WYE making products X and Y respectively. Each unit of Y requires one unit of X and WYE can sell a maximum of 100000 units in the external market at a selling price of ₹ 200 per unit. EXE has the capacity to produce 200000 units of X. The variable cost per unit is ₹ 15. Fixed costs are ₹ 15, 00,000. EXE can sell the following quantities in the external market:\n\n| Price per unit | Demand units |\n|---|---|\n| ₹ 25 | 160000 units |\n| ₹ 30 | 175000 units |\n| ₹ 35 | 150000 units |\n| ₹ 40 | 125000 units |\n| ₹ 45 | 100000 or less |\n\nWYE can purchase its requirement from the external market at ₹ 35 per unit.\n\nRequired:\n(i) Assess what will be the best strategy for EXE, if no demand from WYE.\n(ii) Calculate the minimum transfer price that EXE will agree if EXE has to supply 100000 units to WYE.\n(iii) If WYE agrees to accept the partial supplies, assess and recommend what will be the EXE’s best strategy under no compulsion to transfer the maximum units? Calculate the quantity that EXE will agree to transfer and the corresponding price, assuming both divisions agree to share the benefits of transfer equally.",
+    "parent_ref": "3",
+    "explanation_md": "(i) If there is no demand from WYE, the optimal strategy for EXE would be to manufacture 1,25,000 units for external demand where it can achieve the maximum contribution of ₹ 31,25,000.\n\n(ii) Minimum transfer price = ₹ 16.25 per unit\nIf EXE is strong enough, it can demand a price of ₹ 35 which WYE will be paying to outside suppliers.\n\n(iii) EXE can supply 1,25,000 units for external demand and earn the maximum contribution ₹ 31,25,000.\nBalance 75,000 units can be offered to WYE at the variable cost of ₹ 15.\nWYE will not pay anything above ₹ 35 per unit\nEXE will not accept anything below ₹ 15 per unit.\nTotal benefit to be shared equally between X and Y = ₹ 20 per unit\n\nTransfer price per unit, will be = ₹ 25, so that WYE benefits by ₹ 10 and EXE also gets additional contribution of ₹ 10 per unit transferred.\nTotal units to be transferred = 75,000 units.",
+    "reference_solution_md": "(i) If there is no demand from WYE, the optimal strategy for EXE would be to manufacture 1,25,000 units for external demand where it can achieve the maximum contribution of ₹ 31,25,000.\n\n(ii) Minimum transfer price = ₹ 16.25 per unit\nIf EXE is strong enough, it can demand a price of ₹ 35 which WYE will be paying to outside suppliers.\n\n(iii) EXE can supply 1,25,000 units for external demand and earn the maximum contribution ₹ 31,25,000.\nBalance 75,000 units can be offered to WYE at the variable cost of ₹ 15.\nWYE will not pay anything above ₹ 35 per unit\nEXE will not accept anything below ₹ 15 per unit.\nTotal benefit to be shared equally between X and Y = ₹ 20 per unit\n\nTransfer price per unit, will be = ₹ 25, so that WYE benefits by ₹ 10 and EXE also gets additional contribution of ₹ 10 per unit transferred.\nTotal units to be transferred = 75,000 units.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.15,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 20,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "POSIN Limited supports the concept of the life cycle costing for new investment decisions covering its engineering activities.\n\nThe Company is to replace a number of its machines and the Production Manager is to decide between the ‘BX’ machine, a more expensive machine with a life of 12 years, and the ‘SW’ machine with an estimated life of 6 years. If the ‘SW’ machine is chosen it is likely that it would be replaced at the end of 6 years by another ‘SW’ machine. The pattern of maintenance and running cost differs between two types of machine and relevant data are shown below :\n\n| Machine | BX (₹) | SW (₹) |\n|---|---|---|\n| Purchase Price | 38,00,000 | 26,00,000 |\n| Trade-in-value | 6,00,000 | 6,00,000 |\n| Annual Repair Cost | 4,00,000 | 5,20,000 |\n| Overhaul Cost (p.a.) | 8,00,000 (at year 8) | 4,00,000 (at year 4) |\n| Estimated financing costs averaged over machine life (p.a.) | 10% | 10% |\n\nGiven :\n\n| Years | 3 | 4 | 5 | 6 | 7 | 8 | 10 | 12 |\n|---|---|---|---|---|---|---|---|---|\n| PVIF (10%) | 0·75 | 0·68 | 0·62 | 0·56 | 0·51 | 0·47 | 0·38 | 0·32 |\n\nPVIF(10%, 6) = 4·36, PVIFA (10%, 12) = 6·81\n\nRequired:\nAnalyze and Recommend which machine should be purchased.",
+    "parent_ref": "3",
+    "explanation_md": "Equivalent Annualized Cost (EAC) = ₹ 9,85,022 (Machine BX-life 12 year)\nEquivalent Annualized Cost (EAC) = ₹ 11,01,651 (Machine SW-life 6 year)\nRecommendation:\nSince the annualized equivalent Cost of Machine BX (₹ 9,85,022) is lower than that of Machine SW (₹ 11,01,651), the Machine BX should be purchased.",
+    "reference_solution_md": "Equivalent Annualized Cost (EAC) = ₹ 9,85,022 (Machine BX-life 12 year)\nEquivalent Annualized Cost (EAC) = ₹ 11,01,651 (Machine SW-life 6 year)\nRecommendation:\nSince the annualized equivalent Cost of Machine BX (₹ 9,85,022) is lower than that of Machine SW (₹ 11,01,651), the Machine BX should be purchased.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.56,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 21,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "BIVON Ltd., a manufacturing company, manufactures 3 products VN, DN and XN. Due to scarcity of machine hours, management of BIVON Ltd., is planning to adopt Throughput Accounting in the company. The informations pertaining to the three products are as follows:\n\n| | VN | DN | XN |\n|---|---|---|---|\n| Selling price per unit | ₹ 5,000 | ₹ 4,000 | ₹ 3,500 |\n| Material Cost per unit | ₹ 2,500 | ₹ 2,500 | ₹ 2,000 |\n| Machine Hours required | 5 | 6 | 4 |\n| Maximum annual demand | 3000 units | 4000 units | 2000 units |\n\nTotal factory cost is ₹ 1,05,00,000 and available machine hours are 35000 hours.\n\nBIVON Ltd. has to supply 2500 units of product DN to Beta Ltd. as per a court judgement which cannot be denied.\n\nRequired:\n(i) Rank the products using Throughput Accounting and prepare a statement showing Optimal Mix for maximization of profit.\n(ii) Whether court Judgement has affected the Optimum Plan of profit of the company, if yes, by which amount?",
+    "parent_ref": "4",
+    "explanation_md": "(i) Statement of Ranking\n\n| Particulars | VN | DN | XN |\n|---|---|---|---|\n| Selling price per unit | ₹ 5000 | ₹ 4000 | ₹ 3500 |\n| Less: Material cost per unit | ₹ 2500 | ₹ 2500 | ₹ 2000 |\n| Throughput per unit | ₹ 2500 | ₹ 1500 | ₹ 1500 |\n| Throughput Return per hour | ₹ 500 | ₹ 250 | ₹ 375 |\n| Throughput Accounting Ratio | 1.67 | 0.83 | 1.25 |\n| Ranking | I | III | II |\n\nStatement showing optimal mix for maximization of profit\n\n| Product | No. of units | Total Machine hours | T/P per hr. (₹) | Total T/P (₹) |\n|---|---|---|---|---|\n| DN to Beta Ltd. | 2500 | 15000 | 250 | 37,50,000 |\n| VN | 3000 | 15000 | 500 | 75,00,000 |\n| XN | 1250 | 5000 | 375 | 18,75,000 |\n| Total | | | | 1,31,25,000 |\n| Less : Total Factory cost | | | | 1,05,00,000 |\n| Profit | | | | 26,25,000 |\n\n(ii) Statement showing optimal plan of profit if there is no such court’s judgement:\n\n| Product | No. of units | Total Machine hours | T/P per hr. (₹) | Total T/P (₹) |\n|---|---|---|---|---|\n| VN | 3000 | 15,000 | 500 | 75,00,000 |\n| XN | 2000 | 8,000 | 375 | 30,00,000 |\n| DN | 2000 | 12,000 | 250 | 30,00,000 |\n| Total | | | | 1,35,00,000 |\n| Less: Total Factory Cost | | | | 1,05,00,000 |\n| Profit | | | | 30,00,000 |\n\nFrom the above Calculation, we can say that court’s judgement has affected the optimal plan of Profit.\nDue to court’s judgement profit of the company has been reduced by ₹ 3,75,000",
+    "reference_solution_md": "(i) Statement of Ranking\n\n| Particulars | VN | DN | XN |\n|---|---|---|---|\n| Selling price per unit | ₹ 5000 | ₹ 4000 | ₹ 3500 |\n| Less: Material cost per unit | ₹ 2500 | ₹ 2500 | ₹ 2000 |\n| Throughput per unit | ₹ 2500 | ₹ 1500 | ₹ 1500 |\n| Throughput Return per hour | ₹ 500 | ₹ 250 | ₹ 375 |\n| Throughput Accounting Ratio | 1.67 | 0.83 | 1.25 |\n| Ranking | I | III | II |\n\nStatement showing optimal mix for maximization of profit\n\n| Product | No. of units | Total Machine hours | T/P per hr. (₹) | Total T/P (₹) |\n|---|---|---|---|---|\n| DN to Beta Ltd. | 2500 | 15000 | 250 | 37,50,000 |\n| VN | 3000 | 15000 | 500 | 75,00,000 |\n| XN | 1250 | 5000 | 375 | 18,75,000 |\n| Total | | | | 1,31,25,000 |\n| Less : Total Factory cost | | | | 1,05,00,000 |\n| Profit | | | | 26,25,000 |\n\n(ii) Statement showing optimal plan of profit if there is no such court’s judgement:\n\n| Product | No. of units | Total Machine hours | T/P per hr. (₹) | Total T/P (₹) |\n|---|---|---|---|---|\n| VN | 3000 | 15,000 | 500 | 75,00,000 |\n| XN | 2000 | 8,000 | 375 | 30,00,000 |\n| DN | 2000 | 12,000 | 250 | 30,00,000 |\n| Total | | | | 1,35,00,000 |\n| Less: Total Factory Cost | | | | 1,05,00,000 |\n| Profit | | | | 30,00,000 |\n\nFrom the above Calculation, we can say that court’s judgement has affected the optimal plan of Profit.\nDue to court’s judgement profit of the company has been reduced by ₹ 3,75,000",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.16,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 23,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What is Lean Accounting? Append the Principles and Practices of Lean Accounting.",
+    "parent_ref": "4",
+    "explanation_md": "Lean Accounting:\nLean Accounting is the application of Lean thinking to all accounting and finance process and system. It is an essential component of a successful Lean transformation for any organization. Lean accounting uses a method that categorizes costs by value stream rather than by department. This approach “provides the basis for sound management decisions”. Lean accounting groups together costs that fall outside of the value stream as “business sustaining costs” that do not get included in value stream costs. This, in turn, helps the businesses to find better price points for products and do further research into high-cost areas. The bottom line is that Lean accounting can help business leaders quickly know if they are heading in the right direction or need to make a change.\n\nThe principles and Practices of Lean Accounting are appended in the following table:\n\n| Principles | Practices |\n|---|---|\n| Lean & Simple Business Accounting | Continuously eliminates waste from the transactions, processes, reports, and other accounting methods. |\n| Accounting process that supports lean transformation | Management Control & Continuous improvement. Cost Management. Customer & supplier value and Cost Management. |\n| Clear & Timely Communication of information | Financial reporting. Visual reporting of financial & non-financial performance measurements. Decision making |\n| Planning from a lean perspective | Planning & Budgeting. Impact of lean improvement. Capital planning. Invest in people |\n| Strengthen internal accounting control | Internal control based on Lean Operational Controls. Inventory Valuation. |",
+    "reference_solution_md": "Lean Accounting:\nLean Accounting is the application of Lean thinking to all accounting and finance process and system. It is an essential component of a successful Lean transformation for any organization. Lean accounting uses a method that categorizes costs by value stream rather than by department. This approach “provides the basis for sound management decisions”. Lean accounting groups together costs that fall outside of the value stream as “business sustaining costs” that do not get included in value stream costs. This, in turn, helps the businesses to find better price points for products and do further research into high-cost areas. The bottom line is that Lean accounting can help business leaders quickly know if they are heading in the right direction or need to make a change.\n\nThe principles and Practices of Lean Accounting are appended in the following table:\n\n| Principles | Practices |\n|---|---|\n| Lean & Simple Business Accounting | Continuously eliminates waste from the transactions, processes, reports, and other accounting methods. |\n| Accounting process that supports lean transformation | Management Control & Continuous improvement. Cost Management. Customer & supplier value and Cost Management. |\n| Clear & Timely Communication of information | Financial reporting. Visual reporting of financial & non-financial performance measurements. Decision making |\n| Planning from a lean perspective | Planning & Budgeting. Impact of lean improvement. Capital planning. Invest in people |\n| Strengthen internal accounting control | Internal control based on Lean Operational Controls. Inventory Valuation. |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.09,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 24,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Eighteen workers (12 Type I workers and 6 Type II workers) work in a production process of RONT Ltd. during a month of 25 working days. Each Type I worker is expected to produce 8 units per day and Type II worker is expected to produce 10 units per day. They work on the regular shift from 9:00 a.m. to 5:00 p.m. and have a tea break between 10:30 to 10:45 a.m. and 3:00 to 3:15 p.m. and also have a lunch break from 1:00 to 1:30 p.m. The actual production was 2000 units by Type I workers and 1200 units by Type II workers. The standard wage rate per hour were ₹ 80 and ₹ 90 for Type I and Type II workers respectively and corresponding actuals were ₹ 90 and ₹ 100 respectively. During the month, 16 hours were lost actually for both types of workers, which is also as per expectation for waiting for materials and inspection.\n\nNote: Normal waiting and breaks time are included in standard hours for production.\n\nRequired:\nAnalyse and calculate the following:\n(i) Standard Labour Cost for the month\n(ii) Labour Cost Variance\n(iii) Labour Efficiency Variance\n(iv) Idle Time Variance",
+    "parent_ref": "5",
+    "explanation_md": "| | Type I | Type II | Total (₹) |\n|---|---|---|---|\n| Std. Labour Cost (₹) | 1,60,000 | 86,400 | 2,46,400 |\n| Labour Cost Variance (₹) | 56000 (A) | 33600 (A) | 89,600 (A) |\n| Efficiency Variance (₹) | 32000 (A) | 21600 (A) | 53600 (A) |\n| Idle Time Variance ** (₹) | Nil | Nil | 0 |\n\n** Since normal waiting and break are included in standard hours of production",
+    "reference_solution_md": "| | Type I | Type II | Total (₹) |\n|---|---|---|---|\n| Std. Labour Cost (₹) | 1,60,000 | 86,400 | 2,46,400 |\n| Labour Cost Variance (₹) | 56000 (A) | 33600 (A) | 89,600 (A) |\n| Efficiency Variance (₹) | 32000 (A) | 21600 (A) | 53600 (A) |\n| Idle Time Variance ** (₹) | Nil | Nil | 0 |\n\n** Since normal waiting and break are included in standard hours of production",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.87,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 26,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ZOSIN Ltd., a manufacturing company using the budgetary control and standard costing system, has furnished the following information:\n\n| | |\n|---|---|\n| Standard overhead absorption rate per unit | ₹ 20 |\n| Standard rate per hour | ₹ 4 |\n| Budgeted production | 12000 units |\n| Actual production | 15560 units |\n| Actual working hours | 74000 |\n\nActual overheads amounted to ₹ 2,95,000 out of which ₹ 62,500 are fixed.\n\nOverheads are based on the following flexible budget:\n\n| Production (units) | Total overheads (₹) |\n|---|---|\n| 8000 | 1,80,000 |\n| 10000 | 2,10,000 |\n| 14000 | 2,70,000 |\n\nRequired:\nAnalyse and calculate the following overheads variances on the basis of hours :\n(i) Variable Overhead Efficiency variance\n(ii) Variable Overhead Expenditure variance\n(iii) Fixed Overhead Efficiency variance\n(iv) Fixed Overhead Capacity variance",
+    "parent_ref": "5",
+    "explanation_md": "(i) Variable Overhead Efficiency Variance = ₹ 11,400 (F)\n(ii) Variable Overhead Expenditure Variance = ₹ 10,500 (A) or ₹ 10,501 (A)\n(iii) Fixed Overhead Efficiency Variance = ₹ 3,800 (F)\n(iv) Fixed Overhead Capacity Variance = ₹ 14,000 (F)",
+    "reference_solution_md": "(i) Variable Overhead Efficiency Variance = ₹ 11,400 (F)\n(ii) Variable Overhead Expenditure Variance = ₹ 10,500 (A) or ₹ 10,501 (A)\n(iii) Fixed Overhead Efficiency Variance = ₹ 3,800 (F)\n(iv) Fixed Overhead Capacity Variance = ₹ 14,000 (F)",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.89,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 27,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "FAMC Ltd., a manufacturing company produces three products A, B and C. It uses two types of raw materials I and II of which 5000 and 7500 units respectively are available. The raw material requirements per unit of the products are given below:\n\n| Raw Material | Requirement per unit of Product: A | Requirement per unit of Product: B | Requirement per unit of Product: C |\n|---|---|---|---|\n| I | 3 | 4 | 5 |\n| II | 5 | 3 | 5 |\n\nThe labour time for each unit of product A is twice that of product B and three times that of product C. The entire labour force of the firm can produce the equivalent of 3,000 units. The minimum demand of the three products is 600, 650 and 500 units respectively. Also the ratios of the number of units produced must be equal to 2 : 3 : 4. The profits per unit of A, B and C are ₹ 50, ₹ 50 and ₹ 80 respectively.\n\nRequired:\nAnalyze and Formulate the problem as a linear programming model in order to determine the number of units of each product which will maximize the profit.",
+    "parent_ref": "6",
+    "explanation_md": "Let the firm produce $X_1$ units of product A, $X_2$ units of product B and $X_3$ units of product C. The profit per unit of products A, B and C is ₹ 50, ₹ 50 and ₹ 80 respectively.\nThe objective function is : Maximise $Z = 50X_1 + 50X_2 + 80X_3$\nRaw material constraints are : $3X_1 + 4X_2 + 5X_3 \\leq 5{,}000$ & $5X_1 + 3X_2 + 5X_3 \\leq 7{,}500$\nThe labour time for each unit of product A is twice that of product B and three times that of product C. Also, the entire labour force can produce the equivalent of 3000 units.\n\n$$\nX_1 + \\frac{X_2}{2} + \\frac{X_3}{3} \\leq 3000\n$$\n\n$6X_1 + 3X_2 + 2X_3 \\leq 18{,}000$\nDemand constraints are: $X_1 \\geq 600$, $X_2 \\geq 650$ and $X_3 \\geq 500$\nSince the ratios of the number of units produced must be equal to 2 : 3 : 4, therefore,\n$\\frac{1}{2}X_1 = \\frac{1}{3}X_2$ and $\\frac{1}{3}X_2 = \\frac{1}{4}X_3$\nOr, $3X_1 = 2X_2$ and $4X_2 = 3X_3$\n\nThe linear programming model can be formulated as follows:\nMaximise $Z = 50X_1 + 50X_2 + 80X_3$\nSubject to the Constraints\n\n$$\n\\begin{aligned}\n3X_1 + 4X_2 + 5X_3 &\\leq 5000 \\\\\n5X_1 + 3X_2 + 5X_3 &\\leq 7500 \\\\\n6X_1 + 3X_2 + 2X_3 &\\leq 18000 \\\\\n3X_1 = 2X_2 \\text{ and } 4X_2 &= 3X_3 \\\\\nX_1 \\geq 600,\\ X_2 \\geq 650 \\text{ and } X_3 &\\geq 500\n\\end{aligned}\n$$",
+    "reference_solution_md": "Let the firm produce $X_1$ units of product A, $X_2$ units of product B and $X_3$ units of product C. The profit per unit of products A, B and C is ₹ 50, ₹ 50 and ₹ 80 respectively.\nThe objective function is : Maximise $Z = 50X_1 + 50X_2 + 80X_3$\nRaw material constraints are : $3X_1 + 4X_2 + 5X_3 \\leq 5{,}000$ & $5X_1 + 3X_2 + 5X_3 \\leq 7{,}500$\nThe labour time for each unit of product A is twice that of product B and three times that of product C. Also, the entire labour force can produce the equivalent of 3000 units.\n\n$$\nX_1 + \\frac{X_2}{2} + \\frac{X_3}{3} \\leq 3000\n$$\n\n$6X_1 + 3X_2 + 2X_3 \\leq 18{,}000$\nDemand constraints are: $X_1 \\geq 600$, $X_2 \\geq 650$ and $X_3 \\geq 500$\nSince the ratios of the number of units produced must be equal to 2 : 3 : 4, therefore,\n$\\frac{1}{2}X_1 = \\frac{1}{3}X_2$ and $\\frac{1}{3}X_2 = \\frac{1}{4}X_3$\nOr, $3X_1 = 2X_2$ and $4X_2 = 3X_3$\n\nThe linear programming model can be formulated as follows:\nMaximise $Z = 50X_1 + 50X_2 + 80X_3$\nSubject to the Constraints\n\n$$\n\\begin{aligned}\n3X_1 + 4X_2 + 5X_3 &\\leq 5000 \\\\\n5X_1 + 3X_2 + 5X_3 &\\leq 7500 \\\\\n6X_1 + 3X_2 + 2X_3 &\\leq 18000 \\\\\n3X_1 = 2X_2 \\text{ and } 4X_2 &= 3X_3 \\\\\nX_1 \\geq 600,\\ X_2 \\geq 650 \\text{ and } X_3 &\\geq 500\n\\end{aligned}\n$$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 29,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "MOSAN Ltd., an International tourist company deals with numerous personal callers each day and prides itself on its level of service. The time to deal with each caller depends on the client’s requirements which range from, say a request for a brochure to booking a round-the-world-cruise. If a client has to wait for more than 10 minutes for attention, it is company’s policy for the manager to see him personally and to give him a holiday voucher worth ₹ 15.\n\nThe company’s observations have shown that the time taken to deal with clients and the arrival pattern of their calls follow the following distribution pattern:\n\n| Time to deal with clients | Minutes | 2 | 4 | 6 | 10 | 14 | 20 | 30 |\n|---|---|---|---|---|---|---|---|---|\n| | Probability | 0·05 | 0·10 | 0·15 | 0·30 | 0·25 | 0·10 | 0·05 |\n\n| Time between call arrivals | Minutes | 1 | 8 | 15 | 25 |\n|---|---|---|---|---|---|\n| | Probability | 0·2 | 0·4 | 0·3 | 0·1 |\n\nRequired :\n(i) Demonstrate how you would simulate the operation of the travel agency based on the use of random number tables.\n(ii) Simulate the arrival and serving of 12 clients and show the number of clients who receive a voucher (use Line 1 of the random numbers below to derive the arrival pattern and Line 2 for serving times)\n\nNote: for using Random Number.\n\n```text\n| Line 1 | 3 | 47 | 43 | 73 | 86 | 36 | 96 | 47 | 36 | 61 | 46 | 98 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| Line 2 | 63 | 71 | 62 | 33 | 26 | 16 | 80 | 45 | 60 | 11 | 14 | 10 |\n```",
+    "parent_ref": "6",
+    "explanation_md": "(i) & (ii) Time to deal with Clients :\n\n| Time (Minutes) | Probability | Cumulative Probability | Assigned Random Number |\n|---|---|---|---|\n| 2 | 0.05 | 0.05 | 00 – 04 |\n| 4 | 0.10 | 0.15 | 05 – 14 |\n| 6 | 0.15 | 0.30 | 15 – 29 |\n| 10 | 0.30 | 0.60 | 30 – 59 |\n| 14 | 0.25 | 0.85 | 60 – 84 |\n| 20 | 0.10 | 0.95 | 85 – 94 |\n| 30 | 0.05 | 1.00 | 95 – 99 |\n\nTime between arrivals:\n\n| Time (Minutes) | Probability | Cumulative Probability | Assigned Random Number |\n|---|---|---|---|\n| 1 | 0.2 | 0.2 | 00 – 19 |\n| 8 | 0.4 | 0.6 | 20 – 59 |\n| 15 | 0.3 | 0.9 | 60 – 89 |\n| 25 | 0.1 | 1.0 | 90 – 99 |\n\nSimulation table for time between arrivals and service time:\n\n| Client | RN for arrival | Time Between Arrival | Arrival Time | Time in Service | RN for Serving | Service Time | Time out | Waiting Time |\n|---|---|---|---|---|---|---|---|---|\n| 1 | 3 | 1 | 1 | 1 | 63 | 14 | 15 | -- |\n| 2 | 47 | 8 | 9 | 15 | 71 | 14 | 29 | 6 |\n| 3 | 43 | 8 | 17 | 29 | 62 | 14 | 43 | 12 |\n| 4 | 73 | 15 | 32 | 43 | 33 | 10 | 53 | 11 |\n| 5 | 86 | 15 | 47 | 53 | 26 | 6 | 59 | 6 |\n| 6 | 36 | 8 | 55 | 59 | 16 | 6 | 65 | 4 |\n| 7 | 96 | 25 | 80 | 80 | 80 | 14 | 94 | -- |\n| 8 | 47 | 8 | 88 | 94 | 45 | 10 | 104 | 6 |\n| 9 | 36 | 8 | 96 | 104 | 60 | 14 | 118 | 8 |\n| 10 | 61 | 15 | 111 | 118 | 11 | 4 | 122 | 7 |\n| 11 | 46 | 8 | 119 | 122 | 14 | 4 | 126 | 3 |\n| 12 | 98 | 25 | 144 | 144 | 10 | 4 | 148 | -- |\n\nIf a client has to wait for more than 10 minutes, he is entitled for a holiday voucher worth ₹ 15. It is obvious from the above table that Clients 3 & 4 wait for more than 10 minutes. Hence, number of clients who receive a holiday voucher is 2.",
+    "reference_solution_md": "(i) & (ii) Time to deal with Clients :\n\n| Time (Minutes) | Probability | Cumulative Probability | Assigned Random Number |\n|---|---|---|---|\n| 2 | 0.05 | 0.05 | 00 – 04 |\n| 4 | 0.10 | 0.15 | 05 – 14 |\n| 6 | 0.15 | 0.30 | 15 – 29 |\n| 10 | 0.30 | 0.60 | 30 – 59 |\n| 14 | 0.25 | 0.85 | 60 – 84 |\n| 20 | 0.10 | 0.95 | 85 – 94 |\n| 30 | 0.05 | 1.00 | 95 – 99 |\n\nTime between arrivals:\n\n| Time (Minutes) | Probability | Cumulative Probability | Assigned Random Number |\n|---|---|---|---|\n| 1 | 0.2 | 0.2 | 00 – 19 |\n| 8 | 0.4 | 0.6 | 20 – 59 |\n| 15 | 0.3 | 0.9 | 60 – 89 |\n| 25 | 0.1 | 1.0 | 90 – 99 |\n\nSimulation table for time between arrivals and service time:\n\n| Client | RN for arrival | Time Between Arrival | Arrival Time | Time in Service | RN for Serving | Service Time | Time out | Waiting Time |\n|---|---|---|---|---|---|---|---|---|\n| 1 | 3 | 1 | 1 | 1 | 63 | 14 | 15 | -- |\n| 2 | 47 | 8 | 9 | 15 | 71 | 14 | 29 | 6 |\n| 3 | 43 | 8 | 17 | 29 | 62 | 14 | 43 | 12 |\n| 4 | 73 | 15 | 32 | 43 | 33 | 10 | 53 | 11 |\n| 5 | 86 | 15 | 47 | 53 | 26 | 6 | 59 | 6 |\n| 6 | 36 | 8 | 55 | 59 | 16 | 6 | 65 | 4 |\n| 7 | 96 | 25 | 80 | 80 | 80 | 14 | 94 | -- |\n| 8 | 47 | 8 | 88 | 94 | 45 | 10 | 104 | 6 |\n| 9 | 36 | 8 | 96 | 104 | 60 | 14 | 118 | 8 |\n| 10 | 61 | 15 | 111 | 118 | 11 | 4 | 122 | 7 |\n| 11 | 46 | 8 | 119 | 122 | 14 | 4 | 126 | 3 |\n| 12 | 98 | 25 | 144 | 144 | 10 | 4 | 148 | -- |\n\nIf a client has to wait for more than 10 minutes, he is entitled for a holiday voucher worth ₹ 15. It is obvious from the above table that Clients 3 & 4 wait for more than 10 minutes. Hence, number of clients who receive a holiday voucher is 2.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.35,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "ref_suffix": "q7",
+    "depth": 0,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "JOBSON Ltd., a manufacturer of plant and machinery is in the process of quoting a tender called by ZOYB Ltd. Delivery date once promised is crucial and penalty clause is applicable. The Project Manager of JOBSON Ltd. has listed down the activities of the project as under:\n\n| ACTIVITY (i – j) | Optimistic (a) | Most likely (m) | Pessimistic (b) |\n|---|---|---|---|\n| (Estimated Duration in Weeks) | | | |\n| 1 – 2 | 1 | 1 | 7 |\n| 1 – 3 | 1 | 4 | 7 |\n| 1 – 4 | 2 | 2 | 8 |\n| 2 – 5 | 1 | 1 | 1 |\n| 3 – 5 | 2 | 5 | 14 |\n| 4 – 6 | 2 | 5 | 8 |\n| 5 – 6 | 3 | 6 | 15 |\n\nRequired:\n(i) Design the project network and indicate all the paths through it.\n(ii) Analyse the expected duration and variances for each activity and Assess project length.\n(iii) Calculate the standard deviation of the project length and critically assess the probability that the project will be completed:\n (a) At least 3 weeks earlier than expected time.\n (b) No more than 3 weeks later than expected time.\n(iv) If the project due date is 18 weeks, assess the probability of not meeting the due date.\n\nGiven: Table for areas under normal curve for 0 to Z.\n\n| Z = 0 to Z | 0.10 | 0.33 | 0.67 | 1.00 | 1.33 | 2.00 |\n|---|---|---|---|---|---|---|\n| Table Value | 0.0398 | 0.1293 | 0.2486 | 0.3413 | 0.4082 | 0.4772 |",
+    "choice_group_ref": "secB",
+    "explanation_md": "(i) The network as below :\n[Network diagram not available in text]\n\n(ii) Critical path is 1 – 3 – 5 – 6\nThe total project duration is sum of the duration of each critical activity, i.e. 4 + 6 + 7 = 17 Weeks.\n(iii) Variance of the critical path is sum of the variance of each critical activity, i.e. 1 + 4 + 4 = 9 Weeks.\nOR, S.D. = $\\sqrt{\\text{Variance of the Project}} = 3$\n\n(a) At least 3 weeks earlier than expected :\nThe Standard normal equation can be applied as follows:\n\n$$\nZ = \\frac{\\text{Due date} - \\text{Expected date of Completion}}{\\text{S.D.}} = \\frac{-3}{3} = -1\n$$\n\nReferring to the normal table, we find a probability of = 0.1587 i.e. 15.87 %\n(b) No more than 3 weeks later than expected:\n\n$$\nZ = \\frac{20 - 17}{3} = 1\n$$\n\nProbability = (0.50 + 0.3413) = 0.8413 i.e. 84.13%\n(iv) $Z = \\frac{18 - 17}{3} = 0.33$\nTherefore, Probability of meeting the due date = 0.50 + 0.1293 = 0.6293 i.e. 62.93%\nProbability of not meeting the due date = (1 – 0.6293) = 0.3707 = 0.3707 i.e. 37.07%",
+    "reference_solution_md": "(i) The network as below :\n[Network diagram not available in text]\n\n(ii) Critical path is 1 – 3 – 5 – 6\nThe total project duration is sum of the duration of each critical activity, i.e. 4 + 6 + 7 = 17 Weeks.\n(iii) Variance of the critical path is sum of the variance of each critical activity, i.e. 1 + 4 + 4 = 9 Weeks.\nOR, S.D. = $\\sqrt{\\text{Variance of the Project}} = 3$\n\n(a) At least 3 weeks earlier than expected :\nThe Standard normal equation can be applied as follows:\n\n$$\nZ = \\frac{\\text{Due date} - \\text{Expected date of Completion}}{\\text{S.D.}} = \\frac{-3}{3} = -1\n$$\n\nReferring to the normal table, we find a probability of = 0.1587 i.e. 15.87 %\n(b) No more than 3 weeks later than expected:\n\n$$\nZ = \\frac{20 - 17}{3} = 1\n$$\n\nProbability = (0.50 + 0.3413) = 0.8413 i.e. 84.13%\n(iv) $Z = \\frac{18 - 17}{3} = 0.33$\nTherefore, Probability of meeting the due date = 0.50 + 0.1293 = 0.6293 i.e. 62.93%\nProbability of not meeting the due date = (1 – 0.6293) = 0.3707 = 0.3707 i.e. 37.07%",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.64,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 31,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 32,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ZUZOO Ltd., a Mobile manufacturer produces χ sets per week at total cost of χ² + 78χ + 300. ZUZOO Ltd. is a monopolist and demand function for the product is χ = (600 –P)/8 when price in rupees is P per set.\n\nRequired:\n(i) Analyze the Optimal (Profit maximizing) production per week.\n(ii) Assess the monopoly price per week.\n(iii) Assess the Total Cost and Profit at the optimal production.",
+    "parent_ref": "8",
+    "explanation_md": "(i) Optimal Production per week = 29 sets\n(ii) Monopoly Price = ₹ 368\n(iii) Total Cost = ₹ 3,403\nTotal Profit = ₹ 7,269",
+    "reference_solution_md": "(i) Optimal Production per week = 29 sets\n(ii) Monopoly Price = ₹ 368\n(iii) Total Cost = ₹ 3,403\nTotal Profit = ₹ 7,269",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.72,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "From the following data fit a Straight Line trend by the Method of Least Squares and assess the export turnover in the year 2025.\n\n| Year | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 |\n|---|---|---|---|---|---|---|---|\n| Exports (Figures in crores) | 20 | 22 | 25 | 27 | 26 | 30 | 32 |",
+    "parent_ref": "8",
+    "explanation_md": "The required equation of Straight line trend is $y = 26 + 1.893x$\n(Origin = 2018, $x$ unit = 1 year)\n\nExport Turnover for Year 2025:\nFor the year 2025, $x = 7$\nSo, the estimated no. of exports in the year 2025:\n= ₹ 39.25 Crores",
+    "reference_solution_md": "The required equation of Straight line trend is $y = 26 + 1.893x$\n(Origin = 2018, $x$ unit = 1 year)\n\nExport Turnover for Year 2025:\nFor the year 2025, $x = 7$\nSo, the estimated no. of exports in the year 2025:\n= ₹ 39.25 Crores",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "introduction-to-tools-for-data-analytics",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(vii)": [
+   "Printed key A matches stored key A",
+   "Decimal point printed as middle dot, kept as {\\cdot}"
+  ],
+  "1(xii)": [
+   "Printed key C matches stored key C",
+   "Removed the bracketed 'i.e. R = (1/3)x^3 – x^2 + 10x + 5' that is not in the print (extraction artefact); print uses chi-like x with superscripts"
+  ],
+  "6(a)": [
+   "Replaced the garbled labour-constraint line in source text with the printed stacked-fraction inequality",
+   "Printed 'Or, 3X1 = 2X2 and 4X2 = 3X3' kept; printed 18000 kept"
+  ],
+  "7": [
+   "Network diagram is a figure and not reproduced",
+   "Printed 'Z = 0.33' kept (print also has 'Z = 0.33' for 0.333); 'Probability = 0.3707 = 0.3707' duplication is as printed"
+  ]
+ },
+ "review_decisions": {
+  "1(ix)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key D equals the printed key (D).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (D) '(B) and (C) only' for a 'not features' stem looks odd; kept as printed"
+   ],
+   "by": "claude-review"
+  },
+  "1(xii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key C equals the printed key (C) (marginal revenue 25 gives x = 5).",
+   "fixes": [],
+   "printed_issues": [
+    "Print sets the exponents of x in the revenue equation on the baseline (looks like x3 and x2); typeset as cubic and square as intended"
+   ],
+   "by": "claude-review"
+  },
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem tables, further information and requirements (a)-(c) compared with the print; the answer prints only final figures and matches them.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem table heading restored to the printed group heading; the formulation in the answer matches the printed steps, constraints and final model.",
+   "fixes": [
+    "Replaced the added note '(Column heading: Requirement per unit of Product)' by the printed group heading in the column titles"
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "7": {
+   "verdict": "approve",
+   "reason": "Stem table, requirements and normal-area table match the print; the written answer matches; the network diagram is an image and the remaining answer stands alone.",
+   "fixes": [],
+   "printed_issues": [
+    "Network diagram printed only as an image, not reproduced",
+    "Print gives Z = 0.33 for 0.333 and 'Probability = 0.3707 = 0.3707'",
+    "Part (ii) does not tabulate expected durations and variances of each activity"
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 27,
+  "draft_parts": 0,
+  "answered": 27
+ }
+}

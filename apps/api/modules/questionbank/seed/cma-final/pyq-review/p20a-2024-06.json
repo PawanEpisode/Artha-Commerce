@@ -1,0 +1,68 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p20a-2024-06",
+ "items": {
+  "1(viii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key C equals printed key (viii) (C).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says 'Annual Report 2024 of FinPoor Limited' but the balance sheet is titled 'Balance Sheet of Stress Limited'"
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Balanced scorecard measures are placed under the same perspectives as in the printed table.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  }
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p17-2025-06",
+ "items": {
+  "7(b)": {
+   "answer_md": "Capacity utilization refers to the extent a company or economy uses its productive resources (like equipment, labour, and facilities) to generate output, expressed as a percentage of potential output. It's calculated by dividing the actual output by the potential output and multiplying by 100 to express it as a percentage.\n\nFormula: $(\\text{Actual Output} / \\text{Maximum possible Output}) \\times 100 = \\text{Capacity Utilization Rate}$.\n\nThe capacity utilization rate is an important indicator for companies because it can be used to assess operating efficiency and provides an insight into cost structure. It can be used to determine the level at which costs per unit go up or down. When there is a rise in output, the average cost of production will decrease.\n\nIt is one of the Key Performance Areas of Operational Efficiency which Management Auditor should focus on. In general terms, Capacity utilization indicates how well the resources available to the Management have been utilized. The resources may include Plant & Machinery, Building, Land, Raw Materials, Manpower, Utilities etc. Understanding capacity utilization helps businesses assess their operational efficiency, identify areas for improvement, and make informed decisions about resource allocation and investment. For Higher capacity utilization, reduced cost of production adds to profitability. For lower capacity utilization, the reasons may be identified as to\n\n1) Machine Break Down- Better maintenance required.\n2) Loss of Market share- To focus on product quality or renovation.\n3) Non-availability of key raw materials- To develop new vendors, alternately look for in-house material production\n4) Non-availability of power- Arrange for captive power plant.",
+   "confidence": "high",
+   "review": [
+    "Formula typeset as math; the page-footer text 'Page 9 of 12' that had leaked into the stored answer removed (page break joined)."
+   ]
+  }
+ }
+}

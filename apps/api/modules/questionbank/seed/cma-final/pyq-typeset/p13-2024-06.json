@@ -1,0 +1,14 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p13-2024-06",
+ "items": {
+  "4(a)": {
+   "answer_md": "(i) **Whether RR Ltd comes within the purview of CSR Regulations**\n\nAs per section 135(1) of the Companies Act, 2013, the CSR regulations will apply where any of the following conditions are fulfilled:\n\n- Net worth of Rs. 500 crores or more, or\n- Turnover of Rs.1000 or more, or\n- Net profit of Rs. 5 crores\n\nSince RR Ltd. fulfils the net profit criteria, CSR Regulations will apply.\n\n(ii) Formation of CSR Committee Yes, where a company comes under the purview of section 135 of the Act, CSR Committee is required to be formed.\n\n(iii) Minimum budget for CSR for 2023-24 Average profits for the last 3 years = $6.9+7.9+8.9=23.7/3=7.9$ crores Minimum budget for CSR for 2023-24= 2% of 7.9 = Rs.15.8 lakhs\n\n(iv) **Other CSR obligations**\n\n- The amount has to be spent before the end of the financial year.\n- The details of the CSR spending have to be furnished in the Report of the Board of Directors.\n- Form CSR 1 has to be filed.",
+   "confidence": "high",
+   "review": [
+    "Only the average-profit working typeset; stem and table already match the print.",
+    "Institute text kept as printed: 'Turnover of Rs.1000 or more' (no unit), average of 3 years taken as 6.9+7.9+8.9 (2020-21 to 2022-23), '2% of 7.9 = Rs.15.8 lakhs' (units as printed)."
+   ]
+  }
+ }
+}

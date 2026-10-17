@@ -1,0 +1,997 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "16",
+ "source_file": "pyq-transcriptions/p16-2024-12.json",
+ "paper_review": [
+  "Page 12 of qp.pdf is a blank back page (bleed-through only)."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p16:2024-12",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-cost-management",
+  "term_code": "2024-12",
+  "title": "CMA Final December 2024: Strategic Cost Management (Paper 16)",
+  "paper_code": "P16",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct option from the four alternatives given :  2×15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following important pillars of Strategic Cost Management determines the company’s comparative position in the industry in terms of performance ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Cost Driver Analysis",
+      "is_correct": false
+     },
+     {
+      "body_md": "Value Chain Analysis",
+      "is_correct": false
+     },
+     {
+      "body_md": "Strategic Positioning Analysis",
+      "is_correct": true
+     },
+     {
+      "body_md": "Competitive Value Analysis",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "ROTIZ Ltd., a manufacturing company has a break-even point when sales are ₹ 12,00,000 and fixed costs at that level of sales are ₹ 4,80,000.\n\nIf the margin of safety (MOS) and sales of the company are 40% and 5,00,000 units respectively, what will be the sale price per unit ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 6",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 5",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 4",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following quality costs is incurred when inferior products are delivered to customers?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Prevention Costs",
+      "is_correct": false
+     },
+     {
+      "body_md": "Appraisal Costs",
+      "is_correct": false
+     },
+     {
+      "body_md": "External Failure Costs",
+      "is_correct": true
+     },
+     {
+      "body_md": "Internal Failure Costs",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "quality-cost-management",
+    "mapping_confidence": 0.32,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "DASN Ltd., operates a throughput accounting system. The details of product MB per unit are as under :\n\n| | ₹ |\n|---|---|\n| Selling Price | 50 |\n| Material Cost | 20 |\n| Conversion Cost | 15 |\n\nIf time on bottleneck resource is 10 minutes, what will be the return per hour for product MB ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 300",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 270",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 180",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 150",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.65,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In a factory where standard costing system is followed the production department consumed 1100 kgs of a material @ ₹ 8 per kg for product X resulting in material price variance of ₹ 2200(Fav) and material usage variance of ₹ 1000(Adv). What is the standard material cost of actual production of product X?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 11,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 20,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 14,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 10,000",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.86,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "120 units of semi-conductors are required to be sold to earn a profit of ₹ 1,00,000 in a monopoly market. The fixed cost for the period is ₹ 80,000. The contribution in the monopoly market is as high as 3/4th of its variable cost. Determine the target selling price per unit.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 4,500",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 3,250",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 4,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 3,500",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.75,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The average cost function for a product is given by $AC = \\frac{1}{3}x^{2} + x + 8$, in terms of output $x$. If the marginal cost is ₹ 23 what will be the number of units (Output) ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "3",
+      "is_correct": true
+     },
+     {
+      "body_md": "4",
+      "is_correct": false
+     },
+     {
+      "body_md": "5",
+      "is_correct": false
+     },
+     {
+      "body_md": "0",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "At KL Company, cost of personnel department has always been charged to production department based upon number of employees. Recently, opinion gathered from the department managers indicate that number of new hires might be better predictor of personnel cost. Total personnel department cost are ₹ 2,00,000.\n\n| Department | A | B | C |\n|---|---|---|---|\n| Number of employees | 30 | 270 | 100 |\n| Number of new hires | 8 | 12 | 5 |\n\nIf number of new hires is considered the cost driver, what amount of cost will be allocated to Department A?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 15,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 64,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 72,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 40,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Optimistic and pessimistic time of an activity respectively are 4 days and 16 days. Variance of the duration of the activity will be:—",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "4 days",
+      "is_correct": true
+     },
+     {
+      "body_md": "2 days",
+      "is_correct": false
+     },
+     {
+      "body_md": "3 days",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.36,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The normal duration and normal cost of an activity of project BOZ are 12 days and ₹ 400 respectively. The cost slope is ₹ 80 per day, if the crash cost of the activity is ₹ 560, what will be the crash duration of the activity ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "12 Days",
+      "is_correct": false
+     },
+     {
+      "body_md": "10 Days",
+      "is_correct": true
+     },
+     {
+      "body_md": "8 Days",
+      "is_correct": false
+     },
+     {
+      "body_md": "6 Days",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.75,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which one of the following is not a Spread Sheet ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Quip",
+      "is_correct": false
+     },
+     {
+      "body_md": "MS Excel",
+      "is_correct": false
+     },
+     {
+      "body_md": "E views",
+      "is_correct": true
+     },
+     {
+      "body_md": "Google Sheets",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "\\# Script Ends – is related to which type of Programming Language ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "SPSS",
+      "is_correct": false
+     },
+     {
+      "body_md": "Python",
+      "is_correct": true
+     },
+     {
+      "body_md": "SAS",
+      "is_correct": false
+     },
+     {
+      "body_md": "R Programming",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "linear-programming",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "LONAX Ltd., a manufacturing company has developed a new product and just completed the manufacture of first 16 units of the product. If the first unit took 6 hours to manufacture and the first 16 units together took 62.9856 hours to produce, the Learning Curve (LC) rate would be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "80 %",
+      "is_correct": false
+     },
+     {
+      "body_md": "85 %",
+      "is_correct": false
+     },
+     {
+      "body_md": "90 %",
+      "is_correct": true
+     },
+     {
+      "body_md": "95 %",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "learning-curve",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In Simple Exponential Smoothing forecast to give higher weightage to recent demand information, the smoothing constant must be close to",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "–1",
+      "is_correct": false
+     },
+     {
+      "body_md": "0",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.3",
+      "is_correct": false
+     },
+     {
+      "body_md": "1",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "business-forecasting-models-time-series-and-regression-analysis",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Children’s Park in a city with various signals and crossing is the simulated model of city traffic. This is a type of",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Analogue Simulation",
+      "is_correct": true
+     },
+     {
+      "body_md": "Computer Simulation",
+      "is_correct": false
+     },
+     {
+      "body_md": "Monte Carlo Simulation",
+      "is_correct": false
+     },
+     {
+      "body_md": "Both (A) and (C) of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "business-forecasting-models-time-series-and-regression-analysis",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "ref_suffix": "q2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "GREEN SINE (C) Ltd., a cement manufacturing company, produces ‘50 grade’ cement for which the company has an assured market. The output for 2024 has been budgeted at 180000 units at 90% capacity utilization. The cost sheet based on output (per unit) is as follows :\n\n| | (₹) |\n|---|---|\n| Selling Price | 130 |\n| Direct Material | 30 |\n| Component “EX” | 9.40 |\n| Direct Wages @ Rs 7 per hour | 28 |\n| Factory Overheads (50% fixed) | 24 |\n| Selling and distribution Overheads (75% variable) | 16 |\n| Administrative Overheads (Fixed) | 5 |\n\nThe factory overheads are applied on the basis of direct labour hours.\n\nTo utilize the idle capacity and to improve the profitability of the company, the following proposal was put up before the Board of Directors for consideration :\n\nAn order has been received from abroad for 6000 units of product ‘53 grade’ cement at ₹ 175 per unit. The cost data are :\n\nDirect material ₹ 56 per unit, direct labour 10 hours per unit, selling and distribution overheads applicable to this product order is ₹ 14 per unit and variable factory overheads are chargeable on the basis of direct labour hours.\n\nThe company at present manufactures component ‘EX’ one unit of which is required for each unit of product ‘50 grade’ cement. The cost details for 15000 units of component ‘EX’ are as follows :\n\n| | (₹) |\n|---|---|\n| Direct Material | 30,000 |\n| Direct Labour | 52,500 |\n| Variable Overheads | 25,500 |\n| Fixed Overheads | 33,000 |\n| Total | 1,41,000 |\n\nThe component “EX” however is available for purchase at the market at ₹ 7.90 per unit.\n\nRequired :\n(i) Prepare a statement showing profitability of the company as envisaged in the Budget.\n(ii) Evaluate the export order and state whether it is acceptable or not.\n(iii) Make an appraisal of proposal to manufacture component “EX” and state whether component “EX” should be manufactured in the factory or purchased from the market. Assume that no alternative use of spare capacity is available.",
+    "choice_group_ref": "secB",
+    "explanation_md": "Segregation of Variable Costs and Fixed Costs:\n\n| | Cost/per unit (₹) | Variable Cost (₹/ unit) | Fixed Cost (₹) |\n|---|---|---|---|\n| Direct Material | 30.00 | 30.00 | - |\n| Component EX | 9.40 | 7.20 | 3,96,000 |\n| Direct Wages | 28.00 | 28.00 | - |\n| Factory Overhead (50% fixed) | 24.00 | 12.00 | 21,60,000 |\n| Selling & Distribution Overhead (75% variable) | 16.00 | 12.00 | 7,20,000 |\n| Administration Overhead (Fixed) | 5.00 | 0.00 | 9,00,000 |\n| Total | 112.40 | 89.20 | 41,76,000 |\n\n(i) Statement showing Profitability as envisaged in the Budget:\n\n| Units sold | 1,80,000 |\n|---|---|\n| | Amount (₹) |\n| Selling Price per unit | 130.00 |\n| Less: Variable cost per unit | 89.20 |\n| Contribution per unit | 40.80 |\n| Total Contribution | 73,44,000 |\n| Less: Fixed Cost | 41,76,000 |\n| Profit | 31,68,000 |\n\nAlternative Solution:\nStatement showing Profitability as envisaged in the Budget:\n\n| | ₹ (‘000s) | ₹ (‘000s) |\n|---|---|---|\n| Sales | | 23400 |\n| Direct Material | 5400 | |\n| Component “EX” | 1296 | |\n| Direct wages | 5040 | |\n| Variable factory overheads | 2160 | |\n| Variable selling & distribution overheads | 2160 | |\n| Total variable cost | | 16056 |\n| Contribution | | 7344 |\n| Fixed factory overheads | 2160 | |\n| Fixed selling & distribution overheads | 720 | |\n| Component “EX” | 396 | |\n| Administrative overhead | 900 | |\n| Total Fixed Cost | | 4176 |\n| Profit | | 3168 |\n\n(ii) Evaluation of Export Order:\n\n| | ₹ per Unit | ₹ per Unit |\n|---|---|---|\n| Direct material | 56 | |\n| Direct labour | 70 | |\n| Variable factory overhead | 30 | |\n| Selling and distribution overheads | 14 | |\n| Total variable cost | | 170 |\n| Selling price (export) | | 175 |\n| Contribution | | 5 |\n| Total units | | 6000 |\n| Additional contribution from export order (6000 units X ₹5) | | ₹ 30,000 |\n\nVerification of availability of Capacity to fulfill the export order:\n\n| | |\n|---|---|\n| Total labour Hours on Product 50 grade | 7,20,000 |\n| Total labour Hours on component EX | 90,000 |\n| Total hours utilised at 90% capacity | 8,10,000 |\n| Total Hours at 100% capacity | 9,00,000 |\n| Balance Hours available | 90,000 |\n| Hours required for export order | 60,000 |\n\nDecision:\nSince export order gives an additional contribution of ₹ 30,000 and availability of capacity also exists to fulfill the export order, the same is acceptable.\n\n(iii) Appraisal of Make or Buy Decision:\n\n| (per 15000 units) | Make (₹) | Buy (₹) |\n|---|---|---|\n| Direct material | 30,000 | |\n| Direct labour | 52,500 | |\n| Variable factory overhead | 25,500 | |\n| Total | 1,08,000 | 1,18,500 |\n| Per unit | 7.20 | 7.90 |\n\nDecision:\nIf the company makes the component, the out-of-pocket cost is ₹ 7.20 per unit whereas if the component is bought, the out-of-pocket cost is ₹ 7.90. Since no alternative use of spare capacity is available, it is profitable to make.",
+    "reference_solution_md": "Segregation of Variable Costs and Fixed Costs:\n\n| | Cost/per unit (₹) | Variable Cost (₹/ unit) | Fixed Cost (₹) |\n|---|---|---|---|\n| Direct Material | 30.00 | 30.00 | - |\n| Component EX | 9.40 | 7.20 | 3,96,000 |\n| Direct Wages | 28.00 | 28.00 | - |\n| Factory Overhead (50% fixed) | 24.00 | 12.00 | 21,60,000 |\n| Selling & Distribution Overhead (75% variable) | 16.00 | 12.00 | 7,20,000 |\n| Administration Overhead (Fixed) | 5.00 | 0.00 | 9,00,000 |\n| Total | 112.40 | 89.20 | 41,76,000 |\n\n(i) Statement showing Profitability as envisaged in the Budget:\n\n| Units sold | 1,80,000 |\n|---|---|\n| | Amount (₹) |\n| Selling Price per unit | 130.00 |\n| Less: Variable cost per unit | 89.20 |\n| Contribution per unit | 40.80 |\n| Total Contribution | 73,44,000 |\n| Less: Fixed Cost | 41,76,000 |\n| Profit | 31,68,000 |\n\nAlternative Solution:\nStatement showing Profitability as envisaged in the Budget:\n\n| | ₹ (‘000s) | ₹ (‘000s) |\n|---|---|---|\n| Sales | | 23400 |\n| Direct Material | 5400 | |\n| Component “EX” | 1296 | |\n| Direct wages | 5040 | |\n| Variable factory overheads | 2160 | |\n| Variable selling & distribution overheads | 2160 | |\n| Total variable cost | | 16056 |\n| Contribution | | 7344 |\n| Fixed factory overheads | 2160 | |\n| Fixed selling & distribution overheads | 720 | |\n| Component “EX” | 396 | |\n| Administrative overhead | 900 | |\n| Total Fixed Cost | | 4176 |\n| Profit | | 3168 |\n\n(ii) Evaluation of Export Order:\n\n| | ₹ per Unit | ₹ per Unit |\n|---|---|---|\n| Direct material | 56 | |\n| Direct labour | 70 | |\n| Variable factory overhead | 30 | |\n| Selling and distribution overheads | 14 | |\n| Total variable cost | | 170 |\n| Selling price (export) | | 175 |\n| Contribution | | 5 |\n| Total units | | 6000 |\n| Additional contribution from export order (6000 units X ₹5) | | ₹ 30,000 |\n\nVerification of availability of Capacity to fulfill the export order:\n\n| | |\n|---|---|\n| Total labour Hours on Product 50 grade | 7,20,000 |\n| Total labour Hours on component EX | 90,000 |\n| Total hours utilised at 90% capacity | 8,10,000 |\n| Total Hours at 100% capacity | 9,00,000 |\n| Balance Hours available | 90,000 |\n| Hours required for export order | 60,000 |\n\nDecision:\nSince export order gives an additional contribution of ₹ 30,000 and availability of capacity also exists to fulfill the export order, the same is acceptable.\n\n(iii) Appraisal of Make or Buy Decision:\n\n| (per 15000 units) | Make (₹) | Buy (₹) |\n|---|---|---|\n| Direct material | 30,000 | |\n| Direct labour | 52,500 | |\n| Variable factory overhead | 25,500 | |\n| Total | 1,08,000 | 1,18,500 |\n| Per unit | 7.20 | 7.90 |\n\nDecision:\nIf the company makes the component, the out-of-pocket cost is ₹ 7.20 per unit whereas if the component is bought, the out-of-pocket cost is ₹ 7.90. Since no alternative use of spare capacity is available, it is profitable to make.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.23,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 18,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ROXIN Ltd., has two Divisions–M and N. Division–M manufactures product A-15 which it sells in outside market as well as to Division–N which processes it to manufacture Z-25. The manager of Division–N has expressed the opinion that transfer price is too high. The two divisional managers are about to enter into discussions to resolve the conflict and manager of Division–M is to supply him with some information prior to discussions.\n\nDivision–M has been selling 50000 units to outsiders and 10000 units to Division–N all at ₹ 25 per unit. It is not anticipated that these demand will change. The variable cost is ₹ 15 per unit and the fixed costs are ₹ 3,00,000. Divisional investment in assets is ₹ 12,00,000.\n\nThe manager of Division–M anticipates that Division–N will want a transfer price of ₹ 22. If he does not sell to Division–N, ₹ 40,000 of fixed costs and ₹ 2,00,000 of assets can be avoided. The manager of Division–M would have no control over the proceeds from the sale of the assets and is judged primarily on his rate of return.\n\nRequired :\n(i) Analyze should the Manager of Division–M transfer its products at ₹ 22 to Division–N.\n(ii) Assess the lowest price that the Division–M should accept.",
+    "parent_ref": "3",
+    "explanation_md": "(i) Comparative Profitability Statement of Division M (figures in ₹):\n\n| Particulars | Sales at ₹ 25 | Transfer at ₹ 22 | Do not transfer |\n|---|---|---|---|\n| Sales Revenue: | | | |\n| Market Sales | 12,50,000 | 12,50,000 | 12,50,000 |\n| Transfer to Division | 2,50,000 | 2,20,000 | |\n| Total (A) | 15,00,000 | 14,70,000 | 12,50,000 |\n| Variable Cost (at ₹ 15 / unit) | 9,00,000 | 9,00,000 | 7,50,000 |\n| Fixed Cost | 3,00,000 | 3,00,000 | 2,60,000 |\n| Total (B) (₹) | 12,00,000 | 12,00,000 | 10,10,000 |\n| Total Profit (A – B) (₹) | 3,00,000 | 2,70,000 | 2,40,000 |\n| Total Assets (₹) | 12,00,000 | 12,00,000 | 10,00,000 |\n| ROI | 25.00% | 22.50% | 24.00% |\n\nDecision:\nManager of Division M should not transfer the product at ₹ 22 / unit to Division N because it is less than its selling price i.e. ₹ 25 / unit and will get low rate of return at ₹ 22/unit by 2.5% (25% - 22.50%).\n\n(ii) Calculation of lowest transfer price:\nThe lowest transfer price acceptable to Division M is one, which maintains its rate of return of 24% without selling to Division N\n$= (\\text{Total Sales Revenue} - \\text{Total Cost}) / \\text{Total Assets} = 0.24$.\nOr, $[(\\text{₹ }12{,}50{,}000 + 10{,}000 \\times \\text{Transfer Price (TP)}] - 12{,}00{,}000] \\div \\text{₹ }12{,}00{,}000 = 0.24$\nOr, $10{,}000\\,\\text{TP} = 2{,}88{,}000 - 50{,}000 = 2{,}38{,}000$\nOr, $\\text{TP} = 2{,}38{,}000 \\div 10{,}000 = 23.80$ i.e. ₹ 23.80\nThe lowest transfer price acceptable to Division – M is ₹ 23.80 per unit.",
+    "reference_solution_md": "(i) Comparative Profitability Statement of Division M (figures in ₹):\n\n| Particulars | Sales at ₹ 25 | Transfer at ₹ 22 | Do not transfer |\n|---|---|---|---|\n| Sales Revenue: | | | |\n| Market Sales | 12,50,000 | 12,50,000 | 12,50,000 |\n| Transfer to Division | 2,50,000 | 2,20,000 | |\n| Total (A) | 15,00,000 | 14,70,000 | 12,50,000 |\n| Variable Cost (at ₹ 15 / unit) | 9,00,000 | 9,00,000 | 7,50,000 |\n| Fixed Cost | 3,00,000 | 3,00,000 | 2,60,000 |\n| Total (B) (₹) | 12,00,000 | 12,00,000 | 10,10,000 |\n| Total Profit (A – B) (₹) | 3,00,000 | 2,70,000 | 2,40,000 |\n| Total Assets (₹) | 12,00,000 | 12,00,000 | 10,00,000 |\n| ROI | 25.00% | 22.50% | 24.00% |\n\nDecision:\nManager of Division M should not transfer the product at ₹ 22 / unit to Division N because it is less than its selling price i.e. ₹ 25 / unit and will get low rate of return at ₹ 22/unit by 2.5% (25% - 22.50%).\n\n(ii) Calculation of lowest transfer price:\nThe lowest transfer price acceptable to Division M is one, which maintains its rate of return of 24% without selling to Division N\n$= (\\text{Total Sales Revenue} - \\text{Total Cost}) / \\text{Total Assets} = 0.24$.\nOr, $[(\\text{₹ }12{,}50{,}000 + 10{,}000 \\times \\text{Transfer Price (TP)}] - 12{,}00{,}000] \\div \\text{₹ }12{,}00{,}000 = 0.24$\nOr, $10{,}000\\,\\text{TP} = 2{,}88{,}000 - 50{,}000 = 2{,}38{,}000$\nOr, $\\text{TP} = 2{,}38{,}000 \\div 10{,}000 = 23.80$ i.e. ₹ 23.80\nThe lowest transfer price acceptable to Division – M is ₹ 23.80 per unit.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.24,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 20,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "SOVAN Ltd., a manufacturing company is preparing budget for 2025. The parameters relating to sales, price and cost are as follows :\n\n| | |\n|---|---|\n| Sales Price | ₹ 200 per unit |\n| Variable Cost | ₹ 120 per unit |\n| Fixed Costs | ₹ 20,00,000 per year |\n\nSales forecast have been prepared which disclose the following :\n\n| Quantity | Probability | Quantity | Probability |\n|---|---|---|---|\n| 15000 | 0.10 | 35000 | 0.30 |\n| 20000 | 0.10 | 40000 | 0.10 |\n| 25000 | 0.10 | 45000 | 0.10 |\n| 30000 | 0.20 | - | - |\n\nRequired :\n(i) Analyze the break-even quantity.\n(ii) Analyze how many units must be sold to (a) earn a profit of ₹ 6,00,000 (b) incur a loss of ₹ 5,00,000.\n(iii) Based on the sales forecast, identify the probability that the company can break-even.\n(iv) Analyze the probability of achieving sales volumes involved in part (ii)",
+    "parent_ref": "3",
+    "explanation_md": "(i) Calculation of Break-Even Quantity:\n\n| | Amount (₹) |\n|---|---|\n| Selling Price per unit | 200 |\n| Variable Cost per unit | 120 |\n| Contribution per unit | 80 |\n| Total Fixed Costs | 20,00,000 |\n| Break Even Quantity | 25,000 |\n\n(ii)\n(a) Calculation of No. of units to earn a profit of ₹ 6,00,000:\n\n| | Amount (₹) |\n|---|---|\n| Total Fixed Costs | 20,00,000 |\n| Required Profit | 6,00,000 |\n| Total contribution required | 26,00,000 |\n| Contribution per unit | 80 |\n| Units to be sold to earn a profit of ₹ 6,00,000 | 32,500 |\n\n(b) Calculation of No. of units to incur a loss of ₹ 5,00,000:\n\n| | Amount (₹) |\n|---|---|\n| Total Fixed Costs | 20,00,000 |\n| Required Loss | 5,00,000 |\n| Total contribution required | 15,00,000 |\n| Contribution per unit | 80 |\n| units to be sold to incur loss of ₹ 5,00,000 | 18,750 |\n\n(iii) Calculation of probability that the company will Break-Even:\nTo calculate the probability that the company will break even, we have to calculate the cumulative probability of Sales Volume equal to or greater than the 25000 units i.e. the break-even volume.\nTherefore, the required probability is 10 % + 20 % + 30 % + 10 % + 10 % i.e. 80%.\n\n(iv) Calculation of probability of sales volume mentioned at (ii) above:\n(a) Required Sales volume = 32,500 units\nCumulative probability of sales volume being greater than 32,500 units is 30 % + 10 % + 10 % i.e. 50%\n\n(b) Required Sales volume = 18,750 units\nCumulative probability of sales volume being less than 18,750 units is 10 %. Further, chances of incurring loss are cumulative probability of sales volume being less than 25,000 units is 10 % + 10 % i.e. 20%.",
+    "reference_solution_md": "(i) Calculation of Break-Even Quantity:\n\n| | Amount (₹) |\n|---|---|\n| Selling Price per unit | 200 |\n| Variable Cost per unit | 120 |\n| Contribution per unit | 80 |\n| Total Fixed Costs | 20,00,000 |\n| Break Even Quantity | 25,000 |\n\n(ii)\n(a) Calculation of No. of units to earn a profit of ₹ 6,00,000:\n\n| | Amount (₹) |\n|---|---|\n| Total Fixed Costs | 20,00,000 |\n| Required Profit | 6,00,000 |\n| Total contribution required | 26,00,000 |\n| Contribution per unit | 80 |\n| Units to be sold to earn a profit of ₹ 6,00,000 | 32,500 |\n\n(b) Calculation of No. of units to incur a loss of ₹ 5,00,000:\n\n| | Amount (₹) |\n|---|---|\n| Total Fixed Costs | 20,00,000 |\n| Required Loss | 5,00,000 |\n| Total contribution required | 15,00,000 |\n| Contribution per unit | 80 |\n| units to be sold to incur loss of ₹ 5,00,000 | 18,750 |\n\n(iii) Calculation of probability that the company will Break-Even:\nTo calculate the probability that the company will break even, we have to calculate the cumulative probability of Sales Volume equal to or greater than the 25000 units i.e. the break-even volume.\nTherefore, the required probability is 10 % + 20 % + 30 % + 10 % + 10 % i.e. 80%.\n\n(iv) Calculation of probability of sales volume mentioned at (ii) above:\n(a) Required Sales volume = 32,500 units\nCumulative probability of sales volume being greater than 32,500 units is 30 % + 10 % + 10 % i.e. 50%\n\n(b) Required Sales volume = 18,750 units\nCumulative probability of sales volume being less than 18,750 units is 10 %. Further, chances of incurring loss are cumulative probability of sales volume being less than 25,000 units is 10 % + 10 % i.e. 20%.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.42,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 21,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ANTOX Ltd., is producing a product in 10 batches each of 15000 units in a year and incurring following overheads thereon :\n\n| | Amount (₹) |\n|---|---|\n| Material procurement | 22,50,000 |\n| Maintenance | 17,30,000 |\n| Set up | 6,84,500 |\n| Quality control | 5,14,800 |\n\nThe prime costs for the year amounted to ₹ 3,01,39,000.\n\nThe company is using currently the method of absorbing overheads on the basis of prime cost. Now it wants to shift to activity based costing. Information relevant to activity drivers for the year are as under :\n\n| Activity Driver | Activity Volume |\n|---|---|\n| No. of purchase orders | 1500 |\n| Maintenance hours | 9080 |\n| No. of set-ups | 2250 |\n| No. of inspections | 2710 |\n\nThe company has produced a batch of 15000 units and has incurred ₹ 26,38,700 and ₹ 3,75,200 on materials and wages respectively.\n\nThe usage of activities of the said batch are as follows :\n\n| | |\n|---|---|\n| Material orders | 48 orders |\n| Maintenance hours | 810 hours |\n| No. of set-ups | 40 |\n| No. of inspections | 25 |\n\nRequired :\n(i) Evaluate cost of product per unit on absorption costing basis for the said batch.\n(ii) Assess the cost driver rate.\n(iii) Analyze the total cost per unit of output of the said batch on the basis of activity based costing.",
+    "parent_ref": "4",
+    "explanation_md": "Absorption of overhead on the basis of Prime Cost\nCalculation of Absorption of overhead cost rate\n\n$$\n= \\frac{2250000 + 1730000 + 684500 + 514800}{30139000}\n$$\n\nAbsorption of Overhead Rate = 17.18 %\n(For a batch of 15000 units)\n\n(i) Calculation of Cost of Product per unit on the basis of absorption costing method.\n\n| Particulars | Amount (₹) |\n|---|---|\n| Materials | 26,38,700.00 |\n| Wages | 3,75,200.00 |\n| Prime Cost | 30,13,900.00 |\n| Overhead Cost (17.18% of Prime Cost) | 5,17,788.02 |\n| Cost of Product | 35,31,688.02 |\n| No. of unit in a batch | 15,000 units |\n| Cost of Product Per unit | ₹ 235.45 |\n\n(ii) Statement Showing Cost Driver Rate\n\n| Overhead | Cost (₹) | Cost Driver | Cost Driver Rate (₹) |\n|---|---|---|---|\n| Material Procurement | 22,50,000 | No. of Purchase Orders = 1,500 Order | 1500 per order |\n| Maintenance | 17,30,000 | Maintenance Hours = 9,080 hours | 190.53 per hour |\n| Set up | 6,84,500 | No. of Setup = 2,250 Setup | 304.22 per setup |\n| Quality Control | 5,14,800 | No. of inspections = 2,710 insp. | 189.96 per inspection |\n\n(iii) Statement Showing Total Cost and Per unit Cost based on Activity Based Costing :\n\n| Particulars | Total Cost (₹) | Per Unit Cost (₹) |\n|---|---|---|\n| Materials | 26,38,700.00 | 175.91 |\n| Wages | 3,75,200.00 | 25.01 |\n| Prime Cost | 30,13,900.00 | 200.92 |\n| Overhead Activity Cost : | | |\n| Material Order Cost | 72,000.00 | 4.80 |\n| Maintenance Cost | 1,54,329.30 | 10.29 |\n| Setup Cost | 12,168.80 | 0.81 |\n| Quality control Cost | 4,749.00 | 0.32 |\n| Total Cost | 32,57,147.10 | 217.14 |",
+    "reference_solution_md": "Absorption of overhead on the basis of Prime Cost\nCalculation of Absorption of overhead cost rate\n\n$$\n= \\frac{2250000 + 1730000 + 684500 + 514800}{30139000}\n$$\n\nAbsorption of Overhead Rate = 17.18 %\n(For a batch of 15000 units)\n\n(i) Calculation of Cost of Product per unit on the basis of absorption costing method.\n\n| Particulars | Amount (₹) |\n|---|---|\n| Materials | 26,38,700.00 |\n| Wages | 3,75,200.00 |\n| Prime Cost | 30,13,900.00 |\n| Overhead Cost (17.18% of Prime Cost) | 5,17,788.02 |\n| Cost of Product | 35,31,688.02 |\n| No. of unit in a batch | 15,000 units |\n| Cost of Product Per unit | ₹ 235.45 |\n\n(ii) Statement Showing Cost Driver Rate\n\n| Overhead | Cost (₹) | Cost Driver | Cost Driver Rate (₹) |\n|---|---|---|---|\n| Material Procurement | 22,50,000 | No. of Purchase Orders = 1,500 Order | 1500 per order |\n| Maintenance | 17,30,000 | Maintenance Hours = 9,080 hours | 190.53 per hour |\n| Set up | 6,84,500 | No. of Setup = 2,250 Setup | 304.22 per setup |\n| Quality Control | 5,14,800 | No. of inspections = 2,710 insp. | 189.96 per inspection |\n\n(iii) Statement Showing Total Cost and Per unit Cost based on Activity Based Costing :\n\n| Particulars | Total Cost (₹) | Per Unit Cost (₹) |\n|---|---|---|\n| Materials | 26,38,700.00 | 175.91 |\n| Wages | 3,75,200.00 | 25.01 |\n| Prime Cost | 30,13,900.00 | 200.92 |\n| Overhead Activity Cost : | | |\n| Material Order Cost | 72,000.00 | 4.80 |\n| Maintenance Cost | 1,54,329.30 | 10.29 |\n| Setup Cost | 12,168.80 | 0.81 |\n| Quality control Cost | 4,749.00 | 0.32 |\n| Total Cost | 32,57,147.10 | 217.14 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.16,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 23,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "“Value Analysis enables people to contribute towards value addition by continuous focus on product design and services”. – In this context, summarize the phases of Value Analysis.",
+    "parent_ref": "4",
+    "explanation_md": "The Phases of Value Analysis are summarized as follows:\n\n(1) Origination: The phase of origination starts with the identification of a project to undertake value analysis. After selecting the project, a project team consisting of experts from various fields and departments is constituted.\n(2) Information: The second phase is that of collecting relevant information. In this phase, the relevant facts relating to specifications, drawings, methods, materials, etc. are collected. Costs are, also, ascertained for each of the elements that are being studied.\n(3) Functional Analysis: Then follows the important phase of functional analysis. After familiarisation with the relevant facts & figures, a functional analysis is carried out to determine the functions and uses of the product and its components. The cost and importance of each function are identified. A value index is computed on the basis of cost benefit ratio for each of the functions\n(4) Innovation: This is the creative phase concerned with the generation of new alternatives to replace or remove the existing ones. The objective is to produce ideas and to formulate alternative means and methods for accomplishing the essential functions and improving the value of the element under consideration.\n(5) Evaluation: During the stage of evaluation, each and every alternative is analysed and the most promising alternatives are selected. These alternatives are further examined for economic and technical feasibility. The alternatives finally selected must be capable of performing the desired functions satisfactorily.\n(6) Choice: In this phase, the decision makers choose the best of alternatives. The programs and action plans are then developed to implement the chosen alternative.\n(7) Implementation: The chosen alternative is put to the actual use with the help of the programs and action plans. The progress of implementation is continuously monitored and followed up to ensure that the desired results are achieved.",
+    "reference_solution_md": "The Phases of Value Analysis are summarized as follows:\n\n(1) Origination: The phase of origination starts with the identification of a project to undertake value analysis. After selecting the project, a project team consisting of experts from various fields and departments is constituted.\n(2) Information: The second phase is that of collecting relevant information. In this phase, the relevant facts relating to specifications, drawings, methods, materials, etc. are collected. Costs are, also, ascertained for each of the elements that are being studied.\n(3) Functional Analysis: Then follows the important phase of functional analysis. After familiarisation with the relevant facts & figures, a functional analysis is carried out to determine the functions and uses of the product and its components. The cost and importance of each function are identified. A value index is computed on the basis of cost benefit ratio for each of the functions\n(4) Innovation: This is the creative phase concerned with the generation of new alternatives to replace or remove the existing ones. The objective is to produce ideas and to formulate alternative means and methods for accomplishing the essential functions and improving the value of the element under consideration.\n(5) Evaluation: During the stage of evaluation, each and every alternative is analysed and the most promising alternatives are selected. These alternatives are further examined for economic and technical feasibility. The alternatives finally selected must be capable of performing the desired functions satisfactorily.\n(6) Choice: In this phase, the decision makers choose the best of alternatives. The programs and action plans are then developed to implement the chosen alternative.\n(7) Implementation: The chosen alternative is put to the actual use with the help of the programs and action plans. The progress of implementation is continuously monitored and followed up to ensure that the desired results are achieved.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "ref_suffix": "q5",
+    "depth": 0,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "GINTECH Ltd., a manufacturing company using the budgetary control and standard costing system, manufactures a product for which the standard selling price has been ascertained as follows :\n\n| | ₹ per unit |\n|---|---|\n| Material = 2 units at ₹ 20 | 40 |\n| Labour = 20 hours @ ₹ 2 | 40 |\n| Variable overhead | 8 |\n| Fixed overhead | 20 |\n| Total Cost | 108 |\n| Profit | 32 |\n| Selling Price | 140 |\n\nDuring the budget period the company could produce and sell only 8000 units as against, a budget of 10000 units.\n\nThe company’s Profit and Loss Account is presented below :\n\n| | ₹ | | ₹ |\n|---|---|---|---|\n| To Material (16500 units) | 3,96,000 | By Sales (8000 units) | 11,20,000 |\n| Wages (170000 hrs.) | 3,46,800 | | |\n| Variable overhead | 60,000 | | |\n| Fixed overhead | 1,84,000 | | |\n| Net Profit | 1,33,200 | | |\n| | 11,20,000 | | 11,20,000 |\n\n4000 hours were lost due to power failure. There were no opening or closing work in progress.\n\nRequired :\n(i) Analyze the relevant variances (Material, Wages, Variable overhead, Fixed overhead and Sale etc.)\n(ii) Prepare a statement reconciling Actual Profit with Standard Profit in terms of the variances.",
+    "choice_group_ref": "secB",
+    "explanation_md": "(i) Analysis of Variances:\n1. Direct Material Cost Variances:\n\n$$\n\\begin{aligned}\n\\text{Direct Material Price Variance} &= 16{,}500\\left(\\text{₹ }20 - \\frac{\\text{₹ }396000}{16500}\\right) \\\\\n&= \\text{₹ }3{,}30{,}000 - \\text{₹ }3{,}96{,}000 = \\text{₹ }66{,}000\\ \\text{(A)} \\\\\n\\text{Direct Material Usage Variance} &= \\text{₹ }20\\,(8{,}000 \\times 2 - 16{,}500) = \\text{₹ }10{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n2. Direct Wages Variances:\n\n$$\n\\begin{aligned}\n\\text{Wages Rate Variance} &= \\left(\\text{₹ }2 - \\frac{\\text{₹ }346800}{170000}\\right) 1{,}70{,}000 \\\\\n&= \\text{₹ }3{,}40{,}000 - \\text{₹ }3{,}46{,}800 = \\text{₹ }6{,}800\\ \\text{(A)} \\\\\n\\text{Wages Efficiency Variance} &= \\text{₹ }2\\,(8{,}000 \\times 20 - 1{,}66{,}000) \\\\\n&= \\text{₹ }2\\,(1{,}60{,}000 - 1{,}66{,}000) = \\text{₹ }12{,}000\\ \\text{(A)} \\\\\n\\text{Idle time Variance} &= 4{,}000 \\times \\text{₹ }2 = \\text{₹ }8{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n3. Variable Overhead Cost Variance\n\n$$\n\\text{Variable Overhead Cost Variance} = \\text{₹ }8 \\times 8{,}000 - \\text{₹ }60{,}000 = \\text{₹ }4{,}000\\ \\text{(F)}\n$$\n\nAlternatively\n\n$$\n\\begin{aligned}\n\\text{VOH Expenditure Variance} &= \\text{₹ }\\left(\\frac{8}{20} - \\frac{60{,}000}{170{,}000}\\right) \\times 1{,}70{,}000 \\\\\n&= \\text{₹ }68{,}000 - \\text{₹ }60{,}000 = \\text{₹ }8{,}000\\ \\text{(F)} \\\\\n\\text{VOH Efficiency Variance} &= \\text{₹ }0.4\\,(1{,}60{,}000 - 1{,}70{,}000) \\\\\n&= \\text{₹ }4{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n4. Fixed Overhead Cost Variance\n\n$$\n\\begin{aligned}\n\\text{FO Expenditure Variance} &= \\text{₹ }2{,}00{,}000 - \\text{₹ }1{,}84{,}000 = \\text{₹ }16{,}000\\ \\text{(F)} \\\\\n\\text{FO Volume Variance} &= \\text{₹ }20 \\times 8{,}000 - \\text{₹ }2{,}00{,}000 = \\text{₹ }40{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n5. Sales Margin Variances\nHere actual sales margin per unit and standard sales margin per unit remains same i.e. actual price – standard cost = $\\text{₹ }140 - \\text{₹ }108 = \\text{₹ }3$\n\n$$\n\\begin{aligned}\n\\text{Sales Margin Price Variance} &= (\\text{₹ }32 - \\text{₹ }32) \\times 8{,}000 = \\text{NIL} \\\\\n\\text{Sales Margin Volume Variance} &= (8{,}000 - 10{,}000) \\times \\text{₹ }32 = \\text{₹ }64{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n(ii) Calculation of Standard Profit\n\n| | Per Unit (₹) |\n|---|---|\n| Selling Price | 140 |\n| Less: Variable Cost | 88 |\n| Contribution | 52 |\n| Standard Sales Quantity | 8000 |\n| Total Contribution | 4,16,000 |\n| Less: Standard Fixed Overhead @ ₹ 20 per unit | 1,60,000 |\n| Standard Profit | 2,56,000 |\n\nReconciliation between Standard Profit & Actual Profit\n\n| | Adverse (₹) | Favourable (₹) | |\n|---|---|---|---|\n| Standard Profit | | | ₹ 2,56,000 |\n| Cost Variances | Adverse (₹) | Favourable (₹) | |\n| Direct Material | | | |\n| Price Variance | 66,000 | | |\n| Usage Variance | 10,000 | | |\n| Wages | | | |\n| Rate Variance | 6,800 | | |\n| Idle Time Variance | 8,000 | | |\n| Efficiency Variance | 12,000 | | |\n| Variable Overhead | | | |\n| Cost Variance | | 4,000 | |\n| Fixed Overhead | | | |\n| Expenditure Variance | | 16,000 | |\n| Volume Variance | 40,000 | | |\n| | 1,42,800 | 20,000 | 1,22,800 (A) |\n| Actual Profit | | | 1,33,200 |\n\nAlternative Solution\n(i) Analysis of Variances:\n\n| For Material Cost Variances : | ₹ |\n|---|---|\n| M1 – Actual Cost of Material used | 3,96,000 |\n| M2 – Standard Cost of Material used | 3,30,000 |\n| M3 – No mix variance | Nil |\n| M4 – Standard material cost Output | 3,20,000 |\n| Material Price Variance. (M1 – M2) | 66,000 (A) |\n| Material Usage Variance. (M2– M4) | 10,000 (A) |\n| For Direct Wages Variances : | |\n| L1– Actual payment made to workers for actual hours worked | 346800 |\n| L2– Payment involved, if workers had been paid at standard rate | 340000 |\n| L3– No gang variance | |\n| L4– Standard labour cost of labour hours utilised. (This step will have value when there is a difference between hours available and hours utilised.) | 3,32,000 |\n| L5– Standard labour cost of output achieved | 3,20,000 |\n| Wage Rate Variance (L1 – L2) | 6,800 (A) |\n| Wage idle Time Variance(L2 – L4) | 8,000 (A) |\n| Wage Yield Variance(L4 – L5) | 12,000 (A) |\n| For Variable Overhead Variances : | |\n| VO1 – Actual variable overhead (given) | 60,000 |\n| VO2 – No expenditure variance | Nil |\n| VO3– Standard variable overhead for production | 64,000 |\n| Variable Overhead Variance (VO1 – VO3) | 4,000 (F) |\n| For Fixed Overhead Variances : | |\n| FO1 – Actual fixed overhead incurred (given) | 1,84,000 |\n| FO2 – Budgeted fixed overhead for the period | 2,00,000 |\n| FO3 –There is no calendar or idle time variance | |\n| FO4 – Fixed overhead for actual hours worked at standard rate | 1,66,000 |\n| FO5 – Standard fixed overhead for production | 1,60,000 |\n| Fixed overhead expenditure variance(FO1 – FO2) | 16,000 (F) |\n| Fixed overhead idle time variance(FO2 – FO4) | 34,000 (A) |\n| Fixed overhead efficiency variance(FO4 – FO5) | 6,000 (A) |\n| For Sales Margin Variances : | |\n| Standard sales margin = ₹ 32 (given). Actual sales margin also remains the same i.e., actual price – standard cost. | |\n| SM1– Actual sales margin on actual sales. | 2,56,000 |\n| SM2– Standard sales margin on actual sales | 2,56,000 |\n| SM3– No Mix Variances | Nil |\n| SM4– Standard sales margin on standard sales mix or budgeted sales margin as per budget or standard. | 3,20,000 |\n| Sales Margin Price Variance (SM1 – SM2) | Nil |\n| Sales Margin Volume Variance (SM2 – SM4) | 64,000 (A) |\n\nii) Calculation of Standard Profit\n\n| | Amount (₹) |\n|---|---|\n| Budgeted Profit | 3,20,000 |\n| Less: Sales Margin Volume Variance (Adverse) | 64,000 |\n| Standard Profit | 2,56,000 |\n\nReconciliation between Standard Profit & Actual Profit\n\n| | Adverse (₹) | Favourable (₹) | |\n|---|---|---|---|\n| Standard Profit | | | ₹ 2,56,000 |\n| Cost Variances | Adverse (₹) | Favourable (₹) | |\n| Direct Material | | | |\n| Price Variance | 66,000 | | |\n| Usage Variance | 10,000 | | |\n| Wages | | | |\n| Rate Variance | 6,800 | | |\n| Idle Time Variance | 8,000 | | |\n| Yield Variance | 12,000 | | |\n| Variable Overhead | | | |\n| Cost Variance | | 4,000 | |\n| Fixed Overhead | | | |\n| Expenditure Variance | | 16,000 | |\n| Idle Time Variance | 34,000 | | |\n| Efficiency Variance | 6,000 | | |\n| | 1,42,800 | 20,000 | 1,22,800 (A) |\n| Actual Profit | | | 1,33,200 |",
+    "reference_solution_md": "(i) Analysis of Variances:\n1. Direct Material Cost Variances:\n\n$$\n\\begin{aligned}\n\\text{Direct Material Price Variance} &= 16{,}500\\left(\\text{₹ }20 - \\frac{\\text{₹ }396000}{16500}\\right) \\\\\n&= \\text{₹ }3{,}30{,}000 - \\text{₹ }3{,}96{,}000 = \\text{₹ }66{,}000\\ \\text{(A)} \\\\\n\\text{Direct Material Usage Variance} &= \\text{₹ }20\\,(8{,}000 \\times 2 - 16{,}500) = \\text{₹ }10{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n2. Direct Wages Variances:\n\n$$\n\\begin{aligned}\n\\text{Wages Rate Variance} &= \\left(\\text{₹ }2 - \\frac{\\text{₹ }346800}{170000}\\right) 1{,}70{,}000 \\\\\n&= \\text{₹ }3{,}40{,}000 - \\text{₹ }3{,}46{,}800 = \\text{₹ }6{,}800\\ \\text{(A)} \\\\\n\\text{Wages Efficiency Variance} &= \\text{₹ }2\\,(8{,}000 \\times 20 - 1{,}66{,}000) \\\\\n&= \\text{₹ }2\\,(1{,}60{,}000 - 1{,}66{,}000) = \\text{₹ }12{,}000\\ \\text{(A)} \\\\\n\\text{Idle time Variance} &= 4{,}000 \\times \\text{₹ }2 = \\text{₹ }8{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n3. Variable Overhead Cost Variance\n\n$$\n\\text{Variable Overhead Cost Variance} = \\text{₹ }8 \\times 8{,}000 - \\text{₹ }60{,}000 = \\text{₹ }4{,}000\\ \\text{(F)}\n$$\n\nAlternatively\n\n$$\n\\begin{aligned}\n\\text{VOH Expenditure Variance} &= \\text{₹ }\\left(\\frac{8}{20} - \\frac{60{,}000}{170{,}000}\\right) \\times 1{,}70{,}000 \\\\\n&= \\text{₹ }68{,}000 - \\text{₹ }60{,}000 = \\text{₹ }8{,}000\\ \\text{(F)} \\\\\n\\text{VOH Efficiency Variance} &= \\text{₹ }0.4\\,(1{,}60{,}000 - 1{,}70{,}000) \\\\\n&= \\text{₹ }4{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n4. Fixed Overhead Cost Variance\n\n$$\n\\begin{aligned}\n\\text{FO Expenditure Variance} &= \\text{₹ }2{,}00{,}000 - \\text{₹ }1{,}84{,}000 = \\text{₹ }16{,}000\\ \\text{(F)} \\\\\n\\text{FO Volume Variance} &= \\text{₹ }20 \\times 8{,}000 - \\text{₹ }2{,}00{,}000 = \\text{₹ }40{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n5. Sales Margin Variances\nHere actual sales margin per unit and standard sales margin per unit remains same i.e. actual price – standard cost = $\\text{₹ }140 - \\text{₹ }108 = \\text{₹ }3$\n\n$$\n\\begin{aligned}\n\\text{Sales Margin Price Variance} &= (\\text{₹ }32 - \\text{₹ }32) \\times 8{,}000 = \\text{NIL} \\\\\n\\text{Sales Margin Volume Variance} &= (8{,}000 - 10{,}000) \\times \\text{₹ }32 = \\text{₹ }64{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n(ii) Calculation of Standard Profit\n\n| | Per Unit (₹) |\n|---|---|\n| Selling Price | 140 |\n| Less: Variable Cost | 88 |\n| Contribution | 52 |\n| Standard Sales Quantity | 8000 |\n| Total Contribution | 4,16,000 |\n| Less: Standard Fixed Overhead @ ₹ 20 per unit | 1,60,000 |\n| Standard Profit | 2,56,000 |\n\nReconciliation between Standard Profit & Actual Profit\n\n| | Adverse (₹) | Favourable (₹) | |\n|---|---|---|---|\n| Standard Profit | | | ₹ 2,56,000 |\n| Cost Variances | Adverse (₹) | Favourable (₹) | |\n| Direct Material | | | |\n| Price Variance | 66,000 | | |\n| Usage Variance | 10,000 | | |\n| Wages | | | |\n| Rate Variance | 6,800 | | |\n| Idle Time Variance | 8,000 | | |\n| Efficiency Variance | 12,000 | | |\n| Variable Overhead | | | |\n| Cost Variance | | 4,000 | |\n| Fixed Overhead | | | |\n| Expenditure Variance | | 16,000 | |\n| Volume Variance | 40,000 | | |\n| | 1,42,800 | 20,000 | 1,22,800 (A) |\n| Actual Profit | | | 1,33,200 |\n\nAlternative Solution\n(i) Analysis of Variances:\n\n| For Material Cost Variances : | ₹ |\n|---|---|\n| M1 – Actual Cost of Material used | 3,96,000 |\n| M2 – Standard Cost of Material used | 3,30,000 |\n| M3 – No mix variance | Nil |\n| M4 – Standard material cost Output | 3,20,000 |\n| Material Price Variance. (M1 – M2) | 66,000 (A) |\n| Material Usage Variance. (M2– M4) | 10,000 (A) |\n| For Direct Wages Variances : | |\n| L1– Actual payment made to workers for actual hours worked | 346800 |\n| L2– Payment involved, if workers had been paid at standard rate | 340000 |\n| L3– No gang variance | |\n| L4– Standard labour cost of labour hours utilised. (This step will have value when there is a difference between hours available and hours utilised.) | 3,32,000 |\n| L5– Standard labour cost of output achieved | 3,20,000 |\n| Wage Rate Variance (L1 – L2) | 6,800 (A) |\n| Wage idle Time Variance(L2 – L4) | 8,000 (A) |\n| Wage Yield Variance(L4 – L5) | 12,000 (A) |\n| For Variable Overhead Variances : | |\n| VO1 – Actual variable overhead (given) | 60,000 |\n| VO2 – No expenditure variance | Nil |\n| VO3– Standard variable overhead for production | 64,000 |\n| Variable Overhead Variance (VO1 – VO3) | 4,000 (F) |\n| For Fixed Overhead Variances : | |\n| FO1 – Actual fixed overhead incurred (given) | 1,84,000 |\n| FO2 – Budgeted fixed overhead for the period | 2,00,000 |\n| FO3 –There is no calendar or idle time variance | |\n| FO4 – Fixed overhead for actual hours worked at standard rate | 1,66,000 |\n| FO5 – Standard fixed overhead for production | 1,60,000 |\n| Fixed overhead expenditure variance(FO1 – FO2) | 16,000 (F) |\n| Fixed overhead idle time variance(FO2 – FO4) | 34,000 (A) |\n| Fixed overhead efficiency variance(FO4 – FO5) | 6,000 (A) |\n| For Sales Margin Variances : | |\n| Standard sales margin = ₹ 32 (given). Actual sales margin also remains the same i.e., actual price – standard cost. | |\n| SM1– Actual sales margin on actual sales. | 2,56,000 |\n| SM2– Standard sales margin on actual sales | 2,56,000 |\n| SM3– No Mix Variances | Nil |\n| SM4– Standard sales margin on standard sales mix or budgeted sales margin as per budget or standard. | 3,20,000 |\n| Sales Margin Price Variance (SM1 – SM2) | Nil |\n| Sales Margin Volume Variance (SM2 – SM4) | 64,000 (A) |\n\nii) Calculation of Standard Profit\n\n| | Amount (₹) |\n|---|---|\n| Budgeted Profit | 3,20,000 |\n| Less: Sales Margin Volume Variance (Adverse) | 64,000 |\n| Standard Profit | 2,56,000 |\n\nReconciliation between Standard Profit & Actual Profit\n\n| | Adverse (₹) | Favourable (₹) | |\n|---|---|---|---|\n| Standard Profit | | | ₹ 2,56,000 |\n| Cost Variances | Adverse (₹) | Favourable (₹) | |\n| Direct Material | | | |\n| Price Variance | 66,000 | | |\n| Usage Variance | 10,000 | | |\n| Wages | | | |\n| Rate Variance | 6,800 | | |\n| Idle Time Variance | 8,000 | | |\n| Yield Variance | 12,000 | | |\n| Variable Overhead | | | |\n| Cost Variance | | 4,000 | |\n| Fixed Overhead | | | |\n| Expenditure Variance | | 16,000 | |\n| Idle Time Variance | 34,000 | | |\n| Efficiency Variance | 6,000 | | |\n| | 1,42,800 | 20,000 | 1,22,800 (A) |\n| Actual Profit | | | 1,33,200 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.85,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 25,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 26,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A salesman has to visit five cities A, B, C, D and E. The inter-city distances in kilometre are tabulated below. Note the distance between two cities need not be same both ways.\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | 12 | 24 | 25 | 15 |\n| B | 6 | - | 16 | 18 | 7 |\n| C | 10 | 11 | - | 18 | 12 |\n| D | 14 | 17 | 22 | - | 16 |\n| E | 12 | 13 | 23 | 25 | - |\n\nIf the salesman starts from city A and has to come back to city A, by applying the principles of Assignment which route would you advise him to take so that total distance travelled by him is minimised?",
+    "parent_ref": "6",
+    "explanation_md": "Reduced matrix after Row subtraction operation:\nTable-1\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | 0 | 12 | 13 | 3 |\n| B | 0 | - | 10 | 12 | 1 |\n| C | 0 | 1 | - | 8 | 2 |\n| D | 0 | 3 | 8 | - | 2 |\n| E | 0 | 1 | 11 | 13 | - |\n\nReduced matrix after Column subtraction operation:\nTable-2\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | 0 | 4 | 5 | 2 |\n| B | 0 | - | 2 | 4 | 0 |\n| C | 0 | 1 | - | 0 | 1 |\n| D | 0 | 3 | 0 | - | 1 |\n| E | 0 | 1 | 3 | 5 | - |\n\nHere minimum number of straight lines to cover all the zeroes = 5 = order of the matrix. So, the solution is optimal. Now, assignments done by following standard rules of Hungarian method is as follows:\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | **0** | 4 | 5 | 2 |\n| B | 0 | - | 2 | 4 | **0** |\n| C | 0 | 1 | - | **0** | 1 |\n| D | 0 | 3 | **0** | - | 1 |\n| E | **0** | 1 | 3 | 5 | - |\n\nAs per the solution above, the salesman will travel from A to B, B to E, then E to A. This is not meeting the requirement of travelling through all the cities and finally returning to the starting point. Hence the solution is unacceptable.\n\nUnder the circumstances, it is decided to try for the assignment at the cells which are having next higher entry after zero. The next minimum non-zero element in the matrix is 1 & 2. So, an assignment is made at cell (5,4) instead of zero assignment at cell (4,3) and at cell (2,3) instead of cell (2,5). The resulting solution will be:\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | **0** | 4 | 5 | 2 |\n| B | 0 | - | **2** | 4 | 0 |\n| C | 0 | 1 | - | **0** | 1 |\n| D | 0 | 3 | 0 | - | **1** |\n| E | **0** | 1 | 3 | 5 | - |\n\nThe solution is A → B → C → D → E → A.\nThe distance travelled will be = $12+16+18+16+12 = 74$ km.\nThere can be another schedule also: A → B → E → C → D → A.\nBased on this, distance will be = $12+7+23+18+14 = 74$ km.",
+    "reference_solution_md": "Reduced matrix after Row subtraction operation:\nTable-1\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | 0 | 12 | 13 | 3 |\n| B | 0 | - | 10 | 12 | 1 |\n| C | 0 | 1 | - | 8 | 2 |\n| D | 0 | 3 | 8 | - | 2 |\n| E | 0 | 1 | 11 | 13 | - |\n\nReduced matrix after Column subtraction operation:\nTable-2\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | 0 | 4 | 5 | 2 |\n| B | 0 | - | 2 | 4 | 0 |\n| C | 0 | 1 | - | 0 | 1 |\n| D | 0 | 3 | 0 | - | 1 |\n| E | 0 | 1 | 3 | 5 | - |\n\nHere minimum number of straight lines to cover all the zeroes = 5 = order of the matrix. So, the solution is optimal. Now, assignments done by following standard rules of Hungarian method is as follows:\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | **0** | 4 | 5 | 2 |\n| B | 0 | - | 2 | 4 | **0** |\n| C | 0 | 1 | - | **0** | 1 |\n| D | 0 | 3 | **0** | - | 1 |\n| E | **0** | 1 | 3 | 5 | - |\n\nAs per the solution above, the salesman will travel from A to B, B to E, then E to A. This is not meeting the requirement of travelling through all the cities and finally returning to the starting point. Hence the solution is unacceptable.\n\nUnder the circumstances, it is decided to try for the assignment at the cells which are having next higher entry after zero. The next minimum non-zero element in the matrix is 1 & 2. So, an assignment is made at cell (5,4) instead of zero assignment at cell (4,3) and at cell (2,3) instead of cell (2,5). The resulting solution will be:\n\n| From / To | A | B | C | D | E |\n|---|---|---|---|---|---|\n| A | - | **0** | 4 | 5 | 2 |\n| B | 0 | - | **2** | 4 | 0 |\n| C | 0 | 1 | - | **0** | 1 |\n| D | 0 | 3 | 0 | - | **1** |\n| E | **0** | 1 | 3 | 5 | - |\n\nThe solution is A → B → C → D → E → A.\nThe distance travelled will be = $12+16+18+16+12 = 74$ km.\nThere can be another schedule also: A → B → E → C → D → A.\nBased on this, distance will be = $12+7+23+18+14 = 74$ km.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "assignment",
+    "mapping_confidence": 0.21,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A bakery bakes 100 cakes per day. The sale of cakes depends upon demand which has the following distribution:\n\n| Sale of cakes (Nos.) | Probability |\n|---|---|\n| 97 | 0.10 |\n| 98 | 0.15 |\n| 99 | 0.20 |\n| 100 | 0.35 |\n| 102 | 0.15 |\n| 103 | 0.05 |\n\nThere is no carry-over of inventory. The following details are given:\n\n| | |\n|---|---|\n| Variable production cost per cake | ₹ 14 |\n| Selling price per cake | ₹ 18 |\n| Penalty attracted per unsold cake | ₹ 3 |\n| Penalty attracted per unit of demand not met | ₹ 1 |\n\nRandom numbers to be used: 09, 98, 64, 98, 94, 01, 78, 10, 15, 19\n\nSimulate and assess the profit/loss for the next ten days using the above random numbers.",
+    "parent_ref": "6",
+    "explanation_md": "Allocation of Random No.\n\n| Demand | Probability | Cumulative probability | Random number interval |\n|---|---|---|---|\n| 97 | 0.10 | 0.10 | 00-09 |\n| 98 | 0.15 | 0.25 | 10-24 |\n| 99 | 0.20 | 0.45 | 25-44 |\n| 100 | 0.35 | 0.80 | 45-79 |\n| 102 | 0.15 | 0.95 | 80-94 |\n| 103 | 0.05 | 1.00 | 95-99 |\n\nSimulation table for simulated demand, unsatisfied demand and unsold cakes:\nTABLE : SIMULATION WORKSHEET\n\n| Day | Random No | Demand | No. of cakes produced | No. of cakes sold | Unsatisfied demand | No. of cakes unsold |\n|---|---|---|---|---|---|---|\n| 1 | 9 | 97 | 100 | 97 | 0 | 3 |\n| 2 | 98 | 103 | 100 | 100 | 3 | 0 |\n| 3 | 64 | 100 | 100 | 100 | 0 | 0 |\n| 4 | 98 | 103 | 100 | 100 | 3 | 0 |\n| 5 | 94 | 102 | 100 | 100 | 2 | 0 |\n| 6 | 1 | 97 | 100 | 97 | 0 | 3 |\n| 7 | 78 | 100 | 100 | 100 | 0 | 0 |\n| 8 | 10 | 98 | 100 | 98 | 0 | 2 |\n| 9 | 15 | 98 | 100 | 98 | 0 | 2 |\n| 10 | 19 | 98 | 100 | 98 | 0 | 2 |\n| Total | | 996 | 1,000 | 988 | 8 | 12 |\n\nCalculation of Bakery's Profit/Loss\n\n| | Number | Unit rate (₹) | Amount (₹) |\n|---|---|---|---|\n| Sale of cakes | 988 | 18 | 17,784 |\n| Less: Variable production cost | 1,000 | 14 | 14,000 |\n| Less: Penalty on unsatisfied demand | 8 | 01 | 8 |\n| Less: Penalty on unsold cakes | 12 | 03 | 36 |\n| Profit/Loss | | | 3,740 |\n\nThus, the simulated profit for 10 days' operation is ₹ 3,740.",
+    "reference_solution_md": "Allocation of Random No.\n\n| Demand | Probability | Cumulative probability | Random number interval |\n|---|---|---|---|\n| 97 | 0.10 | 0.10 | 00-09 |\n| 98 | 0.15 | 0.25 | 10-24 |\n| 99 | 0.20 | 0.45 | 25-44 |\n| 100 | 0.35 | 0.80 | 45-79 |\n| 102 | 0.15 | 0.95 | 80-94 |\n| 103 | 0.05 | 1.00 | 95-99 |\n\nSimulation table for simulated demand, unsatisfied demand and unsold cakes:\nTABLE : SIMULATION WORKSHEET\n\n| Day | Random No | Demand | No. of cakes produced | No. of cakes sold | Unsatisfied demand | No. of cakes unsold |\n|---|---|---|---|---|---|---|\n| 1 | 9 | 97 | 100 | 97 | 0 | 3 |\n| 2 | 98 | 103 | 100 | 100 | 3 | 0 |\n| 3 | 64 | 100 | 100 | 100 | 0 | 0 |\n| 4 | 98 | 103 | 100 | 100 | 3 | 0 |\n| 5 | 94 | 102 | 100 | 100 | 2 | 0 |\n| 6 | 1 | 97 | 100 | 97 | 0 | 3 |\n| 7 | 78 | 100 | 100 | 100 | 0 | 0 |\n| 8 | 10 | 98 | 100 | 98 | 0 | 2 |\n| 9 | 15 | 98 | 100 | 98 | 0 | 2 |\n| 10 | 19 | 98 | 100 | 98 | 0 | 2 |\n| Total | | 996 | 1,000 | 988 | 8 | 12 |\n\nCalculation of Bakery's Profit/Loss\n\n| | Number | Unit rate (₹) | Amount (₹) |\n|---|---|---|---|\n| Sale of cakes | 988 | 18 | 17,784 |\n| Less: Variable production cost | 1,000 | 14 | 14,000 |\n| Less: Penalty on unsatisfied demand | 8 | 01 | 8 |\n| Less: Penalty on unsold cakes | 12 | 03 | 36 |\n| Profit/Loss | | | 3,740 |\n\nThus, the simulated profit for 10 days' operation is ₹ 3,740.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "simulation",
+    "mapping_confidence": 0.21,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "ref_suffix": "q7",
+    "depth": 0,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "RONTECH (I) Ltd., an engineering firm won a contract to install an instrument landing device at the local airport. The complete installation can be broken down into seven separate activities. Each activity (Labelled A through G), its predecessor activities, normal time (days) and cost and crash time(days) and cost are given below (in table):\n\n| Activity and Identification | Predecessor Activity | Normal duration (Days) | Crash duration (Days) | Normal Cost (₹) | Crash Cost (₹) |\n|---|---|---|---|---|---|\n| A (1–2) | — | 7 | 5 | 500 | 900 |\n| B (2–4) | A | 4 | 5 | 400 | 600 |\n| C (2–3) | A | 5 | 5 | 500 | 500 |\n| D (2–5) | A | 6 | 4 | 800 | 1000 |\n| E (4–6) | B, C | 7 | 4 | 700 | 1000 |\n| F (5–6) | C, D | 5 | 2 | 800 | 1400 |\n| G (6–7) | E, F | 6 | 4 | 800 | 1600 |\n\nRequired :\n(i) Design the project network and indicate all paths through it.\n(ii) Assess the critical path and the normal duration.\n(iii) Evaluate the percentage increase in cost to complete the project in 21 days.",
+    "choice_group_ref": "secB",
+    "explanation_md": "(i) Network Diagram:\n[Network diagram not available in text]\n\nVarious paths of the network are given below:\n1 – 2 – 3 – 4 – 6 – 7 with duration = 25 days\n1 – 2 – 4 – 6 – 7 with duration = 24 days\n1 – 2 – 3 – 5 – 6 – 7 with duration = 23 days\n1 – 2 – 5 – 6 – 7 with duration = 24 days\n\n(ii) The critical path of the project is A → C → E → G or 1 – 2 – 3 – 4 – 6 – 7 with normal duration of 25 days.\n\n(iii) Calculation of Cost Slope for various activities:\n\n| Activity | Normal duration | Crash duration | Normal Cost (₹) | Crash Cost (₹) | Cost Slope (₹) |\n|---|---|---|---|---|---|\n| A (1 – 2) | 7 | 5 | 500 | 900 | 200 |\n| B (2 – 4) | 4 | 5 | 400 | 600 | -200 |\n| C (2 – 3) | 5 | 5 | 500 | 500 | N.A. |\n| D (2 – 5) | 6 | 4 | 800 | 1000 | 100 |\n| E (4 – 6) | 7 | 4 | 700 | 1000 | 100 |\n| F (5 – 6) | 5 | 2 | 800 | 1400 | 200 |\n| G (6 – 7) | 6 | 4 | 800 | 1600 | 400 |\n| Total | | | 4500 | | |\n\nStep-1:\nIn order to determine the cost of completing the project in 21 days, let us crash that activity on the critical path which has minimum cost slope. It can be seen that the minimum cost slope of ₹ 100 corresponds to activity E (4 – 6) and it lies on the critical path. Hence, we crash activity E (4 – 6) by 1 day at an additional cost of ₹ 100.\n\nStep-2:\nVarious paths now are\n1 – 2 – 3 – 4 – 6 – 7 with duration = 24 days\n1 – 2 – 4 – 6 – 7 with duration = 23 days\n1 – 2 – 3 – 5 – 6 – 7 with duration = 23 days\n1 – 2 – 5 – 6 – 7 with duration = 24 days\n\nAn examination of the above four paths clearly points out that there are two critical paths namely 1 – 2 – 3 – 4 – 6 – 7 and 1 – 2 – 5 – 6 – 7, each with duration = 24 days.\n\nTo reduce the project duration by three days more, there are following possible combination of activities:\n1. Crash activities 4 – 6 on the path 1 – 2 – 3 – 4 – 6 – 7 and 5 – 6 on the path 1 – 2 – 5 – 6 – 7 by one day each at an additional cost of ₹ 100 + ₹ 200 = ₹ 300.\n2. Crash activities 4 – 6 on path 1 – 2 – 3 – 4 – 6 – 7 and 2 – 5 on path 1 – 2 – 5 – 6 – 7 by one day each at an additional cost of ₹ 100 + ₹ 100 = ₹ 200.\n3. Crash activity 1 – 2 by one day at an additional cost of ₹ 200.\n\nIt can be observed that the additional cost of reducing the project duration by one day in combination 2 as well as combination 3 is ₹ 200. Hence any of these two can be selected for crashing. However, since crashing activity 1 – 2 by 1 day reduces the duration of all the paths by 1 day, we will crash it by 1 day. The project duration becomes 23 days at an additional cost of ₹ 200.\n\nStep-3:\nCrash activity 1 – 2 by 1 day further, it would reduce the project duration to 22 days at an additional cost = ₹ 200.\n\nStep-4:\nActivity 1 – 2 cannot be crashed further. So, we now select the combination 2 stated above for crashing. Crash activities 4 – 6 and 2 – 5 by one day each at an additional cost of ₹ 100 + ₹ 100 = ₹ 200.\n\nThe project duration now becomes equal to 21 days.\nHence, in order to complete the project in 21 days, an additional cost of ₹ 100 + ₹ 200 + ₹ 200 + ₹ 200 = ₹ 700 will be incurred.\nThe normal cost of completing the project in 25 days = ₹ 4500.\nHence, the percentage increase in cost to complete the project in 21 days $= \\frac{\\text{Rs }700}{\\text{Rs }4500} \\times 100 = 15.55\\%$",
+    "reference_solution_md": "(i) Network Diagram:\n[Network diagram not available in text]\n\nVarious paths of the network are given below:\n1 – 2 – 3 – 4 – 6 – 7 with duration = 25 days\n1 – 2 – 4 – 6 – 7 with duration = 24 days\n1 – 2 – 3 – 5 – 6 – 7 with duration = 23 days\n1 – 2 – 5 – 6 – 7 with duration = 24 days\n\n(ii) The critical path of the project is A → C → E → G or 1 – 2 – 3 – 4 – 6 – 7 with normal duration of 25 days.\n\n(iii) Calculation of Cost Slope for various activities:\n\n| Activity | Normal duration | Crash duration | Normal Cost (₹) | Crash Cost (₹) | Cost Slope (₹) |\n|---|---|---|---|---|---|\n| A (1 – 2) | 7 | 5 | 500 | 900 | 200 |\n| B (2 – 4) | 4 | 5 | 400 | 600 | -200 |\n| C (2 – 3) | 5 | 5 | 500 | 500 | N.A. |\n| D (2 – 5) | 6 | 4 | 800 | 1000 | 100 |\n| E (4 – 6) | 7 | 4 | 700 | 1000 | 100 |\n| F (5 – 6) | 5 | 2 | 800 | 1400 | 200 |\n| G (6 – 7) | 6 | 4 | 800 | 1600 | 400 |\n| Total | | | 4500 | | |\n\nStep-1:\nIn order to determine the cost of completing the project in 21 days, let us crash that activity on the critical path which has minimum cost slope. It can be seen that the minimum cost slope of ₹ 100 corresponds to activity E (4 – 6) and it lies on the critical path. Hence, we crash activity E (4 – 6) by 1 day at an additional cost of ₹ 100.\n\nStep-2:\nVarious paths now are\n1 – 2 – 3 – 4 – 6 – 7 with duration = 24 days\n1 – 2 – 4 – 6 – 7 with duration = 23 days\n1 – 2 – 3 – 5 – 6 – 7 with duration = 23 days\n1 – 2 – 5 – 6 – 7 with duration = 24 days\n\nAn examination of the above four paths clearly points out that there are two critical paths namely 1 – 2 – 3 – 4 – 6 – 7 and 1 – 2 – 5 – 6 – 7, each with duration = 24 days.\n\nTo reduce the project duration by three days more, there are following possible combination of activities:\n1. Crash activities 4 – 6 on the path 1 – 2 – 3 – 4 – 6 – 7 and 5 – 6 on the path 1 – 2 – 5 – 6 – 7 by one day each at an additional cost of ₹ 100 + ₹ 200 = ₹ 300.\n2. Crash activities 4 – 6 on path 1 – 2 – 3 – 4 – 6 – 7 and 2 – 5 on path 1 – 2 – 5 – 6 – 7 by one day each at an additional cost of ₹ 100 + ₹ 100 = ₹ 200.\n3. Crash activity 1 – 2 by one day at an additional cost of ₹ 200.\n\nIt can be observed that the additional cost of reducing the project duration by one day in combination 2 as well as combination 3 is ₹ 200. Hence any of these two can be selected for crashing. However, since crashing activity 1 – 2 by 1 day reduces the duration of all the paths by 1 day, we will crash it by 1 day. The project duration becomes 23 days at an additional cost of ₹ 200.\n\nStep-3:\nCrash activity 1 – 2 by 1 day further, it would reduce the project duration to 22 days at an additional cost = ₹ 200.\n\nStep-4:\nActivity 1 – 2 cannot be crashed further. So, we now select the combination 2 stated above for crashing. Crash activities 4 – 6 and 2 – 5 by one day each at an additional cost of ₹ 100 + ₹ 100 = ₹ 200.\n\nThe project duration now becomes equal to 21 days.\nHence, in order to complete the project in 21 days, an additional cost of ₹ 100 + ₹ 200 + ₹ 200 + ₹ 200 = ₹ 700 will be incurred.\nThe normal cost of completing the project in 25 days = ₹ 4500.\nHence, the percentage increase in cost to complete the project in 21 days $= \\frac{\\text{Rs }700}{\\text{Rs }4500} \\times 100 = 15.55\\%$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Two Firms P and Q are competing for business under the conditions so that one firm’s gain is another firm’s loss. Firm P’s pay-off matrix is given below :\n\n| | | Firm Q: No Advertising | Firm Q: Medium Advertising | Firm Q: Heavy Advertising |\n|---|---|---|---|---|\n| Firm P | No Advertising | 10 | 5 | -2 |\n| Firm P | Medium Advertising | 13 | 12 | 15 |\n| Firm P | Heavy Advertising | 16 | 14 | 10 |\n\nRequired :\n(i) Suggest optimal strategies for the two firms.\n(ii) Assess the value of Game.",
+    "parent_ref": "8",
+    "explanation_md": "Clearly, the first column is dominated by the second column as all the elements of the first column are greater than elements of the second column. Thus eliminating first column, we get\n\n| | FIRM Q: Medium Advertising | FIRM Q: Heavy Advertising |\n|---|---|---|\n| FIRM P: No Advertising | 5 | -2 |\n| FIRM P: Medium Advertising | 12 | 15 |\n| FIRM P: Heavy Advertising | 14 | 10 |\n\nAgain, first row is dominated by second and third row as all the elements of first row are less than the respective elements of second and third row. Hence eliminating first row, we obtain the following 2 x 2 pay-off matrix.\n\n| | FIRM Q: Medium Advertising | FIRM Q: Heavy Advertising |\n|---|---|---|\n| FIRM P: Medium Advertising | 12 | 15 |\n| FIRM P: Heavy Advertising | 14 | 10 |\n\nAs the pay-off matrix does not possess any saddle point, the firms will use mixed strategies. The optimum mixed strategy for firm P is determined by:\n$$\np_1 = \\frac{10 - 14}{12 + 10 - (14 + 15)} = \\frac{4}{7} \\quad \\text{and} \\quad p_2 = 1 - p_1 = \\frac{3}{7}\n$$\n\nand for the firm Q is given by:\n\n$$\nq_1 = \\frac{10 - 15}{12 + 10 - (14 + 15)} = \\frac{5}{7} \\quad \\text{and} \\quad q_2 = 1 - q_1 = \\frac{2}{7}\n$$\n\nHence the optimum strategies for the two firms are:\n\n| | No Advertising | Medium Advertising | Heavy Advertising |\n|---|---|---|---|\n| $S_A$ | 0 | 4/7 | 3/7 |\n| $S_B$ | 0 | 5/7 | 2/7 |\n\nThe Value of the game (corresponding to the above strategies) is given by:\n$$\nV = \\frac{12 \\times 10 - 14 \\times 15}{12 + 10 - (14 + 15)} = \\frac{90}{7}\n$$\n\nTherefore, the Value of the game is $v = 90 / 7$",
+    "reference_solution_md": "Clearly, the first column is dominated by the second column as all the elements of the first column are greater than elements of the second column. Thus eliminating first column, we get\n\n| | FIRM Q: Medium Advertising | FIRM Q: Heavy Advertising |\n|---|---|---|\n| FIRM P: No Advertising | 5 | -2 |\n| FIRM P: Medium Advertising | 12 | 15 |\n| FIRM P: Heavy Advertising | 14 | 10 |\n\nAgain, first row is dominated by second and third row as all the elements of first row are less than the respective elements of second and third row. Hence eliminating first row, we obtain the following 2 x 2 pay-off matrix.\n\n| | FIRM Q: Medium Advertising | FIRM Q: Heavy Advertising |\n|---|---|---|\n| FIRM P: Medium Advertising | 12 | 15 |\n| FIRM P: Heavy Advertising | 14 | 10 |\n\nAs the pay-off matrix does not possess any saddle point, the firms will use mixed strategies. The optimum mixed strategy for firm P is determined by:\n$$\np_1 = \\frac{10 - 14}{12 + 10 - (14 + 15)} = \\frac{4}{7} \\quad \\text{and} \\quad p_2 = 1 - p_1 = \\frac{3}{7}\n$$\n\nand for the firm Q is given by:\n\n$$\nq_1 = \\frac{10 - 15}{12 + 10 - (14 + 15)} = \\frac{5}{7} \\quad \\text{and} \\quad q_2 = 1 - q_1 = \\frac{2}{7}\n$$\n\nHence the optimum strategies for the two firms are:\n\n| | No Advertising | Medium Advertising | Heavy Advertising |\n|---|---|---|---|\n| $S_A$ | 0 | 4/7 | 3/7 |\n| $S_B$ | 0 | 5/7 | 2/7 |\n\nThe Value of the game (corresponding to the above strategies) is given by:\n$$\nV = \\frac{12 \\times 10 - 14 \\times 15}{12 + 10 - (14 + 15)} = \\frac{90}{7}\n$$\n\nTherefore, the Value of the game is $v = 90 / 7$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "On the basis of the quarterly sales (in ₹ Lakh) of commodity cumin of BOXIN Ltd., for the year 2020-2024, the following calculations were made.\n\nTrend : $Y = 25 + 0.6t$\n\nWith Origin : 1st quarter of 2020; and Scale 1 unit of t = One quarter, where $y$ = Quarterly sales, $t$ = Time units.\n\nSeasonal variations :\n\n| Quarter | I | II | III | IV |\n|---|---|---|---|---|\n| Seasonal Index | 90 | 95 | 105 | 110 |\n\nRequired :\nUsing the multiplicative model of the time series, estimate the sales for each of four quarters of 2024.",
+    "parent_ref": "8",
+    "explanation_md": "Since, in the Trend equation: $Y = 25 + 0.6\\,t$\n1st Quarter of 2020 is origin, we have $t - 0$ for 1st Quarter, Further, since time unit is one Quarter, we have $t = 1, 2$ and $3$ for 2nd, 3rd, 4th Quarters respectively of the year 2020.\n\nHence, the value of $t$ for 1st, 2nd, 3rd and 4th Quarters of 2024 are 16, 17, 18 and 19 respectively\n\nThe estimated quarterly Sales for the year 2024 are obtained in the following table.\nQUARTERLY SALES FOR THE YEAR 2024\n\n| Year Quarter 2024 | $t$ | Total value (T) | Seasonal Effects (S) = Seasonal Index ÷ 100 | Expected Sales (₹ in Lakh) (T x S) |\n|---|---|---|---|---|\n| I. | 16 | 34.6 | 0.90 | 31.14 |\n| II. | 17 | 35.2 | 0.95 | 33.44 |\n| III. | 18 | 35.8 | 1.05 | 37.59 |\n| IV. | 19 | 36.4 | 1.10 | 40.04 |",
+    "reference_solution_md": "Since, in the Trend equation: $Y = 25 + 0.6\\,t$\n1st Quarter of 2020 is origin, we have $t - 0$ for 1st Quarter, Further, since time unit is one Quarter, we have $t = 1, 2$ and $3$ for 2nd, 3rd, 4th Quarters respectively of the year 2020.\n\nHence, the value of $t$ for 1st, 2nd, 3rd and 4th Quarters of 2024 are 16, 17, 18 and 19 respectively\n\nThe estimated quarterly Sales for the year 2024 are obtained in the following table.\nQUARTERLY SALES FOR THE YEAR 2024\n\n| Year Quarter 2024 | $t$ | Total value (T) | Seasonal Effects (S) = Seasonal Index ÷ 100 | Expected Sales (₹ in Lakh) (T x S) |\n|---|---|---|---|---|\n| I. | 16 | 34.6 | 0.90 | 31.14 |\n| II. | 17 | 35.2 | 0.95 | 33.44 |\n| III. | 18 | 35.8 | 1.05 | 37.59 |\n| IV. | 19 | 36.4 | 1.10 | 40.04 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "business-forecasting-models-time-series-and-regression-analysis",
+    "mapping_confidence": 0.54,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(vii)": [
+   "Printed key A matches stored key A"
+  ],
+  "3(a)": [
+   "Printed unbalanced brackets in the TP equation kept as printed"
+  ],
+  "4(a)": [
+   "Print has a 'Calculation of Absorption of overhead cost rate' line before the fraction; the stored text lacked it, so it is added from the print and the fraction is shown stacked"
+  ],
+  "5": [
+   "Printed 'actual price – standard cost = ₹ 140 - ₹ 108 = ₹ 3' kept as printed (₹ 32 evidently intended)",
+   "Removed extraction annotations '[formula garbled in source text]' and '[aid text shows ₹ 3; ₹ 32 intended]' that are not in the print",
+   "Reconciliation tables rebuilt to the printed four-column layout (adverse, favourable, net); indentation of sub-items not reproducible",
+   "Alternative solution analysis rebuilt as a two-column table as printed"
+  ],
+  "6(a)": [
+   "Assignment-matrix figures (boxed cells) are images in the print and are not reproduced",
+   "Printed 'Table-2' has hand-drawn cover lines; reproduced as plain table"
+  ],
+  "7": [
+   "Printed percentage formula uses 'Rs' and is kept as 'Rs'",
+   "Network diagram is a figure and not reproduced",
+   "Cost slope of B printed as -200 (crash duration 5 exceeds normal 4), as in the question"
+  ],
+  "8(a)": [
+   "2x2 matrix and strategy vectors are images in the print; typeset as matrices with a bracketed note of the printed row/column labels",
+   "Printed values (e.g. p1 = 4/7 from (10-14)/(-7)) kept as printed"
+  ],
+  "8(b)": [
+   "Print reads 'we have t – 0 for 1st Quarter' (misprint for t = 0), restored as printed",
+   "Print column heading is 'Total value (T)' (stored text said 'Trend value'), restored as printed"
+  ]
+ },
+ "review_decisions": {
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem tables, requirements and the full answer (cost segregation, budget statement and alternative, export order, capacity check, make-or-buy) compared with the print; faithful.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem and tables match the print; answer compared page by page and a duplicated printed line removed.",
+   "fixes": [
+    "Removed the duplicated line 'Calculation of Absorption of overhead cost rate'"
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem and the printed answer compared; the stored answer repeated the alternative solution (with a wrong standard-profit table and reconciliation) so the duplicates were removed to match the print.",
+   "fixes": [
+    "Removed the misplaced per-unit standard profit table and first reconciliation after the alternative analysis",
+    "Removed the duplicated plain-text copy of the alternative analysis"
+   ],
+   "printed_issues": [
+    "Print reads 'actual price – standard cost = ₹ 140 - ₹ 108 = ₹ 3' (₹ 32 intended)",
+    "Reconciliation arrangement as printed"
+   ],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and Tables 1 and 2 match the print; the two image-only assignment matrices were added with the boxed cells marked, and the rest of the answer matches.",
+   "fixes": [
+    "Replaced the first image placeholder with the printed first assignment matrix (boxed zeros in bold)",
+    "Replaced the second image placeholder with the printed revised assignment matrix (boxed cells in bold)"
+   ],
+   "printed_issues": [
+    "Table-2 prints hand-drawn cover lines, not reproduced"
+   ],
+   "by": "claude-review"
+  },
+  "7": {
+   "verdict": "approve",
+   "reason": "Stem, crash-data table, paths, cost-slope table, all steps and the percentage compared with the print; the network diagram is an image and the answer otherwise stands alone.",
+   "fixes": [],
+   "printed_issues": [
+    "Network diagram printed only as an image, not reproduced",
+    "Activity B has crash duration 5 above normal 4 and cost slope printed as -200",
+    "Percentage formula printed with 'Rs'"
+   ],
+   "by": "claude-review"
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem matrix matches the print; the answer was compared and the bracketed label notes (not in the print) were replaced by the printed labelled matrices.",
+   "fixes": [
+    "2x2 pay-off matrix shown with its printed row and column labels, removing the added bracketed note",
+    "Optimal strategy vectors shown under their printed column labels, removing the added bracketed note"
+   ],
+   "printed_issues": [
+    "Print writes p and q with subscript i for the first strategy",
+    "Value of game 90/7 and p1 = 4/7 as printed"
+   ],
+   "by": "claude-review"
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and the answer (trend, t values, table with 'Total value (T)') compared with the print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Print reads 't – 0' for the first quarter (t = 0 intended)"
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 26,
+  "draft_parts": 0,
+  "answered": 26
+ }
+}

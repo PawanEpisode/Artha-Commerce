@@ -1,0 +1,1064 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "19",
+ "source_file": "pyq-transcriptions/p19-2023-12.json",
+ "paper_review": [
+  "Section B heading printed as 'Customs Act and Rules' although Q2-Q5, Q8 are GST questions; recorded as printed.",
+  "Many descriptive/numerical suggested answers give only final figures."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p19:2023-12",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "indirect-tax-laws-and-practice",
+  "term_code": "2023-12",
+  "title": "CMA Final December 2023: Indirect Tax Laws and Practice (Paper 19)",
+  "paper_code": "P19",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct answer from the *four* alternatives given: 15×2=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "QRP Company Ltd, was aggrieved by 3 different orders of Appellate authority on 25th April, 2023 and want to file 3 different appeals before Appellate Tribunal. The details of amount of tax involved are as follows:\n\n| Case No. | Amount of Tax (₹) |\n|---|---|\n| 1 | 98,000 |\n| 2 | 18,00,000 |\n| 3 | 42,00,000 |\n\nFor this purpose, you are required to calculate the Total amount of fees for all the three applications, to be paid along with application under CGST Act, 2017.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 61,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 25,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 44,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 60,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "input-tax-credit-advanced",
+    "mapping_confidence": 0.79,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In cases of change in rate of tax and amount is credited to the bank account after 4 working days from the date of change in rate of tax, the date of receipt of payment will be:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Date of bank entry",
+      "is_correct": true
+     },
+     {
+      "body_md": "Date of book entry",
+      "is_correct": false
+     },
+     {
+      "body_md": "Date of book entry or date of bank entry, whichever is earlier",
+      "is_correct": false
+     },
+     {
+      "body_md": "Date of book entry or date of bank entry, whichever is later",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "input-tax-credit-advanced",
+    "mapping_confidence": 0.61,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In case of supply of goods for ₹ 9,00,000, following information is provided:\nAdvance of ₹ 5,00,000 received on 1st August\nInvoice issued for ₹ 9,00,000 on 15th August\nGoods removed on 25th August\nBalance payment of ₹ 4,00,000 received on 26th August\nYou may assume that payment entered in the books and credited in the bank on the same day of receipt.\nWhat is the Time of supply for the purpose of payment of tax, as per GST Law?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "1st August for ₹ 5,00,000 and 15th August for ₹ 4,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "15th August for both ₹ 5,00,000 and ₹ 4,00,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "25th August for both ₹ 5,00,000 and ₹ 4,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "1st August for ₹ 5,00,000 and 26th August for ₹ 4,00,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "supply-under-gst-a-refresh",
+    "mapping_confidence": 0.02,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Transactions falling outside the ambit of supply are provided in:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Schedule I",
+      "is_correct": false
+     },
+     {
+      "body_md": "Schedule II",
+      "is_correct": false
+     },
+     {
+      "body_md": "Schedule III",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "place-of-supply",
+    "mapping_confidence": 0.17,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Mr. Ram, a trader in Delhi has opted for composition scheme of taxation under GST. Determine the rate of total GST payable by him under composition scheme:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "0.5% CGST & 0.5% SGST",
+      "is_correct": true
+     },
+     {
+      "body_md": "2.5% CGST & 2.5% UTGST",
+      "is_correct": false
+     },
+     {
+      "body_md": "5% IGST",
+      "is_correct": false
+     },
+     {
+      "body_md": "5% of UTGST",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "export-promotion-schemes-under-foreign-trade-policy",
+    "mapping_confidence": 0.02,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Maintenance & repair service provided within territorial waters to marine vessel owned by foreign company is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "not export of service even if payment is received in forex.",
+      "is_correct": true
+     },
+     {
+      "body_md": "not export of service if payment is received in Indian Rupees.",
+      "is_correct": false
+     },
+     {
+      "body_md": "export of service if payment is received in forex.",
+      "is_correct": false
+     },
+     {
+      "body_md": "export of service even if payment is received in Indian Rupees.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "export-promotion-schemes-under-foreign-trade-policy",
+    "mapping_confidence": 0.48,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The time limit beyond which if goods are not returned, the capital goods sent for job work shall be treated as supply",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "One year",
+      "is_correct": false
+     },
+     {
+      "body_md": "Five years",
+      "is_correct": false
+     },
+     {
+      "body_md": "Six months",
+      "is_correct": false
+     },
+     {
+      "body_md": "Three years",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "gst-returns",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A registered supplier, who regularly files monthly GST return, has paid GST of ₹ 85,000 pertaining to the month of June 2022 on 10-08-2022. The total interest payable for delayed remittance of GST is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 838 (R/off)",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 419 (R/off)",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 559 (R/off)",
+      "is_correct": false
+     },
+     {
+      "body_md": "NIL",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "gst-annual-return-and-gst-audit-return",
+    "mapping_confidence": 0.36,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A manufacturer who is a registered person under GST has purchased 11000 kgs of raw material during February, 2023, on which IGST of ₹ 1,10,000 has been paid. He has taken 100 kgs for personal use. 200 kgs were stolen from the factory. Only 80% of the raw materials were consumed during the month for production. The input tax credit available to him for February, 2023 is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 1,09,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1,07,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 1,08,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1,10,000",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "input-tax-credit-advanced",
+    "mapping_confidence": 0.63,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "M/s Amar Megamart, a store located and registered under GST in Karnataka, has come out with big discount offers at the time of Diwali on various gift items. In order to attract more customers, it has decided to supply a gift pack containing 6 packets of Amarram's Namkeen (200 gram each) taxable @ 12%, 2 packet of Roasted Smoked Almonds (100 gram) taxable @ 18%, 1 packet of Cournville Chocolate (50 mg) taxable @ 28% and 1 bottle of Teal Fresh Juice (1 litre) taxable @ 18% in a single basket for a single price of ₹ 1,200. State the type of supply and the tax rate applicable on the same.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Composite supply; tax rate of the principal item, i.e. Namkeen @18%",
+      "is_correct": false
+     },
+     {
+      "body_md": "Composite supply; highest tax rate out of all items, i.e. 28% applicable to chocolates",
+      "is_correct": false
+     },
+     {
+      "body_md": "Mixed supply; tax rate of principal item, i.e. Namkeen @18%",
+      "is_correct": false
+     },
+     {
+      "body_md": "Mixed supply; highest tax rate out of all items, i.e. 28% applicable to chocolates",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "supply-under-gst-a-refresh",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Under Customs Act, 1962 which of this is not mandatory documents required for export of goods from India",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Bill of Lading/Airway Bill/Lorry Receipt/Railway Receipt/Postal Receipt",
+      "is_correct": false
+     },
+     {
+      "body_md": "Commercial Invoice cum Packing List",
+      "is_correct": false
+     },
+     {
+      "body_md": "Shipping Bill/Bill of Export",
+      "is_correct": false
+     },
+     {
+      "body_md": "Bill of entry",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "export-promotion-schemes-under-foreign-trade-policy",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In which of the following cases, can an importer claim abatement of duty under section 22 of the Customs Act, 1962?\n(i) Goods pilfered during unloading\n(ii) Goods damaged by accident (due to negligence of the importer) after unloading but before examination for assessment by customs authorities\n(iii) Goods destroyed by accident while being removed from the warehouse after clearance for home consumption\n(iv) Goods damaged by accident (not due to negligence of the importer) after unloading but before examination for assessment by customs authorities\nChoose the most appropriate option:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Only (iv)",
+      "is_correct": true
+     },
+     {
+      "body_md": "Only (iii)",
+      "is_correct": false
+     },
+     {
+      "body_md": "Both (i) and (iii)",
+      "is_correct": false
+     },
+     {
+      "body_md": "(i), (ii), (iii) and (iv)",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "customs-import-of-goods-at-concessional-rate-of-duty-rules-2017",
+    "mapping_confidence": 0.58,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Value of inputs covered by Advance authorization ₹ 27 lakh. Export must be of __________ minimum value addition.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "10%",
+      "is_correct": false
+     },
+     {
+      "body_md": "15%",
+      "is_correct": true
+     },
+     {
+      "body_md": "20%",
+      "is_correct": false
+     },
+     {
+      "body_md": "50%",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "export-promotion-schemes-under-foreign-trade-policy",
+    "mapping_confidence": 0.36,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In the context of Indian Customs law, ICEGATE means",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Indian Customs Electronic Data Interchange Gateway",
+      "is_correct": true
+     },
+     {
+      "body_md": "Indian Customs Electronic Gateway",
+      "is_correct": false
+     },
+     {
+      "body_md": "Inter-Continental Electronic Gateway",
+      "is_correct": false
+     },
+     {
+      "body_md": "Indian Constitutional Electronic Data Interchange Gateway",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "customs-procedures-baggage-and-courier-post",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Where a person of Indian origin stays abroad for 36 months and returns to India on 25.4.2023 for having residence in India, the GFA for used household articles (Baggage) is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 1 lakh",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 3 lakh",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 5 lakh",
+      "is_correct": true
+     },
+     {
+      "body_md": "Nil",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "gst-returns",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What do you mean by composite supply and mixed supply? Briefly discuss the manner in which the tax liability on composite supplies and mixed supplies is determined.",
+    "parent_ref": "2",
+    "explanation_md": "Composite supply means a supply made by a taxable person to a recipient and:\n\n(a) Comprises two or more taxable supplies of goods or services or both, or any combination thereof.\n(b) are naturally bundled and supplied in conjunction with each other, in the ordinary course of business. This means that in a composite supply, goods or services or both are bundled owing to natural necessities. The elements in a composite supply are dependent on the 'principal supply'.\n\nDetermination of tax liability on composite supplies:\nA composite supply comprising of two or more supplies, one of which is a principal supply, shall be treated as rate of tax applicable to of such principal supply.\n\nMixed supply means:\n(a) Two or more individual supplies of goods or services, or any combination thereof, made in conjunction with each other by a taxable person\n(b) For a single price where such supply does not constitute a composite supply.\nThe individual supplies are independent of each other and are not naturally bundled\n\nDetermination of tax liability on mixed supplies:\nA mixed supply comprising of two or more supplies shall be treated as supply of that particular supply that attracts highest rate of tax.",
+    "reference_solution_md": "Composite supply means a supply made by a taxable person to a recipient and:\n\n(a) Comprises two or more taxable supplies of goods or services or both, or any combination thereof.\n(b) are naturally bundled and supplied in conjunction with each other, in the ordinary course of business. This means that in a composite supply, goods or services or both are bundled owing to natural necessities. The elements in a composite supply are dependent on the 'principal supply'.\n\nDetermination of tax liability on composite supplies:\nA composite supply comprising of two or more supplies, one of which is a principal supply, shall be treated as rate of tax applicable to of such principal supply.\n\nMixed supply means:\n(a) Two or more individual supplies of goods or services, or any combination thereof, made in conjunction with each other by a taxable person\n(b) For a single price where such supply does not constitute a composite supply.\nThe individual supplies are independent of each other and are not naturally bundled\n\nDetermination of tax liability on mixed supplies:\nA mixed supply comprising of two or more supplies shall be treated as supply of that particular supply that attracts highest rate of tax.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "supply-under-gst-a-refresh",
+    "mapping_confidence": 0.03,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "With reference to GST law, discuss the contents of Form GSTR-3B.",
+    "parent_ref": "2",
+    "explanation_md": "Form GSTR-3B consists of Tables:\n1. GSTIN number of Registered Person\n2. Legal name of Registered Person\n3. Summary of Outward Supply & Inward Supply under Reverse Charge Bifurcation of Inter-state outward supplies as follows:\n(a) To unregistered Person\n(b) To Composite taxable Person\n(c) To UIN Holders\n4. Summary of eligible ITC claim bifurcated into IGST, CGST & SGST/UTSGT and Cess\n5. Summary of Exempted, Nil rated and Non-GST inward supplies\n6. Details of payment of tax, which includes Category wise tax payable, ITC availed, TDS credit and Tax paid in cash along with interest and late fees (Though it is not applicable for initial return.)\n7. Summary of tax category wise TDS/TCS credit",
+    "reference_solution_md": "Form GSTR-3B consists of Tables:\n1. GSTIN number of Registered Person\n2. Legal name of Registered Person\n3. Summary of Outward Supply & Inward Supply under Reverse Charge Bifurcation of Inter-state outward supplies as follows:\n(a) To unregistered Person\n(b) To Composite taxable Person\n(c) To UIN Holders\n4. Summary of eligible ITC claim bifurcated into IGST, CGST & SGST/UTSGT and Cess\n5. Summary of Exempted, Nil rated and Non-GST inward supplies\n6. Details of payment of tax, which includes Category wise tax payable, ITC availed, TDS credit and Tax paid in cash along with interest and late fees (Though it is not applicable for initial return.)\n7. Summary of tax category wise TDS/TCS credit",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "supply-under-gst-a-refresh",
+    "mapping_confidence": 0.01,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Mr. Basant a registered supplier of Chennai, received the following amounts in respect of the various activities undertaken by him during the month of May, 2023:\n\n| S. No. | Particulars | Amount (₹) |\n|---|---|---|\n| (i) | Actionable claim received from normal business debtors | 9,20,000 |\n| (ii) | Commission received as a recovery agent from a non-banking finance-company (NBFC) | 51,000 |\n| (iii) | He got permission from the municipal authorities to build 7 floors building in the Bengaluru but he agreed to build only 3 floors and received ₹ 22,00,000 as compensation from Ranjeet Constructions Ltd, a neighboring housing project which wants to protect its sunlight | 22,00,000 |\n| (iv) | Amount received from GHK Ltd. for performance of classical dance in one program. | 1,99,500 |\n| (v) | Amount charged for providing services by way of fumigation in a warehouse of agricultural produce. | 1,20,000 |\n| (vi) | Consideration received for one month rent from a registered individual person for renting of residential dwelling for use as office. | 18,000 |\n| (vii) | Amount charged for composite supply of goods and service by way of milling of wheat in to wheat flour, along with fortification to Karnataka Government for distribution of such wheat flour under Public Distribution System (PDS) in Karnataka. (The value of supply of goods in the above supply constitutes 48% of the value of composite supply) | 7,00,000 |\n\nNotes:-\n(i) All the amount stated above in both the tables are exclusive of GST, wherever applicable\n(ii) Aggregate turnover of Mr. Basant in previous year was ₹ 42,00,000\n\nYou. are required to Compute Gross Value of supplies, on which GST to be paid by Mr. Basant for the month of May, 2023.\nCorrect legal provision should form part of your answer.",
+    "parent_ref": "3",
+    "explanation_md": "Total supply on which GST to be paid by Mr. Basant ₹ 32,19,500",
+    "reference_solution_md": "Total supply on which GST to be paid by Mr. Basant ₹ 32,19,500",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "supply-under-gst-a-refresh",
+    "mapping_confidence": 0.1,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "KJP Ltd. gives you the following information for the month of April, 2023:\n\n| S. No. | Particulars | Amount (₹) | Amount (₹) |\n|---|---|---|---|\n| (i) | Total input tax credit on input goods and input services. | | 9,60,000 |\n| (ii) | This amount of ₹ 9,60,000 includes the following: | | |\n| | ITC attributable to goods exclusively used for non-business purposes | 70,000 | |\n| | ITC attributable, to goods used for effecting exempt supplies | 2,20,000 | |\n| | ITC in respect of inputs on which credit is not available under section 17(5) such as blocked credit | 75,000 | |\n| | ITC attributable exclusively for effecting taxable supplies | 4,25,000 | |\n| (iii) | Total turnover | | 75,00,000 |\n| (iv) | Total value of exempt supplies | | 18,50,000 |\n\nCompute the quantum of common credit and the amount of ITC to be reversed as per rule 42 of CGST Rules, 2017.",
+    "parent_ref": "3",
+    "explanation_md": "Common credit ₹ 1,70,000\nITC to be reversed ₹ 50,433 (R/off)",
+    "reference_solution_md": "Common credit ₹ 1,70,000\nITC to be reversed ₹ 50,433 (R/off)",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "input-tax-credit-advanced",
+    "mapping_confidence": 0.67,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "With reference to GST law, discuss in brief the Contents of Form GSTR-9C.",
+    "parent_ref": "4",
+    "explanation_md": "Contents of Form GSTR-9C:\nThe GSTR-9C consists of two main parts:\nPart-A: Reconciliation Statement\nPart-B: Self-certification\n\nPart-A: The Reconciliation Statement is divided into different parts as follows:\nPart-I: Basic details:\nConsists of FY, GSTIN, Legal Name and Trade Name. The taxpayer must also mention if he is subject to audit under any other law.\n\nPart-II: Reconciliation of turnover declared in the Audited Annual Financial Statement with turnover declared in Annual Return (GSTR-9):\nThis involves reporting the gross and taxable turnover declared in the Annual return with the Audited Financial Statements. One must note that most often, the Audited Financial statements are at a PAN level. This might require the breakup of the audited financial statements at GSTIN level for reporting in GSTR-9C.\n\nPart-III: Reconciliation of tax paid:\nThis section requires GST rate-wise reporting of the tax liability that arose as per the accounts and paid as reported in the GSTR-9 respectively with the differences thereof. Further, it requires the taxpayers to state the additional liability due to un-reconciled differences noticed upon reconciliation.\n\nPart-IV: Reconciliation of Input Tax Credit (ITC):\nThis part consists of the reconciliation of input tax credit availed and utilised by taxpayers as reported in GSTR-9 and as reported in the Audited Financial Statement.\n\nFurther, it needs a reporting of Expenses booked as per the Audited Accounts, with a breakup of eligible and ineligible ITC and reconciliation of the eligible ITC with that amount claimed as per GSTR-9. This declaration will be after considering the reversals of ITC claimed, if any.\n\nPart-B: Self-certification:\nThe amended section 44 clearly states now only self-certification of reconciliation statement in Form GSTR-9C is required. Earlier the same also required certification either by the Chartered accountant or the cost accountant.\nThe GST annual return should be accompanied by a self-certified reconciliation statement",
+    "reference_solution_md": "Contents of Form GSTR-9C:\nThe GSTR-9C consists of two main parts:\nPart-A: Reconciliation Statement\nPart-B: Self-certification\n\nPart-A: The Reconciliation Statement is divided into different parts as follows:\nPart-I: Basic details:\nConsists of FY, GSTIN, Legal Name and Trade Name. The taxpayer must also mention if he is subject to audit under any other law.\n\nPart-II: Reconciliation of turnover declared in the Audited Annual Financial Statement with turnover declared in Annual Return (GSTR-9):\nThis involves reporting the gross and taxable turnover declared in the Annual return with the Audited Financial Statements. One must note that most often, the Audited Financial statements are at a PAN level. This might require the breakup of the audited financial statements at GSTIN level for reporting in GSTR-9C.\n\nPart-III: Reconciliation of tax paid:\nThis section requires GST rate-wise reporting of the tax liability that arose as per the accounts and paid as reported in the GSTR-9 respectively with the differences thereof. Further, it requires the taxpayers to state the additional liability due to un-reconciled differences noticed upon reconciliation.\n\nPart-IV: Reconciliation of Input Tax Credit (ITC):\nThis part consists of the reconciliation of input tax credit availed and utilised by taxpayers as reported in GSTR-9 and as reported in the Audited Financial Statement.\n\nFurther, it needs a reporting of Expenses booked as per the Audited Accounts, with a breakup of eligible and ineligible ITC and reconciliation of the eligible ITC with that amount claimed as per GSTR-9. This declaration will be after considering the reversals of ITC claimed, if any.\n\nPart-B: Self-certification:\nThe amended section 44 clearly states now only self-certification of reconciliation statement in Form GSTR-9C is required. Earlier the same also required certification either by the Chartered accountant or the cost accountant.\nThe GST annual return should be accompanied by a self-certified reconciliation statement",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "gst-annual-return-and-gst-audit-return",
+    "mapping_confidence": 0.66,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "With reference to CGST Act, 2017, Explain in brief the term \"Related persons\" and \"Distinct persons\".",
+    "parent_ref": "4",
+    "explanation_md": "Related persons\nAs per Explanation to Section 15 of CGST Act, 2017:\n(a) persons shall be deemed to be \"related persons\" if--\n(i) such persons are officers or directors of one another's businesses;\n(ii) such persons are legally recognized partners in business;\n(iii) such persons are employer and employee;\n(iv) any person directly or indirectly owns, controls or holds 25% or more of the outstanding voting stock or shares of both of them;\n(v) one of them directly or indirectly controls the other;\n(vi) both of them are directly or indirectly controlled by a third person;\n(vii) together they directly or indirectly control a third person; or\n(viii) they are members of the same family;\n(b) the term \"person\" also includes legal persons;\n(c) persons who are associated in the business of one another in that one is the sole agent or sole distributor or sole concessionaire, howsoever described, of the other, shall be deemed to be related.\n\nDistinct persons\nDistinct persons specified under section 25 of CGST Act, 2017:\nEvery place of business of a person where separate registration is obtained for output supply will be considered as distinct person.\nSection 25(4), A person who has obtained or is required to obtain more than one registration, whether in one State or Union territory or more than one State or Union territory shall, in respect of each such registration, be treated as distinct persons for the purposes of this Act.\nSection 25(5), Where a person who has obtained or is required to obtain registration in a State or Union territory in respect of an establishment, has an establishment in another State or Union territory, then such establishments shall be treated as establishments of distinct persons for the purposes of this Act.",
+    "reference_solution_md": "Related persons\nAs per Explanation to Section 15 of CGST Act, 2017:\n(a) persons shall be deemed to be \"related persons\" if--\n(i) such persons are officers or directors of one another's businesses;\n(ii) such persons are legally recognized partners in business;\n(iii) such persons are employer and employee;\n(iv) any person directly or indirectly owns, controls or holds 25% or more of the outstanding voting stock or shares of both of them;\n(v) one of them directly or indirectly controls the other;\n(vi) both of them are directly or indirectly controlled by a third person;\n(vii) together they directly or indirectly control a third person; or\n(viii) they are members of the same family;\n(b) the term \"person\" also includes legal persons;\n(c) persons who are associated in the business of one another in that one is the sole agent or sole distributor or sole concessionaire, howsoever described, of the other, shall be deemed to be related.\n\nDistinct persons\nDistinct persons specified under section 25 of CGST Act, 2017:\nEvery place of business of a person where separate registration is obtained for output supply will be considered as distinct person.\nSection 25(4), A person who has obtained or is required to obtain more than one registration, whether in one State or Union territory or more than one State or Union territory shall, in respect of each such registration, be treated as distinct persons for the purposes of this Act.\nSection 25(5), Where a person who has obtained or is required to obtain registration in a State or Union territory in respect of an establishment, has an establishment in another State or Union territory, then such establishments shall be treated as establishments of distinct persons for the purposes of this Act.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-advanced",
+    "mapping_confidence": 0.17,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "In the following independent cases determine the place of supply along with reasons as per the provisions of GST law:\n(i) Mr. Manoj, who is registered under GST at Delhi, has availed land-line services from VGT Ltd. The telephone is installed in residential premises in Bengaluru.\n(ii) Mr. Mohit (registered person in Hyderabad) travels from Mumbai to Delhi by BCG Airlines. Mr Mohit has bought the tickets for the journey from BCG Airline's office registered in Chennai.\n(iii) ABC Ltd. an event management company (New Delhi) is hired by Mr. Varan (unregistered person based in Bangaluru) to plan and organise his marriage in Jaipur.\n(iv) Miss Saroj, an unregistered person of Delhi sends a courier to her friend in Jalandhar which was delivered going through Haryana.",
+    "parent_ref": "5",
+    "explanation_md": "(i) Bengaluru\nThe place of supply of services by way of fixed telecommunication line is the location where the telecommunication line is installed for receipt of service.\n(ii) Hyderabad\nIn a case where recipient of service is registered, the place of supply of service is the location of recipient.\n(iii) Jaipur\nThe recipient being an unregistered person and the event held in India, the place of supply is the location where the event is held.\n(iv) Delhi\nThe recipient being unregistered person, the place of supply is the location where goods handed over for their transportation.",
+    "reference_solution_md": "(i) Bengaluru\nThe place of supply of services by way of fixed telecommunication line is the location where the telecommunication line is installed for receipt of service.\n(ii) Hyderabad\nIn a case where recipient of service is registered, the place of supply of service is the location of recipient.\n(iii) Jaipur\nThe recipient being an unregistered person and the event held in India, the place of supply is the location where the event is held.\n(iv) Delhi\nThe recipient being unregistered person, the place of supply is the location where goods handed over for their transportation.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "place-of-supply",
+    "mapping_confidence": 0.56,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Compute the GST liability of Mr. Ravi, an air travel agent, for the quarter ended December 31, 2022 using the following details:\n\n| | Particulars | Amount (₹) |\n|---|---|---|\n| (i) | Basic air fare collected for domestic booking of tickets | 60,00,000 |\n| (ii) | Basic air fare collected for international booking of tickets | 70,00,000 |\n| (iii) | Commission received from the airlines on the sale of domestic and international tickets | 4,75,000 |\n| (iv) | Year ending bonus received from airlines | 40,000 |\n\nIn the above case, would the GST liability of Mr. Ravi be reduced if he opts for the special provision for payment of GST as per Rule 32(3) of the CGST Rules, 2017? The applicable rate of GST 18%.",
+    "parent_ref": "5",
+    "explanation_md": "Under normal Provision\nGST ₹ 92,700\n\nAs per Rule 32(3) of the CGST Rules, 2017\nGST ₹ 1,80,000\nNote: The GST liability of Mr. Ravi would not be reduced in the aforesaid option. Therefore, special provision under Rule 32(3) of CGST Rules, 2017 is not economical.",
+    "reference_solution_md": "Under normal Provision\nGST ₹ 92,700\n\nAs per Rule 32(3) of the CGST Rules, 2017\nGST ₹ 1,80,000\nNote: The GST liability of Mr. Ravi would not be reduced in the aforesaid option. Therefore, special provision under Rule 32(3) of CGST Rules, 2017 is not economical.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "gst-annual-return-and-gst-audit-return",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "With reference to New Foreign Trade Policy (FTP) - 2023 discuss briefly operating principles of \"Remission of Duties and Taxes on Exported Products\" (RoDTEP) scheme.",
+    "parent_ref": "6",
+    "explanation_md": "RODTEP Scheme Operating Principles:\n1. RoDTEP support will be available to eligible exporters at a notified rate as a percentage of Freight On Board (FOB) value. Rebate on certain export products will also be subject to value cap per unit of the exported product. However, for the purpose of calculation of duty credit, value of exported shall be least of the following: (a) FOB value of said goods, or (b) 1.5 times of the market price of the goods.\n2. Identified export sectors and rates under RoDTEP cover 8555 tariff lines in addition to similar support being extended to apparel and made-ups exports under RoSCTL scheme of Ministry of Textiles.\n3. Employment Oriented Sectors like Marine, Agriculture, Leather, Gems & Jewellery etc. are covered under the Scheme. Other sectors like Automobile, Plastics, Electrical / Electronics, Machinery etc. also get support. The entire valve chain of textiles also gets covered through RoDTEP & RoSCTL.\n4. Rebate under the Scheme shall not be available in respect of duties and taxes already exempted or remitted or credited.\n5. The determination of ceiling rates under the scheme will be done by a Committee in the Department of Revenue/Drawback Division with suitable representation of the DoC/DGFT, line ministries and experts, on the sectors prioritized by Department of Commerce and Depart of Revenue.\n6. No provision for remission of arrears or contingent liabilities is permissible under the Scheme to be carried over to the next financial year.\n7. The rebate allowed is subject to the receipt of sale proceeds within time allowed under the Foreign Exchange Management Act, 1999 failing which such rebate shall be deemed never to have been allowed.\nThe rebate would not be dependent on the realisation of export proceeds at the time of issue of rebate. However, adequate safeguards to avoid any misuse on account of non-realisation and other systemic improvements as in operation under Drawback Scheme, IGST and other GST refunds relating to exports would also be applicable for claims made under RoDTEP Scheme.",
+    "reference_solution_md": "RODTEP Scheme Operating Principles:\n1. RoDTEP support will be available to eligible exporters at a notified rate as a percentage of Freight On Board (FOB) value. Rebate on certain export products will also be subject to value cap per unit of the exported product. However, for the purpose of calculation of duty credit, value of exported shall be least of the following: (a) FOB value of said goods, or (b) 1.5 times of the market price of the goods.\n2. Identified export sectors and rates under RoDTEP cover 8555 tariff lines in addition to similar support being extended to apparel and made-ups exports under RoSCTL scheme of Ministry of Textiles.\n3. Employment Oriented Sectors like Marine, Agriculture, Leather, Gems & Jewellery etc. are covered under the Scheme. Other sectors like Automobile, Plastics, Electrical / Electronics, Machinery etc. also get support. The entire valve chain of textiles also gets covered through RoDTEP & RoSCTL.\n4. Rebate under the Scheme shall not be available in respect of duties and taxes already exempted or remitted or credited.\n5. The determination of ceiling rates under the scheme will be done by a Committee in the Department of Revenue/Drawback Division with suitable representation of the DoC/DGFT, line ministries and experts, on the sectors prioritized by Department of Commerce and Depart of Revenue.\n6. No provision for remission of arrears or contingent liabilities is permissible under the Scheme to be carried over to the next financial year.\n7. The rebate allowed is subject to the receipt of sale proceeds within time allowed under the Foreign Exchange Management Act, 1999 failing which such rebate shall be deemed never to have been allowed.\nThe rebate would not be dependent on the realisation of export proceeds at the time of issue of rebate. However, adequate safeguards to avoid any misuse on account of non-realisation and other systemic improvements as in operation under Drawback Scheme, IGST and other GST refunds relating to exports would also be applicable for claims made under RoDTEP Scheme.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "export-promotion-schemes-under-foreign-trade-policy",
+    "mapping_confidence": 0.73,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Under the new Foreign Trade Policy (FTP)-2023 state the categories of supplies considered as 'Deemed Export' in case of\n(i) Supply by manufacturer\n(ii) Supply by main/sub-contractors(s)",
+    "parent_ref": "6",
+    "explanation_md": "Supply by manufacturer\n1 Supply of goods against Advance Authorisation/Advance Authorisation for annual requirement/ DFIA\n2 Supply of goods to units located in EOU/ STP/ EHTP/ BTP.\n3 Supply of capital goods against EPCG authorisation\nSupply by main/sub-contractors(s)\n1 Supply of goods to projects or turnkey contracts financed by multilateral or bilateral agencies/Funds notified by Department of Economic Affairs (DEA), under International Competitive Bidding (ICB).\n2 Supply of goods to any project or for any purpose where import is permitted at zero basic customs duty provided supply is made against International Competitive Bidding.\n3 Supply of goods to mega power projects\n4 Supply to goods to UN or international organisations for their official use or supplied to projects financed by them.\n5 Supply of goods to nuclear projects through national/international competitive bidding",
+    "reference_solution_md": "Supply by manufacturer\n1 Supply of goods against Advance Authorisation/Advance Authorisation for annual requirement/ DFIA\n2 Supply of goods to units located in EOU/ STP/ EHTP/ BTP.\n3 Supply of capital goods against EPCG authorisation\nSupply by main/sub-contractors(s)\n1 Supply of goods to projects or turnkey contracts financed by multilateral or bilateral agencies/Funds notified by Department of Economic Affairs (DEA), under International Competitive Bidding (ICB).\n2 Supply of goods to any project or for any purpose where import is permitted at zero basic customs duty provided supply is made against International Competitive Bidding.\n3 Supply of goods to mega power projects\n4 Supply to goods to UN or international organisations for their official use or supplied to projects financed by them.\n5 Supply of goods to nuclear projects through national/international competitive bidding",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "export-promotion-schemes-under-foreign-trade-policy",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "After visiting USA for a month, Mrs. and Mr. X (Indian residents aged 40 and 45 years respectively) brought to India a laptop computer valued at ₹ 80,000, used personal effects valued at ₹ 90,000 and as personal computer for ₹ 52,000. What is the customs duty payable? (Ignore Agriculture infrastructure and development cess.)",
+    "parent_ref": "7",
+    "explanation_md": "Baggage duty\nAs per Baggage Rules, 2016, an Indian resident arriving from any country other than Nepal, Bhutan or Myanmar is allowed duty free clearance of-\n(i) Used personal effects and travel souvenirs without any value limit.\n(ii) Articles [other than certain specified articles] upto a value of ₹ 50,000 carried as accompanied baggage [General duty-free baggage allowance].\nFurther, such general duty-free baggage allowance of a passenger cannot be pooled with the general duty free baggage allowance of any other passenger.\nOne laptop computer when imported into India by a passenger of the age of 18 years or above (other than member of crew) as baggage is exempt from whole of the customs duty [Notification No. 11/2004 Cus. dated 08.01.2004].\nAccordingly, there will be no customs duty on used personal effects (worth ₹ 90,000) of Mrs. and Mr. X and laptop computer brought by them will be exempt from duty.\nValue of baggage of personal computer after exhausting the duty-free baggage allowance will be ₹ 52,000 - ₹ 50,000 = ₹ 2,000.\nEffective rate of duty for baggage =38.5% [including social welfare surcharge @ 10%] Therefore, total customs duty = ₹ 770",
+    "reference_solution_md": "Baggage duty\nAs per Baggage Rules, 2016, an Indian resident arriving from any country other than Nepal, Bhutan or Myanmar is allowed duty free clearance of-\n(i) Used personal effects and travel souvenirs without any value limit.\n(ii) Articles [other than certain specified articles] upto a value of ₹ 50,000 carried as accompanied baggage [General duty-free baggage allowance].\nFurther, such general duty-free baggage allowance of a passenger cannot be pooled with the general duty free baggage allowance of any other passenger.\nOne laptop computer when imported into India by a passenger of the age of 18 years or above (other than member of crew) as baggage is exempt from whole of the customs duty [Notification No. 11/2004 Cus. dated 08.01.2004].\nAccordingly, there will be no customs duty on used personal effects (worth ₹ 90,000) of Mrs. and Mr. X and laptop computer brought by them will be exempt from duty.\nValue of baggage of personal computer after exhausting the duty-free baggage allowance will be ₹ 52,000 - ₹ 50,000 = ₹ 2,000.\nEffective rate of duty for baggage =38.5% [including social welfare surcharge @ 10%] Therefore, total customs duty = ₹ 770",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "customs-procedures-baggage-and-courier-post",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Nidhi Exporters imported some goods on 1st January, 2023. The goods were not meant for being used in an 100% EOU, STP unit, EHTP unit. The goods were cleared from the Mumbai port for warehousing on 8th January by presenting an 'into Bond' Bill of Entry. The assessable value of the goods was US $ 10,000. On 8th January, the exchange rate was ₹ 66 per US $ and the rate of basic customs duty was 15%. The order permitting the deposit of goods, in warehouse for 4 months was issued under section 60 of the Customs Act, 1962 on 15th January. The goods were thereafter deposited in a warehouse at Delhi and were cleared from Delhi warehouse on 31st May. The rate of Basic customs duty was 15% and exchange rate was ₹ 68.75 per 1 US $ on 31st May. IGST @ 10% is applicable on said goods. Further, the rate of basic customs duty was 12% and exchange rate was ₹ 67 per 1 US $ on 15th May. Ignore IGST and agriculture and infrastructure development cess.\nYou are required to compute: (a) total customs duty payable and (b) interest, if any, payable.",
+    "parent_ref": "7",
+    "explanation_md": "(a) Total customs duty payable ₹ 1,61,832\n(b) Interest payable ₹ 2,993",
+    "reference_solution_md": "(a) Total customs duty payable ₹ 1,61,832\n(b) Interest payable ₹ 2,993",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "customs-import-of-goods-at-concessional-rate-of-duty-rules-2017",
+    "mapping_confidence": 0.74,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Following are the particulars, relating to one of the machines sold by M/s TDR Ltd. registered at Mumbai to M/s. FDT Ltd. of Rajasthan in the month of April 2023, at contract price of ₹ 6,00,000. (Exclusive of taxes and discount)\nFurther, following additional amounts have been charged from M/s FDT Ltd:\n\n| S. No. | Particulars | Amount (₹) |\n|---|---|---|\n| (i) | Outward freight Charges (Contract was to deliver machine at FDT Ltd's factory i.e. F.O.R. contract) | 40,000 |\n| (ii) | CGST and SGST chargeable on the machine | 72,000 |\n\nAdditional information:\n(i) M/s TDR Ltd. offers trade discount of ₹ 3 % on the price of ₹ 6,00,000 which was recorded in invoice.\n(ii) M/s TDR Ltd. normally gives an interest-free credit period of 20 days for payment, after that it charge interest @ 1.50 % P.M. or part thereof on contract price. M/s FDT Ltd. paid for the supply after 25 days but M/s TDR Ltd. waived the interest payable for delay\n(iii) M/s TDR Ltd. received ₹ 50,000 as subsidy, from one non-government organization (NGO) on sale of such machine., this Subsidy not linked to the price of machine and also not considered in contract price of ₹ 6,00,000.\n\nCompute the Taxable Value of supply as per provision of GST laws considering that the price is the sole consideration for the supply and both parties are unrelated to each other\nNote:- Correct legal provision should form part of your answer.",
+    "parent_ref": "8",
+    "explanation_md": "Taxable value of Supply ₹ 6,22,000",
+    "reference_solution_md": "Taxable value of Supply ₹ 6,22,000",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "supply-under-gst-a-refresh",
+    "mapping_confidence": 0.26,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "CDA Ltd., a unit in SEZ, received services from various service providers in relation to authorized operations in SEZ during the month May, 2023. The following details are furnished for the month May, 2023:\n(i) Value of Taxable services used exclusively for authorized operations within SEZ : ₹ 8,00,000 (exemption from GST availed).\n(ii) Value of Taxable Services used by SEZ units and DTA units : ₹ 9,00,000. GST paid @ 18%.\n(iii) Value of Taxable Service used wholly for DTA units : ₹ 7,00,000. GST paid @ 18%.\n(iv) Export Turnover of SEZ Unit : ₹ 90,00,000\n(v) Turnover of DTA Unit : ₹ 60,00,000\nCompute the Input Tax Credit (ITC) and amount of refund if any.\nNote: All input services used by SEZ for its authorized operations only.",
+    "parent_ref": "8",
+    "explanation_md": "Input Tax Credit (ITC) ₹ 1,90,800\n\nRefund ₹ 97,200",
+    "reference_solution_md": "Input Tax Credit (ITC) ₹ 1,90,800\n\nRefund ₹ 97,200",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "input-tax-credit-advanced",
+    "mapping_confidence": 0.59,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {},
+ "review_decisions": {
+  "1(viii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print and the stored key A equals the key (A) printed in the suggested answers.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared the stem table, notes and requirement with the print; the answer gives only the final figure as printed.",
+   "fixes": [
+    "Restored the printed 'You. are required'."
+   ],
+   "printed_issues": [
+    "Section B is headed 'Customs Act and Rules' although the question is a GST question.",
+    "Requirement reads 'You. are required'.",
+    "Suggested answer gives only the final figure."
+   ],
+   "by": "claude-review"
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem table matches the print; answer gives only the final figures as printed.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ],
+   "by": "claude-review"
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and requirement match the print; answer figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ],
+   "by": "claude-review"
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Compared the stem with the print (checked at high resolution under the watermark) and the long answer with the suggested answers.",
+   "fixes": [
+    "Restored the printed 'and as personal computer'."
+   ],
+   "printed_issues": [
+    "Stem prints 'and as personal computer'.",
+    "Section B is headed 'Customs Act and Rules'."
+   ],
+   "by": "claude-review"
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the final figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ],
+   "by": "claude-review"
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem, table and additional information match the print apart from one symbol; answer gives only the final figure as printed.",
+   "fixes": [
+    "Restored the printed '₹ 3 %' in the trade discount line."
+   ],
+   "printed_issues": [
+    "Trade discount printed as '₹ 3 %'.",
+    "Suggested answer gives only the final figure."
+   ],
+   "by": "claude-review"
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only final figures."
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 29
+ }
+}

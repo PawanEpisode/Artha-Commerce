@@ -1,0 +1,14 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p13-2024-12",
+ "items": {
+  "5(b)": {
+   "answer_md": "Petition to Tribunal against mismanagement by majority members\n\n(i) Who can file the petition Section-241. Provides application to Tribunal for relief in cases of oppression\n\nAs per section 244, the following members of a company shall have the right to apply, namely: —\n\n1. in the case of a company having a share capital, not less than one hundred members of the company or not less than one-tenth of the total number of its members, whichever is less, or any member or members holding not less than one-tenth of the issued share capital of the company, subject to the condition that the applicant or applicants has or have paid all calls and other sums due on his or their shares;\n2. in the case of a company not having a share capital, not less than one-fifth of the total number of its members In the light of the above provisions the petition is maintainable since the number of members who file petition is 90 which is more than the minimum requirement i.e $1/10$ th of total number of member $600/10=60$.\n\n(ii) Subsequent withdrawal by some members\n\nThe maintainability of the petition is to be judged to be judged with reference to the fulfilment of the criteria at the time of its filing. Once the petition is duly filed, subsequent withdrawal by some member or members will not invalidate the petition.\n\n(iii) Maintainability when the minimum number of members is not present\n\nYes, the power is vested with NCLT.\n\nThe NCLT may waive all or any of the conditions.",
+   "confidence": "high",
+   "review": [
+    "Only 1/10 th and 600/10=60 typeset as math; text otherwise as printed.",
+    "Printed misprints kept: 'judged to be judged', 'i.e 1/10 th of total number of member600/10=60' (space added before 600/10=60 for display)."
+   ]
+  }
+ }
+}

@@ -1,0 +1,285 @@
+{
+ "schema": "artha.qbreview.v1",
+ "paper": "p16",
+ "items": {
+  "workbook:cma-final:p16:ch1:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem, all tables (ranking, hours allocation incl. 450000/600000 columns, profitability) and working notes cell by cell with pages 1-3; faithful.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch1:q3": {
+   "verdict": "approve",
+   "reason": "Compared stem data table, overhead list, profitability statement and advice with print; all figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch1:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem, comparative statement, second-shift table, overall savings, conclusion and working notes with print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Savings for B printed 1850.60 in table but 1850 in overall savings"
+   ]
+  },
+  "workbook:cma-final:p16:ch1:q5": {
+   "verdict": "approve",
+   "reason": "Compared stem data, contribution, present and post-diversification statements and recommendation with print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Direct Material for X shown 1.00 though ratio 1:1.5 stated; stem prints inconsistent data as is"
+   ]
+  },
+  "workbook:cma-final:p16:ch1:q7": {
+   "verdict": "approve",
+   "reason": "Compared estimate table, details a-f, requirements and full solution with print; figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Material Y contract price 1,80,000 in estimate but 1,50,000 in solution",
+    "Question refers to XYZ's profit though company is Zeta Ltd."
+   ]
+  },
+  "workbook:cma-final:p16:ch1:q9": {
+   "verdict": "approve",
+   "reason": "Compared stem, demand table, and the two working tables with print; faithful (header row Item/Amount added only for Markdown validity).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch1:q12": {
+   "verdict": "approve",
+   "reason": "Compared stem, unit selling price table, all three profit statements and both working notes with print; figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "(iii) KX Transferred Cost shows 2000x257 but amount 244000",
+    "LD profit (i) 629000 vs totals; (iii) LD profit 621000 with lower revenue"
+   ]
+  },
+  "workbook:cma-final:p16:ch2:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem tables, price/demand table, traditional and ABC cost tables with print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Total Overheads and Total Cost figures in ABC table do not reconcile with components"
+   ]
+  },
+  "workbook:cma-final:p16:ch2:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem tables and customer profitability table cell by cell with print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Andrew total operating expenses 31150 vs components"
+   ]
+  },
+  "workbook:cma-final:p16:ch2:q3": {
+   "verdict": "approve",
+   "reason": "Compared stem table, stock computation and holding cost tables with print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Proposed WIP 0.25 month and FG 0.30 month used in solution though stem says 50%/40% less"
+   ]
+  },
+  "workbook:cma-final:p16:ch1:q11": {
+   "verdict": "approve",
+   "reason": "Compared stem table and solution table and working note with print; text faithful. Key was the working-note investment (10), not the answer; the question asks for the transfer price, printed as 12.70 per unit.",
+   "fixes": [
+    "numeric_key changed from 10 lakhs (total investment) to 12.70 (transfer price per unit)"
+   ],
+   "numeric_key": {
+    "numeric_value": "12.70",
+    "tolerance_rel": "0.01",
+    "unit": "₹ per unit",
+    "key_note": "Transfer Price = Required Revenue 50.80 Lakhs / 4.00 Lakh units = ₹ 12.70 per unit (final printed answer in the solution table)."
+   },
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch2:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Traditional overhead debit printed as 600,000 (no Indian grouping)"
+   ]
+  },
+  "workbook:cma-final:p16:ch2:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem item labelled i. but solution labels cost table ii.; total 325.33 as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch3:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed \"₹ in Lakhs\" label and variance signs kept as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch4:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed X1 = 15, X2 = 30/4, Z = 230/4 kept as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch5:q1": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch5:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Heading typo \"RULR\" kept"
+   ]
+  },
+  "workbook:cma-final:p16:ch5:q3": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch5:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch5:q5": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch5:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch5:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables, grids and totals cell by cell against the printed page(s); text, figures and order match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch5:q8": {
+   "verdict": "approve",
+   "reason": "Compared stem, all tables (profit, relative loss, VAM with row/column penalties) and final profit line against pages 80-82; all figures and rows match, cancelled values kept as plain text.",
+   "fixes": [],
+   "printed_issues": [
+    "Strike-through cancellations are not representable; shown as plain figures"
+   ]
+  },
+  "workbook:cma-final:p16:ch5:q9": {
+   "verdict": "approve",
+   "reason": "Compared stem and the balanced and VAM tables with pages 82-83; figures all match. Only the printed 'Distribution' group heading over (1)(2)(3) was missing and has been added.",
+   "fixes": [
+    "Added missing 'Distribution' group heading over (1)(2)(3) in the stem table, balanced table and VAM table"
+   ],
+   "printed_issues": [
+    "Supply total 145/105 diagonal cell kept as printed; dummy supply of 40 and demand total 145 as printed"
+   ],
+   "stem_md": "(MINIMIZATION AND UNBALANCED PROBLEM):\nConsider the following data for the transportation problem:\n\n| Factory | Distribution |  |  | Supply to be exhausted |\n|---|---|---|---|---|\n|  | **(1)** | **(2)** | **(3)** |  |\n| A | 5 | 1 | 7 | **10** |\n| B | 6 | 4 | 6 | **80** |\n| C | 3 | 2 | 5 | **15** |\n| **Demand** | **75** | **20** | **50** | **145** |\n|  |  |  |  | 105 |\n\nSince there is not enough supply, some of the demands at the three destinations may not be satisfied. For the unsatisfied demands, let the penalty costs be Rupees 1, 2 and 3 for destinations (1), (2) and (3) respectively. Find the optimum allocation that minimizes the transportation and penalty costs.",
+   "explanation_md": "Since the $\\text{Demand} \\neq \\text{Supplies}$, this problem is an unbalanced problem. Hence a dummy factory is added with cost equal to penalty for all distribution destinations and supplies equal to 40 units. Now, apply Vogel’s Approximation Method to the resultant balanced matrix for finding the basic feasible solution with matrix given below:\n\n| Factory | Distribution |  |  | Supply to be exhausted |\n|---|---|---|---|---|\n|  | **(1)** | **(2)** | **(3)** |  |\n| A | 5 | 1 | 7 | **10** |\n| B | 6 | 4 | 6 | **80** |\n| C | 3 | 2 | 5 | **15** |\n| Dummy Row | 1 | 2 | 3 | **40** |\n| **Demand** | **75** | **20** | **50** | **145** |\n\nThe initial solution is obtained below by Vogel’s Approximation method:\n\n| Factory | Distribution |  |  | Supply to be exhausted | Row Penalty |  |  |  |\n|---|---|---|---|---|---|---|---|---|\n|  | **(1)** | **(2)** | **(3)** |  |  |  |  |  |\n| A | 5 | 10 1 | 7 | 10 0 | 4 |  |  |  |\n| B | 20 6 | 10 4 | 50 6 | 80 30 20 0 | 2 | 2 | 2 | 6 |\n| C | 15 3 | 2 | 5 | 15 0 | 1 | 1 | 1 | 3 |\n| Dummy Row | 40 1 | 2 | 3 | 40 0 | 1 | 1 | 1 | 1 |\n| Demand | 75 55 40 0 | 20 10 0 | 50 0 | 145 |  |  |  |  |\n| Column Penalty | 2 | 1 | 2 |  |  |  |  |  |\n|  | 2 | 0 | 2 |  |  |  |  |  |\n|  | 2 | 0 |  |  |  |  |  |  |\n|  | 2 |  |  |  |  |  |  |  |\n\n$$\\text{Total Minimum Cost of transportation and the penalty costs} = 10 \\times 1 + 20 \\times 6 + 10 \\times 4 + 50 \\times 6 + 15 \\times 3 + 40 \\times 1 = \\text{₹ }555\\text{/-}$$"
+  },
+  "workbook:cma-final:p16:ch5:q10": {
+   "verdict": "approve",
+   "reason": "Compared stock/requirement tables, balanced table, VAM table with penalties and cost line against pages 83-84; all match. Following chapter banner not present.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch7:q3": {
+   "verdict": "approve",
+   "reason": "Compared supply/demand stem table, random-number table, simulation table and total profit with pages 114-115; all figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch7:q6": {
+   "verdict": "approve",
+   "reason": "Compared distributions, random-number ranges and the 10-row simulation table (incl. idle-time total 14) with pages 118-119; all match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p16:ch8:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem and every working line with pages 126-127; matches, including 9,56,806.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed revenue arithmetic (-450 x 2126.13 = -956759) left as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch8:q3": {
+   "verdict": "approve",
+   "reason": "Compared cost function, derivatives, second-order tests and equilibrium figures with pages 127-128; matches.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed '-2.1 + 12' and '11.11' (meaning products) kept as printed; 111.33 as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch8:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem and all workings with pages 128-129; matches as printed.",
+   "fixes": [],
+   "printed_issues": [
+    "Derivative printed without minus sign (14400/x^2 + 0.01) kept",
+    "'9i)' and 'd2 dx2' kept as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch8:q5": {
+   "verdict": "approve",
+   "reason": "Compared profit function, partial derivatives, critical point and final profit with pages 129-130; matches.",
+   "fixes": [],
+   "printed_issues": [
+    "Powers printed as plain digits (x2, 252) typeset as superscripts"
+   ]
+  },
+  "workbook:cma-final:p16:ch8:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem and the full working over pages 130-132 with print; all equations and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "0.22x = 160 giving 727 and later figures as printed (not exact)",
+    "D = 0.0044 as printed",
+    "'dR/dP' used for partial derivatives as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch8:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem and working with page 133-134; matches, with printed ambiguous 'x+52' read as (x+5)^2.",
+   "fixes": [],
+   "printed_issues": [
+    "Linear print with slashes kept; marginal-cost wording as printed"
+   ]
+  },
+  "workbook:cma-final:p16:ch9:q5": {
+   "verdict": "approve",
+   "reason": "Compared data table, calculation table, normal equations and trend value with pages 139-141; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed a = 127 and b = 10.8 arithmetic as printed (Y1984 = 159.40)"
+   ]
+  },
+  "workbook:cma-final:p16:ch9:q7": {
+   "verdict": "approve",
+   "reason": "Compared data table and the staggered 4-year moving average table with pages 141-143; all rows and totals match.",
+   "fixes": [],
+   "printed_issues": [
+    "Differences column shows 3093-2680 and 3248-2901 as printed (do not match the data)"
+   ]
+  },
+  "workbook:cma-final:p16:ch9:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem data table, formula text, two-alpha smoothing table, variances and conclusion with pages 145-146; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Row 10 for alpha 0.3 printed as 0 / 0; '0 is smoothing constant' as printed"
+   ]
+  }
+ }
+}

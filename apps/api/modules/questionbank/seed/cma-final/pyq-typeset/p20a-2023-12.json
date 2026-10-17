@@ -1,0 +1,44 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p20a-2023-12",
+ "items": {
+  "1(vii)": {
+   "stem_md": "The demand curve for X is given by the equation: $P = 24 - \\frac{1}{2}\\sqrt{q}$ where P & q denote price and quantity respectively. Find the price point elasticity for P = ₹ 20.\n\n(A) 64\n(B) 48\n(C) 72\n(D) 60",
+   "confidence": "medium",
+   "review": [
+    "Print reads 'P = 24 – 1/2√q'; typeset as 24 minus (1/2)·sqrt(q), the reading consistent with the layout (1/2 before the root sign).",
+    "Suggested answer prints '(A/B/C/D) Any'; no key stored, none changed."
+   ]
+  },
+  "3(a)": {
+   "answer_md": "Profit of the discriminating monopolist = ₹7625 by Considering Cost Function as $c = 3000 + 50Q$",
+   "confidence": "high",
+   "review": []
+  },
+  "4(a)": {
+   "answer_md": "(i) Extended DuPont provides the drivers of ROE in terms of margins, assets utilization and leverage thereby provides important information in understanding business model of a company.\nExtended DuPont Analysis decomposes ROE into three components as given below: -\n\n$$\n\\text{ROE} = (\\text{PAT}/\\text{Sales}) \\times (\\text{Sales}/\\text{Assets}) \\times (\\text{Assets}/\\text{Equity})\n$$\n\nThe above equation shows that ROE is driven by profit Margin (PAT/Sales), Assets Utilization or Assets Turnover (Sales/Assets) and how much of the assets are financed by equity and debt, i.e. a measure of leverage (Assets/Equity)\nUsing the above decomposition, we obtain various decomposed components of ROE over a period of four years which are given below:\n\nYear ended $31^{\\text{st}}$ March | 2020 | 2021 | 2022 | 2023\n---|---|---|---|---\nROE | 18.287% | 14.532% | 14.883% | 16.974%\nPAT / Sales | 18.930% | 14.958% | 15.778% | 17.875%\nSales to Assets | 0.937 | 0.884 | 0.914 | 0.833\nAssets to Equity (Net worth) | 1.031 | 1.099 | 1.032 | 1.140\n\n(ii) The company saw a sharp decline in ROE in year 2021-22 which was primarily due to reduction in Profit Margins (from 18.930% to 14.958%) as well as reduction in the assets utilization, which may hint that the company (or perhaps the industry) might be having a tough time in pushing sales; situation improved in 2022-23 and 2023-24 and the main driver was Profit Margin. The big increase in ROE 2023-24 came primarily from Profit Margin and Leverage; had the company increased its assets utilization ROE would have increased further; seeing this, it is clear that the biggest challenge before Metcalf Ltd. is to increase Asset utilization.",
+   "confidence": "high",
+   "review": [
+    "Institute text kept as printed: 'Metcalf Ltd.' and year labels 2022-23/2023-24 differ from the question (Surya Textiles, FY 2020-2023).",
+    "Stem balance sheet/P&L tables unchanged (plain figures)."
+   ]
+  },
+  "4(b)": {
+   "stem_md": "Using Altman's Model, **compute** the value of Z from the provided data (Balance Sheet extract):\n\nLiabilities | ₹ | Assets | ₹\n---|---|---|---\nShare Capital @ ₹10 each | 2,00,000 | Fixed Assets | 4,20,000\nReserves & Surplus | 60,000 | Inventory | 1,80,000\n10% Debentures | 3,00,000 | Book Debts | 70,000\nSundry Creditors | 80,000 | Loans & Advances | 20,000\nOutstanding Expenses | 60,000 | Cash at Bank | 10,000\n**Total** | 7,00,000 | **Total** | 7,00,000\n\nAdditional Information:\nMarket value per share ₹ 12.50\nOperating Profit (20% on sales) ₹ 1,40,000",
+   "answer_md": "$Z\\text{-score} = 2.35978$ Or $2.36078$",
+   "confidence": "high",
+   "review": [
+    "Restored 'Cash at Bank' (flattened text had 'Cash Bank').",
+    "Suggested answer prints two values (2.35978 Or 2.36078); kept as printed."
+   ]
+  },
+  "8(b)": {
+   "answer_md": "Asking price of XY Ltd. INR 62,00,000\nAnnual sales of XY Ltd. INR 82,00,000\nAsking P/S ratio of XY Ltd. = 0.76\n\nP/S ratio of XY Ltd. 0.76 is much higher than industry average 0.55, it is far below than the maximum P/S ratio of 2.35. The ratio of XY Ltd. is lying between 8th and 9th highest of the top ten players of the industry. In other words, XY Ltd. would need to be among the 22%* $(8.5/38 \\times 100)$ most desirable florist business to justify the asking price of ₹ 62,00,000 with annual gross sales of ₹ 82,00,000. If the sales are likely to hold in the coming years, the price may be $(0.85 + 0.72)/2 \\times \\text{₹ }82\\text{ Lakhs} = \\text{₹ }64.37\\text{ Lakhs}$.\nProvided the buyer believes that XY Ltd. is a superior retail florist (among the top quartile), and the future sales are not likely to fall, the asking price of ₹ 62 lakhs appears to be reasonable. However, the buyer should make sure that the florist's accounts reflect a true and fair view of the business before he arrives at a final decision.",
+   "confidence": "high",
+   "review": [
+    "Print shows '22%*' with no footnote; kept as printed.",
+    "Stem tables unchanged."
+   ]
+  }
+ }
+}

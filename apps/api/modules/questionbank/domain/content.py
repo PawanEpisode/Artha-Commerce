@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from decimal import Decimal
 from typing import Any
 
@@ -82,6 +83,60 @@ def lint_option(body_md: str, position: int) -> list[str]:
     return errors
 
 
+_MATH_SPAN = re.compile(r"\$\$(.+?)\$\$|(?<![\\$])\$(?!\$)(?=\S)((?:[^$\n\\]|\\.)*?)(?<=\S)(?<!\\)\$(?!\$)", re.DOTALL)
+_TEX_WORDS = {
+    "times": "×",
+    "div": "÷",
+    "pm": "±",
+    "approx": "≈",
+    "leq": "≤",
+    "geq": "≥",
+    "neq": "≠",
+    "ast": "*",
+    "cdot": "·",
+    "sigma": "σ",
+    "beta": "β",
+    "mu": "μ",
+    "rho": "ρ",
+    "lambda": "λ",
+    "alpha": "α",
+    "Delta": "Δ",
+    "sum": "Σ",
+    "prod": "Π",
+    "ln": "ln",
+    "log": "log",
+    "sqrt": "√",
+    "quad": " ",
+    "qquad": " ",
+    "left": "",
+    "right": "",
+    "displaystyle": "",
+    "bullet": "•",
+    "infty": "∞",
+}
+
+
+def math_to_text(text: str) -> str:
+    """
+    Math spans of a plain-text stem turned into something readable in a list row or a search index:
+    `$\\frac{10.95}{75}$` becomes `10.95/75`, `\\text{Variance}` becomes `Variance`. Display only; the stored Markdown is untouched.
+    """
+
+    def flat(tex: str) -> str:
+        tex = tex.replace("{,}", ",").replace("\\%", "%").replace('\\char"24', "$").replace("\\$", "$")
+        tex = re.sub(r"\\(?:begin|end)\{[a-z*]+\}", " ", tex)
+        tex = re.sub(r"\\(?:text|textbf|textit|mathrm|mathbf|operatorname|mbox)\s*\{([^{}]*)\}", r"\1", tex)
+        for _ in range(4):  # nested fractions
+            tex = re.sub(r"\\d?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}", r"\1/\2", tex)
+        tex = re.sub(r"\\sqrt\s*\{([^{}]*)\}", r"√(\1)", tex)
+        tex = re.sub(r"\\([A-Za-z]+)", lambda m: _TEX_WORDS.get(m.group(1), m.group(1)), tex)
+        tex = re.sub(r"\\[,;:! ]", " ", tex).replace("\\\\", " ").replace("&", " ")
+        tex = re.sub(r"[_^]\{([^{}]*)\}", r"^\1", tex)
+        return re.sub(r"\s+", " ", tex.replace("{", "").replace("}", "")).strip()
+
+    return _MATH_SPAN.sub(lambda m: " " + flat(m.group(1) or m.group(2) or "") + " ", text)
+
+
 def extract_search_text(
     stem_md: str,
     option_bodies: list[str] | None = None,
@@ -92,16 +147,16 @@ def extract_search_text(
     1. stem_head: First 300 characters of plain text stem.
     2. search_text: Stem, options, and explanation flattened to plain text, truncated at 10,000 chars.
     """
-    clean_stem = plain_text(sanitise(stem_md or "")).strip()
+    clean_stem = plain_text(math_to_text(sanitise(stem_md or ""))).strip()
     stem_head = clean_stem[:300]
 
     parts = [clean_stem]
     if option_bodies:
         for opt in option_bodies:
-            parts.append(plain_text(sanitise(opt or "")).strip())
+            parts.append(plain_text(math_to_text(sanitise(opt or ""))).strip())
 
     if explanation_md:
-        parts.append(plain_text(sanitise(explanation_md)).strip())
+        parts.append(plain_text(math_to_text(sanitise(explanation_md))).strip())
 
     combined = " \n ".join(p for p in parts if p)
     search_text = combined[:10_000]

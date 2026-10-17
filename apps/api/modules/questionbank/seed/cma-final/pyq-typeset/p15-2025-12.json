@@ -1,0 +1,46 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p15-2025-12",
+ "items": {
+  "2(b)": {
+   "answer_md": "**Computation of income of the firm VSM & Co. and tax liability**\n\n| Particulars | (₹) | (₹) |\n|---|---:|---:|\n| Income from business before adjustment of stock given to partner. | 4,50,000 | |\n| Add: NRV of stock given to retiring partner (unrealized profit) | 1,50,000 | |\n| Income from Business | | 6,00,000 |\n| Long-term capital gain | | |\n| Stamp duty value as per section 50C | 30,00,000 | |\n| Less: Cost of acquisition. | 12,00,000 | |\n| No indexation benefit where transfer is made on or after 23.7.2024. | | |\n| LTCG chargeable to tax | | 18,00,000 |\n| Total income | | 24,00,000 |\n| Tax thereon: | | |\n| On business income @30% on ₹ 6,00,000 | 1,80,000 | |\n| On LTCG @12.5% on ₹ 18,00,000 | 2,25,000 | |\n| | 4,05,000 | |\n| Add: HEC @4% | 16,200 | |\n| | | 4,21,200 |\n\n**Tax liability of retiring partner Mohan on account of the above transactions**\n\nFirst we need to see whether there will be any impact of the given transitions to the total income of Mohan.\n\n| Particulars | Taxable Amount (₹) |\n|---|---:|\n| Share of profit from firm up to retirement ₹ 1,50,000 ($1{,}50{,}000/3$) [Exempt u/s 10(2A)] | NIL |\n| Stock received on retirement (NRV ₹ 9,50,000) Not taxable to Mohan; taxed in firm under Sec. 9B | NIL |\n| Land received on retirement (SDV ₹ 30,00,000) Not taxable to Mohan; taxed in firm under Sec. 45(4) | NIL |\n| Cash received on settlement Not taxable to Mohan; forms part of Sec. 45(4) mechanics in firm | NIL |\n| Total income of Mohan on account of above transactions | NIL |\n| Tax effect of the given transactions (current year) | NIL |",
+   "confidence": "high",
+   "review": [
+    "Both tables rebuilt as printed; stored text had a spurious 'Total:' line and had lost the column headings.",
+    "Printed '(1,50,000/3)' typeset as math; 'Sec. 45(4)' wording and the NIL for stock/land kept as printed."
+   ]
+  },
+  "4(a)": {
+   "answer_md": "**Computation of capital gains in the hands of Sunil on the transfer of shares of Tall (P) Ltd and Salt (P) Ltd.**\n\nAs per section 47(vid), any transfer or issue of shares by the resulting company, in a scheme of demerger to the shareholders of the demerged company is not regarded as transfer if the transfer or issue is made in consideration of the demerger of the undertaking.\n\nTherefore, no capital gain shall be calculated for Sunil on receipt of shares of Salt P Ltd (resulting Company) in consideration of surrender of shares of Tall P Ltd (demerged company).\n\nAs per section 49(2C), where the shares are issued in the scheme of demerger, the cost of acquisition of such shares in the hands of shareholders shall be computed as follows:\n\nCost of acquisition of the shares in the resulting company (Salt (P) Ltd.) = Cost of acquisition of shares held by assessee in the demerged company x Net book value of the assets transferred in a demerger / net worth of the demerged company immediately before the demerger.\n\nOn subsequent transfer of Salt (P) Ltd shares, the period of holding, as per Explanation 1 to section 2(42A) shall also include the period for which the shares were held in the demerged company by the shareholders.\n\nTherefore, the cost of acquisition of shares received by Sunil in Salt (P) Ltd. shall be\n\n$$\n(15{,}000 \\times \\text{₹ }150) \\times \\frac{\\text{₹ }20\\text{ crore}}{\\text{₹ }50\\text{ crore}} = \\text{₹ }9{,}00{,}000\n$$\n\n| Computation of capital gains on transfer of shares in Salt (P) Ltd. | ₹ |\n|---|---:|\n| Sales consideration (assuming sold at FMV) $(75{,}000 \\times \\text{₹ }20)$ | 15,00,000 |\n| Less: Cost of acquisition | 9,00,000 |\n| Long-term capital gain | 6,00,000 |",
+   "confidence": "high",
+   "review": [
+    "Section 49(2C) formula printed with slash in running text; shown here as plain text exactly as printed, the numeric working typeset with a stacked fraction (layout approximation).",
+    "Sales consideration row and boxed layout of the print rebuilt as a table."
+   ]
+  },
+  "4(b)": {
+   "answer_md": "**Computation of total income and tax liability of Aditya for the A.Y.2025-26 under Chapter XII-A**\n\n| Particulars | ₹ | ₹ |\n|---|---:|---:|\n| Income from Salary | | |\n| Salary from Global Ltd | | Nil/-- |\n| (Salary received by a non-resident from a foreign company is not deemed to accrue or arise in India. Hence not taxable in India.) | | |\n| Income from House Property | | |\n| Rent received $(\\text{₹ }20{,}000 \\times 12)$ | 2,40,000 | |\n| Less: Deduction u/s 24(a) @30% | 72,000 | 1,68,000 |\n| Capital Gains | | |\n| Sales consideration | 5,25,000 | |\n| Less: Cost of acquisition | 4,00,000 | |\n| Long-term capital gain | 1,25,000 | |\n| [As per section 115D, the indexation benefit would not be available for computing long term capital gain under Chapter XII-A) | | |\n| Less: Exemption u/s 115F (Not available) (since whole of the sale consideration is invested in the purchase of specified assets after a period of six months after the date of such transfer) | Nil | |\n| | | 1,25,000 |\n| Income from Other Sources | | |\n| Dividend from Indian Companies | 1,50,000 | |\n| Interest on debentures | 4,00,000 | |\n| | | 5,50,000 |\n| Gross Total Income/Total Income | | 8,43,000 |\n| Computation of tax liability | | |\n| Tax on Dividend i.e., ₹ 1,50,000 @ 20% u/s 115E | 30,000 | |\n| Tax on Interest on debenture i.e., ₹ 4,00,000 @ 20% u/s 115E | 80,000 | |\n| Tax on LTCG ₹ 1,25,000 @ 10% u/s 115E | 12,500 | |\n| Tax on other income of ₹1,68,000 (Below basic exemption limit) | Nil | |\n| | 1,22,500 | |\n| Add: HEC @4% | 4,900 | |\n| Tax Liability | | 1,27,400 |",
+   "confidence": "high",
+   "review": [
+    "Table rebuilt with both ₹ columns as printed.",
+    "Kept as printed: unbalanced bracket '[As per section 115D ... Chapter XII-A)'; exemption note 'after a period of six months'; salary shown as 'Nil/--'."
+   ]
+  },
+  "5(b)": {
+   "answer_md": "**Machinery A: ICDS V to be applied**\n\nAs per ICDS V – when a tangible fixed asset is acquired in exchange for shares or other securities, the fair value of the tangible fixed asset so acquired shall be its actual cost.\n\nThe actual cost of Machinery A would be its fair value (i.e.) ₹ 20,00,000. The shares issued in consideration thereof would not be considered.\n\nMoreover, the amount spent on installation of the machinery will also be added to the cost of the machinery as per ICDS V.\n\nSo, the total cost of machinery A would be $\\text{₹ }20{,}00{,}000+\\text{₹ }5{,}00{,}000 = \\text{₹ }25{,}00{,}000$.\n\nDepreciation allowable on the machinery =50% of 15% of ₹ 25,00,000 (since it was ready to use only after installation, i.e., 15th October 2024) = $\\text{₹ }25{,}00{,}000 \\times 15\\% \\times 50\\% = \\text{₹ }1{,}87{,}500$.\n\nAdditional depreciation @ 10% since it was used for less than 180 days.\n\nThe amount being $\\text{₹ }25\\text{ lakhs}\\,@\\,10\\% = \\text{₹ }2{,}50{,}000$.\n\n**Machinery B: ICDS VI to be applied**\n\nImported Machinery: Cost includes purchase price + customs duty + installation.\n\n- Purchase cost (on 18th October 2024) = $\\char\"24 40{,}000 \\times \\text{₹ }82 = \\text{₹ }32{,}80{,}000$\n- Change in exchange rate to be considered only upon actual payment.\n- Add: Customs duty = ₹ 4,00,000\n- Add: Installation = ₹ 1,50,000\n- Total Cost = ₹ 38,30,000\n\nDepreciation @50% of 15% on ₹ 38,30,000 =₹ 2,87,250\n\nSince it is a second-hand machinery, additional depreciation is not allowed.",
+   "confidence": "high",
+   "review": [
+    "Working lines typeset as math; text otherwise as printed.",
+    "Kept as printed: 'Additional depreciation @ 10% since it was used for less than 180 days', Machinery A purchase and installation dates (23 June / 15 October) as in the SA; USD amount '$40,000' written with \\char\"24."
+   ]
+  },
+  "7(a)": {
+   "answer_md": "**Computation of ALP of sale of goods between AEs**\n\nReal Ltd. and Reel Inc. are deemed to be associated enterprises as Reel Inc has 27% shareholding in Real Ltd.\n\nThus, the transaction between Reel Inc. and Real Ltd will be “international transaction” and subject to transfer pricing provisions.\n\nSince, Reel Inc also sells the products to an unrelated party, i.e., Yolo Ltd., the Comparable Uncontrolled Price (CUP) would be the most appropriate method to determine the arm’s length price of the transactions.\n\nComputation of arm’s length price using the CUP method\n\n| Particulars | ₹ |\n|---|---:|\n| Sale Price charged by Reel Inc from Yolo Ltd | 20,000 |\n| Less: Cost of warrantee included in the price charged from Yolo Ltd 3% of 20,000 | 600 |\n| Arm’s length price per unit | 19,400 |\n| Actual price paid by Real Ltd. to Reel Inc | 25,000 |\n| Difference in price per unit | 5,600 |\n| No of units supplied by Reel Inc to Real Ltd. | 50,000 |\n| ALP adjustment to be made in the income of Real Ltd. [$50{,}000 \\times 5{,}600$] | 2800 lakhs |",
+   "confidence": "high",
+   "review": [
+    "Boxed layout of the print rebuilt as prose plus a table; '[50,000 x 5,600]' typeset as math.",
+    "Kept as printed: 'warrantee', '2800 lakhs' (50,000 x 5,600 = 28,00,00,000 i.e. 2800 lakhs)."
+   ]
+  }
+ }
+}

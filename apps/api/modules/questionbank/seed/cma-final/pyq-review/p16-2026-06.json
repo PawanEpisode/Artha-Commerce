@@ -1,0 +1,50 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p16-2026-06",
+ "items": {
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. 14 marks printed once for the whole question.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer refers to 'Note 2(b)' and 'Note 3' that are not defined",
+    "Alternative solution uses 255/510 per hour vs 250/500 in the main solution; same mix"
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. Price printed ₹ 1,000.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. Figures flagged by the text check were formatting only.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed M4 working '10,700 x 60/95' yields amounts that correspond to 9,500"
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [
+    "Stem: '₹ 50, 50 and 80' as printed (rupee sign was repeated on each figure)"
+   ],
+   "printed_issues": [],
+   "stem_md": "A firm produces three products A, B and C. It uses two types of raw materials I and II of which 5000 and 7500 units respectively are available. The raw material requirements per unit of the products are given below:\n\n| Raw Material | A | B | C |\n|---|---|---|---|\n| I | 3 | 4 | 5 |\n| II | 5 | 3 | 5 |\n\n(Column heading above A, B, C: Requirements per unit of Product)\n\nThe labour time for each unit of product A is twice that of product B and three times that of product C. The entire labour force of the firm can produce equivalent of 3000 units. The minimum demand of the three products is 600, 650 and 500 units respectively. Also, the ratios of the number of units produced must be equal to 2:3:4. Assume the profits per unit of A, B and C as ₹ 50, 50 and 80 respectively.\n\nDevelop a Linear Programming Model for this problem."
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": []
+  }
+ }
+}

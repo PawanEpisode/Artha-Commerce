@@ -1,0 +1,666 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p15",
+ "term_code": "2023-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Header printed: 'The figures in the margin on the right side indicate full marks.' Q2 table layout reconstructed from image.",
+  "Suggested answers for Q2, Q4, Q5(b), Q6(b) give final figures only (no working)."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "SECTION-A (Compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct option. 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "AB Ltd. has debited a sum of ₹ 780 lakhs towards income-tax in its Statement of Profit and Loss for the year ended 31-3-2023. It includes ₹34 lakhs towards surcharge and ₹6 lakhs towards HEC. How much would be the amount of disallowance of income-tax under section 40(a)(ii)?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Nil"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 740 lakhs"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 774 lakhs"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 780 lakhs."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "For Doomsday Ltd. there was an outstanding interest payment due to a nationalized bank of ₹ 340 lakhs, which was converted into 8% Debentures on 12-03-2023. How much of interest due to the bank would be deemed as paid and allowable under section 43B by issue of 8% debentures?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Nil"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 85 lakhs"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 170 lakhs"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 340 lakhs"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Bala was found to be the owner of jewellery worth ₹ 22,60,000 during the financial year ending 31.03.2023 which was not recorded in his books of account and he could not offer satisfactory explanation of the source of income for acquiring the same. How much of income-tax is payable by Bala under section 115BBE (including surcharge and cess, if any) for the said jewellery?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 17,62,800"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 7,05,120"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 5,10,120"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 4,32,120"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Ramesh & Co paid ₹ 5 lakhs to Wave Inc. a foreign company not having a PE in India towards online digital advertisement charges. How much is the amount payable by Ramesh & Co as equalisation levy for the payment made?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 30,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 31,200"
+        },
+        {
+         "key": "C",
+         "body_md": "Nil"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 12,000"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The total income of Minerals (P) Ltd. a trading company, computed as per the normal provisions of Income-tax Act is ₹ 8,40,000 for the year ended 31st March, 2023. The annual turnover of Minerals (P) Ltd. was always less than ₹ 10 crores. Book profit of the company computed as per the provisions of section 115 JB is ₹ 18,40,000. What would be the final tax liability of the company for the assessment year 2023-24? Note: Ignore surcharge and cess.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 2,52,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 2,76,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 2,10,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 2,25,000"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "During the course of assessment in the case of M & Co (firm) the Assessing Officer found out one accommodation entry (bogus purchase) for ₹ 7 lakh from another firm by name P & Co. Both M & Co and P & Co have admitted fake invoice and accommodation entry. What would be the penal consequence of the transaction? (Ignore HEC)",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Penalty on M & Co @100% of tax being ₹ 2,10,000"
+        },
+        {
+         "key": "B",
+         "body_md": "Penalty on M & Co @200% of tax being ₹ 4,20,000"
+        },
+        {
+         "key": "C",
+         "body_md": "Penalty on M & Co @200% of transaction being ₹ 2,10,000 and amount equal to the transaction being ₹ 7,00,000."
+        },
+        {
+         "key": "D",
+         "body_md": "Penalty on M & Co @200% of tax being ₹ 4,20,000 plus the amount equal to the transaction being ₹ 7,00,000. Also, penalty equal to the amount of transaction on P & Co being ₹ 7,00,000."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Mr. A filed his return of income for the assessment year 2023-24 on 20th December, 2023. He noticed in January, 2024 that he has omitted to admit income from business of ₹ 4 lakhs in the ITR filed by him for the assessment year 2023-24. What is the maximum time limit available for Mr. A to file updated return?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "31.03.2024"
+        },
+        {
+         "key": "B",
+         "body_md": "31.03.2025"
+        },
+        {
+         "key": "C",
+         "body_md": "31.03.2026"
+        },
+        {
+         "key": "D",
+         "body_md": "31.03.2027"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Little Co. Ltd., Delhi, proposes to enter into a transaction for purchase of raw material from UK and sale of finished goods to its group company located in Australia. It has obtained advance ruling in respect of the transactions but it is aggrieved with the ruling given by Board for Advance Rulings. What is the legal remedy available to Little Co. Ltd?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "File an appeal before Commissioner (Appeals) against the ruling."
+        },
+        {
+         "key": "B",
+         "body_md": "File an appeal before ITAT against the ruling."
+        },
+        {
+         "key": "C",
+         "body_md": "File an appeal before High Court against the ruling."
+        },
+        {
+         "key": "D",
+         "body_md": "File a revision petition under section 264 with Commissioner."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Income-tax authority having jurisdiction of Azeem & Co conducted a survey under section 133A and seized the books of account and other documents on 10.10.2022. What is the maximum time limit that the books of account and other documents can be retained by the Income-tax authority without obtaining permission of higher authorities?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Up to 15 days exclusive of holidays"
+        },
+        {
+         "key": "B",
+         "body_md": "Up to the end of the previous year i.e. 31.03.2023"
+        },
+        {
+         "key": "C",
+         "body_md": "Up to 30 days exclusive of holidays"
+        },
+        {
+         "key": "D",
+         "body_md": "Up to the date of completion of assessment under section 143(3)"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Srinath (P) Ltd. filed its return of income with suo moto adjustment of ₹ 300 lakhs in respect of ALP of its transactions with its associated enterprise. Within how many days the amount of secondary adjustment must be repatriated to India in order to avoid interest under section 92 CE read with rule 10CB?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Within 90 days from the end of the assessment year"
+        },
+        {
+         "key": "B",
+         "body_md": "Within 120 days from the date of filing ITR"
+        },
+        {
+         "key": "C",
+         "body_md": "Within 90 days from the ‘due date’ specified in section 139(1)"
+        },
+        {
+         "key": "D",
+         "body_md": "Within 30 days from the end of the assessment year"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "How much is the minimum tax effect that should be involved to invoke GAAR provisions?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "No minimum limit"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 3 crores"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 2 crores"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 50 lakhs"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which model of DTAA, does Government of India generally follow in its treaty with other countries?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "UK Model"
+        },
+        {
+         "key": "B",
+         "body_md": "US Model"
+        },
+        {
+         "key": "C",
+         "body_md": "UN Model"
+        },
+        {
+         "key": "D",
+         "body_md": "OECD Model"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Printed key is (C) UN Model; OECD Model (D) may be the more commonly cited answer. Key kept as printed in suggested answer."
+       ]
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Mesne (P) Ltd. engaged in international transactions entered into APA on 1st June, 2022. Its appeal before CIT (Appeals) was pending for the assessment year 2021-22 and the ITAT has given decision in favour of the Revenue for the assessment year 2020-21. It wants to avail rollback benefit. Assume that the returns of income of all the assessment years were filed before the ‘due date’ specified in section 139(1). For which of the assessment years the rollback benefit would be available?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Assessment year 2018-19 to assessment year 2021-22"
+        },
+        {
+         "key": "B",
+         "body_md": "Assessment year 2019-20 to assessment year 2022-23"
+        },
+        {
+         "key": "C",
+         "body_md": "Assessment years 2019-20, 2020-21 and 2022-23"
+        },
+        {
+         "key": "D",
+         "body_md": "Assessment years 2019-20, 2021-22 and 2022-23"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Ramji Ltd. entered into international transactions during the previous year 2022-23 for a sum exceeding ₹ 10 crores. It has omitted to furnish report from an accountant as required under section 92E. What is the quantum of penalty leviable for the failure to furnish report from the accountant?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 50,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 1,00,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 1,50,000"
+        },
+        {
+         "key": "D",
+         "body_md": "0.5% of the transactions being ₹ 5,00,000"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In the assessment of Amit (P) Ltd. there was increase in income by way of arm’s length price adjustment of ₹ 200 lakhs. The assessee decided to pay additional income-tax instead of making secondary adjustment. What is the tax rate at which the additional income-tax is payable by the assessee?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "10.92%"
+        },
+        {
+         "key": "B",
+         "body_md": "16.692%"
+        },
+        {
+         "key": "C",
+         "body_md": "20.9664%"
+        },
+        {
+         "key": "D",
+         "body_md": "23.296%"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five Questions out of seven questions given. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "",
+       "kind": "long_form",
+       "marks": 14,
+       "stem_md": "Small (P) Ltd. engaged in various activities, reports a net profit of ₹ 20,60,000 after debit / credit of the following items to its Statement of Profit and Loss for the year ended 31st March, 2023:\n\n| Items debited to Statement of Profit and Loss: | ₹ |\n|---|---|\n| Interest paid to non-resident without deduction of tax at source | 8,00,000 |\n| Proposed dividend | 1,00,000 |\n| Bank term loan interest unpaid [because of dispute regarding rate of interest. It would be paid only after the ‘due date’ specified in section 139(1)] | 1,20,000 |\n| Provision for bad and doubtful debts | 2,00,000 |\n| Depreciation (includes ₹ 40,000 on account of revaluation of assets) | 1,70,000 |\n| **Items credited to Statement of Profit and Loss:** | |\n| Agricultural income | 60,000 |\n| Long-term capital gain on sale of vacant land | 2,10,000 |\n| Long-term capital gain on sale of shares (STT Paid) | 95,000 |\n\n**Additional Information:**\n\n| Depreciation allowable as per Income-tax Act | 2,40,000 | |\n|---|---|---|\n| | As per books (₹) | As per Income-tax Act (₹) |\n| Brought forward business loss | 1,10,000 | 1,30,000 |\n| Brought forward depreciation | 90,000 | 1,50,000 |\n\nYou are required to compute –\n(i) Income from business as per normal provisions; and\n(ii) Book profit under section 115JB.\n\nNote: Give brief reasons for treatment of each item considered by you in your answer.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Income from business as per normal provisions = ₹ 20,05,000\n(ii) Book profit under section 115JB = ₹ 22,50,000",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives final figures only, no working/reasons.",
+        "Table layout reconstructed from image; B/F loss and depreciation 'as per books' vs 'as per Income-tax Act' columns read from image."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "In respect of the following independent transactions undertaken during the previous year 2022-23, state whether they are tax planning or tax management or tax evasion:\n\n(i) Filing ITR before the ‘due date’ in order to carry forward business loss.\n(ii) Setting up of a warehouse to avail tax benefit under section 35AD.\n(iii) Payment of medical insurance premium of ₹ 45,000 for a parent, aged 76.\n(iv) Collecting PAN Details of contractors to whom TDS as per section 194C is to be made.\n(v) Recording in the books of account, salary payment to J, who is not actually employed by the assessee.\n(vi) Paying advance tax instalments in accordance with section 211.\n(vii) Gifting a property to major son in order to divert rental income so that it is taxed at a lower slab rate.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Tax Planning, Tax Management, Tax Evasion\n(i) Filing ITR before the due date for availing carry forward benefit of business loss is Tax management\n(ii) Setting up of a warehouse to avail tax benefit u/s 35AD - Tax planning\n(iii) Payment of medical insurance premium of ₹ 45,000 for a parent, aged 76 - Tax planning\n(iv) Collecting PAN Details of contractors to whom TDS as per section 194C is to be made - Tax management\n(v) Recording in the books of account, salary payment to J, who is not actually employed by the assessee - Tax evasion\n(vi) Paying advance tax instalments in accordance with section 211. – Tax management\n(vii) Gifting a property to major son in order to divert rental income being taxed at a lower rate of tax – Tax planning",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Tiger (P) Ltd. is engaged in manufacture of textile garments and automobile parts. It has been incurring losses in manufacture of automobile parts. The management of the company wants to divest automobile parts manufacture for a lump sum consideration of ₹ 500 lakhs. The net worth of the automobile division has been computed @ ₹ 340 lakhs. The automobile division was in existence for the past 10 years. The management has identified a potential buyer by name Lion Ltd. There are two options available to Tiger (P) Ltd. regarding divesting of automobile division viz. (i) slump sale; or (ii) demerger.\n\nBriefly explain to the management of Tiger (P) Ltd. the comparative pros and cons of slump sale and demerger of automobile division.",
+       "options": [],
+       "correct": null,
+       "answer_md": "In the case of slump sale\nSlump sale means transfer of one or more undertaking for a lump sum consideration without values being assigned to individual assets and liabilities in such transfer.\nAny profits or gains arising from slump sale effected shall be chargeable to income-tax as capital gain arising from long-term capital asset if the undertaking was owned and held for more than 36 months preceding the date of transfer. Since it is stated that the automobile division was operational for more than 10 years the capital gain is liable to tax as long-term capital gain.\nIt is liable to tax @ 20% + surcharge @7% + HEC @4%. The effective rate would be 22.256% on ₹ 160 lakhs (₹ 500 lakhs minus ₹ 340 lakhs).\nThe tax liability would be ₹ 35,60,960.\n\nIn the case of demerger\nDemerger is defined in section 2(19AA) where all the property of the undertaking of the demerged company held immediately before demerger is transferred and becomes the property of the resulting company. In this case, Tiger (P) Ltd would be demerged company and Lion Ltd would be the resulting company.\nSection 47(vib) says any transfer in a demerger, of a capital asset by the demerged company to the resulting company is not to be regarded as transfer, if the resulting company is an Indian company. In this case, both Tiger (P) Ltd and Lion Ltd are Indian companies. Therefore, the transaction of demerger will not attract any tax liability.\nIf the sale consideration is discharged by the resulting company by issuing shares to the demerged company, there would be no tax consequence. On the other hand, if the shareholders of the demerged company receive shares in return for the shares held in demerged company it would attract capital gains tax based on their individual holding, cost of acquisition, period of holding and other factors.\nIt is advisable to prefer demerger than slump sale of automobile division.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Moon Ltd. engaged in textile business got amalgamated with Sun Ltd. also engaged in similar business on 1st April, 2022, duly complying with the provisions of section 72A. Moon Ltd. has always been filing its ITR within “due date” specified in section 139(1). The following items remain unabsorbed in the hands of Moon Ltd. as on the above said date:\n\n| Nature of item | ₹ |\n|---|---|\n| Normal business loss for AY 2018-19 | 12,60,000 |\n| Speculative business loss for AY 2022-23 | 9,23,560 |\n| Unabsorbed depreciation of AY 2022-23 | 13,23,000 |\n| Loss from warehousing business eligible for deduction under section 35AD relating to assessment year 2021-22. Business discontinued w.e.f. 01.04.2021 | 3,00,000 |\n\nFor the previous year 2022-23, Sun Ltd. has earned profit of ₹ 24,10,000 after current depreciation, but before considering the above said items. With respect to machinery transferred from Moon Ltd. with WDV of ₹ 120 lakhs as on 31-03-2022, the book value adopted by Sun Ltd. is ₹ 100 lakhs as on 01-04-2022 and depreciation has been provided at 15% on this value. This block is entitled to depreciation at 15%.\n\nCompute the total income of Sun Ltd. for the assessment year 2023-24. Note to be given for treatment of each of the item set off in the hands of Sun Ltd, duly considering the provisions of the Act. If any item remains unabsorbed, state the number of years for which the same can be carried forward by Sun Ltd.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Total income of Sun Ltd for the AY 2023-24 = ₹ Nil",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives final figure only; no working or carry-forward years."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. Wesley a non-resident (age 56 years) furnishes the following information relating to the previous year 2022-23:\n\n| Particulars | ₹ |\n|---|---|\n| Interest on deposits with limited companies in India | 2,10,000 |\n| Short-term capital gain from sale of shares in listed companies, (STT paid). | 4,60,000 |\n| Long-term capital gain, from transfer of specified foreign exchange asset, sold on 01-06-2022. The long-term capital gain is a computed figure. Note: Expenditure incurred wholly and exclusively in connection with transfer ₹ 17,000 has not been deducted while computing the capital gain given above. | 6,67,000 |\n| Investment in shares of public limited companies in India on 22-11-2022. | 2,10,000 |\n\nCompute total income and tax liability of Wesley as per Chapter XII-A of the Income-tax Act, 1961.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Total Income ₹ 11,10,000\nTax liability ₹ 1,17,520",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives final figures only."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The income tax assessment of Murali (P) Ltd. was completed on 20th November, 2022. There were three additions to the returned income viz; ₹ 5 lakh; ₹ 4 lakh and ₹ 3 lakh respectively. The assessee filed appeal against first two additions. When the matter was pending in appeal, the CIT invoked section 263 in respect of the third addition. Is the action of CIT tenable in law? What would be your answer in case the assessee filed revision under section 264 in respect of the third addition made in the assessment after filing appeal in respect of the first two additions?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Invoking section 263 when the matter is pending before CIT (Appeals)\nSection 263 empowers PCCIT / CCIT / PCIT or CIT to call for and examine the record of any proceeding under the Act if he considers that any order passed by the Assessing Officer is erroneous in so far as it is prejudicial to the interests of the Revenue.\nThe CIT may enhance or modify the assessment or cancel the assessment and direct a fresh assessment.\nWhen the matter is pending before CIT (Appeals), the doctrine of partial merger will apply.\nTherefore, section 263 could be invoked in respect of matters not covered in the appeal.\nTherefore, the action of the CIT is tenable in law.\n\nInvoking section 264 when the matter is pending before CIT (Appeals):\nAs per section 264 in the case of any order passed by an income-tax authority subordinate to PCCIT or CCIT or PCIT / CIT, he may either of his own motion or on an application made by the assessee call for record of any proceeding and make such enquiry and make an order not being prejudicial to the Revenue.\nWhen the assessee has preferred an appeal in respect of some of the matters and has not preferred appeal in respect of some of the matters contained in the assessment order, the doctrine of total merger would apply.\nOnce the assessee has approached CIT (Appeals) in respect of some of the matters, he cannot prefer revision under section 264.\nThis is because the assessment order of the Assessing Officer fully merges with that of the appellate order and therefore, it cannot be subjected to revision under section 264.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mathi (age 55 years) is a resident individual having income from business of ₹ 14,00,000 (computed) for the year ended 31st March, 2023. He sold a vacant land on 15th February, 2023 in which his long-term capital gain (computed) amounts to ₹ 6,00,000. He has TDS credit of ₹ 30,000. He paid advance tax as under:\n\n| Date | Amount |\n|---|---|\n| 13.06.2022 | 10,000 |\n| 20.09.2022 | 50,000 |\n| 10.12.2022 | 40,000 |\n| 27.03.2023 | 20,000 |\n\nAssume that he has opted for section 115BAC and compute interest under section 234C payable for the assessment year 2023-24.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Interest U/S 234C payable for AY 2023-24 ₹ 3,663",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives final figure only."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the meaning of the term “permanent establishment”; and state whether use of facilities for storage or display or delivery of goods or merchandize is a permanent establishment under OECD and under UN model.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Meaning of “Permanent Establishment”\nPermanent establishment means a fixed place of business through which the business of an enterprise is wholly or partly carried on.\nIt includes especially\n(a) a place of management;\n(b) a branch;\n(c) an office;\n(d) a factory;\n(e) a workshop; and\n(f) a mine, an oil or gas well, a quarry or any other place of extraction of natural resources. (Any two)\n\nThe term “permanent establishment” also encompasses\n(a) a building site, a construction, assembly or installation project or supervisory activities in connection therewith, but only if such site, project or activities last more than 6 months;\n(b) the furnishing of services including consultancy services by an enterprise through employees or other personnel engaged by the enterprise for such purpose, but only if activities of that nature continue within a contracting state for a period or periods aggregating more than 183 days in any 12 month period commencing or ending in the fiscal year concerned.\n\nAs per OECD model\npermanent establishment does not include the use of facilities solely for the purpose of storage, display or delivery of goods or merchandise belonging to the enterprise. (Any two)\nAs per UN Model\npermanent establishment does not include use of facilities for the purpose of storage or display of goods or merchandize belonging to the enterprise. (Any two)\n\nIf the goods are delivered then as per UN model PE is said to exist.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Manoj (age 50 years), an Indian resident doing business in India and in Country X and Country Y, discloses the following information for the previous year 2022-23:\n\n| Particulars | ₹ |\n|---|---|\n| Income from automobile business in India | 9,10,000 |\n| Income from rubber estate in Country X | 5,00,000 |\n| Loss from textile business in Country Y | 2,00,000 |\n| Income from property in Country Y | 50,000 |\n| Income from authorship of book in Country Y (not eligible for deduction under section 80QQB) | 3,00,000 |\n| Contribution to public provident fund | 1,10,000 |\n| Housing loan interest in respect of self-occupied property in India | 2,00,000 |\n| Housing loan principal in respect of self-occupied property | 70,000 |\n| Health insurance premium for non-resident parents (senior citizens) | 35,000 |\n\nTax rate in Country X 10% without basic exemption limit\nTax rate in Country Y 25% without basic exemption limit\nIndia has no DTAA with both Country X and Country Y.\nNote: Assume Manoj has not opted for section 115BAC.\n\nCompute the total income and tax liability of Manoj for the assessment year 2023-24.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Total Income ₹ 11,85,000\nTax liability ₹ 1,02,600 (Round off)",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer gives final figures only."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "SD LLP, a foreign company, holds 32% of the voting powers in ZX Ltd, Mumbai, an Indian company. ZX Ltd. provides banking related software services to its clients. SD LLP is one of the major customers of ZX Ltd.\n\nDuring the previous year 2022-23, ZX Ltd. has billed SD LLP for 30,000 man-hours at USD 36 per man hour. Direct costs may be taken as USD 18 per man hour and indirect costs at USD 12 per man hour. TY Inc. Colombo is also a client of ZX Ltd. to whom similar services are provided at 45% profit to operating costs. However, the following aspects may be noted as between the services rendered to SD LLP and TY Inc:\n\n(i) Since SD LLP gives huge volume of business, ZX Ltd. offered a special quantity discount as per market norms, which may be taken as 8% of the gross operating margin;\n(ii) SD LLP provides some technical support to ZX Ltd. because of its specialised knowledge in the banking domain; no such support is derived by the assessee from TY Inc. The value of the technical support of SD LLP to ZX Ltd. may be taken as 10% of the gross operating margin.\n(iii) SD LLP is given a credit period of 15 days, whilst the unrelated party TY Inc. is given a credit period of 45 days. The impact of the extra credit period provided may be taken as 5% of the gross operating margin.\n\nUsing Cost Plus Method (CPM), determine the ALP (in INR) and the amount, if any, to be added to the total income of ZX Ltd. for the assessment year 2023-24. (1 USD = ₹ 80).\n\nNote: All calculations may be done up to 3 decimal places.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Computation of ALP of ZX Ltd\nTwo enterprises are deemed to be associated enterprises where one enterprise, directly or indirectly, holds shares carrying not less than 26% of the voting power in the other enterprise.\nIn this case, since SD LLP., a foreign company, holds 32% of the voting powers in ZX Ltd, an Indian company, These two entities are deemed to be associated enterprises.\nSince the transaction of developing software and providing related support service by the assessee to SD LLP is an international transaction between associated enterprises, the provisions of transfer pricing would be attracted in this case.\n\nALP in INR ₹ 9,69,48,000\nActual price charged to SD LLP ₹ 8,64,00,000\nDifference in profit to be adjusted by way of addition in the hands of ZX Ltd. ₹ 1,05,48,000",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mithun (P) Ltd. is a subsidiary of Robert LLC of USA. On 1st June, 2022 Mithun (P) Ltd. borrowed ₹ 2500 lakhs from Robert LLC for which interest is payable at 6% per annum. There is no other borrowing made by Mithun (P) Ltd.\n\nThe net profit of Mithun (P) Ltd. for the year ended 31st March, 2023 was ₹ 95 lakhs after deduction of the following: (i) Depreciation ₹ 50 lakhs; (ii) Provision for Income-tax ₹ 20 lakhs; (iii) Amortisation of preliminary expenditure ₹ 10 lakhs; and (iv) Interest on loan borrowed from Robert LLC.\n\nExplain thin capitalization’s applicability and compute the amount of interest eligible for deduction and / or liable for disallowance in the case of Mithun (P) Ltd. Also state the consequence of interest disallowance.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Thin capitalization\nAs per section 94B where an Indian company being the borrower incurs any expenditure by way of interest to the AEs exceeding ₹ 100 lakhs which is deductible in computing income under the head “Profits and gains of business or profession” in respect of any debt issued by a non-resident being an associated enterprise of such borrower, the interest to the extent it exceeds 30% of EBITDA is not eligible for deduction.\n\n| ₹ in lakhs | |\n|---|---|\n| Interest paid to AE | 125.00 |\n| EBITDA | 300.00 |\n| Interest payment limited to 30% of EBITDA | 90.00 |\n| Excess interest liable for disallowance (₹ 125 lakhs minus ₹ 90 lakhs) | 35.00 |\n\nThe disallowed portion of interest is eligible for carry forward for 8 assessment years immediately succeeding the assessment year 2023-24",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Dhruv, a resident Indian, was served an intimation under section 143(1) relating to the assessment year 2023-24. He came to know only then that he has omitted to claim deduction under section 80-IA, which he is eligible to claim. He wants to file a revision petition before the Principal Commissioner of Income-tax (PCIT) under section 264 of the Income-tax Act, 1961. The Tax Manager of his concern opines that intimation is not an “order” eligible for a revision under section 264 by PCIT.\n\nIs the opinion of the Tax Manager, correct?\n\nYou are required to answer under the following heads: (i) Issue involved, (ii) Provisions applicable (iii) Analysis of the issue, and (iv) Conclusion.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Can the “intimation” be revised by the PCIT?\n\nIssue involved\nThe issue involved is whether an Intimation served on an assessee u/s 143(1) can be regarded as an “order” which can be revised by the PCIT u/s 264. In other words, whether intimation is an “order” amenable for revisionary jurisdiction of the PCIT.\n\nProvisions applicable\nAs per section 264, in the case of any order, other than the one to which section 263 applies, the PCIT may, either on his own motion, or upon an application by the assessee,\ncall for the record of any proceeding under the Act,\nmay make an inquiry or cause an inquiry to be conducted,\nand may pass such order as he thinks fit, not being an order prejudicial to the assessee.\n\nAnalysis\nSection 264 uses the words “any order”; hence it would imply that the section does not limit the power thereunder to correct errors committed by the subordinate authorities but could even be exercised where errors are committed by assessees. It would even cover situations where the assessee, because of an error, has not put forth a legitimate claim at the time of filing the return and the error is subsequently discovered and is raised in an application under section 264.\nThe intimation under section 143(1) is to be regarded as an order for the purposes of section 264. Further, as per CBDT circular, a duty is cast upon the Assessing Officer to assist and aid the assessee in the matter of taxation and to advise the assessee, guide him and not to take advantage of error or mistake committed by the assessee or of his ignorance.\nWhen the AO has failed in his duty, the PCIT should come to the rescue of the taxpayer.\n\nConclusion\nIn view of the above, intimation u/s 143(1) can be regarded as an “order” for the purposes of section 264 and is amenable to the revisionary jurisdiction of the PCIT.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mittal & Co Ltd, Delhi is engaged in manufacture of computer hardware. It has been exporting its goods to unrelated parties till 31st March, 2023. It is contemplating to sell only to its associated enterprises exceeding ₹ 100 crore in every financial year commencing from financial year 2023-24. As tax manager of the company, you are requested to explain briefly with reference to Advance Pricing Agreement (APA)\n(i) period of its validity; (ii) fees payable; (iii) on whom it is binding; and (iv) determination of ALP after entering into APA.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Period of validity of APA:\nWhen the assessee enters into an APA with the Department, it is valid for 5 consecutive previous years commencing from the previous year in which the APA was entered into.\nIf the application is filed and the APA is entered into the financial year 2023-24 it would be valid and applicable from F.Y.2023-24 to F.Y.2027-28 (5 consecutive years).\n(ii) Fees payable:\nWhen the amount of international transaction proposed to be undertaken exceeds ₹ 100 crore the fee payable along with application for APA would be ₹ 10 lakh.\n(iii) Binding nature:\nAn APA entered into shall be binding on\n- the person in whose case and in respect of the transaction in relation to which the APA has been entered into; and\n- the PCIT or CIT and the income-tax authorities subordinate to him, in respect of the said person and the said transaction\nHowever, the APA would not be binding if there is any change in law or facts which have a bearing on such APA.\n(iv) APA vis a vis ALP determination\nOnce APA is entered in to the ALP shall be determined in accordance with APA only. It shall override the provisions of section 92 C or section 92CA.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

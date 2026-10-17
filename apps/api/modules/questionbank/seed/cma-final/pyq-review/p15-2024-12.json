@@ -1,0 +1,82 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p15-2024-12",
+ "items": {
+  "1(i)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key C equals the printed key.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (C) looks inconsistent with a section 115BA company paying 25% on total income; kept as printed."
+   ]
+  },
+  "1(vi)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key C equals the printed key.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (C) appears to conflict with the stem, since adding income appearing in Form 26AS is a permitted adjustment under 143(1)(a); kept as printed."
+   ]
+  },
+  "1(xv)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key A equals the printed key.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key is UN Model; OECD Model is also commonly cited."
+   ]
+  },
+  "2": {
+   "verdict": "approve",
+   "reason": "Compared stem items (i)-(xi) and the printed answer table line by line; all lines and figures present in order. Restored two printed misprints in item (ii) that the transcription had silently corrected.",
+   "fixes": [
+    "Answer item (ii): restored printed 'it ia' and 'capita expenditure'."
+   ],
+   "answer_md": "Computation of total income of M/s Devi (P) Ltd for the assessment year 2024-25 (₹)\nNet profit as per Statement of Profit and Loss: 43,45,000\nAdd:\ni) Raw material purchase from WS & Co LLP for ₹ 15 lakhs on 12.03.2024. WS & Co LLP being a micro enterprise as per the MSMED Act, 2005, the amount paid on 10th July, 2024 is liable for disallowance under section 43B: 7,00,000\nii) Gratuity voluntarily paid to dependents of senior manager: NIL. No adjustment is required since it is already debited to profit and loss account; it ia an expenditure incurred wholly and exclusively for business purposes and not being capita expenditure, it is an allowable expenditure.\niii) Advertisement expenditure to Surya LLP: 60,000. In a LLP, where director is a designated partner it becomes a relative within meaning of section 40A(2), ₹ 60,000 being excess payment made to the specified person shall be disallowed.\niv) TDS late fee is allowed since it is not in the nature of penalty: NIL. Interest on late payment of TDS is not allowed: 25,000\nv) Belated remittance of EPF recovered from employees for the month of August, 2023 and March, 2024 - disallowed. Employees contribution disallowed since it was remitted late thus not eligible for deduction u/s 36(1)(va): 1,00,000\nvi) Belated remittance of EPF contribution of employer is allowed under section 43B. So, no adjustment is required: NIL\nvii) Incentives to dealers and distributors without deduction of TDS (₹ 60,000 X 10) @ 30% = ₹ 1,80,000 (being 30% of such expenditure on which TDS is not made is disallowed): 1,80,000\nviii) Additional depreciation - disallowed. Since such machine has been in used outside India, additional depreciation shall not be allowed: 3,40,000\nix) Bonus declared but remained unpaid till the date of filing return on income - Disallowed. Bonus shall be allowed in the year in which it will be actually paid, as per section 43B: 15,00,000\nx) Donation to registered political party by net banking ₹ 1,80,000 and by cash ₹ 20,000. Not being an expenditure related to business, the same is disallowed u/s 37; will be considered for deduction u/s 80GGB: 2,00,000\nTotal additions: 31,05,000\nSub-total: 74,50,000\nLess:\nxi) Waiver of principal on bank loan for acquiring capital asset - no adjustment required (NIL). If the loan was taken for acquiring a capital asset (vacant land), waiver thereof would be a capital receipt and not amount to taxability of the same.\nWaiver of interest on bank loan: 1,20,000. Interest is allowed on actual payment as per section 43B. As the same would not have been allowed in any earlier previous year, the write back cannot be considered as income. Therefore, the same is to be deducted.\nTotal deduction: 1,20,000\nSub-total: 73,30,000\nLess: Deduction u/s 80GGB - paid by net banking: 1,80,000\nTotal income: 71,50,000",
+   "printed_issues": [
+    "Answer cites 'MSMED Act, 2005' while the question says 2006.",
+    "Misprints 'ia' and 'capita' in item (ii) of the answer.",
+    "Donation disallowance 2,00,000 and 80GGB deduction 1,80,000 kept as printed."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and both computations match the print, figures digit for digit.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer uses 'Ms. Palam Ltd.'."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem sub-parts (i)-(iv) and answer match the print, including the alternative view in (iv).",
+   "fixes": [],
+   "printed_issues": [
+    "Answer typos 'discharge is tax liability' and 'assesse' kept as printed.",
+    "Single printed mark of 7 for four independent sub-questions."
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem with the five-row table and answer match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and computation match the print; age reads 30 in the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Total income 17,65,000 shown as printed."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem and table (date of AO order printed once across all columns) and answer match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says the AE did not repatriate in time yet also says no additional tax since repatriated."
+   ]
+  }
+ }
+}

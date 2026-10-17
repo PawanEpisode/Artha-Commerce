@@ -1,0 +1,678 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p13",
+ "term_code": "2025-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Page 1 instructions say: answer Q1 (30 marks, compulsory) and any five of Q2-Q8 (14 marks each); no separate 'Section-B' printed marks beyond that.",
+  "Q1 (i)-(iv) share a case scenario. Q1(ii) suggested key prints '(A/C)'. Answer text from OCR of suggested-answer PDF with noise removed; some answers contain bullet glyphs from OCR."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section-A (Compulsory)\n[(i) to (iv) are based on Case scenario. Rest are independent MCQs]",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the most appropriate option for the following MCQs: 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Case Scenario:\nHighway Ltd. is a transport company providing transport to Government departments of Bihar, West Bengal and Odisha. Each of the three state governments hold 15% shares in the company. The company appointed Mr. Parimal, CA, by ordinary resolution as statutory auditor for FY 2024-25, after observing due formalities. The remuneration was fixed at ₹2,00,000. But some members opposed it, stating that approval of CAG was required and the resolution be special resolution. Mr. Parimal had tenure till 31st March, 2025, but due to some personal problems resigned on 15th January, 2025. The BOD appointed another auditor on 25th January, 2025.\nIn this context answer the following questions.\n\nThe auditor has not informed the ROC and not filed form ADT-3. What are the consequences?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Liable for ₹50,000 penalty and ₹500 per day for continuing default subject to the maximum ₹2 lakh."
+        },
+        {
+         "key": "B",
+         "body_md": "₹2 lakh penalty and ₹1000 per day for continuing default."
+        },
+        {
+         "key": "C",
+         "body_md": "Minimum penalty of ₹50,000 and ₹5,00,000 maximum penalty."
+        },
+        {
+         "key": "D",
+         "body_md": "Penalty of ₹50,000 only."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Shared case scenario (MCQs (i) to (iv)) printed once under Q1; included in the stem of (i)."
+       ]
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Case Scenario:\nHighway Ltd. is a transport company providing transport to Government departments of Bihar, West Bengal and Odisha. Each of the three state governments hold 15% shares in the company. The company appointed Mr. Parimal, CA, by ordinary resolution as statutory auditor for FY 2024-25, after observing due formalities. The remuneration was fixed at ₹2,00,000. But some members opposed it, stating that approval of CAG was required and the resolution be special resolution. Mr. Parimal had tenure till 31st March, 2025, but due to some personal problems resigned on 15th January, 2025. The BOD appointed another auditor on 25th January, 2025.\nIn this context answer the following questions.\n\nThe new auditor owes to the company ₹2,00,000. Is he eligible to be appointed as auditor?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The threshold limit of indebtedness is ₹5,00,000. So, he can continue."
+        },
+        {
+         "key": "B",
+         "body_md": "The limit of indebtedness is ₹2,00,000, so he can continue."
+        },
+        {
+         "key": "C",
+         "body_md": "No, he is not eligible as he exceeded the limit of ₹1,00,000."
+        },
+        {
+         "key": "D",
+         "body_md": "The limit of indebtedness is ₹1,00,000 for security held by relatives but for auditor there is no limit of debt. So he can continue."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "The Institute's suggested answer prints the key as (A/C). Under section 141(3)(d)(ii) of the Companies Act, 2013 read with Rule 10(2) of the Companies (Audit and Auditors) Rules, 2014, a person is disqualified only if indebted to the company in excess of ₹5,00,000. Debt of ₹2,00,000 is within the limit, so option (A) is the legally correct choice.",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer key prints '(A/C)'. Key set to A (indebtedness limit is ₹5,00,000 under s.141(3)(d)(ii) / Rule 10(2); the ₹1,00,000 limit applies to guarantees or security for a third party's debt under s.141(3)(d)(iii)); confirm against the Institute's official answer."
+       ]
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "After appointment at GM, the auditor was found to be involved in fraud amounting to ₹1.50 Cr. and the GST authorities charged him. Can he continue as an auditor?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "He can’t continue as auditor."
+        },
+        {
+         "key": "B",
+         "body_md": "He can continue as auditor unless convicted by court."
+        },
+        {
+         "key": "C",
+         "body_md": "He can continue as auditor unless debarred by NFRA."
+        },
+        {
+         "key": "D",
+         "body_md": "He can continue for next five years even if convicted by court."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Refers to the Highway Ltd. case scenario printed before (i) (MCQs (i) to (iv) share it)."
+       ]
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Mr. Parimal has not completed audit and not signed the Balance Sheet. What will happen to his remuneration?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "He is not entitled to any remuneration as he has not signed the Balance Sheet."
+        },
+        {
+         "key": "B",
+         "body_md": "He can claim only expenses not audit fees."
+        },
+        {
+         "key": "C",
+         "body_md": "Remuneration may be decided by Shareholders as per terms of appointment."
+        },
+        {
+         "key": "D",
+         "body_md": "He can claim reasonable fees (not audit fees) for work done and expenses incurred subject to terms and conditions of appointment."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Refers to the Highway Ltd. case scenario printed before (i) (MCQs (i) to (iv) share it)."
+       ]
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The following members of a company shall have the right to apply under Section 241 of the companies Act 2013, for oppression namely:\n1. in the case of a company having a share capital, not less than one hundred members of the company;\n2. not less than one-tenth of the total number of its members, whichever is less, or any member or members holding not less than one tenth of the issued share capital of the company;\n3. in the case of a company not having a share capital, not less than one-fifth of the total number of its members.\n4. Any of the above",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "1 and 2 only"
+        },
+        {
+         "key": "B",
+         "body_md": "1 and 3 only"
+        },
+        {
+         "key": "C",
+         "body_md": "2 and 4 only"
+        },
+        {
+         "key": "D",
+         "body_md": "only 4"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Ambition Inc. is a Company registered in USA and doing business in USA. As per the Companies Act, 2013",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "it is a Foreign Company."
+        },
+        {
+         "key": "B",
+         "body_md": "it is not a Foreign Company."
+        },
+        {
+         "key": "C",
+         "body_md": "it will be a foreign company once it starts business in India."
+        },
+        {
+         "key": "D",
+         "body_md": "Both (B) and (C) are correct."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under the Insolvency and Bankruptcy Code, 2016, where extension of time is requested, the Corporate Resolution process shall be completed within a period of ______ from the date of admission of the application to initiate such process.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "270 days"
+        },
+        {
+         "key": "B",
+         "body_md": "240 days"
+        },
+        {
+         "key": "C",
+         "body_md": "180 days"
+        },
+        {
+         "key": "D",
+         "body_md": "120 days"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Keyed (A) 270 days per suggested answer; not independently verified."
+       ]
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Corporate Governance ratings are done by\n1. Commercial Banks\n2. Reserve Bank of India\n3. Credit Rating Agencies\n4. All of the above",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "1 and 2"
+        },
+        {
+         "key": "B",
+         "body_md": "1 and 4"
+        },
+        {
+         "key": "C",
+         "body_md": "1 only"
+        },
+        {
+         "key": "D",
+         "body_md": "3 only"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which, out of the following would not amount to Sustainable Development activity?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Rain water harvesting"
+        },
+        {
+         "key": "B",
+         "body_md": "Solar energy"
+        },
+        {
+         "key": "C",
+         "body_md": "Paddy cultivation"
+        },
+        {
+         "key": "D",
+         "body_md": "Plantation of sapling for forestation"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Mr. Jyotiranjan, trading in refrigerator, purchased some refrigerators but has not paid the amount. They were not for his personal use. As per the Competition Act, 2002, whether he is a consumer or not and why?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "As per Consumer Protection Act, he is not a consumer. So also, as per the Competition Act, 2002, as it is commercial in nature."
+        },
+        {
+         "key": "B",
+         "body_md": "As per the Competition Act, 2002, he is a consumer because, the purchaser of goods for resale or commercial purpose is also considered as a consumer."
+        },
+        {
+         "key": "C",
+         "body_md": "Since he has not paid the full amount, he can’t be considered as a consumer. After payment only, his claim arises."
+        },
+        {
+         "key": "D",
+         "body_md": "The Competition Act, 2002, expressly prohibits such transactions and therefore he is not a consumer."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A debenture trustee can be",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "any merchant banker."
+        },
+        {
+         "key": "B",
+         "body_md": "any scheduled bank."
+        },
+        {
+         "key": "C",
+         "body_md": "any NBFC."
+        },
+        {
+         "key": "D",
+         "body_md": "any entity registered with SEBI as such."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Eligible borrower can raise up to ______ million US$ through ECB in automatic route under FEMA 1999.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "400"
+        },
+        {
+         "key": "B",
+         "body_md": "600"
+        },
+        {
+         "key": "C",
+         "body_md": "750"
+        },
+        {
+         "key": "D",
+         "body_md": "1000"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The IRDA shall, within ______ after the close of each financial year, submit to the Central Government a report giving a true and full account of its activities including the activities for promotion and development of the insurance business during the previous financial year.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "9 months"
+        },
+        {
+         "key": "B",
+         "body_md": "6 months"
+        },
+        {
+         "key": "C",
+         "body_md": "3 months"
+        },
+        {
+         "key": "D",
+         "body_md": "1 month"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Keyed (A) 9 months per suggested answer; not independently verified."
+       ]
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In the course of doing business, if as on 1st March, 2025, a MSME unit goes to next category,",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "it shall cease to avail all the MEME benefits after 1 year."
+        },
+        {
+         "key": "B",
+         "body_md": "it shall continue to avail all non-tax benefits for next 3 years."
+        },
+        {
+         "key": "C",
+         "body_md": "it shall continue to avail all non-tax benefits for next 4 years."
+        },
+        {
+         "key": "D",
+         "body_md": "it can avail only for the next one Financial Year."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under the Prevention of Money Laundering Act, 2002, every Scheduled Offence is a",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Money Laundering Offence"
+        },
+        {
+         "key": "B",
+         "body_md": "Pre-requisite Offence"
+        },
+        {
+         "key": "C",
+         "body_md": "Punishable Offence"
+        },
+        {
+         "key": "D",
+         "body_md": "Predicate Offence"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from Question nos. 2 to 8. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. Jhunjhunwala proposed the name of Mr. Dandpat as Director, not liable to retire by rotation, in Vida Ltd. and submitted a notice in writing on 15/07/2024 along with a deposit of ₹1,00,000.\nState the validity of this proposal of Mr. Jhunjhunwala in the following situations:\n(i) If Vida Ltd. is a Government Company and the Government has been duly intimated.\n(ii) If Vida Ltd. has a provision in its Articles for election of Directors by ballot.\n(iii) If it is a public limited company and the company has not served individual notices on members, but 7 days before the meeting, advertises such candidature or intention in a local vernacular newspaper in the district where the registered office is situated.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Such deposits do not exceed 10% of the aggregate of the paid-up share capital, free reserves and\n securities premium account; and\n (b) Such deposits are repayable not earlier than three months.\nTherefore:\n • Normal deposit tenure: 6 to 36 months.\n • Short-term deposits (3–6 months): Allowed only up to 10% of the aggregate of capital + reserves +\n premium.\n\n(iii) Limit for Acceptance of Deposits from Members\n As per Rule 3(4) of the Companies (Acceptance of Deposits) Rules, 2014:\n A public company (whether eligible or not) may accept deposits from its members up to 10% of the\n aggregate of its paid-up share capital, free reserves and securities premium account.\n\nComputation:\n (100 + 20 + 5) × 10% = ₹12.5 crore\n Limit from members = ₹12.5 crore\n(iv) Limit for Acceptance of Deposits from Public and Members Together\n As per Rule 3(4), an eligible public company may accept:\n • Deposits from members up to 10%, and\n • Deposits from public up to 25% of the aggregate of paid-up capital, free reserves and securities\n premium account.\n\nTherefore, total permissible = 35% of (100 + 20 + 5) = 35% of ₹125 crore = ₹43.75 crore.\nLimit from public = ₹31.25 crore (25%)\nLimit from members = ₹12.5 crore (10%)\nTotal limit (public + members) = ₹43.75 crore (35%)",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "M/s Pearson Ltd., a public limited company engaged in manufacturing of steel pipes, has the following financial figures as per its latest audited financial statements:\n\n| Particulars | Amount (₹ Cr) |\n|---|---|\n| Paid-up Equity Share Capital | 100 |\n| General Reserve | 20 |\n| Securities Premium | 5 |\n| Term Loan from SBI | 75 |\n| Turnover | 575 |\n\nThe company proposes to invite public deposits of different tenures ranging from three months to 36 months.\nAnswer the following:\n(i) Is the company eligible to invite public deposits?\n(ii) What is the limit for acceptance of deposits from the public? Can it accept deposits for less than six months?\n(iii) How much can the company accept as deposits from its members?\n(iv) How much can it accept from public and members together?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Eligibility to Invite Public Deposits\n As per Section 76(1) of the Companies Act, 2013, only an “eligible company” (a certain class of public\n companies) can invite deposits from the public.\n\nA public company is eligible to invite public deposits if it satisfies all of the following conditions:\n 1. Net worth of not less than ₹100 crore, or\n 2. Turnover of not less than ₹500 crore, and\n 3. Has obtained prior consent of shareholders in a general meeting by special resolution, and\n 4. Has filed the said resolution with the Registrar of Companies, and\n 5. Has obtained a credit rating and complied with the prescribed rules under the Companies (Acceptance of\n Deposits) Rules, 2014.\n\nApplication to the given case:\n • Net worth = ₹100 + ₹20 + ₹5 = ₹125 crore. Fulfilled.\n • Turnover = ₹575 crore Fulfilled.\n\nHence, the company qualifies as an “eligible public company” under Section 76.\n\nConclusion:\nM/s Pearson Ltd is eligible to invite public deposits, subject to compliance with all procedural requirements\n(special resolution, credit rating, filing, etc.).\n\n(ii) Tenure and Limit for Acceptance of Public Deposits\n Under Rule 3(1) of the Companies (Acceptance of Deposits) Rules, 2014:\n • No company shall accept or renew any deposit repayable on demand or for a period of less than six\n months or more than 36 months.\nHowever, a short-term exception is allowed:\nA company may accept deposits for less than six months but not less than three months, for meeting short-\nterm fund requirements, subject to:",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A public limited company wants to hold an urgent Board Meeting at a shorter notice. As per the Companies Act, 2013, examine\n(i) whether the Board Meeting can be convened at a shorter notice and what conditions apply;\n(ii) whether decisions can be taken at such a meeting without an independent director; and\n(iii) if the meeting is held through video conferencing with directors in different locations, what shall be the venue of the meeting?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Conducting Board Meetings at a shorter notice\n (i) Holding of Board Meeting at a Shorter Notice\n Statutory Reference: Section 173(3) of the Companies Act, 2013.\n • A meeting of the Board of Directors shall be called by giving not less than seven days’ notice in\n writing to every director at his registered address by hand, post, or electronic means.\n • However, a meeting may be convened at shorter notice to transact urgent business, subject to\n compliance with specified conditions.\n • The notice must state clearly that the meeting is being held at a shorter notice.\n\nConclusion:\nYes, the Board Meeting may be held at a shorter notice, provided the prescribed conditions (see below) are\nfulfilled.\n\n (ii) Requirement regarding Independent Director\n\nWhen a company is required to appoint independent directors, the following provisions apply (as per the\nsecond proviso to Section 173(3) and Rule 3(3) of the Companies (Meetings of Board and its Powers) Rules,\n2014):\n\n  (a) The presence of at least one Independent Director is mandatory for the meeting held at a shorter notice\n to transact urgent business.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The Central Government, under the powers conferred by Section 237(1) of the Companies Act, 2013, has ordered the amalgamation of A Ltd. and B Ltd. into a new company, AB Ltd., on certain specified terms and conditions.\nUnder the scheme:\n- Shareholders of A Ltd. are to receive ₹1,200 per existing share in cash, and in addition, one share of AB Ltd. for every two shares held in A Ltd.\n- Shareholders of B Ltd. are to receive one share of AB Ltd. for every share held in B Ltd.\nTwo shareholders have objected to the amalgamation, contending that the compensation awarded is unsatisfactory.\nDuly outlining the applicable provisions, explain whether any remedy is available to the dissenting shareholders under the Companies Act, 2013. What is the effect of the order of the Central Government passed in this regard?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Amalgamation of two companies\nRelevant Legal Provision\nUnder Section 237 of the Companies Act, 2013, the Central Government may, in the public interest, order the\namalgamation of two or more companies into a single company.\n\nSuch an order may include:\n  • The constitution, properties, and rights and liabilities of the new company; and\n  • The terms and conditions of the amalgamation, including compensation payable to shareholders or\n other interested persons.\n\nDetermination of Compensation\nAs per Section 237(3):\n • Where an order made by the Central Government under Section 237(1) provides for transfer of\n undertakings or shares of any company,\n • The prescribed authority shall determine the compensation payable to the shareholders or interested\n persons having regard to the prescribed principles.\n\nIn this case, the prescribed authority has fixed:\n • Cash compensation of ₹1,200 per share to shareholders of A Ltd.; and Share exchange ratio as per the\n terms of amalgamation.\n\nRemedy for Dissatisfied Shareholders\nUnder Section 237(4) of the Act:\nAny person aggrieved by the order of the prescribed authority determining the amount of compensation may,\nwithin thirty days from the publication of such order, appeal to the National Company Law Tribunal (NCLT).\nThe Tribunal, after hearing the parties, may confirm, modify, or vary the amount of compensation determined\nby the prescribed authority.\n\n\fTherefore:\nThe remedy available to the objecting shareholders is to appeal to the NCLT within 30 days from the\npublication of the compensation order, seeking revision of the compensation determined by the prescribed\nauthority.\n\nEffect of the Central Government’s Order\nOnce the amalgamation order is made and published in the Official Gazette:\nThe transfer of undertakings and shares, and the constitution of the new company, take effect by operation of\nlaw; and\n\nThe amalgamation cannot be stayed or invalidated merely due to objections on compensation grounds—such\nobjections lie only before the NCLT regarding the quantum of compensation.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The Board Meeting of Victoria Vibes Ltd., an unlisted public company having its Registered Office at Chennai, was convened at 8:00 p.m. on Sunday, 5th January, 2025, at Taj Palace, Mumbai.\nThe total strength of the Board was 14 directors, of which 2 positions were vacant.\nAs per the provisions of the Companies Act, 2013, answer the following:\n(i) Examine the validity of the venue, date, and time of the Board Meeting.\n(ii) How should the notice of the meeting be circulated to a director who is currently in London?\n(iii) During the meeting, 7 directors attended — 3 in person (at Mumbai), 2 from Bhopal, and 2 from London through video conferencing.\nHowever, 5 minutes after commencement, the internet connection of the 3 directors attending through video conferencing got disrupted, and they could not participate further.\nThe Chairman proceeded with the agenda and declared that all resolutions were duly passed, since the agenda papers and draft resolutions had been circulated in advance.\nIn addition, referring to the relevant provisions of the Companies Act, 2013 and Companies (Meetings of Board and its Powers) Rules, 2014, decide the validity of the place of meeting and the resolutions passed.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Case Study on Board Meeting of an unlisted company\nVenue, Date, and Time of the Meeting\nAs per Section 173(1) of the Companies Act, 2013:\nA Board Meeting may be held\n • at any place in India or outside India,\n • on any day, and\n • at any time,\n • except on a National Holiday.\n\nTherefore:\nHolding the meeting at Taj Palace, Mumbai, on Sunday, 5th January 2025, at 8:00 p.m., is valid and\npermissible, since Sunday is not a National Holiday under the Act.\n\nMode of Sending Notice to a Director in London\nAs per Section 173(3) and Rule 3 of the Companies (Meetings of Board and its Powers) Rules, 2014:\n • Notice in writing of every Board Meeting shall be given to every director at his registered address,\n whether in India or outside India.\n • Such notice may be sent by hand delivery, post, or electronic means (e.g., e-mail).\n\nTherefore:\nNotice to the director present in London can validly be sent by electronic means (e-mail) to his registered e-\nmail ID, or by post to his registered address abroad.\n\nQuorum for the Meeting\nUnder Section 174(1) of the Act:\nThe quorum for a meeting of the Board of Directors shall be one-third of its total strength, or two directors,\nwhichever is higher.\n\nHere, the total strength of the Board = 12 (Directors currently holding office Excludes Vacancies)\nHence, quorum = 12 ÷ 3 = 4 → 4 directors\n\nAt the commencement of the meeting, 7 directors were present — quorum was validly constituted.\n\nEffect of Directors Losing Video Connectivity\nAs per Rule 3 (3) (e) of the Companies (Meetings of Board and its Powers) Rules, 2014:\n\n\f“A director participating through video conferencing shall be counted for the purpose of quorum, unless he is\ndisconnected, in which case, he shall be considered as not participating from the time of disconnection.”\n\nThus, once the three directors from London lost their internet connection and ceased to participate, the\neffective number of participating directors fell from 7 to 4, which is equal to the quorum (4).\nValidity of Resolutions Passed\n\nThe resolution is passed and valid as the number of directors present meets the quorum requirements of\nSection 174(1) of the Companies Act, 2013.",
+       "confidence": "medium",
+       "review": [
+        "Stem as printed: 7 directors attended = 3 + 2 + 2, but '3 directors attending through video conferencing' got disconnected (count inconsistency is in the printed question)."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "United Social Services Ltd. is a company formed by 10 professionals, each contributing ₹1 lakh as paid-up capital, making the total paid-up capital ₹10 lakh. The company intends to provide various consulting and support services to NGOs and social sector organisations, with the objective of earning only marginal profits sufficient to sustain operations.\nThe company has its Registered Office in Delhi, but intends to carry out activities on a pan-India basis.\nIn this context, critically examine the following perceptions of the company and advise its management in line with the provisions of the Companies Act, 2013:\n(1) Whether the company can be treated as a non-profit company merely based on its objects and intentions.\n(2) If not, whether it can be converted into a not-for-profit (NPO) company.\n(3) The procedure and requirements for such conversion.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Whether the company can be considered a Non-Profit Company\n\nUnder Section 8 of the Companies Act, 2013, a non-profit company (commonly known as an NPO or Section\n8 company) is one that:\n\n • Has its objects confined to promotion of commerce, art, science, sports, education, research, social\n welfare, charity, protection of environment, or similar objects;\n • Applies its profits or income solely for promoting its objects; and\n • Prohibits payment of any dividend to its members.\n\nThese conditions must be expressly stated in the Memorandum and Articles of Association.\n\nIn the given case, United Social Services Ltd is a public company incorporated with profit motive, though it\nintends to earn only marginal profit. The company has not obtained a license under Section 8 from the Central\nGovernment (MCA).\n\nTherefore:\nMerely having social welfare objectives or low profit intention does not automatically make it a Section 8\n(non-profit) company.\n\nUnless the company is licensed under Section 8, it remains an ordinary company limited by shares under\nSection 2(20).\n\nWhether it can be converted into a Non-Profit Company\nYes.\n\nAs per the Companies (Incorporation) Rules, 2014, a company already incorporated under Section 2(20) of\nthe Act can be converted into a company registered under Section 8, provided it satisfies the conditions\nprescribed therein and obtains a license from the Central Government.\n\nSuch conversion can be done for both private and public limited companies, subject to approval by Regional\nDirector (RD).\n\nProcedure for Conversion into a Section 8 Company\n\nThe procedure is governed by Rule 20 of the Companies (Incorporation) Rules, 2014 and involves the\nfollowing steps:\n\n i. Board Meeting:\n ➢ Pass a Board Resolution approving the proposal for conversion and fixing date, time, and agenda for a\n General Meeting.\n ii. Special Resolution:\n ➢ Pass a Special Resolution in the General Meeting approving alteration of Memorandum and Articles to\n align with Section 8 objectives.\n iii. Application to Regional Director (RD):\n ➢ File Form INC-12 with the Regional Director along with relevant documents required.\n iv. License under Section 8:\n ➢ On satisfaction, the Regional Director issues a license under Section 8, and the company thereafter\n becomes a non-profit company.\n v. Filing with Registrar:\n ➢ The company must then file necessary forms with the Registrar of Companies (ROC) to record the\n conversion.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Briefly outline the procedure for reporting of fraud by auditors under Section 143(12) of the Companies Act, 2013, read with the Companies (Audit and Auditors) Rules, 2014.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Reporting of fraud by Auditor\n 1. Statutory Provision – Section 143(12)\n Section 143(12) of the Companies Act, 2013 casts a statutory duty on the auditor (including cost\n accountant or company secretary in practice conducting audit) to report any fraud committed or being\n committed against the company by officers or employees of the company to the Central Government\n or Audit Committee/Board, depending on the amount involved.\n\n 2. Classification Based on Amount of Fraud\n The Companies (Audit and Auditors) Rules, 2014, particularly Rule 13, prescribe the reporting\n procedure based on the value of the fraud:\n\n (a) Where the Fraud Involves ₹1 crore or More\n 1. Immediate Intimation:\n The auditor shall report the matter to the Board or Audit Committee immediately after becoming aware of\n it and seek their reply or observations within 45 days.\n\n 2. Reporting to Central Government:\n ✓ If the auditor does not receive a satisfactory reply within 45 days, or is not satisfied with the reply,\n ✓ He shall forward his report to the Central Government within 15 days of expiry of the 45-day period.\n\n 3. Mode of Reporting:\n ✓ The report shall be sent in a sealed cover to the Secretary, Ministry of Corporate Affairs,\n ✓ In Form ADT-4,\n ✓ With a copy of the report and reply/observations of the Board or Audit Committee, if any\n ✓ in a sealed cover by registered post/speed post.\n\n 4. Intimation to Board/Audit Committee:\n ✓ The auditor shall also intimate the Board or Audit Committee of such reporting to the Government.\n\n (b) Where the Fraud Involves Less than ₹1 crore\n 1. The auditor shall report the matter only to the Audit Committee or the Board of Directors.\n 2. The company shall disclose such details in the Board’s Report under Section 134(3)(ca).\n 3. No reporting to the Central Government is required in such cases.\n\n 3. Scope and Applicability\n  • These provisions apply to statutory auditors, cost auditors, and secretarial auditors.\n  • “Fraud” has the meaning assigned under Section 447 of the Act (i.e., wrongful gain or loss through\n deceit or concealment).\n\n  4. Confidentiality and Responsibility\n  • The auditor’s duty to report fraud overrides confidentiality obligations.\n  • Failure to comply attracts penalty under Section 143(15) - ₹5 lakh for listed companies and ₹1 lakh for\n others.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Under the provisions of the Insolvency and Bankruptcy Code, 2016 (IBC), explain the procedure for approval of a resolution plan by the Adjudicating Authority (NCLT).",
+       "options": [],
+       "correct": null,
+       "answer_md": "Procedure for Approval of Resolution Plan by Adjudicating Authority\nThe process is governed by Section 31 of the Insolvency and Bankruptcy Code, 2016 and Regulation 39(4) of\nthe CIRP Regulations, 2016.\n\n  1. Submission of Resolution Plan:\n  ❖ Resolution applicant submits the plan to the Resolution Professional (RP) after due approval by the\n Committee of Creditors (CoC) under Section 30(4).\n  ❖ The plan must be approved by not less than 66% of voting share of the CoC.\n\n  2. Verification by RP:\n  ❖ RP ensures that the plan complies with the requirements of Section 30(2), such as:\n  • Payment of CIRP costs in priority;\n  • Payment to operational creditors as per statutory minimum;\n  • Management of affairs post-resolution;\n  • Implementation plan and approvals;\n  • Non-contravention of existing laws.\n\n  3. Submission to Adjudicating Authority (NCLT):\n  ❖ The approved plan is submitted to the Adjudicating Authority for final approval under Section 31(1).\n\n  4. Examination by NCLT:\n  ❖ NCLT examines whether:\n  ❖ The plan meets the conditions of Section 30(2);\n  ❖ The plan has been approved by the CoC with the required majority;\n  ❖ It is feasible, viable, and in accordance with the law.\n\n  5. Order of Approval:\n  ❖ If satisfied, the NCLT approves the plan, and it becomes binding on the corporate debtor, creditors,\n employees, creditors, guarantors and other stakeholders.\n  ❖ The NCLT may reject the plan if it does not comply with Section 30(2).\n\n  6. Post-Approval Compliance:\n  ❖ After approval, the Resolution Applicant and Resolution Professional are required to implement the\n plan under supervision as per timelines. Implementation is monitored, often through a monitoring\n committee constituted for this purpose, to ensure compliance.\n\n Legal Reference: Section 31(1)-(3) of IBC; K. Sashidhar v. Indian Overseas Bank (2019) 12 SCC\n 150.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Corporate Social Responsibility (CSR) has emerged as an essential component for promoting the welfare of society. In India, the CSR framework is primarily governed by the Companies Act, 2013, and has evolved significantly over the years through national and international initiatives.\nIn this background, explain the following terms and their provisions:\n(i) National Voluntary Guidelines (NVGs) on Social, Environmental and Economic Responsibilities of Business\n(ii) Sustainable Development Goals (SDGs), UN Guiding Principles (UNGP) and Revised NVGs\n(iii) National Guidelines on Responsible Business Conduct (NGRBC) – applicability to all businesses",
+       "options": [],
+       "correct": null,
+       "answer_md": "CSR\n 1. NVG – National Voluntary Guidelines (2011)\n ➢ The National Voluntary Guidelines on Social, Environmental and Economic Responsibilities of\n Business (NVGs) were issued by the Ministry of Corporate Affairs (MCA) in 2011.\n ➢ They were formulated by the Indian Institute of Corporate Affairs (IICA) to promote responsible\n business conduct among Indian companies.\n ➢ The NVGs outlined nine principles based on the Triple Bottom Line approach — ethics, product\n responsibility, employee well-being, stakeholder engagement, environment, public policy, inclusive\n growth, customer value)\n ➢ These principles encouraged businesses to:\n • Conduct themselves ethically,\n • Respect human rights,\n • Promote environmental stewardship,\n ➢ Support inclusive growth and equitable development.\n\n  ❖ Essence: NVGs provided the first national framework encouraging companies to go beyond\n compliance and integrate sustainability into core business operations.\n\n  2. SDG, UNGP, and Revised NVG\n  (a) SDGs – Sustainable Development Goals\n India has adopted the United Nations Sustainable Development Goals (SDGs) and aligned its CSR and\n sustainability initiatives accordingly. The progress of States and Union Territories towards achieving\n these goals is monitored through the SDG India Index prepared by NITI Aayog.\n\n  (b) UNGP – UN Guiding Principles on Business and Human Rights\n • Adopted in 2011 by the UN Human Rights Council, these principles are based on the “Protect, Respect\n and Remedy” framework.\n • They emphasize that businesses must respect human rights and provide grievance redress mechanisms.\n\n  (c) Revised NVG (2019) → NGRBC\n • In 2019, MCA replaced the earlier NVGs with the National Guidelines on Responsible Business\n Conduct (NGRBC).\n • The revised framework incorporated global developments (UNGP, SDGs) and stressed responsible\n conduct, transparency, and stakeholder engagement.\n\n  3. The National Guidelines on Responsible Business Conduct (NGRBC) apply to:\n 1. All Businesses: They are designed to be adopted by all business entities in India, regardless of their\n size, sector, ownership (Public/Private/MSMEs), or location\n 2. Global Reach: They apply to the domestic and overseas operations of Indian MNCs\n 3. Mandatory Compliance: While the principles are aspirational for all, they are mandatory for the top\n 1,000 listed entities via the Business Responsibility and Sustainability Report (BRSR)",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain how the Business Intelligence (BI) process works in an organization.",
+       "options": [],
+       "correct": null,
+       "answer_md": "How Business Intelligence Works\nBusiness Intelligence (BI) is a technology-driven process that collects raw data from various business\noperations, converts it into structured information, and presents it in a form useful for decision-making.\n\n\fThe working of BI can be explained in five key stages:\n 1. Data Collection\n BI begins by collecting data from multiple sources within and outside the organization — such as:\n • Sales, finance, production, HR systems\n • Customer feedback, market data, or social media\n\n This data is extracted from different formats and stored in a central database.\n\n 2. Data Integration and Storage\n The collected data undergoes the ETL (Extract, Transform, Load) process:\n • Extracted from multiple sources within and outside the organization,\n • Transformed (cleaned — errors and duplicates removed, converted into a uniform format), and\n • Loaded into a Data Warehouse or Data Mart.\n\n • This ETL step ensures that the information is accurate, consistent, and ready for analysis.\n\n 3. Data Analysis\n Using BI tools (like Power BI, Tableau, or Qlik), the stored data is analyzed through:\n • Querying: Asking questions from data, such as sales by region or by product.\n • Data mining: Detecting hidden trends and correlations.\n • Predictive analytics: Forecasting future patterns based on historical data.\n\n 4. Reporting and Visualization\n The analysis is converted into easy-to-understand dashboards, charts, and reports. These real-time\n dashboards for KPI monitoring help managers track key performance indicators continuously and\n compare actual performance with targets in a clear, visual format.\n\n 5. Decision Making and Action\n The insights derived from BI are used by management to:\n • Identify problems or opportunities,\n • Evaluate “what-if” scenarios, and\n • Take quick, evidence-based business decisions.\n\n In this way, BI acts as a continuous feedback loop that helps the business improve its performance\n over time.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "For the issue of an Initial Public Offer (IPO), a company must fulfil certain eligibility conditions regarding net worth, net tangible assets, operating profit, etc.\nExplain these conditions with reference to the SEBI (ICDR) Regulations, 2018. State why these eligibility criteria have been laid down to make an IPO.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Eligibility criteria for making an IPO\nUnder the SEBI (Issue of Capital and Disclosure Requirements) Regulations, 2018, as amended, an issuer\ncompany can make an Initial Public Offer (IPO) only if it satisfies the following eligibility criteria:\n\n 1. Net Tangible Assets\n • The issuer must have net tangible assets of at least ₹3 crore in each of the preceding three full years\n (each year of 12 months).\n • Not more than 50% of these assets should be held in monetary form (cash, bank balances, or financial\n investments).\n • If more than 50% of assets are monetary, the company must make a firm commitment to deploy the\n excess funds in its business or project.\n\n • Note: The 50% restriction does not apply if the IPO is entirely through an offer for sale by existing\n shareholders.\n\n 2. Net Worth\n • The company must have a net worth of at least ₹1 crore in each of the preceding three full financial\n years.\n • “Net worth” refers to paid-up share capital plus free reserves, excluding revaluation reserves.\n\n 3. Track Record of Distributed Profits\n • The company should have earned a minimum average distributable pre-tax profits of ₹15 crore,\n computed on a restated and consolidated basis, during the three most profitable years out of the\n immediately preceding five years.\n\n • This requirement ensures that only companies with consistent profitability and genuine distributable\n earnings can access public capital.\n\n 4. Change of Name Condition\n • If the issuer has changed its name within the last one year, at least 50% of the revenue for the\n preceding one year must have been earned from the activity reflected by the new name.\n • This prevents misleading investors by issuing shares under a recently adopted but unrelated name.\n\n 5. Alternative Route (QIB Route)\n • If the issuer does not satisfy the eligibility criteria, it may make an IPO through the book-building\n process, provided it allots at least 75% of the net offer to public to Qualified Institutional Buyers\n (QIBs).\n\nWhy?\nThese eligibility norms ensure that only companies with a sound financial track record, stable assets, and\ngenuine business operations are permitted to access the public markets, thereby protecting investor interest\nand maintaining market integrity.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A reputed car manufacturer implemented a discount policy applicable to customers and instructed its dealers not to offer any discounts beyond the prescribed limits. It further directed that any dealership found selling or billing at pre-revised prices after a price increase would be deemed to have violated the selling norms, and such billing would be treated as unauthorized discounting. The company monitored compliance through Master Service Agreements (MSAs), imposed penalties on dealers, and threatened strict actions such as stoppage of supply and recovery of penalties. The company contends that these measures are intended to maintain standard guidelines and discipline, and do not violate any provisions of the Competition Act, 2002.\nExamine whether the conduct of the company is in contravention of the provisions of the Competition Act, 2002.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Case Study under the Competition Act, 2002\nThe Competition Act, 2002 aims to prevent practices that have an appreciable adverse effect on competition\nand to protect consumer interests and ensure freedom of trade in Indian markets.\n\nUnder Section 3(1) of the Act, any agreement that causes or is likely to cause an appreciable adverse effect on\ncompetition is prohibited. Specifically, Section 3(4) addresses vertical agreements between enterprises at\ndifferent stages of the production or supply chain.\n\nThese include:\n • Tie-in arrangements\n • Exclusive supply agreements\n • Exclusive distribution agreements\n • Refusal to deal\n • Resale price maintenance\n\nThe practice of resale price maintenance, defined under Section 3(4)(e), refers to any agreement that restricts\nthe reseller’s ability to sell goods below a stipulated price. Such restrictions are considered anti-competitive if\nthey limit the dealer’s pricing freedom and adversely affect market competition.\n\fIn the landmark case Re: Maruti Suzuki India Limited Suo Motu Case No. 01 of 2019, order dated\n23.08.2021, the Competition Commission of India (CCI) imposed a penalty of ₹200 crore on Maruti Suzuki\nfor implementing a Discount Control Policy.\n\nThe company not only restricted dealers from offering additional discounts but also actively monitored and\nenforced compliance through Mystery Shopping Agencies (MSAs), imposed penalties, and threatened supply\nstoppages.\n\nThe CCI held that these actions amounted to resale price maintenance, which had an appreciable adverse\neffect on competition and violated Section 3(4)(e) read with Section 3(1) of the Act.\nMaruti appealed the decision before the National Company Law Appellate Tribunal (NCLAT) after depositing\n10% of the penalty.\n\nThe (NCLAT) has not yet delivered a final decision in the Maruti Suzuki discount control policy case. As of\nnow, the matter is pending.\n\nGiven the similarity of facts, the conduct of the car manufacturer in the present case—restricting dealer\ndiscounts, enforcing pricing discipline through penalties and threats, and monitoring via MSAs—constitutes\nresale price maintenance and is likely to be in contravention of Section 3 of the Competition Act, 2002.1\n\nAny measure that restricts the freedom of trade and pricing autonomy of dealers is considered anti-\ncompetitive under Indian law. The company’s conduct, though claimed to be for discipline, may attract\nregulatory scrutiny and penalties under the Competition Act.\n\nSuch conduct amounts to resale price maintenance and is prohibited under Section 3(4)(e) read with Section\n3(1) of the Competition Act, 2002.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. P.K. Soni, a software engineer from India, moved to the USA in 2010 and remained settled there until 2024. During his stay, he purchased a flat and some equity shares in a company, collectively valued at $100,000. Additionally, certain immovable properties were acquired in his wife’s name. Upon her unfortunate demise due to a heart attack, Mr. Soni inherited those properties, valued at $50,000. On 1st January, 2025, Mr. Soni returned to India with the intention to settle permanently.\nIn this context, answer the following, keeping in mind the applicable provisions under the Foreign Exchange Management Act, 1999 (FEMA):\n(i) Define capital account transactions and provide three examples.\n(ii) Mr. Soni, now a resident in India, wishes to pay certain outstanding dues in foreign currency ($) from his foreign currency account held abroad. Is he eligible to do so? Advise him suitably.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Definition and Examples of Capital Account Transactions\n As per Section 2(e) of the Foreign Exchange Management Act (FEMA), 1999, a capital account\n transaction refers to:\n ➢ A transaction which alters the assets or liabilities, including contingent liabilities, outside India of\n persons resident in India, or\n ➢ Assets or liabilities in India of persons resident outside India.\n\n These transactions typically involve cross-border movement of capital and are regulated under Section\n 6 of FEMA.\n\nExamples of Capital Account Transactions:\n 1. Foreign Direct Investment (FDI) by a resident in India into a foreign entity\n 2. External Commercial Borrowings (ECBs) raised by Indian entities\n 3. Transfer of fixed assets to a company’s capital account\n 4. Investment by non-residents in Indian securities\n 5. Sale/purchase of immovable property in India by non-residents\n 6. Investment in equity shares or capital contribution in a foreign company\n 7. Acquisition of immovable property outside India by a resident\n 8. Opening a Foreign Currency Account Abroad by a Resident Indian\n 9. Issue of ADRs/GDRs\n 10. Transfer of Shares or Debentures Between Residents and Non-Residents\n 11. Remittance for Purchase of Property Abroad\n (ii) Eligibility to Pay Foreign Dues from Foreign Currency Account\n As per Section 6(4) of FEMA, a person resident in India is permitted to “Hold, own, transfer or invest\n in foreign currency, foreign security or any immovable property situated outside India if such\n currency, security or property was acquired, held or owned by such person when he was resident\n outside India or inherited from a person resident outside India.”\n\n Additionally, Section 6(5) allows the use of foreign exchange and income arising therefrom, including\n its conversion or replacement, for legitimate purposes.\n\nIn Mr. Soni’s case:\n • He acquired the foreign assets while he was a non-resident.\n • He also inherited foreign property from his wife, who was a resident outside India at the time of\n acquisition.\n • Now that he has become a resident in India, he is legally permitted to use his foreign currency account\n abroad to pay outstanding dues in foreign currency.\n\nConclusion: Mr. Soni is eligible to make payments from his foreign currency account held abroad, as the\nassets were acquired or inherited while he was a non-resident, in accordance with Section 6(4) and 6(5) of\nFEMA, 1999.\n\nSuch transactions are permissible capital account transactions under Section 6(4) and 6(5) of FEMA, 1999.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Analyse the role of the Reserve Bank of India in the formulation of monetary, banking and financial policies in India.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Role of the RBI\nThe Reserve Bank of India (RBI) plays a pivotal role in shaping India’s monetary, banking, and financial\nlandscape. Over the years, it has evolved from a regulator to a facilitator, adapting its structure and approach\nto meet dynamic economic needs.\n\nKey functions include\n 1. Bank Inspection and Regulation RBI conducts inspections under the Banking Regulation Act, 1949 to\n ensure stability, compliance, and protection of depositors.\n 2. Policy Formulation and Prudential Norms It issues guidelines relating to income recognition, asset\n classification, provisioning, and capital adequacy, and implements international standards such as the\n Basel framework.\n 3. Licensing and Branch Expansion RBI authorizes branch openings, reviews licensing policies, and\n maintains data on branch operations and ATMs.\n 4. Board-Level Appointments It approves appointments/removals of key executives in private banks and\n recommends appointments in public sector banks.\n 5. Anti-Money Laundering (AML) Through its AML Cell, RBI monitors compliance with the Prevention\n of Money Laundering Act (PMLA) and tracks developments in combating financial terrorism.\n 6. Monitoring Overseas Operations RBI formulates policies and grants approvals for Indian banks’\n foreign branches, joint ventures, and representative offices.\n 7. Precious Metals and Foreign Exchange Management RBI authorizes banks to deal in gold, silver, and\n platinum, oversees schemes like the Gold Deposit Scheme, and manages India’s foreign exchange\n reserves.\n\n Conclusion: RBI’s multifaceted role ensures a robust, transparent, and globally aligned banking\n system, safeguarding public interest and promoting financial stability.\n\n ______________________________",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

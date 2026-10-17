@@ -1,0 +1,56 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "paper": "p17",
+ "items": {
+  "mcq:cma-final:p17:q001": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q003": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q016": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q020": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q026": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q035": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q053": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q148": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q176": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q218": {
+   "confidence": "high",
+   "review": [
+    "Print: 'Maximum of Output' in option A kept; the ÷ and × are plain operators in the print, left plain"
+   ]
+  },
+  "mcq:cma-final:p17:q219": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p17:q223": {
+   "confidence": "high",
+   "review": []
+  }
+ }
+}

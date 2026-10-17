@@ -1,0 +1,27 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p17-2025-12",
+ "items": {
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print word for word and figure for figure; the answer was rebuilt from the OCR layout as prose and two tables matching the suggested answer page 5 (22 - 11 = 11; 1.20 - 0.50 = 0.70).",
+   "fixes": [
+    "Rebuilt the answer: joined hard-wrapped lines into paragraphs and set the two working tables as Markdown tables"
+   ],
+   "answer_md": "As per CAS 12 – High value spare, when replaced by a new spare and is reconditioned, shall be recognised as property, plant and equipment, when they meet the definition of property, plant and equipment and depreciated accordingly. Otherwise, such items are classified as inventory and recognised in cost as and when they are consumed.\n\nIf the company is covered under Ind AS, such spare is capitalized as Property, Plant & Equipment.\n\nThe property, plant and equipment are depreciated when they are available for use.\n\nTreatment of Repairs & Maintenance as per CAS-12\n\nThe amount to be treated in repairs and maintenance is as follows:\n\n| | Particulars | ₹ Crores |\n|---|---|---|\n| A | Equipment Cost | 20 |\n| B | Cost of New Spare | 2 |\n| | Total Cost (A + B) | 22 |\n| Less: | Depreciation for 5 years | 11 |\n| | Depreciated value of Equipment &Spare | 11 |\n\n| Particulars | ₹ Crores |\n|---|---|\n| Reconditioning cost of old Spare | 0.20 |\n| Depreciated Value of old Spare | 1.00 |\n| Book Value of Reconditioned spare | 1.20 |\n| Less: Current market value of reconditioned spare to be restated in the Books of Accounts | 0.50 |\n| Amount to be treated in Repairs and Maintenance | 0.70 |\n\nThus, the amount to be treated in repairs and maintenance is ₹ 70 lakh.",
+   "printed_issues": []
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem transactions (i)-(vi) match the print; the reconciliation statement was rebuilt as a table from the suggested answer image and all figures and totals match (17,73,350 + 3,63,250 - 1,98,150 = 19,38,450).",
+   "fixes": [
+    "Rebuilt the reconciliation statement from the OCR layout text as a Markdown table"
+   ],
+   "answer_md": "Reconciliation of Profit between Cost Accounts and the Financial Accounts:\n\n| Particulars | ₹ | ₹ |\n|---|---|---|\n| Profit as per the Financial Accounts | | 17,73,350 |\n| Add: Trading Loss | 24,250 | |\n| 4/5thofRenovationExpenses Amortized | 3,10,000 | |\n| CSR Contribution | 29,000 | 3,63,250 |\n| Less: Profit on Sale of Assets | 1,38,000 | |\n| Income from Investments | 42,250 | |\n| Net over valuation of closing inventory in the financial records ₹ (32,700– 14,800) | 17,900 | (-)1,98,150 |\n| Profit as per the Cost Accounts | | 19,38,450 |",
+   "printed_issues": [
+    "Line 'Renovation Expenses' printed without spaces as '4/5thofRenovationExpenses Amortized'",
+    "Net over valuation of closing inventory is shown as a deduction, as printed"
+   ]
+  }
+ }
+}

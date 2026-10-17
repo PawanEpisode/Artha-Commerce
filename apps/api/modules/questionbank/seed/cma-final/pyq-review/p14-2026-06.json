@@ -1,0 +1,92 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p14-2026-06",
+ "items": {
+  "1(v)": {
+   "verdict": "approve",
+   "reason": "Stem table and options match the question paper; stored key A equals the printed key (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key 70.41 differs from the RSI computed from the data (about 70.5); kept as printed."
+   ]
+  },
+  "1(xiii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the question paper; stored key B equals the printed key (B).",
+   "fixes": [],
+   "printed_issues": [
+    "Stem wording 'trade USD 10,00,000 : by USD via GBP' is garbled in print."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem, contribution, depreciation, operating inflow, outflow, terminal inflow and NPV tables, with the alternative, match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Two alternative NPVs (1,230.21 and 1,230.52); salvage tax shown as -0.71."
+   ]
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer for both lease structures plus the advice match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem, PV table and answer (i)-(ii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says 'ZS Ltd.' for Zenith Systems Ltd."
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and answer (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Decision column labels stock B 'Overvalued' although its given return (20%) is below its CAPM return (21.56%), and stock A 'Undervalued', as printed."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem tables and the main and alternative solutions in (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Alternative solution uses weights 0.3478/0.6522 against 0.35/0.65 in the main solution."
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the main and alternative solutions in (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Net profit line prints '₹ 14,06,456,00' against total gain ₹ 14,06,45,600 above; two solutions with 974 and 487 contracts."
+   ]
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and both swap tables match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Print shows 'LIBOR + 0.37 %' and a differential row; YON effective rate sums to 8.198 as printed."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem rate lines and answer (i)-(iii) with alternatives match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Question item (iii) is only an assumption line; the printed answer numbers the appreciation analysis as (iii); several alternatives for the percentage change."
+   ]
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the forward and money market hedge workings with recommendations match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Forward cover for the yen uses 0.60 (ask) and money market uses spot 0.5850, some rates differ from the strictly applicable bid/ask."
+   ]
+  }
+ }
+}

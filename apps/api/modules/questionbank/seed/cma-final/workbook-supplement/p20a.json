@@ -1,0 +1,98 @@
+{
+ "schema": "artha.qbsupplement.v1",
+ "paper": "p20a",
+ "insert": [
+  {
+   "after": "workbook:cma-final:p20a:ch2:q5",
+   "item": {
+    "external_ref": "workbook:cma-final:p20a:ch2:q5b",
+    "origin_module": "workbook",
+    "status": "ok",
+    "review_reasons": [],
+    "payload": {
+     "kind": "long_form",
+     "stem_md": "Arena Distributors is a new company and currently pays no dividends. The company recently reported earnings of INR 150 per share and is expected to grow at a 15% rate for the next four years. Beginning in Year 5, Arena is expected to distribute 20% of its earnings in the form of dividends and to have a constant growth rate of 5%. The required rate of return is 12%. Calculate the value of Arena shares today.",
+     "marks": "7",
+     "explanation_md": "Let us first forecast the earnings in Year 5. Then calculate the dividends in Year 5 as 20% of Year 5 earnings. Applying the Gordon growth model to the Year 5 dividend gives us an estimate of the terminal value in Year 4. The terminal value discounted back four years is the current value of the stock.\n\n$$\\begin{aligned}E_4 &= \\text{INR } 150 \\times (1.15)^4 = \\text{INR } 262\\\\ E_5 &= \\text{INR } 262 \\times 1.05 = \\text{INR } 275\\\\ D_5 &= \\text{INR } 275 \\times 0.20 = \\text{INR } 55\\\\ V_4 &= \\frac{\\text{INR } 55}{0.12 - 0.05} = \\text{INR } 787\\\\ V_0 &= \\frac{\\text{INR } 787}{1.12^4} = \\text{INR } 500\\end{aligned}$$",
+     "rubric": {
+      "reference_solution_md": "Let us first forecast the earnings in Year 5. Then calculate the dividends in Year 5 as 20% of Year 5 earnings. Applying the Gordon growth model to the Year 5 dividend gives us an estimate of the terminal value in Year 4. The terminal value discounted back four years is the current value of the stock.\n\n$$\\begin{aligned}E_4 &= \\text{INR } 150 \\times (1.15)^4 = \\text{INR } 262\\\\ E_5 &= \\text{INR } 262 \\times 1.05 = \\text{INR } 275\\\\ D_5 &= \\text{INR } 275 \\times 0.20 = \\text{INR } 55\\\\ V_4 &= \\frac{\\text{INR } 55}{0.12 - 0.05} = \\text{INR } 787\\\\ V_0 &= \\frac{\\text{INR } 787}{1.12^4} = \\text{INR } 500\\end{aligned}$$",
+      "steps": [
+       {
+        "title": "Complete solution and working notes",
+        "description_md": "Self-assess against the Institute's worked solution.",
+        "marks": "7",
+        "kind": "concept",
+        "mandatory": true,
+        "partial_allowed": true
+       }
+      ]
+     },
+     "labels": {
+      "source_kind": "institute_mat",
+      "source_name": "ICMAI Work Book, Paper 20A: Strategic Performance Management and Business Valuation (Elective Paper 20A)",
+      "source_ref": "workbook:cma-final:p20a:ch2:q5b",
+      "source_year": 2025,
+      "source_term_code": "",
+      "difficulty": 3,
+      "tags": [
+       "workbook",
+       "paper:20a"
+      ],
+      "nature": "practical"
+     },
+     "mapping": [
+      {
+       "course": "cma",
+       "level": "final",
+       "subject_key": "strategic-performance-management-and-business-valuation",
+       "chapter_key": "business-valuation-methods-and-approaches",
+       "primary": true
+      }
+     ]
+    },
+    "mapping_meta": {
+     "confidence": 0.5,
+     "runner_up": "fundamentals-of-business-valuation"
+    },
+    "marks_source": "inferred",
+    "evidence": {
+     "chapter_title": "Business Valuation Methods and Approaches",
+     "page": 28,
+     "printed_number": 6,
+     "typeset": true,
+     "typeset_notes": [
+      "Illustration 6 (printed 'ILLUSTRATTION 6') was swallowed by the parser's cut after Illustration 5; added from the page image as its own item.",
+      "Printed V4 = INR 787 kept as printed (55 / 0.07 = 785.7 with the rounded D5; the Institute's rounding)."
+     ],
+     "review": {
+      "verdict": "approve",
+      "reason": "Stem and all five working lines (E4 262, E5 275, D5 55, V4 787, V0 500) checked against page 28 of the workbook.",
+      "fixes": [],
+      "printed_issues": [
+       "Heading printed 'ILLUSTRATTION 6'",
+       "V4 printed 787 although 55 / 0.07 = 785.7"
+      ],
+      "by": "owner-decision"
+     }
+    }
+   }
+  }
+ ],
+ "patch": [
+  {
+   "ref": "workbook:cma-final:p20a:ch2:q5",
+   "drop_typeset_notes_containing": "Left out of the solution",
+   "evidence": {
+    "review": {
+     "verdict": "approve",
+     "reason": "Stem and both solution parts (Gordon 89, P/E 96) checked against pages 27-28 (the question continues over the page break); Illustration 6 is its own item (q5b).",
+     "fixes": [],
+     "printed_issues": [
+      "Gordon formula printed as 'r-g' without brackets"
+     ],
+     "by": "owner-decision"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,162 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "paper": "p13",
+ "items": {
+  "mcq:cma-final:p13:q054": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q064": {
+   "confidence": "high",
+   "review": [
+    "Printed as plain text ordinals (1/3rd, 2/3rd, 1/2 half); kept plain."
+   ]
+  },
+  "mcq:cma-final:p13:q078": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q083": {
+   "confidence": "high",
+   "review": [
+    "Printed as plain text ordinals (1/4th, 1/3rd); kept plain."
+   ]
+  },
+  "mcq:cma-final:p13:q098": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q102": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q105": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q165": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q172": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q178": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q184": {
+   "confidence": "high",
+   "review": [
+    "Printed as plain text ordinals (3/4th); kept plain."
+   ]
+  },
+  "mcq:cma-final:p13:q185": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q188": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q189": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q191": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q195": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q202": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q212": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q216": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q224": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q233": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q243": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q289": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q290": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q294": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  },
+  "mcq:cma-final:p13:q297": {
+   "confidence": "high",
+   "review": [
+    "No mathematics; stored text left as is."
+   ]
+  }
+ }
+}

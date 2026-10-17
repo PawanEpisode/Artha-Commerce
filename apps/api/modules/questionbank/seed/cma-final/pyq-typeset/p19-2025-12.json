@@ -1,0 +1,68 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p19-2025-12",
+ "items": {
+  "1(viii)": {
+   "options": [
+    {
+     "key": "A",
+     "body_md": "$\\text{Refund Amount} = (\\text{Turnover of zero-rated supply of goods} + \\text{Turnover of zero-rated supply of services}) \\times \\text{Net ITC} / \\text{Adjusted Total turnover}$"
+    },
+    {
+     "key": "B",
+     "body_md": "$\\text{Refund Amount} = (\\text{Turnover of zero-rated supply of goods} + \\text{Turnover of zero-rated supply of services}) \\times \\text{Net ITC} / \\text{Gross Total turnover}$"
+    },
+    {
+     "key": "C",
+     "body_md": "$\\text{Refund Amount} = \\text{Turnover of zero-rated supply of goods} \\times \\text{Net ITC} / \\text{Adjusted Total turnover}$"
+    },
+    {
+     "key": "D",
+     "body_md": "$\\text{Refund Amount} = \\text{Turnover of zero-rated supply of services} \\times \\text{Net ITC} / \\text{Adjusted Total turnover}$"
+    }
+   ],
+   "confidence": "high",
+   "review": [
+    "Formulas typeset inline as printed (linear '/'); printed key A matches stored key."
+   ]
+  },
+  "3(a)": {
+   "answer_md": "A. GST liability on outward supply\n\n| SI No. | Particulars | Value | CGST | SGST |\n|---|---|---|---|---|\n| (i) | Security services to BCM Ltd., a registered person [Tax is payable under reverse charge by the recipient since security services are being provided by a non-body corporate to a registered person.] | - | - | - |\n| (ii) | Loading, unloading, packing and warehousing of tomato ketchup bottles [Loading, unloading, packing and warehousing of agricultural produce is exempt. However, tomato ketchup bottles is not an agricultural produce.] | 6,00,000 | 54,000 [$6{,}00{,}000 \\times 9\\%$] | 54,000 [$6{,}00{,}000 \\times 9\\%$] |\n| (iii) | Security services to DEV Trust, an unregistered person [Tax is payable under forward charge/ not payable under reverse charges since security services are being provided by a non-body corporate to an unregistered person.] | 1,00,000 | 9,000 [$1{,}00{,}000 \\times 9\\%$] | 9,000 [$1{,}00{,}000 \\times 9\\%$] |\n| (iv) | Renting of motor vehicle for carrying passengers to CBM Travels Ltd. where value included cost of fuel [Tax is payable under reverse charge by recipient since such services are provided by a non-body corporate to a body corporate and GST is payable @ 5%.] | - | - | - |\n| (v) | Renting of motor vehicle for carrying passengers to Amisha & Co., a partnership firm, where supply value included cost of fuel [Tax is payable under forward charge/ not payable under reverse charges since such services are provided by a non-body corporate to a non-body corporate.] | 50,000 | 1,250 [$50{,}000 \\times 2.5\\%$] | 1,250 [$50{,}000 \\times 2.5\\%$] |\n| (vi) | Services provided to Gujarat Government administration under a Health Training programme [Exempt since the total expenditure borne by the Gujarat Government is more than 75%.] | - | - | - |\n\nB. GST liability on inward supplies under reverse charge\n\n| | Particulars | Value | CGST | SGST |\n|---|---|---|---|---|\n| (vii) | Availed legal consultancy service from Ajay and Co., a law firm, for business purposes [Legal services provided by a partnership firm of advocates/individual advocate other than a senior advocate to a business entity with an aggregate turnover up to such amount in the preceding financial year as makes it eligible for exemption from registration, are exempt from GST. Since Sunil and Sons started its business in April in the current financial year, its turnover in the preceding financial year is nil making it eligible for exemption from registration in the preceding financial year and hence, the legal services provided to it are exempt from GST.] | - | - | - |\n| | Total GST liability | | 64,250 | 64,250 |",
+   "confidence": "high",
+   "review": [
+    "Printed 'x' in working read as multiplication sign.",
+    "Print says government bears 'more than 75%' while stem says 80%; kept as printed."
+   ]
+  },
+  "3(b)": {
+   "answer_md": "Statement showing net GST liability:\n\n| | (₹) |\n|---|---|\n| Output tax | 4,50,000 |\n| Less: Net ITC available | (1,72,826) |\n| Net GST liability | 2,77,174 |\n\nWorking note:\n(1) Calculation of GST liability on outwards supply\n\n| | |\n|---|---|\n| Taxable Supply of goods | 25,00,000 |\n| Exempted supply of goods | Nil |\n| Recovery Agent services supplied to JKY Bank Ltd | Covered under RCM |\n| Deposit in Public Sector Bank on which interest received | Exempt |\n| Sale of land | Not a supply or (Under Schedule III) |\n| Total Taxable supply: | 25,00,000 |\n\nTax Payable $= \\text{₹ }25{,}00{,}000 \\times 18\\% = \\text{₹ }4{,}50{,}000$\n\n(2) Exempted supply for the purpose of reversal of ITC : (₹)\n\n| | |\n|---|---|\n| Exempted supply of goods | 6,00,000 |\n| Sale of land (Sale of land is treated as exempted supply for the purpose of reversal of ITC as per Section 17(3) of the CGST Act, 2017. value will be stamp duty valuation. (assumed that sale value given in the question is stamp duty value) | 10,50,000 |\n| Recovery Agent services supplied to JKY Bank Ltd (Recovery Agent to a banking company is covered under RCM but for reversal of ITC treated as exempted supply as per Section 17(3) of the CGST Act, 2017) | 3,00,000 |\n| Total Exempted supply: | 19,50,000 |\n\n(3) ITC not allowed as per Rule 42(1) (i) of CGST Rules, 2017 $= 3{,}00{,}000 \\times 19.50\\text{ L}/46\\text{ L} = \\text{₹ }1{,}27{,}173.91$ or 1,27,174 (r/off)\n\n(4) Net ITC allowed $= \\text{₹ }1{,}72{,}826$ ($\\text{₹ }3{,}00{,}000 - \\text{₹ }127{,}174$)\n\nNote : W.e.f. 25.1.2018, interest on deposits should NOT be included in exempted supply. However, it is included in total turnover.",
+   "confidence": "high",
+   "review": [
+    "Print shows '19.50 L/46L' in linear form; kept linear.",
+    "Working-note tables have no header row in print; empty header cells used."
+   ]
+  },
+  "5(b)": {
+   "answer_md": "| S No. | Particulars | Value ₹ in lakhs |\n|---|---|---|\n| i. | General Policies: (a) 1st year premium (25% value will be considered) | 1,500 $(6{,}000 \\times 25\\%)$ |\n| | (b) Old premium (12.50 % value will be considered) | 1,000 $(8{,}000 \\times 12.50\\%)$ |\n| ii. | Only Risk cover policies: (100 % value will be considered) | 475 |\n| iii. | Variable insurance policies: (Since separate Break up is given to policy holders only remaining (i e 20%) will be considered | 1800 $(9{,}000 - 80\\%\\text{ i.e.}7{,}200)$ |\n| | Total Value | 4775 |\n\nCalculation of Tax\n\nTotal Tax @ 18% 859.50 $(4{,}775 \\times 18\\%)$\n\nOR\n\nCGST 9% 429.75 $(4{,}775 \\times 9\\%)$\n\nSGST 9% 429.75 $(4{,}775 \\times 9\\%)$",
+   "confidence": "high",
+   "review": [
+    "Print has 'Calculation of Tax' as a merged row; shown as a line below the table."
+   ]
+  },
+  "8(a)": {
+   "answer_md": "Statement showing transaction value of WWR Ltd\n\n| Particulars | Value ₹ |\n|---|---|\n| Job worker's charges including profit ($32000+8000$) | 40,000 |\n| Cost of raw material supplied by XYR Ltd (Supply of Material from principal to job worker and job worker to principal cannot be treated as supply as per section 143 of the CGST Act, 2017.) | Nil |\n| Transportation charges for sending the raw material to the job worker (cannot be treated as supply) | Nil |\n| Transportation charges for returning the finished packets to XYR Ltd. [Section 15(2)(b) of the CGST Act, 2017] | 8,500 |\n| Technology fee (CBIC Circular No. 47/21/2018-GST, dated 8-6-2018: Technology owned by the recipient which are provided to a job worker (the two not being related persons or distinct persons) on \"Free of Cost\"( FOC) basis does not constitute a supply. (OR) It is clarified that while calculating the value of the supply made by the job worker, the value of technology provided by the recipient to the job worker on FOC basis shall not be added to the value of such supply because the cost of technology was not to be incurred by the job worker and thus, does not merit inclusion in the value of supply in terms of section 15(2)(b) of the CGST Act 2017) | Nil |\n| Sub-total | 48,500 |\n| Less: Discount (Shown in invoice so deduction is available as per Section 15(3) of CGST Act, 2017) | (6,000) |\n| Transaction value (i.e. sole consideration) | 42,500 |",
+   "confidence": "high",
+   "review": []
+  },
+  "8(b)": {
+   "answer_md": "(i) Eligible ITC for the year 2024-25\n\n| SI No. | Particulars | GST Paid/ (₹) | Eligible ITC (₹) |\n|---|---|---|---|\n| 1 | Regular raw materials | 2,70,000 | 2,70,000 Used fully in taxable outward supplies $\\rightarrow$ fully eligible |\n\nAll other purchases are for earlier years and ITC already taken in the respective years\n\n(ii) ITC REVERSAL\n\n| SI No. | Particulars | GST Paid/ITC Claimed (₹) | ITC reversal (₹) |\n|---|---|---|---|\n| 1 | Machinery sent to job worker (ITC claimed FY 2022-23 | 7,20,000 | NIL (Section 19 and 143: Capital goods sent to job worker must be returned within 3 years, not 1 year. No ITC reversal required) |\n| 2 | Gifts to agents | 36,000 | 36,000 As per section 17(5)(h) of the CGST Act, 2017, ITC on goods disposed of by way of gift or free samples is blocked; hence, the entire ITC attributable to such goods is required to be reversed. |\n| | Total reversal | | 36,000 |\n\nCalculation of Tax to be paid\n\n| SI No. | Particulars | GST Paid/ITC Claimed (₹) | Tax to be paid |\n|---|---|---|---|\n| 1 | Sale of machinery after 2 years | 7,20,000 | ₹ 4,50,000: Section 18(6) of CGST Act, 2017: When capital goods on which ITC has been taken are supplied, the registered person shall pay an amount equal to the higher of: 1. ITC taken on such capital goods reduced by 5% per quarter or part thereof, or 2. Tax on the transaction value of such supply. ITC originally claimed $= \\text{₹ }7{,}20{,}000$. Period held: 01/04/2022 to 15/01/2025 = 12 quarters. Hence $\\text{₹ }7{,}20{,}000 - 4{,}32{,}000\\ (5\\%\\text{ per }12\\text{ quarters} = 60\\%) = 2{,}88{,}000$. Or Tax on Sale Value: $\\text{₹ }25{,}00{,}000 * 18\\% = 4{,}50{,}000$. Higher amount $= \\text{₹ }4{,}50{,}000$ to be paid |\n| 2 | Sale of car purchased 3 years back | 1,80,000 | ₹ 1,08,000: The registered person shall pay an amount equal to the higher of: 1. ITC taken on such capital goods reduced by 5% per quarter or part thereof, or 2. Tax on the transaction value of such supply. ITC originally claimed $= \\text{₹ }1{,}80{,}000$. Period held: February 2022 to February 2025 = 13 quarters. Hence $\\text{₹ }1{,}80{,}000 - 1.17.000\\ (5\\%\\text{ per }13\\text{ quarters}= 65\\ \\%) = 63{,}000$. Or Tax on Sale Value: $\\text{₹ }6{,}00{,}000 * 18\\% = 1{,}08{,}000$. Higher amount $= \\text{₹ }1{,}08{,}000$ to be paid |\n\nNote:\n(1) The amount payable under Section 18(6) is treated as an output tax liability and to be reported in Form GSTR-1 and paid via Form GSTR-3B, rather than being shown as an ITC reversal in the ITC ledger.\n(2) Generally ITC on Car is blocked but in the question specifically given that ITC claimed so we assumed that this is fall under the exceptions of the block credit.",
+   "confidence": "medium",
+   "review": [
+    "Print '1.17.000' (should be 1,17,000) kept as printed.",
+    "Print: 'Machinery sent to job worker (ITC claimed FY 2022-23' has unclosed bracket; kept.",
+    "Print says 12 quarters for 01/04/2022 to 15/01/2025 and 60% (13 quarters would arguably apply); kept as printed.",
+    "Multi-line cells flattened into single table cells."
+   ]
+  }
+ }
+}

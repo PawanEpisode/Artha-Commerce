@@ -1,0 +1,16 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p13-2023-12",
+ "items": {
+  "4(b)": {
+   "stem_md": "KFR Limited was registered as a public company. There are 230 members in the company as noted below:\n(i) Directors and their relatives = 50\n(ii) Employees = 15\n(iii) Ex-employees (Shares were allotted when they were employees) = 10\n(iv) 5 couples holding shares jointly in the name of husband and wife $(5\\times 2)=10$\n(v) Others = 145\nThe Board of Directors of the company proposes to convert it into a private company. Advise whether reduction in the number of members is necessary.",
+   "answer_md": "According to section 2(68) of the Companies Act, 2013, \"Private company\" means a company having a minimum paid-up share capital as may be prescribed, and which by its articles, except in case of One Person Company, limits the number of its members to two hundred. However, where two or more persons hold one or more shares in a company jointly, they shall, for the purposes of this clause, be treated as a single member\n\nIt is further provided that –\n\n(a) persons who are in the employment of the company, and\n\n(b) persons who, having been formerly in the employment of the company, were members of the company while in that employment and have continued to be members after the employment ceased, shall not be included in the number of members.\n\nIn the instant case, KFR Limited may be converted into a private company only if the total members of the company are limited to 200 Total Number of members\n\nI. Directors and their relatives 50\n\nII. 5 Couples $(5\\times 1)$ 5\n\nIII. Others 145\n\nTotal 200\n\nTherefore, there is no need for reduction in the number of members since the existing number of members is 200 which does not exceed the maximum limit of 200.",
+   "confidence": "high",
+   "review": [
+    "Stem: only (5×2) typeset as math; the stored text otherwise matches the print.",
+    "Answer: SA prints '5 Couples (5x1) 5' while the stem says 5 couples (5×2)=10; kept as printed (institute treats joint holders as one member each).",
+    "'200 Total Number of members' run-on kept as printed."
+   ]
+  }
+ }
+}

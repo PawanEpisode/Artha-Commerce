@@ -1,0 +1,43 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p16-2024-06",
+ "items": {
+  "1(vii)": {
+   "stem_md": "DOXT Ltd., a manufacturing company, is preparing a quotation for a new product-D. The time taken for the first unit is 30 hours. The company expects 85% learning curve (Index is $-0{\\cdot}2345$). The company desires that the quotation should be based on the time taken for the final output within the Learning period which is expected to end after the company has produced 200 units. What will be the time per unit of product to be used for the quotation?\n\n[Given: $199^{-0{\\cdot}2345} = 0{\\cdot}28901$, $200^{-0{\\cdot}2345} = 0{\\cdot}28867$ and $201^{-0{\\cdot}2345} = 0{\\cdot}28834$]",
+   "confidence": "high",
+   "review": [
+    "Printed key A matches stored key A",
+    "Decimal point printed as middle dot, kept as {\\cdot}"
+   ]
+  },
+  "1(xii)": {
+   "stem_md": "Total Revenue of ZOM Ltd., from the Sales of the quantity (units) is given by the equation $R = \\frac{1}{3}x^{3} - x^{2} + 10x + 5$. If the Marginal revenue is 25, what will be number of quantity (in units)?",
+   "confidence": "high",
+   "review": [
+    "Printed key C matches stored key C",
+    "Removed the bracketed 'i.e. R = (1/3)x^3 – x^2 + 10x + 5' that is not in the print (extraction artefact); print uses chi-like x with superscripts"
+   ]
+  },
+  "6(a)": {
+   "answer_md": "Let the firm produce $X_1$ units of product A, $X_2$ units of product B and $X_3$ units of product C. The profit per unit of products A, B and C is ₹ 50, ₹ 50 and ₹ 80 respectively.\nThe objective function is : Maximise $Z = 50X_1 + 50X_2 + 80X_3$\nRaw material constraints are : $3X_1 + 4X_2 + 5X_3 \\leq 5{,}000$ & $5X_1 + 3X_2 + 5X_3 \\leq 7{,}500$\nThe labour time for each unit of product A is twice that of product B and three times that of product C. Also, the entire labour force can produce the equivalent of 3000 units.\n\n$$\nX_1 + \\frac{X_2}{2} + \\frac{X_3}{3} \\leq 3000\n$$\n\n$6X_1 + 3X_2 + 2X_3 \\leq 18{,}000$\nDemand constraints are: $X_1 \\geq 600$, $X_2 \\geq 650$ and $X_3 \\geq 500$\nSince the ratios of the number of units produced must be equal to 2 : 3 : 4, therefore,\n$\\frac{1}{2}X_1 = \\frac{1}{3}X_2$ and $\\frac{1}{3}X_2 = \\frac{1}{4}X_3$\nOr, $3X_1 = 2X_2$ and $4X_2 = 3X_3$\n\nThe linear programming model can be formulated as follows:\nMaximise $Z = 50X_1 + 50X_2 + 80X_3$\nSubject to the Constraints\n\n$$\n\\begin{aligned}\n3X_1 + 4X_2 + 5X_3 &\\leq 5000 \\\\\n5X_1 + 3X_2 + 5X_3 &\\leq 7500 \\\\\n6X_1 + 3X_2 + 2X_3 &\\leq 18000 \\\\\n3X_1 = 2X_2 \\text{ and } 4X_2 &= 3X_3 \\\\\nX_1 \\geq 600,\\ X_2 \\geq 650 \\text{ and } X_3 &\\geq 500\n\\end{aligned}\n$$",
+   "confidence": "high",
+   "review": [
+    "Replaced the garbled labour-constraint line in source text with the printed stacked-fraction inequality",
+    "Printed 'Or, 3X1 = 2X2 and 4X2 = 3X3' kept; printed 18000 kept"
+   ]
+  },
+  "7": {
+   "answer_md": "(i) The network as below :\n[Network diagram not available in text]\n\n(ii) Critical path is 1 – 3 – 5 – 6\nThe total project duration is sum of the duration of each critical activity, i.e. 4 + 6 + 7 = 17 Weeks.\n(iii) Variance of the critical path is sum of the variance of each critical activity, i.e. 1 + 4 + 4 = 9 Weeks.\nOR, S.D. = $\\sqrt{\\text{Variance of the Project}} = 3$\n\n(a) At least 3 weeks earlier than expected :\nThe Standard normal equation can be applied as follows:\n\n$$\nZ = \\frac{\\text{Due date} - \\text{Expected date of Completion}}{\\text{S.D.}} = \\frac{-3}{3} = -1\n$$\n\nReferring to the normal table, we find a probability of = 0.1587 i.e. 15.87 %\n(b) No more than 3 weeks later than expected:\n\n$$\nZ = \\frac{20 - 17}{3} = 1\n$$\n\nProbability = (0.50 + 0.3413) = 0.8413 i.e. 84.13%\n(iv) $Z = \\frac{18 - 17}{3} = 0.33$\nTherefore, Probability of meeting the due date = 0.50 + 0.1293 = 0.6293 i.e. 62.93%\nProbability of not meeting the due date = (1 – 0.6293) = 0.3707 = 0.3707 i.e. 37.07%",
+   "confidence": "medium",
+   "review": [
+    "Network diagram is a figure and not reproduced",
+    "Printed 'Z = 0.33' kept (print also has 'Z = 0.33' for 0.333); 'Probability = 0.3707 = 0.3707' duplication is as printed"
+   ]
+  },
+  "8(b)": {
+   "answer_md": "The required equation of Straight line trend is $y = 26 + 1.893x$\n(Origin = 2018, $x$ unit = 1 year)\n\nExport Turnover for Year 2025:\nFor the year 2025, $x = 7$\nSo, the estimated no. of exports in the year 2025:\n= ₹ 39.25 Crores",
+   "confidence": "high",
+   "review": []
+  }
+ }
+}

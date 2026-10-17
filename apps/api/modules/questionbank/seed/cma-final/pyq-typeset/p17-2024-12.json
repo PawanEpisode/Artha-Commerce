@@ -1,0 +1,14 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p17-2024-12",
+ "items": {
+  "3(b)": {
+   "answer_md": "In a Cost Audit program, draw a checklist to audit the production of a manufacturing unit-\n\n- The audit assignment should be planned with professional care. It has to provide reasonable assurance that the cost information provided is free of material misstatements. As regards the audit of production- product-wise, the following checklist may be considered.\n- Ensure that there is proper inventory balancing for each of the finished products. Viz. ($\\text{op stock} + \\text{production} = \\text{sales} + \\text{closing stock}$.)\n- The closing stock of the previous year is correctly considered in the opening stock of the current year.\n- Check the capacity utilization of 5 years’ product-wise.\n- For any abnormal underutilization of production capacity, the auditor should seek the reasons and enquire into the steps the management proposes to overcome it.\n\n  **Alternatively,**\n\n  For any abnormal underutilisation of production capacity the auditor should seek the reasons from the management and what steps management has proposed to undertake to overcome underutilisation of capacity. Underutilisation of capacity should merit attention and focus where either product is profitable or the product has substantial positive contribution.\n- Check whether there are any circumstances where there is an addition to capacity for any product during the year but the increase is not reflected in the records.\n\n  **Alternatively,**\n\n  Check whether there is any circumstance where there is addition to capacity for any product during the year but actual production achieved is either equal to or less than that of previous year. Reasons for the same should be sought from the management.\n- An MIS for five years in prescribed form be submitted.",
+   "confidence": "high",
+   "review": [
+    "Only the inventory-balancing identity typeset as math; the stored '5 years‟' garbled apostrophe corrected to the printed ’.",
+    "Alternative answers nested under their bullets as in the print."
+   ]
+  }
+ }
+}

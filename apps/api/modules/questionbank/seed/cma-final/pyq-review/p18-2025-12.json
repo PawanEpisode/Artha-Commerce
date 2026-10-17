@@ -1,0 +1,69 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p18-2025-12",
+ "items": {
+  "1(i)": {
+   "verdict": "approve",
+   "reason": "Compared stem and four options with the printed paper and the printed key (C) in the suggested answers; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Key (C) is cost plus conversion at 5,25,225 units x 105, although cost ₹100 is below NRV ₹115 on the stem as printed."
+   ]
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and the answer table, three criteria and six combinations match the printed pages.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed wording 'should be reach minimum 75%'."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the amortisation table with journal entries match the printed pages digit for digit.",
+   "fixes": []
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Balance sheet, notes, scheme, journal entries and the working-note account match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer writes off Loans & Advances as 17,000 (77,000 - 60,000)."
+   ]
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem, both printed solutions (main and Alternative) and journals match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Main answer uses Trade Receivables '(190 - 10 doubtful) = 180' and the Alternative '(200 - 10 doubtful) = 190', giving net assets 1,010 and 1,020.",
+    "Journal amount 1000 printed without a comma in places."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem, working notes and tables match the print; restored the printed row label in the NOPAT table.",
+   "fixes": [
+    "Row label 'Adjusted NOPAT' restored to the printed 'Adjusted NOPAT (NOPAT)'."
+   ],
+   "answer_md": "The Economic Value Added (EVA) is calculated using the formula:\n$\\text{EVA} = \\text{Adjusted NOPAT} - (\\text{WACC} \\times \\text{Adjusted Invested Capital})$\n\nCalculation of Economic Value Added (EVA)\n\n$$\n\\begin{aligned}\n\\text{EVA} &= \\text{NOPAT} - (\\text{WACC} \\times \\text{IC})\\\\\n\\text{EVA} &= 1{,}370 - (13.00\\% \\times 3{,}150)\\\\\n\\text{EVA} &= 1{,}370 - 409.50\\\\\n\\text{EVA} &= \\text{₹ }960.50\\text{ Lakhs}\n\\end{aligned}\n$$\n\nWorking Notes\n(A) Cost of Equity (Ke) using CAPM:\n\n$$\n\\begin{aligned}\nK_e &= R_f + \\beta(R_m - R_f)\\\\\nK_e &= 6\\% + 1.25(14\\% - 6\\%) = 6\\% + 1.25(8\\%) = 6\\% + 10\\% = 16\\%\n\\end{aligned}\n$$\n\n(B) After-tax Cost of Debt (Kd):\n\n$$\n\\begin{aligned}\nK_d &= \\text{Pre-tax Cost of Debt} \\times (1 - t)\\\\\nK_d &= 10\\% \\times (1 - 0.30) = 10\\% \\times 0.70 = 7\\%\n\\end{aligned}\n$$\n\n(C) WACC Calculation (Based on Book Value Weights):\n\n| Source of Capital | Amount | Weight ($W_i$) | Cost ($K_i$) | $K_i \\times W_i$ |\n|---|---|---|---|---|\n| Equity (Share Capital + Reserves) | 2,000 | $2{,}000/3{,}000 = 0.6667$ | 16% | 10.67% |\n| Debt (10% Term Loan) | 1,000 | $1{,}000/3{,}000 = 0.3333$ | 7% | 2.33% |\n| Total | 3,000 | 1.00 | | 13.00% |\n| $\\text{WACC} = 13.00\\%$ | | | | |\n\n(D) Calculation of Adjusted Net Operating Profit After Tax (NOPAT)\nEVA adjustments are made to NOPAT to reflect economic reality.\n\n| Particulars | Calculation | Amount (₹ Lakhs) |\n|---|---|---|\n| PAT (Profit After Tax) | | 910 |\n| Add: Interest (Net of Tax) → To reverse the effect of financing costs on operating profit. | $300 \\times (1 - 0.30)$ | 210 |\n| NOPAT (Unadjusted) | | 1,120 |\n| Add: EVA Adjustment 1: R&D Expensed (Add back R&D, as it is an investment) | | 200 |\n| Add: EVA Adjustment 2: Accounting Depreciation (Add back) | | 400 |\n| Deduct: EVA Adjustment 3: Amortization of R&D (Economic Amortization) | $200/4\\text{ years}$ | (50) |\n| Deduct: EVA Adjustment 4: Economic Depreciation (Charge) | | (300) |\n| Adjusted NOPAT (NOPAT) | | 1,370 |\n\n(E) Calculation of Adjusted Invested Capital (IC)\nAdjusted Invested Capital includes all capital employed, plus the cumulative effect of capitalized expenses (like R&D).\n(1) Unadjusted Invested Capital (IC):\n\n$$\n\\begin{aligned}\n\\text{IC} &= \\text{Total Assets} - \\text{Non-Interest-Bearing Current Liabilities (NIBCL)}\\\\\n\\text{IC} &= \\text{₹ }(3{,}200 - 200)\\text{ Lakhs} = \\text{₹ }3{,}000\\text{ Lakhs}\n\\end{aligned}\n$$\n\n(Alternatively, $\\text{IC} = \\text{Equity} + \\text{Debt} = 2{,}000 + 1{,}000 = \\text{₹ }3{,}000\\text{ Lakhs}$)\n(2) Closing Balance of Capitalized R&D Asset:\n\n$$\n\\begin{aligned}\n\\text{Closing R\\&D Asset} &= \\text{Opening Balance} + \\text{R\\&D Expenditure} - \\text{Amortization}\\\\\n\\text{Closing R\\&D Asset} &= \\text{₹ }(0 + 200 - 50)\\text{ Lakhs} = \\text{₹ }150\\text{ Lakhs}\n\\end{aligned}\n$$\n\n$$\n\\begin{aligned}\n\\text{Adjusted Invested Capital (IC)} &= \\text{Unadjusted IC} + \\text{Closing R\\&D Asset}\\\\\n\\text{IC} &= \\text{₹ }(3{,}000 + 150)\\text{ Lakhs} = \\text{₹ }3{,}150\\text{ Lakhs}\n\\end{aligned}\n$$"
+  },
+  "6": {
+   "verdict": "approve",
+   "reason": "Balance sheets, additional information, consolidated balance sheet, notes and working notes match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Note 7 total printed as 35898.40 without a comma.",
+    "Note 7 bracket '[(4000 x 60%) x 10% x 1/4)]' has an extra closing bracket."
+   ]
+  },
+  "8(c)": {
+   "verdict": "approve",
+   "reason": "Stem, journal entry and working note match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says 'Net Assets of Delta Ltd.' while the stem says D Ltd."
+   ]
+  }
+ }
+}

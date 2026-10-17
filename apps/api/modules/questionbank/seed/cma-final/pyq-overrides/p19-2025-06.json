@@ -1,0 +1,33 @@
+{
+ "schema": "artha.qboverride.v1",
+ "paper": "19",
+ "term_code": "2025-06",
+ "note": "Direct edits made to the seed JSON by the owner. Applied last by build_pyq_seed so a rebuild never loses them.",
+ "parts": {
+  "1(x)": {
+   "stem_md": "The maximum amount of pre-deposit payable by a taxpayer for filing an appeal involving IGST implications before the appellate authority is",
+   "options": [
+    {
+     "body_md": "₹ 50 lakhs",
+     "is_correct": false
+    },
+    {
+     "body_md": "₹ 25 crores",
+     "is_correct": false
+    },
+    {
+     "body_md": "₹ 50 crore",
+     "is_correct": true
+    },
+    {
+     "body_md": "₹ 100 crore",
+     "is_correct": false
+    }
+   ],
+   "kind": "mcq_single",
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true
+  }
+ }
+}

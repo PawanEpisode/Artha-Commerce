@@ -1,0 +1,75 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p16-2025-12",
+ "items": {
+  "1(x)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper; stored key A equals printed key (x) (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key is (A) Value Engineering although the wording is classically associated with Value Analysis; kept as printed."
+   ]
+  },
+  "2": {
+   "verdict": "approve",
+   "reason": "Compared stem, data table and all four parts (i)-(iv) with the question paper and suggested answer pages 1-3; text, tables and figures match digit for digit.",
+   "fixes": [],
+   "printed_issues": [
+    "Dept 5 time 0.333 hr x 72 shown as 24.00 and 0.333 x 1,000 shown as 334 hrs (rounding as printed)",
+    "Contribution per unit is 23.50 in (ii) but 31 in (iv) as printed"
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and all workings, charts and break-up table match the question paper and suggested answer page 7-8 digit for digit.",
+   "fixes": [],
+   "printed_issues": [
+    "RSQ working printed as (50/100 X 110) = 55 for both materials, kept as printed"
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem figures (including 2,400 hours) and all seven workings match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and bid table match the print; answer matches the suggested answer, with the missing final assignment matrix (boxed zeros) now written from the page image.",
+   "fixes": [
+    "Replaced the image placeholder with the final assignment matrix; the assigned (boxed) zeros are shown in bold"
+   ],
+   "answer_md": "(i) There are 5 rows and 4 columns, hence a dummy column is to be inserted. Further, assigning C1 → R1 and C5 → R2, we have the cost table:\n\nCost of Repairs (₹ in Lakhs)\n\n| Contractors \\ Road | R3 | R4 | Dummy |\n|---|---|---|---|\n| C2 | 40 | 39 | 0 |\n| C3 | 42 | 38 | 0 |\n| C4 | 36 | 36 | 0 |\n\nAs there is ZERO in each row, we go straight to the column reduction:\n\n| Contractors \\ Road | R3 | R4 | Dummy |\n|---|---|---|---|\n| C2 | 4 | 3 | 0 |\n| C3 | 6 | 2 | 0 |\n| C4 | 0 | 0 | 0 |\n\nThe minimum number of lines to cover all zeroes is 2, which is less than 3, the order of the matrix. Hence, optimum solution has not been reached and the solution needs to be improved.\n\nTo improve the solution, the minimum uncovered element (i.e. 2) is deducted from all the uncovered elements and added with the covered elements at the junction. The new matrix will be as under:\n\n| Contractors \\ Road | R3 | R4 | Dummy |\n|---|---|---|---|\n| C2 | 2 | 1 | 0 |\n| C3 | 4 | 0 | 0 |\n| C4 | 0 | 0 | 2 |\n\nThe minimum number of lines to cover all zeroes is 3, which is equal to the order of the matrix, hence optimum solution has been reached. The assignment is made below:\n| Contractors \\ Road | R3 | R4 | Dummy |\n|---|---|---|---|\n| C2 | 2 | 1 | **0** |\n| C3 | 4 | **0** | 0 |\n| C4 | **0** | 0 | 2 |\n\nThe optimal assignment is:\n\n| Contractor | Road | Cost (₹ in lakhs) |\n|---|---|---|\n| C1 | R1 | 18 |\n| C2 | No assignment | X |\n| C3 | R4 | 38 |\n| C4 | R3 | 36 |\n| C5 | R2 | 30 |\n| Total | | 122 |\n\nHence, total minimum cost of the repair project is ₹ 122 lakhs.\n\n(ii) Minimum Discount for eliminated contractor:\nThe eliminated contractor is C2, as they were not assigned any road in the optimal plan.\nTo \"merit a contract\" C2 must offer a price lower than the current winning bids for the roads they are most competitive in (R3 or R4)\nCurrent cost for R4: 38 lakhs (assigned to C3)\nC2's current bid for R4: ₹ 39 lakhs.\nRequired discount: C2 must at least match the current assignment: ₹ (39 - 38) = ₹ 1 lakh.\nC2 must offer a minimum Discount of ₹ 1 lakh to equal C3 from R4.\nOR: The minimum discount of ₹ 4 lakhs (40 - 36) must offer by C2 to get/ equal C4 from R3",
+   "printed_issues": [
+    "Total minimum cost of ₹ 122 lakhs exceeds the ₹ 114 lakhs grant, as printed",
+    "Part (ii) gives two alternative discounts (₹ 1 lakh against C3 on R4, or ₹ 4 lakhs against C4 on R3) as printed",
+    "Printed 'X' used for C2 cost in the optimal assignment table"
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; the suggested answer is present on page 13 of the answer PDF, so the missing answer was transcribed from the image (main and alternative solutions, parts (i) and (ii)).",
+   "fixes": [
+    "Replaced the 'not available' placeholder with the printed suggested answer"
+   ],
+   "answer_md": "Total cost $C(x) = x^{3} + 60x^{2} + 8x$\n\nTotal Revenue\n\n$$\n\\begin{aligned}\nR(x) &= (3x^{2} - 3x + 656)\\,x \\\\\n&= 3x^{3} - 3x^{2} + 656x\n\\end{aligned}\n$$\n\nProfit\n\n$$\n\\begin{aligned}\nP &= (3x^{3} - 3x^{2} + 656x) - (x^{3} + 60x^{2} + 8x) \\\\\n&= 3x^{3} - x^{3} - 3x^{2} - 60x^{2} + 656x - 8x \\\\\n&= 2x^{3} - 63x^{2} + 648x\n\\end{aligned}\n$$\n\nFor maximization of profit, $\\dfrac{dP}{dx} = 0$ and $\\dfrac{d^{2}P}{dx^{2}} = \\text{Negative} < 0$\n\nDerivative w.r.t. $x$\n\n$$\n\\begin{aligned}\n\\frac{dP}{dx} &= \\frac{d}{dx}\\left(2x^{3} - 63x^{2} + 648x\\right) \\\\\n\\therefore\\ 6x^{2} - 126x + 648 &= 0 \\\\\n\\text{Or, } x^{2} - 21x + 108 &= 0 \\\\\n\\text{Or, } x(x - 9) - 12(x - 9) &= 0 \\\\\n(x - 12)(x - 9) &= 0 \\\\\n\\text{i.e. } x &= 12 \\text{ or } 9\n\\end{aligned}\n$$\n\nAgain,\n\n$$\n\\begin{aligned}\n\\frac{d^{2}P}{dx^{2}} &= 12x - 126, \\text{ at } x = 9 \\\\\n\\frac{d^{2}P}{dx^{2}} &= 108 - 126 = -18 < 0 \\text{ (Negative)}\n\\end{aligned}\n$$\n\nTherefore, P is maximum at $x = 9$\n\nAt $x = 12$, $\\dfrac{d^{2}P}{dx^{2}} = 144 - 126 = 18 > 0$ (Positive)\n\nP is minimum at $x = 12$\n\nHence, the SUTON Ltd., should sell 9 items to make Maximum profit\n\nALTERNATIVE SOLUTION:\n\nFor maximization of Profit, Marginal Revenue = Marginal Cost\n\n$$\n\\begin{aligned}\n\\text{Marginal Revenue (MR)} &= \\frac{d}{dx}(\\text{Total Revenue}) = \\frac{d}{dx}(3X^{3} - 3X^{2} + 656X) = 9X^{2} - 6X + 656 \\\\\n\\text{Marginal Cost (MC)} &= \\frac{d}{dx}(X^{3} + 60X^{2} + 8X) = 3X^{2} + 120X + 8\n\\end{aligned}\n$$\n\nWe have MR = MC,\n\n$$\n\\begin{aligned}\n9X^{2} - 6X + 656 &= 3X^{2} + 120X + 8 \\\\\n\\text{Or, } x^{2} - 21x + 108 &= 0 \\\\\n\\text{Or, } x(x - 9) - 12(x - 9) &= 0 \\\\\n(x - 12)(x - 9) &= 0 \\\\\n\\text{i.e. } x &= 12 \\text{ or } 9\n\\end{aligned}\n$$\n\nAgain,\n\n$$\n\\begin{aligned}\n\\frac{d^{2}P}{dx^{2}} &= 12x - 126, \\text{ at } x = 9 \\\\\n\\frac{d^{2}P}{dx^{2}} &= 108 - 126 = -18 < 0 \\text{ (Negative)}\n\\end{aligned}\n$$\n\nTherefore, P is maximum at $x = 9$\n\nAt $x = 12$, $\\dfrac{d^{2}P}{dx^{2}} = 144 - 126 = 18 > 0$ (Positive)\n\nP is minimum at $x = 12$\n\nHence, the SUTON Ltd., should sell 9 items to make Maximum profit\n\n(ii) Profit\n\n$$\n\\begin{aligned}\nP &= 2x^{3} - 63x^{2} + 648x \\\\\n&= 2(9)^{3} - 63(9)^{2} + 648(9) \\text{ at } x = 9 \\\\\n&= 7290 - 63 \\times 81 = 2187 \\text{ (Rs)}\n\\end{aligned}\n$$\n\nThe maximum profit SUTON Ltd., can earn from the product is ₹ 2187.",
+   "printed_issues": [
+    "In the alternative solution the second-derivative test is shown with d2p/dx2 although the profit function was not restated, as printed"
+   ]
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and all tables, trend values, ratios and seasonal indices in both solutions match the suggested answer pages 14-17 digit for digit.",
+   "fixes": [
+    "Alternative table total row: Production column total restored to the printed '\\sum X = 1080'"
+   ],
+   "answer_md": "Fit a Linear Trend Equation\nFirst, we tabulate the monthly production data (Y) for the 36 months ($n = 36$) covering 2022, 2023 and 2024. We assign $X$ is the time variable ($X = 1$ for Jan. 2022, $X = 36$ for Dec. 2024).\n\n| Month | 2022 | 2023 | 2024 |\n|---|---|---|---|\n| Jan | 15 | 23 | 25 |\n| Feb | 16 | 22 | 25 |\n| Mar | 18 | 28 | 35 |\n| Apr | 18 | 27 | 36 |\n| May | 23 | 31 | 36 |\n| Jun | 23 | 28 | 30 |\n| Jul | 20 | 22 | 30 |\n| Aug | 28 | 28 | 34 |\n| Sep | 29 | 32 | 38 |\n| Oct | 33 | 37 | 47 |\n| Nov | 33 | 34 | 41 |\n| Dec | 38 | 44 | 53 |\n| Total | 294 | 356 | 430 |\n\nTotals:\n$\\sum Y = 1080$\n$n = 36$\nMean $Y = 1080 / 36 = 30$\n\nCompute Trend Equation (Least Squares)\nGiven:\n$\\sum X = 666$\n$\\sum X^{2} = 16206$\n$\\sum XY = 22377$\n\n$$\n\\begin{aligned}\nb &= \\frac{n\\sum XY - (\\sum X)(\\sum Y)}{n\\sum X^{2} - (\\sum X)^{2}} \\\\\nb &= \\frac{36(22377) - 666(1080)}{36(16206) - 666^{2}} \\\\\nb &= \\frac{805572 - 719280}{583416 - 443556} \\\\\nb &= \\frac{86292}{139860} = 0.617 \\\\\na &= \\bar{Y} - b\\bar{X} \\\\\na &= 30 - 0.617(666/36) = 18.58\n\\end{aligned}\n$$\n\nTrend Equation\n\n$$\n\\boxed{Y = 18.58 + 0.617X}\n$$\n\nCalculate Trend Values (T) and Ratios (A/T × 100)\nExample calculations\nJanuary\n• Jan 2022 ($X=1$): $T = 18.58 + 0.617(1) = 19.197$; $\\text{Ratio} = 15 / 19.197 \\times 100 = 78.14$\n• Jan 2023 ($X=13$): $T = 18.58 + 0.617(13) = 26.601$; $\\text{Ratio} = 23 / 26.601 \\times 100 = 86.46$\n• Jan 2024 ($X=25$): $T = 34.005$; $\\text{Ratio} = 25 / 34.005 \\times 100 = 73.52$\nAverage (Jan): $(78.14 + 86.46 + 73.52)/3 = 79.37$\n\nRepeating for all months we have:\n\n| MONTH | Avg Ratio (2022) | Avg Ratio (2023) | Avg Ratio (2024) | Average Ratio |\n|---|---|---|---|---|\n| JAN | 78.14 | 86.46 | 73.52 | 79.37 |\n| FEB | 80.75 | 80.83 | 72.21 | 77.93 |\n| MAR | 88.10 | 100.59 | 99.32 | 96.00 |\n| APR | 85.52 | 94.90 | 100.40 | 93.61 |\n| MAY | 106.16 | 106.64 | 98.70 | 103.83 |\n| JUNE | 103.22 | 94.35 | 80.88 | 92.82 |\n| JULY | 87.34 | 72.57 | 79.56 | 79.82 |\n| AUG | 119.07 | 90.54 | 88.72 | 99.44 |\n| SEPT | 120.17 | 101.47 | 97.58 | 106.41 |\n| OCT | 133.33 | 115.07 | 118.81 | 122.40 |\n| NOV | 130.09 | 103.75 | 102.05 | 111.96 |\n| DEC | 146.24 | 131.78 | 129.93 | 135.98 |\n| TOTAL | | | | 1199.57 |\n\nFinal Seasonal Index:\nThe sum of the average ratios is 1199.57. Since the sum of Seasonal ratios for 12 months should be exactly 1200, a minor correction factor ($1200/11199.57 = 1.00036$) is applied.\n\n| Month | Seasonal Index | Month | Seasonal Index |\n|---|---|---|---|\n| JAN | 79.40 | JULY | 79.85 |\n| FEB | 77.96 | AUG | 99.48 |\n| MAR | 96.03 | SEPT | 106.45 |\n| APR | 93.64 | OCT | 122.44 |\n| MAY | 103.87 | NOV | 112.00 |\n| JUNE | 92.85 | DEC | 136.03 |\n\n[Calculation of final seasonal index has been made by multiplying correction factor with each calculated seasonal index]\n\nConclusion:\nThe production of Turmeric Powder peaks significantly in DECEMBER (136.03) and reaches its lowest point in FEBRUARY (77.96).\n\nALTERNATIVE SOLUTION (if calculation is made up to 3 decimal places)\nMethod: Trend Ratio Method (Multiplicative Model)\nFit a Linear Trend Equation $y = a + bx$\n\nTable 1: Monthly Data and Calculations of Ratio\n\n| Month | $x$ | Production (Y) | $x^{2}$ | $xy$ | Trend $T = 18.59 + 0.617x$ | Ratio $(Y/T) \\times 100$ |\n|---|---|---|---|---|---|---|\n| Jan – 22 | 1 | 15 | 1 | 15 | 19.207 | 78.10 |\n| Feb – 22 | 2 | 16 | 4 | 32 | 19.824 | 80.71 |\n| Mar – 22 | 3 | 18 | 9 | 54 | 20.441 | 88.06 |\n| Apr – 22 | 4 | 18 | 16 | 72 | 21.058 | 85.48 |\n| May – 22 | 5 | 23 | 25 | 115 | 21.675 | 106.11 |\n| Jun – 22 | 6 | 23 | 36 | 138 | 22.292 | 103.18 |\n| Jul – 22 | 7 | 20 | 49 | 140 | 22.909 | 87.30 |\n| Aug – 22 | 8 | 28 | 64 | 224 | 23.526 | 119.02 |\n| Sep – 22 | 9 | 29 | 81 | 261 | 24.143 | 120.12 |\n| Oct – 22 | 10 | 33 | 100 | 330 | 24.760 | 133.28 |\n| Nov – 22 | 11 | 33 | 121 | 363 | 25.377 | 130.04 |\n| Dec – 22 | 12 | 38 | 144 | 456 | 25.994 | 146.19 |\n| Jan – 23 | 13 | 23 | 169 | 299 | 26.611 | 86.43 |\n| Feb – 23 | 14 | 22 | 196 | 308 | 27.228 | 80.80 |\n| Mar – 23 | 15 | 28 | 225 | 420 | 27.845 | 100.56 |\n| Apr – 23 | 16 | 27 | 256 | 432 | 28.462 | 94.86 |\n| May – 23 | 17 | 31 | 289 | 527 | 29.079 | 106.61 |\n| Jun – 23 | 18 | 28 | 324 | 504 | 29.696 | 94.29 |\n| Jul – 23 | 19 | 22 | 361 | 418 | 30.313 | 72.58 |\n| Aug – 23 | 20 | 28 | 400 | 560 | 30.930 | 90.53 |\n| Sep – 23 | 21 | 32 | 441 | 672 | 31.547 | 101.44 |\n| Oct – 23 | 22 | 37 | 484 | 814 | 32.164 | 115.04 |\n| Nov – 23 | 23 | 34 | 529 | 782 | 32.781 | 103.72 |\n| Dec – 23 | 24 | 44 | 576 | 1056 | 33.398 | 131.74 |\n| Jan – 24 | 25 | 25 | 625 | 625 | 34.015 | 73.50 |\n| Feb – 24 | 26 | 25 | 676 | 650 | 34.632 | 72.19 |\n| Mar – 24 | 27 | 35 | 729 | 945 | 35.249 | 99.29 |\n| Apr – 24 | 28 | 36 | 784 | 1008 | 35.866 | 100.37 |\n| May – 24 | 29 | 36 | 841 | 1044 | 36.483 | 98.68 |\n| Jun – 24 | 30 | 30 | 900 | 900 | 37.100 | 80.86 |\n| Jul – 24 | 31 | 30 | 961 | 930 | 37.717 | 79.54 |\n| Aug – 24 | 32 | 34 | 1024 | 1088 | 38.334 | 88.69 |\n| Sep – 24 | 33 | 38 | 1089 | 1254 | 38.951 | 97.56 |\n| Oct – 24 | 34 | 47 | 1156 | 1598 | 39.568 | 118.78 |\n| Nov – 24 | 35 | 41 | 1225 | 1435 | 40.185 | 102.03 |\n| Dec – 24 | 36 | 53 | 1296 | 1908 | 40.802 | 129.90 |\n| TOTAL | $\\sum X = 666$ | $\\sum X = 1080$ | $\\sum X^{2} = 16206$ | $\\sum XY = 22377$ | | |\n\nCalculation of Slope (b):\nFormula $b^{2} = [n\\sum XY - (\\sum X)(\\sum Y)] / [n\\sum X^{2} - (\\sum X)^{2}]$\nSubstitution $b = [(36 \\times 22377) - (666 \\times 1080)] / [36 \\times 16206 - (666)^{2}]$\nCalculation $b = (805572 - 719280) \\div (583416 - 443556)$\nResult $b = (86292 \\div 139860) = 0.6170$\n\nCalculation of Intercept (a):\nFormula $a = (\\sum Y / n) - b\\,(\\sum X / n)$\nSubstitution $a = (1080 / 36) - 0.6170\\,(666 / 36)$\nCalculation $a = 30 - 11.41 = 18.59$\nTrend Equation: $Y = 18.59 + 0.617x$\n\nAverage of Ratios and Final Indices\nThe ratios for each specific month across the three years are averaged to find the Seasonal Index.\nCorrection Factor and Adjusted Seasonal Indices\nCorrection Factor $= 1200 / 1199.19 = 1.00068$\nAdjusted Seasonal Index (Adjusted SI) $= \\text{Raw Seasonal Index} \\times 1.00068$\n\n| Month | 2022 Ratio | 2023 Ratio | 2024 Ratio | Raw SI (Average) | Adjusted SI |\n|---|---|---|---|---|---|\n| Jan | 78.10 | 86.43 | 73.50 | 79.34 | 79.39 |\n| Feb | 80.71 | 80.80 | 72.19 | 77.90 | 77.95 |\n| Mar | 88.06 | 100.56 | 99.29 | 95.97 | 96.03 |\n| Apr | 85.48 | 94.86 | 100.37 | 93.57 | 93.64 |\n| May | 106.11 | 106.61 | 98.68 | 103.80 | 103.87 |\n| Jun | 103.18 | 94.29 | 80.86 | 92.78 | 92.84 |\n| Jul | 87.30 | 72.58 | 79.54 | 79.81 | 79.87 |\n| Aug | 119.02 | 90.53 | 88.69 | 99.41 | 99.48 |\n| Sep | 120.12 | 101.44 | 97.56 | 106.37 | 106.44 |\n| Oct | 133.28 | 115.04 | 118.78 | 122.37 | 122.45 |\n| Nov | 130.04 | 103.72 | 102.03 | 111.93 | 112.01 |\n| Dec | 146.19 | 131.74 | 129.90 | 135.94 | 136.03 |\n| Total | 1277.59 | 1178.60 | 1141.39 | 1199.19 | 1200.00 |\n\nConclusion: The production of Turmeric Powder peaks significantly in DECEMBER (136.03) and reaches its lowest point in FEBRUARY (77.95).",
+   "printed_issues": [
+    "Slope formula printed as b squared in the alternative solution",
+    "Correction factor printed as 1200/11199.57 = 1.00036 (misprint for 1199.57)",
+    "Total row of the production column printed as ∑X = 1080 instead of ∑Y",
+    "Two solutions use different intercepts (18.58 and 18.59) and different conclusions for February (77.96 and 77.95)"
+   ]
+  }
+ }
+}

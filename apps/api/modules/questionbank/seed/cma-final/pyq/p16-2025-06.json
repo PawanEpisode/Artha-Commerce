@@ -1,0 +1,968 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "16",
+ "source_file": "pyq-transcriptions/p16-2025-06.json",
+ "paper_review": [
+  "Page 12 of qp.pdf is blank. Section A label '(xii)' in aid OCR shows '(xi)' twice; image confirms (xi) and (xii)."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p16:2025-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-cost-management",
+  "term_code": "2025-06",
+  "title": "CMA Final June 2025: Strategic Cost Management (Paper 16)",
+  "paper_code": "P16",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct option from the given alternatives:  2×15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following primary activities of Porter’s Value Chain deliver the Product or Service to the Customer?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Operations",
+      "is_correct": false
+     },
+     {
+      "body_md": "Outbound Logistics",
+      "is_correct": true
+     },
+     {
+      "body_md": "Infrastructure",
+      "is_correct": false
+     },
+     {
+      "body_md": "Services",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.83,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is/are not the quality parameter(s) for manufacturing organisations?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Reliability",
+      "is_correct": false
+     },
+     {
+      "body_md": "Durability",
+      "is_correct": false
+     },
+     {
+      "body_md": "Service ability",
+      "is_correct": false
+     },
+     {
+      "body_md": "Courtesy/Friendliness",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "quality-cost-management",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The companies that would benefit from backflush costing include companies",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "which have fast manufacturing lead time.",
+      "is_correct": true
+     },
+     {
+      "body_md": "whose inventory vary from period to period.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Company requires that audit trails.",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is related to Financial Data Analytics?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Value driver analytics",
+      "is_correct": false
+     },
+     {
+      "body_md": "Financial ratio analytics",
+      "is_correct": false
+     },
+     {
+      "body_md": "Predictive sales analysis",
+      "is_correct": false
+     },
+     {
+      "body_md": "All of the above",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-tools-for-data-analytics",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Python can be used on Linux, Windows, Macintosh, Solaris and many more. What category of language features of Python it comes under?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Robust",
+      "is_correct": false
+     },
+     {
+      "body_md": "Embeddable",
+      "is_correct": false
+     },
+     {
+      "body_md": "High Level Language",
+      "is_correct": false
+     },
+     {
+      "body_md": "Platform Independent",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "AON Ltd., a manufacturer of doors using a Throughput Costing System, is experiencing a bottleneck in its plant. Set up time at one of its Work Stations has been identified as the offender. The Manager (Finance) has proposed a plan to reduce the set up time at a cost of ₹ 5,24,000. The change will result in 500 additional doors. The Direct Labour costs are ₹ 2,400 per door and the cost of Direct Materials is ₹ 8,000 per door. All units produced can be sold. If the change will result in an increase in the Throughput Contribution of ₹ 56,50,000, what will be the selling price per door?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 19,300",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 18,500",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 13,700",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 21,700",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.01,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In marking assignments which of the following should be preferred?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Only row having single zero",
+      "is_correct": false
+     },
+     {
+      "body_md": "Only column having single zero",
+      "is_correct": false
+     },
+     {
+      "body_md": "Column having more than one zero",
+      "is_correct": false
+     },
+     {
+      "body_md": "Only row/column having single zero",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "assignment",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The Cost function of TNZ PIC is given by C = X³ – 4X² + 7X in terms of Output X. Assess at what level of output the average cost is minimum.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "3",
+      "is_correct": false
+     },
+     {
+      "body_md": "2",
+      "is_correct": true
+     },
+     {
+      "body_md": "4",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The break-even point of a manufacturing company is ₹ 1,60,000. Fixed cost is ₹ 48,000. Variable cost is ₹ 12 per unit. The PV ratio will be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "20%",
+      "is_correct": false
+     },
+     {
+      "body_md": "40%",
+      "is_correct": false
+     },
+     {
+      "body_md": "30%",
+      "is_correct": true
+     },
+     {
+      "body_md": "25%",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.62,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The pay-off matrix of game for Firm A and Firm B is given below:\n\nFIRM B\n\n| FIRM A | | | | |\n|---|---|---|---|---|\n| | 30 | 15 | 12 | 35 |\n| | 20 | 13 | 8 | 10 |\n| | 40 | 4 | 11 | 6 |\n\nWhat is the value of game (using Maximin – Minimax Principle)?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "6",
+      "is_correct": false
+     },
+     {
+      "body_md": "10",
+      "is_correct": false
+     },
+     {
+      "body_md": "12",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "game-theory",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In a factory where standard costing system is followed, the production department consumed 1100 kgs of material @ ₹ 8 per kg for product X resulting in material price variance of ₹ 2,200 (Fav) and material usage variance of ₹ 1,000 (Adv). What is the standard material cost of actual production of product X?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 11,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 20,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 14,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 10,000",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.86,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A factory of MONZ Ltd., can make only one of the three products A, B or C in a given production period. The following informations are given:\n\n| Per Unit (₹) | A | B | C |\n|---|---|---|---|\n| Selling price | 1,500 | 2,000 | 2,500 |\n| Variable Cost | 700 | 1,100 | 1,500 |\n\nAssume that there is no constraint on resource utilization or demand and similar resources are consumed by A, B and C. The opportunity cost of making one unit of C is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 900",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 800",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1,800",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1,500",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.81,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "When 24 hours is required to produce a condenser of a particular type then the time required to produce the 16th unit with 85% Learning Curve is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "between 9 and 10 hours.",
+      "is_correct": false
+     },
+     {
+      "body_md": "between 12 and 14 hours.",
+      "is_correct": true
+     },
+     {
+      "body_md": "between 15 and 17 hours.",
+      "is_correct": false
+     },
+     {
+      "body_md": "between 18 and 20 hours.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "learning-curve",
+    "mapping_confidence": 0.59,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A PERT Network has four activities on its Critical Path. The Standard Deviation of each activity on the Critical path is 4 days. What will be the standard deviation of the CRITICAL PATH?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "8 days",
+      "is_correct": true
+     },
+     {
+      "body_md": "4 days",
+      "is_correct": false
+     },
+     {
+      "body_md": "2 days",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "network-analysis-pert-cpm",
+    "mapping_confidence": 0.02,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "SONT Ltd., has fixed costs of ₹ 5,00,000 and variable costs are 70% of the selling price. To realize profits of ₹ 1,00,000 from sales of 400000 units, the selling price per unit must be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 5",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 6",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 7",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 4",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.62,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "ref_suffix": "q2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "AIRWAY Ltd. has hired an aircraft to specially operate between cities A and B. All the seats are economy class. The following information is available:\n\n| | | |\n|---|---|---|\n| Seating capacity of the aircraft | : | 260 passengers |\n| Average number of passengers per flight | : | 240 passengers |\n| Average one-way fare from A to B | : | ₹ 5,000 per passenger |\n| Fuel costs per flight from A to B | : | ₹ 90,000 |\n| Food cost (A to B sector) (no charge to passenger) | : | ₹ 300 per passenger |\n| Commission to travel agents (All tickets are through agents) | : | 10% of the fare |\n| Annual lease costs allocated to each flight | : | ₹ 2,00,000 |\n| Ground services, baggage handling/checking in service costs per flight A to B | : | ₹ 40,000 |\n| Flight crew salaries per flight A to B | : | ₹ 48,000 |\n\nThere is an offer from another airlines operator, ZOMB Ltd. for a stop-over at destination D, which is on the way from A to B. Due to this, the flight will operate from A to D, then from D to B.\n\nThe following terms are considered for the stop-over:\n\n50 seats from D to B will be booked by ZOMB Ltd. at ₹ 2,700 per ticket, whether or not ZOMB Ltd. is able to sell them to its customers. No agents’ commission is payable on these tickets. However, snacks must be provided to these passengers also by Airway Ltd. at no further charge to the passengers.\n\nA maximum of 60 tickets can be sold by Airway’s travel agents for A to D sector at a fare of ₹ 3,000 per passenger.\n\nSince the stop-over wastes more time, 25 of Airway’s original passengers in the A to B sector will voluntarily drop out in favour of other airlines offering direct flights between A and B.\n\nDue to the stop-over, fuel costs will increase from ₹ 90,000 to ₹ 1,35,000. Additional airport landing/baggage, handling charges of ₹ 19,000 per stop-over will have to be incurred by Airway Ltd.\n\nAirway Ltd. will have to serve snacks to all the passengers in the D to B sector at no charge to passengers. Each snack will cost Airway ₹ 200. This will be in addition to the original food at ₹ 300 served in the A to D sector.\n\n(Assume that fuel costs are not affected by the actual number of passengers in the flight, ignore non-financial considerations, additional wear and tear to aircraft due to extra landing/take-off.)\n\nRequired:\n(a) Without considering ZOMB Ltd.’s offer:\n (i) Analyze the Profit earned by AIRWAY Ltd., per flight from city A to B.\n (ii) Assess the Break–even number of passengers for each flight from city A to B.\n(b) Considering the effects of ZOMB Ltd’s offer:\n (i) Analyze the additional Profit earned by AIRWAY Ltd., from ZOMB Ltd’s offer.\n (ii) Advise with the justification whether the AIRWAY Ltd. should accept the offer of ZOMB Ltd. or not.\n\n[NOTE: A detailed Profitability Statement is not essential. Only figures relevant to the cost-revenue analysis are required.]",
+    "choice_group_ref": "secB",
+    "explanation_md": "2. (a)\nStatement Showing Allocation of Seats in the Aircraft:\n\n| | |\n|---|---|\n| Existing Situation for Destination A to B: | |\n| Seating Capacity of the Aircraft | 260 passengers |\n| Average Number of Passengers per flight | 240 passengers |\n| Proposed Situation for Destination D to B | |\n| Seat Booked by ZOMB Ltd. | 50 Seats |\n| For Destination A to B | |\n| Seats Available {260 (Capacity) – 50 (booked by ZOMB Ltd. for Destination D to B)} | 210 Seats |\n| Requirement of Regular Passengers {240 (original no. of passengers) – 25 (no. of passengers drop out due to wastage of time)} | 215 Seats |\n| Possible Allocation of Seats to Regular Passengers | 210 Seats |\n| For Destination A to D | |\n| Seats Available {260 (capacity) – 210 (seats allocated to regular passengers of destination A to B)} | 50 Seats |\n| Requirement of Agents (tickets can be sold by Airway’s Travel Agents) | 60 Seats |\n| Possible Allocation to Agents of Airways Ltd. | 50 Sets |\n\n(i) Analysis of Profit Per flight\n\n| | ₹ | ₹ |\n|---|---|---|\n| Revenue per passenger (Gross Fare) | | 5,000 |\n| Less: Total variable Cost per passenger | | |\n| 10 % Commission on Fare | 500 | |\n| Food | 300 | 800 |\n| Contribution per passenger | | 4,200 |\n| Contribution per flight (Contribution for 240 Passengers) | | 10,08,000 |\n| Less: Fixed Costs per Flight | | |\n| Fuel Cost | 90,000 | |\n| Annual Lease Cost | 2,00,000 | |\n| Group Service, Baggage Handling / Checking in | 40,000 | |\n| Flight Crew Salaries | 48,000 | 3,78,000 |\n| Profit per Flight | | 6,30,000 |\n\n(ii) Break-even number of Passengers for each flight from A to B\nBreak-even number of Passengers = Total Fixed cost per flight / Contribution per Passenger\nBreak-even number of Passengers = ₹ 378000 / ₹ 4200 = 90 Passengers\n\n2. (b) Proposed Situation:\nContribution per Passenger (A to D)\n\n| | ₹ | ₹ |\n|---|---|---|\n| Revenue per passenger (Gross Fare) | | 3,000 |\n| Less: Total Variable Cost per Passenger: | | |\n| 10 % Commission on Fare | 300 | |\n| Food # | 300 | 600 |\n| Contribution per Passenger | | 2,400 |\n\n(#) All the passengers booked for destination A to D are also served food.\n\n(i) Analysis of Additional Profit Per Flight earned by Airway Ltd. from the offer of ZOMB Ltd.\n\n| | Additional Cost (₹) | Additional Revenue (₹) |\n|---|---|---|\n| Revenue from Destination D to B (50 Seats x ₹ 2,700) | | 1,35,000 |\n| Contribution from Destination A to D (50 Sets x ₹ 2,400) | | 1,20,000 |\n| Contribution Lost for Destination A to B (30 Seats x ₹ 4,200) * | 1,26,000 | |\n| Snacks (260 Passengers x ₹ 200) | 52,000 | |\n| Fuel Cost | 45,000 | |\n| Airport Landing / Baggage Handling Charges | 19,000 | |\n| Total | 2,42,000 | 2,55,000 |\n| Profit (Additional) Per Flight (2,55,000 – 2,42,000) | | 13,000 |\n\n(*) 240 Seats (existing) Less 210 Seats (Proposed)\n\n(ii) Advice:\nSince Airway Ltd. will gain of ₹ 13,000 per flight, it should accept the ZOMB Ltd’s Offer.",
+    "reference_solution_md": "2. (a)\nStatement Showing Allocation of Seats in the Aircraft:\n\n| | |\n|---|---|\n| Existing Situation for Destination A to B: | |\n| Seating Capacity of the Aircraft | 260 passengers |\n| Average Number of Passengers per flight | 240 passengers |\n| Proposed Situation for Destination D to B | |\n| Seat Booked by ZOMB Ltd. | 50 Seats |\n| For Destination A to B | |\n| Seats Available {260 (Capacity) – 50 (booked by ZOMB Ltd. for Destination D to B)} | 210 Seats |\n| Requirement of Regular Passengers {240 (original no. of passengers) – 25 (no. of passengers drop out due to wastage of time)} | 215 Seats |\n| Possible Allocation of Seats to Regular Passengers | 210 Seats |\n| For Destination A to D | |\n| Seats Available {260 (capacity) – 210 (seats allocated to regular passengers of destination A to B)} | 50 Seats |\n| Requirement of Agents (tickets can be sold by Airway’s Travel Agents) | 60 Seats |\n| Possible Allocation to Agents of Airways Ltd. | 50 Sets |\n\n(i) Analysis of Profit Per flight\n\n| | ₹ | ₹ |\n|---|---|---|\n| Revenue per passenger (Gross Fare) | | 5,000 |\n| Less: Total variable Cost per passenger | | |\n| 10 % Commission on Fare | 500 | |\n| Food | 300 | 800 |\n| Contribution per passenger | | 4,200 |\n| Contribution per flight (Contribution for 240 Passengers) | | 10,08,000 |\n| Less: Fixed Costs per Flight | | |\n| Fuel Cost | 90,000 | |\n| Annual Lease Cost | 2,00,000 | |\n| Group Service, Baggage Handling / Checking in | 40,000 | |\n| Flight Crew Salaries | 48,000 | 3,78,000 |\n| Profit per Flight | | 6,30,000 |\n\n(ii) Break-even number of Passengers for each flight from A to B\nBreak-even number of Passengers = Total Fixed cost per flight / Contribution per Passenger\nBreak-even number of Passengers = ₹ 378000 / ₹ 4200 = 90 Passengers\n\n2. (b) Proposed Situation:\nContribution per Passenger (A to D)\n\n| | ₹ | ₹ |\n|---|---|---|\n| Revenue per passenger (Gross Fare) | | 3,000 |\n| Less: Total Variable Cost per Passenger: | | |\n| 10 % Commission on Fare | 300 | |\n| Food # | 300 | 600 |\n| Contribution per Passenger | | 2,400 |\n\n(#) All the passengers booked for destination A to D are also served food.\n\n(i) Analysis of Additional Profit Per Flight earned by Airway Ltd. from the offer of ZOMB Ltd.\n\n| | Additional Cost (₹) | Additional Revenue (₹) |\n|---|---|---|\n| Revenue from Destination D to B (50 Seats x ₹ 2,700) | | 1,35,000 |\n| Contribution from Destination A to D (50 Sets x ₹ 2,400) | | 1,20,000 |\n| Contribution Lost for Destination A to B (30 Seats x ₹ 4,200) * | 1,26,000 | |\n| Snacks (260 Passengers x ₹ 200) | 52,000 | |\n| Fuel Cost | 45,000 | |\n| Airport Landing / Baggage Handling Charges | 19,000 | |\n| Total | 2,42,000 | 2,55,000 |\n| Profit (Additional) Per Flight (2,55,000 – 2,42,000) | | 13,000 |\n\n(*) 240 Seats (existing) Less 210 Seats (Proposed)\n\n(ii) Advice:\nSince Airway Ltd. will gain of ₹ 13,000 per flight, it should accept the ZOMB Ltd’s Offer.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.64,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 18,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "REGAL Ltd., is organised into two divisions. Division X produces a component, which is used by division Y in making of a final product. The final product is sold for ₹ 540 each. Division X has capacity to produce 2500 units and division Y can purchase the entire production. The variable cost of division X in manufacturing each component is ₹ 256.50.\n\nDivision X informed that due to installation of new machines, its depreciation cost had gone up and hence wanted to increase the price of component to be supplied to division Y to ₹ 297, however division Y can buy the component from outside the market at ₹ 270 each. The variable cost of division Y in manufacturing the final product by using the component is ₹ 202.50 (excluding component cost).\n\nRequired:\nAnalyze and Present the statement indicating the position of each Division and the company as whole taking each of the following situations separately:\n(i) If there is no alternative use for the production facilities of division X, will the company benefit, if division Y buys from outside suppliers at ₹ 270 per component?\n(ii) If there is no alternative use for the production facilities of division X and the selling price for the component in the outside market drops by ₹ 20.25, should division Y purchase from outside supplier?\n(iii) What transfer price would be fixed for the component in each of the above circumstances?",
+    "parent_ref": "3",
+    "explanation_md": "(i) When Component is purchased by Division Y from outside:\n\n| | (₹) | (₹) |\n|---|---|---|\n| Division Y sales 2,500 x ₹ 540 | | 13,50,000 |\n| Less: Cost of purchase 2,500 x ₹ 270 | 6,75,000 | |\n| Own Variable cost 2,500 x ₹ 202.50 | 5,06,250 | 11,81,250 |\n| Division Y Contribution | | 1,68,750 |\n| Division X Contribution | | Nil |\n| Total Contribution | | 1,68,750 |\n\nWhen component is purchased from Division X:\n\n| Division X | (₹) | (₹) |\n|---|---|---|\n| Sales 2,500 x ₹ 297 | 7,42,500 | |\n| Less: Variable cost 2,500 x ₹ 256.50 | 6,41,250 | |\n| Division X Contribution (A) | | 1,01,250 |\n| Division Y | | |\n| Sales 2,500 x ₹ 540 | 13,50,000 | |\n| Less: Variable Cost | | |\n| Purchase Cost 2,500 x ₹ 297 | 7,42,500 | |\n| Variable Cost of division Y 2,500 x ₹ 202.50 | 5,06,250 | |\n| Division Y Contribution (B) | | 1,01,250 |\n| Total Contribution (A+B) | | 2,02,500 |\n\nDecision: Thus, it will be beneficial for the company as whole to buy component from division X.\n\n(ii) When there is no alternative use of Division X and selling price of components reduces in the Market:\n\n| | (₹) | (₹) |\n|---|---|---|\n| Division Y sales 2,500 x ₹ 540 | 13,50,000 | |\n| Less: Cost of purchase 2,500 x ₹ 249.75 | 6,24,375 | |\n| Own Variable cost 2,500 x ₹ 202.50 | 5,06,250 | |\n| Division Y Contribution | | 2,19,375 |\n| Division X Contribution | | NIL |\n| Company’s total contribution | | 2,19,375 |\n\nDecision: When the component is purchased from outside market, total contribution comes to ₹ 2,19,375 which is more than the total contribution of ₹ 2,02,500, when the component is purchased from Division X (calculated above). Therefore, Division Y should purchase the component from outside supplier.\n\n(iii) Transfer Price:\n(a) Where there is no alternative use of capacity of division X, then variable cost i.e. ₹ 256.50 per component will be charged.\n(b) If market price gets reduced to ₹ 249.75 and there is no alternative use of facilities of Division X, transfer should take place at incremental cost of production, which in this case is ₹ 256.50 per component.",
+    "reference_solution_md": "(i) When Component is purchased by Division Y from outside:\n\n| | (₹) | (₹) |\n|---|---|---|\n| Division Y sales 2,500 x ₹ 540 | | 13,50,000 |\n| Less: Cost of purchase 2,500 x ₹ 270 | 6,75,000 | |\n| Own Variable cost 2,500 x ₹ 202.50 | 5,06,250 | 11,81,250 |\n| Division Y Contribution | | 1,68,750 |\n| Division X Contribution | | Nil |\n| Total Contribution | | 1,68,750 |\n\nWhen component is purchased from Division X:\n\n| Division X | (₹) | (₹) |\n|---|---|---|\n| Sales 2,500 x ₹ 297 | 7,42,500 | |\n| Less: Variable cost 2,500 x ₹ 256.50 | 6,41,250 | |\n| Division X Contribution (A) | | 1,01,250 |\n| Division Y | | |\n| Sales 2,500 x ₹ 540 | 13,50,000 | |\n| Less: Variable Cost | | |\n| Purchase Cost 2,500 x ₹ 297 | 7,42,500 | |\n| Variable Cost of division Y 2,500 x ₹ 202.50 | 5,06,250 | |\n| Division Y Contribution (B) | | 1,01,250 |\n| Total Contribution (A+B) | | 2,02,500 |\n\nDecision: Thus, it will be beneficial for the company as whole to buy component from division X.\n\n(ii) When there is no alternative use of Division X and selling price of components reduces in the Market:\n\n| | (₹) | (₹) |\n|---|---|---|\n| Division Y sales 2,500 x ₹ 540 | 13,50,000 | |\n| Less: Cost of purchase 2,500 x ₹ 249.75 | 6,24,375 | |\n| Own Variable cost 2,500 x ₹ 202.50 | 5,06,250 | |\n| Division Y Contribution | | 2,19,375 |\n| Division X Contribution | | NIL |\n| Company’s total contribution | | 2,19,375 |\n\nDecision: When the component is purchased from outside market, total contribution comes to ₹ 2,19,375 which is more than the total contribution of ₹ 2,02,500, when the component is purchased from Division X (calculated above). Therefore, Division Y should purchase the component from outside supplier.\n\n(iii) Transfer Price:\n(a) Where there is no alternative use of capacity of division X, then variable cost i.e. ₹ 256.50 per component will be charged.\n(b) If market price gets reduced to ₹ 249.75 and there is no alternative use of facilities of Division X, transfer should take place at incremental cost of production, which in this case is ₹ 256.50 per component.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 20,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ASLIN Company has the capacity of production of 80000 units and presently sells 20000 units at ₹ 100 each. Demand is sensitive to selling price and it has been observed that for every reduction of ₹ 10 in selling price, the demand is doubled.\n\nRequired:\n(i) Calculate the Target Cost at full capacity, if profit margin on sale is 25%.\n(ii) Assess the Cost Reduction Scheme at full capacity if at the present level 40% of the cost is variable and total fixed cost is ₹ 36 lakhs.\n(iii) If Rate of Return desired is 16%, evaluate the maximum investment at full capacity.",
+    "parent_ref": "3",
+    "explanation_md": "(i) Calculation of Target Cost at Full Capacity:\nProjected Demand:\n\n| Selling Price (₹ Per Unit) | Demand (Units) | Capacity Utilisation |\n|---|---|---|\n| 100 | 20,000 | 25% |\n| 90 | $(20{,}000 \\times 2) = 40{,}000$ | 50% |\n| 80 | $(40{,}000 \\times 2) = 80{,}000$ | 100% |\n\nSelling Price at Full Capacity = ₹ 80.00;\nTarget Profit = 25% on Sales = ₹ 20.00\nTarget Cost at Full Capacity = $\\text{₹ }(80 - 20) = \\text{₹ }60.00$ per unit\n\n(ii) Cost Reduction Scheme:\n(a) Computation of Variable Cost per unit at the Present Capacity of 20,000 units\nSelling Price = ₹ 100.00 per unit\nProfit Margin = 25% on Sales = ₹ 25.00\n$\\text{Total Cost} = (100 - 25) = \\text{₹ }75.00$\n$\\text{Variable Cost} = 40\\%\\text{ of total cost} = 40\\%\\text{ of }75 = \\text{₹ }30.00$\n\n(b) Existing Projections of Total Cost at full capacity\n$\\text{Total Variable Cost} = (\\text{₹ }30 \\times 80000) = \\text{₹ }24.00\\text{ lakhs}$\nTotal Fixed Cost = ₹ 36.00 lakhs\n$\\text{Total Cost} = \\text{₹ }(24.00 + 36.00)\\text{ lakhs} = \\text{₹ }60.00\\text{ lakhs}$\n\n(c) $\\text{Target Cost} = (\\text{₹ }60 \\times 80{,}000) = \\text{₹ }48.00\\text{ lakhs}$\n\n(d) Cost Reduction Scheme\n$\\text{Cost Reduction needed} = (\\text{Existing Cost} - \\text{Target Cost}) = (60.00 - 48.00) = \\text{₹ }12.00\\text{ lakhs}$\n\n(iii) Maximum Investment at full capacity:\na) Target Profit at full Capacity:\n$\\text{Sales} = 80.00 \\times 80{,}000\\text{ units} = \\text{₹ }64.00\\text{ lakhs}$\nTarget Cost = ₹ 48.00 lakhs\n$\\text{Target Profit} = (64.00 - 48.00) = \\text{₹ }16.00\\text{ lakhs}$\n\nb) Rate of Return on Investment = 16%\n\nc) Maximum Investment\nInvestment needed\n\n$$\n\\begin{aligned}\n&= (\\text{Target Profit} \\div \\text{Target Return on Investment}) \\\\\n&= (16.00 \\div 16\\%) \\\\\n&= \\text{₹ }100.00\\text{ lakhs}\n\\end{aligned}\n$$",
+    "reference_solution_md": "(i) Calculation of Target Cost at Full Capacity:\nProjected Demand:\n\n| Selling Price (₹ Per Unit) | Demand (Units) | Capacity Utilisation |\n|---|---|---|\n| 100 | 20,000 | 25% |\n| 90 | $(20{,}000 \\times 2) = 40{,}000$ | 50% |\n| 80 | $(40{,}000 \\times 2) = 80{,}000$ | 100% |\n\nSelling Price at Full Capacity = ₹ 80.00;\nTarget Profit = 25% on Sales = ₹ 20.00\nTarget Cost at Full Capacity = $\\text{₹ }(80 - 20) = \\text{₹ }60.00$ per unit\n\n(ii) Cost Reduction Scheme:\n(a) Computation of Variable Cost per unit at the Present Capacity of 20,000 units\nSelling Price = ₹ 100.00 per unit\nProfit Margin = 25% on Sales = ₹ 25.00\n$\\text{Total Cost} = (100 - 25) = \\text{₹ }75.00$\n$\\text{Variable Cost} = 40\\%\\text{ of total cost} = 40\\%\\text{ of }75 = \\text{₹ }30.00$\n\n(b) Existing Projections of Total Cost at full capacity\n$\\text{Total Variable Cost} = (\\text{₹ }30 \\times 80000) = \\text{₹ }24.00\\text{ lakhs}$\nTotal Fixed Cost = ₹ 36.00 lakhs\n$\\text{Total Cost} = \\text{₹ }(24.00 + 36.00)\\text{ lakhs} = \\text{₹ }60.00\\text{ lakhs}$\n\n(c) $\\text{Target Cost} = (\\text{₹ }60 \\times 80{,}000) = \\text{₹ }48.00\\text{ lakhs}$\n\n(d) Cost Reduction Scheme\n$\\text{Cost Reduction needed} = (\\text{Existing Cost} - \\text{Target Cost}) = (60.00 - 48.00) = \\text{₹ }12.00\\text{ lakhs}$\n\n(iii) Maximum Investment at full capacity:\na) Target Profit at full Capacity:\n$\\text{Sales} = 80.00 \\times 80{,}000\\text{ units} = \\text{₹ }64.00\\text{ lakhs}$\nTarget Cost = ₹ 48.00 lakhs\n$\\text{Target Profit} = (64.00 - 48.00) = \\text{₹ }16.00\\text{ lakhs}$\n\nb) Rate of Return on Investment = 16%\n\nc) Maximum Investment\nInvestment needed\n\n$$\n\\begin{aligned}\n&= (\\text{Target Profit} \\div \\text{Target Return on Investment}) \\\\\n&= (16.00 \\div 16\\%) \\\\\n&= \\text{₹ }100.00\\text{ lakhs}\n\\end{aligned}\n$$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.51,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 21,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "PASN Ltd., manufactures four products, namely A, B, C and D using the same plant and process. The following information relates to a production period:\n\n| Product | A | B | C | D |\n|---|---|---|---|---|\n| Output in Units | 720 | 600 | 480 | 504 |\n\nThe four products are similar and are usually produced in production runs of 24 units and sold in batches of 12 units. The total overheads incurred by the company for the period are as follows:\n\n| | ₹ |\n|---|---|\n| Machine operation and maintenance cost | 63,000 |\n| Setup costs | 20,000 |\n| Store receiving | 15,000 |\n| Inspection | 10,000 |\n| Material handling and dispatch | 2,592 |\n\nDuring the period the following cost drivers are to be used for the overhead cost:\n\n| Cost | Cost Driver |\n|---|---|\n| Setup cost | No. of production runs |\n| Store receiving | Requisitions raised |\n| Inspection | No. of production runs |\n| Material handling and dispatch | Orders executed |\n\nIt is also determined that:\n• Machine operation and maintenance cost should be apportioned between setup cost, store receiving and inspection activity in the ratio 4 : 3 : 2.\n• Number of requisition raised on store is 50 for each product and the number of orders executed is 192, each order being for a batch of 12 units of a product.\n\nRequired:\n(i) Analyse the Activity Based Costing Recovery Rate.\n(ii) Integrate the total overhead cost per unit of each Product using Activity Based Costing.",
+    "parent_ref": "4",
+    "explanation_md": "(i) Calculation of Activity Based Costing Recovery Rate:\n\n| Activity | Activity Cost Pool | Cost Driver | Quantity | ABC RATE |\n|---|---|---|---|---|\n| Set Up | $20{,}000 + 28{,}000 = \\text{₹ }48{,}000$ | No. of Production Runs | 96 | ₹ 500 per Run |\n| Stores Receiving | $15{,}000 + 21{,}000 = \\text{₹ }36{,}000$ | Requisitions raised | $50 \\times 4 = 200$ | ₹ 180 per Reqn. |\n| Inspection | $10{,}000 + 14{,}000 = \\text{₹ }24{,}000$ | No. of Production Runs | 96 | ₹ 250 per Run |\n| Material Handling | Given = ₹ 2,592 | Orders executed | 192 | ₹ 13.5 per Batch |\n\nNote:\n1. Machine Operation and Maintenance Cost of ₹ 63,000 is apportioned to the first three activities in the ratio 4:3:2, i.e. ₹ 28,000, ₹ 21,000 and ₹ 14,000.\n\n2. Number of Production Runs and Number of Batches are computed as under:\n\n| Product | A | B | C | D | Total |\n|---|---|---|---|---|---|\n| (a) Output Quantity | 720 units | 600 units | 480 units | 504 units | |\n| (b) Quantity per Production Run | 24 units | 24 units | 24 units | 24 units | |\n| (c) Number of Production Runs (a ÷ b) | 30 runs | 25 runs | 20 runs | 21 runs | 96 runs |\n| (d) Quantity per Batch Order | 12 units | 12 units | 12 units | 12 units | |\n| (e) Number of Batches (a ÷ d) | 60 batches | 50 batches | 40 batches | 42 batches | 192 batches |\n\n(ii) Computation of OH Costs using Activity Based Costing System\n\n| Product | A | B | C | D | Total |\n|---|---|---|---|---|---|\n| Setup | $500 \\times 30 = \\text{₹ }15{,}000$ | $500 \\times 25 = \\text{₹ }12{,}500$ | $500 \\times 20 = \\text{₹ }10{,}000$ | $500 \\times 21 = \\text{₹ }10{,}500$ | ₹ 48,000 |\n| Stores Receiving | ₹ 9,000 | ₹ 9,000 | ₹ 9,000 | ₹ 9,000 | ₹ 36,000 |\n| Inspection | $250 \\times 30 = \\text{₹ }7{,}500$ | $250 \\times 25 = \\text{₹ }6{,}250$ | $250 \\times 20 = \\text{₹ }5{,}000$ | $250 \\times 21 = \\text{₹ }5{,}250$ | ₹ 24,000 |\n| Material Handling | $13.50 \\times 60 = \\text{₹ }810$ | $13.50 \\times 50 = \\text{₹ }675$ | $13.50 \\times 40 = \\text{₹ }540$ | $13.50 \\times 42 = \\text{₹ }567$ | ₹ 2,592 |\n| Total OH Cost | ₹ 32,310 | ₹ 28,425 | ₹ 24,540 | ₹ 25,317 | ₹ 1,10,592 |\n| Output | 720 units | 600 units | 480 units | 504 units | |\n| OH Cost per unit | ₹ 44.875 | ₹ 47.375 | ₹ 51.125 | ₹ 50.232 | |",
+    "reference_solution_md": "(i) Calculation of Activity Based Costing Recovery Rate:\n\n| Activity | Activity Cost Pool | Cost Driver | Quantity | ABC RATE |\n|---|---|---|---|---|\n| Set Up | $20{,}000 + 28{,}000 = \\text{₹ }48{,}000$ | No. of Production Runs | 96 | ₹ 500 per Run |\n| Stores Receiving | $15{,}000 + 21{,}000 = \\text{₹ }36{,}000$ | Requisitions raised | $50 \\times 4 = 200$ | ₹ 180 per Reqn. |\n| Inspection | $10{,}000 + 14{,}000 = \\text{₹ }24{,}000$ | No. of Production Runs | 96 | ₹ 250 per Run |\n| Material Handling | Given = ₹ 2,592 | Orders executed | 192 | ₹ 13.5 per Batch |\n\nNote:\n1. Machine Operation and Maintenance Cost of ₹ 63,000 is apportioned to the first three activities in the ratio 4:3:2, i.e. ₹ 28,000, ₹ 21,000 and ₹ 14,000.\n\n2. Number of Production Runs and Number of Batches are computed as under:\n\n| Product | A | B | C | D | Total |\n|---|---|---|---|---|---|\n| (a) Output Quantity | 720 units | 600 units | 480 units | 504 units | |\n| (b) Quantity per Production Run | 24 units | 24 units | 24 units | 24 units | |\n| (c) Number of Production Runs (a ÷ b) | 30 runs | 25 runs | 20 runs | 21 runs | 96 runs |\n| (d) Quantity per Batch Order | 12 units | 12 units | 12 units | 12 units | |\n| (e) Number of Batches (a ÷ d) | 60 batches | 50 batches | 40 batches | 42 batches | 192 batches |\n\n(ii) Computation of OH Costs using Activity Based Costing System\n\n| Product | A | B | C | D | Total |\n|---|---|---|---|---|---|\n| Setup | $500 \\times 30 = \\text{₹ }15{,}000$ | $500 \\times 25 = \\text{₹ }12{,}500$ | $500 \\times 20 = \\text{₹ }10{,}000$ | $500 \\times 21 = \\text{₹ }10{,}500$ | ₹ 48,000 |\n| Stores Receiving | ₹ 9,000 | ₹ 9,000 | ₹ 9,000 | ₹ 9,000 | ₹ 36,000 |\n| Inspection | $250 \\times 30 = \\text{₹ }7{,}500$ | $250 \\times 25 = \\text{₹ }6{,}250$ | $250 \\times 20 = \\text{₹ }5{,}000$ | $250 \\times 21 = \\text{₹ }5{,}250$ | ₹ 24,000 |\n| Material Handling | $13.50 \\times 60 = \\text{₹ }810$ | $13.50 \\times 50 = \\text{₹ }675$ | $13.50 \\times 40 = \\text{₹ }540$ | $13.50 \\times 42 = \\text{₹ }567$ | ₹ 2,592 |\n| Total OH Cost | ₹ 32,310 | ₹ 28,425 | ₹ 24,540 | ₹ 25,317 | ₹ 1,10,592 |\n| Output | 720 units | 600 units | 480 units | 504 units | |\n| OH Cost per unit | ₹ 44.875 | ₹ 47.375 | ₹ 51.125 | ₹ 50.232 | |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.2,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 23,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "“Quality is the degree to which a set of inherent characteristics fulfils requirements.” – In this context, explain the concept of quality and append the cost of quality under different categories briefly explaining them.",
+    "parent_ref": "4",
+    "explanation_md": "The term quality is a perception which is personal to an individual. In plain terms, quality is “features” or “worth” or “value”. Today, there is no single universal definition of quality. Some common definitions of quality are as under:\nConformance to specifications: It measures how well the product or service meets the targets and tolerances determined by its designers.\nFitness for use: It focuses on how well the product performs its intended function or use.\nValue for price paid: It is a definition of quality that consumers often use for product or service usefulness.\nSupport services: These services provided are often how the quality of a product or service is judged.\nPsychological criteria: It is a subjective definition that focuses on the judgmental evaluation of what constitutes product or service quality.\n\nCosts of quality can be classified into the following groups for better quality costs management:\n(i) Prevention costs, (ii) Appraisal costs, (iii) Internal failure costs and (iv) External failure costs.\n\n(i) Prevention costs:\nPrevention costs are all costs incurred in the process of preventing poor quality from occurring. They include quality planning costs, such as the costs of developing and implementing a quality plan. Also included are the costs of product and process design, from collecting customer information to designing processes that achieve conformance to specifications.\nExample: Quality training, Quality circles, Statistical process control activities, System Development for prevention. Quality improvement.\n\n(ii) Appraisal costs:\nAppraisal costs are incurred in the process of uncovering defect. They include the cost of quality inspections, product testing, and performing audits to make sure that quality standards are being met. Also included in this category are the costs of worker time spent measuring quality and the cost of equipment used for quality appraisal.\nExample: testing and inspecting materials, final product testing and inspecting, WIP testing and inspecting, package inspection and depreciation of testing equipment.\n\n(iii) Internal failure costs:\nInternal failure costs are associated with discovering poor product quality before the product reaches the customer site. One type of internal failure cost is rework, which is the cost of correcting the defective item. Sometimes the item is so defective that it cannot be corrected and must be thrown away. This is called scrap, and its costs include all the material, labor, and machine cost spent in producing the defective product.\nExample: cost of scrap (net of realization), cost of spoilage, cost of rework, down time due to defect in quality and retesting.\n\n(iv) External failure costs:\nExternal failure costs are incurred when inferior products are delivered to customers. They include cost of handling customer complaints, warranty replacements, repairs of returned products and cost arising from a damaged company reputation.\nExample: cost of field servicing, cost of handling complaints, warranty repairs, lost sales, warranty replacements.",
+    "reference_solution_md": "The term quality is a perception which is personal to an individual. In plain terms, quality is “features” or “worth” or “value”. Today, there is no single universal definition of quality. Some common definitions of quality are as under:\nConformance to specifications: It measures how well the product or service meets the targets and tolerances determined by its designers.\nFitness for use: It focuses on how well the product performs its intended function or use.\nValue for price paid: It is a definition of quality that consumers often use for product or service usefulness.\nSupport services: These services provided are often how the quality of a product or service is judged.\nPsychological criteria: It is a subjective definition that focuses on the judgmental evaluation of what constitutes product or service quality.\n\nCosts of quality can be classified into the following groups for better quality costs management:\n(i) Prevention costs, (ii) Appraisal costs, (iii) Internal failure costs and (iv) External failure costs.\n\n(i) Prevention costs:\nPrevention costs are all costs incurred in the process of preventing poor quality from occurring. They include quality planning costs, such as the costs of developing and implementing a quality plan. Also included are the costs of product and process design, from collecting customer information to designing processes that achieve conformance to specifications.\nExample: Quality training, Quality circles, Statistical process control activities, System Development for prevention. Quality improvement.\n\n(ii) Appraisal costs:\nAppraisal costs are incurred in the process of uncovering defect. They include the cost of quality inspections, product testing, and performing audits to make sure that quality standards are being met. Also included in this category are the costs of worker time spent measuring quality and the cost of equipment used for quality appraisal.\nExample: testing and inspecting materials, final product testing and inspecting, WIP testing and inspecting, package inspection and depreciation of testing equipment.\n\n(iii) Internal failure costs:\nInternal failure costs are associated with discovering poor product quality before the product reaches the customer site. One type of internal failure cost is rework, which is the cost of correcting the defective item. Sometimes the item is so defective that it cannot be corrected and must be thrown away. This is called scrap, and its costs include all the material, labor, and machine cost spent in producing the defective product.\nExample: cost of scrap (net of realization), cost of spoilage, cost of rework, down time due to defect in quality and retesting.\n\n(iv) External failure costs:\nExternal failure costs are incurred when inferior products are delivered to customers. They include cost of handling customer complaints, warranty replacements, repairs of returned products and cost arising from a damaged company reputation.\nExample: cost of field servicing, cost of handling complaints, warranty repairs, lost sales, warranty replacements.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "quality-cost-management",
+    "mapping_confidence": 0.64,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "ref_suffix": "q5",
+    "depth": 0,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "ZINTECH Ltd., operating a system of Standard Costing, makes and sells a single product “JULAM” for which the standard cost is as follows:\n\n| | | ₹ per unit |\n|---|---|---|\n| Direct materials | 4 kilograms at ₹ 12.00 per kg | 48.00 |\n| Direct labour | 5 hours at ₹ 7.00 per hour | 35.00 |\n| Variable production overhead | 5 hours at ₹ 2.00 per hour | 10.00 |\n| Fixed production overhead | 5 hours at ₹ 10.00 per hour | 50.00 |\n| | | 143.00 |\n\nThe variable production overhead is deemed to vary with the hours worked.\n\nOverhead is absorbed into production on the basis of standard hours of production and the normal volume of production for the period just ended was 20000 units (100000 standard hours of production).\n\nFor the period under consideration, the actual results were :\n\n| | |\n|---|---|\n| Production of “ JULAM ” | 18000 units |\n| Direct material used :- 76000 kgs. at a cost of | ₹ 8,36,000 |\n| Direct labour cost incurred :- for 84000 hours worked | ₹ 6,04,800 |\n| Variable production overhead incurred | ₹ 1,72,000 |\n| Fixed production overhead incurred | ₹ 10,30,000 |\n\nRequired:\n(i) Assess and show, by element of cost, the standard cost of the output for the period.\n(ii) Analyze the relevant variances of all costs (Material, Wages, Overheads).\n(iii) Prepare a statement showing the reconciliation of standard cost with the actual cost.\nNote: Fixed production overhead sub-variance of capacity and volume efficiency (productivity) are not required.",
+    "choice_group_ref": "secB",
+    "explanation_md": "(i) Statement showing Standard Cost of output produced:\n\n| Element of Cost | Calculation | Amount (₹) |\n|---|---|---|\n| Direct Material | $18{,}000 \\times \\text{₹ }48$ | 8,64,000 |\n| Direct Labour | $18{,}000 \\times \\text{₹ }35$ | 6,30,000 |\n| Variable Production Overhead | $18{,}000 \\times \\text{₹ }10$ | 1,80,000 |\n| Fixed Production Overhead | $18{,}000 \\times \\text{₹ }50$ | 9,00,000 |\n| Total | | 25,74,000 |\n\n(ii) Analysis of Variances:\n1. Direct Material Cost variance:\nDirect Material Price Variance\n\n$$\n\\begin{aligned}\n&= (\\text{Standard price/Kg} - \\text{Actual Price/Kg}) \\times \\text{Actual Quantity} \\\\\n&= (\\text{₹ }12 - \\text{₹ }11) \\times 76{,}000 = \\text{₹ }76{,}000\\ \\text{(F)}\n\\end{aligned}\n$$\n\nDirect Material Usage Variance\n\n$$\n\\begin{aligned}\n&= \\text{Standard Price}\\,(\\text{Standard Quantity for actual production} - \\text{Actual Quantity}) \\\\\n&= \\text{₹ }12\\,(4 \\times 18000 - 76000) = \\text{₹ }48{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n2. Direct Labour Cost Variance:\nDirect Labour Rate Variance\n\n$$\n\\begin{aligned}\n&= (\\text{Standard rate per hour} - \\text{Actual rate per hour}) \\times \\text{Actual hour} \\\\\n&= (\\text{₹ }7 - \\text{₹ }7.2) \\times 84{,}000 = \\text{₹ }16{,}800\\ \\text{(A)}\n\\end{aligned}\n$$\n\nDirect Labour Efficiency Variance\n\n$$\n\\begin{aligned}\n&= \\text{SR / hour}\\,(\\text{Std. Hours for actual production} - \\text{Actual Hours}) \\\\\n&= \\text{₹ }7\\,(5\\text{ hours} \\times 18{,}000 - 84{,}000) = \\text{₹ }42{,}000\\ \\text{(F)}\n\\end{aligned}\n$$\n\n3. Variable Overhead Cost Variance:\nVariable Overhead Expenditure Variance\n\n$$\n\\begin{aligned}\n&= (\\text{Standard rate / hour} - \\text{Actual rate / hour}) \\times \\text{Actual hours} \\\\\n&= \\left(\\text{₹ }2 - \\frac{\\text{Rs }172{,}000}{84{,}000}\\right) \\times 84{,}000 = \\text{₹ }4{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\nVariable Overhead Efficiency variance\n\n$$\n\\begin{aligned}\n&= \\text{Standard rate / hour}\\,(\\text{Std hours for Actual Output} - \\text{Actual Hours}) \\\\\n&= \\text{₹ }2\\,(5 \\times 18{,}000 - 84{,}000) = \\text{₹ }12{,}000\\ \\text{(F)}\n\\end{aligned}\n$$\n\n4. Fixed Overhead Cost Variance:\nFixed Overhead Expenditure variance\n\n$$\n\\begin{aligned}\n&= \\text{Budgeted Fixed overhead} - \\text{Actual Fixed Overhead} \\\\\n&= 20{,}000 \\times \\text{₹ }50 - \\text{₹ }10{,}30{,}000 = \\text{₹ }30{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\nFixed Overhead Volume variance\n\n$$\n\\begin{aligned}\n&= \\text{Recovered Fixed overhead} - \\text{Budgeted Fixed overhead} \\\\\n&= \\text{₹ }50 \\times 18{,}000 - \\text{₹ }10{,}00{,}000 = \\text{₹ }1{,}00{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n(iii) Statement showing reconciliation of Standard Cost with Actual Cost:\n\n| | | | |\n|---|---|---|---|\n| Standard Cost of Actual Output | | | ₹ 25,74,000 |\n| Adjustment for Variances | Favourable | Adverse | |\n| Direct Material Price Variance | 76,000 | | |\n| Direct Material Usage Variance | | 48,000 | |\n| Direct Labour Rate Variance | | 16,800 | |\n| Direct Labour Efficiency Variance | 42,000 | | |\n| Variable Overhead Expenditure Variance | | 4,000 | |\n| Variable Overhead Efficiency Variance | 12,000 | | |\n| Fixed Overhead Expenditure variance | | 30,000 | |\n| Fixed Overhead Efficiency variance | | 1,00,000 | |\n| | 1,30,000 | 1,98,800 | 68,800 (A) |\n| Actual Cost | | | ₹ 26,42,800 |\n\nAlternative Solution\n(i) Statement showing Standard Cost of output produced:\n\n| Element of Cost | Calculation | Amount (₹) |\n|---|---|---|\n| Direct Material | $18{,}000 \\times \\text{₹ }48$ | 8,64,000 |\n| Direct Labour | $18{,}000 \\times \\text{₹ }35$ | 6,30,000 |\n| Variable Production Overhead | $18{,}000 \\times \\text{₹ }10$ | 1,80,000 |\n| Fixed Production Overhead | $18{,}000 \\times \\text{₹ }50$ | 9,00,000 |\n| Total | | 25,74,000 |\n\n(ii) Analysis of Variances:\n\n| For Direct Material Cost Variances | Amount (₹) |\n|---|---|\n| 1. $M_1$ – Actual cost of material used | 8,36,000 |\n| $M_2$ – Standard cost of actual material ($76{,}000\\text{ kgs.} \\times \\text{₹ }12$) | 9,12,000 |\n| $M_4$ – Standard material cost of output ($18{,}000 \\times \\text{₹ }48$) | 8,64,000 |\n| Material price variance = ($M_1$ – $M_2$) = $\\text{₹ }8{,}36{,}000 - \\text{₹ }9{,}12{,}000$ | 76,000 (F) |\n| Material usage variance = ($M_2$ – $M_4$) = $\\text{₹ }9{,}12{,}000 - \\text{₹ }8{,}64{,}000$ | 48,000 (A) |\n| 2. For Direct Labour Cost Variances | |\n| $L_1$ — Actual payment made to workers for actual hours worked | 6,04,800 |\n| $L_2$ — Payment involved, if the workers had been paid at standard rate ($84{,}000\\text{ hours} \\times \\text{₹ }7$) | 5,88,000 |\n| $L_5$ — Standard labour cost of output achieved ($18{,}000\\text{ units} \\times \\text{₹ }35$) | 6,30,000 |\n| Labour Rate Variance = $L_1 - L_2$ = $\\text{₹ }6{,}04{,}800 - \\text{₹ }5{,}88{,}000$ | 16,800 (A) |\n| Labour efficiency variance = $L_2 - L_5$ = $\\text{₹ }5{,}88{,}000 - \\text{₹ }6{,}30{,}000$ | 42,000 (F) |\n| 3. For Variable Overhead Cost Variances | |\n| $VO_1$ — Actual Variable Overhead | 1,72,000 |\n| $VO_2$ — Actual hours worked at standard variable overhead rate ($84{,}000\\text{ hrs.} \\times \\text{₹ }2$) | 1,68,000 |\n| $VO_3$ — Standard variable overhead for the production ($18{,}000\\text{ units} \\times \\text{₹ }10$) | 1,80,000 |\n| V.O. Expenditure Variance = $VO_1 - VO_2$ = $172000 - 168000$ | 4,000 (A) |\n| V.O Efficiency Variance = $V_2 - V_3$ $168000 - 180000$ | 12,000 (F) |\n| 4. For Fixed Overhead Cost Variance | |\n| $FO_1$ – Actual Fixed Overhead incurred | 10,30,000 |\n| $FO_2$ – Budgeted Fixed Overhead for the period $1{,}00{,}000 \\times \\text{₹ }10$ | 10,00,000 |\n| $FO_3$ – Standard Fixed Overhead for production $18{,}000\\text{ units} \\times \\text{₹ }50$ | 9,00,000 |\n| F.O. Expenditure variance = $FO_1 - FO_2$ = $10{,}30{,}000 - 10{,}00{,}000$ | 30,000 (A) |\n| F.O. Volume variance = $FO_2 - FO_3$ = $10{,}00{,}000 - 9{,}00{,}000$ | 1,00,000 (A) |\n\n(iii) Statement showing relevant variances and reconciliation of standard cost with actual cost\n\n| | Ref No. | Standard cost of output (₹) | Variances | Actual Cost (₹) |\n|---|---|---|---|---|\n| Direct Materials | | 8,64,000 | | |\n| Price variance | (1) | | 76,000 (F) | |\n| Usage variance | (1) | | 48,000 (A) | |\n| Actual Direct Material cost | | | | 8,36,000 |\n| Direct labour | | 6,30,000 | | |\n| Rate variance | (2) | | 16,800 (A) | |\n| Efficiency variance | (2) | | 42,000 (F) | |\n| Actual Direct Labour cost | | | | 6,04,800 |\n| Variable Production Overhead | | 1,80,000 | | |\n| Expenditure variance | (3) | | 4,000 (A) | |\n| Efficiency variance | (3) | | 12,000 (F) | |\n| Actual Variable Prodn. OH | | | | 1,72,000 |\n| Fixed production overhead | | 9,00,000 | | |\n| Expenditure variance | (4) | | 30,000 (A) | |\n| Volume variance | (4) | | 100,000 (A) | |\n| Actual Fixed Overhead | | | | 10,30,000 |\n| TOTAL | | 25,74,000 | 68,800 (A) | 26,42,800 |",
+    "reference_solution_md": "(i) Statement showing Standard Cost of output produced:\n\n| Element of Cost | Calculation | Amount (₹) |\n|---|---|---|\n| Direct Material | $18{,}000 \\times \\text{₹ }48$ | 8,64,000 |\n| Direct Labour | $18{,}000 \\times \\text{₹ }35$ | 6,30,000 |\n| Variable Production Overhead | $18{,}000 \\times \\text{₹ }10$ | 1,80,000 |\n| Fixed Production Overhead | $18{,}000 \\times \\text{₹ }50$ | 9,00,000 |\n| Total | | 25,74,000 |\n\n(ii) Analysis of Variances:\n1. Direct Material Cost variance:\nDirect Material Price Variance\n\n$$\n\\begin{aligned}\n&= (\\text{Standard price/Kg} - \\text{Actual Price/Kg}) \\times \\text{Actual Quantity} \\\\\n&= (\\text{₹ }12 - \\text{₹ }11) \\times 76{,}000 = \\text{₹ }76{,}000\\ \\text{(F)}\n\\end{aligned}\n$$\n\nDirect Material Usage Variance\n\n$$\n\\begin{aligned}\n&= \\text{Standard Price}\\,(\\text{Standard Quantity for actual production} - \\text{Actual Quantity}) \\\\\n&= \\text{₹ }12\\,(4 \\times 18000 - 76000) = \\text{₹ }48{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n2. Direct Labour Cost Variance:\nDirect Labour Rate Variance\n\n$$\n\\begin{aligned}\n&= (\\text{Standard rate per hour} - \\text{Actual rate per hour}) \\times \\text{Actual hour} \\\\\n&= (\\text{₹ }7 - \\text{₹ }7.2) \\times 84{,}000 = \\text{₹ }16{,}800\\ \\text{(A)}\n\\end{aligned}\n$$\n\nDirect Labour Efficiency Variance\n\n$$\n\\begin{aligned}\n&= \\text{SR / hour}\\,(\\text{Std. Hours for actual production} - \\text{Actual Hours}) \\\\\n&= \\text{₹ }7\\,(5\\text{ hours} \\times 18{,}000 - 84{,}000) = \\text{₹ }42{,}000\\ \\text{(F)}\n\\end{aligned}\n$$\n\n3. Variable Overhead Cost Variance:\nVariable Overhead Expenditure Variance\n\n$$\n\\begin{aligned}\n&= (\\text{Standard rate / hour} - \\text{Actual rate / hour}) \\times \\text{Actual hours} \\\\\n&= \\left(\\text{₹ }2 - \\frac{\\text{Rs }172{,}000}{84{,}000}\\right) \\times 84{,}000 = \\text{₹ }4{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\nVariable Overhead Efficiency variance\n\n$$\n\\begin{aligned}\n&= \\text{Standard rate / hour}\\,(\\text{Std hours for Actual Output} - \\text{Actual Hours}) \\\\\n&= \\text{₹ }2\\,(5 \\times 18{,}000 - 84{,}000) = \\text{₹ }12{,}000\\ \\text{(F)}\n\\end{aligned}\n$$\n\n4. Fixed Overhead Cost Variance:\nFixed Overhead Expenditure variance\n\n$$\n\\begin{aligned}\n&= \\text{Budgeted Fixed overhead} - \\text{Actual Fixed Overhead} \\\\\n&= 20{,}000 \\times \\text{₹ }50 - \\text{₹ }10{,}30{,}000 = \\text{₹ }30{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\nFixed Overhead Volume variance\n\n$$\n\\begin{aligned}\n&= \\text{Recovered Fixed overhead} - \\text{Budgeted Fixed overhead} \\\\\n&= \\text{₹ }50 \\times 18{,}000 - \\text{₹ }10{,}00{,}000 = \\text{₹ }1{,}00{,}000\\ \\text{(A)}\n\\end{aligned}\n$$\n\n(iii) Statement showing reconciliation of Standard Cost with Actual Cost:\n\n| | | | |\n|---|---|---|---|\n| Standard Cost of Actual Output | | | ₹ 25,74,000 |\n| Adjustment for Variances | Favourable | Adverse | |\n| Direct Material Price Variance | 76,000 | | |\n| Direct Material Usage Variance | | 48,000 | |\n| Direct Labour Rate Variance | | 16,800 | |\n| Direct Labour Efficiency Variance | 42,000 | | |\n| Variable Overhead Expenditure Variance | | 4,000 | |\n| Variable Overhead Efficiency Variance | 12,000 | | |\n| Fixed Overhead Expenditure variance | | 30,000 | |\n| Fixed Overhead Efficiency variance | | 1,00,000 | |\n| | 1,30,000 | 1,98,800 | 68,800 (A) |\n| Actual Cost | | | ₹ 26,42,800 |\n\nAlternative Solution\n(i) Statement showing Standard Cost of output produced:\n\n| Element of Cost | Calculation | Amount (₹) |\n|---|---|---|\n| Direct Material | $18{,}000 \\times \\text{₹ }48$ | 8,64,000 |\n| Direct Labour | $18{,}000 \\times \\text{₹ }35$ | 6,30,000 |\n| Variable Production Overhead | $18{,}000 \\times \\text{₹ }10$ | 1,80,000 |\n| Fixed Production Overhead | $18{,}000 \\times \\text{₹ }50$ | 9,00,000 |\n| Total | | 25,74,000 |\n\n(ii) Analysis of Variances:\n\n| For Direct Material Cost Variances | Amount (₹) |\n|---|---|\n| 1. $M_1$ – Actual cost of material used | 8,36,000 |\n| $M_2$ – Standard cost of actual material ($76{,}000\\text{ kgs.} \\times \\text{₹ }12$) | 9,12,000 |\n| $M_4$ – Standard material cost of output ($18{,}000 \\times \\text{₹ }48$) | 8,64,000 |\n| Material price variance = ($M_1$ – $M_2$) = $\\text{₹ }8{,}36{,}000 - \\text{₹ }9{,}12{,}000$ | 76,000 (F) |\n| Material usage variance = ($M_2$ – $M_4$) = $\\text{₹ }9{,}12{,}000 - \\text{₹ }8{,}64{,}000$ | 48,000 (A) |\n| 2. For Direct Labour Cost Variances | |\n| $L_1$ — Actual payment made to workers for actual hours worked | 6,04,800 |\n| $L_2$ — Payment involved, if the workers had been paid at standard rate ($84{,}000\\text{ hours} \\times \\text{₹ }7$) | 5,88,000 |\n| $L_5$ — Standard labour cost of output achieved ($18{,}000\\text{ units} \\times \\text{₹ }35$) | 6,30,000 |\n| Labour Rate Variance = $L_1 - L_2$ = $\\text{₹ }6{,}04{,}800 - \\text{₹ }5{,}88{,}000$ | 16,800 (A) |\n| Labour efficiency variance = $L_2 - L_5$ = $\\text{₹ }5{,}88{,}000 - \\text{₹ }6{,}30{,}000$ | 42,000 (F) |\n| 3. For Variable Overhead Cost Variances | |\n| $VO_1$ — Actual Variable Overhead | 1,72,000 |\n| $VO_2$ — Actual hours worked at standard variable overhead rate ($84{,}000\\text{ hrs.} \\times \\text{₹ }2$) | 1,68,000 |\n| $VO_3$ — Standard variable overhead for the production ($18{,}000\\text{ units} \\times \\text{₹ }10$) | 1,80,000 |\n| V.O. Expenditure Variance = $VO_1 - VO_2$ = $172000 - 168000$ | 4,000 (A) |\n| V.O Efficiency Variance = $V_2 - V_3$ $168000 - 180000$ | 12,000 (F) |\n| 4. For Fixed Overhead Cost Variance | |\n| $FO_1$ – Actual Fixed Overhead incurred | 10,30,000 |\n| $FO_2$ – Budgeted Fixed Overhead for the period $1{,}00{,}000 \\times \\text{₹ }10$ | 10,00,000 |\n| $FO_3$ – Standard Fixed Overhead for production $18{,}000\\text{ units} \\times \\text{₹ }50$ | 9,00,000 |\n| F.O. Expenditure variance = $FO_1 - FO_2$ = $10{,}30{,}000 - 10{,}00{,}000$ | 30,000 (A) |\n| F.O. Volume variance = $FO_2 - FO_3$ = $10{,}00{,}000 - 9{,}00{,}000$ | 1,00,000 (A) |\n\n(iii) Statement showing relevant variances and reconciliation of standard cost with actual cost\n\n| | Ref No. | Standard cost of output (₹) | Variances | Actual Cost (₹) |\n|---|---|---|---|---|\n| Direct Materials | | 8,64,000 | | |\n| Price variance | (1) | | 76,000 (F) | |\n| Usage variance | (1) | | 48,000 (A) | |\n| Actual Direct Material cost | | | | 8,36,000 |\n| Direct labour | | 6,30,000 | | |\n| Rate variance | (2) | | 16,800 (A) | |\n| Efficiency variance | (2) | | 42,000 (F) | |\n| Actual Direct Labour cost | | | | 6,04,800 |\n| Variable Production Overhead | | 1,80,000 | | |\n| Expenditure variance | (3) | | 4,000 (A) | |\n| Efficiency variance | (3) | | 12,000 (F) | |\n| Actual Variable Prodn. OH | | | | 1,72,000 |\n| Fixed production overhead | | 9,00,000 | | |\n| Expenditure variance | (4) | | 30,000 (A) | |\n| Volume variance | (4) | | 100,000 (A) | |\n| Actual Fixed Overhead | | | | 10,30,000 |\n| TOTAL | | 25,74,000 | 68,800 (A) | 26,42,800 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.79,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 25,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 26,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "CNG Ltd., (CNGL), a compressed natural gas (CNG) company, has three plants producing gas and four outlets. The cost of transporting gas from different production plants to the outlets, production capacity of each plant and requirement at different outlets is shown in the following cost-matrix table:\n\n| Plants \\ Outlets | A | B | C | D | Capacity of Production (Units) |\n|---|---|---|---|---|---|\n| X | 4 | 6 | 8 | 6 | 700 |\n| Y | 3 | 5 | 2 | 5 | 400 |\n| Z | 3 | 9 | 6 | 5 | 600 |\n| Requirement (Units) | 400 | 450 | 350 | 500 | 1700 |\n\n(The cost in the cost-matrix is given in thousand of rupees.)\n\nRequired:\n(i) Analyze and show the production and distribution schedule in a way which minimizes the transportation costs of the company using Vogel’s Approximation Method (VAM).\n(ii) Assess the total costs of transporting gas of the company.",
+    "parent_ref": "6",
+    "explanation_md": "(i) The given problem is a balanced minimization transportation problem. The objective of the company is to minimize the cost. Let us find the initial feasible solution using Vogel’s Approximation method (VAM).\n\n| PLANTS \\ OUTLETS | A | B | C | D | CAPACITY | DIFF. |\n|---|---|---|---|---|---|---|\n| X | 4 | **400** (6) | 8 | **300** (6) | 700 / 300 / 0 | 2 2 0 0 |\n| Y | 3 | **50** (5) | **350** (2) | 5 | 400 / 50 / 0 | 1 2 0 0 |\n| Z | **400** (3) | 9 | 6 | **200** (5) | 600 / 200 / 0 | 2 2 4 – |\n| Requirement | 400 / 0 | 450 / 400 / 0 | 350 / 0 | 500 / 300 / 0 | | |\n\n| Diff. | | | | |\n|---|---|---|---|---|\n| | 0 | 1 | 4 | 0 |\n| | 0 | 1 | - | 0 |\n| | - | 1 | - | 0 |\n| | - | 1 | - | 1 |\n\nThe initial feasible solution obtained by VAM is given below:\n\n| PLANTS \\ OUTLETS | A | B | C | D | CAPACITY |\n|---|---|---|---|---|---|\n| X | 4 | **400** (6) | 8 | **300** (6) | 700 |\n| Y | 3 | **50** (5) | **350** (2) | 5 | 400 |\n| Z | **400** (3) | 9 | 6 | **200** (5) | 600 |\n| Requirement | 400 | 450 | 350 | 500 | |\n\nSince the number of allocations = 6 = $(m + n - 1)$, the above initial basic feasible solution is non-degenerate and hence an optimum solution can be obtained.\nTest of Optimality:\nLet us introduce $U_i$ ($i = 1, 2, 3$) and $V_j$ ($j = 1, 2, 3, 4$). We assume $U_1 = 0$ and other $U_i$ and $V_j$ can be calculated by using the relation $C_{ij} = U_i + V_j$ for allocated cells.\nThe opportunity costs for the unallocated cells can be calculated using the relation $\\Delta_{ij} = C_{ij} - (U_i + V_j)$. The calculations of $U_i$’s, $V_j$’s and $\\Delta_{ij}$’s are given below:\n\n| PLANTS \\ OUTLETS | A | B | C | D | $U_i$ |\n|---|---|---|---|---|---|\n| X | Δ 0 (4) | **400** (6) | Δ 5 (8) | **300** (6) | 0 |\n| Y | Δ 0 (3) | **50** (5) | **350** (2) | Δ 0 (5) | -1 |\n| Z | **400** (3) | Δ 4 (9) | Δ 4 (6) | **200** (5) | -1 |\n| $V_j$ | 4 | 6 | 3 | 6 | |\n\nOn Calculating $\\Delta_{ij}$’s for non-allocated cells, we found that all the $\\Delta_{ij} \\geq 0$, hence the initial solution obtained above is optimal.\n\n(ii) Calculations of the total costs:\n\n| Plants | Outlet | Units | Cost | Total Cost |\n|---|---|---|---|---|\n| X | → B | 400 | x 6 = | 2,400 |\n| X | → D | 300 | x 6 = | 1,800 |\n| Y | → B | 50 | x 5 = | 250 |\n| Y | → C | 350 | x 2 = | 700 |\n| Z | → A | 400 | x 3 = | 1,200 |\n| Z | → D | 200 | x 5 = | 1,000 |\n| | | | | 7,350 |\n\nThe minimum cost = 7,350 thousand rupees.",
+    "reference_solution_md": "(i) The given problem is a balanced minimization transportation problem. The objective of the company is to minimize the cost. Let us find the initial feasible solution using Vogel’s Approximation method (VAM).\n\n| PLANTS \\ OUTLETS | A | B | C | D | CAPACITY | DIFF. |\n|---|---|---|---|---|---|---|\n| X | 4 | **400** (6) | 8 | **300** (6) | 700 / 300 / 0 | 2 2 0 0 |\n| Y | 3 | **50** (5) | **350** (2) | 5 | 400 / 50 / 0 | 1 2 0 0 |\n| Z | **400** (3) | 9 | 6 | **200** (5) | 600 / 200 / 0 | 2 2 4 – |\n| Requirement | 400 / 0 | 450 / 400 / 0 | 350 / 0 | 500 / 300 / 0 | | |\n\n| Diff. | | | | |\n|---|---|---|---|---|\n| | 0 | 1 | 4 | 0 |\n| | 0 | 1 | - | 0 |\n| | - | 1 | - | 0 |\n| | - | 1 | - | 1 |\n\nThe initial feasible solution obtained by VAM is given below:\n\n| PLANTS \\ OUTLETS | A | B | C | D | CAPACITY |\n|---|---|---|---|---|---|\n| X | 4 | **400** (6) | 8 | **300** (6) | 700 |\n| Y | 3 | **50** (5) | **350** (2) | 5 | 400 |\n| Z | **400** (3) | 9 | 6 | **200** (5) | 600 |\n| Requirement | 400 | 450 | 350 | 500 | |\n\nSince the number of allocations = 6 = $(m + n - 1)$, the above initial basic feasible solution is non-degenerate and hence an optimum solution can be obtained.\nTest of Optimality:\nLet us introduce $U_i$ ($i = 1, 2, 3$) and $V_j$ ($j = 1, 2, 3, 4$). We assume $U_1 = 0$ and other $U_i$ and $V_j$ can be calculated by using the relation $C_{ij} = U_i + V_j$ for allocated cells.\nThe opportunity costs for the unallocated cells can be calculated using the relation $\\Delta_{ij} = C_{ij} - (U_i + V_j)$. The calculations of $U_i$’s, $V_j$’s and $\\Delta_{ij}$’s are given below:\n\n| PLANTS \\ OUTLETS | A | B | C | D | $U_i$ |\n|---|---|---|---|---|---|\n| X | Δ 0 (4) | **400** (6) | Δ 5 (8) | **300** (6) | 0 |\n| Y | Δ 0 (3) | **50** (5) | **350** (2) | Δ 0 (5) | -1 |\n| Z | **400** (3) | Δ 4 (9) | Δ 4 (6) | **200** (5) | -1 |\n| $V_j$ | 4 | 6 | 3 | 6 | |\n\nOn Calculating $\\Delta_{ij}$’s for non-allocated cells, we found that all the $\\Delta_{ij} \\geq 0$, hence the initial solution obtained above is optimal.\n\n(ii) Calculations of the total costs:\n\n| Plants | Outlet | Units | Cost | Total Cost |\n|---|---|---|---|---|\n| X | → B | 400 | x 6 = | 2,400 |\n| X | → D | 300 | x 6 = | 1,800 |\n| Y | → B | 50 | x 5 = | 250 |\n| Y | → C | 350 | x 2 = | 700 |\n| Z | → A | 400 | x 3 = | 1,200 |\n| Z | → D | 200 | x 5 = | 1,000 |\n| | | | | 7,350 |\n\nThe minimum cost = 7,350 thousand rupees.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "transportation",
+    "mapping_confidence": 0.04,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The management of PIKON LTD. is considering the proposal of marketing a new product. The fixed cost required in the project is ₹ 4,000. Three factors are uncertain viz. the selling price, variable cost and the annual sales volume. The product has a life of only one year. The management has the data on these three factors as under:\n\n| Selling Price (₹) | Probability | Variable cost (₹) | Probability | Sale Units | Probability |\n|---|---|---|---|---|---|\n| 3 | 0.20 | 1 | 0.30 | 2000 | 0.30 |\n| 4 | 0.50 | 2 | 0.60 | 3000 | 0.30 |\n| 5 | 0.30 | 3 | 0.10 | 5000 | 0.40 |\n\nConsider the following sequence of fifteen random numbers:\n\n| 81, 32, 60 | 04, 46, 31 | 67, 25, 24 | 10, 40, 02 | 39, 68, 08 |\n|---|---|---|---|---|\n\nRequired:\nUsing the sequence (first 3 random numbers for the first trial, etc), simulate the average profit for the above project on the basis of 5 trials.",
+    "parent_ref": "6",
+    "explanation_md": "Allocation of Random No- Selling Price:\n\n| Selling Price (₹) | Probability | Cumulative Probability | Allocation of RN |\n|---|---|---|---|\n| 3 | 0.20 | 0.20 | 00-19 |\n| 4 | 0.50 | 0.70 | 20-69 |\n| 5 | 0.30 | 1.00 | 70-99 |\n\nAllocation of Random No- Variable Cost:\n\n| Variable Cost (₹) | Probability | Cumulative Probability | Allocation of RN |\n|---|---|---|---|\n| 1 | 0.30 | 0.30 | 00-29 |\n| 2 | 0.60 | 0.90 | 30-89 |\n| 3 | 0.10 | 1.00 | 90-99 |\n\nAllocation of Random No- Sales Units:\n\n| Sales (Units) | Probability | Cumulative Probability | Allocation of RN |\n|---|---|---|---|\n| 2,000 | 0.30 | 0.30 | 00-29 |\n| 3,000 | 0.30 | 0.60 | 30-59 |\n| 5,000 | 0.40 | 1.00 | 60-99 |\n\nCalculation of Simulated Profit:\n\n| Trial | RN | SP | RN | VC | RN | Sales Units | Profit (₹) |\n|---|---|---|---|---|---|---|---|\n| 1 | 81 | 5 | 32 | 2 | 60 | 5,000 | $(5-2)5{,}000-4{,}000 = 11{,}000$ |\n| 2 | 4 | 3 | 46 | 2 | 31 | 3,000 | $(3-2)3{,}000-4{,}000 = -1{,}000$ |\n| 3 | 67 | 4 | 25 | 1 | 24 | 2,000 | $(4-1)2{,}000-4{,}000 = 2{,}000$ |\n| 4 | 10 | 3 | 40 | 2 | 2 | 2,000 | $(3-2)2{,}000-4{,}000 = -2{,}000$ |\n| 5 | 39 | 4 | 68 | 2 | 8 | 2,000 | $(4-2)2{,}000-4{,}000 = 0$ |\n\nTotal = 10,000\n$\\text{Average Annual Profit} = \\frac{\\text{₹ }10{,}000}{5} = \\text{₹ }2{,}000$\n\nAlternative Solution\nProbability Distribution (Selling Price):\n\n| SP | Probability | Cum. Prob. | Probability range | Probability range for simulation |\n|---|---|---|---|---|\n| 3 | 0.20 | 0.20 | 0 – 0.20 | 0 – 0.19 |\n| 4 | 0.50 | 0.70 | 0.20 – 0.70 | 0.20 – 0.69 |\n| 5 | 0.30 | 1.00 | 0.70 – 1.00 | 0.70 – 0.99 |\n\nProbability Distribution (Variable Cost):\n\n| VC | Probability | Cum. Prob. | Probability range | Probability range for simulation |\n|---|---|---|---|---|\n| 1 | 0.30 | 0.30 | 0 – 0.30 | 0 – 0.29 |\n| 2 | 0.60 | 0.90 | 0.30 – 0.90 | 0.30 – 0.89 |\n| 3 | 0.10 | 1.00 | 0.90 – 1.00 | 0.90 – 0.99 |\n\nProbability Distribution (Sales Units):\n\n| Sale units | Probability | Cum. Prob. | Probability range | Probability range for simulation |\n|---|---|---|---|---|\n| 2000 | 0.30 | 0.30 | 0 – 0.30 | 0 – 0.29 |\n| 3000 | 0.30 | 0.60 | 0.30 – 0.60 | 0.30 – 0.59 |\n| 5000 | 0.40 | 1.00 | 0.60 – 1.00 | 0.60 – 0.99 |\n\nSimulated Profit:\n\n| Trial | RN | Profit (₹) |\n|---|---|---|\n| 1 | 81, 32, 60 | $(5 - 2) (5{,}000) - 4{,}000 = 11{,}000$ |\n| 2 | 04, 46, 31 | $(3 - 2) (3{,}000) - 4{,}000 = -1{,}000$ |\n| 3 | 67, 25, 24 | $(4 - 1) (2{,}000) - 4{,}000 = 2{,}000$ |\n| 4 | 10, 40, 02 | $(3 - 2) (2{,}000) - 4{,}000 = -2{,}000$ |\n| 5 | 39, 68, 08 | $(4 - 2) (2{,}000) - 4{,}000 = 0$ |\n\nTotal = ₹ 10,000\n$\\text{Average Annual Profit} = \\frac{\\text{₹ }10{,}000}{5} = \\text{₹ }2{,}000$",
+    "reference_solution_md": "Allocation of Random No- Selling Price:\n\n| Selling Price (₹) | Probability | Cumulative Probability | Allocation of RN |\n|---|---|---|---|\n| 3 | 0.20 | 0.20 | 00-19 |\n| 4 | 0.50 | 0.70 | 20-69 |\n| 5 | 0.30 | 1.00 | 70-99 |\n\nAllocation of Random No- Variable Cost:\n\n| Variable Cost (₹) | Probability | Cumulative Probability | Allocation of RN |\n|---|---|---|---|\n| 1 | 0.30 | 0.30 | 00-29 |\n| 2 | 0.60 | 0.90 | 30-89 |\n| 3 | 0.10 | 1.00 | 90-99 |\n\nAllocation of Random No- Sales Units:\n\n| Sales (Units) | Probability | Cumulative Probability | Allocation of RN |\n|---|---|---|---|\n| 2,000 | 0.30 | 0.30 | 00-29 |\n| 3,000 | 0.30 | 0.60 | 30-59 |\n| 5,000 | 0.40 | 1.00 | 60-99 |\n\nCalculation of Simulated Profit:\n\n| Trial | RN | SP | RN | VC | RN | Sales Units | Profit (₹) |\n|---|---|---|---|---|---|---|---|\n| 1 | 81 | 5 | 32 | 2 | 60 | 5,000 | $(5-2)5{,}000-4{,}000 = 11{,}000$ |\n| 2 | 4 | 3 | 46 | 2 | 31 | 3,000 | $(3-2)3{,}000-4{,}000 = -1{,}000$ |\n| 3 | 67 | 4 | 25 | 1 | 24 | 2,000 | $(4-1)2{,}000-4{,}000 = 2{,}000$ |\n| 4 | 10 | 3 | 40 | 2 | 2 | 2,000 | $(3-2)2{,}000-4{,}000 = -2{,}000$ |\n| 5 | 39 | 4 | 68 | 2 | 8 | 2,000 | $(4-2)2{,}000-4{,}000 = 0$ |\n\nTotal = 10,000\n$\\text{Average Annual Profit} = \\frac{\\text{₹ }10{,}000}{5} = \\text{₹ }2{,}000$\n\nAlternative Solution\nProbability Distribution (Selling Price):\n\n| SP | Probability | Cum. Prob. | Probability range | Probability range for simulation |\n|---|---|---|---|---|\n| 3 | 0.20 | 0.20 | 0 – 0.20 | 0 – 0.19 |\n| 4 | 0.50 | 0.70 | 0.20 – 0.70 | 0.20 – 0.69 |\n| 5 | 0.30 | 1.00 | 0.70 – 1.00 | 0.70 – 0.99 |\n\nProbability Distribution (Variable Cost):\n\n| VC | Probability | Cum. Prob. | Probability range | Probability range for simulation |\n|---|---|---|---|---|\n| 1 | 0.30 | 0.30 | 0 – 0.30 | 0 – 0.29 |\n| 2 | 0.60 | 0.90 | 0.30 – 0.90 | 0.30 – 0.89 |\n| 3 | 0.10 | 1.00 | 0.90 – 1.00 | 0.90 – 0.99 |\n\nProbability Distribution (Sales Units):\n\n| Sale units | Probability | Cum. Prob. | Probability range | Probability range for simulation |\n|---|---|---|---|---|\n| 2000 | 0.30 | 0.30 | 0 – 0.30 | 0 – 0.29 |\n| 3000 | 0.30 | 0.60 | 0.30 – 0.60 | 0.30 – 0.59 |\n| 5000 | 0.40 | 1.00 | 0.60 – 1.00 | 0.60 – 0.99 |\n\nSimulated Profit:\n\n| Trial | RN | Profit (₹) |\n|---|---|---|\n| 1 | 81, 32, 60 | $(5 - 2) (5{,}000) - 4{,}000 = 11{,}000$ |\n| 2 | 04, 46, 31 | $(3 - 2) (3{,}000) - 4{,}000 = -1{,}000$ |\n| 3 | 67, 25, 24 | $(4 - 1) (2{,}000) - 4{,}000 = 2{,}000$ |\n| 4 | 10, 40, 02 | $(3 - 2) (2{,}000) - 4{,}000 = -2{,}000$ |\n| 5 | 39, 68, 08 | $(4 - 2) (2{,}000) - 4{,}000 = 0$ |\n\nTotal = ₹ 10,000\n$\\text{Average Annual Profit} = \\frac{\\text{₹ }10{,}000}{5} = \\text{₹ }2{,}000$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "ref_suffix": "q7",
+    "depth": 0,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "SIMCON, a construction company has an opportunity to submit a bid for the construction of Administrative Building of LNP Ltd. From the specifications provided, project manager has estimated most likely, optimistic and pessimistic completion time (in days) for each activity of the project as under:\n\n| Activity | Immediate Predecessor | Time (days): Most likely | Time (days): Optimistic | Time (days): Pessimistic |\n|---|---|---|---|---|\n| A | — | 5 | 4 | 6 |\n| B | — | 12 | 8 | 16 |\n| C | — | 5 | 4 | 12 |\n| D | A, B | 3 | 1 | 5 |\n| E | B | 2 | 2 | 2 |\n| F | C | 5 | 4 | 6 |\n| G | B, C | 14 | 10 | 18 |\n| H | D, E, G | 20 | 18 | 34 |\n\nRequired:\n(i) Assess the expected duration for each activity.\n(ii) Design the PERT Network and indicate all paths through it.\n(iii) Identify the Critical path and assess the expected completion time (in days) and its standard deviation.\n(iv) Assess the probability that the project will be completed in 54 days.\n(v) There is evidence that managers are poor in estimating extreme values. It is suspected that in this project the times for tasks A, B, C and F underestimate the pessimistic times by 1 day and overestimate the optimistic time by 1 day. In the case of tasks G & H, the under/over estimation is put at 2 days.\nIn consideration of above aspects, assess the new probability of completing the project in 54 days.\n\nGiven: Table for areas under Normal Curve from 0 to Z\n\n| Z = 0 to Z | 0.50 | 1 | 1.3 | 1.42 | 1.84 | 2.00 |\n|---|---|---|---|---|---|---|\n| Table Value | 0.0915 | 0.3413 | 0.4032 | 0.4222 | 0.4667 | 0.4772 |",
+    "choice_group_ref": "secB",
+    "explanation_md": "(i) Calculation of Expected Project Duration:\n\n| Activity | Most Likely (M) | Optimistic (O) | Pessimistic (P) | Expected Duration $(O+4M+P)/6$ (Days) |\n|---|---|---|---|---|\n| A | 5 | 4 | 6 | 5 |\n| B | 12 | 8 | 16 | 12 |\n| C | 5 | 4 | 12 | 6 |\n| D | 3 | 1 | 5 | 3 |\n| E | 2 | 2 | 2 | 2 |\n| F | 5 | 4 | 6 | 5 |\n| G | 14 | 10 | 18 | 14 |\n| H | 20 | 18 | 34 | 22 |\n\n(ii) Project Network Diagram\n[Network diagram not available in text]\n\n(iii) Critical Path, Expected project duration & Std. Deviation:\nFrom the EST and LST calculated above, it is clear that, tasks B, G and H are in critical path. The overall project duration is 48 days.\n\nCalculation of Standard Deviation of the activities in Critical Path\n\n| Activity | Pessimistic time | Optimistic Time | Standard Deviation |\n|---|---|---|---|\n| B | 16 | 8 | 1.33 |\n| G | 18 | 10 | 1.33 |\n| H | 34 | 18 | 2.67 |\n\nStandard Deviation of the Project $= \\sqrt{1.33^{2} + 1.33^{2} + 2.67^{2}} = 3.27$\n\n(iv) Calculation of probability that the project will be completed in 54 days:\nUsing Z value, we have $Z = (54-48)/3.27 = 1.84$\nUsing area under standard normal curve, the probability of finishing the project in 54 days is $0.5 + 0.4667 = 0.9667 = 96.67\\%$\n\n(v) Calculation of new probability:\nThe revised estimates do not affect the average task times as the reduction in optimistic time equals the increase in pessimistic times. Therefore, tasks B, G & H are still in critical path and the expected project duration is still 48 days.\nHowever, increase in variability will affect the standard deviation of the project.\n\nCalculation of Revised Standard Deviation of the project:\n\n| Activity | Pessimistic time | Optimistic Time | Standard Deviation |\n|---|---|---|---|\n| B | 17 | 7 | 2.78 |\n| G | 20 | 8 | 4.00 |\n| H | 36 | 16 | 11.10 |\n\nStandard Deviation of the project $= \\sqrt{2.78 + 4 + 11.10} = 4.23$\nUsing Z value, we have $Z = (54-48)/4.23 = 1.42$\nUsing area under standard normal curve, the probability of finishing the project in 54 days is $0.5 + 0.4222 = 0.9222 = 92.22\\%$.",
+    "reference_solution_md": "(i) Calculation of Expected Project Duration:\n\n| Activity | Most Likely (M) | Optimistic (O) | Pessimistic (P) | Expected Duration $(O+4M+P)/6$ (Days) |\n|---|---|---|---|---|\n| A | 5 | 4 | 6 | 5 |\n| B | 12 | 8 | 16 | 12 |\n| C | 5 | 4 | 12 | 6 |\n| D | 3 | 1 | 5 | 3 |\n| E | 2 | 2 | 2 | 2 |\n| F | 5 | 4 | 6 | 5 |\n| G | 14 | 10 | 18 | 14 |\n| H | 20 | 18 | 34 | 22 |\n\n(ii) Project Network Diagram\n[Network diagram not available in text]\n\n(iii) Critical Path, Expected project duration & Std. Deviation:\nFrom the EST and LST calculated above, it is clear that, tasks B, G and H are in critical path. The overall project duration is 48 days.\n\nCalculation of Standard Deviation of the activities in Critical Path\n\n| Activity | Pessimistic time | Optimistic Time | Standard Deviation |\n|---|---|---|---|\n| B | 16 | 8 | 1.33 |\n| G | 18 | 10 | 1.33 |\n| H | 34 | 18 | 2.67 |\n\nStandard Deviation of the Project $= \\sqrt{1.33^{2} + 1.33^{2} + 2.67^{2}} = 3.27$\n\n(iv) Calculation of probability that the project will be completed in 54 days:\nUsing Z value, we have $Z = (54-48)/3.27 = 1.84$\nUsing area under standard normal curve, the probability of finishing the project in 54 days is $0.5 + 0.4667 = 0.9667 = 96.67\\%$\n\n(v) Calculation of new probability:\nThe revised estimates do not affect the average task times as the reduction in optimistic time equals the increase in pessimistic times. Therefore, tasks B, G & H are still in critical path and the expected project duration is still 48 days.\nHowever, increase in variability will affect the standard deviation of the project.\n\nCalculation of Revised Standard Deviation of the project:\n\n| Activity | Pessimistic time | Optimistic Time | Standard Deviation |\n|---|---|---|---|\n| B | 17 | 7 | 2.78 |\n| G | 20 | 8 | 4.00 |\n| H | 36 | 16 | 11.10 |\n\nStandard Deviation of the project $= \\sqrt{2.78 + 4 + 11.10} = 4.23$\nUsing Z value, we have $Z = (54-48)/4.23 = 1.42$\nUsing area under standard normal curve, the probability of finishing the project in 54 days is $0.5 + 0.4222 = 0.9222 = 92.22\\%$.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.44,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ROLEX Ltd., a monopolist can effectively segment the market into two Sub-markets with the demand functions, $P_1 = 400 - 2Q_1$ and $P_2 = 300 - 2Q_2$, where $Q = Q_1 + Q_2$ = Total production of two Sub-markets. Total Cost Function of two Sub-markets are given as $C = 3000 + 60Q$.\n\nRequired:\nIf price discrimination is allowed, assess the maximum possible profit that can be earned by the Monopolist (ROLEX Ltd.) from two Sub-markets.",
+    "parent_ref": "8",
+    "explanation_md": "Price Discrimination:\n\n$$\n\\begin{aligned}\nP_1 &= 400 - 2\\,Q_1 \\\\\nTR_1 &= 400\\,Q_1 - 2\\,Q_1^{2} \\\\\nMR_1 &= \\frac{d\\left(400\\,Q_1 - 2\\,Q_1^{2}\\right)}{dQ_1} = 400 - 4\\,Q_1 \\\\\nP_2 &= 300 - 2\\,Q_2 \\\\\nTR_2 &= 300\\,Q_2 - 2\\,Q_2^{2} \\\\\nMR_2 &= \\frac{d\\left(300\\,Q_1 - 2\\,Q_2^{2}\\right)}{dQ_2} = 300 - 4\\,Q_2\n\\end{aligned}\n$$\n\nTotal Cost Function $(C) = 3000 + 60\\,Q$\nWhere $Q = Q_1 + Q_2$\n\n$$\nMC = \\frac{d(3000 + 60\\,Q)}{dQ} = 60\n$$\n\nTo maximize profits, the discrimination monopolist should equate $MR_1 = MC$ and $MR_2 = MC$\nSo, $400 - 4Q_1 = 60$\n$Q_1 = 85$\nSimilarly, $300 - 4Q_2 = 60$\nSo, $Q_2 = 60$\n\nPrices in the sub-markets are\n$P_1 = 400 - (2 \\times 85) = 230$\n$P_2 = 300 - (2 \\times 60) = 180$\n$Q_1 = 85$ $P_1 = 230$\n$Q_2 = 60$ $P_2 = 180$\n\nProfit of the discriminating monopolist:\n\n$$\n\\begin{aligned}\n&= (TR_1 + TR_2) - TC \\\\\n&= (85 \\times 230 + 60 \\times 180) - [3{,}000 + 60 \\times (85 + 60)] = 30{,}350 - 11{,}700 \\\\\n&= \\text{₹ }18{,}650\n\\end{aligned}\n$$\n\nThe maximum possible profit that can be earned by the monopolist from the two sub-division market with price discrimination is ₹ 18,650.",
+    "reference_solution_md": "Price Discrimination:\n\n$$\n\\begin{aligned}\nP_1 &= 400 - 2\\,Q_1 \\\\\nTR_1 &= 400\\,Q_1 - 2\\,Q_1^{2} \\\\\nMR_1 &= \\frac{d\\left(400\\,Q_1 - 2\\,Q_1^{2}\\right)}{dQ_1} = 400 - 4\\,Q_1 \\\\\nP_2 &= 300 - 2\\,Q_2 \\\\\nTR_2 &= 300\\,Q_2 - 2\\,Q_2^{2} \\\\\nMR_2 &= \\frac{d\\left(300\\,Q_1 - 2\\,Q_2^{2}\\right)}{dQ_2} = 300 - 4\\,Q_2\n\\end{aligned}\n$$\n\nTotal Cost Function $(C) = 3000 + 60\\,Q$\nWhere $Q = Q_1 + Q_2$\n\n$$\nMC = \\frac{d(3000 + 60\\,Q)}{dQ} = 60\n$$\n\nTo maximize profits, the discrimination monopolist should equate $MR_1 = MC$ and $MR_2 = MC$\nSo, $400 - 4Q_1 = 60$\n$Q_1 = 85$\nSimilarly, $300 - 4Q_2 = 60$\nSo, $Q_2 = 60$\n\nPrices in the sub-markets are\n$P_1 = 400 - (2 \\times 85) = 230$\n$P_2 = 300 - (2 \\times 60) = 180$\n$Q_1 = 85$ $P_1 = 230$\n$Q_2 = 60$ $P_2 = 180$\n\nProfit of the discriminating monopolist:\n\n$$\n\\begin{aligned}\n&= (TR_1 + TR_2) - TC \\\\\n&= (85 \\times 230 + 60 \\times 180) - [3{,}000 + 60 \\times (85 + 60)] = 30{,}350 - 11{,}700 \\\\\n&= \\text{₹ }18{,}650\n\\end{aligned}\n$$\n\nThe maximum possible profit that can be earned by the monopolist from the two sub-division market with price discrimination is ₹ 18,650.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.51,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "TONIB Ltd., dealing in logistics business, has a business wing, named Ship Unloading. During the year 2023 and 2024 they have the following quarterly figures (in tonnage) of material unloading from ships:\n\n| YEAR | 2023 | 2023 | 2023 | 2023 | 2024 | 2024 | 2024 | 2024 |\n|---|---|---|---|---|---|---|---|---|\n| Quarter | I | II | III | IV | I | II | III | IV |\n| Material Unloading | 200 | 188 | 179 | 195 | 210 | 225 | 200 | 202 |\n\n(Use a Smoothing Co-efficient of 0.1)\n\nRequired:\nIf the forecast for the first quarter of 2023 is 195 tons, Assess the forecast figure for the first quarter (1) of 2025. (Using Exponential Smoothing).",
+    "parent_ref": "8",
+    "explanation_md": "Statement Showing the Forecasted demand of Material unloaded (in Tons)\n\n| Year | Quarter of Year | Demand (in tons) (Yi) | Previous Forecast Ui | Forecast Error ei = (Yi – Ui) | Correction σe (σ = 0.1) | New Forecast |\n|---|---|---|---|---|---|---|\n| 2023 | I | 200 | 195.00 | 5.00 | 0.50 | 195.5 |\n| 2023 | II | 188 | 195.50 | – 7.50 | – 0.75 | 194.75 |\n| 2023 | III | 179 | 194.75 | – 15.75 | – 1.575 | 193.175 |\n| 2023 | IV | 195 | 193.175 | 1.825 | 0.1825 | 193.3575 |\n| 2024 | I | 210 | 193.3575 | 16.6425 | 1.6642 | 195.0217 |\n| 2024 | II | 225 | 195.0217 | 29.9783 | 2.9978 | 198.0195 |\n| 2024 | III | 200 | 198.0195 | 1.9805 | 0.1981 | 198.2176 |\n| 2024 | IV | 202 | 198.2176 | 3.7824 | 0.3782 | 198.5958 |\n| 2025 | I | | 198.5958 | | | |\n\nHence Forecast Figure for 1st quarter of 2025 is 198.5958 i.e. 198.60 Tons",
+    "reference_solution_md": "Statement Showing the Forecasted demand of Material unloaded (in Tons)\n\n| Year | Quarter of Year | Demand (in tons) (Yi) | Previous Forecast Ui | Forecast Error ei = (Yi – Ui) | Correction σe (σ = 0.1) | New Forecast |\n|---|---|---|---|---|---|---|\n| 2023 | I | 200 | 195.00 | 5.00 | 0.50 | 195.5 |\n| 2023 | II | 188 | 195.50 | – 7.50 | – 0.75 | 194.75 |\n| 2023 | III | 179 | 194.75 | – 15.75 | – 1.575 | 193.175 |\n| 2023 | IV | 195 | 193.175 | 1.825 | 0.1825 | 193.3575 |\n| 2024 | I | 210 | 193.3575 | 16.6425 | 1.6642 | 195.0217 |\n| 2024 | II | 225 | 195.0217 | 29.9783 | 2.9978 | 198.0195 |\n| 2024 | III | 200 | 198.0195 | 1.9805 | 0.1981 | 198.2176 |\n| 2024 | IV | 202 | 198.2176 | 3.7824 | 0.3782 | 198.5958 |\n| 2025 | I | | 198.5958 | | | |\n\nHence Forecast Figure for 1st quarter of 2025 is 198.5958 i.e. 198.60 Tons",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-forecasting-models-time-series-and-regression-analysis",
+    "mapping_confidence": 0.71,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "4(a)": [
+   "Table cell workings typeset as inline math; tables otherwise as printed"
+  ],
+  "5": [
+   "Reconciliation table rebuilt to the printed layout (favourable, adverse, net); the stored text had the net amount inside a cell",
+   "Alternative solution analysis rebuilt as the printed two-column table",
+   "Printed 'V.O Efficiency Variance = V2 – V3' (misprint for VO2 – VO3) kept as V_2 - V_3",
+   "Printed 'Fixed Overhead Efficiency variance' label for the volume variance kept as printed",
+   "Price variance printed as ₹ 76,000 (F) for (12-11) x 76,000 kept"
+  ],
+  "6(a)": [
+   "VAM allocation tables, penalty grid and U/V/delta table are images in the print and are not reproduced; the separately printed 'Diff.' table is rebuilt",
+   "Removed extraction annotation about the 'penalty row visible'"
+  ],
+  "7": [
+   "Network diagram is a figure and not reproduced",
+   "Printed revised SD formula sqrt(2.78+4+11.10) (variances not squared in print) kept as printed"
+  ],
+  "8(a)": [
+   "Print shows MR2 numerator as d(300 Q1 - 2 Q2^2) (Q1 in the first term, a misprint for Q2); kept as printed"
+  ]
+ },
+ "review_decisions": {
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem data list, terms and requirements, and the full answer (seat allocation, profit, break-even, additional profit, advice) compared with the print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Print says 'Sets' for seats in two places and 'Group Service' for ground services"
+   ],
+   "by": "claude-review"
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem tables and the printed answer (standard cost, variances, reconciliation, alternative solution) compared with the print; removed a duplicated heading and an extra header row that is not in the print.",
+   "fixes": [
+    "Removed duplicated line '(ii) Analysis of Variances:'",
+    "Reconciliation table header row (not in the print) emptied so the first printed row is 'Standard Cost of Actual Output'"
+   ],
+   "printed_issues": [
+    "Print writes 'V.O Efficiency Variance = V2 – V3' (VO2 – VO3 intended)",
+    "Fixed overhead volume variance is labelled 'Fixed Overhead Efficiency variance' in the reconciliation",
+    "Alternative solution prints FO2 as 1,00,000 x ₹ 10 and 100,000 for the volume variance"
+   ],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and cost matrix match the print; the image-only VAM allocation table, final allocation table and U/V/delta table were read from the print and added, and the rest of the answer matches.",
+   "fixes": [
+    "Replaced the VAM table placeholder with the printed table (allocations in bold, costs in brackets, capacity and difference columns)",
+    "Replaced the allocation table placeholder with the printed initial solution",
+    "Replaced the U/V/delta table placeholder with the printed table (allocations in bold, deltas, costs in brackets, U and V values)"
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "7": {
+   "verdict": "approve",
+   "reason": "Stem table and requirements and the normal-area table match the print; the answer tables and calculations match; the network diagram is an image and the remaining answer stands alone.",
+   "fixes": [
+    "Replaced the added note '(Column group heading: Time (days))' by the printed group heading in the column titles"
+   ],
+   "printed_issues": [
+    "Network diagram printed only as an image, not reproduced",
+    "Revised standard deviation printed as sqrt(2.78+4+11.10) using variances without squaring",
+    "Probability lines print '0.5-+0.4667'"
+   ],
+   "by": "claude-review"
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the full answer compared with the print; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "MR2 numerator printed as d(300 Q1 – 2 Q2²) with Q1 in the first term"
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 26,
+  "draft_parts": 0,
+  "answered": 26
+ }
+}

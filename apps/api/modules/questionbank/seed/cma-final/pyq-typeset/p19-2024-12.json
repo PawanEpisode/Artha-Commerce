@@ -1,0 +1,12 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p19-2024-12",
+ "items": {
+  "1(xiii)": {
+   "confidence": "high",
+   "review": [
+    "No mathematical content; printed key B matches stored key."
+   ]
+  }
+ }
+}

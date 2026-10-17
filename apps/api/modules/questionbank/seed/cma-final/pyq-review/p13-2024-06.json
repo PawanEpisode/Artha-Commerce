@@ -1,0 +1,12 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p13-2024-06",
+ "items": {
+  "1(xi)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper; stored key B equals printed key (xi) B in the suggested answers.",
+   "fixes": [],
+   "printed_issues": []
+  }
+ }
+}

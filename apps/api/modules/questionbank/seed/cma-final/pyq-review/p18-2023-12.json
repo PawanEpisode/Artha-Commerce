@@ -1,0 +1,70 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p18-2023-12",
+ "items": {
+  "1(xiv)": {
+   "verdict": "approve",
+   "reason": "Stem and four options compared with the printed page; stored key C equals the printed key (xiv) C.",
+   "fixes": [],
+   "printed_issues": [
+    "Keyed option C (1000 lakhs) cannot be derived from the stem as printed (no NCI fair value given); kept as printed."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the two printed final figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only final figures, no working."
+   ]
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the printed impairment table (1.82, 1.40, 0.42) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only the final table, no working."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem including balance sheet rows and all six notes match the print; answer 1,38,600 matches.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only the final figure, no working."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem, PV table and answer figures (95,53,600; 4,46,400) and journal entry match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Journal entry prints '6% Debenture' although the stem says 8% debentures."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Balance sheet, notes, scheme items (i)-(ix) and the seven printed journal entries compared line by line with the print; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer entry numbering (i)-(vii) differs from scheme items (i)-(ix)."
+   ]
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem tables and instructions and the printed consolidated balance sheet match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only the final balance sheet; the workings the question asks for are not printed."
+   ]
+  },
+  "6": {
+   "verdict": "approve",
+   "reason": "Stem tables, additional information (a)-(e) and the printed consolidated balance sheet match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer prints only the final balance sheet; workings not printed."
+   ]
+  }
+ }
+}

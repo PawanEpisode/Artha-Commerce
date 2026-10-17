@@ -1,0 +1,33 @@
+{
+ "schema": "artha.qboverride.v1",
+ "paper": "20A",
+ "term_code": "2023-12",
+ "note": "Direct edits made to the seed JSON by the owner. Applied last by build_pyq_seed so a rebuild never loses them.",
+ "parts": {
+  "1(vii)": {
+   "stem_md": "The demand curve for X is given by the equation: $P = 24 - \\frac{1}{2}\\sqrt{q}$ where P & q denote price and quantity respectively. Find the price point elasticity for P = ₹ 20.",
+   "options": [
+    {
+     "body_md": "64",
+     "is_correct": false
+    },
+    {
+     "body_md": "48",
+     "is_correct": false
+    },
+    {
+     "body_md": "72",
+     "is_correct": false
+    },
+    {
+     "body_md": "None of the above",
+     "is_correct": true
+    }
+   ],
+   "kind": "mcq_single",
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true
+  }
+ }
+}

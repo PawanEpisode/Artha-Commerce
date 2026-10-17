@@ -1,0 +1,687 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p13",
+ "term_code": "2024-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Page 8 of the PDF is blank. Answer text from OCR of the suggested-answer PDF with watermark noise lines removed; minor OCR typos may remain."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section-A (Compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the most appropriate option from the four alternatives given: 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "ABC Ltd., has 35% shares in XYZ Ltd. The majority of directors of XYZ Ltd. are appointed and removed by ABC Ltd., XYZ Ltd. is ______.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Not a subsidiary of ABC Ltd."
+        },
+        {
+         "key": "B",
+         "body_md": "Depends on the Board of ABC Ltd."
+        },
+        {
+         "key": "C",
+         "body_md": "Depends on the Board of XYZ Ltd."
+        },
+        {
+         "key": "D",
+         "body_md": "A subsidiary of ABC Ltd."
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The paid-up capital requirement in a public company in which the number of independent directors shall be at least 2, is ₹ ______ crores or more.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "10"
+        },
+        {
+         "key": "B",
+         "body_md": "20"
+        },
+        {
+         "key": "C",
+         "body_md": "30"
+        },
+        {
+         "key": "D",
+         "body_md": "50"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "As per the Companies Act, 2013, in certain companies, a director may be appointed by small shareholders. Small shareholder means, shareholders who hold shares worth of face value of maximum ______.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹5,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹10,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹20,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹50,000"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In case of open offer by a public company to its shareholders, the type of bank account where the amount payable to shareholders are kept is called ______ account.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Open Offer"
+        },
+        {
+         "key": "B",
+         "body_md": "Escrow"
+        },
+        {
+         "key": "C",
+         "body_md": "Current"
+        },
+        {
+         "key": "D",
+         "body_md": "Special Current"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "XYZ Co. Ltd. was incorporated on 1st April, 2023. Its paid up capital of ₹10 lakh consisting of 1 lakh equity shares of ₹10 each was held by 100 individuals. There are 6 directors on its Board. The quorum for the Annual General Meeting is ______ members to be present personally (AOA has not stipulated larger number).",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "2"
+        },
+        {
+         "key": "B",
+         "body_md": "5"
+        },
+        {
+         "key": "C",
+         "body_md": "10"
+        },
+        {
+         "key": "D",
+         "body_md": "15"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The Board of Directors of a limited company wants to co-opt an expert in a specialised field. In this context, the correct option is:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The tenure of the expert directors shall not exceed such period as may be specified in the Articles."
+        },
+        {
+         "key": "B",
+         "body_md": "An additional director can be appointed exceeding one-fifth of the total number of directors."
+        },
+        {
+         "key": "C",
+         "body_md": "The tenure of the expert directors shall not exceed one year."
+        },
+        {
+         "key": "D",
+         "body_md": "Expert directors can be appointed exceeding one-fifth of the total number of directors."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under the IBC, the corporate insolvency resolution process shall be completed within a period of ______ from the date of the application.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "6 months"
+        },
+        {
+         "key": "B",
+         "body_md": "4 months"
+        },
+        {
+         "key": "C",
+         "body_md": "180 days"
+        },
+        {
+         "key": "D",
+         "body_md": "120 days"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "There are three approaches to sustainability management, commonly known as bottom-line approach. The following is not a part of the three approaches:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Economic approach"
+        },
+        {
+         "key": "B",
+         "body_md": "Ecological/Environmental approach"
+        },
+        {
+         "key": "C",
+         "body_md": "Social approach"
+        },
+        {
+         "key": "D",
+         "body_md": "Ergonomic approach"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Amalgamation of banking companies require the approval of ______ of its shareholders.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "One-third"
+        },
+        {
+         "key": "B",
+         "body_md": "Two-thirds"
+        },
+        {
+         "key": "C",
+         "body_md": "One half"
+        },
+        {
+         "key": "D",
+         "body_md": "One-fourth"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Where any application for merger is submitted to the CCI, deemed approval may be presumed if",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "no approval is received within 180 days."
+        },
+        {
+         "key": "B",
+         "body_md": "no approval is received within 90 days."
+        },
+        {
+         "key": "C",
+         "body_md": "there is no concept of deemed approvals for mergers."
+        },
+        {
+         "key": "D",
+         "body_md": "no approval is received within 120 days."
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In case of listed companies, minimum subscription, as per SEBI Regulations, is",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "80% of ticket size."
+        },
+        {
+         "key": "B",
+         "body_md": "90% of ticket size."
+        },
+        {
+         "key": "C",
+         "body_md": "90% of amount fixed by the company in its Prospectus."
+        },
+        {
+         "key": "D",
+         "body_md": "80% of amount fixed by the company in its Prospectus."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Keyed (B) 90% of ticket size per suggested answer; wording as printed (SEBI rule refers to 90% of issue size). Key kept as printed."
+       ]
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Business intelligence tools which put BI and data visualization functionality directly into business applications is called as ______.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Mobile"
+        },
+        {
+         "key": "B",
+         "body_md": "Embedded BI"
+        },
+        {
+         "key": "C",
+         "body_md": "Collaborative BI"
+        },
+        {
+         "key": "D",
+         "body_md": "Real time BI"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In the classification of MSMEs, which one of the following criteria for medium enterprises based on\n(1) Investment in plant, machinery and equipment (2) Turnover, is correct?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "(1) not to exceed ₹50 crores and (2) not exceeding ₹250 crores"
+        },
+        {
+         "key": "B",
+         "body_md": "(1) not to exceed ₹25 crores and (2) not exceeding ₹150 crores"
+        },
+        {
+         "key": "C",
+         "body_md": "(1) not to exceed ₹100 crores and (2) not exceeding ₹500 crores"
+        },
+        {
+         "key": "D",
+         "body_md": "No such limits"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The Insolvency and Bankruptcy Board has power of ______ Court in respect of issue of summons, discover and production of books, inspection of books/registers and issue of commission for examination of witnesses.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Session"
+        },
+        {
+         "key": "B",
+         "body_md": "High"
+        },
+        {
+         "key": "C",
+         "body_md": "Criminal"
+        },
+        {
+         "key": "D",
+         "body_md": "Civil"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "As per the IRDA Act, 1999, the minimum paid-up capital requirement for registration in the “Life, General or Health Insurance” sector of insurance business is ₹ ______ crores.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "100"
+        },
+        {
+         "key": "B",
+         "body_md": "200"
+        },
+        {
+         "key": "C",
+         "body_md": "300"
+        },
+        {
+         "key": "D",
+         "body_md": "500"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from Question No. 2 to Question No. 8. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the term “Class Action” under section 245 of the Companies Act, 2013. What are the remedies which can be sought for in a petition for Class Action?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Class Action as per section 245 of the Companies Act, 2013 Class Action is provided under Sec245 of the\nCompanies Act, 2013. A class action lawsuit provides a legal advantage where many people can collectively\nfile a lawsuit against an individual or business for similar nature of damages caused. If they are of the opinion\nthat the management or conduct of the affairs of the company are being conducted in a manner prejudicial to\nthe interests of the company or its members or depositors, file an application before the Tribunal on behalf of\nthe members or depositors for seeking orders.\n\nA petition for Class Action can be filed to seek the following reliefs:\n (a) to restrain the company from committing an act which is ultra vires the Articles or Memorandum of\n Association of the company;\n (b) to restrain the company from committing breach of any provision of the company‘s memorandum or\n articles;\n (c) to declare a resolution altering the memorandum or articles of the company as void if the resolution\n was passed by suppression of material facts or obtained by mis-statement to the members or depositors;\n (d) to restrain the company and its directors from acting on such resolution;\n (e) to restrain the company from doing an act which is contrary to the provisions of this Act or any other\n law for the time being in force;\n (f) to restrain the company from taking action contrary to any resolution passed by the members.\n (g) to claim damages or compensation or demand any other suitable action from or against—\n (i) the company or its directors for any fraudulent, unlawful or wrongful act or omission or conduct or any\n likely act or omission or conduct on its or their part;\n (ii) the auditor including audit firm of the company for any improper or misleading statement of particulars\n made in his audit report or for any fraudulent, unlawful or wrongful act or conduct; or\n\n\f (iii) any expert or advisor or consultant or any other person for any incorrect or misleading statement\n made to the company or for any fraudulent, unlawful or wrongful act or conduct or any likely act or\n conduct on his part;\n(h) to seek any other remedy as the Tribunal may deem fit.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Who are the persons not entitled to initiate insolvency resolution process under the IBC, 2016?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Persons who are not entitled to initiate insolvency resolution process under the IBC, 2016.\nThe court states that a corporate debtor (which includes a corporate applicant in respect of such corporate\ndebtor) shall not be entitled to make an application to initiate corporate insolvency resolution process (Section\n11 of Insolvency and Bankruptcy Code, 2016) in the following cases:\n  (a) when undergoing a corporate insolvency resolution process; or\n  (b) having completed corporate insolvency resolution process twelve months preceding the date of making\n of the application; or\n  (c) a corporate debtor or a financial creditor who has violated any of the terms of resolution plan which\n was approved twelve months before the date of making of an application under this Chapter; or\n  (d) a corporate debtor in respect of him a liquidation order has been made.9",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is the quorum of Company’s Board Meeting in the following cases (explain as per the provisions of the Companies Act, 2013)?\n(i) A public company has 10 directors (including 4 non-executive directors). But 8 directors (including 4 non-executive directors) attended the BOD meeting.\n(ii) Startup Odisha Ltd. is a section 8 company which has 8 non-executive directors. 3 directors attended the meeting.\n(iii) BOD of X Ltd. consists of 9 executive directors and 3 non-executive directors. Total 6 executive directors and 3 non-executive directors attended the BOD meeting. A business was transacted in which one director was interested. Articles of Association has fixed the quorum as 5.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Quorum of company’s Board meetings\n (i) According to Section 174 of the Companies Act, 2013 the quorum for a Board Meeting shall be onethird\n of its total strength or two directors, whichever is higher.\n Here the strength is 10. 1/3rd of total strength is 3.33 or 4.\n So the quorum is 4.(any fraction rounded as one).\n (ii) The companies covered under section 8 of the Act shall constitute quorum for the Board meeting, either\n eight members or 25% of its total strength whichever is less. Provided that quorum shall not be less\n than two members. [Vide Notification G.S.R.466(E) dated 5th June 2015].\n As Startup Odisha Ltd. is a section 8 company, the quorum will be decided as per above provisions.\n Here 1/4th of total directors is 2. Hence the quorum is 2.\n (iii) Interested Director means any director whose presence cannot counted for the purpose of forming a\n quorum at a meeting of the Board, at the time of the discussion or vote on any matter.\n The Act prohibits an interested director from participating in the discussion of or voting on, any\n contract or arrangement entered into, or to be entered into, by or on behalf of the company in which\n his presence shall not be counted for the purpose of forming a quorum at the time of any such discussion\n or vote and if he does vote, his vote shall be void.\n There is requirement of 12/3 i.e., 4 directors to be quorum, However, now 8 directors are present\n (excluding the interested director); Hence quorum is available for a valid BOD meeting of X Ltd.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "State the restrictions on dealing in foreign exchange and holding of foreign exchange or foreign securities, as per the provisions of the Foreign Exchange Management Act, 1999.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(a) Restriction in dealing in foreign exchange, etc. (Section 3) under FEMA\n Section 3 prohibits the following transactions, namely:\n (i) dealing in or transferring any foreign exchange or foreign securities by any person not being an\n authorized person.\n (ii) making any payment to or for the credit of any person resident outside India in any manner.\n (iii) receiving otherwise than through an authorized person, any payment by order or on behalf of any person\n resident outside India in any manner.\n (iv) entering into any financial transaction in India as consideration for or in association with acquisition or\n creation or transfer of a right to acquire, any asset outside India by any person.\n (b) Restriction in holding of foreign exchange (Section 4)\n\n No person resident in India shall acquire, hold, own, possess or transfer any foreign exchange,\n foreign security or any immovable property situated outside India, other than those provided under\n the relevant Rules. Rules provide exemption as under.\n (i) Property held outside India by a foreign citizen resident in India.\n (ii) Property acquired by a person on or before 8th July, 1947 and held with the permission of Reserve\n Bank.\n (iii) Property acquired by way of gift or inheritance from persons referred to in above.\n (iv) Property purchased out of funds held in RFC account.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "RR Ltd. is a public limited company, having its registered office in Bengaluru, and has been in existence since March, 2010. The following is the summarised position of its financial results for the past four years (₹ in crores):\n\n| Particulars | 2019-20 | 2020-21 | 2021-22 | 2022-23 |\n|---|---|---|---|---|\n| Net worth | 303 | 319 | 368 | 503 |\n| Turnover | 500 | 490 | 680 | 890 |\n| Net profit | 6.1 | 6.9 | 7.9 | 8.9 |\n\nIn the light of above facts, examine the following issues:\n(i) Does the company come within the purview of CSR Regulations?\n(ii) Is CSR Committee required to be formed?\n(iii) What will be the minimum budget for CSR compliance, for the year 2023-24?\n(iv) What are the other CSR obligations under the provisions of the Companies Act, 2013?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Whether RR Ltd comes within the purview of CSR Regulations\n As per section 135(1) of the Companies Act, 2013, the CSR regulations will apply where any of the\n following conditions are fulfilled:\n • Net worth of Rs. 500 crores or more, or\n • Turnover of Rs.1000 or more, or\n • Net profit of Rs. 5 crores\n Since RR Ltd. fulfils the net profit criteria, CSR Regulations will apply.\n (ii) Formation of CSR Committee Yes, where a company comes under the purview of section 135 of the\n Act, CSR Committee is required to be formed.\n\n (iii) Minimum budget for CSR for 2023-24 Average profits for the last 3 years = 6.9+7.9+8.9=23.7/3 =\n 7.9 crores Minimum budget for CSR for 2023-24= 2% of 7.9 = Rs.15.8 lakhs\n\n (iv) Other CSR obligations\n • The amount has to be spent before the end of the financial year.\n • The details of the CSR spending have to be furnished in the Report of the Board of Directors.\n • Form CSR 1 has to be filed.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The Board of Directors of Mckinsy Ltd., a listed company, appointed Dinesh, as an Executive Director at the Board Meeting held on June 1, 2023. The Company took up this appointment of Dinesh, for approval of the shareholders at its Annual General Meeting (AGM) held on September 29, 2023, but the same was not approved by the shareholders. However, he was appointed as an Additional Director on whole time employment by the Board at its meeting held on September 30, 2023 by passing a resolution to hold the office of directorship till the conclusion of the next AGM, to be held for the year 2024. Is appointment of Dinesh as an Additional Director, by the Board justified ? Examine the correctness of the aforesaid appointment.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Correctness of the appointment of Dinesh by the BOD of Mickinsy Ltd.\n  According to section 161(1) of the Companies Act, 2013,\n  the Articles of a company may provide that the Board of Directors shall have the power to appoint any\n person, other than a person who fails to get appointed as a director in a general meeting, as an additional\n director\n  at any time who shall hold office up to the date of the next annual general meeting or the last date on\n which the annual general meeting should have been held, whichever is earlier.\n As per the provisions of regulation 17(1C) of the SEBI (LODR) Regulations, 2015, as introduced with\n effect from 1.1.2022\n  a listed entity shall ensure that approval of shareholders for appointment of a person on the Board of\n the company as a director or as a manager is taken at the next general meeting or within a time period\n of 3 months from the date of appointment, whichever is earlier.\n  However, according to the first proviso to Regulation 17(1C), a public sector company shall ensure\n that the approval of the shareholders for appointment or re-appointment of a person on the Board of\n Directors or as a Manager is taken at the next general meeting.\n  Further the second proviso to regulation 17(1C) provides that the appointment or a reappointment of a\n person, including as a managing director or a whole-time director or a manger, who was earlier rejected\n by the shareholders at a general meeting, shall be done only with the prior approval of shareholders.\n In the light of above, the appointment of Dinesh as Director is not justified.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A PSU awarded two contracts—one in favour of Gaman Infrastructure Project Ltd. (GIPL) and another in favour of Simple Infrastructure Ltd. (SIL). Ranjan was the CMD of GIPL at the time of award of contract. GIPL and SIL had entered into two shareholders agreements which were terminated later on by the GIPL Board. Ranjan sold shares of GIPL before it was intimated to the Nationsal Stock Exchange. SEBI charged Ranjan as guilty of insider trading. However, Ranjan took a plea that this was necessary as part of corporate restructuring to prevent GIPL parent company from going into bankruptcy, which was factually found to be correct.\n\nExamine the following issues:\n(i) Is Ranjan an insider in this case? What is his liability, if any?\n(ii) What is the meaning of Unpublished price sensitive information?\n(iii) Are the charges of SEBI correct?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Insider trading under SEBI Regulations (i)\n Is Ranjan an Insider?\n ―Insider‖ means any person who is:\n  a. a connected person; or\n  b. in possession of or having access to unpublished price sensitive information;\n Since Ranjan was the CMD having possession of the unpublished information, he is an insider. Listed\n entities shall have a process for how and when people are brought ‗inside‘ on sensitive transactions.\n Individuals should be made aware of the duties and responsibilities attached to the receipt of Inside\n Information, and the liability that attaches to misuse or unwarranted use of such price sensitive\n information.\n(ii) Unpublished price sensitive information\n ―Unpublished price sensitive information‖ means any information, relating to a company or its\n securities, ,directly or indirectly, that is not generally available which upon becoming generally\n available, is likely to materially affect the price of the securities and shall, ordinarily including but not\n restricted to, information relating to the following:\n  (i) financial results;\n  (ii) dividends;\n  (iii) change in capital structure;\n  (iv) mergers, de-mergers, acquisitions, de-listings, disposals and expansion of business and such other\n transactions;\n  (v) changes in key managerial personnel; and\n  (vi) material events in accordance with the listing agreement.\n In this case the cancellation of agreement is having material impact also.\n  (vii) Correctness of charges of SEBI\n On the one hand there is clear insider trading but on the other hand the motive is important. In a case,\n Supreme Court held that although the information was price sensitive , Ranjans sale was a case of\n ―distressed Sale‖ and cannot be considered as ―insider trading‖(SEBI vs Abhijit Ranjan).\n\n Although superficially it tantamount to violation but as per orders and derivation of court the motive\n of sale is considered and Ranjan is exonerated. Hence SEBI‘s charges will not hold good.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr Paras deals with a company in a manner incompatible with the some of the articles mentioned in the Articles of Association of the company. What will be the consequences of the same? Is there any exception in this regard?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Doctrine of constructive notice\nIn consequences of the registration of the memorandum and articles of association of the company with the\nRegistrar of Companies, a person dealing with the company is deemed to have constructive notice of their\ncontents. This is because these documents are construed as ‗public document‘ under Section 399 of the\nCompanies Act, 2013. Accordingly, if Mr. Paras, deals with a company in a manner incompatible with the\nprovisions of the aforesaid documents or enters into transaction, which is ultra vires to these documents, he\nmust do so at his peril.\n\nWhere the Articles provide that a bill of exchange must be signed by two directors, if the bill is actually signed\nby one director only the holder there of cannot claim payment thereon.\n\n\fHowever, the doctrine of constructive notice is not a positive one but a negative one like that of estoppel of\nwhich it forms parts. It operates only against the person who has been dealing with the company but not\nagainst the company itself.\nPersons in charge of management cannot be prevented from wrong doing on the pretext that he did not know\nthat the constitution of the company rendered a particular act or a particular delegation of authority ultra\nvires. Thus, the doctrine is a ‗cloud‘ for the strangers. The doctrine of indoor management has been\nrecognized in the case of Royal British Bank v. Turquand (1856)6 E&B 327 All ER Rep (435).\n\nWhile an ordinary person dealing with a company is bound to assume that the requisite compliance or\ndelegation of powers to the person dealing on behalf of the company has been made, he need not probe beyond\nwhat is ostensible and evident from the actions.\n\nExceptions to Doctrine of Indoor Management:\nThe aforementioned rule of Indoor Management is important to persons dealing with a company through its\ndirectors or other persons. They are entitled to assume that the acts of the directors or other officers of the\ncompany are validly performed, if they are within the scope of their apparent authority. So long as an act is\nvalid under the articles, if done in a particular manner, an outsider dealing with the company is entitled to\nassume that it has been done in the manner required.\nThe above mentioned doctrine of Indoor Management has limitations of its own. The law will assume that\nthose information which an outsider has reasonable access to and should have known with minimal efforts\nbefore dealing, cannot be a basis of indoor management case in his favour.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What do you mean by “Business Intelligence” in the context of Cyber Security? What are its benefits?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Business intelligence in the context of cyber security\nBusiness Intelligence (BI) is a technology-driven process for analyzing data and delivering actionable\ninformation that helps executives, managers and workers make informed business decisions.\nAs part of the BI process, organizations collect data from internal IT systems and external sources, prepare it\nfor analysis, run queries against the data and create data visualizations, BI dashboards and reports to make the\nanalytics results available to business users for operational decision-making and strategic planning.\n\nBenefits of business intelligence\nA successful BI program produces a variety of business benefits in an organization. For example, BI enables\nC-suite executives and department managers to monitor business performance on an ongoing basis so they can\nact quickly when issues or opportunities arise. Analyzing customer data helps make marketing, sales and\ncustomer service efforts more effective. Supply chain, manufacturing and distribution bottlenecks can be\ndetected before they cause financial harm. HR managers are better able to monitor employee productivity,\nlabor costs and other workforce data.\nOverall, the key benefits that businesses can get from BI applications include the ability to:\n (i) speed up and improve decision-making;\n (ii) optimize internal business processes;\n (iii) increase operational efficiency and productivity;\n (iv) spot business problems that need to be addressed;\n (v) identify emerging business and market trends;\n (vi) develop stronger business strategies;\n (vii) drive higher sales and new revenues; and (viii) gain a competitive edge over rival companies.\n\nBI initiatives also provide narrower business benefits -- among them, making it easier for project managers to\ntrack the status of business projects and for organizations to gather competitive intelligence on their rivals. In\n\faddition, BI, data management and IT teams themselves benefit from business intelligence, using it to\nanalyze various aspects of technology and analytics operations.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 4,
+       "stem_md": "Discuss about the powers of the Competition Commission of India to order division of enterprise enjoying dominant position.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Powers of the Competition Commission of India to order division of enterprise enjoying dominant\nposition.\nThe Commission may, direct division of an enterprise to ensure that such enterprise does not abuse its\ndominant position because of its size. The order may provide for all or any of the following matters,\nnamely:—\n (a) the transfer or vesting of property, rights, liabilities or obligations;\n (b) the adjustment of contracts;\n (c) the creation, allotment, surrender or cancellation of any shares, stocks or securities;\n (d) the formation or winding up of an enterprise\n (e) amendment of the memorandum of association or articles of association",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(c)",
+       "kind": "long_form",
+       "marks": 3,
+       "stem_md": "Briefly enumerate the process of Money Laundering as per the Prevention of Money Laundering Act, 2002.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Process of Money Laundering\n (i) Placement: The Money Launderer introduces the illegal funds into the financial systems. This might\n be done by breaking up large amount of cash into less conspicuous smaller sums which are deposited\n directly into a Bank Account or by purchasing a series of instruments such as Cheques, Bank Drafts\n etc., which are then collected and deposited into one or more accounts at another location.\n (ii) Layering: In this stage, the Money Launderer typically engages in a series of continuous conversions\n or movements of funds, within the financial or banking system by way of numerous accounts, so as to\n hide their true origin and to distance them from their criminal source. The Money Launderer may use\n various channels for movement of funds, like a series of Bank Accounts, sometimes spread across the\n globe, especially in those jurisdictions which do not co-operate in anti Money Laundering\n investigations.\n (iii) Integration: The Launderer moves to this third stage in which th1e funds reach the legitimate\n economy, after getting inseparably mixed with the legitimate money earned through legal sources of\n income. The Money Launderer may invest the funds into real estate, business ventures & luxury assets,\n etc. so that he can enjoy the laundered money, without any fear of law enforcement agencies.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 5,
+       "stem_md": "Briefly discuss about the principles of Indemnity and Subrogation in the context of principles of insurance.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Indemnity and Subrogation\nMost kinds of insurance policies other than life and personal accident insurance are contracts of indemnity\nwhereby the insurer undertakes to indemnify the insured for the actual loss suffered by him as a result of the\noccurring of the event insured against. The happening of the event is neither in the control of the event the\ninsurance company or the indemnified. Even within the maximum limit, the insured cannot recover more than\nwhat he establishes to be his actual loss [Vania Silk Mills (P) Ltd. v. CIT (1991) 4 SCC 22]. A contract of\nmarine insurance is an agreement whereby the insurer undertakes to indemnify the insured to the extent agreed\nupon.\nAlthough the insured is to be placed in the same position as if the loss has not occurred, the amount of\nindemnity may be limited by certain conditions:\n (i) Injury or loss sustained by the insured has to be proved.\n (ii) The indemnity is limited to the amount specified in the policy.\n (iii) The insured is indemnified only for the proximate causes.\n (iv) The market value of the property determines the amount of indemnity.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 5,
+       "stem_md": "What are the restrictions on loans and advances by banks, as envisaged by the Banking Regulations Act, 1949?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Restrictions on loans and advances by banks\nSection 20 lays down the restrictions on banking companies on granting any loan to any of its director or to\nany firm in which a director is interested or to any individual or whom a director stands as a guarantor.\nFurther the banking companies are prohibited from granting loans or advances on the security of its own\nshares. RBI is also empowered to control advances by any bank, on public interest.\nUnder Section 21, the RBI has been empowered to determine the policy to be followed by the banks in\nrelation to advances. Thus, RBI gives directions to banking companies on the following matters:\n (a) The purposes for which an advance may or may not be granted.\n (b) The margins to be maintained in case of secured advances.\n (c) The rate of interest charged on advances, other financial accommodation and commission on\n guarantees.\n (d) The maximum amount of advance or other financial accommodation that a bank may make to or\n guarantee that it may issue for, a single party, having regard to the paid-up capital, reserves and deposits\n of the concerned bank.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(c)",
+       "kind": "long_form",
+       "marks": 4,
+       "stem_md": "State the time limit for payments to be made by buyers to MSMEs and the consequences of delayed payment to them.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Delayed payments to micro and small enterprises\nThe payments to MSME units shall exceed 45 days from the date of acceptance or the day of deemed\nacceptance. In case of failure to do so, the buyer shall be liable to pay compound interest with monthly rests\nto the supplier on that amount from the appointed day or, as the case may be; from the date immediately\nfollowing the date agreed upon by the parties.\nThe interest shall be payable at three times of the bank rate notified by the Reserve Bank. Where any buyer is\nrequired to get his annual accounts audited under any law for the time being in force, such buyer shall furnish\nthe following additional information in his annual statement of accounts, namely:- (1) the principal amount\nand the interest due thereon (to be shown separately) remaining unpaid to any supplier as at the end of each\naccounting year; Interest not to be allowed as deduction from income.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Should investments of a limited company be held in its name only? State the requirements of the Companies Act, 2013 in this regard.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Investments of Company to be held in its own name [Section 187] Section\n187 lays down the norms in this regard.\n (a) All investments made or held by a company in any property, security or other asset shall be made and\n held by it in its own name: Provided the company may hold any shares in its subsidiary company in the\n name of any nominee or nominees of the company, if it is necessary to do so, to ensure that the number\n of members of the subsidiary company is not reduced below the statutory limit.\n\n Example: ABC Ltd. holds 100% of XYZ Ltd. which is a private limited company, where at least two\n members shall be there. ABC Ltd. is one member. ABC Ltd can, therefore, nominate someone as\n shareholder but only one, since this is the minimum requirement of members which it will fall below\n to statutory limit of two members.\n\n (b) Nothing in this Section shall be deemed to prevent a company:\n (1) from depositing with a bank, any shares or securities for the collection of any dividend or interest\n payable thereon.\n (2) from depositing with, or transferring to, or holding in the name of, the State Bank of India or a\n scheduled bank, being the bankers of the company, shares or securities, in order to facilitate the transfer\n thereof:\n (3) from depositing with, or transferring to, any person any shares or securities, by way of security for the\n repayment of any loan.\n\n\f (4) from holding investments in the name of a depository when such investments are in the form of\n securities held by the company as a beneficial owner.\n  (c) Where any shares or securities in which investments have been made by a company are not held by it\n in its own name, the company shall maintain a register which shall contain such particulars as may\n be prescribed and such register shall be open to inspection by any member or debenture-holder of\n the company without any charge during business hours.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Discuss about sustainability reporting in the light of the need for filing of Annual Business Responsibility Report as per SEBI guidelines and connected factors in this regard.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Sustainability reporting Annual Business Responsibility Report (ABRR) has been made compulsory by the\nSecurities and Exchange Bureau of India (SEBI) based on NVGs. It contains a set of useful references and\nresources which businesses may consult as part of their implementation efforts.\nNational Guidelines on Responsible Business There are nine thematic pillars of business responsibility which\nare called Principles. Each Principle is introduced as a statement and followed by a narration of the essential\naspects of the Principle, referred to as the brief description. A reading of each Principle and brief description\nshould provide a clear idea of the essential spirit and intent of the Principle. Each Principle is accompanied by\nCore Elements. The information sought in Annexure 3 of the Guidelines (Business Responsibility Reporting\nFramework) is derived from the Core Elements. The Principles are interdependent, interrelated and non-\ndivisible, and businesses are urged to address them holistically.\n\nAnnexure 1 of the Guidelines provides guidance to all businesses on the adoption and implementation of the\nPrinciples. Furthermore, businesses impact different stakeholders in different ways. Therefore, while applying\nthese principles, businesses need to be sensitive to characteristics, such as caste, creed, sex, race, ethnicity,\nage, colour, religion, disability, socio-economic status or sexual orientation. Though this has not been\nspecifically mentioned in the Principles and Core Elements, businesses are expected to keep this in mind. Most\nimportantly, the ultimate responsibility for adoption of the Principles rests with the highest governance\nstructure of the business.\n\n _________________________________",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

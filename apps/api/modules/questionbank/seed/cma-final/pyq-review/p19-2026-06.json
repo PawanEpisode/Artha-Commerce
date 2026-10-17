@@ -1,0 +1,69 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p19-2026-06",
+ "items": {
+  "1(vii)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answer prints '(B / D)', two accepted options, so the stored single key B is not unambiguous.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Stem table compared with the print and suggested answer compared line by line; stem wording restored where the print differs.",
+   "fixes": [
+    "Item (vii) stem: 'Business Correspondent (BC)' restored to the printed 'Business Corresponded (BC)'."
+   ],
+   "stem_md": "Mr. N.G. Srinivasan engaged in providing various services is registered as a regular taxpayer under GST. He furnished the following information relating to various transactions done for the month of October 2025:\n\n| S. No. | Particulars | Amount (₹) |\n|---|---|---|\n| (i) | Provided services by way of pre-conditioning, pre-cooling, ripening and waxing of fruits. The essential characteristics of fruits remain same. | 42,00,000 |\n| (ii) | Security services received from M/s. KBCL Security Services, sole proprietorship firm, registered under composition scheme at Kanpur, (Uttar Pradesh) | 35,000 |\n| (iii) | Rent received for renting of land for fish farming. | 4,00,000 |\n| (iv) | Received price linked subsidy from M/s Happy Days, a registered Charitable Trust. | 2,00,000 |\n| (v) | Provided services as National Testing Agency to M/s Fine Future Institute, a recognized educational institute for conducting an entrance examination for admission to educational institute. | 1,30,000 |\n| (vi) | Providing rooms having room charges ₹ 4,600 per day to a person receiving health care services from his established health care clinic. | 1,15,000 |\n| (vii) | Provided service as an agent of Business Corresponded (BC) to such Business corresponded who is registered at Mumbai. | 40,000 |\n\nAll amounts given above are exclusive of taxes wherever applicable\nRequired:\nCalculate the amount of taxable supply on which tax to be paid by N.G. Srinivasan for the month of October, 2025 showing each item separately.\nCorrect legal reasoning of each item should form part of your answer",
+   "printed_issues": [
+    "Print has 'Business Corresponded (BC)' in item (vii); suggested answer has 'Business Correspondent (BC)'."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and suggested answer compared with the print; complete, including the December reversal remark.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem and answer name 'SSAL'; answer row (i) reads 'Original Equipment'."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer compared with the print; one wording deviation restored.",
+   "fixes": [
+    "'i.e. 948 or 250' restored to the printed 'I ie 948 or 250'."
+   ],
+   "answer_md": "Determination of Value of Supply as per CGST Rules, 2017 for S Anand Lakshmi Forex Solutions Private Limited\n\n(1) Value of Supply under Rule 32(2)(b) of the CGST Rules, 2017\nRule 32(2)(b) provides that value in relation to the supply of foreign currency, including money changing shall be deemed to be\n\n| S. No. | Currency exchanged | Value of supply |\n|---|---|---|\n| 1. | Upto ₹ 1,00,000 | 1% of the gross amount of currency exchanged OR ₹ 250 whichever is higher |\n| 2. | Exceeding ₹ 1,00,000 and upto ₹ 10,00,000 | ₹ 1,000 + 0.50% of the (gross amount of currency exchanged - ₹ 1,00,000) |\n| 3. | Exceeding ₹ 10,00,000 | ₹ 5,500 + 0.1% of the (gross amount of currency exchanged - ₹ 10,00,000) OR ₹ 60,000 whichever is lower |\n\nCase 1: For the purchase of 1,200 USD from Bincon traders:\nGross amount of currency exchanged: $\\text{₹ }79 \\times 1{,}200 = 94{,}800$\nSince the amount is less than ₹ 1,00,000, the value of supply is 1% of the gross amount or ₹ 250, whichever is higher. I ie 948 or 250\nTherefore, Value of supply $= \\text{₹ }948$\n\nCase 2: For the sale of 2,600 USD to Meera Exports:\nGross amount of currency exchanged: $\\text{₹ }78 \\times 2{,}600 = \\text{₹ }2{,}02{,}800$\nSince the amount exceeds ₹ 1,00,000 but is less than ₹ 10,00,000, the value of supply is $\\text{₹ }1{,}000 + 0.50\\%\\text{ of }(\\text{₹ }2{,}02{,}800 - \\text{₹ }1{,}00{,}000)$.\n$1000+ 514$\nTherefore, Value of supply $= \\text{₹ }1{,}514$\n\n(2) Value of Supply under Rule 32(2)(a) of the CGST Rules, 2017\nKey Aspects of Rule 32(2)(a) and related provisions:\n• Rule 32(2)(a) of the CGST Rules, 2017, It enables the supplier to calculate the value based on the difference between the RBI rate and buying/selling rate, If RBI Reference Rate is available\n• If no RBI Reference Rate: the rate determined by 1% of the gross amount of Indian Rupees provided or received.\n• No Indian Rupees Involved: If neither currency exchanged is Indian Rupees, the value is 1% of the lesser of the two amounts that the person changing the money would have received by converting into Indian Rupees at the RBI reference rate, say\n\nCase 1: For the purchase of 1,200 USD from Bincon traders:\n$(\\text{RBI reference rate} - \\text{transaction rate}) \\times \\text{Amount in USD}$\nCalculation: $(\\text{₹ }80.80 - \\text{₹ }79) \\times 1{,}200\\text{ USD}$\nTherefore, Value of supply $= \\text{₹ }2{,}160$\n\nCase 2: For the sale of 2,600 USD to Meera Exports:\n$1\\%\\text{ of }(\\text{Transaction rate} \\times \\text{Amount in USD})$\nCalculation: $1\\%\\text{ of }(\\text{₹ }78 \\times 2{,}600\\text{ USD})$\nValue of supply $= \\text{₹ }2{,}028$",
+   "printed_issues": [
+    "Print 'I ie 948 or 250'.",
+    "Case 1 line says 'purchase', Case 2 'sale' as in the stem.",
+    "Rule 32(2)(a) figures 2,160 and 2,028 as printed.",
+    "Third bullet under Rule 32(2)(a) ends 'say'."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer compared with the print; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says '16 month and 16 days' while the stem says 16 months and 17 days.",
+    "Print writes '2-1/2%' as plain text."
+   ]
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and suggested answer table compared with the print; all figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer table plus alternate-answers note compared with the print; complete.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem names 'GJ Enterprises' in the facts and 'Beta Enterprises' in the order.",
+    "Answer (iv) says the earlier deposit counts towards the total yet is not adjustable against the fresh deposit."
+   ]
+  }
+ }
+}

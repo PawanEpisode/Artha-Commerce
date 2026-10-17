@@ -1,0 +1,42 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p20a-2024-12",
+ "items": {
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Derivative lines and the stacked fraction follow the printed working.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "ROA and ROE rows (27.59, 55.46 etc.) do not equal margin x turnover (x equity multiplier) as percentages but are printed as such"
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem calls the company 'Sundar Televisions Ltd.' in the data and 'Smart Televisions Ltd.' in the comparables sentence"
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer labels the year as '6' ('Required value PE Investments 6', 'Estimated Equity Value 6') although the holding period is 5 years"
+   ]
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": []
+  }
+ }
+}

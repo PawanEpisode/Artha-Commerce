@@ -1,0 +1,1063 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "13",
+ "source_file": "pyq-transcriptions/p13-2025-06.json",
+ "paper_review": [
+  "Page 8 of the PDF is blank. Q1 (i)-(iv) share a case paragraph. Answer text from OCR of suggested-answer PDF with page-number/watermark noise removed; table in 4(a) answer reproduced as OCR text lines."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p13:2025-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "corporate-and-economic-laws",
+  "term_code": "2025-06",
+  "title": "CMA Final June 2025: Corporate and Economic Laws (Paper 13)",
+  "paper_code": "P13",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the most appropriate option for the following MCQs: 2×15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (i) to (iv)\n>\n> New Horizon Limited (NHL) is a company with paid up capital of INR 50 crore and turnover of INR 340 crore. Mr. Uttam Kumar (UK), who is the promoter and MD of the company, wants to run the company complying with all laws and regulations. The Chairman is non-executive and is an eminent academician; he is not an independent director. There are two more directors, one is Director (Finance), Mr. Verma and the other, Director (Commercial) Mr. Raman Kumar, who is related to the promoter. The company is in the process of taking substantial loan for capital investment from SBI, whereby SBI will nominate a woman director on the Board of Directors (BOD). Based on these facts, UK wants to clarify the following issues from you [MCQs (i) to (iv)]:\n\nIs the present BOD properly constituted?— Which of the following statements is correct?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "NHL is an unlisted company with four directors, the present Board is properly constituted.",
+      "is_correct": false
+     },
+     {
+      "body_md": "NHL is an unlisted company with four directors, which is properly constituted, but since the turnover is more than ₹300 crore, a woman director is required, which requirement is met.",
+      "is_correct": false
+     },
+     {
+      "body_md": "NHL is an unlisted company with four directors, which is not properly constituted, since the requirement relating to independent director is not met.",
+      "is_correct": false
+     },
+     {
+      "body_md": "NHL is an unlisted company with four directors, which is not properly constituted, since the requirements relating to independent director and woman director are not met.",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.91,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(i)-1(iv)"
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (i) to (iv)\n>\n> New Horizon Limited (NHL) is a company with paid up capital of INR 50 crore and turnover of INR 340 crore. Mr. Uttam Kumar (UK), who is the promoter and MD of the company, wants to run the company complying with all laws and regulations. The Chairman is non-executive and is an eminent academician; he is not an independent director. There are two more directors, one is Director (Finance), Mr. Verma and the other, Director (Commercial) Mr. Raman Kumar, who is related to the promoter. The company is in the process of taking substantial loan for capital investment from SBI, whereby SBI will nominate a woman director on the Board of Directors (BOD). Based on these facts, UK wants to clarify the following issues from you [MCQs (i) to (iv)]:\n\nCan Mr. Raman Kumar be considered as independent director?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Yes, since he is related to UK.",
+      "is_correct": false
+     },
+     {
+      "body_md": "No, since he is related to UK.",
+      "is_correct": true
+     },
+     {
+      "body_md": "Yes, since he is commercial Director.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Yes, since he is a whole time/functional Director.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.91,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(i)-1(iv)"
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (i) to (iv)\n>\n> New Horizon Limited (NHL) is a company with paid up capital of INR 50 crore and turnover of INR 340 crore. Mr. Uttam Kumar (UK), who is the promoter and MD of the company, wants to run the company complying with all laws and regulations. The Chairman is non-executive and is an eminent academician; he is not an independent director. There are two more directors, one is Director (Finance), Mr. Verma and the other, Director (Commercial) Mr. Raman Kumar, who is related to the promoter. The company is in the process of taking substantial loan for capital investment from SBI, whereby SBI will nominate a woman director on the Board of Directors (BOD). Based on these facts, UK wants to clarify the following issues from you [MCQs (i) to (iv)]:\n\nIs there any need of woman director?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Yes, since the turnover is more than ₹300 crore.",
+      "is_correct": true
+     },
+     {
+      "body_md": "No, since the paid up capital is not more than ₹100 crore.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Yes, SBI will nominate a director in the Board.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Insufficient information to arrive at proper conclusion.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.91,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(i)-1(iv)"
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (i) to (iv)\n>\n> New Horizon Limited (NHL) is a company with paid up capital of INR 50 crore and turnover of INR 340 crore. Mr. Uttam Kumar (UK), who is the promoter and MD of the company, wants to run the company complying with all laws and regulations. The Chairman is non-executive and is an eminent academician; he is not an independent director. There are two more directors, one is Director (Finance), Mr. Verma and the other, Director (Commercial) Mr. Raman Kumar, who is related to the promoter. The company is in the process of taking substantial loan for capital investment from SBI, whereby SBI will nominate a woman director on the Board of Directors (BOD). Based on these facts, UK wants to clarify the following issues from you [MCQs (i) to (iv)]:\n\nWhat will be the status of the director nominated by SBI? Can she be treated as woman director?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "No, she will be classified as Interested Director.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Yes, SBI has right to nominate any woman director in the Board.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Yes, a nominee director, if woman, can be regarded as woman director.",
+      "is_correct": true
+     },
+     {
+      "body_md": "No, she will be classified only as Nominee Director, and not woman director.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.92,
+    "mapping_state": "confirmed",
+    "publish": true,
+    "case_group": "1(i)-1(iv)"
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In case of private limited companies, as per the Companies Act, 2013, the criteria for appointment of internal auditor is.\n1. turnover ₹100 crore or more.\n2. turnover ₹200 crore or more.\n3. outstanding liability from banks or financial institutions ₹100 crore.\n4. outstanding liability from banks or financial institutions ₹200 crore.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "2 and 3",
+      "is_correct": true
+     },
+     {
+      "body_md": "1 and 3",
+      "is_correct": false
+     },
+     {
+      "body_md": "1 and 4",
+      "is_correct": false
+     },
+     {
+      "body_md": "2 and 4",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.58,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following will qualify as CSR expenditure?\n1. Donation to unrecognized charitable institution.\n2. Contribution to funds under Schedule VII of the Companies Act, 2013.\n3. Expenditure incurred for activates under Schedule VII of the Companies Act, 2013.\n4. Direct implementation of CSR projects by the company.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "1 and 2",
+      "is_correct": false
+     },
+     {
+      "body_md": "1, 3 and 4",
+      "is_correct": false
+     },
+     {
+      "body_md": "2, 3 and 4",
+      "is_correct": true
+     },
+     {
+      "body_md": "1, 2, 3 and 4",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.83,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The Insolvency and Bankruptcy Code, 2016 is not applicable on",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "companies incorporated under the Companies Act, 2013.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Financial Service Providers.",
+      "is_correct": true
+     },
+     {
+      "body_md": "Limited Liability Partnership (LLP).",
+      "is_correct": false
+     },
+     {
+      "body_md": "Partnership Firms and individuals.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "insolvency-and-bankruptcy-code-2016",
+    "mapping_confidence": 0.93,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Under the IBC, a person shall not be eligible to submit a resolution plan, if such person, or any other person acting jointly or in concert with such person\n1. is an undischarged insolvent.\n2. at the time of submission of plan, has an account, or an account of a corporate debtor under the management or control of such person or of whom such person is a promoter, classified as non-performing asset.\n3. is a willful defaulter of the time of submission of resolution plan.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "1, 2 and 3",
+      "is_correct": true
+     },
+     {
+      "body_md": "1 and 2",
+      "is_correct": false
+     },
+     {
+      "body_md": "1 and 3",
+      "is_correct": false
+     },
+     {
+      "body_md": "2 and 3",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "SEBI has three functions rolled into one body. Which of the following is not the function of SEBI?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Quasi-legislative",
+      "is_correct": false
+     },
+     {
+      "body_md": "Quasi-judicial",
+      "is_correct": false
+     },
+     {
+      "body_md": "Quasi-executive",
+      "is_correct": false
+     },
+     {
+      "body_md": "Quasi-official",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "sebi-laws-and-regulations",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Unfair competition under the Competition Act, 2002 means adoption of practices viz. —\n1. Collusive price fixing\n2. Allocation of markets\n3. Discriminatory pricing",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "1 only",
+      "is_correct": false
+     },
+     {
+      "body_md": "1, 2 and 3",
+      "is_correct": true
+     },
+     {
+      "body_md": "1 and 2",
+      "is_correct": false
+     },
+     {
+      "body_md": "2 and 3",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-competition-act-2002",
+    "mapping_confidence": 0.9,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "In the course of doing business if a MSME unit goes to next category,",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "it shall cease to avail all the MEME benefits.",
+      "is_correct": false
+     },
+     {
+      "body_md": "it shall continue to avail all non-tax benefits for next 2 years.",
+      "is_correct": false
+     },
+     {
+      "body_md": "it shall continue to avail all non-tax benefits for next 3 years.",
+      "is_correct": true
+     },
+     {
+      "body_md": "it can avail only for the next one Financial year.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "specific-legal-provisions-related-to-msme-sector",
+    "mapping_confidence": 0.89,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The ultimate order of winding up of a banking company in India, emerges from the",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "order of the RBI.",
+      "is_correct": false
+     },
+     {
+      "body_md": "order of the Central Government.",
+      "is_correct": false
+     },
+     {
+      "body_md": "order of the RBI on request by the members of banking company.",
+      "is_correct": false
+     },
+     {
+      "body_md": "orders of the jurisdictional High Court.",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "laws-and-regulations-related-to-banking-sector",
+    "mapping_confidence": 0.72,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Venus Ltd., an Indian company, has issued equity shares to Mr. K, a resident in Singapore. Under the Indian Law, such shares are",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Indian securities.",
+      "is_correct": true
+     },
+     {
+      "body_md": "foreign securities.",
+      "is_correct": false
+     },
+     {
+      "body_md": "neither Indian securities, nor foreign securities.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Indian or foreign securities.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "corporate-governance-social-responsibility-and-sustainability",
+    "mapping_confidence": 0.57,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which among the following is not a cyber crime under the Information Technology Act, 2000?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Sending threatening messages by email.",
+      "is_correct": true
+     },
+     {
+      "body_md": "Tampering with computer source documents.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Hacking with computer systems, data alteration.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Publishing obscene information.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "laws-and-regulations-related-to-cyber-security-and-data-privacy",
+    "mapping_confidence": 0.81,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Insurance policy issued by an insurer shall not be questioned after ______ years.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "2",
+      "is_correct": false
+     },
+     {
+      "body_md": "3",
+      "is_correct": true
+     },
+     {
+      "body_md": "4",
+      "is_correct": false
+     },
+     {
+      "body_md": "5",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "laws-and-regulations-related-to-insurance-sector",
+    "mapping_confidence": 0.8,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Examine whether investments made or held by a company must be in its own name. Elucidate the exemptions, if any, enshrined in Section 187 of the Companies Act, 2013.",
+    "parent_ref": "2",
+    "explanation_md": "Investment to be in the name of the company: Sec 187\n(a) All investments made or held by a company in any property, security or other asset shall be made and\n held by it in its own name:\n\n Provided that the company may hold any shares in its subsidiary company in the name of any nominee\n or nominees of the company, if it is necessary to do so, to ensure that the number of members of the\n subsidiary company is not reduced below the statutory limit.\n\n Example:\n ABC Ltd. holds 100% of XYZ Ltd. which is a private limited company, where at least two members\n shall be there. ABC Ltd. is one member. ABC Ltd can, therefore, nominate someone as shareholder but\n only one, since this is the minimum requirement of members which it will fall below to statutory limit\n of two members.\n\n(b) Nothing in this Section shall be deemed to prevent a company:\n• from depositing with a bank, any shares or securities for the collection of any dividend or interest\n payable thereon.\n\n• from depositing with, or transferring to, or holding in the name of, the State Bank of India or a\n scheduled bank, being the bankers of the company, shares or securities, in order to facilitate the transfer\n thereof:\n\f• from depositing with, or transferring to, any person any shares or securities, by way of security for the\n repayment of any loan.\n\n• from holding investments in the name of a depository when such investments are in the form of\n securities held by the company as a beneficial owner.\n\n(c) Where any shares or securities in which investments have been made by a company are not held by it in\n its own name, the company shall maintain a register which shall contain such particulars as may be\n prescribed and such register shall be open to inspection by any member or debenture-holder of the\n company without any charge during business hours.",
+    "reference_solution_md": "Investment to be in the name of the company: Sec 187\n(a) All investments made or held by a company in any property, security or other asset shall be made and\n held by it in its own name:\n\n Provided that the company may hold any shares in its subsidiary company in the name of any nominee\n or nominees of the company, if it is necessary to do so, to ensure that the number of members of the\n subsidiary company is not reduced below the statutory limit.\n\n Example:\n ABC Ltd. holds 100% of XYZ Ltd. which is a private limited company, where at least two members\n shall be there. ABC Ltd. is one member. ABC Ltd can, therefore, nominate someone as shareholder but\n only one, since this is the minimum requirement of members which it will fall below to statutory limit\n of two members.\n\n(b) Nothing in this Section shall be deemed to prevent a company:\n• from depositing with a bank, any shares or securities for the collection of any dividend or interest\n payable thereon.\n\n• from depositing with, or transferring to, or holding in the name of, the State Bank of India or a\n scheduled bank, being the bankers of the company, shares or securities, in order to facilitate the transfer\n thereof:\n\f• from depositing with, or transferring to, any person any shares or securities, by way of security for the\n repayment of any loan.\n\n• from holding investments in the name of a depository when such investments are in the form of\n securities held by the company as a beneficial owner.\n\n(c) Where any shares or securities in which investments have been made by a company are not held by it in\n its own name, the company shall maintain a register which shall contain such particulars as may be\n prescribed and such register shall be open to inspection by any member or debenture-holder of the\n company without any charge during business hours.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.86,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Discuss about the management of affairs of corporate debtors by interim resolution professional under the IBC.",
+    "parent_ref": "2",
+    "explanation_md": "Management of affairs of corporate debtor by interim resolution professional from the date of appointment of\nthe interim resolution professional, the management of the affairs of the corporate debtor shall vest in the\ninterim resolution professional.\n\nThe powers of the Board of directors or the partners of the corporate debtor, as the case may be, shall stand\nsuspended and be exercised by the interim resolution professional.\n\nThe officers and managers of the corporate debtor shall report to the interim resolution professional and\nprovide access to such documents and records of the corporate debtor as may be required by the interim\nresolution professional.\n\nThe financial institutions maintaining accounts of the corporate debtor shall act on the instructions of the\ninterim resolution professional in relation to such accounts and furnish all information relating to the corporate\ndebtor available with them to the interim resolution professional [Section 17(1) of Insolvency and Bankruptcy\nCode, 2016].\n\nThe interim resolution professional shall make every endeavour to protect and preserve the value of the\nproperty of the corporate debtor and manage the operations of the corporate debtor as a going concern.\n\nFor this purpose, he can take any of the actions specified in Section 20(2) of Insolvency and Bankruptcy Code,\n2016.\n\nThis includes appointments of professionals, entering into contracts, raise interim finance, issue instructions to\nthe employees and any action deemed necessary.",
+    "reference_solution_md": "Management of affairs of corporate debtor by interim resolution professional from the date of appointment of\nthe interim resolution professional, the management of the affairs of the corporate debtor shall vest in the\ninterim resolution professional.\n\nThe powers of the Board of directors or the partners of the corporate debtor, as the case may be, shall stand\nsuspended and be exercised by the interim resolution professional.\n\nThe officers and managers of the corporate debtor shall report to the interim resolution professional and\nprovide access to such documents and records of the corporate debtor as may be required by the interim\nresolution professional.\n\nThe financial institutions maintaining accounts of the corporate debtor shall act on the instructions of the\ninterim resolution professional in relation to such accounts and furnish all information relating to the corporate\ndebtor available with them to the interim resolution professional [Section 17(1) of Insolvency and Bankruptcy\nCode, 2016].\n\nThe interim resolution professional shall make every endeavour to protect and preserve the value of the\nproperty of the corporate debtor and manage the operations of the corporate debtor as a going concern.\n\nFor this purpose, he can take any of the actions specified in Section 20(2) of Insolvency and Bankruptcy Code,\n2016.\n\nThis includes appointments of professionals, entering into contracts, raise interim finance, issue instructions to\nthe employees and any action deemed necessary.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.65,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What is the required quorum for holding a Board meeting, as per the provisions of the Companies Act, 2013? Examine the following cases in this context:\n(i) In a Board meeting, only 3 directors were present out of the total of 11 directors. None of the 3 directors was interested in any of the items of the agenda. Examine the validity of meeting.\n(ii) In a meeting of the Board, out of the total of 11 directors, 5 directors were present, of which only 2 directors were not interested in one of the transactions. How should the meeting deal with the matter?",
+    "parent_ref": "3",
+    "explanation_md": "Quorum for Board meetings\nThe provisions relating to quorum for a Board meeting are contained in section 174.\n\nUnless the articles provide for a higher quorum, the quorum shall be 1/3rd of the total strength' (any fraction\ncontained in that 1/3rd shall be rounded off to one) or two directors whichever is higher [Section 174(1)].\n\nHowever, section 174(3) states that where at any time the number of interested directors (present in the Board\nmeeting) exceeds or is equal to 2/3rd of the 'total strength' (any fraction contained in that 2/3rd shall be\nrounded off as one), the number of disinterested directors present at the meeting, being not less than two, shall\nbe the quorum.\n\f• In the instant case, 1/3rd of 11 comes to 3.67; the fraction 0.67 shall be rounded off to 1. Thus, at least\n 4 disinterested directors must be present in the Board meeting. However, only 3 directors are present in\n the Board meeting.\n Moreover, there is no interested director present in the meeting and so, the benefit of section 174(3)\n cannot be availed.\n Hence, the quorum was not present and so the meeting has not been validly held.\n\n• In the given case, the required quorum comes to 4 directors, 5 were present, so the basic requirement is\n fulfilled.\n\n During one of the transactions, only 2 directors were not interested. The requirement of section 174(3)\n is met with.\n The quorum requirement is thus fulfilled.",
+    "reference_solution_md": "Quorum for Board meetings\nThe provisions relating to quorum for a Board meeting are contained in section 174.\n\nUnless the articles provide for a higher quorum, the quorum shall be 1/3rd of the total strength' (any fraction\ncontained in that 1/3rd shall be rounded off to one) or two directors whichever is higher [Section 174(1)].\n\nHowever, section 174(3) states that where at any time the number of interested directors (present in the Board\nmeeting) exceeds or is equal to 2/3rd of the 'total strength' (any fraction contained in that 2/3rd shall be\nrounded off as one), the number of disinterested directors present at the meeting, being not less than two, shall\nbe the quorum.\n\f• In the instant case, 1/3rd of 11 comes to 3.67; the fraction 0.67 shall be rounded off to 1. Thus, at least\n 4 disinterested directors must be present in the Board meeting. However, only 3 directors are present in\n the Board meeting.\n Moreover, there is no interested director present in the meeting and so, the benefit of section 174(3)\n cannot be availed.\n Hence, the quorum was not present and so the meeting has not been validly held.\n\n• In the given case, the required quorum comes to 4 directors, 5 were present, so the basic requirement is\n fulfilled.\n\n During one of the transactions, only 2 directors were not interested. The requirement of section 174(3)\n is met with.\n The quorum requirement is thus fulfilled.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.94,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Corporate governance is important in a family business also. Summarise the key points in evolving corporate governance in family businesses.",
+    "parent_ref": "3",
+    "explanation_md": "Corporate Governance in Family Business – Summary\n\n1. Balancing Family and Business Interests\n Family businesses often struggle to balance emotional family ties with professional business decisions.\n Good governance helps manage conflicts, ensures objectivity, and separates personal issues from\n business matters.\n2. Importance of Succession Planning\n A major governance challenge is preparing for leadership transition. Clear succession plans reduce\n uncertainty, prevent disputes, and ensure business continuity across generations.\n\n3. Formal Governance Structures\n Introducing structured governance mechanisms like a board of directors, family council, and family\n constitution helps define roles, responsibilities, and decision-making processes, fostering transparency\n and accountability.\n4. Professionalization of the Business\n Hiring non-family professionals and setting clear job descriptions and performance expectations\n reduces nepotism, enhances efficiency, and ensures business decisions are made on merit.\n\n5. Conflict Resolution Mechanisms\n Family businesses are prone to internal conflicts. Having pre-agreed mechanisms (e.g., mediation\n clauses, voting rights, conflict resolution committees) ensures smooth functioning and preserves\n relationships.\n\n6. Communication and Transparency\n Open communication builds trust between family members and non-family stakeholders. Regular\n meetings, clear financial reporting, and shared vision statements are critical for alignment.\n\n7. Preserving Family Legacy and Values\n Governance is not only about business—it also protects the family’s long-term values and legacy. A\n documented set of shared principles (e.g., mission, vision, code of ethics) guides behaviour and\n preserves identity.",
+    "reference_solution_md": "Corporate Governance in Family Business – Summary\n\n1. Balancing Family and Business Interests\n Family businesses often struggle to balance emotional family ties with professional business decisions.\n Good governance helps manage conflicts, ensures objectivity, and separates personal issues from\n business matters.\n2. Importance of Succession Planning\n A major governance challenge is preparing for leadership transition. Clear succession plans reduce\n uncertainty, prevent disputes, and ensure business continuity across generations.\n\n3. Formal Governance Structures\n Introducing structured governance mechanisms like a board of directors, family council, and family\n constitution helps define roles, responsibilities, and decision-making processes, fostering transparency\n and accountability.\n4. Professionalization of the Business\n Hiring non-family professionals and setting clear job descriptions and performance expectations\n reduces nepotism, enhances efficiency, and ensures business decisions are made on merit.\n\n5. Conflict Resolution Mechanisms\n Family businesses are prone to internal conflicts. Having pre-agreed mechanisms (e.g., mediation\n clauses, voting rights, conflict resolution committees) ensures smooth functioning and preserves\n relationships.\n\n6. Communication and Transparency\n Open communication builds trust between family members and non-family stakeholders. Regular\n meetings, clear financial reporting, and shared vision statements are critical for alignment.\n\n7. Preserving Family Legacy and Values\n Governance is not only about business—it also protects the family’s long-term values and legacy. A\n documented set of shared principles (e.g., mission, vision, code of ethics) guides behaviour and\n preserves identity.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.36,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The following is the extract from the Balance Sheet of XYZ Ltd., as on 31-3-2024:\n\n| Sl. No. | Particulars | Amount (₹ in lakhs) |\n|---|---|---|\n| (i) | Authorised capital | 100 |\n| (ii) | Paid-up Capital | 40 |\n| (iii) | P & L Account balance | 22 |\n| (iv) | Share Premium Account | 10 |\n| (v) | Machinery Revaluation Reserve | 11 |\n| (vi) | Secured loan taken from a nationalised bank (at 11% rate of interest) | 35 |\n\nThe yield of Government security may be taken as under:\n\n| Tenure | Yield |\n|---|---|\n| 1 year | 6.5% |\n| 2 years | 6.7% |\n| 3 years | 6.9% |\n\nABC Ltd., has approached the company for grant of secured loan for ₹40 lakhs for a tenure of 40 months. Can this loan be granted by the Board of Directors at the interest rate of 6.5%?\nWill your answer be different, if the loan is for ₹45 lakhs?",
+    "parent_ref": "4",
+    "explanation_md": "Grant of loan by a public company\nSection 186 of the Act provides Loan and Investment by a Company.\n\nAs stated therein, a company will not acquire by way of subscription, purchase or otherwise, the securities of\nany other body corporate\n\n• exceeding 60% of its paid-up share capital, free reserves and securities premium account and debit or\n credit balance of profit or loss account or\n\n• 100% of its free reserves and securities premium account, whichever is higher.\n\n However, a company can give loans, guarantees and securities or make investments above the\n prescribed limit when it is previously authorised by a special resolution passed in a general meeting.\n\n Loan amount ₹ 40 lakhs\n In the present case, Limit (a) above is\n Particulars Amount (₹ in lakhs)\n Authorised capital Not relevant\n Paid-u capital 40\n P & L account balance 22\n Share premium account 10\n Machinery revaluation reserve Not to be considered\n Secured loan taken from a nationalised bank (at 11% rate of interest) Not relevant\n Total 72\n Eligible amount 60% of 72 43.2\n\n Limit (b) above is\n P & L account balance 22\n Share premium account 10\n Eligible amount (100%) 32\n\nHigher of the above is 43.2 lakhs. Hence as regards the quantum of loan, ₹ 40 lakhs can be granted by the\nBoard.\n\nLoan amount ₹ 45 lakhs\nThe Company can give loan with approval of Board. Where the giving of any loan or guarantee or providing\nany security or the acquisition under Sub-Section (2) exceeds the limits specified in that Sub-Section, prior\napproval by means of a special resolution passed at a general meeting shall be necessary.\n\nRate of interest\nNo loan shall be given under this Section at a rate of interest lower than the prevailing yield of one year, three-\nyear, five year or ten-year Government Security closest to the tenor of the loan.\n\nThe tenor is 40 months and hence 3 years yield has to be taken, i.e. 6.9%\n\nHence, the loan cannot be granted at 6.5%, it must be minimum 6.9.",
+    "reference_solution_md": "Grant of loan by a public company\nSection 186 of the Act provides Loan and Investment by a Company.\n\nAs stated therein, a company will not acquire by way of subscription, purchase or otherwise, the securities of\nany other body corporate\n\n• exceeding 60% of its paid-up share capital, free reserves and securities premium account and debit or\n credit balance of profit or loss account or\n\n• 100% of its free reserves and securities premium account, whichever is higher.\n\n However, a company can give loans, guarantees and securities or make investments above the\n prescribed limit when it is previously authorised by a special resolution passed in a general meeting.\n\n Loan amount ₹ 40 lakhs\n In the present case, Limit (a) above is\n Particulars Amount (₹ in lakhs)\n Authorised capital Not relevant\n Paid-u capital 40\n P & L account balance 22\n Share premium account 10\n Machinery revaluation reserve Not to be considered\n Secured loan taken from a nationalised bank (at 11% rate of interest) Not relevant\n Total 72\n Eligible amount 60% of 72 43.2\n\n Limit (b) above is\n P & L account balance 22\n Share premium account 10\n Eligible amount (100%) 32\n\nHigher of the above is 43.2 lakhs. Hence as regards the quantum of loan, ₹ 40 lakhs can be granted by the\nBoard.\n\nLoan amount ₹ 45 lakhs\nThe Company can give loan with approval of Board. Where the giving of any loan or guarantee or providing\nany security or the acquisition under Sub-Section (2) exceeds the limits specified in that Sub-Section, prior\napproval by means of a special resolution passed at a general meeting shall be necessary.\n\nRate of interest\nNo loan shall be given under this Section at a rate of interest lower than the prevailing yield of one year, three-\nyear, five year or ten-year Government Security closest to the tenor of the loan.\n\nThe tenor is 40 months and hence 3 years yield has to be taken, i.e. 6.9%\n\nHence, the loan cannot be granted at 6.5%, it must be minimum 6.9.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.89,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Explain the obligations of the target company and exemptions conferred under the SEBI Regulations.",
+    "parent_ref": "4",
+    "explanation_md": "Obligations of the target company\n• the Board of directors of such target company shall ensure that during the offer period, the business of\n the target company is conducted in the ordinary course consistent with past practice.\n\n• the target company shall be prohibited from fixing any record date for a corporate action on or after the\n third working day prior to the commencement of the tendering period and until the expiry of the\n tendering period.\n\n• furnish to the acquirer within two working days from the identified date, a list of shareholders as per the\n register of members of the target company containing names, addresses, shareholding and folio number,\n in electronic form, wherever available, and a list of persons whose applications, if any for registration\n of transfer of shares are pending with the target company\n\n• during the offer period:\n\n• unless the approval of shareholders of the target company by way of a special resolution by postal\n ballot is obtained, the board of directors of either the target company or any of its subsidiaries shall not\n\n• alienate any material assets whether by way of sale, lease, encumbrance or otherwise or enter into any\n agreement therefore outside the ordinary course of business.\n\nExemptions\nThe following types of acquisition shall not come under the purview of this regulation\n(a) acquisition in the ordinary course of business by\n(i) Underwriter registered with SEBI\n(ii) Stock Broker registered with SEBI on behalf of client in exercise of lien over the shares purchased on\n behalf of the client\n(iii)  merchant banker registered with the Board or a nominated investor in the process of market making\n(b) any person acquiring shares pursuant to a scheme of safety net\n(c) a merchant banker registered with the Board acting as a stabilizing agent.\n(d) acquiring shares pursuant to an agreement of disinvestment to Reconstruction / Merger /\n Reconstruction/Merger/Amalgamation / Demerger under order of Court to provisions of Securitization\n and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 to provisions of\n Delisting of shares Upon Share Forfeiture of Equity Shares by a Company.",
+    "reference_solution_md": "Obligations of the target company\n• the Board of directors of such target company shall ensure that during the offer period, the business of\n the target company is conducted in the ordinary course consistent with past practice.\n\n• the target company shall be prohibited from fixing any record date for a corporate action on or after the\n third working day prior to the commencement of the tendering period and until the expiry of the\n tendering period.\n\n• furnish to the acquirer within two working days from the identified date, a list of shareholders as per the\n register of members of the target company containing names, addresses, shareholding and folio number,\n in electronic form, wherever available, and a list of persons whose applications, if any for registration\n of transfer of shares are pending with the target company\n\n• during the offer period:\n\n• unless the approval of shareholders of the target company by way of a special resolution by postal\n ballot is obtained, the board of directors of either the target company or any of its subsidiaries shall not\n\n• alienate any material assets whether by way of sale, lease, encumbrance or otherwise or enter into any\n agreement therefore outside the ordinary course of business.\n\nExemptions\nThe following types of acquisition shall not come under the purview of this regulation\n(a) acquisition in the ordinary course of business by\n(i) Underwriter registered with SEBI\n(ii) Stock Broker registered with SEBI on behalf of client in exercise of lien over the shares purchased on\n behalf of the client\n(iii)  merchant banker registered with the Board or a nominated investor in the process of market making\n(b) any person acquiring shares pursuant to a scheme of safety net\n(c) a merchant banker registered with the Board acting as a stabilizing agent.\n(d) acquiring shares pursuant to an agreement of disinvestment to Reconstruction / Merger /\n Reconstruction/Merger/Amalgamation / Demerger under order of Court to provisions of Securitization\n and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 to provisions of\n Delisting of shares Upon Share Forfeiture of Equity Shares by a Company.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.86,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "State the responsibilities of an Audit committee constituted in a company. Is any recommendation of such committee binding on the Board of Directors of the company?",
+    "parent_ref": "5",
+    "explanation_md": "Responsibilities of Audit Committee:\nEvery Audit Committee shall act in accordance with the terms of reference specified in writing by the Board\nwhich shall, inter alia, include:\n\n(1) the recommendation for appointment, remuneration and terms of appointment of auditors of the\n company.\n\n Note: In case of Government companies, in this clause, for the word ‘recommendation for appointment,\n remuneration and of appointment’ the words ‘recommendation for remuneration’ shall be substituted,\n as in case of Govt. company, appointment is made by the C&AG.\n(2) review and monitor the auditor ‘s independence and performance, and effectiveness of audit process.\n\f(3) examination of the financial statement and the auditors’ report thereon.\n(4) approval or any subsequent modification of transactions of the company with related parties.\n\n The Audit Committee may make omnibus approval for related party transactions proposed to be entered\n by the company subject to such conditions as may be prescribed.\n(5) scrutiny of inter-corporate loans and investments.\n(6) valuation of undertakings or assets of the company, wherever it is necessary.\n(7) evaluation of internal financial controls and risk management systems.\n(8) monitoring the end use of funds raised through public offers and related matters.\n\nBinding nature of recommendation of Audit Committee\nLike any other committee, shall be recommendatory in nature.\n\nHowever, if the Board had not accepted any recommendation, the reasons for the same shall be recorded in the\nMinutes of the Board Meeting.\n\nIf the company is a listed company, SEBI (LODR) Regulations require the company to disclose the reasons for\nnot accepting, in the corporate governance section of the Annual Report or to the Stock Exchange.",
+    "reference_solution_md": "Responsibilities of Audit Committee:\nEvery Audit Committee shall act in accordance with the terms of reference specified in writing by the Board\nwhich shall, inter alia, include:\n\n(1) the recommendation for appointment, remuneration and terms of appointment of auditors of the\n company.\n\n Note: In case of Government companies, in this clause, for the word ‘recommendation for appointment,\n remuneration and of appointment’ the words ‘recommendation for remuneration’ shall be substituted,\n as in case of Govt. company, appointment is made by the C&AG.\n(2) review and monitor the auditor ‘s independence and performance, and effectiveness of audit process.\n\f(3) examination of the financial statement and the auditors’ report thereon.\n(4) approval or any subsequent modification of transactions of the company with related parties.\n\n The Audit Committee may make omnibus approval for related party transactions proposed to be entered\n by the company subject to such conditions as may be prescribed.\n(5) scrutiny of inter-corporate loans and investments.\n(6) valuation of undertakings or assets of the company, wherever it is necessary.\n(7) evaluation of internal financial controls and risk management systems.\n(8) monitoring the end use of funds raised through public offers and related matters.\n\nBinding nature of recommendation of Audit Committee\nLike any other committee, shall be recommendatory in nature.\n\nHowever, if the Board had not accepted any recommendation, the reasons for the same shall be recorded in the\nMinutes of the Board Meeting.\n\nIf the company is a listed company, SEBI (LODR) Regulations require the company to disclose the reasons for\nnot accepting, in the corporate governance section of the Annual Report or to the Stock Exchange.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.98,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "(i) Briefly discuss about cyber crimes against persons.\n(ii) Explain the manner and effect of takeover of management under Section 15 of the SARFAESI Act, 2002.",
+    "parent_ref": "5",
+    "explanation_md": "(i) Cybercrimes against persons are:\n Cyber-Stalking:\n It means to create physical threat that creates fear to use the computer technology such as internet, e-\n mail, phones, text messages, webcam, websites or videos.\n\n Obscenity:\n It includes Indecent exposure/ Pornography (basically child pornography), hosting of web site\n containing these prohibited materials.\n\n Defamation:\n It is an act of imputing any person to lower down the dignity of the person by hacking his mail account\n and sending some mails with using vulgar language to unknown persons.\n\n Hacking:\n unauthorized control/access over computer system and act of hacking completely destroys the whole\n data as well as computer programmes\n\n Cracking:\n Cracking means that a stranger has broken into your computer systems without your knowledge and\n consent and has tampered with precious confidential data and information.\n\n Spoofing:\n A spoofed e-mail may be said to be one, which misrepresents its origin. It shows its origin to be\n different from which actually it originates.\n\n Spoofing is a blocking through spam which means the unwanted uninvited messages. Wrongdoer steals\n mobile phone number of any person and sending SMS via internet and receiver gets the SMS from the\n mobile phone number of the victim.\n\n Carding:\n It means false ATM cards i.e. Debit and Credit cards used by criminals for their monetary benefits\n through withdrawing money from the bank account in a mala-fide manner.\n\n Fraud:\n It means the person who is doing the act of cyber crime i.e. stealing password and data storage has done\n it with having guilty mind which leads to fraud and cheating.\n\n Threat:\n refers to threatening a person with fear for their lives or lives of their families through the use of a\n computer network i.e. E-mail, videos or phones.\n\n(ii) Manner and effect of takeover of management (Section 15)\n Section 15 of the SARFAESI Act, 2002 provides for the manner and effect of takeover of management.\n When the management of business of a borrower is taken over by an asset reconstruction company it\n can appoint as many persons as it thinks fit to be the directors, where the borrower is a company, or the\n administrators of the business of the borrower, in any other case. The secured creditor is required to\n publish a notice in a newspaper published in English language and in a newspaper published in an\n Indian language in circulation in the place where the principal office of the borrower is situated.\n\n On the publication of the notice all persons who were directors of the company or administrators of the\n business, as the case may be, are deemed to have vacated their office. It also has the effect of\n termination of all contracts entered into by the borrower with such directors or administrators.\n\n Where the management is taken over by the secured creditor, then, the shareholders shall not nominate\n or appoint any person to be director of the company unless approved by secured creditor\n\n No proceeding for the winding up of such company or for the appointment of a receiver in respect\n thereof shall lie in any court, except with the consent of the secured creditor.\n\n Where the management of the business of a borrower had been taken over by the secured creditor, the\n secured creditor shall, on realization of his debt in full, restore the management of the business of the\n borrower.",
+    "reference_solution_md": "(i) Cybercrimes against persons are:\n Cyber-Stalking:\n It means to create physical threat that creates fear to use the computer technology such as internet, e-\n mail, phones, text messages, webcam, websites or videos.\n\n Obscenity:\n It includes Indecent exposure/ Pornography (basically child pornography), hosting of web site\n containing these prohibited materials.\n\n Defamation:\n It is an act of imputing any person to lower down the dignity of the person by hacking his mail account\n and sending some mails with using vulgar language to unknown persons.\n\n Hacking:\n unauthorized control/access over computer system and act of hacking completely destroys the whole\n data as well as computer programmes\n\n Cracking:\n Cracking means that a stranger has broken into your computer systems without your knowledge and\n consent and has tampered with precious confidential data and information.\n\n Spoofing:\n A spoofed e-mail may be said to be one, which misrepresents its origin. It shows its origin to be\n different from which actually it originates.\n\n Spoofing is a blocking through spam which means the unwanted uninvited messages. Wrongdoer steals\n mobile phone number of any person and sending SMS via internet and receiver gets the SMS from the\n mobile phone number of the victim.\n\n Carding:\n It means false ATM cards i.e. Debit and Credit cards used by criminals for their monetary benefits\n through withdrawing money from the bank account in a mala-fide manner.\n\n Fraud:\n It means the person who is doing the act of cyber crime i.e. stealing password and data storage has done\n it with having guilty mind which leads to fraud and cheating.\n\n Threat:\n refers to threatening a person with fear for their lives or lives of their families through the use of a\n computer network i.e. E-mail, videos or phones.\n\n(ii) Manner and effect of takeover of management (Section 15)\n Section 15 of the SARFAESI Act, 2002 provides for the manner and effect of takeover of management.\n When the management of business of a borrower is taken over by an asset reconstruction company it\n can appoint as many persons as it thinks fit to be the directors, where the borrower is a company, or the\n administrators of the business of the borrower, in any other case. The secured creditor is required to\n publish a notice in a newspaper published in English language and in a newspaper published in an\n Indian language in circulation in the place where the principal office of the borrower is situated.\n\n On the publication of the notice all persons who were directors of the company or administrators of the\n business, as the case may be, are deemed to have vacated their office. It also has the effect of\n termination of all contracts entered into by the borrower with such directors or administrators.\n\n Where the management is taken over by the secured creditor, then, the shareholders shall not nominate\n or appoint any person to be director of the company unless approved by secured creditor\n\n No proceeding for the winding up of such company or for the appointment of a receiver in respect\n thereof shall lie in any court, except with the consent of the secured creditor.\n\n Where the management of the business of a borrower had been taken over by the secured creditor, the\n secured creditor shall, on realization of his debt in full, restore the management of the business of the\n borrower.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "laws-and-regulations-related-to-cyber-security-and-data-privacy",
+    "mapping_confidence": 0.58,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Under the Companies Act, 2013, discuss the obligations in respect of maintenance of registers and records by the companies incorporated in India. Enumerate any ten such registers to be kept and maintained by such companies.",
+    "parent_ref": "6",
+    "explanation_md": "Registers and records to be maintained by companies\nEvery company has to maintain at its registered office certain registers and records for statutory, statistical,\ndisclosure, information management and MIS purposes.\n\nFurther, the company is also required to keep these records within the vicinity of the place prescribed for it by\nthe laws.\n\nEvery company incorporated under the Act is required to keep at its registered office, inter alia, the following\nstatutory books and registers:\n\n• Register of investments in securities not held in company’s name in Form MBP-3. [Under Section\n 187(3)]\n• Register of deposits. [Section73 and Rule14 of the Companies (Acceptance of Deposits) Rules,2014]\n\f• Register of securities bought back in Form SH-10. [Section 68(9)]\n• Register of charges in Form CHG-7. [Section85(1)]\n• Register and index of members in Form MGT-1. [Sections88(1)(a)]\n• Register and index of debenture holders in Form MGT-2. [Section88(1)(b)]\n• Register and index of beneficial owners. [Section88(1)(3)]\n• Foreign register of members and debenture holders and their duplicates in FormMGT-3.\n [Section88(1)(4)]\n• Copies of Annual Return [Section94(1)]\n• Books containing minutes of general meeting and of Board and of committees of Directors.\n [Section118]\n• Register of Postal Ballot [Section 110]",
+    "reference_solution_md": "Registers and records to be maintained by companies\nEvery company has to maintain at its registered office certain registers and records for statutory, statistical,\ndisclosure, information management and MIS purposes.\n\nFurther, the company is also required to keep these records within the vicinity of the place prescribed for it by\nthe laws.\n\nEvery company incorporated under the Act is required to keep at its registered office, inter alia, the following\nstatutory books and registers:\n\n• Register of investments in securities not held in company’s name in Form MBP-3. [Under Section\n 187(3)]\n• Register of deposits. [Section73 and Rule14 of the Companies (Acceptance of Deposits) Rules,2014]\n\f• Register of securities bought back in Form SH-10. [Section 68(9)]\n• Register of charges in Form CHG-7. [Section85(1)]\n• Register and index of members in Form MGT-1. [Sections88(1)(a)]\n• Register and index of debenture holders in Form MGT-2. [Section88(1)(b)]\n• Register and index of beneficial owners. [Section88(1)(3)]\n• Foreign register of members and debenture holders and their duplicates in FormMGT-3.\n [Section88(1)(4)]\n• Copies of Annual Return [Section94(1)]\n• Books containing minutes of general meeting and of Board and of committees of Directors.\n [Section118]\n• Register of Postal Ballot [Section 110]",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.87,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Discuss about the penalty imposable under section 45 of the Indian Competition Act, 2002 for offences in relation to furnishing of information.",
+    "parent_ref": "6",
+    "explanation_md": "Penalty for offences in relation to furnishing of information\nWithout prejudice to the provisions of section 44, if a person, who furnishes or is required to furnish under this\nAct any particulars, documents or any information, —\n\n(a) makes any statement or furnishes any document which he knows or has reason to believe to be false in\n any material particular; or\n\n(b) omits to state any material fact knowing it to be material; or\n\n(c) wilfully alters, suppresses or destroys any document which is required to be furnished as aforesaid,\n such person shall be punishable with fine which may extend to rupees one crore as may be determined\n by the Commission.\n\nthen they are liable to a penalty of up to ₹ 1 lakh for each day during which such failure continues, subject to\na maximum of ₹ 1 crore.\n\nThe Commission may, if it is satisfied impose lesser penalty where it is satisfied that any person has made a\nfull and true disclosure in respect of the alleged violations, a lesser penalty.\n\nHowever, lesser penalty shall not be imposed by the Commission in cases where the report of investigation\ndirected under section 26 of the Indian Competition Act has been received before making of such disclosure.\n\nLesser penalty shall not be imposed by the Commission if the person making the disclosure does not continue\nto cooperate with the Commission till the completion of the proceedings before the Commission.",
+    "reference_solution_md": "Penalty for offences in relation to furnishing of information\nWithout prejudice to the provisions of section 44, if a person, who furnishes or is required to furnish under this\nAct any particulars, documents or any information, —\n\n(a) makes any statement or furnishes any document which he knows or has reason to believe to be false in\n any material particular; or\n\n(b) omits to state any material fact knowing it to be material; or\n\n(c) wilfully alters, suppresses or destroys any document which is required to be furnished as aforesaid,\n such person shall be punishable with fine which may extend to rupees one crore as may be determined\n by the Commission.\n\nthen they are liable to a penalty of up to ₹ 1 lakh for each day during which such failure continues, subject to\na maximum of ₹ 1 crore.\n\nThe Commission may, if it is satisfied impose lesser penalty where it is satisfied that any person has made a\nfull and true disclosure in respect of the alleged violations, a lesser penalty.\n\nHowever, lesser penalty shall not be imposed by the Commission in cases where the report of investigation\ndirected under section 26 of the Indian Competition Act has been received before making of such disclosure.\n\nLesser penalty shall not be imposed by the Commission if the person making the disclosure does not continue\nto cooperate with the Commission till the completion of the proceedings before the Commission.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-competition-act-2002",
+    "mapping_confidence": 0.63,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Explain the various exceptions under the Companies Act, 2013 to the Rule enunciated in the case of Foss vs. Harbottle.",
+    "parent_ref": "7",
+    "explanation_md": "Exceptions to the Rule enunciated in the case of Foss vs Harbottle\nThe Rule in Foss v. Harbottle is not absolute but is subject to certain exceptions. In other words, the Rule of\nsupremacy of the majority is subject to certain exceptions and so that, the minority shareholders are not left\nhelpless and desperate, but they are protected by:\n\n• The Common Law.\n• the provisions of the Companies Act ,2013.\n• Action may be taken by Shareholders under Common Law\n\fThe cases in which the majority rule does not prevail are commonly known as exceptions to the rule in Foss v.\nHarbottle and are available to the minority. In all these cases an individual member may sue for declaration\nthat the resolution complained of is void, or for an injunction to restrain the company from passing it.\n\nThe majority rule will not apply in the following cases.\n• Ultra Viresacts\n Where the directors representing the majority of shareholders perform an illegal or ultravires act for the\n company, an individual shareholder has right to bring an action. In such case a shareholder has the right\n to restrain the company by an order or injunction of the court from carrying out an ultra vires act.\n\n• Fraud on Minority\n Where an act done by the majority amounts to a fraud on the minority. an action can be brought by an\n individual shareholder.\n\n• Wrong doers in charge of the management control\n If the wrongdoers are in control of the company, the minority shareholders’ representative action for\n fraud on the minority will be entertained by the Court as the voice of the Minority Shareholders must be\n heard in such a situation.\n\n• Resolution requiring Special Majority but is passed by a simple majority\n A Minority shareholder can sue if an act requiring a special majority but is passed by a simple majority. An\n individual shareholder has the right of action to restrain the company from acting on a special resolution\n to which the insufficient notice is served.\n\n• Personal actions by shareholders\n Individual member is entitled to all the rights and privileges according to his status as a member. He\n can insist on the strict compliance with the legal rules, statutory provisions. Provisions in the\n memorandum and the articles are mandatory in nature and cannot be waived off by majority\n shareholders.\n\n• Breach of duty\n The minority shareholder may bring an action against the company, where although there is no fraud,\n there is a Breach of duty by directors and majority shareholders to the detriment of the company.",
+    "reference_solution_md": "Exceptions to the Rule enunciated in the case of Foss vs Harbottle\nThe Rule in Foss v. Harbottle is not absolute but is subject to certain exceptions. In other words, the Rule of\nsupremacy of the majority is subject to certain exceptions and so that, the minority shareholders are not left\nhelpless and desperate, but they are protected by:\n\n• The Common Law.\n• the provisions of the Companies Act ,2013.\n• Action may be taken by Shareholders under Common Law\n\fThe cases in which the majority rule does not prevail are commonly known as exceptions to the rule in Foss v.\nHarbottle and are available to the minority. In all these cases an individual member may sue for declaration\nthat the resolution complained of is void, or for an injunction to restrain the company from passing it.\n\nThe majority rule will not apply in the following cases.\n• Ultra Viresacts\n Where the directors representing the majority of shareholders perform an illegal or ultravires act for the\n company, an individual shareholder has right to bring an action. In such case a shareholder has the right\n to restrain the company by an order or injunction of the court from carrying out an ultra vires act.\n\n• Fraud on Minority\n Where an act done by the majority amounts to a fraud on the minority. an action can be brought by an\n individual shareholder.\n\n• Wrong doers in charge of the management control\n If the wrongdoers are in control of the company, the minority shareholders’ representative action for\n fraud on the minority will be entertained by the Court as the voice of the Minority Shareholders must be\n heard in such a situation.\n\n• Resolution requiring Special Majority but is passed by a simple majority\n A Minority shareholder can sue if an act requiring a special majority but is passed by a simple majority. An\n individual shareholder has the right of action to restrain the company from acting on a special resolution\n to which the insufficient notice is served.\n\n• Personal actions by shareholders\n Individual member is entitled to all the rights and privileges according to his status as a member. He\n can insist on the strict compliance with the legal rules, statutory provisions. Provisions in the\n memorandum and the articles are mandatory in nature and cannot be waived off by majority\n shareholders.\n\n• Breach of duty\n The minority shareholder may bring an action against the company, where although there is no fraud,\n there is a Breach of duty by directors and majority shareholders to the detriment of the company.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.84,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "(i) Define MSME enterprises, with classification under the MSMED Act, 2006.\n(ii) Outline the objectives behind setting up of IRDA in India.",
+    "parent_ref": "7",
+    "explanation_md": "(i) MSME\n MSME Stands for Micro, Small and Medium Enterprises which has become a crucial sector to provide\n large scale employment with low Capital base and is defined based on the investment and turnover\n criteria as per MSMED Act ,2006.\n\n Micro Enterprises\n Enterprises with Investment in Plant and Machinery or Equipment of not more than INR 1 crore and\n Annual Turnover of not more than INR 5 crores in a financial year.\n\n Small Enterprises\n Enterprises with Investment in Plant and Machinery or Equipment of not more than INR 10 crores and\n Annual Turnover of not more than INR 50 crores.\n\n Medium Enterprises\n Enterprises with Investment in Plant and Machinery or Equipment of not more than INR 50 crores and\n Annual Turnover of not more than INR 250 crores.\n\n(ii) Objective behind setting up IRDA\n The Insurance Regulatory and Development Authority (IRDA)was established in the year 1999 by the\n Indian Government with the following objectives:\n• To protect the interests of holders of insurance policies.\n• To regulate, promote and ensure orderly growth of the industry\n• Matters connected therewith or incidental thereto.",
+    "reference_solution_md": "(i) MSME\n MSME Stands for Micro, Small and Medium Enterprises which has become a crucial sector to provide\n large scale employment with low Capital base and is defined based on the investment and turnover\n criteria as per MSMED Act ,2006.\n\n Micro Enterprises\n Enterprises with Investment in Plant and Machinery or Equipment of not more than INR 1 crore and\n Annual Turnover of not more than INR 5 crores in a financial year.\n\n Small Enterprises\n Enterprises with Investment in Plant and Machinery or Equipment of not more than INR 10 crores and\n Annual Turnover of not more than INR 50 crores.\n\n Medium Enterprises\n Enterprises with Investment in Plant and Machinery or Equipment of not more than INR 50 crores and\n Annual Turnover of not more than INR 250 crores.\n\n(ii) Objective behind setting up IRDA\n The Insurance Regulatory and Development Authority (IRDA)was established in the year 1999 by the\n Indian Government with the following objectives:\n• To protect the interests of holders of insurance policies.\n• To regulate, promote and ensure orderly growth of the industry\n• Matters connected therewith or incidental thereto.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "specific-legal-provisions-related-to-msme-sector",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "On 10th May, 2024, Budang Pest GmbH (BPG), a German pesticides company, invested Euro 1.5 million (equivalent INR 14.3 crore) in the equity shares of ABC Pesticides Pvt. Ltd. (ABC), an Indian pesticides manufacturer based in Raipur. The shares were issued on 15th May, 2024 under the automatic route and ABC received the funds directly into its designated FDI bank account.\nHowever, due to an oversight, ABC failed to file the Form FC-GPR with the RBI within the stipulated time. The delay was noticed during their internal audit in August, 2024. By then, more than 60 days had passed since the share allotment.\nFurther, it was later discovered that ABC had not updated its Entity Master Form on the RBI FIRMS portal since 2022, even though the company had received FDI in the past as well.\nBased on the above information, you are required to:\n(I) Explain the compliance requirements under FEMA in relation to\n(i) form FC-GPR filing timeline and procedure.\n(ii) maintaining and updating the Entity Master on the FIRMS portal.\n(II) Discuss the possible consequences of non-compliance in this case and suggest remedial steps that ABC should take as on August, 2024.",
+    "parent_ref": "8",
+    "explanation_md": "(1) Compliance Requirements under FEMA:\n\n(i) Form FC-GPR Filing Timeline and Procedure:\n As per FEMA regulations, when a company receives FDI through equity instruments, it must file Form\n FC-GPR within 30 days of share allotment. In this case, shares were allotted on 15th May, 2024, so the\n due date was 14th June 2024. The Form must be filed online via the RBI’s FIRMS portal, along with\n requisite documents such as FIRC, KYC, valuation certificate, Board resolution, etc.\n\n(ii) Entity Master Maintenance:\n Every Indian company receiving FDI is required to create and maintain an Entity Master on the FIRMS\n portal. It must be updated regularly to reflect current foreign holdings. Failure to update the Entity\n Master is treated as non-compliance under FEMA and may block the ability to file any forms related to\n FDI.\n\n(2) Consequences and Remedial Steps:\n Consequences of Non-Compliance:\n(i) Delay in FC-GPR filing beyond 30 days attracts penalty under Section 13 of FEMA, which may include\n a monetary penalty up to thrice the sum involved.\n(ii) Inability to file further FDI-related forms due to a non-updated Entity Master.\n(iii) Regulatory risk and potential scrutiny from RBI.\n\nRemedial Steps (as on August 2024):\nImmediately update the Entity Master with correct details on FIRMS.\nFile the delayed FC-GPR on FIRMS portal and await rejection due to delay.\nApply for compounding with RBI for the delay, as FC-GPR delay is compoundable offence.\n\nPenalty for Non-Compliance\nAs per the Foreign Exchange Management Act (FEMA), 1999, failure to file Form FC-GPR within the\nprescribed time can attract penalties:\n\n• Late Submission Fee (LSF) is applicable if the delay is condoned by the RBI.\n• If the company fails to file entirely, it may be liable for:\n - A penalty up to thrice the sum involved in the contravention (where the amount is quantifiable), or\n - A penalty up to ₹ 2 lakh if the amount is not quantifiable.\n - An additional penalty of ₹ 5,000 per day for continuing contraventions.",
+    "reference_solution_md": "(1) Compliance Requirements under FEMA:\n\n(i) Form FC-GPR Filing Timeline and Procedure:\n As per FEMA regulations, when a company receives FDI through equity instruments, it must file Form\n FC-GPR within 30 days of share allotment. In this case, shares were allotted on 15th May, 2024, so the\n due date was 14th June 2024. The Form must be filed online via the RBI’s FIRMS portal, along with\n requisite documents such as FIRC, KYC, valuation certificate, Board resolution, etc.\n\n(ii) Entity Master Maintenance:\n Every Indian company receiving FDI is required to create and maintain an Entity Master on the FIRMS\n portal. It must be updated regularly to reflect current foreign holdings. Failure to update the Entity\n Master is treated as non-compliance under FEMA and may block the ability to file any forms related to\n FDI.\n\n(2) Consequences and Remedial Steps:\n Consequences of Non-Compliance:\n(i) Delay in FC-GPR filing beyond 30 days attracts penalty under Section 13 of FEMA, which may include\n a monetary penalty up to thrice the sum involved.\n(ii) Inability to file further FDI-related forms due to a non-updated Entity Master.\n(iii) Regulatory risk and potential scrutiny from RBI.\n\nRemedial Steps (as on August 2024):\nImmediately update the Entity Master with correct details on FIRMS.\nFile the delayed FC-GPR on FIRMS portal and await rejection due to delay.\nApply for compounding with RBI for the delay, as FC-GPR delay is compoundable offence.\n\nPenalty for Non-Compliance\nAs per the Foreign Exchange Management Act (FEMA), 1999, failure to file Form FC-GPR within the\nprescribed time can attract penalties:\n\n• Late Submission Fee (LSF) is applicable if the delay is condoned by the RBI.\n• If the company fails to file entirely, it may be liable for:\n - A penalty up to thrice the sum involved in the contravention (where the amount is quantifiable), or\n - A penalty up to ₹ 2 lakh if the amount is not quantifiable.\n - An additional penalty of ₹ 5,000 per day for continuing contraventions.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "the-companies-act-2013",
+    "mapping_confidence": 0.57,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What are the key features of the Prevention of Money Laundering Act (PMLA), 2002? Explain any seven points.",
+    "parent_ref": "8",
+    "explanation_md": "Key features of PMLA\nThe Prevention of Money Laundering Act (PMLA), 2002, was enacted to prevent money laundering and to\nprovide for the confiscation of property derived from or involved in money laundering. Here are seven key\nfeatures of the Act:\n\n1. Definition of Money Laundering:\n Under Section 3 of PMLA, money laundering is defined as any process or activity connected with the\n proceeds of crime, including its concealment, possession, acquisition, or use.\n\n2. Attachment of Property:\n Authorities under PMLA can provisionally attach property believed to be involved in money\n laundering, to prevent its transfer or disposal before the completion of investigation.\n\n3. Adjudicating Authority:\n An Adjudicating Authority is appointed to confirm the attachment of property and take further action\n regarding its confiscation.\n\n4. Special Courts:\n Special Courts are designated under the Act to try offenses of money laundering. These courts are set\n up under the Prevention of Money Laundering Act in consultation with the Chief Justice of the High\n Court.\n\n5. Reporting Entities and KYC:\n Banks, financial institutions, and intermediaries are required to maintain records and report suspicious\n transactions to the Financial Intelligence Unit – India (FIU-IND). They must also follow Know Your\n Customer (KYC) norms.\n\n6. Presumption in Certain Cases:\n The Act presumes the existence of a money laundering offense in cases involving interconnected\n transactions and gives enforcement agencies more power in prosecution.\n\n7. Confiscation of Property:\n Once a person is found guilty of money laundering, the involved property can be permanently\n confiscated by the government.\n\n ______________________________",
+    "reference_solution_md": "Key features of PMLA\nThe Prevention of Money Laundering Act (PMLA), 2002, was enacted to prevent money laundering and to\nprovide for the confiscation of property derived from or involved in money laundering. Here are seven key\nfeatures of the Act:\n\n1. Definition of Money Laundering:\n Under Section 3 of PMLA, money laundering is defined as any process or activity connected with the\n proceeds of crime, including its concealment, possession, acquisition, or use.\n\n2. Attachment of Property:\n Authorities under PMLA can provisionally attach property believed to be involved in money\n laundering, to prevent its transfer or disposal before the completion of investigation.\n\n3. Adjudicating Authority:\n An Adjudicating Authority is appointed to confirm the attachment of property and take further action\n regarding its confiscation.\n\n4. Special Courts:\n Special Courts are designated under the Act to try offenses of money laundering. These courts are set\n up under the Prevention of Money Laundering Act in consultation with the Chief Justice of the High\n Court.\n\n5. Reporting Entities and KYC:\n Banks, financial institutions, and intermediaries are required to maintain records and report suspicious\n transactions to the Financial Intelligence Unit – India (FIU-IND). They must also follow Know Your\n Customer (KYC) norms.\n\n6. Presumption in Certain Cases:\n The Act presumes the existence of a money laundering offense in cases involving interconnected\n transactions and gives enforcement agencies more power in prosecution.\n\n7. Confiscation of Property:\n Once a person is found guilty of money laundering, the involved property can be permanently\n confiscated by the government.\n\n ______________________________",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "laws-and-regulations-related-to-anti-money-laundering",
+    "mapping_confidence": 0.17,
+    "mapping_state": "pending",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {},
+ "review_decisions": {
+  "1(i)": {
+   "verdict": "approve",
+   "reason": "Shared case paragraph, question and four options match the print; stored key D equals printed key (i) D.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "1(ii)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key B equals printed key (ii) B. The shared NHL case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case paragraph printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key A equals printed key (iii) A. The shared NHL case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case paragraph printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "1(iv)": {
+   "verdict": "approve",
+   "reason": "Question and options match the print; stored key C equals printed key (iv) C. The shared NHL case paragraph was added to the stem because the question depends on it.",
+   "fixes": [
+    "Added the shared case paragraph printed before (i) to the stem."
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "1(vi)": {
+   "verdict": "approve",
+   "reason": "Stem list and options match the print; stored key C equals printed key (vi) C.",
+   "fixes": [],
+   "printed_issues": [
+    "\"activates\" printed for \"activities\" in item 3."
+   ],
+   "by": "claude-review"
+  },
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key B equals printed key (vii) B.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "1(xiv)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key A equals printed key (xiv) A.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem has both sub-parts; answer (i) cyber crimes against persons and (ii) Section 15 SARFAESI compared with suggested-answer pages 6-7 and is complete and in print order.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem has both sub-parts; answer (i) MSME classification and (ii) IRDA objectives compared with suggested-answer pages 9-10 and is complete and as printed.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [
+  "1(i)",
+  "1(ii)",
+  "1(iii)",
+  "1(iv)"
+ ],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 29
+ }
+}

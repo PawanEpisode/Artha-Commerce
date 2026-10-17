@@ -1,0 +1,676 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p13",
+ "term_code": "2026-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Page-1 header prints the title as 'CORPORATE LAWS AND ECONOMIC LAWS' (code P-13(CEL)). Page 8 of the PDF is blank. Q1 (i)-(iv) share a case study. Answer text from OCR of suggested-answer PDF; bullet glyphs from OCR retained."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section-A (Compulsory)\nAnswer Question No. 1 which is compulsory carrying 30 marks and answer any five questions from Question No. 2 to Question No. 8 each of 14 marks.",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the most appropriate option for the following MCQs: 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Case study\nABC Ltd., incorporated in Mumbai, with the object of manufacturing pharmaceutical products, faced the following issues:\n- One director, Mr. X, entered into a contract on behalf of the company to invest in real estate, which was not covered under the objects clause of the Memorandum of Association.\n- Mr. X also borrowed ₹50 lakh from a bank in company’s name without obtaining the required Board approval as per the Articles of Association. The bank had no knowledge of this internal restriction.\n- During the issue of prospectus, the company falsely stated that it had secured government approval for a new drug, inducing investors to subscribe for shares.\n- Minority shareholders holding 12% alleged that majority shareholders were diverting company funds for personal use and approached the Tribunal.\nBases on above facts, answer the following MCQs (i) to (iv) :\n\nWhat is the validity of the real estate contract entered into by Mr. X?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Valid"
+        },
+        {
+         "key": "B",
+         "body_md": "Voidable"
+        },
+        {
+         "key": "C",
+         "body_md": "Void ab initio"
+        },
+        {
+         "key": "D",
+         "body_md": "Valid if ratified"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Shared case study (MCQs (i) to (iv)) printed once under Q1; included in the stem of (i). Printed text \"Bases on above facts\" kept verbatim."
+       ]
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Is the company liable to repay the ₹50 lakh loan taken by Mr. X?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "No, due to lack of Board approval"
+        },
+        {
+         "key": "B",
+         "body_md": "Yes, under the doctrine of indoor management"
+        },
+        {
+         "key": "C",
+         "body_md": "Only Mr. X is liable"
+        },
+        {
+         "key": "D",
+         "body_md": "Loan is void"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Refers to the ABC Ltd. case study printed before (i) (MCQs (i) to (iv) share it)."
+       ]
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "What is the liability for misstatement in the prospectus?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "No liability"
+        },
+        {
+         "key": "B",
+         "body_md": "Only civil liability"
+        },
+        {
+         "key": "C",
+         "body_md": "Civil and criminal liability on company officers"
+        },
+        {
+         "key": "D",
+         "body_md": "Only refund to investors"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Refers to the ABC Ltd. case study printed before (i) (MCQs (i) to (iv) share it)."
+       ]
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Can minority shareholders (12%) apply for relief against oppression?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "No, minimum 25% required"
+        },
+        {
+         "key": "B",
+         "body_md": "Yes, directly under Section 241 of the Companies Act, 2013"
+        },
+        {
+         "key": "C",
+         "body_md": "Yes, with Tribunal’s permission under Section 244 of the Companies Act, 2013"
+        },
+        {
+         "key": "D",
+         "body_md": "Only through civil court"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Refers to the ABC Ltd. case study printed before (i) (MCQs (i) to (iv) share it).",
+        "Keyed (B) per suggested answer; option (C) also plausible (s.244 permission); key kept as printed."
+       ]
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A statutory auditor of a company shall be:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "An Associate Company Secretary (ACS)"
+        },
+        {
+         "key": "B",
+         "body_md": "A Cost and Management Accountant (CMA)"
+        },
+        {
+         "key": "C",
+         "body_md": "A Practicing Chartered Accountant (CA)"
+        },
+        {
+         "key": "D",
+         "body_md": "Any of the above"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "In normal course, the Board’s Report is signed by:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Chairman without authority of the Board"
+        },
+        {
+         "key": "B",
+         "body_md": "Chairman with authority of the Board"
+        },
+        {
+         "key": "C",
+         "body_md": "Managing Director (MD)"
+        },
+        {
+         "key": "D",
+         "body_md": "Any Director"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under the Insolvency and Bankruptcy Code, 2016, where extension of time is requested, the Corporate Insolvency Resolution Process (CIRP) must be completed within:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "120 days"
+        },
+        {
+         "key": "B",
+         "body_md": "180 days"
+        },
+        {
+         "key": "C",
+         "body_md": "240 days"
+        },
+        {
+         "key": "D",
+         "body_md": "270 days"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Keyed (D) 270 days per suggested answer; not independently verified."
+       ]
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Clause 49A, which was the first major compliance requirement of Corporate Governance for listed companies, was based on the recommendations of:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Narayan Murthy Committee"
+        },
+        {
+         "key": "B",
+         "body_md": "Kumar Mangalam Birla Committee"
+        },
+        {
+         "key": "C",
+         "body_md": "Kotak Committee"
+        },
+        {
+         "key": "D",
+         "body_md": "Rahul Bajaj Committee"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following would not amount to a sustainable development activity?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Rain water harvesting"
+        },
+        {
+         "key": "B",
+         "body_md": "Solar energy"
+        },
+        {
+         "key": "C",
+         "body_md": "Paddy cultivation"
+        },
+        {
+         "key": "D",
+         "body_md": "Plantation of saplings for afforestation"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "A process undertaken to elicit demand and assess the price for determination of the quantum or value of specified securities is known as:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Lock-in securities"
+        },
+        {
+         "key": "B",
+         "body_md": "Promoters’ contribution"
+        },
+        {
+         "key": "C",
+         "body_md": "Book building"
+        },
+        {
+         "key": "D",
+         "body_md": "Indian Depository Receipts"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "With respect to the restrictions on communication and trading by insiders under SEBI (Prohibition of Insider Trading) Regulations, 2015 which of the following is correct?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Insiders may freely share unpublished price sensitive information (UPSI) with family members"
+        },
+        {
+         "key": "B",
+         "body_md": "UPSI may be communicated only for legitimate purposes, performance of duties, or legal obligations"
+        },
+        {
+         "key": "C",
+         "body_md": "UPSI can be shared with auditors without any restriction"
+        },
+        {
+         "key": "D",
+         "body_md": "UPSI can be disclosed after the Board’s approval without conditions"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Takeover of one company by another company operating in totally different industries is known as:",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Conglomerate takeover"
+        },
+        {
+         "key": "B",
+         "body_md": "Friendly takeover"
+        },
+        {
+         "key": "C",
+         "body_md": "Hostile takeover"
+        },
+        {
+         "key": "D",
+         "body_md": "Horizontal takeover"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under Section 6 of the Banking Regulation Act, 1949, a banking company may engage in which of the following activities in addition to the business of banking?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Acting as an agent for Government or local authority"
+        },
+        {
+         "key": "B",
+         "body_md": "Undertaking and executing trusts"
+        },
+        {
+         "key": "C",
+         "body_md": "Managing, selling, and realizing property received in satisfaction of claims"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "If a unit has investment in plant and equipment of ₹130 crores and turnover of ₹510 crores, how will it be classified under the MSME framework?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Micro enterprise"
+        },
+        {
+         "key": "B",
+         "body_md": "Small enterprise"
+        },
+        {
+         "key": "C",
+         "body_md": "Medium enterprise"
+        },
+        {
+         "key": "D",
+         "body_md": "None of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "medium",
+       "review": [
+        "Keyed (D) None of the above per suggested answer (investment ₹130 cr / turnover ₹510 cr exceed the medium-enterprise limits); not independently verified."
+       ]
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Under the Information Technology Act, 2000, which of the following constitutes a cyber crime offence relating to unauthorized access?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Tampering with computer source documents (Sec. 65)"
+        },
+        {
+         "key": "B",
+         "body_md": "Hacking with computer systems and data alteration (Sec. 66)"
+        },
+        {
+         "key": "C",
+         "body_md": "Breach of confidentiality and privacy (Sec. 72)"
+        },
+        {
+         "key": "D",
+         "body_md": "All of the above"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from Questions 2 to 8. Each question carries 14 marks",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the statutory provisions relating to declaration and payment of dividend under the Companies Act, 2013.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Declaration and Payment of Dividend\n • Authority to Declare:\n Dividend is declared by shareholders in the general meeting, but only on recommendation of the\n Board. Shareholders cannot increase the rate beyond what the Board recommends.\n\n • Sources of Dividend:\n ❖ Out of current year profits after providing depreciation.\n ❖ Out of past reserves (subject to Rule 3 of Companies (Declaration and Payment of Dividend) Rules,\n 2014).\n ❖ Out of both current profits and reserves.\n\n • Transfer to Reserves: Optional transfer of a portion of profits to reserves before declaration.\n\n • Interim Dividend: Board may declare interim dividend during the year out of surplus or profits.\n\n • Unpaid Dividend: Must be transferred to “Unpaid Dividend Account” within 7 days from the date\n of expiry of 30 days payment period; if unclaimed for 7 years, transferred to Investor Education and\n Protection Fund (IEPF).\n\n • Accounts & Audit Link: Dividend can be declared only after adoption of audited accounts at AGM.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Critically examine the restrictions and compliance requirements relating to holding office in more than one company by a Key Managerial Personnel (KMP) under Section 203 of the Companies Act, 2013. Illustrate with an example.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Restrictions on Holding Office in More Than One Company by KMP\n\n • Applicability: Section 203 applies to every listed company and every public company with paid-up\n share capital of ₹10 crore or more.\n\n • Restriction: A whole-time KMP cannot hold office in more than one company at the same time,\n except in its subsidiary. This ensures focus and prevents conflict of interest.\n\n • Compliance Requirements:\n ❖ Appointment must be made by Board resolution specifying terms.\n ❖ Disclosure of office held in subsidiary is required.\n ❖ Vacancy must be filled within 6 months.\n\n • Illustration: Example: CFO of a holding company may also serve as CFO of its wholly-owned\n subsidiary. However, the same CFO cannot simultaneously serve in an unrelated company.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. R, a shareholder of Alpha Ltd., submits a notice proposing the appointment of Ms. S as a director who shall not be liable to retire by rotation. Along with the notice, he deposits ₹1,00,000 with the company.\nExamine the validity of this proposal in the following situations:\n(i) Alpha Ltd. is a Government company, and the Government has been duly informed of the proposal.\n(ii) The Articles of Association of Alpha Ltd. stipulate that directors are to be elected by ballot.\n(iii) The company issues notice of the candidature only in a regional vernacular newspaper, seven days prior to the general meeting.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Appointment of Director other than retiring director (Section 160)\nCase I – Government Company\n • Proviso to Section 160(1) read with Rule 7(1) of the Companies (Appointment and Qualification of\n Directors) Rules, 2014: Section 160 does not apply to a Government Company where the\n Ministry/Department concerned has been duly intimated.\n\n • Proposal valid even without compliance under Section 160.\n\nCase II – Articles provide for election by ballot\nThe exemption from Section 160 in case of election of directors by ballot is available only to Section 8\ncompanies. Since Alpha Ltd. is a normal limited company and not a Section 8 company, Section 160 is\napplicable.\n\nIn the given case, Mr. S has duly given notice in writing and deposited ₹1,00,000, thereby complying with\nthe requirements of Section 160. Hence, the proposal is valid.\n\nHowever, as per Section 152 read with Section 10, the appointment of directors is subject to the Articles of\nAssociation, which are binding on the company and its members. Since the Articles provide for election of\ndirectors by ballot, the appointment, if made, must be decided through ballot voting.\n\n • Conclusion:\n The proposal is valid, but the appointment must be made by ballot in accordance with the Articles of\n Association.\n\nCase III – Advertisement only in vernacular newspaper\n • Section 160(2) read with Rule 13 requires publication in two newspapers: (i) one in English, and (ii)\n one in vernacular language of the district.\n\n • In the given case, only vernacular publication done → partial compliance.\n\n • Hence candidature notice invalid, election irregular.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A public company is required to appoint its statutory auditor at the Annual General Meeting (AGM). In this context, discuss the following aspects:\n(i) Outline the procedure for appointment of the first auditor and for subsequent auditors.\n(ii) Explain the tenure of auditors and the statutory provisions relating to rotation of auditors.\n(iii) Identify the disqualifications for appointment as auditor under Section 141 of the Companies Act, 2013.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Appointment of Statutory Auditor (Sections 139–141, Companies Act, 2013)\n (i) Appointment of First Auditor\n • Section 139(6): First auditor of a company (other than Government company) shall be appointed by\n the Board within 30 days of incorporation.\n • If Board fails → Members at an EGM within 90 days.\n\n Appointment of Subsequent Auditors\n • Section 139(1): At the first AGM, company shall appoint an auditor to hold office till conclusion of\n 6th AGM.\n • Thereafter, appointment at every 6th AGM.\n\n (ii) Tenure and Rotation of Auditors\n • Section 139(2): Listed companies and certain classes of public companies must rotate auditors.\n • Individual auditor: maximum one term of 5 years.\n • Audit firm: maximum two terms of 5 years each.\n • Cooling-off period: 5 years before reappointment.\n\n (iii) Disqualifications under Section 141\n • Auditor indebted to company > ₹5 lakh.\n • Auditor holding security/Interest in company, provided that Relatives may hold security upto ₹1 Lakh\n • Relative is director or key managerial personnel.\n • Business relationship with company.\n • Conviction for fraud (10 years not elapsed).",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the statutory provisions under the Companies Act, 2013 relating to conversion of a private company into a public company. Outline the procedural requirements, including alteration of Articles, filing with the Registrar, and compliance with prescribed rules.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Conversion of Private Company into Public Company\n • Board Resolution: The Board must approve the proposal for conversion and call a general meeting.\n\n • Special Resolution: Shareholders must pass a special resolution to alter Articles of Association\n (removing restrictions applicable to private companies).\n\n • Filing with Registrar:\n ❖ File Form MGT-7 (annual return) and Form MGT-14 (filing of resolution).\n ❖ File Form INC-27 with prescribed fees for conversion.\n\n • Alteration of Articles: Articles must be amended to comply with requirements of a public company\n (minimum directors, removal of restrictions on transfer, etc.).\n\n • Certificate of Incorporation: Registrar issues a fresh certificate of incorporation reflecting the new\n status as a public company.\n\n • Effect: The company becomes a public company from the date of issue of the new certificate.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Discuss the statutory provisions under the Companies Act, 2013 relating to compromise and arrangements with special reference to procedure for approval, the role of the Tribunal, and the requirements for filing and implementation of such schemes.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Compromise and Arrangements\n • Initiation of Scheme:\n ❖ Application may be made to the Tribunal (NCLT) by the company, any creditor, member, or\n liquidator.\n ❖ The application must disclose all material facts, including latest financial position, auditor’s report,\n and details of any investigation.\n\n • Tribunal’s Role:\n ❖ Tribunal orders meetings of creditors or members as it considers appropriate.\n ❖ It supervises the conduct of meetings and ensures compliance with statutory requirements.\n ❖ Tribunal sanctions the scheme only if it is fair, reasonable, and not contrary to law or public interest.\n\n • Approval Requirements:\n ❖ Majority in number representing three-fourths in value of creditors or members present and voting\n must approve the scheme.\n ❖ The scheme must be filed with the Registrar within 30 days of Tribunal’s order.\n\n • Filing and Implementation:\n ❖ Certified copy of Tribunal’s order must be filed with the Registrar in Form INC-28.\n ❖ Once filed, the scheme becomes binding on all creditors, members, and the company.\n ❖ Implementation must follow the terms approved, and Tribunal may monitor compliance.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Discuss the statutory provisions under the Companies Act, 2013 relating to the preparation and contents of the Board’s Report with special emphasis on authentication of financial statements and filing with the Registrar.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Board's Report — Section 134\n • Board's Report must be attached to every financial statement laid before the AGM\n • Contents: extract of annual return, number of Board meetings, Directors' Responsibility Statement,\n details of frauds reported by auditors, CSR policy, declarations by independent directors, etc.\n\nAuthentication of Financial statements [Sections 134 (1), (2) & (7)]\n • The financial statements, including consolidated financial statement, if any, shall be approved by the\n Board of Directors before they are signed on behalf of the Board at least by the following:\n ⎯ The chairperson of the company where he is authorised by the Board, or\n ⎯ By two directors out of which one shall be managing director and other the Chief Executive Officer,\n if he is a director in the company,\n ⎯ The Chief Financial Officer, wherever he is appointed, and\n ⎯ The company secretary of the company, wherever he is appointed.\n\n • In the case of a One Person Company, the financial statement shall be signed by only one director,\n for submission to the auditor for his report thereon.\n • The auditors’ report shall be attached to every financial statement [Section 134(2)].\n • A signed copy of every financial statement, including consolidated financial statement, if any, shall\n be issued, circulated or published along with a copy each of\n ⎯ Any notes annexed to or forming part of such financial statement.\n ⎯ The auditor’ report. and\n ⎯ The Board’s report. [Section 134(7)]\n\n\fCopy of Financial Statements to be filed with Registrar (Section 137)\n • Every company shall file the financial statements with Registrar together with Form AOC-4 and the\n consolidated financial statements, if any, with form AOC-4 CFS with such fees or additional fees as\n may be prescribed.\n • Where the financial statements are not adopted at annual general meeting or adjourned annual general\n meeting, such unadopted financial statements along with the required documents shall be filed with\n the Registrar within 30 days of the date of annual general meeting.\n • The Registrar shall take them in his records as provisional till the financial statements are filed with\n him after their adoption in the adjourned annual general meeting for that purpose.\n • If the financial statements are adopted in the adjourned annual general meeting, then they shall be\n filed with the Registrar within 30 days of the date of such adjourned annual general meeting with\n such fees or such additional fees as may be prescribed within the time specified under Section 403\n (i.e. within 270 days from the date by which it should have been filed with additional fees).",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "A company, ABC Ltd., defaulted on repayment of a large debt to its financial creditors. The creditors filed an application before the National Company Law Tribunal (NCLT) under the Insolvency and Bankruptcy Code, 2016.\nRequired:\nDiscuss the statutory provisions relating to initiation of the Corporate Insolvency Resolution Process (CIRP) under the IBC, 2016 with special reference to the role of the Tribunal, the duties of the Resolution Professional, and the process of approval and implementation of a resolution plan.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Corporate Insolvency Resolution Process (CIRP)\n • Initiation of CIRP: Under the Insolvency and Bankruptcy Code, 2016, CIRP may be initiated by:\n ❖ A financial creditor (Section 7),\n ❖ An operational creditor (Section 9), or\n ❖ The corporate debtor itself (Section 10). The application is filed before the National Company Law\n Tribunal (NCLT).\n\n • Role of Tribunal (NCLT):\n ❖ Examines the application and, if satisfied, admits it.\n ❖ Declares a moratorium under Section 14 (suspending recovery actions).\n ❖ Appoints an Interim Resolution Professional (IRP).\n\n • Duties of Resolution Professional (RP):\n ❖ Takes over management of the corporate debtor.\n ❖ Collects claims and constitutes the Committee of Creditors (CoC).\n ❖ Prepares an Information Memorandum.\n ❖ Invites and examines resolution plans.\n\n • Approval of Resolution Plan:\n ❖ Resolution plan must be approved by at least 66% voting share of the CoC.\n ❖ The approved plan is submitted to NCLT.\n ❖ Once sanctioned under Section 31, it becomes binding on all stakeholders.\n\n • Implementation:\n ❖ The plan may involve restructuring debt, infusion of capital, or change in management.\n ❖ If no plan is approved within the prescribed time, the company proceeds to liquidation under Section\n 33, with distribution of assets as per Section 53.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Corporate Social Responsibility (CSR) is a crucial component of modern corporate sustainability. Discuss the statutory applicability criteria for constituting a CSR Committee under Section 135 of the Companies Act, 2013. Furthermore, outline any four core functions or duties that the CSR Committee is mandated to perform once constituted.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Applicability of CSR Committee (Section 135)\nUnder Section 135(1) of the Companies Act, 2013, every company must constitute a Corporate Social\nResponsibility (CSR) Committee of the Board if it meets any of the following financial thresholds during the\nimmediately preceding financial year\n\n • Net worth of ₹ 500 crores or more; or\n • Turnover of ₹ 1,000 crores or more; or\n • Net profit of ₹ 5 crores or more.\n\nCore Functions/Duties of the CSR Committee\nThe CSR Committee is mandated to perform the following statutory functions\n\n • Formulate CSR Policy: Formulate and recommend to the Board, a Corporate Social Responsibility\n Policy which shall indicate the activities to be undertaken by the company as specified in Schedule\n VII of the Act.\n • Recommend Expenditure: Recommend the exact amount of expenditure to be incurred on the\n activities referred to in the CSR Policy.\n • Monitor the Policy: Institute a transparent monitoring mechanism and monitor the Corporate Social\n Responsibility Policy of the company from time to time.\n • Formulate Annual Action Plan: Formulate and recommend to the Board an annual action plan in\n pursuance of its CSR policy, including the list of CSR projects, manner of execution, modalities of\n fund utilization, and impact assessment.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Cyber fraud and cyber crimes pose significant risks in the digital era. With reference to the Information Technology Act, 2000, discuss the statutory provisions dealing with offences such as identity theft and cheating by personation. Also explain the role of adjudicating authorities and outline the penalties prescribed for such offences.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Cyber Fraud under the IT Act, 2000\n • Statutory Basis: The Information Technology Act, 2000 provides a legal framework to address cyber\n fraud and cyber crimes. Key provisions include:\n ❖ Section 43: Penalty for unauthorized access, downloading, introducing viruses, or damaging\n computer systems.\n ❖ Section 66: Treats such acts as offences when done dishonestly or fraudulently.\n ❖ Section 66C: Punishes identity theft (fraudulent use of another person’s password, digital signature,\n or electronic signature).\n ❖ Section 66D: Punishes cheating by personation using computer resources (e.g., online fraud,\n phishing).\n\n • Role of Adjudicating Authorities:\n ❖ The Adjudicating Officer (appointed under Section 46) has powers to inquire into contraventions\n relating to unauthorized access, data theft, or damage to computer systems.\n ❖ The Cyber Appellate Tribunal hears appeals against orders of the Adjudicating Officer.\n ❖ Criminal offences are tried by courts with jurisdiction under the Code of Criminal Procedure.\n\n • Penalties:\n ❖ For contraventions under Section 43: liable to pay damages by way of compensation to the person so\n affected.\n ❖ For offences under Sections 66: imprisonment up to 3 years and/or fine up to ₹5 lakh.\n ❖ For offences under Sections 66C, 66D: imprisonment up to 3 years and fine up to ₹1 lakh.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the provisions of the SEBI (Prohibition of Insider Trading) Regulations, 2015 relating to prohibition on communication of unpublished price sensitive information (UPSI) and trading by insiders.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Insider Trading under SEBI Regulations\n • Statutory Framework: The SEBI (Prohibition of Insider Trading) Regulations, 2015 were enacted\n to curb misuse of unpublished price sensitive information (UPSI) and ensure transparency and\n fairness in securities markets.\n • Definition of Insider: An insider means:\n ❖ A connected person (directors, officers, employees, professionals associated with the company), or\n ❖ Any person in possession of or having access to UPSI.\n\n • Prohibition on Communication and Trading:\n ❖ Regulation 3: Prohibits communication of UPSI to any person except for legitimate purposes,\n performance of duties, or discharge of legal obligations.\n ❖ Regulation 4: Prohibits trading in securities while in possession of UPSI.\n\n • Compliance Requirements:\n ❖ Companies must frame a Code of Conduct to regulate, monitor, and report trading by employees and\n connected persons.\n ❖ Maintain a structured digital database of persons with whom UPSI is shared.\n ❖ Appoint a Compliance Officer to oversee adherence.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the regulatory framework governing Foreign Direct Investment (FDI) in India under the Foreign Exchange Management Act (FEMA), 1999 with special emphasis on the routes of investment, sectoral caps, and reporting requirements applicable to Indian companies receiving FDI.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Foreign Direct Investment (FDI) under FEMA\n • Statutory Basis: FDI in India is regulated by the Foreign Exchange Management Act, 1999 (FEMA),\n along with the Foreign Exchange Management (Non-Debt Instruments) Rules, 2019 and the\n consolidated FDI policy issued by the Government of India.\n • Routes of Investment:\n ❖ Automatic Route: No prior approval required; investment permitted up to sectoral caps.\n ❖ Government Route: Prior approval required from the Government/concerned ministry for specified\n sectors.\n • Sectoral Caps:\n ❖ 100% permitted in most manufacturing sectors.\n ❖ 74% in private sector banking.\n ❖ 74% in insurance.\n ❖ Sensitive sectors such as defence, media, and multi-brand retail have lower caps or require\n government approval.\n\n • Note - The Foreign Direct Investment (FDI) limit in the insurance sector was increased from 49% to\n 74% pursuant to the Insurance (Amendment) Act, 2021 and the corresponding amendments to the\n FDI Policy. Subsequently, the Union Budget 2025–26 announced an increase of the FDI limit to\n 100%, which was formally incorporated into the FDI Policy through DPIIT Press Note No. 1 (2026\n Series) dated 9 February 2026, permitting 100% FDI in Insurance Companies under the Automatic\n Route.\n • Reporting Requirements:\n ❖ Indian companies must file Form FC-GPR with RBI within 30 days of issue of shares to foreign\n investors.\n ❖ Transfer of shares between residents and non-residents must be reported in Form FC-TRS.\n ❖ Annual return on foreign liabilities and assets must also be filed.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the objectives and key provisions of the Competition Act, 2002. Also discuss the role of the Competition Commission of India (CCI) in preventing anti-competitive agreements and abuse of dominant position.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Competition Act, 2002\n • Objectives of the Act: The Competition Act, 2002 was enacted to:\n ❖ Prevent practices having adverse effect on competition.\n ❖ Promote and sustain competition in markets.\n ❖ Protect the interests of consumers.\n ❖ Ensure freedom of trade carried on by other participants in markets in India.\n\n • Key Provisions:\n (i) Anti-Competitive Agreements (Section 3):\n • Prohibits agreements that cause or are likely to cause appreciable adverse effect on competition\n (AAEC).\n • Includes cartels, price-fixing, bid-rigging, and market allocation.\n\n (ii) Abuse of Dominant Position (Section 4):\n • Prohibits unfair or discriminatory conditions or prices imposed by enterprises in a dominant position.\n • Examples: predatory pricing, denial of market access.\n\n (iii) Regulation of Combinations (Sections 5 & 6):\n • Mergers, acquisitions, or amalgamations crossing prescribed thresholds must be notified to CCI.\n • CCI may approve, modify, or prohibit combinations that adversely affect competition.\n\n • Role of the Competition Commission of India (CCI):\n ❖ Established under Section 7 of the Act.\n ❖ Functions include inquiry into anti-competitive agreements, abuse of dominance, and regulation of\n combinations.\n ❖ Can impose penalties, issue cease-and-desist orders, and direct modification of agreements.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain the objectives and key provisions of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 (SARFAESI Act, 2002) relating to Applicability and Enforcement of Security Interest. Also discuss the rights available to secured creditors and the measures they can take to enforce security interests without court intervention.",
+       "options": [],
+       "correct": null,
+       "answer_md": "SARFAESI Act, 2002\n • Objectives of the Act:\n ❖ To empower banks and financial institutions to recover non-performing assets (NPAs) efficiently.\n ❖ To allow enforcement of security interests without the need for lengthy court proceedings.\n ❖ To facilitate securitisation and asset reconstruction.\n\n • Applicability:\n (i) Applies to secured creditors such as banks and financial institutions.\n (ii) Not applicable to agricultural land.\n\n • Enforcement of Security Interest (Section 13):\n (i) If a borrower defaults and the account is classified as NPA, the secured creditor may issue a notice\n of 60 days demanding repayment.\n (ii) On failure, the creditor may:\n • Take possession of secured assets.\n • Take over management of the borrower’s business.\n • Appoint a manager to manage secured assets.\n • Require third parties to pay monies due to the borrower directly to the creditor.\n\n\f • Rights of Secured Creditors:\n ❖ Enforce security interest without court intervention.\n ❖ Transfer or assign financial assets to ARCs.\n ❖ Recover dues by sale of secured assets.\n\nMeasures\nSection 15 of the SARFAESI Act provides for the manner and effect of takeover of management. When the\nmanagement of business of a borrower is taken over by an asset reconstruction company it can appoint as\nmany persons as it thinks fit to be the directors, where the borrower is a company, or the administrators of\nthe business of the borrower, in any other case. The secured creditor is required to publish a notice in a\nnewspaper published in English language and in a newspaper published in an Indian language in circulation\nin the place where the principal office of the borrower is situated.\n\nWhere the management of the business of a borrower had been taken over by the secured creditor, the secured\ncreditor shall, on realization of his debt in full, restore the management of the business of the borrower.\n\n _____________________________",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

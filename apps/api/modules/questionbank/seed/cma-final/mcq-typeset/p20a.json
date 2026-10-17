@@ -1,0 +1,94 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "paper": "p20a",
+ "items": {
+  "mcq:cma-final:p20a:q020": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q029": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q030": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q054": {
+   "confidence": "high",
+   "review": [
+    "Options typeset as printed (P=AC etc.)"
+   ],
+   "options": [
+    {
+     "key": "A",
+     "body_md": "$P = AC$"
+    },
+    {
+     "key": "B",
+     "body_md": "$P = MC$"
+    },
+    {
+     "key": "C",
+     "body_md": "$P = AVC$"
+    },
+    {
+     "key": "D",
+     "body_md": "$P > AVC$"
+    }
+   ]
+  },
+  "mcq:cma-final:p20a:q056": {
+   "confidence": "high",
+   "review": [
+    "Inequalities typeset as printed"
+   ],
+   "options": [
+    {
+     "key": "A",
+     "body_md": "Where $P$ = lowest average cost"
+    },
+    {
+     "key": "B",
+     "body_md": "Where $P > AC$"
+    },
+    {
+     "key": "C",
+     "body_md": "Where $P < AC$"
+    },
+    {
+     "key": "D",
+     "body_md": "Where $P > AVC$"
+    }
+   ]
+  },
+  "mcq:cma-final:p20a:q104": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q162": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q163": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q183": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q190": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q207": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p20a:q223": {
+   "confidence": "high",
+   "review": []
+  }
+ }
+}

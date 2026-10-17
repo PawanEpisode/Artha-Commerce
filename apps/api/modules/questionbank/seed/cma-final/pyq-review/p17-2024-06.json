@@ -1,0 +1,47 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p17-2024-06",
+ "items": {
+  "1(a)(viii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper; stored key A equals printed key 1(a)(viii) (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (A) Internal Check looks doubtful (the definition matches Internal Control, option B); kept as printed"
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem table (closing stock amount blank as printed), loss notes and requirement match the print; the answer lines match the printed final figures.",
+   "fixes": [],
+   "printed_issues": [
+    "Closing Stock amount cell is blank in the printed question",
+    "Suggested answer gives only final figures without working"
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem table matches the print digit for digit; answer figures match the suggested answer, only the stored layout (indented lines) was cleaned.",
+   "fixes": [
+    "Removed hard line break and leading spaces so the answer is plain paragraphs; text and figures unchanged"
+   ],
+   "answer_md": "According to the Rule 30 of the Central Goods & Services Tax Rules, 2017, the Assessable Value of goods used for captive consumption is 110% of cost of production of such goods.\n\nCost of production as per CAS-4 ₹ 90,05,000\n\nAssessable value as per Rule 30 of CGST Rules, 2017 is ₹ 99,05,500",
+   "printed_issues": [
+    "Direct Material Cost 'per unit' printed against a ₹ '000 total",
+    "Suggested answer gives only final figures without working"
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and requirement match the print; the reconciliation statement was rebuilt as a four-column table from the suggested answer image and all figures and subtotals match.",
+   "fixes": [
+    "Rebuilt the reconciliation statement as a Markdown table with the printed column layout"
+   ],
+   "answer_md": "Reconciliation of Profit between Cost and Financial Accounts for the year ended March 31, 2024\n\n| Particulars | | ₹ | ₹ |\n|---|---|---|---|\n| Profit as per Financial Accounts | | | 33,18,100 |\n| Add: Loss on Sale of Investments | | 45,600 | |\n| Add: Voluntary Retirement Compensation included in salary-not included in Cost Accounts | | 56,25,000 | |\n| Add: Donation paid | | 80,000 | 57,50,600 |\n| Less: Profit on Sale of Fixed Assets- not considered in Cost Accounts | | 3,05,000 | 90,68,700 |\n| Less: Receipts of insurance claim related to previous year | | 5,28,700 | |\n| Less: Profit from Retailing Activity | | 30,00,600 | |\n| Less: Interest income from inter-corporate deposit- not considered in cost accounts | | 7,25,000 | |\n| Less: Difference in valuation of stock: | | | |\n| Decrease in inventories as per cost accounts | 398,15,200 | | |\n| Decrease in inventories as per financial accounts | (392,06,480) | 6,08,720 | 51,68,020 |\n| PROFIT AS PER COST ACCOUNTS | | | 39,00,680 |",
+   "printed_issues": [
+    "Stock figures are labelled 'Decrease in inventories' although they are the closing inventory values of the question",
+    "Grouping 398,15,200 and 392,06,480 printed with non-standard commas"
+   ]
+  }
+ }
+}

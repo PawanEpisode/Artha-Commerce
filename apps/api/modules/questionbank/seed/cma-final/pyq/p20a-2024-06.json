@@ -1,0 +1,1087 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "20A",
+ "source_file": "pyq-transcriptions/p20a-2024-06.json",
+ "paper_review": [
+  "Q1 is split into 1(a) (i)-(x) 2x10=20 and 1(b) (xi)-(xv) 2x5=10 with a common scenario; scenario repeated in the stems of (xi)-(xv).",
+  "Most Section B answer workings are images in the suggested-answer PDF; only text-extractable content included."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p20a:2024-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-performance-management-and-business-valuation",
+  "term_code": "2024-06",
+  "title": "CMA Final June 2024: Strategic Performance Management and Business Valuation (Paper 20A)",
+  "paper_code": "P20A",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "(a) Choose the correct answer from the given alternatives. 2×10=20 [parts (i)-(x)]\n(b) Parts (xi)-(xv) are based on a common scenario, 2×5=10 (scenario repeated in each of those parts' stems).",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which principle/technique is considered base platform for TPM?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Six Sigma",
+      "is_correct": false
+     },
+     {
+      "body_md": "5S",
+      "is_correct": true
+     },
+     {
+      "body_md": "SMED",
+      "is_correct": false
+     },
+     {
+      "body_md": "Kaizen",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The pricing of niche products is appropriate to",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Perceived value pricing",
+      "is_correct": true
+     },
+     {
+      "body_md": "Penetration pricing",
+      "is_correct": false
+     },
+     {
+      "body_md": "Differential pricing",
+      "is_correct": false
+     },
+     {
+      "body_md": "Full cost pricing",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.8,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is/are not the element(s)/parameter of NCAER model of corporate distress prediction?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Net Worth Position",
+      "is_correct": false
+     },
+     {
+      "body_md": "Outstanding Liability Position",
+      "is_correct": true
+     },
+     {
+      "body_md": "Net Working Capital Position",
+      "is_correct": false
+     },
+     {
+      "body_md": "Cash Profit Position",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.93,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Balance Score Card is a set of __________ measures relating to company's critical success factors.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Financial",
+      "is_correct": false
+     },
+     {
+      "body_md": "Non-financial",
+      "is_correct": false
+     },
+     {
+      "body_md": "Financial and non-financial",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "performance-measurement-evaluation-and-improvement-tools",
+    "mapping_confidence": 0.35,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The asset turnover is a measure of ____________ which measures how efficiently a company uses its assets to generate sales.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "profitability",
+      "is_correct": false
+     },
+     {
+      "body_md": "productivity",
+      "is_correct": true
+     },
+     {
+      "body_md": "Both (A) and (B)",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.67,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Market price of share ₹ 50, earnings per share ₹ 22.20, dividend per share ₹ 12.5 then what would be the price earnings ratio?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "2.25",
+      "is_correct": true
+     },
+     {
+      "body_md": "4",
+      "is_correct": false
+     },
+     {
+      "body_md": "6.25",
+      "is_correct": false
+     },
+     {
+      "body_md": "10.25",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.2,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "An analyst has estimated ₹ 450 crore as future maintainable profits for Super Shine Limited. If the expected rate of return on capital employed is 15% and the Average Capital Employed is ₹ 1200 crore, the goodwill of Super Shine Limited at 4 years purchase will be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 180 crore",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 270 crore",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1,080 crore",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 1,200 crore",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.37,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A Company has reported Profit Before Tax ₹ 1,000 crore. The applicable tax rate is 30% and it has ROE (Return on Equity) of 14%. If it has Other Equity of ₹ 4,000 crore and the face value of the share is ₹ 10, then its EPS (Earnings Per Share) is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 2",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 5",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 7",
+      "is_correct": true
+     },
+     {
+      "body_md": "Insufficient Information",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.44,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A Company's share is currently trading in the market at ₹ 450. It is estimated that its cost of equity is 18% and the value of growth opportunities is ₹ 250. Then, its Price/Earnings Ratio will be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "11.11",
+      "is_correct": false
+     },
+     {
+      "body_md": "12.25",
+      "is_correct": false
+     },
+     {
+      "body_md": "12.50",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "If a person buys a five year bond in which he can realize a coupon rate of 5%, but the rate of inflation is 8%, the purchasing power of the bond interest has ________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "increased",
+      "is_correct": false
+     },
+     {
+      "body_md": "declined",
+      "is_correct": true
+     },
+     {
+      "body_md": "no effect on purchasing power",
+      "is_correct": false
+     },
+     {
+      "body_md": "all of these depend upon the market situation",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.9,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Read the following scenario and answer the following questions:\n>\n> There are four firms (A, B, C and D) which operates under similar conditions and are comparable. The top management of Firm B is worried about the profitability of the firm and anticipates that the firm's operational efficiency is relatively poor which is projected in declining market share of the company as well as other operational ratios.\n>\n> Miss Lizi, the cost accountant of Firm B has been authorized by the top management to look into the matter and report back. Miss Lizi is able to extract the following data of the four firms.\n>\n> | Firm | Capital Employed (₹ in Millions) | Value added (₹ in Millions) |\n> |---|---|---|\n> | A | 8.6 | 1.8 |\n> | B | 2.2 | 0.2 |\n> | C | 15.6 | 2.8 |\n> | D | 31.6 | 4.1 |\n>\n> She is of the opinion that the value added is the comparable output and the capital employed is the comparable input. Accordingly, she extracts the data of the two variables across the four firms.\n>\n> Choose the correct option from the given alternatives based on the above scenario: 2×5=10\n\nWhich firm has the highest efficiency?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "A",
+      "is_correct": true
+     },
+     {
+      "body_md": "B",
+      "is_correct": false
+     },
+     {
+      "body_md": "C",
+      "is_correct": false
+     },
+     {
+      "body_md": "D",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.3,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Read the following scenario and answer the following questions:\n>\n> There are four firms (A, B, C and D) which operates under similar conditions and are comparable. The top management of Firm B is worried about the profitability of the firm and anticipates that the firm's operational efficiency is relatively poor which is projected in declining market share of the company as well as other operational ratios.\n>\n> Miss Lizi, the cost accountant of Firm B has been authorized by the top management to look into the matter and report back. Miss Lizi is able to extract the following data of the four firms.\n>\n> | Firm | Capital Employed (₹ in Millions) | Value added (₹ in Millions) |\n> |---|---|---|\n> | A | 8.6 | 1.8 |\n> | B | 2.2 | 0.2 |\n> | C | 15.6 | 2.8 |\n> | D | 31.6 | 4.1 |\n>\n> She is of the opinion that the value added is the comparable output and the capital employed is the comparable input. Accordingly, she extracts the data of the two variables across the four firms.\n>\n> Choose the correct option from the given alternatives based on the above scenario: 2×5=10\n\nRelative efficiency of Firm B is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "85.88",
+      "is_correct": false
+     },
+     {
+      "body_md": "43.40",
+      "is_correct": true
+     },
+     {
+      "body_md": "62.08",
+      "is_correct": false
+     },
+     {
+      "body_md": "100",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.3,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Read the following scenario and answer the following questions:\n>\n> There are four firms (A, B, C and D) which operates under similar conditions and are comparable. The top management of Firm B is worried about the profitability of the firm and anticipates that the firm's operational efficiency is relatively poor which is projected in declining market share of the company as well as other operational ratios.\n>\n> Miss Lizi, the cost accountant of Firm B has been authorized by the top management to look into the matter and report back. Miss Lizi is able to extract the following data of the four firms.\n>\n> | Firm | Capital Employed (₹ in Millions) | Value added (₹ in Millions) |\n> |---|---|---|\n> | A | 8.6 | 1.8 |\n> | B | 2.2 | 0.2 |\n> | C | 15.6 | 2.8 |\n> | D | 31.6 | 4.1 |\n>\n> She is of the opinion that the value added is the comparable output and the capital employed is the comparable input. Accordingly, she extracts the data of the two variables across the four firms.\n>\n> Choose the correct option from the given alternatives based on the above scenario: 2×5=10\n\nFor inefficient firm,",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Input Target = Actual Input",
+      "is_correct": false
+     },
+     {
+      "body_md": "Input Target > Actual Input",
+      "is_correct": false
+     },
+     {
+      "body_md": "Input Target < Actual Input",
+      "is_correct": true
+     },
+     {
+      "body_md": "Input Target = Input Slack",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Read the following scenario and answer the following questions:\n>\n> There are four firms (A, B, C and D) which operates under similar conditions and are comparable. The top management of Firm B is worried about the profitability of the firm and anticipates that the firm's operational efficiency is relatively poor which is projected in declining market share of the company as well as other operational ratios.\n>\n> Miss Lizi, the cost accountant of Firm B has been authorized by the top management to look into the matter and report back. Miss Lizi is able to extract the following data of the four firms.\n>\n> | Firm | Capital Employed (₹ in Millions) | Value added (₹ in Millions) |\n> |---|---|---|\n> | A | 8.6 | 1.8 |\n> | B | 2.2 | 0.2 |\n> | C | 15.6 | 2.8 |\n> | D | 31.6 | 4.1 |\n>\n> She is of the opinion that the value added is the comparable output and the capital employed is the comparable input. Accordingly, she extracts the data of the two variables across the four firms.\n>\n> Choose the correct option from the given alternatives based on the above scenario: 2×5=10\n\nInput slack for Firm B is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "2.2",
+      "is_correct": false
+     },
+     {
+      "body_md": "1.245",
+      "is_correct": true
+     },
+     {
+      "body_md": "0",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.955",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "> **Case scenario** · questions (xi) to (xv)\n>\n> Read the following scenario and answer the following questions:\n>\n> There are four firms (A, B, C and D) which operates under similar conditions and are comparable. The top management of Firm B is worried about the profitability of the firm and anticipates that the firm's operational efficiency is relatively poor which is projected in declining market share of the company as well as other operational ratios.\n>\n> Miss Lizi, the cost accountant of Firm B has been authorized by the top management to look into the matter and report back. Miss Lizi is able to extract the following data of the four firms.\n>\n> | Firm | Capital Employed (₹ in Millions) | Value added (₹ in Millions) |\n> |---|---|---|\n> | A | 8.6 | 1.8 |\n> | B | 2.2 | 0.2 |\n> | C | 15.6 | 2.8 |\n> | D | 31.6 | 4.1 |\n>\n> She is of the opinion that the value added is the comparable output and the capital employed is the comparable input. Accordingly, she extracts the data of the two variables across the four firms.\n>\n> Choose the correct option from the given alternatives based on the above scenario: 2×5=10\n\nOutput Target for Firm B is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 0.46 million",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 0.26 million",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 0.95 million",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 0.80 million",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true,
+    "case_group": "1(xi)-1(xv)"
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Discuss the four perspectives of Balance Score Card (BSC) for measuring organizational performance. What are the limitations of BSC?",
+    "parent_ref": "2",
+    "explanation_md": "The objectives and measures view organizational performance from four perspectives -\n(1) Financial, (2) Customers, (3) Internal Business Process and, (4) Learning and Growth.\n\n(1) Financial : The financial perspective serves as the focus for the objectives and measures for the objectives and measures in the other scorecard perspectives. This perspective is concerned for profit of the enterprises. Under this perspective the focus will be on financial measures like operating profit, ROI, residual income, economic value-added concept, revenue growth, cost reduction, asset utilization etc. These financial measures will provide feedback on whether improved operational performance is being translated into improved financial performance.\n\n(2) Customer: This perspective captures the ability of the organization to provide quality goods and services, the effectiveness of their delivery, and overall customer service and satisfaction. The needs and desires of customers must be attended to properly because customers pay for the organization's costs and provide for its profits. This perspective typically includes several core or genetic measures that relate to customer loyalty and the result of the strategy in the targeted segment. They include market share, customer retention, new customer acquisition, customer satisfaction and customer profitability.\n\n(3) Internal Business Processes: This perspective focuses on the internal business results that lead to financial success and satisfied customers. To meet organizational objectives and customers' expectations, organizations must identify the key business processes at which they must excel. Key processes are monitored to ensure that outcomes will be satisfactory. The principal internal business processes include the following: (a) Innovation processes for exploring the needs of the customers. (b) Operation processes with a view to providing efficient, consistent, and timely delivery of product/ service. (c) Post service sales processes.\n\n(4) Learning and Growth: This perspective looks at the ability of employees, the quality of information systems, and the effects of organizational alignment in supporting accomplishment of organizational goals. Processes will only succeed if adequately skilled and motivated employees, supplied with accurate and timely information, are driving them. To meet changing requirements and customer expectations, employees may be asked to take on dramatically new responsibilities, and may require skills, capabilities, technologies, and organizational designs that were not available before. The learning and growth perspective identifies the infrastructure that the business must build to create long-term growth and improvement. There will be a focus on factors like employee capability, employee productivity, employee satisfaction, employee retention.\n\nLimitations:\nBSC is subject to the following limitations –\n(i) There is no clear relation between BSC and shareholder value.\n(ii) It does not lead to a single aggregate summary of control.\n(iii) The measures may give conflicting signals and confuse management.\n(iv) It involves substantial shifts in corporate culture.",
+    "reference_solution_md": "The objectives and measures view organizational performance from four perspectives -\n(1) Financial, (2) Customers, (3) Internal Business Process and, (4) Learning and Growth.\n\n(1) Financial : The financial perspective serves as the focus for the objectives and measures for the objectives and measures in the other scorecard perspectives. This perspective is concerned for profit of the enterprises. Under this perspective the focus will be on financial measures like operating profit, ROI, residual income, economic value-added concept, revenue growth, cost reduction, asset utilization etc. These financial measures will provide feedback on whether improved operational performance is being translated into improved financial performance.\n\n(2) Customer: This perspective captures the ability of the organization to provide quality goods and services, the effectiveness of their delivery, and overall customer service and satisfaction. The needs and desires of customers must be attended to properly because customers pay for the organization's costs and provide for its profits. This perspective typically includes several core or genetic measures that relate to customer loyalty and the result of the strategy in the targeted segment. They include market share, customer retention, new customer acquisition, customer satisfaction and customer profitability.\n\n(3) Internal Business Processes: This perspective focuses on the internal business results that lead to financial success and satisfied customers. To meet organizational objectives and customers' expectations, organizations must identify the key business processes at which they must excel. Key processes are monitored to ensure that outcomes will be satisfactory. The principal internal business processes include the following: (a) Innovation processes for exploring the needs of the customers. (b) Operation processes with a view to providing efficient, consistent, and timely delivery of product/ service. (c) Post service sales processes.\n\n(4) Learning and Growth: This perspective looks at the ability of employees, the quality of information systems, and the effects of organizational alignment in supporting accomplishment of organizational goals. Processes will only succeed if adequately skilled and motivated employees, supplied with accurate and timely information, are driving them. To meet changing requirements and customer expectations, employees may be asked to take on dramatically new responsibilities, and may require skills, capabilities, technologies, and organizational designs that were not available before. The learning and growth perspective identifies the infrastructure that the business must build to create long-term growth and improvement. There will be a focus on factors like employee capability, employee productivity, employee satisfaction, employee retention.\n\nLimitations:\nBSC is subject to the following limitations –\n(i) There is no clear relation between BSC and shareholder value.\n(ii) It does not lead to a single aggregate summary of control.\n(iii) The measures may give conflicting signals and confuse management.\n(iv) It involves substantial shifts in corporate culture.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "introduction-to-performance-management",
+    "mapping_confidence": 0.26,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Six sigma delivers better and effective results than total quality management. In the light of the statement differentiate between Six Sigma and Total Quality Management.",
+    "parent_ref": "2",
+    "explanation_md": "Both Six Sigma and TQM are quality management tools which have been put to effective use by companies. Although the methodologies and procedures used in the two appear quite similar, there are certain differences between the two which are enumerated in the next few lines;\n\n(i) Six-Sigma is a relatively newer concept than TQM – while TQM refers to continuous effort by employees to ensure high quality products Six Sigma incorporates many small changes in the systems to ensure effective results and better customer satisfaction. As such TQM evolved, through contributions of various quality gurus post 1950, as a philosophy of quality management. Feigenbaum introduced the concept of \"Total Quality Control\" (TQC) in his first book \"Quality Control Handbook\" in 1951. This is considered as the start of the philosophy of TQM. Six Sigma, on the other, incepted in 1981 in Motorola.\n(ii) Focus - The focus of TQM is to preserve existing quality standards whereas. Six Sigma focuses on improving quality by minimizing and eventually eliminating defects from the system.\n(iii) Implementation – implementation of Six Sigma is much more complicated in comparison to implementation of the TQM process. Deployment of Six Sigma is dependent on certified professionals (referred to as Master Black Belts). Even the employees are certified as \"Green Belts\" or \"Black Belts\" depending on their level of proficiency. TQM, on the other hand, is a philosophy which can be referred to a part time activity which does not require any special training.\n(iv) Results - Six-Sigma delivers better and effective results than TQM. Customer feedback makes Six Sigma more accurate and result oriented. There is a growing consensus24 that six sigma will outperform TQM in future.",
+    "reference_solution_md": "Both Six Sigma and TQM are quality management tools which have been put to effective use by companies. Although the methodologies and procedures used in the two appear quite similar, there are certain differences between the two which are enumerated in the next few lines;\n\n(i) Six-Sigma is a relatively newer concept than TQM – while TQM refers to continuous effort by employees to ensure high quality products Six Sigma incorporates many small changes in the systems to ensure effective results and better customer satisfaction. As such TQM evolved, through contributions of various quality gurus post 1950, as a philosophy of quality management. Feigenbaum introduced the concept of \"Total Quality Control\" (TQC) in his first book \"Quality Control Handbook\" in 1951. This is considered as the start of the philosophy of TQM. Six Sigma, on the other, incepted in 1981 in Motorola.\n(ii) Focus - The focus of TQM is to preserve existing quality standards whereas. Six Sigma focuses on improving quality by minimizing and eventually eliminating defects from the system.\n(iii) Implementation – implementation of Six Sigma is much more complicated in comparison to implementation of the TQM process. Deployment of Six Sigma is dependent on certified professionals (referred to as Master Black Belts). Even the employees are certified as \"Green Belts\" or \"Black Belts\" depending on their level of proficiency. TQM, on the other hand, is a philosophy which can be referred to a part time activity which does not require any special training.\n(iv) Results - Six-Sigma delivers better and effective results than TQM. Customer feedback makes Six Sigma more accurate and result oriented. There is a growing consensus24 that six sigma will outperform TQM in future.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.2,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A company sells one of its products in the domestic as well as in the export market. The relationship between price and demand in the two different markets are as under:\nDomestic market: $136 - 8Q_1$\nExport Market: $228 - 20Q_2$,\nwhere $Q_1$ and $Q_2$ represent quantity of demand in '000 units.\nThe variable cost per unit of the product is represented by $38 - Q$ where $Q = Q_1 + Q_2$\nFind the optimum selling price and total contribution for domestic market and export market.",
+    "parent_ref": "3",
+    "explanation_md": "For Domestic Market:\nOptimum selling price = ₹ 80\nTotal contribution = ₹ 3,43,000\n\nFor Export Market:\nOptimum selling price = ₹ 128\nTotal contribution = ₹ 4,75,000",
+    "reference_solution_md": "For Domestic Market:\nOptimum selling price = ₹ 80\nTotal contribution = ₹ 3,43,000\n\nFor Export Market:\nOptimum selling price = ₹ 128\nTotal contribution = ₹ 4,75,000",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "economic-efficiency-of-the-firm-performance-analysis",
+    "mapping_confidence": 0.13,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What is Value at Risk (VaR)? What are its advantages? Discuss its limitations.",
+    "parent_ref": "3",
+    "explanation_md": "Value at Risk (VaR) is one of the popular methods of measuring financial risks. There are different types of VaR— long-term VaR, marginal VaR, factor VaR, and shock VaR. VaR is also defined as the threshold value such that the probability of a portfolio making a market to a market loss over a specific time horizon exceeds this value. For example, if a portfolio stock has a one day 3 per cent VaR of ₹10 million, there is 0.03 probability that the portfolio may face a reduction in value by more than ₹10 million over a specific time period. This is on assuming that normal market operations and there is no trading. A loss which exceeds VaR threshold is known as 'VaR break'. VaR has applications in financial risk management, risk measurement, control and reporting. It can also be used in calculating regulatory capital.\n\nAdvantages :\nVaR has the advantage of a structured methodology for critically analysing a risk that is available as part of management function. Daily publication of a number on time and with particular statistical data enables an organization to maintain a high objective standard. However, robust backup systems and assumptions regarding default need to be established. A quotation runs thus, 'risk taking institution that does not compute VaR might escape disaster but an institution that cannot compute VaR will not' according to Aaaron Brown.\n\nAnother advantage of VaR is that it differentiates risks into two regimes, that is, normal days and extreme occurrences. Inside the VaR limit, application of the conventional statistical methods is reliable. Out VaR limit risk should be analysed with stress testing on the basis of data available on the long-term and in the broad market. Distribution losses beyond VaR point are both impossible and useless. As such the finance manager should concentrate on developing plans to limit the loss if possible or to survive the loss.\n\nLimitations :\nThere has been criticism against VaR. It is said that this concept has led to excessive risk taking and leveraging by financial institutions. Again, VaR is not sub-additive which means that VaR of a combined portfolio can be larger than the sum of the VaRs of its components.\n\nAlternative Solution :\nValue at Risk (VaR) is one of the popular methods of measuring financial risks. There are different types of VaR — long-term VaR, marginal VaR, factor VaR, and shock VaR. VaR is also defined as the threshold value such that the probability of a portfolio making a market to a market loss over a specific time horizon exceeds this value. For example, if a portfolio stock has a one day 3 per cent VaR of ₹10 million, there is 0.03 probability that the portfolio may face a reduction in value by more than ₹10 million over a specific time period. This is on assuming that normal market operations and there is no trading. A loss which exceeds VaR threshold is known as 'VaR break'. VaR has applications in financial risk management, risk measurement, control and reporting. It can also be used in calculating regulatory capital.\n\nAdvantages :\n(i) Easy to understand : VaR is a Single number that approximates the amount of Risk in a portfolio. VaR is presented either as a percentage of the value of a portfolio or simply in price units such as dollars. This makes it easy to understand and interpret.\n(ii) Applicability : VaR can be used to measure and make a comparison of risks across asset classes and portfolios. This equips the risk manager with relevant information on possible risks.\n(iii) Acceptability : The VaR figure is a widely accepted standard in the buying or selling of assets. Besides, it is acceptable to banking regulators. VaR has the same interpretation irrespective of the assets you are considering. Further, VaR is regularly seen in annual reports of financial companies.\n(iv) Used for performance evaluation: Instead of evaluating a firm's performance purely based on returns, a risk-adjusted return can be calculated by considering the level of risk taken. In this case. VaR can serve as an adjustment basis.\nReliability: VaR, as a measure of risk, can be verified by back testing.\n\nLimitations :\n(i) Depends on inputs and Assumptions:\n(ii) Inconsistent Results: Different approaches to calculating VaR use varying assumptions and, as a result, end up getting different value of VaR of the same portfolio.\n(iii) Misleading and a false sense of Security : When VaR is calculated at a confidence interval of 99%, then its interpretation is that there is a 99% probability that one will lose no more than the VaR value obtained. This may give and investor a false sense of Security.\n(iv) Difficult to Calculate",
+    "reference_solution_md": "Value at Risk (VaR) is one of the popular methods of measuring financial risks. There are different types of VaR— long-term VaR, marginal VaR, factor VaR, and shock VaR. VaR is also defined as the threshold value such that the probability of a portfolio making a market to a market loss over a specific time horizon exceeds this value. For example, if a portfolio stock has a one day 3 per cent VaR of ₹10 million, there is 0.03 probability that the portfolio may face a reduction in value by more than ₹10 million over a specific time period. This is on assuming that normal market operations and there is no trading. A loss which exceeds VaR threshold is known as 'VaR break'. VaR has applications in financial risk management, risk measurement, control and reporting. It can also be used in calculating regulatory capital.\n\nAdvantages :\nVaR has the advantage of a structured methodology for critically analysing a risk that is available as part of management function. Daily publication of a number on time and with particular statistical data enables an organization to maintain a high objective standard. However, robust backup systems and assumptions regarding default need to be established. A quotation runs thus, 'risk taking institution that does not compute VaR might escape disaster but an institution that cannot compute VaR will not' according to Aaaron Brown.\n\nAnother advantage of VaR is that it differentiates risks into two regimes, that is, normal days and extreme occurrences. Inside the VaR limit, application of the conventional statistical methods is reliable. Out VaR limit risk should be analysed with stress testing on the basis of data available on the long-term and in the broad market. Distribution losses beyond VaR point are both impossible and useless. As such the finance manager should concentrate on developing plans to limit the loss if possible or to survive the loss.\n\nLimitations :\nThere has been criticism against VaR. It is said that this concept has led to excessive risk taking and leveraging by financial institutions. Again, VaR is not sub-additive which means that VaR of a combined portfolio can be larger than the sum of the VaRs of its components.\n\nAlternative Solution :\nValue at Risk (VaR) is one of the popular methods of measuring financial risks. There are different types of VaR — long-term VaR, marginal VaR, factor VaR, and shock VaR. VaR is also defined as the threshold value such that the probability of a portfolio making a market to a market loss over a specific time horizon exceeds this value. For example, if a portfolio stock has a one day 3 per cent VaR of ₹10 million, there is 0.03 probability that the portfolio may face a reduction in value by more than ₹10 million over a specific time period. This is on assuming that normal market operations and there is no trading. A loss which exceeds VaR threshold is known as 'VaR break'. VaR has applications in financial risk management, risk measurement, control and reporting. It can also be used in calculating regulatory capital.\n\nAdvantages :\n(i) Easy to understand : VaR is a Single number that approximates the amount of Risk in a portfolio. VaR is presented either as a percentage of the value of a portfolio or simply in price units such as dollars. This makes it easy to understand and interpret.\n(ii) Applicability : VaR can be used to measure and make a comparison of risks across asset classes and portfolios. This equips the risk manager with relevant information on possible risks.\n(iii) Acceptability : The VaR figure is a widely accepted standard in the buying or selling of assets. Besides, it is acceptable to banking regulators. VaR has the same interpretation irrespective of the assets you are considering. Further, VaR is regularly seen in annual reports of financial companies.\n(iv) Used for performance evaluation: Instead of evaluating a firm's performance purely based on returns, a risk-adjusted return can be calculated by considering the level of risk taken. In this case. VaR can serve as an adjustment basis.\nReliability: VaR, as a measure of risk, can be verified by back testing.\n\nLimitations :\n(i) Depends on inputs and Assumptions:\n(ii) Inconsistent Results: Different approaches to calculating VaR use varying assumptions and, as a result, end up getting different value of VaR of the same portfolio.\n(iii) Misleading and a false sense of Security : When VaR is calculated at a confidence interval of 99%, then its interpretation is that there is a 99% probability that one will lose no more than the VaR value obtained. This may give and investor a false sense of Security.\n(iv) Difficult to Calculate",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.84,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The Net profit margin of Ruhi Ltd., Jammu is 5.95%; Operating Efficiency by using asset turnover ratio is 4.40. Total debts of the organization ₹ 3,80,000 and Equity capital is ₹ 10,00,000. If benchmark of the industry with expectations of the investors is\n(i) 25% and\n(ii) 40%, suggest the causes of Low/High Return on Equity by using Dupont analysis.",
+    "parent_ref": "4",
+    "explanation_md": "Return on Equity as per Dupont analysis -\nNet profit margin* Asset turnover *(1 + Debt / Equity) Or\nOperating margin * Operating efficiency * Financial leverage\n= 5.95 % x 4.40 x (1 + 0.38) = 36.13%\nCompare the ROE with industry average or investor expectations – (i) if it is 25% that existing return i.e., 36.13 % is good and (ii) if it is 40% then many options are available to improve upon the ROE (36.13 %). Operating margin, operating efficiency and financial leverage are subjects corresponding to marketing, production, and finance function respectively. Depending upon the feasibility and scope available, the management may adopt a suitable strategy to reward the shareholders.",
+    "reference_solution_md": "Return on Equity as per Dupont analysis -\nNet profit margin* Asset turnover *(1 + Debt / Equity) Or\nOperating margin * Operating efficiency * Financial leverage\n= 5.95 % x 4.40 x (1 + 0.38) = 36.13%\nCompare the ROE with industry average or investor expectations – (i) if it is 25% that existing return i.e., 36.13 % is good and (ii) if it is 40% then many options are available to improve upon the ROE (36.13 %). Operating margin, operating efficiency and financial leverage are subjects corresponding to marketing, production, and finance function respectively. Depending upon the feasibility and scope available, the management may adopt a suitable strategy to reward the shareholders.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.37,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The following financial information has been taken from the Annual Report 2024 of FinPoor Limited:\n\nBalance Sheet of Stress Limited as at March 31, 2024\n\n| ₹ in crore |  |\n|---|---|\n| **ASSETS:** |  |\n| Non-Current Assets |  |\n| Property, Plant and Equipment | 1,654.11 |\n| Intangible Assets | 375.15 |\n| Other Non-Current Assets | 388.18 |\n| Total Non-Current Assets | 2,417.44 |\n| Current Assets |  |\n| Inventories | 128.56 |\n| Financial Assets excluding Cash and Cash Equivalent | 85.36 |\n| Cash and Cash Equivalent | 6.85 |\n| Other Current Assets | 568.93 |\n| Total Current Assets | 789.70 |\n| Total Assets | 3,207.14 |\n| **EQUITY AND LIABILITIES:** |  |\n| Equity |  |\n| Equity Share Capital | 362.75 |\n| Other Equity | -568.94 |\n| Net Worth | -206.19 |\n| Non-Current Liability |  |\n| Financial Liabilities | 1,203.00 |\n| Provisions | 112.63 |\n| Other Non-Current Liabilities | 46.59 |\n| Total Non-Current Liabilities | 1,362.22 |\n| Current Liabilities |  |\n| Financial Liabilities | 1,721.65 |\n| Provisions | 95.25 |\n| Other Current Liabilities | 234.21 |\n| Total Current Liabilities | 2,051.11 |\n| Total Equity and Liabilities | 3,207.14 |\n\nAdditional Information:\nDepreciation written off – ₹ 28 crore\nPreliminary Expenses written off – ₹ 11.60 crore.\nNet Loss during the FY 2023-24 – ₹ 58.70 crore.\n\nUsing the NCAER Model for Corporate Distress Prediction, you are required to ascertain the stage of sickness.",
+    "parent_ref": "4",
+    "explanation_md": "NCAER Model for Corporate Distress Prediction:\nThe NCAER Study on Corporate Distress Prediction prescribed the following three parameters for predicting the stage of Corporate Sickness:\n(i) Cash profit position (a profitability measure)\n(ii) Net working capital position (a liquidity measure)\n(iii) Net worth positions (a solvency measure)\n\nIf anyone of the above-mentioned parameters becomes negative in case of a firm, it can be predicted that the firm is likely to move towards sickness. If all the three parameters are negative then it shows that the company is fully under corporate distress. In order to decide the stage of sickness in the given case, we have to calculate all the three above mentioned parameters.\n\n- Cash profit position : It means that we have to calculate cash from operating activities. In the given case, Cash from Operating Activities = Net Profit + Depreciation Written Off + Preliminary Expenses Written Off = ₹ (19.10) crores which is negative.\n- Net Working Capital : Net Working Capital = Current Assets – Current Liabilities = ₹ (1,261.41) crores which is also negative.\n- Net Worth: Net Worth = Equity Share Capital + Other Equity = ₹ (206.19) crores which is also negative.\n\nThus, we find that in this case, all the three parameters are negative and hence, we can conclude that the company is a sick company and its stage of sickness is 'fully sick'. Therefore, immediate necessary drastic revival measures are essentially required for the survival of the company.",
+    "reference_solution_md": "NCAER Model for Corporate Distress Prediction:\nThe NCAER Study on Corporate Distress Prediction prescribed the following three parameters for predicting the stage of Corporate Sickness:\n(i) Cash profit position (a profitability measure)\n(ii) Net working capital position (a liquidity measure)\n(iii) Net worth positions (a solvency measure)\n\nIf anyone of the above-mentioned parameters becomes negative in case of a firm, it can be predicted that the firm is likely to move towards sickness. If all the three parameters are negative then it shows that the company is fully under corporate distress. In order to decide the stage of sickness in the given case, we have to calculate all the three above mentioned parameters.\n\n- Cash profit position : It means that we have to calculate cash from operating activities. In the given case, Cash from Operating Activities = Net Profit + Depreciation Written Off + Preliminary Expenses Written Off = ₹ (19.10) crores which is negative.\n- Net Working Capital : Net Working Capital = Current Assets – Current Liabilities = ₹ (1,261.41) crores which is also negative.\n- Net Worth: Net Worth = Equity Share Capital + Other Equity = ₹ (206.19) crores which is also negative.\n\nThus, we find that in this case, all the three parameters are negative and hence, we can conclude that the company is a sick company and its stage of sickness is 'fully sick'. Therefore, immediate necessary drastic revival measures are essentially required for the survival of the company.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.34,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A firm has 10,000 shares of ₹ 100 each listed on Bombay Stock Exchange. The Earning per share is ₹ 19 and the market price of the shares is ₹ 140 per share. All shares are outstanding. Capital structure of the firm is divided into equity and debts. Book value of debts is ₹ 4,50,000 while the market value of debts was ₹ 4,00,000. The firm maintains cash and equivalent to cash ₹ 40,000. The profit of the firm was ₹ 1,50,000 without considering the depreciation of ₹ 30,000. Current assets and fixed assets are ₹ 7,00,000. All information about the firm is related to the financial year 2023-24. You are required to **compute** the enterprise value.",
+    "parent_ref": "5",
+    "explanation_md": "Enterprise value (EV) = ₹ 18,10,000\n\nBook value is not considered for computing enterprise value.\nProfit before depreciation or after depreciation has no meaning in computing enterprise value.\nFixed and current assets are not part of enterprise value.\nOnly market values are considered in enterprise value.",
+    "reference_solution_md": "Enterprise value (EV) = ₹ 18,10,000\n\nBook value is not considered for computing enterprise value.\nProfit before depreciation or after depreciation has no meaning in computing enterprise value.\nFixed and current assets are not part of enterprise value.\nOnly market values are considered in enterprise value.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.14,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Laxmi Electronics Ltd. reported a profit of ₹ 105 lakh after 30% tax for the financial year 2023-24. An analysis of the accounts revealed that the income included extraordinary items of ₹ 42 lakh and an extraordinary loss of ₹ 4 lakh. The existing operations, except the extraordinary items, are expected to continue in the future. In addition, the results of the launch of the new product 'Raghu TV' are expected to be as follows:\nSales ₹ 70 lakh; Material and Labour cost as variable costs ₹ 25 lakh; Fixed cost ₹ 17 lakh.\n\nYou are required to-\n(i) **Assess** the value of business given that the capitalization rate is 14%.\n(ii) If the EPS of Laxmi Electronics Ltd is ₹ 4.7 and the price earnings ratio is 10 times, then what would be the market price of share?",
+    "parent_ref": "5",
+    "explanation_md": "(i) Value of Business = ₹ 700 Lakh\n(ii) Market price of share = ₹ 47",
+    "reference_solution_md": "(i) Value of Business = ₹ 700 Lakh\n(ii) Market price of share = ₹ 47",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "From the following information in respect of Ranjan Ltd. compute the value of employees of the organization:\n\n| Age | No. | Average Annual Earnings (₹) |\n|---|---|---|\n| 30-39 | 100 | 3,00,000 |\n| 40-49 | 50 | 4,00,000 |\n| 50-59 | 30 | 5,00,000 |\n\nThe retirement age is 60 years. The future earnings have been discounted at 10%. For computing the total value of human factor lowest age value of each class range is to be taken.\n\nAnnuity Factors at 10% discounting rate are as follows:\n\n| 5 Years | 10 Years | 15 Years | 20 Years | 25 Years | 30 Years |\n|---|---|---|---|---|---|\n| 3.791 | 6.145 | 7.606 | 8.514 | 9.077 | 9.427 |",
+    "parent_ref": "6",
+    "explanation_md": "| Age Group | Value of employees (₹) |\n|---|---|\n| 30 – 39 (Assuming all employees are just 30 years old) | 32,47,600 |\n| 40 - 49 (Assuming all employees are just 40 years old) | 36,42,500 |\n| 50-59 (Assuming all employees are just 50 years old) | 30,72,500 |",
+    "reference_solution_md": "| Age Group | Value of employees (₹) |\n|---|---|\n| 30 – 39 (Assuming all employees are just 30 years old) | 32,47,600 |\n| 40 - 49 (Assuming all employees are just 40 years old) | 36,42,500 |\n| 50-59 (Assuming all employees are just 50 years old) | 30,72,500 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "business-valuation-methods-and-approaches",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Consider A Ltd that has assets in place in which it has capital invested of ₹ 100 crores. Assume the following further facts about the firm:\n\nThe NOPAT on assets in place is ₹ 15 crore. This return on capital of 15% is expected to be sustained in the future, and the company has a cost of capital of 10%.\n\nAt the beginning of each of the next 5 years, A Ltd. is expected to make investments of ₹ 10 crore each. These investments are also expected to earn 15% as a return on capital, and the cost of capital is expected to remain 10%.\n\nAfter year 5, the company will continue to make investments and earnings will grow 5% a year, but the new investments will have a return on capital of only 10%, which is also the cost of capital.\n\nAll assets and investments are expected to have infinite lives. Thus, the assets in place and the investments made in the first five years will make 15% a year in perpetuity, with no growth.\n\n**Calculate** the value of the company using an economic value-added approach.",
+    "parent_ref": "6",
+    "explanation_md": "Value of the Company under EVA approach = ₹ 170.86 crore.",
+    "reference_solution_md": "Value of the Company under EVA approach = ₹ 170.86 crore.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "valuation-of-assets-and-liabilities",
+    "mapping_confidence": 0.17,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Hypothetical Ltd. is acquiring all the outstanding equity shares of Target Ltd. by exchanging one share of its own equity shares for each share of Target Ltd. Hypothetical Ltd. has a policy of keeping 50% of its capital structure in debts. The Capital structure of both these firms before the merger is as follows:\n\n| (Amount in Lakhs of rupees) | Hypothetical Ltd. | Target Ltd. |\n|---|---|---|\n| Equity capital (of ₹ 100 each) | 20 | 5 |\n| Retained earnings | 25 | 25 |\n| 14% Preference Shares | 5 | — |\n| 13% Debts | 50 | — |\n\nHypothetical company needs your advice on the following questions:\n(i) What will the capital structure of the merged firm be? Determine the percentage share of debt in the merged firm.\n(ii) Has the merged firm's financial risk declined?\n(iii) How much additional debt can the combined firm borrow to return to a capital structure 50% of which is debt?",
+    "parent_ref": "7",
+    "explanation_md": "(i) Capital structure of merged firm — (In Rupees)\nEquity capital 25,00,000\nRetained Earnings 50,00,000\n14% Preference shares 5,00,000\n13% Debts 50,00,000\nTotal 1,30,00,000\nDebt / total capital = 38.46%\n\n(ii) Yes, the financial risk has declined due to the lower debt ratio of the merged firm. The same was 50% in a pre-merger situation.\n\n(iii) Additional Debts = ₹ 30,00,000",
+    "reference_solution_md": "(i) Capital structure of merged firm — (In Rupees)\nEquity capital 25,00,000\nRetained Earnings 50,00,000\n14% Preference shares 5,00,000\n13% Debts 50,00,000\nTotal 1,30,00,000\nDebt / total capital = 38.46%\n\n(ii) Yes, the financial risk has declined due to the lower debt ratio of the merged firm. The same was 50% in a pre-merger situation.\n\n(iii) Additional Debts = ₹ 30,00,000",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Anju consultancy Ltd. has been assigned the task of estimating a fair acquisition price for Atul Industries. Anju consultancy decides to use comparable company analysis to determine a fair acquisition price and collects the following significant information regarding three comparable companies:\n\n| Company X | Company Y | Company Z |  |\n|---|---|---|---|\n| Price per share (₹) | 240 | 150 | 300 |\n| Earnings per share | 14.50 | 9.57 | 19.00 |\n\nAnju consultancy has also collected the following information relating to recent acquisitions of similar companies like Atul Industries:\n\n| Company A | Company B | Company C |  |\n|---|---|---|---|\n| Market Price | 92.45 | 357.50 | 224.00 |\n| Deal price | 117.00 | 425.00 | 290.00 |\n\nThe expected earnings per share of Atul industries is ₹ 15. You are required to **Assess** the expected Deal Price that should be offered for the acquisition.",
+    "parent_ref": "7",
+    "explanation_md": "Expected Deal price = ₹ 300",
+    "reference_solution_md": "Expected Deal price = ₹ 300",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "valuation-in-mergers-and-acquisitions",
+    "mapping_confidence": 0.84,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Fitness Solution is a family-owned fitness company, founded in 2020 by Roshan & Suman with traditional style equipment. The company commenced operations in February 2021 within a shopping mall so that members after working out, can conveniently shop, dine, pick up their children from enrichment classes or go to the cinema.\n\nThe owners pride themselves for providing a customized/tailored program by taking into account a person's medical history, present fitness level, fitness goals, fitness interests and offer many other small amenities that might be difficult to get in a similar Fitness Centre.\n\nThey believe –\"Each individual is unique and requires a specialized program plan which should be customized and tailored to his/her needs.\"\n\nThey have a number of loyal members even though they offer the traditional style equipment.\n\nRoshan & Suman take care of most of the routine operations, along with a small permanent staff and temporary staff. They appoint you as a management consultant and seek your advice on the Balanced Scorecard of the company.\n(i) Identify at least three 'Critical Success Factors' for Fitness Solution.\n(ii) Construct a 'Balance Scorecard'. (2 measures for each of the 4 perspectives are sufficient)",
+    "parent_ref": "8",
+    "explanation_md": "(i) Three critical success factors of Fitness solution are :\n- Developing and maintaining a high level of customer satisfaction\n- Offering facilities that are not much below that offered by the competitors\n- Keeping a tight cap on costs as there is considerable competitive pressure in this industry and entry barriers are not high.\n\n(ii) Following is a possible Balanced Scorecard of the company\nFinancial Perspective: Operating expenses relative to budget; Cash flow; Total daily operating revenue\nCustomer Perspective: Turnover rate among members; Customer satisfaction rate\nInternal Business Perspective: Number of employee complaints; Number of equipment not available on average day due to maintenance\nInnovation & Learning: Number of new equipment put into service; Number of staff participating in training programme",
+    "reference_solution_md": "(i) Three critical success factors of Fitness solution are :\n- Developing and maintaining a high level of customer satisfaction\n- Offering facilities that are not much below that offered by the competitors\n- Keeping a tight cap on costs as there is considerable competitive pressure in this industry and entry barriers are not high.\n\n(ii) Following is a possible Balanced Scorecard of the company\nFinancial Perspective: Operating expenses relative to budget; Cash flow; Total daily operating revenue\nCustomer Perspective: Turnover rate among members; Customer satisfaction rate\nInternal Business Perspective: Number of employee complaints; Number of equipment not available on average day due to maintenance\nInnovation & Learning: Number of new equipment put into service; Number of staff participating in training programme",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.24,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Company X is contemplating the purchase of Company Y, Company X has 3,00,000 shares having a market price of ₹ 30 per share, while Company Y has 2,00,000 shares selling at ₹ 20 per share. The EPS are ₹ 4.00 and ₹ 2.25 for Company X and Y respectively. Managements of both companies are discussing two alternative proposals for exchange of shares as indicated below:\n(i) in proportion to the relative earnings per share of two Companies.\n(ii) 0.5 share of Company X for one share of Company Y (0.5:1).\n\nYou are required:\nTo **advice** management on the Earnings Per Share (EPS) after merger under two alternatives; and\nTo **advice** management about the impact on EPS for the shareholders of two companies under both alternatives.",
+    "parent_ref": "8",
+    "explanation_md": "EPS when exchange ratio is in proportion to relative EPS of two companies:\nEPS after merger = ₹ 4\n\nEPS when share exchange ratio is 0.5:1:\nEPS after merger = ₹ 4.125\n\nImpact of merger on EPS for shareholders of Company X and Company Y\na. Merger took place on relative EPS of two companies; therefore, both companies maintain their EPS and no impact on EPS of shareholders of both companies.\nb. Impact on Shareholders of Company X. Increase in EPS (₹) 0.125\nImpact on shareholders of Company Y. Decrease in EPS (₹) 0.1875",
+    "reference_solution_md": "EPS when exchange ratio is in proportion to relative EPS of two companies:\nEPS after merger = ₹ 4\n\nEPS when share exchange ratio is 0.5:1:\nEPS after merger = ₹ 4.125\n\nImpact of merger on EPS for shareholders of Company X and Company Y\na. Merger took place on relative EPS of two companies; therefore, both companies maintain their EPS and no impact on EPS of shareholders of both companies.\nb. Impact on Shareholders of Company X. Increase in EPS (₹) 0.125\nImpact on shareholders of Company Y. Decrease in EPS (₹) 0.1875",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "enterprise-risk-management",
+    "mapping_confidence": 0.48,
+    "mapping_state": "pending",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(xi)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xii)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xiii)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xiv)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "1(xv)": [
+   "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+  ],
+  "3(a)": [
+   "Print shows 'Q1', 'Q2' without subscript formatting; typeset as Q_1, Q_2 (same meaning).",
+   "Answer text already matches the print."
+  ]
+ },
+ "review_decisions": {
+  "1(viii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key C equals printed key (viii) (C).",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says 'Annual Report 2024 of FinPoor Limited' but the balance sheet is titled 'Balance Sheet of Stress Limited'"
+   ],
+   "by": "claude-review"
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Balanced scorecard measures are placed under the same perspectives as in the printed table.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [
+  "1(xi)",
+  "1(xii)",
+  "1(xiii)",
+  "1(xiv)",
+  "1(xv)"
+ ],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 29
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p15-2025-12",
+ "items": {
+  "1(xiv)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key A equals printed key (xiv) (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key is Article 14; Article 12A (FTS) is also a UN-only article, so the key is questionable."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem with the data table and additional information matches the print; answer computation matches the printed table (700, 105, 595, 385, 210) and the suggestion.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer refers to 'Mr. Jacob' while the question says Dr. James."
+   ]
+  },
+  "3(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; two-regime computation table matches (2,35,560 vs 2,08,000).",
+   "fixes": [],
+   "printed_issues": [
+    "Header of the printed table is misaligned ('Income under Old Regime / Normal Provisions / Section 115BAC')."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and table match the print; answer computation (200.304) and conclusion on section 115BAB(7) match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; answer table with both rupee columns matches, including 8,43,000 and 1,27,400.",
+   "fixes": [],
+   "printed_issues": [
+    "Unbalanced bracket in the section 115D note.",
+    "Exemption note says 'after a period of six months'.",
+    "Salary shown as 'Nil/--'."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer match the print (Machinery A cost 25,00,000, Machinery B cost 38,30,000, depreciation 1,87,500 and 2,87,250).",
+   "fixes": [],
+   "printed_issues": [
+    "Additional depreciation on Machinery A stated as 10% of 25 lakhs for use under 180 days.",
+    "Machinery B exchange difference on the unpaid USD 5,000 ignored."
+   ]
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and rate table match the print; answer computation matches digit for digit (47,97,000; 11,74,264; 4,64,400; 7,09,860).",
+   "fixes": [],
+   "printed_issues": [
+    "Answer converts the 28.03.2025 transaction at the 28.02.2025 rate and ignores the table's 28.03.2025 rate.",
+    "Answer says 'Country X' in the section 91 line."
+   ]
+  }
+ }
+}

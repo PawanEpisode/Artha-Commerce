@@ -1,0 +1,54 @@
+{
+ "schema": "artha.qboverride.v1",
+ "paper": "19",
+ "term_code": "2025-12",
+ "note": "Direct edits made to the seed JSON by the owner. Applied last by build_pyq_seed so a rebuild never loses them.",
+ "parts": {
+  "1(vii)": {
+   "stem_md": "Suganya delayed 67 days in filing of GST returns for the month of December, 2024. Determine the effective amount of late fee payable. Assuming amount of CGST/SGST/ UGST for June, 2025 is Nil.",
+   "options": [
+    {
+     "body_md": "₹ 500",
+     "is_correct": true
+    },
+    {
+     "body_md": "₹ 2,000",
+     "is_correct": false
+    },
+    {
+     "body_md": "₹ 5,000",
+     "is_correct": false
+    },
+    {
+     "body_md": "₹ Nil",
+     "is_correct": false
+    }
+   ],
+   "kind": "mcq_single",
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true
+  },
+  "1(xiv)": {
+   "options": [
+    {
+     "body_md": "The drawback is available at 98% if exported as such.",
+     "is_correct": true
+    },
+    {
+     "body_md": "The drawback is available at specified rate if exported after use.",
+     "is_correct": false
+    },
+    {
+     "body_md": "Drawback is not available, as export of part of machinery is not allowed.",
+     "is_correct": false
+    },
+    {
+     "body_md": "Either (A) or (B) above",
+     "is_correct": false
+    }
+   ],
+   "publish": true
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p20a-2025-06",
+ "items": {
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. Both statements and all ratio workings match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer calls item (v) 'Equity Gearing Ratio' while the question says 'Capital Gearing Ratio'",
+    "'Aternative Answer' (sic) heading",
+    "Second ITR line prints '(58 + 74) 0.5' without a multiplication sign",
+    "ROCE working '(236 + 80)' against alternative '(236 – 20 + 80)'"
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says the 2021 score 1.580 is in the gray area although it is below 1.8"
+   ]
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match. All tables in the answer match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Unbalanced bracket in 'Sundry Debtors [ ₹ 2,99,250 ÷ (100 % - Provision at 5%)'",
+    "In the capital employed table the 3,750 sits in an inner column on the same row as (4,10,250); kept as two rows"
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer uses 4,00,000 x 40.35 = 1,61,40,000 with the rounded value per share"
+   ]
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, tables and figures with the printed question paper and the answer with the printed suggested answer page; they match.",
+   "fixes": [],
+   "printed_issues": [
+    "Unbalanced bracket in 'EVA (NOPAT – (Operating Capital Employed x WACC)'",
+    "EVA printed two ways: ₹ 72.18 Lakh and ₹ 72.21 Lakh"
+   ]
+  }
+ }
+}

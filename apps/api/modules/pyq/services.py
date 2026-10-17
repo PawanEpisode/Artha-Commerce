@@ -6,7 +6,8 @@ Reference: docs/product/erd/F-09-previous-year-questions.md Section 3.2.
 from __future__ import annotations
 
 import uuid
-from dataclasses import dataclass
+from collections import Counter
+from dataclasses import dataclass, field
 from decimal import Decimal
 from typing import Any
 
@@ -30,6 +31,9 @@ class ImportReport:
     created_questions: int
     is_valid: bool
     issues: list[str]
+    # How each leaf question was written: {"created": n, "new_version": n, "unchanged": n, "merged_duplicate": n}.
+    outcomes: dict[str, int] = field(default_factory=dict)
+    warnings: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -184,6 +188,8 @@ def import_paper(
     # 3. Create PaperQuestions and underlying QuestionBank items
     part_ref_map: dict[str, PaperQuestion] = {}
     created_leaf_count = 0
+    outcomes: Counter[str] = Counter()
+    warnings: list[str] = []
 
     for p in payload.get("parts", []):
         is_leaf = bool(p.get("is_leaf", True))
@@ -203,7 +209,7 @@ def import_paper(
         if is_leaf:
             created_leaf_count += 1
             # Build F-06 Question payload
-            q_ext_ref = f"{external_ref}:{number_label}"
+            q_ext_ref = f"{external_ref}:{p.get('ref_suffix') or number_label}"
             stem_md = p.get("stem_md")
             if not stem_md:
                 # Link-out descriptor stub
@@ -255,6 +261,18 @@ def import_paper(
                     "source_year": int(paper.term_code[:4]) if paper.term_code[:4].isdigit() else None,
                 },
             }
+            if p.get("numeric_key"):
+                q_payload["numeric_key"] = p["numeric_key"]
+            if ch_key:
+                q_payload["mapping"] = [
+                    {
+                        "course": payload["course_code"].lower(),
+                        "level": payload["level_code"].lower(),
+                        "subject_key": payload["subject_key"],
+                        "chapter_key": ch_key,
+                        "primary": True,
+                    }
+                ]
 
             upsert_res = upsert_from_source(
                 origin_module="pyq",
@@ -263,9 +281,15 @@ def import_paper(
                 ownership="platform",
                 rights_status=rights_basis or "institute_material",
                 actor_id=editor_id,
-                auto_publish=True,
+                # A part the transcriber was unsure about stays a private draft; the rest go live with the paper.
+                auto_publish=bool(p.get("publish", True)),
+                mapping_confidence=p.get("mapping_confidence"),
             )
-            question = upsert_res.question
+            question = upsert_res.canonical
+            outcomes[upsert_res.outcome] += 1
+            if upsert_res.duplicate_of is not None:
+                outcomes["merged_duplicate"] += 1
+            warnings.extend(f"Q.{number_label}: {w}" for w in upsert_res.warnings)
 
         pq = PaperQuestion.objects.create(
             paper=paper,
@@ -279,8 +303,14 @@ def import_paper(
             kind=kind,
             descriptor=descriptor,
             chapter=chapter,
-            chapter_key=ch_key,
-            mapping_state=PaperQuestion.MappingState.CONFIRMED if chapter else PaperQuestion.MappingState.PENDING,
+            chapter_key=ch_key[
+                :80
+            ],  # the column is 80 wide; some syllabus keys are longer, the chapter FK carries the link
+            mapping_state=(
+                PaperQuestion.MappingState.CONFIRMED
+                if chapter and p.get("mapping_state", "confirmed") == "confirmed"
+                else PaperQuestion.MappingState.PENDING
+            ),
             scheme_relation=PaperQuestion.SchemeRelation.CURRENT if scheme else PaperQuestion.SchemeRelation.UNMAPPED,
             answer_source=p.get("answer_source", PaperQuestion.AnswerSource.NONE),
             answer_page_hint=p.get("answer_page_hint", ""),
@@ -302,7 +332,14 @@ def import_paper(
     paper.question_count = created_leaf_count
     paper.save(update_fields=["question_count", "updated_at"])
 
-    return ImportReport(paper=paper, created_questions=created_leaf_count, is_valid=True, issues=[])
+    return ImportReport(
+        paper=paper,
+        created_questions=created_leaf_count,
+        is_valid=True,
+        issues=[],
+        outcomes=dict(outcomes),
+        warnings=warnings,
+    )
 
 
 @transaction.atomic

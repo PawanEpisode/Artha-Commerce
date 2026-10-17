@@ -1,0 +1,89 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p14-2024-06",
+ "items": {
+  "1(iv)": {
+   "verdict": "approve",
+   "reason": "Stem, table and options match the print; stored key C equals printed key (C).",
+   "fixes": [],
+   "printed_issues": [
+    "Table value at Z=1.00 printed as 0.413 (not 0.3413)."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer names 'PONTs Ltd.' whereas the question says FONTS (LS) Ltd."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print. Answer table needed a blank line before it.",
+   "fixes": [
+    "Blank line before covariance table; formula typeset as math."
+   ],
+   "printed_issues": [
+    "Print numbers the last two answers (i),(ii) again; kept mapped to (iii),(iv)."
+   ],
+   "answer_md": "(i) Sensitivity of returns of each stock :\nAB Ltd. = 1.00\nBM Ltd. = 1.27\nCX Ltd. = 0.75\n(ii) Covariance between any 2 Stocks = $\\beta_1 \\beta_2 \\sigma_m^2$\n\n| Stock / Beta | 1.00 | 1.27 | 0.75 |\n|---|---|---|---|\n| AB Ltd. | 625 | 285.75 | 168.75 |\n| BM Ltd. | 285.75 | 400 | 214.31 |\n| CX Ltd. | 168.75 | 214.31 | 225 |\n\n(iii) Total Risk (Variance) of the equally Weighted Portfolio = 287.50\n(iv) Systematic Risk of the Portfolio = 229.52"
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives two answers for (iii): 5% and an alternative (-) 25%."
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print. Answer table needed a blank line before it.",
+   "fixes": [
+    "Blank line before shares table."
+   ],
+   "printed_issues": [],
+   "answer_md": "(i) Portfolio beta = 1.30\n(ii) Risk- Free Securities to be acquired = ₹ 1,500 Lakh\n(iii) Number of Shares of each company to be disposed off:\n\n| Shares | No. of Shares to be disposed off (Lakh) |\n|---|---|\n| P Ltd. | 1.80 |\n| Q Ltd. | 2.40 |\n| R Ltd. | 1.20 |\n\n(iv) Proportion of Q Ltd. = 54.67%"
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem and printed answer with the question paper and suggested answers; text and figures match the print. Answer tables needed a blank line before them.",
+   "fixes": [
+    "Blank line before both currency tables."
+   ],
+   "printed_issues": [],
+   "answer_md": "Proceeds of Exports in INR = ₹ 10 Million.\n(i) Position of Inflows under three Currencies will be as follows:\n\n| Currency | Invoice at Spot Rate | Expected Rate after three Months | Conversion in INR after three Months |\n|---|---|---|---|\n| \\$ | \\$ 121802.680 | ₹ 83.537 | ₹ 1,01,75,030.48 |\n| € | € 129617.628 | ₹ 78.307 | ₹ 1,01,49,967.60 |\n| £ | £ 99354.198 | ₹ 101.908 | ₹ 1,01,24,987.61 |\n\nPayment of Import in INR = ₹ 5 Million.\n(ii) Position of Outflows under three Currencies will be as follows :\n\n| Currency | Invoice at Spot Rate | Expected Rate after three Months | Conversion in INR after three Months |\n|---|---|---|---|\n| \\$ | \\$ 60827.251 | ₹ 85.077 | ₹ 51,75,000.03 |\n| € | € 64766.839 | ₹ 79.516 | ₹ 51,49,999.97 |\n| £ | £ 49627.792 | ₹ 103.269 | ₹ 51,25,012.45 |\n\nRecommendation:\nSince cash inflow is highest (₹ 1,01,75,030.48) in case of \\$, the invoicing for proceeds of export should be in \\$ (Dollars Currency). Further, Since cash outflow is least (₹ 51,25,012.45) in case of £, the invoicing for payment of import should in £ (Pound Sterling Currency)."
+  }
+ }
+}

@@ -1,0 +1,1120 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "14",
+ "source_file": "pyq-transcriptions/p14-2026-06.json",
+ "paper_review": [
+  "Q8 sub-marks 5+5+4 as printed; (c) any four.",
+  "Suggested-answer PDF present for 2026-06, so answers_source = suggested_answer_pdf."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p14:2026-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-financial-management",
+  "term_code": "2026-06",
+  "title": "CMA Final June 2026: Strategic Financial Management (Paper 14)",
+  "paper_code": "P14",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct answer from the alternatives given: 2x15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "ZOBON (P) Ltd., expects a uniform Cash inflow of ₹ 12 Crore for 5 years from its Project ZB. The expected rate at which the said cash flow will be reinvested is 15%. The cost of capital for the Company is 12%. If the Modified Net Present Value (MNPV) of the Project ZB is ₹ 5.905 Crore, how much the company will invest (in ₹) in the said Project?\n[Given PVIF / FVIFA]\n\n| Interest Rate | 12 % | 14 % | 15 % |\n|---|---|---|---|\n| PVIF (5 Yrs.) | 0.5674 | 0.5194 | 0.4972 |\n| FVIFA (5 Yrs.) | 6.353 | 6.610 | 6.742 |",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 30 Crore",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 36 Crore",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 40 Crore",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.68,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "PRITAM Ltd., has provided you the following details of Project Z—\n\n| Particular | Value |\n|---|---|\n| Project Cost | ₹ 12,00,000 |\n| Project Life | 4 Years |\n| Annual cash inflow | ₹ 4,50,000 |\n| Cost of Capital | 14 % |\n\n[Given, PVIFA (14 %, 4 Years) = 2.9137; PVIFA (18 %, 4 Years) = 2.6667]\nWhat is the sensitivity of Annual Cash Flow of the Project Z?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "6.38 %",
+      "is_correct": false
+     },
+     {
+      "body_md": "7.26 %",
+      "is_correct": false
+     },
+     {
+      "body_md": "8.48 %",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.9,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The Financial Manager of YIRO Ltd. feels that he would rather have a certain inflow of ₹ 15,000 in the second year of a project than an inflow of ₹ 20,000 with probability of 0.75 and ₹ 40,000 with probability of 0.25 respectively.\nWhat will be the certainty equivalent Co-efficient of Cash inflow?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "0.60",
+      "is_correct": true
+     },
+     {
+      "body_md": "0.50",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.40",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.7,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Omega Bank Ltd., plans to securitize its pool of housing loans to improve liquidity. The bank transfers these assets to a separate entity that issues securities to investors and isolates risk from the originator. What is the role of this entity?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Underwriter",
+      "is_correct": false
+     },
+     {
+      "body_md": "Depository Participant",
+      "is_correct": false
+     },
+     {
+      "body_md": "Mutual Fund Trustee",
+      "is_correct": false
+     },
+     {
+      "body_md": "Special Purpose Vehicle (SPV)",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "digital-finance",
+    "mapping_confidence": 0.3,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The prices of the Stock of RIBON Ltd., in the Market are given below :\n\n| Date | Price (₹) |\n|---|---|\n| 1st April | 450 |\n| 4th April | 456 |\n| 7th April | 478 |\n| 8th April | 476 |\n| 9th April | 479 |\n| 10th April | 468 |\n\nWhat would be the Relative Strength Index (RSI) of the Stock of RIBON LTD.?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "70.41",
+      "is_correct": true
+     },
+     {
+      "body_md": "60.32",
+      "is_correct": false
+     },
+     {
+      "body_md": "48.72",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.09,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "XYZ Ltd., issued highly rated bond in the market with face value of ₹ 100 carrying coupon rate of 14% p.a. which matures after five years. Interest is payable semi-annually. If Mr. Xavier, an investor, requires a return of 16 % p.a., what will be the value of Bond if it holds at Maturity?\n[Given, PVIFA (8 %, 10 Years) = 6.710 and PVIF (8 %, 10 Years) = 0.463]",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 93.27",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 94.39",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 95.57",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "equity-and-bond-valuation-and-evaluation-of-performance",
+    "mapping_confidence": 0.01,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A Financial Analyst believes that stock returns are influenced by multiple macroeconomic factors such as inflation, GDP growth, and interest rates than a single market factor. This view is consistent with :",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "CAPM",
+      "is_correct": false
+     },
+     {
+      "body_md": "Dividend Discount Model",
+      "is_correct": false
+     },
+     {
+      "body_md": "Arbitrage Pricing Theory (APT)",
+      "is_correct": true
+     },
+     {
+      "body_md": "Efficient Market Hypothesis",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.25,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A Company has an equity beta of 1.20 and a debt equity ratio of 0.8. If the Tax rate is NIL, what will be the beta of the Asset of the Company?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "0.90",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.80",
+      "is_correct": false
+     },
+     {
+      "body_md": "0.67",
+      "is_correct": true
+     },
+     {
+      "body_md": "1.20",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "equity-and-bond-valuation-and-evaluation-of-performance",
+    "mapping_confidence": 0.08,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Responses to risk generally fall into :",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Risk avoidance",
+      "is_correct": false
+     },
+     {
+      "body_md": "Risk transfer",
+      "is_correct": false
+     },
+     {
+      "body_md": "Risk Measurement",
+      "is_correct": false
+     },
+     {
+      "body_md": "Both (A) and (B)",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "risks-in-financial-market",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A Nifty has a Theta of –0.02. If the time to expiration decreases by 1 day, what is the change in the option price, assuming the option price is ₹ 1,000 ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Decrease by ₹ 20",
+      "is_correct": true
+     },
+     {
+      "body_md": "Increase by ₹ 20",
+      "is_correct": false
+     },
+     {
+      "body_md": "Decrease by ₹ 50",
+      "is_correct": false
+     },
+     {
+      "body_md": "Increase by ₹ 50",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.91,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following Complex derivatives are options on Portfolios of underlying asset?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Warrants",
+      "is_correct": false
+     },
+     {
+      "body_md": "Swaptions",
+      "is_correct": false
+     },
+     {
+      "body_md": "Baskets",
+      "is_correct": true
+     },
+     {
+      "body_md": "LEAPS",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A Multinational Corporation raises short to medium-term funds in international market by issuing unsecured debt instruments denominated in a foreign currency and placed outside the jurisdiction of any single country. What kind of such instruments are referred?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Foreign Bonds",
+      "is_correct": false
+     },
+     {
+      "body_md": "Euro Notes",
+      "is_correct": true
+     },
+     {
+      "body_md": "FCCBS",
+      "is_correct": false
+     },
+     {
+      "body_md": "ADRs",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.64,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A dealer observes spot mid-rates : ₹ / USD = 83.65, ₹ / GBP = 102.40, GBP / USD = 1.2270. He wants to trade USD 10,00,000 : by USD via GBP at the implied cross rate, then immediately selling USD for INR at the Direct ₹ / USD rate. What is the approximate arbitrage profit in INR?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 1.80 Lakh",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 1.95 Lakh",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 2.00 Lakh",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Interest rate on Indian Rupee and pound sterling are 8% p.a. and 5 % p.a. respectively. If the current exchange rate is ₹ 112 / £, what will be the 6 Month forward rate ?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 113.64",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 114.10",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 108.34",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 115.50",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.28,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Stablecoins are designed to maintain a stable value by",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "being pegged to a volatile asset like stocks.",
+      "is_correct": false
+     },
+     {
+      "body_md": "backing the coin with a reserve of traditional assets, such as fiat currency.",
+      "is_correct": true
+     },
+     {
+      "body_md": "allowing the coin to fluctuate based on market demand.",
+      "is_correct": false
+     },
+     {
+      "body_md": "tying the coin's value to gold and silver only.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "digital-finance",
+    "mapping_confidence": 0.12,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "RSE Ltd., an existing manufacturing company, is evaluating a proposal to undertake a new project for the manufacture of pocket video games. The project requires an initial capital expenditure of ₹ 750 lakhs on fixed assets and an additional ₹ 180 lakhs towards working capital at the commencement of the project. The plant has an installed capacity of 15 lakh units per annum. However, the expected capacity utilisation during the 6-year life of the project will vary, with utilisation at 40% in the first year, 70% in the second year, 90% in the third year, and 100% from the fourth year onwards.\n\nThe product is expected to be sold at an average price of ₹ 220 per unit, yielding a contribution margin of 50%. The annual fixed costs (excluding depreciation) are estimated at ₹ 300 lakhs in the first year, ₹ 420 lakhs in the second year, and ₹ 550 lakhs per annum from the third year onwards.\n\nDepreciation on fixed assets will be charged at 30% on the written down value method for tax purposes. The applicable corporate tax rate is 40%. It is further estimated that an additional investment in working capital of ₹ 120 lakhs will be required at the end of the third year.\n\nAt the end of the project life, the fixed assets are expected to realise a salvage value equivalent to 12% of their original cost, and any funds invested in working capital are assumed to be recouped in full upon completion of the project. For the purpose of this analysis, any balancing charge provisions under the Income Tax Act may be ignored.\n\nThe company has a required rate of return of 15%.\nGiven : PV Factor at 15% :\n\n| Year | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Present value | 0.870 | 0.756 | 0.658 | 0.572 | 0.497 | 0.432 |\n\nRequired:\n(i) Assess the annual operating cash inflows and Net Present Value (NPV).\n(ii) Advise whether the proposal is viable to the company or not.",
+    "parent_ref": "2",
+    "explanation_md": "Calculation of Contribution\n\nContribution per Unit: $= \\text{₹ }220 \\times 50\\% = \\text{₹ }110$\n\nProduction and Contribution\n\n| Year | Capacity (%) | Units (Lakh) | Contribution (₹ Lakh) |\n|---|---|---|---|\n| 1 | 40% | 6 | 660 |\n| 2 | 70% | 10.5 | 1,155 |\n| 3 | 90% | 13.5 | 1,485 |\n| 4 | 100% | 15 | 1,650 |\n| 5 | 100% | 15 | 1,650 |\n| 6 | 100% | 15 | 1,650 |\n\nCalculation of Depreciation (WDV @ 30%)\n\n| Year | Opening WDV (₹ Lakh) | Depreciation (₹ Lakh) | Closing WDV (₹ Lakh) |\n|---|---|---|---|\n| 1 | 750.00 | 225.00 | 525.00 |\n| 2 | 525.00 | 157.50 | 367.50 |\n| 3 | 367.50 | 110.25 | 257.25 |\n| 4 | 257.25 | 77.18 | 180.07 |\n| 5 | 180.07 | 54.02 | 126.05 |\n| 6 | 126.05 | 37.82 | 88.23 |\n\nAssessment of Operating Cash Inflows\n\n| Year | Contribution | Fixed cost | Depreciation | PBT | Tax (40%) | PAT | CIAT | PV Factor (15%) | PV (₹ Lakh) |\n|---|---|---|---|---|---|---|---|---|---|\n| 1 | 660 | 300 | 225.00 | 135.00 | 54.00 | 81.00 | 306.00 | 0.870 | 266.22 |\n| 2 | 1155 | 420 | 157.50 | 577.50 | 231.00 | 346.50 | 504.00 | 0.756 | 381.02 |\n| 3 | 1485 | 550 | 110.25 | 824.75 | 329.90 | 494.85 | 605.10 | 0.658 | 398.16 |\n| 4 | 1650 | 550 | 77.18 | 1022.82 | 409.13 | 613.69 | 690.87 | 0.572 | 395.18 |\n| 5 | 1650 | 550 | 54.02 | 1045.98 | 418.39 | 627.59 | 681.61 | 0.497 | 338.76 |\n| 6 | 1650 | 550 | 37.82 | 1062.18 | 424.87 | 637.31 | 675.13 | 0.432 | 291.66 |\n| | | | 661.77 | | | | | | 2071.00 |\n\nPV of operating cash inflows for 6 years = ₹ 2,071 Lakh\n\nCalculation of Present Value of Cash Outflows\n\n| Particulars | Amount (₹ Lakh) |\n|---|---|\n| Cost of Fixed Assets (t = 0) | 750 |\n| Initial Working Capital (t = 0) | 180 |\n| Additional Working Capital at Year 3 ($120 \\times 0.658$) | 78.96 |\n| Total Present Value of Cash Outflows | 1,008.96 |\n\nCalculation of Terminal Cash Inflows(At year 6)\n\n| Particulars | Amount(₹ Lakh) |\n|---|---|\n| Salvage Value (12% of 750) | 90 |\n| Less:Tax on gain on sale of FA$(90 - 88.23) * 40\\%$ | $-0.71$ |\n| Recovery of Working Capital ($180 + 120$) | 300 |\n| Total Terminal Cash Inflows | 389.29 |\n\nPresent Value $= 389.29 \\times 0.432 = \\text{₹ }168.17$ lakhs\n\nAssessment of NPV :\n\n| Particulars | Amount(₹ Lakh) |\n|---|---|\n| PV of Operating Cash Inflows | 2,071.00 |\n| PV of Terminal Cash Inflows | 168.17 |\n| Total PV of Inflows | 2,239.17 |\n| Less: Total PV of Outflows | $-1{,}008.96$ |\n| Net Present Value (NPV) | 1,230.21 |\n\nSince the Net Present Value (NPV) is positive, the project is financially viable.\n\nAlternative:\n\nCalculation of Present Value of Cash Outflows\n\n| Particulars | Amount (₹ Lakh) |\n|---|---|\n| Cost of Fixed Assets (t = 0) | 750 |\n| Initial Working Capital (t = 0) | 180 |\n| Additional Working Capital at Year 3 ($120 \\times 0.658$) | 78.96 |\n| Total Present Value of Cash Outflows | 1,008.96 |\n\nCalculation of Terminal Cash Inflows (At year 6)\n\n| Particulars | Amount(₹ Lakh) |\n|---|---|\n| Salvage Value (12% of 750) | 90 |\n| Recovery of Working Capital ($180 + 120$) | 300 |\n| Total Terminal Cash Inflows | 390 |\n\nPresent Value $= 390 \\times 0.432 = \\text{₹ }168.48$ lakhs\n\nAssessment of NPV :\n\n| Particulars | Amount (₹ Lakh) |\n|---|---|\n| PV of Operating Cash Inflows | 2,071 |\n| PV of Terminal Cash Inflows | 168.48 |\n| Total PV of Inflows | 2,239.48 |\n| Less: Total PV of Outflows | $-1{,}008.96$ |\n| Net Present Value (NPV) | 1,230.52 |\n\nSince the Net Present Value (NPV) is positive, the project is financially viable.",
+    "reference_solution_md": "Calculation of Contribution\n\nContribution per Unit: $= \\text{₹ }220 \\times 50\\% = \\text{₹ }110$\n\nProduction and Contribution\n\n| Year | Capacity (%) | Units (Lakh) | Contribution (₹ Lakh) |\n|---|---|---|---|\n| 1 | 40% | 6 | 660 |\n| 2 | 70% | 10.5 | 1,155 |\n| 3 | 90% | 13.5 | 1,485 |\n| 4 | 100% | 15 | 1,650 |\n| 5 | 100% | 15 | 1,650 |\n| 6 | 100% | 15 | 1,650 |\n\nCalculation of Depreciation (WDV @ 30%)\n\n| Year | Opening WDV (₹ Lakh) | Depreciation (₹ Lakh) | Closing WDV (₹ Lakh) |\n|---|---|---|---|\n| 1 | 750.00 | 225.00 | 525.00 |\n| 2 | 525.00 | 157.50 | 367.50 |\n| 3 | 367.50 | 110.25 | 257.25 |\n| 4 | 257.25 | 77.18 | 180.07 |\n| 5 | 180.07 | 54.02 | 126.05 |\n| 6 | 126.05 | 37.82 | 88.23 |\n\nAssessment of Operating Cash Inflows\n\n| Year | Contribution | Fixed cost | Depreciation | PBT | Tax (40%) | PAT | CIAT | PV Factor (15%) | PV (₹ Lakh) |\n|---|---|---|---|---|---|---|---|---|---|\n| 1 | 660 | 300 | 225.00 | 135.00 | 54.00 | 81.00 | 306.00 | 0.870 | 266.22 |\n| 2 | 1155 | 420 | 157.50 | 577.50 | 231.00 | 346.50 | 504.00 | 0.756 | 381.02 |\n| 3 | 1485 | 550 | 110.25 | 824.75 | 329.90 | 494.85 | 605.10 | 0.658 | 398.16 |\n| 4 | 1650 | 550 | 77.18 | 1022.82 | 409.13 | 613.69 | 690.87 | 0.572 | 395.18 |\n| 5 | 1650 | 550 | 54.02 | 1045.98 | 418.39 | 627.59 | 681.61 | 0.497 | 338.76 |\n| 6 | 1650 | 550 | 37.82 | 1062.18 | 424.87 | 637.31 | 675.13 | 0.432 | 291.66 |\n| | | | 661.77 | | | | | | 2071.00 |\n\nPV of operating cash inflows for 6 years = ₹ 2,071 Lakh\n\nCalculation of Present Value of Cash Outflows\n\n| Particulars | Amount (₹ Lakh) |\n|---|---|\n| Cost of Fixed Assets (t = 0) | 750 |\n| Initial Working Capital (t = 0) | 180 |\n| Additional Working Capital at Year 3 ($120 \\times 0.658$) | 78.96 |\n| Total Present Value of Cash Outflows | 1,008.96 |\n\nCalculation of Terminal Cash Inflows(At year 6)\n\n| Particulars | Amount(₹ Lakh) |\n|---|---|\n| Salvage Value (12% of 750) | 90 |\n| Less:Tax on gain on sale of FA$(90 - 88.23) * 40\\%$ | $-0.71$ |\n| Recovery of Working Capital ($180 + 120$) | 300 |\n| Total Terminal Cash Inflows | 389.29 |\n\nPresent Value $= 389.29 \\times 0.432 = \\text{₹ }168.17$ lakhs\n\nAssessment of NPV :\n\n| Particulars | Amount(₹ Lakh) |\n|---|---|\n| PV of Operating Cash Inflows | 2,071.00 |\n| PV of Terminal Cash Inflows | 168.17 |\n| Total PV of Inflows | 2,239.17 |\n| Less: Total PV of Outflows | $-1{,}008.96$ |\n| Net Present Value (NPV) | 1,230.21 |\n\nSince the Net Present Value (NPV) is positive, the project is financially viable.\n\nAlternative:\n\nCalculation of Present Value of Cash Outflows\n\n| Particulars | Amount (₹ Lakh) |\n|---|---|\n| Cost of Fixed Assets (t = 0) | 750 |\n| Initial Working Capital (t = 0) | 180 |\n| Additional Working Capital at Year 3 ($120 \\times 0.658$) | 78.96 |\n| Total Present Value of Cash Outflows | 1,008.96 |\n\nCalculation of Terminal Cash Inflows (At year 6)\n\n| Particulars | Amount(₹ Lakh) |\n|---|---|\n| Salvage Value (12% of 750) | 90 |\n| Recovery of Working Capital ($180 + 120$) | 300 |\n| Total Terminal Cash Inflows | 390 |\n\nPresent Value $= 390 \\times 0.432 = \\text{₹ }168.48$ lakhs\n\nAssessment of NPV :\n\n| Particulars | Amount (₹ Lakh) |\n|---|---|\n| PV of Operating Cash Inflows | 2,071 |\n| PV of Terminal Cash Inflows | 168.48 |\n| Total PV of Inflows | 2,239.48 |\n| Less: Total PV of Outflows | $-1{,}008.96$ |\n| Net Present Value (NPV) | 1,230.52 |\n\nSince the Net Present Value (NPV) is positive, the project is financially viable.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.4,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "RONEX Ltd. is evaluating lease pricing for a high-end industrial machine. The company provides the following details:\nInvestment cost: ₹ 2,00,00,000\nLease term: 4 years\nResidual value: NIL\nPre-tax required annual return: 16%\n\nRONEX Ltd. is considering two different lease rental structures:\n(i) Deferred (P.P) Lease Rentals (No rental in the first year, equal rentals in the last 3 years.)\n(ii) Ballooned (P.P) Lease Rentals (fixed ₹ 20 lakhs in the first 2 years, higher rent in the last 2 years)\n(Ignore Depreciation and Income Tax)\n\nGiven : PV Factor :\n\n| Year | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| PVIF (16%) | 0.862 | 0.743 | 0.641 | 0.552 |\n\nRequired:\n(i) Assess the annual lease rentals for each structure.\n(ii) Advise which structure is suitable if initial cashflow is uncertain or not fixed.",
+    "parent_ref": "2",
+    "explanation_md": "(i) Deferred Lease Rent :\n\nUnder deferred lease rental structure, the lessor does not collect any lease rental during the deferment period to accommodate the gestation period. Let $X$ be the annual lease rent for year 2, Year 3 and Year 4 to earn 16 % return. PV of cash inflows:\n\n| Year | Lease Rent | PVF 16 % | PV |\n|---|---|---|---|\n| 1 | -- | 0.862 | -- |\n| 2 | $X$ | 0.743 | $0.743X$ |\n| 3 | $X$ | 0.641 | $0.641X$ |\n| 4 | $X$ | 0.552 | $0.552X$ |\n| PV of Total Cashflow for 4 years | | | $1.936X$ |\n\nPV of cash inflows = Outflows\n\n$1.936X = 20000000$\n\nOr, $X = 20000000 / 1.936 = \\text{₹ }10330579$\n\nHence, Lease rents are as follows :\n\n| Year | Lease Rent (₹) |\n|---|---|\n| 1 | 0 |\n| 2 | 10330579 |\n| 3 | 10330579 |\n| 4 | 10330579 |\n\n(ii) Ballooned lease rent :\n\nBallooned lease rent is a lease rent under which major part of rentals are collected in a lumpsum amount at the end of lease period.\n\nLet $X$ be the Year 3 and Year 4 lease rent.\n\n| Year | Lease Rent | PVF 16 % | PV |\n|---|---|---|---|\n| 1 | 2000000 | 0.862 | 1724000 |\n| 2 | 2000000 | 0.743 | 1486000 |\n| 3 | $X$ | 0.641 | $0.641X$ |\n| 4 | $X$ | 0.552 | $0.552X$ |\n| | | | $3210000 + 1.193X$ |\n\n$\\therefore\\ 3210000 + 1.193X = 20000000$\n\nOr, $1.193X = 16790000$,\n\nOr $X = \\dfrac{16790000}{1.193} = \\text{₹ }14073764$\n\nHence, Lease rents are as follows :\n\n| Year | Lease Rent (₹) |\n|---|---|\n| 1 | 2000000 |\n| 2 | 2000000 |\n| 3 | 14073764 |\n| 4 | 14073764 |\n\nAdvise :\n\nIf the initial cash flow is uncertain or not fixed, the most suitable lease structure would be the Deferred Lease Rent",
+    "reference_solution_md": "(i) Deferred Lease Rent :\n\nUnder deferred lease rental structure, the lessor does not collect any lease rental during the deferment period to accommodate the gestation period. Let $X$ be the annual lease rent for year 2, Year 3 and Year 4 to earn 16 % return. PV of cash inflows:\n\n| Year | Lease Rent | PVF 16 % | PV |\n|---|---|---|---|\n| 1 | -- | 0.862 | -- |\n| 2 | $X$ | 0.743 | $0.743X$ |\n| 3 | $X$ | 0.641 | $0.641X$ |\n| 4 | $X$ | 0.552 | $0.552X$ |\n| PV of Total Cashflow for 4 years | | | $1.936X$ |\n\nPV of cash inflows = Outflows\n\n$1.936X = 20000000$\n\nOr, $X = 20000000 / 1.936 = \\text{₹ }10330579$\n\nHence, Lease rents are as follows :\n\n| Year | Lease Rent (₹) |\n|---|---|\n| 1 | 0 |\n| 2 | 10330579 |\n| 3 | 10330579 |\n| 4 | 10330579 |\n\n(ii) Ballooned lease rent :\n\nBallooned lease rent is a lease rent under which major part of rentals are collected in a lumpsum amount at the end of lease period.\n\nLet $X$ be the Year 3 and Year 4 lease rent.\n\n| Year | Lease Rent | PVF 16 % | PV |\n|---|---|---|---|\n| 1 | 2000000 | 0.862 | 1724000 |\n| 2 | 2000000 | 0.743 | 1486000 |\n| 3 | $X$ | 0.641 | $0.641X$ |\n| 4 | $X$ | 0.552 | $0.552X$ |\n| | | | $3210000 + 1.193X$ |\n\n$\\therefore\\ 3210000 + 1.193X = 20000000$\n\nOr, $1.193X = 16790000$,\n\nOr $X = \\dfrac{16790000}{1.193} = \\text{₹ }14073764$\n\nHence, Lease rents are as follows :\n\n| Year | Lease Rent (₹) |\n|---|---|\n| 1 | 2000000 |\n| 2 | 2000000 |\n| 3 | 14073764 |\n| 4 | 14073764 |\n\nAdvise :\n\nIf the initial cash flow is uncertain or not fixed, the most suitable lease structure would be the Deferred Lease Rent",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "leasing-decisions",
+    "mapping_confidence": 0.53,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Strato Wear Ltd., a company engaged in developing smart wearable technology, is evaluating two mutually exclusive projects—Project X and Project Y. Each project requires an initial investment of ₹ 30,00,000 and has a life of 3 years.\n\nThe cash inflows of both projects are influenced by two independent factors, namely market demand (high or low) and technology performance (efficient or inefficient). The joint probability of high demand with efficient performance is 0.30, high demand with inefficient performance is 0.20, low demand with efficient performance is 0.25, and low demand with inefficient performance is 0.25.\n\nThe corresponding annual cash inflows under each combination are as follows:\n\n| Market Demand | Technology Performance | Project X (₹) | Project Y (₹) |\n|---|---|---|---|\n| High | Efficient | 18,00,000 | 22,00,000 |\n| High | Inefficient | 14,00,000 | 15,00,000 |\n| Low | Efficient | 12,00,000 | 10,00,000 |\n| Low | Inefficient | 8,00,000 | 6,00,000 |\n\nThe coefficient of variation (CV) for Project X is 0.28 and for Project Y is 0.40. Based on their risk profiles, the appropriate cost of capital is estimated at 11% for Project X and 14% for Project Y. The present value annuity factors for 3 years are 2.444 at 11% and 2.322 at 14%.\n\nThe management is risk-averse and aims to select a project that offers an optimal balance between risk and return.\n\nRequired:\n(i) Assess the Expected Cash Inflow of Projects X and Y.\n(ii) Analyze the standard deviation of cash inflows using the given coefficient of variation.\n(iii) Assess the Net Present Value (NPV) of both projects.\n(iv) Recommend which project Strato Wear Ltd. should be selected based on risk & return.",
+    "parent_ref": "3",
+    "explanation_md": "(i) Assessment of Expected Cash Inflows for each project:\n\n| Condition | Probability (P) | X-CF | X-P$\\times$CF | Y-CF | Y-P$\\times$CF |\n|---|---|---|---|---|---|\n| High & Efficient | 0.30 | 18,00,000 | 5,40,000 | 22,00,000 | 6,60,000 |\n| High & Inefficient | 0.20 | 14,00,000 | 2,80,000 | 15,00,000 | 3,00,000 |\n| Low & Efficient | 0.25 | 12,00,000 | 3,00,000 | 10,00,000 | 2,50,000 |\n| Low & Inefficient | 0.25 | 8,00,000 | 2,00,000 | 6,00,000 | 1,50,000 |\n| | Total Expected Cash Inflows | | ₹ 13,20,000 | | ₹ 13,60,000 |\n\n(ii) Analysis of Standard Deviation for each project\n\nCoefficient of Variation (CV) $= \\text{Standard Deviation} / \\text{Expected Cashflow}$\n\nStandard Deviation $= \\text{Coefficient of Variation (CV)} * \\text{Expected Cashflow}$\n\nProject X: $0.28 \\times 13{,}20{,}000 = \\text{₹ }3{,}69{,}600$\n\nProject Y: $0.40 \\times 13{,}60{,}000 = \\text{₹ }5{,}44{,}000$\n\n(iii) Assessment of NPV of the project\n\nProject X :\n\n$\\text{PV} = 13{,}20{,}000 \\times 2.444 = \\text{₹ }32{,}26{,}080$\n\n$\\text{NPV} = 32{,}26{,}080 - 30{,}00{,}000 = \\text{₹ }2{,}26{,}080$\n\nProject Y :\n\n$\\text{PV} = 13{,}60{,}000 \\times 2.322 = \\text{₹ }31{,}57{,}920$\n\n$\\text{NPV} = 31{,}57{,}920 - 30{,}00{,}000 = \\text{₹ }1{,}57{,}920$\n\n(iv) Recommendation:\n\nProject X has lower risk (CV) and higher NPV compared to Project Y. Hence, Project X should be selected.",
+    "reference_solution_md": "(i) Assessment of Expected Cash Inflows for each project:\n\n| Condition | Probability (P) | X-CF | X-P$\\times$CF | Y-CF | Y-P$\\times$CF |\n|---|---|---|---|---|---|\n| High & Efficient | 0.30 | 18,00,000 | 5,40,000 | 22,00,000 | 6,60,000 |\n| High & Inefficient | 0.20 | 14,00,000 | 2,80,000 | 15,00,000 | 3,00,000 |\n| Low & Efficient | 0.25 | 12,00,000 | 3,00,000 | 10,00,000 | 2,50,000 |\n| Low & Inefficient | 0.25 | 8,00,000 | 2,00,000 | 6,00,000 | 1,50,000 |\n| | Total Expected Cash Inflows | | ₹ 13,20,000 | | ₹ 13,60,000 |\n\n(ii) Analysis of Standard Deviation for each project\n\nCoefficient of Variation (CV) $= \\text{Standard Deviation} / \\text{Expected Cashflow}$\n\nStandard Deviation $= \\text{Coefficient of Variation (CV)} * \\text{Expected Cashflow}$\n\nProject X: $0.28 \\times 13{,}20{,}000 = \\text{₹ }3{,}69{,}600$\n\nProject Y: $0.40 \\times 13{,}60{,}000 = \\text{₹ }5{,}44{,}000$\n\n(iii) Assessment of NPV of the project\n\nProject X :\n\n$\\text{PV} = 13{,}20{,}000 \\times 2.444 = \\text{₹ }32{,}26{,}080$\n\n$\\text{NPV} = 32{,}26{,}080 - 30{,}00{,}000 = \\text{₹ }2{,}26{,}080$\n\nProject Y :\n\n$\\text{PV} = 13{,}60{,}000 \\times 2.322 = \\text{₹ }31{,}57{,}920$\n\n$\\text{NPV} = 31{,}57{,}920 - 30{,}00{,}000 = \\text{₹ }1{,}57{,}920$\n\n(iv) Recommendation:\n\nProject X has lower risk (CV) and higher NPV compared to Project Y. Hence, Project X should be selected.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "investment-decisions-project-planning-and-control",
+    "mapping_confidence": 0.53,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Zenith Systems Ltd. has recently paid a dividend of ₹ 3.60 per share. The company follows a policy of retaining 40% of its earnings and has a return on equity (ROE) of 15%. Due to expansion plans, the company expects dividends to grow at 12% per annum for the next 2 years, after which the growth (S.G) rate will stabilize based on its retention policy. The required rate of return for equity shareholders is 12%. The current earnings per share (EPS) of the company is ₹ 6, and shares of comparable companies are trading at an average P/E ratio of 14.\n\nGiven : PV Factor :\n\n| Year | 1 | 2 | 3 |\n|---|---|---|---|\n| PVIF (12%) | 0.893 | 0.797 | 0.712 |\n| PVIF (15%) | 0.870 | 0.756 | 0.658 |\n\nRequired:\n(i) Assess the intrinsic value of the share using the multi-stage Dividend Growth Model.\n(ii) Analyze the current market price of the Company's share.",
+    "parent_ref": "3",
+    "explanation_md": "(i) Sustainable Growth Rate for Year 3 and beyond, $g = \\text{Return on Equity (ROE)} \\times \\text{Retention Ratio}$.\n\n$g = 0.15 \\times 0.40 = 0.06$ or 6 %\n\nExpected Dividend for 3 years :\n\nYear 1 Dividend ($D_1$) $= 3.60 \\times 1.12 = 4.03$\n\nYear 2 Dividend ($D_2$) $= 4.03 \\times 1.12 = 4.51$\n\nYear 3 Dividend ($D_3$) $= 4.51 \\times 1.06 = 4.78$\n\nTerminal Value at End of Year 2 :\n\nTerminal Value ($P_2$) $= D_3/(k - g) = 4.78 / (0.12 - 0.06) = 79.67$\n\n| | Amount | PV Factor at 12% | PV |\n|---|---|---|---|\n| $D_1$ | 4.03 | 0.893 | 3.60 |\n| $D_2$ | 4.51 | 0.797 | 3.59 |\n| $P_2$ | 79.67 | 0.797 | 63.50 |\n| The Present value per share | | | ₹ 70.69 |\n\nIntrinsic Value per share of ZS Ltd. = ₹ 70.69\n\n(ii) Market Price per share as per P/E $= \\text{EPS} \\times \\text{P/E} = 6 \\times 14 = \\text{₹ }84$\n\nFair value (₹ 70.69) is lower than Market price (₹ 84). So the share is overvalued.",
+    "reference_solution_md": "(i) Sustainable Growth Rate for Year 3 and beyond, $g = \\text{Return on Equity (ROE)} \\times \\text{Retention Ratio}$.\n\n$g = 0.15 \\times 0.40 = 0.06$ or 6 %\n\nExpected Dividend for 3 years :\n\nYear 1 Dividend ($D_1$) $= 3.60 \\times 1.12 = 4.03$\n\nYear 2 Dividend ($D_2$) $= 4.03 \\times 1.12 = 4.51$\n\nYear 3 Dividend ($D_3$) $= 4.51 \\times 1.06 = 4.78$\n\nTerminal Value at End of Year 2 :\n\nTerminal Value ($P_2$) $= D_3/(k - g) = 4.78 / (0.12 - 0.06) = 79.67$\n\n| | Amount | PV Factor at 12% | PV |\n|---|---|---|---|\n| $D_1$ | 4.03 | 0.893 | 3.60 |\n| $D_2$ | 4.51 | 0.797 | 3.59 |\n| $P_2$ | 79.67 | 0.797 | 63.50 |\n| The Present value per share | | | ₹ 70.69 |\n\nIntrinsic Value per share of ZS Ltd. = ₹ 70.69\n\n(ii) Market Price per share as per P/E $= \\text{EPS} \\times \\text{P/E} = 6 \\times 14 = \\text{₹ }84$\n\nFair value (₹ 70.69) is lower than Market price (₹ 84). So the share is overvalued.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.19,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Green Volt Power Ltd. is considering investing in a corporate bond with a face value of ₹ 1,000 carrying a coupon rate of 9% per annum, payable annually. The bond has a maturity of 6 years with a redemption value of ₹ 1,060. The investor requires a return of 12% per annum, while the bond's current market yield to maturity is 10% per annum.\n\nGiven : PV Factor :\n\n| Periods | PV @5% | PVAF @5% | PV @6% | PVAF @6% | PV @10% | PVAF @10% | PV @12% | PVAF @12% |\n|---|---|---|---|---|---|---|---|---|\n| 4 | 0.8227 | 3.5459 | 0.7921 | 3.4651 | 0.6830 | 3.1698 | 0.6355 | 3.0374 |\n| 6 | 0.7462 | 5.0756 | 0.7050 | 4.9174 | 0.5645 | 4.3552 | 0.5066 | 4.1114 |\n| 8 | 0.6768 | 6.4631 | 0.6274 | 6.2099 | 0.4665 | 5.3349 | 0.4039 | 4.9676 |\n| 12 | 0.5568 | 8.8631 | 0.4970 | 8.3840 | 0.3186 | 6.8136 | 0.2567 | 6.1944 |\n\nRequired:\n(i) Assess intrinsic value of the bond if it holds at maturity.\n(ii) Assess current market price of the bond.\n(iii) Analyze the intrinsic value with the market price to determine whether the bond is undervalued or overvalued from the investor's perspective.",
+    "parent_ref": "4",
+    "explanation_md": "Face Value = ₹ 1000\n\nCoupon Rate = 9 % p.a. → Annual Coupon = ₹ 90\n\nRedemption Value At Maturity (Year 6) = ₹ 1060\n\nInvestor's Required Return (for intrinsic value) = 12% p.a.\n\nMarket YTM (for price) = 10 % p.a.\n\n(i) Assessment of Intrinsic Value of the bond if holds till maturity at Year 6 :\n\n$\\text{PV of Coupons} = 90 \\times \\text{PVAF (6 years @ 12\\%)} = 90 \\times 4.1114 = \\text{₹ }370.03$\n\n$\\text{PV of Redemption} = 1060 \\times \\text{PV (6 years @ 12\\%)} = 1060 \\times 0.5066 = \\text{₹ }537$\n\n$\\text{Intrinsic Value (Maturity Year 6)} = \\text{₹ }370.03 + \\text{₹ }537 = \\text{₹ }907.03$\n\n(ii) Assessment of Current Market Price :\n\n$\\text{PV of Coupons} = 90 \\times \\text{PVAF (6 years @ 10\\%)} = 90 \\times 4.3552 = \\text{₹ }391.97$\n\n$\\text{PV of Redemption} = 1060 \\times \\text{PV (6 years @ 10\\%)} = 1060 \\times 0.5645 = \\text{₹ }598.37$\n\n$\\text{Market Price} = \\text{₹ }391.97 + \\text{₹ }598.37 = \\text{₹ }990.34$\n\n(iii) Conclusion :\n\nAs the intrinsic value of the bond (₹ 907.03) is lower than the market Price (₹ 990.34), the bond is overvalued from the investor's perspective.",
+    "reference_solution_md": "Face Value = ₹ 1000\n\nCoupon Rate = 9 % p.a. → Annual Coupon = ₹ 90\n\nRedemption Value At Maturity (Year 6) = ₹ 1060\n\nInvestor's Required Return (for intrinsic value) = 12% p.a.\n\nMarket YTM (for price) = 10 % p.a.\n\n(i) Assessment of Intrinsic Value of the bond if holds till maturity at Year 6 :\n\n$\\text{PV of Coupons} = 90 \\times \\text{PVAF (6 years @ 12\\%)} = 90 \\times 4.1114 = \\text{₹ }370.03$\n\n$\\text{PV of Redemption} = 1060 \\times \\text{PV (6 years @ 12\\%)} = 1060 \\times 0.5066 = \\text{₹ }537$\n\n$\\text{Intrinsic Value (Maturity Year 6)} = \\text{₹ }370.03 + \\text{₹ }537 = \\text{₹ }907.03$\n\n(ii) Assessment of Current Market Price :\n\n$\\text{PV of Coupons} = 90 \\times \\text{PVAF (6 years @ 10\\%)} = 90 \\times 4.3552 = \\text{₹ }391.97$\n\n$\\text{PV of Redemption} = 1060 \\times \\text{PV (6 years @ 10\\%)} = 1060 \\times 0.5645 = \\text{₹ }598.37$\n\n$\\text{Market Price} = \\text{₹ }391.97 + \\text{₹ }598.37 = \\text{₹ }990.34$\n\n(iii) Conclusion :\n\nAs the intrinsic value of the bond (₹ 907.03) is lower than the market Price (₹ 990.34), the bond is overvalued from the investor's perspective.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.13,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "MS. KINTU, a high-net-worth investor, has invested in two mutual fund schemes—Growth Fund and Dynamic Fund. While reviewing his portfolio, he observed that both funds have shown significant changes in their Net Asset Values (NAVs) over the past year. However, he is concerned about evaluating their performance on a risk-adjusted basis rather than relying only on absolute returns.\n\nGrowth Fund follows a conservative investment strategy with lower volatility, whereas Dynamic Fund adopts an aggressive strategy with higher exposure to market risk. The prevailing Treasury Bill (T-Bill) rate is 6% per annum.\n\nThe following information is available:\n\n| Particulars | Growth Fund | Dynamic Fund |\n|---|---|---|\n| NAV at beginning (₹) | 50 | 40 |\n| NAV at end (₹) | 58 | 52 |\n| Dividend per unit (₹) | 2 | 3 |\n| Standard Deviation (%) | 8% | 14% |\n| Beta | 0.85 | 1.6 |\n\nRequired:\n(i) Assess the return generated by each fund.\n(ii) Analyze the performance of each fund using the Sharpe Ratio.\n(iii) Analyze the performance of each fund using the Treynor Ratio.\n(iv) Advise which fund should be preferred based on Sharpe & Treynor Ratio.",
+    "parent_ref": "4",
+    "explanation_md": "(i) Assessment of Return for each fund\n\n$\\text{Return} = (\\text{NAV}_{\\text{end}} - \\text{NAV}_{\\text{beginning}} + \\text{Dividend}) / \\text{NAV beginning} \\times 100$\n\nGrowth Fund $= (58 - 50 + 2) / 50 = 20\\%$\n\nDynamic Fund $= (52 - 40 + 3) / 40 = 37.5\\%$\n\n(ii) Analysis of Sharpe Ratio for each fund\n\nSharpe $= (R_p - R_f) / \\text{Standard Deviation}$\n\nGrowth Fund $= (20 - 6) / 8 = 1.75$\n\nDynamic Fund $= (37.5 - 6) / 14 = 2.25$\n\n(iii) Analysis of Treynor Ratio for each fund\n\nTreynor $= (R_p - R_f) / \\text{Beta}$\n\nGrowth Fund $= (20 - 6) / 0.85 = 16.47$\n\nDynamic Fund $= (37.5 - 6) / 1.60 = 19.69$\n\n(iv) Advise : Dynamic Fund should be preferred\n\n| Measure | Better Fund |\n|---|---|\n| Sharpe Ratio | Dynamic Fund due to higher Sharpe Ratio which provides better total risk-adjusted return |\n| Treynor Ratio | Dynamic Fund due to higher Treynor Ratio which provides systematic risk-adjusted return |",
+    "reference_solution_md": "(i) Assessment of Return for each fund\n\n$\\text{Return} = (\\text{NAV}_{\\text{end}} - \\text{NAV}_{\\text{beginning}} + \\text{Dividend}) / \\text{NAV beginning} \\times 100$\n\nGrowth Fund $= (58 - 50 + 2) / 50 = 20\\%$\n\nDynamic Fund $= (52 - 40 + 3) / 40 = 37.5\\%$\n\n(ii) Analysis of Sharpe Ratio for each fund\n\nSharpe $= (R_p - R_f) / \\text{Standard Deviation}$\n\nGrowth Fund $= (20 - 6) / 8 = 1.75$\n\nDynamic Fund $= (37.5 - 6) / 14 = 2.25$\n\n(iii) Analysis of Treynor Ratio for each fund\n\nTreynor $= (R_p - R_f) / \\text{Beta}$\n\nGrowth Fund $= (20 - 6) / 0.85 = 16.47$\n\nDynamic Fund $= (37.5 - 6) / 1.60 = 19.69$\n\n(iv) Advise : Dynamic Fund should be preferred\n\n| Measure | Better Fund |\n|---|---|\n| Sharpe Ratio | Dynamic Fund due to higher Sharpe Ratio which provides better total risk-adjusted return |\n| Treynor Ratio | Dynamic Fund due to higher Treynor Ratio which provides systematic risk-adjusted return |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "mutual-funds",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Mr. Rohan, a portfolio manager, is evaluating two investment opportunities—Stock A and Stock B—to assess their performance relative to market risk. He wants to determine whether these securities are fairly priced based on their risk-return characteristics.\n\nThe following data has been collected:\n\n| Particulars | Stock A | Stock B |\n|---|---|---|\n| Covariance with market | 0.020 | 0.028 |\n| Variance of market | 0.016 | 0.016 |\n| Expected Return (%) | 19% | 20% |\n\nThe NIFTY has yielded as return of 15%. Additionally, a Treasury Bill (T-Bill) of face value ₹ 100 carries a coupon rate of 6.75% per annum and is currently trading at ₹ 108.\n\nRequired:\n(i) Analyze Beta of each stock.\n(ii) Assess expected return using CAPM for each stock.\n(iii) Analyze whether each stock is overvalued or undervalued.",
+    "parent_ref": "5",
+    "explanation_md": "(i) Analysis of Beta\n\n$\\beta = \\text{Cov}(R_i, R_m) / \\text{Var}(R_m)$\n\nBeta of Stock A $= 0.020 / 0.016 = 1.25$\n\nBeta of Stock B $= 0.028 / 0.016 = 1.75$\n\n(ii) Analysis of Risk free return\n\n| Particulars | Value |\n|---|---|\n| Face Value of Treasury Bills | ₹ 100 |\n| Return on Face Value (in %) | 6.75% |\n| Return on Treasury Bills (in Value) [₹ $100 \\times 6.75\\%$] | ₹ 6.75 |\n| Trading Price of Treasury Bills | ₹ 108 |\n| Risk Free Return ($R_F$) as per Market Expectations [Actual Return ₹ 6.75 / Market Price ₹ 108] | 6.25% |\n\nAssessment of Expected Rate of Return under CAPM\n\n$E(R) = R_F + [\\beta \\times (R_M - R_F)]$\n\nRisk Free Return, $R_F = 6.25\\%$ [Treasury Bills]\n\nReturn on Market Portfolio, $R_M = 15\\%$ [Return on NIFTY]\n\n$E(R)$ Stock A $= 6.25 + \\{1.25 \\times (15 - 6.25)\\} = 17.19\\%$\n\n$E(R)$ Stock B $= 6.25 + \\{1.75 \\times (15 - 6.25)\\} = 21.56\\%$\n\n(iii) Analysis of stock for decision :\n\n| Stock | Given Return | Calculated Return | Decision |\n|---|---|---|---|\n| A | 19% | 17.19% | Undervalued |\n| B | 20% | 21.56% | Overvalued |",
+    "reference_solution_md": "(i) Analysis of Beta\n\n$\\beta = \\text{Cov}(R_i, R_m) / \\text{Var}(R_m)$\n\nBeta of Stock A $= 0.020 / 0.016 = 1.25$\n\nBeta of Stock B $= 0.028 / 0.016 = 1.75$\n\n(ii) Analysis of Risk free return\n\n| Particulars | Value |\n|---|---|\n| Face Value of Treasury Bills | ₹ 100 |\n| Return on Face Value (in %) | 6.75% |\n| Return on Treasury Bills (in Value) [₹ $100 \\times 6.75\\%$] | ₹ 6.75 |\n| Trading Price of Treasury Bills | ₹ 108 |\n| Risk Free Return ($R_F$) as per Market Expectations [Actual Return ₹ 6.75 / Market Price ₹ 108] | 6.25% |\n\nAssessment of Expected Rate of Return under CAPM\n\n$E(R) = R_F + [\\beta \\times (R_M - R_F)]$\n\nRisk Free Return, $R_F = 6.25\\%$ [Treasury Bills]\n\nReturn on Market Portfolio, $R_M = 15\\%$ [Return on NIFTY]\n\n$E(R)$ Stock A $= 6.25 + \\{1.25 \\times (15 - 6.25)\\} = 17.19\\%$\n\n$E(R)$ Stock B $= 6.25 + \\{1.75 \\times (15 - 6.25)\\} = 21.56\\%$\n\n(iii) Analysis of stock for decision :\n\n| Stock | Given Return | Calculated Return | Decision |\n|---|---|---|---|\n| A | 19% | 17.19% | Undervalued |\n| B | 20% | 21.56% | Overvalued |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "On 1st April 2024, Zeta Capital Ltd. invested in equity shares of the following two companies:\n\n| Company Name | No. of Shares | Purchase Cost (₹) |\n|---|---|---|\n| Alpha Motors Ltd. (₹ 10 each) | 800 shares | ₹ 32,000 |\n| Beta Warehousing Ltd. (₹ 5 each) | 1200 shares | ₹ 60,000 |\n\nDuring the financial year 2024-25, Alpha Motors Ltd. declared a 30% dividend in August 2024, while Beta Warehousing Ltd. declared a 40% dividend in October 2024.\nAs of 31st March 2025, the market prices of the shares stood at ₹ 43 for Alpha Motors and ₹ 58 for Beta Warehousing. On 1st April 2025, investment analysts projected that for the FY 2025-26, Alpha Motors Ltd. is expected to declare a dividend of 80%, while Beta Warehousing Ltd. is expected to declare a dividend of 100%, based on their respective face values. The expected market prices on 31st March 2026 and their associated probabilities are:\n\n| Probability | Price per share–Alpha Motors | Price per share–Beta Warehousing |\n|---|---|---|\n| 0.3 | ₹ 44 | ₹ 58 |\n| 0.4 | ₹ 48 | ₹ 60 |\n| 0.3 | ₹ 50 | ₹ 63 |\n\nThe systematic risk values were reported as 1.5 for Alpha Motors Ltd. and 0.5 for Beta Warehousing Ltd. The current risk-free rate is 8%, and the expected market return is 13%.\n\nRequired:\n(i) Analyze the average return from the portfolio for FY 2024-25.\n(ii) Assess the expected average return from the portfolio for FY 2025-26.\n(iii) Assess the risk-adjusted performance of each stock by calculating the Treynor Ratio, and advise Zeta Capital Ltd. which stock is offering better return per unit of systematic risk.",
+    "parent_ref": "5",
+    "explanation_md": "(i) Analysis of return on Portfolio for 2024 – 2025 (Calculation in ₹ / Share)\n\n| Particulars | Alpha Motors Ltd. | Beta Warehousing Ltd. |\n|---|---|---|\n| 1. Market Value by 31.03.25 | 43 | 58 |\n| 2. Cost of Investment | 40 | 50 |\n| 3. Gain / Loss | 3 | 8 |\n| 4. Dividend received during the year | 3 | 2 |\n| 5. Yield [(3) + (4)] | 6 | 10 |\n| 6. % Return [(5) $\\div$ (2)] $\\times$ 100 | 15.0 % | 20.0 % |\n| 7. Weight in the Portfolio [32 : 60] [$32/92$, $60/92$] | 0.35 | 0.65 |\n| Weighted average return $= (0.35 \\times 15\\%) + (0.65 \\times 20\\%)$ | 18.26 % | |\n\n(ii) Assessment of return on Portfolios for 2025 – 2026 (Calculation in ₹ / Share)\n\n| Particulars | Alpha Motors Ltd. | Beta Warehousing Ltd. |\n|---|---|---|\n| 1. Expected Dividend | 8 | 5 |\n| 2. Capital Gain by 31.03.26 | | |\n| $(44 \\times 0.3) + (48 \\times 0.4) + (50 \\times 0.3) - 43 = (47.4 - 43)$ | 4.40 | |\n| $(58 \\times 0.3) + (60 \\times 0.4) + (63 \\times 0.3) - 58 = (60.30 - 58)$ | | 2.30 |\n| 3. Yield [(1) + (2)] | 12.40 | 7.30 |\n| 4. Market Value 01.04.25 | 43 | 58 |\n| 5. % Return [(3) $\\div$ (4)] | 28.84 % | 12.59 % |\n| 6. Weight in Portfolio ($800 \\times 43$) : ($1200 \\times 58$) | 0.33 | 0.67 |\n| Weighted Average (Expected) Return | 17.96 % | |\n\n(iii) Assessment of the Treynor Ratio for both Companies :\n\nTreynor Ratio $= (\\text{Return of Portfolio} - \\text{Risk Free Rate}) / \\text{Beta}$\n\nAlpha Motor Ltd. Treynor ratio $= (28.84 - 8) / 1.5 = 13.89$\n\nBeta Warehousing Ltd. Treynor ratio $= (12.59 - 8) / 0.50 = 9.18$\n\nAdvice :\n\nAlpha Motor Ltd. outperforms Beta Warehousing Ltd. in terms of return per unit of systematic risk. So, Alpha Motor's stock is offering better return per unit of Systematic Risk.\n\nAlternative\n\n(i) Analysis of Average Return from Portfolio for FY 2024-25\n\nReturn from Alpha Motors Ltd.\n\nInvestment Cost = ₹ 32,000\n\nDividend received: $800 \\times \\text{₹ }10 \\times 30\\% = \\text{₹ }2{,}400$\n\nMarket Value on 31.03.2025: $800 \\times \\text{₹ }43 = \\text{₹ }34{,}400$\n\nCapital Gain: $\\text{₹ }34{,}400 - \\text{₹ }32{,}000 = \\text{₹ }2{,}400$\n\nTotal Return: $\\text{₹ }2{,}400 + \\text{₹ }2{,}400 = \\text{₹ }4{,}800$\n\n$\\text{Return (\\%)} = \\dfrac{4{,}800}{32{,}000} \\times 100 = 15\\%$\n\nReturn from Beta Warehousing Ltd.\n\nInvestment Cost = ₹ 60,000\n\nDividend received: $1200 \\times \\text{₹ }5 \\times 40\\% = \\text{₹ }2{,}400$\n\nMarket Value on 31.03.2025: $1{,}200 \\times \\text{₹ }58 = \\text{₹ }69{,}600$\n\nCapital Gain: $\\text{₹ }69{,}600 - \\text{₹ }60{,}000 = \\text{₹ }9{,}600$\n\nTotal Return: $\\text{₹ }2{,}400 + \\text{₹ }9{,}600 = \\text{₹ }12{,}000$\n\n$\\text{Return (\\%)} = \\dfrac{12{,}000}{60{,}000} \\times 100 = 20\\%$\n\nPortfolio Average Return\n\nTotal Investment: $\\text{₹ }32{,}000 + \\text{₹ }60{,}000 = \\text{₹ }92{,}000$\n\nWeights: $W_A = \\dfrac{32{,}000}{92{,}000} = 0.3478$\n\n$W_B = \\dfrac{60{,}000}{92{,}000} = 0.6522$\n\nPortfolio Return $= R_A \\times W_A + R_B \\times W_B$\n\n$15\\% \\times 0.3478 + 20\\% \\times 0.6522 = 5.22 + 13.04$\n\n$R_p = 18.26\\%$\n\n(ii) Assessment of Expected Average Return from Portfolio for FY 2025-26\n\nA. Alpha Motors Ltd.\n\nExpected Dividend $= 800 \\times \\text{₹ }10 \\times 80\\% = \\text{₹ }6{,}400$\n\nExpected Price on 31.03.2026\n\n| Probability | Price (₹) | P $\\times$ Price |\n|---|---|---|\n| 0.3 | 44 | 13.2 |\n| 0.4 | 48 | 19.2 |\n| 0.3 | 50 | 15 |\n| Expected Price | | 47.4 |\n\nExpected Market Value: $800 \\times 47.4 = \\text{₹ }37{,}920$\n\nBeginning Value (01.04.2025): $800 \\times 43 = \\text{₹ }34{,}400$\n\nExpected Capital Gain: $37{,}920 - 34{,}400 = \\text{₹ }3{,}520$\n\nExpected Total Return: $6{,}400 + 3{,}520 = \\text{₹ }9{,}920$\n\nExpected Return: $\\dfrac{9{,}920}{34{,}400} \\times 100 = 28.84\\%$\n\nB. Beta Warehousing Ltd.\n\nExpected Dividend $= 1{,}200 \\times \\text{₹ }5 \\times 100\\% = \\text{₹ }6{,}000$\n\nExpected Price on 31.03.2026\n\n| Probability | Price (₹) | P $\\times$ Price |\n|---|---|---|\n| 0.3 | 58 | 17.4 |\n| 0.4 | 60 | 24 |\n| 0.3 | 63 | 18.9 |\n| Expected Price | | 60.3 |\n\nExpected Market Value: $1{,}200 \\times 60.3 = \\text{₹ }72{,}360$\n\nBeginning Value (01.04.2025): $1{,}200 \\times 58 = \\text{₹ }69{,}600$\n\nExpected Capital Gain: $72{,}360 - 69{,}600 = \\text{₹ }2{,}760$\n\nExpected Total Return: $6{,}000 + 2{,}760 = \\text{₹ }8{,}760$\n\nExpected Return: $\\dfrac{8{,}760}{69{,}600} \\times 100 = 12.59\\%$\n\nPortfolio Expected Return FY 2025-26\n\nUsing market values as on 01.04.2025:\n\nTotal Portfolio Value: $34{,}400 + 69{,}600 = \\text{₹ }104{,}000$\n\nWeights:\n\n$$\n\\begin{aligned}\nW_A &= \\frac{34{,}400}{104{,}000} = 0.3308 \\\\\nW_B &= \\frac{69{,}600}{104{,}000} = 0.6692\n\\end{aligned}\n$$\n\nExpected Portfolio Return: $R_p = (0.3308 \\times 28.84) + (0.6692 \\times 12.59) = 9.54 + 8.42 = R_p = 17.96\\%$\n\n(iii) Assessment of the Treynor Ratio for both Companies :\n\nTreynor Ratio $= (\\text{Return of Portfolio} - \\text{Risk Free Rate}) / \\text{Beta}$\n\nWhere, $R_f = 8\\%$\n\nAlpha Motors Ltd. : $(28.84 - 8)/1.5 = 20.84/1.5 = 13.89$\n\nBeta Warehousing Ltd. $= (12.59 - 8)/0.5 = 4.59/0.5 = 9.18$\n\nAdvice :\n\nAlpha Motor Ltd. outperforms Beta Warehousing Ltd. in terms of return per unit of systematic risk. So, Alpha Motor's stock is offering better return per unit of Systematic Risk.",
+    "reference_solution_md": "(i) Analysis of return on Portfolio for 2024 – 2025 (Calculation in ₹ / Share)\n\n| Particulars | Alpha Motors Ltd. | Beta Warehousing Ltd. |\n|---|---|---|\n| 1. Market Value by 31.03.25 | 43 | 58 |\n| 2. Cost of Investment | 40 | 50 |\n| 3. Gain / Loss | 3 | 8 |\n| 4. Dividend received during the year | 3 | 2 |\n| 5. Yield [(3) + (4)] | 6 | 10 |\n| 6. % Return [(5) $\\div$ (2)] $\\times$ 100 | 15.0 % | 20.0 % |\n| 7. Weight in the Portfolio [32 : 60] [$32/92$, $60/92$] | 0.35 | 0.65 |\n| Weighted average return $= (0.35 \\times 15\\%) + (0.65 \\times 20\\%)$ | 18.26 % | |\n\n(ii) Assessment of return on Portfolios for 2025 – 2026 (Calculation in ₹ / Share)\n\n| Particulars | Alpha Motors Ltd. | Beta Warehousing Ltd. |\n|---|---|---|\n| 1. Expected Dividend | 8 | 5 |\n| 2. Capital Gain by 31.03.26 | | |\n| $(44 \\times 0.3) + (48 \\times 0.4) + (50 \\times 0.3) - 43 = (47.4 - 43)$ | 4.40 | |\n| $(58 \\times 0.3) + (60 \\times 0.4) + (63 \\times 0.3) - 58 = (60.30 - 58)$ | | 2.30 |\n| 3. Yield [(1) + (2)] | 12.40 | 7.30 |\n| 4. Market Value 01.04.25 | 43 | 58 |\n| 5. % Return [(3) $\\div$ (4)] | 28.84 % | 12.59 % |\n| 6. Weight in Portfolio ($800 \\times 43$) : ($1200 \\times 58$) | 0.33 | 0.67 |\n| Weighted Average (Expected) Return | 17.96 % | |\n\n(iii) Assessment of the Treynor Ratio for both Companies :\n\nTreynor Ratio $= (\\text{Return of Portfolio} - \\text{Risk Free Rate}) / \\text{Beta}$\n\nAlpha Motor Ltd. Treynor ratio $= (28.84 - 8) / 1.5 = 13.89$\n\nBeta Warehousing Ltd. Treynor ratio $= (12.59 - 8) / 0.50 = 9.18$\n\nAdvice :\n\nAlpha Motor Ltd. outperforms Beta Warehousing Ltd. in terms of return per unit of systematic risk. So, Alpha Motor's stock is offering better return per unit of Systematic Risk.\n\nAlternative\n\n(i) Analysis of Average Return from Portfolio for FY 2024-25\n\nReturn from Alpha Motors Ltd.\n\nInvestment Cost = ₹ 32,000\n\nDividend received: $800 \\times \\text{₹ }10 \\times 30\\% = \\text{₹ }2{,}400$\n\nMarket Value on 31.03.2025: $800 \\times \\text{₹ }43 = \\text{₹ }34{,}400$\n\nCapital Gain: $\\text{₹ }34{,}400 - \\text{₹ }32{,}000 = \\text{₹ }2{,}400$\n\nTotal Return: $\\text{₹ }2{,}400 + \\text{₹ }2{,}400 = \\text{₹ }4{,}800$\n\n$\\text{Return (\\%)} = \\dfrac{4{,}800}{32{,}000} \\times 100 = 15\\%$\n\nReturn from Beta Warehousing Ltd.\n\nInvestment Cost = ₹ 60,000\n\nDividend received: $1200 \\times \\text{₹ }5 \\times 40\\% = \\text{₹ }2{,}400$\n\nMarket Value on 31.03.2025: $1{,}200 \\times \\text{₹ }58 = \\text{₹ }69{,}600$\n\nCapital Gain: $\\text{₹ }69{,}600 - \\text{₹ }60{,}000 = \\text{₹ }9{,}600$\n\nTotal Return: $\\text{₹ }2{,}400 + \\text{₹ }9{,}600 = \\text{₹ }12{,}000$\n\n$\\text{Return (\\%)} = \\dfrac{12{,}000}{60{,}000} \\times 100 = 20\\%$\n\nPortfolio Average Return\n\nTotal Investment: $\\text{₹ }32{,}000 + \\text{₹ }60{,}000 = \\text{₹ }92{,}000$\n\nWeights: $W_A = \\dfrac{32{,}000}{92{,}000} = 0.3478$\n\n$W_B = \\dfrac{60{,}000}{92{,}000} = 0.6522$\n\nPortfolio Return $= R_A \\times W_A + R_B \\times W_B$\n\n$15\\% \\times 0.3478 + 20\\% \\times 0.6522 = 5.22 + 13.04$\n\n$R_p = 18.26\\%$\n\n(ii) Assessment of Expected Average Return from Portfolio for FY 2025-26\n\nA. Alpha Motors Ltd.\n\nExpected Dividend $= 800 \\times \\text{₹ }10 \\times 80\\% = \\text{₹ }6{,}400$\n\nExpected Price on 31.03.2026\n\n| Probability | Price (₹) | P $\\times$ Price |\n|---|---|---|\n| 0.3 | 44 | 13.2 |\n| 0.4 | 48 | 19.2 |\n| 0.3 | 50 | 15 |\n| Expected Price | | 47.4 |\n\nExpected Market Value: $800 \\times 47.4 = \\text{₹ }37{,}920$\n\nBeginning Value (01.04.2025): $800 \\times 43 = \\text{₹ }34{,}400$\n\nExpected Capital Gain: $37{,}920 - 34{,}400 = \\text{₹ }3{,}520$\n\nExpected Total Return: $6{,}400 + 3{,}520 = \\text{₹ }9{,}920$\n\nExpected Return: $\\dfrac{9{,}920}{34{,}400} \\times 100 = 28.84\\%$\n\nB. Beta Warehousing Ltd.\n\nExpected Dividend $= 1{,}200 \\times \\text{₹ }5 \\times 100\\% = \\text{₹ }6{,}000$\n\nExpected Price on 31.03.2026\n\n| Probability | Price (₹) | P $\\times$ Price |\n|---|---|---|\n| 0.3 | 58 | 17.4 |\n| 0.4 | 60 | 24 |\n| 0.3 | 63 | 18.9 |\n| Expected Price | | 60.3 |\n\nExpected Market Value: $1{,}200 \\times 60.3 = \\text{₹ }72{,}360$\n\nBeginning Value (01.04.2025): $1{,}200 \\times 58 = \\text{₹ }69{,}600$\n\nExpected Capital Gain: $72{,}360 - 69{,}600 = \\text{₹ }2{,}760$\n\nExpected Total Return: $6{,}000 + 2{,}760 = \\text{₹ }8{,}760$\n\nExpected Return: $\\dfrac{8{,}760}{69{,}600} \\times 100 = 12.59\\%$\n\nPortfolio Expected Return FY 2025-26\n\nUsing market values as on 01.04.2025:\n\nTotal Portfolio Value: $34{,}400 + 69{,}600 = \\text{₹ }104{,}000$\n\nWeights:\n\n$$\n\\begin{aligned}\nW_A &= \\frac{34{,}400}{104{,}000} = 0.3308 \\\\\nW_B &= \\frac{69{,}600}{104{,}000} = 0.6692\n\\end{aligned}\n$$\n\nExpected Portfolio Return: $R_p = (0.3308 \\times 28.84) + (0.6692 \\times 12.59) = 9.54 + 8.42 = R_p = 17.96\\%$\n\n(iii) Assessment of the Treynor Ratio for both Companies :\n\nTreynor Ratio $= (\\text{Return of Portfolio} - \\text{Risk Free Rate}) / \\text{Beta}$\n\nWhere, $R_f = 8\\%$\n\nAlpha Motors Ltd. : $(28.84 - 8)/1.5 = 20.84/1.5 = 13.89$\n\nBeta Warehousing Ltd. $= (12.59 - 8)/0.5 = 4.59/0.5 = 9.18$\n\nAdvice :\n\nAlpha Motor Ltd. outperforms Beta Warehousing Ltd. in terms of return per unit of systematic risk. So, Alpha Motor's stock is offering better return per unit of Systematic Risk.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "portfolio-theory-and-practice",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "GENZ Capital Ltd. holds a diversified equity portfolio worth ₹ 250 Crore, with a beta of 1.35 relative to the Nifty 50 index. The portfolio has a correlation of 0.50 with the Nifty 50 index, and the company expects high-beta stocks to increase the overall beta to 1.50 during the hedge period. The company plans to hedge 100% of its market exposure using Nifty futures over the next six months. The current Nifty 50 index value is 19,300, and the six-month Nifty futures price is 19,250 points with a contract size of 200 units. The company anticipates a market decline of 4.0% over the next six months.\n\nRequired:\n(i) Assess the number of Nifty futures contracts needed to hedge the portfolio.\n(ii) Analyze the expected profit/loss by hedging.\n(iii) If Nifty 50 index increases to 19,350 points over the same period, and the adjusted beta (with correlation of 1.0) is 1.50, the number of contracts will be same as calculated in part (i). Assess the expected profit/loss by hedging.",
+    "parent_ref": "6",
+    "explanation_md": "The given portfolio beta already incorporates the correlation effect ($\\beta = \\rho \\times \\sigma_P/\\sigma_M$) Therefore, correlation should not be applied separately while computing the hedge ratio.\n\n(i) Number of Nifty Futures Contracts Needed to Hedge the Portfolio: Effective Beta :\n\n$\\text{Effective Beta} = 1.50$\n\n$\\text{Number of Contracts} = (\\text{Portfolio Value} \\times \\text{Effective Beta}) / (\\text{Futures Price} \\times \\text{Contract Size}) =$\n\n$\\text{Number of Contracts} = (\\text{₹ }250\\ \\text{crore} \\times 1.50) / (19{,}250 \\times 200) = 974$ contracts\n\n(ii) Gain/loss on future contract\n\nNew Nifty Index Value:\n\n$\\text{New Nifty Value} = 19{,}300 \\times (1 - 0.04) = 19{,}300 \\times 0.96 = 18{,}528$\n\nPrice Change in Futures contracts :\n\n$\\text{Price Change} = 19{,}250 - 18{,}528 = 722$\n\nGain per Contract :\n\n$\\text{Gain per Contract} = 722 \\times 200 = \\text{₹ }1{,}44{,}400$\n\nTotal Gain on Futures Contracts :\n\n$\\text{Total Gain} = 974\\ \\text{contracts} \\times \\text{₹ }1{,}44{,}400 = \\text{₹ }14{,}06{,}45{,}600$\n\nPortfolio gain/loss :\n\n$\\text{Portfolio Loss Percentage} = \\text{Effective Beta} \\times \\text{Market Decline}$\n\n$= 1.50 \\times 4\\% = 6.0\\%$\n\n$\\text{Portfolio Loss} = 6.0\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }15{,}00{,}00{,}000$\n\nNet Profit / loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Total Gain on Futures Contracts} - \\text{Portfolio Loss} \\\\\n&= \\text{₹ }14{,}06{,}456{,}00 - \\text{₹ }15{,}00{,}00{,}000 \\\\\n&= -\\text{₹ }93{,}54{,}400\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹93,54,400\n\n(iii) Nifty Increases to 19,350 Points\n\nPrice Change in Futures :\n\n$\\text{Price Change} = 19{,}350 - 19{,}250 = 100$\n\nLoss per Contract :\n\n$\\text{Loss per Contract} = 100\\ \\text{points} \\times 200 = \\text{₹ }20{,}000$\n\nTotal Loss on Futures Contracts :\n\n$= 974\\ \\text{contracts} \\times \\text{₹ }20{,}000 = \\text{₹ }1{,}94{,}80{,}000$\n\nPortfolio Gain :\n\n$\\text{Percentage Change in Nifty} = (19{,}350 - 19{,}300) / 19{,}300 = 0.259\\%$\n\n$\\text{Portfolio Gain Percentage} = \\text{Effective Beta} \\times \\text{Percentage Change}$\n\n$= 1.50 \\times 0.259\\% = 0.3886\\%$\n\n$\\text{Portfolio Gain} = 0.3886\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }97{,}15{,}000$\n\nNet Profit/loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Portfolio gain} - \\text{Total loss on Futures Contracts} \\\\\n&= \\text{₹ }97{,}15{,}000 - \\text{₹ }1{,}94{,}80{,}000 = -\\text{₹ }97{,}65{,}000\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹ 97,65,000\n\nAlternative:\n\n(i) Number of Nifty Futures Contracts Needed to Hedge the Portfolio: Effective Beta :\n\n$\\text{Effective Beta} = \\text{Portfolio Beta} \\times \\text{Correlation} = 1.50 \\times 0.50 = 0.75$\n\n$\\text{Number of Contracts} = (\\text{Portfolio Value} \\times \\text{Effective Beta}) / (\\text{Futures Price} \\times \\text{Contract Size})$\n\n$\\text{Number of Contracts} = (\\text{₹ }250\\ \\text{crore} \\times 0.75) / (19{,}250 \\times 200) = 487$ contracts\n\n(ii) Gain/loss on future contract\n\nNew Nifty Index Value:\n\n$\\text{New Nifty Value} = 19{,}300 \\times (1 - 0.04) = 19{,}300 \\times 0.96 = 18{,}528$\n\nPrice Change in Futures contracts :\n\n$\\text{Price Change} = 19{,}250 - 18{,}528 = 722$\n\nGain per Contract :\n\n$\\text{Gain per Contract} = 722 \\times 200 = \\text{₹ }1{,}44{,}400$\n\nTotal Gain on Futures Contracts :\n\n$\\text{Total Gain} = 487\\ \\text{contracts} \\times \\text{₹ }1{,}44{,}400 = \\text{₹ }7{,}03{,}22{,}800$\n\nPortfolio gain/loss :\n\n$\\text{Portfolio Loss Percentage} = \\text{Effective Beta} \\times \\text{Market Decline}$\n\n$= 0.75 \\times 4\\% = 3.0\\%$\n\n$\\text{Portfolio Loss} = 3.0\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }7{,}50{,}00{,}000$\n\nNet Profit / loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Total Gain on Futures Contracts} - \\text{Portfolio Loss} \\\\\n&= \\text{₹ }7{,}03{,}22{,}800 - \\text{₹ }7{,}50{,}00{,}000 \\\\\n&= -\\text{₹ }46{,}77{,}200\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹ 46,77,200\n\n(iii) Nifty Increases to 19,350 Points\n\nPrice Change in Futures :\n\n$\\text{Price Change} = 19{,}350 - 19{,}250 = 100$\n\nLoss per Contract :\n\n$\\text{Loss per Contract} = 100\\ \\text{points} \\times 200 = \\text{₹ }20{,}000$\n\nTotal Loss on Futures Contracts :\n\n$= 487\\ \\text{contracts} \\times \\text{₹ }20{,}000 = \\text{₹ }97{,}40{,}000$\n\nPortfolio Gain :\n\n$\\text{Percentage Change in Nifty} = (19{,}350 - 19{,}300) / 19{,}300 = 0.259\\%$\n\n$\\text{Portfolio Gain Percentage} = \\text{Effective Beta} \\times \\text{Percentage Change}$\n\n$= 1.50 \\times 0.259\\% = 0.3886\\%$\n\n$\\text{Portfolio Gain} = 0.3886\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }97{,}15{,}000$\n\nNet Profit/loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Portfolio gain} - \\text{Total loss on Futures Contracts} \\\\\n&= \\text{₹ }97{,}15{,}000 - \\text{₹ }97{,}40{,}000 = -\\text{₹ }25{,}000\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹ 25,000",
+    "reference_solution_md": "The given portfolio beta already incorporates the correlation effect ($\\beta = \\rho \\times \\sigma_P/\\sigma_M$) Therefore, correlation should not be applied separately while computing the hedge ratio.\n\n(i) Number of Nifty Futures Contracts Needed to Hedge the Portfolio: Effective Beta :\n\n$\\text{Effective Beta} = 1.50$\n\n$\\text{Number of Contracts} = (\\text{Portfolio Value} \\times \\text{Effective Beta}) / (\\text{Futures Price} \\times \\text{Contract Size}) =$\n\n$\\text{Number of Contracts} = (\\text{₹ }250\\ \\text{crore} \\times 1.50) / (19{,}250 \\times 200) = 974$ contracts\n\n(ii) Gain/loss on future contract\n\nNew Nifty Index Value:\n\n$\\text{New Nifty Value} = 19{,}300 \\times (1 - 0.04) = 19{,}300 \\times 0.96 = 18{,}528$\n\nPrice Change in Futures contracts :\n\n$\\text{Price Change} = 19{,}250 - 18{,}528 = 722$\n\nGain per Contract :\n\n$\\text{Gain per Contract} = 722 \\times 200 = \\text{₹ }1{,}44{,}400$\n\nTotal Gain on Futures Contracts :\n\n$\\text{Total Gain} = 974\\ \\text{contracts} \\times \\text{₹ }1{,}44{,}400 = \\text{₹ }14{,}06{,}45{,}600$\n\nPortfolio gain/loss :\n\n$\\text{Portfolio Loss Percentage} = \\text{Effective Beta} \\times \\text{Market Decline}$\n\n$= 1.50 \\times 4\\% = 6.0\\%$\n\n$\\text{Portfolio Loss} = 6.0\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }15{,}00{,}00{,}000$\n\nNet Profit / loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Total Gain on Futures Contracts} - \\text{Portfolio Loss} \\\\\n&= \\text{₹ }14{,}06{,}456{,}00 - \\text{₹ }15{,}00{,}00{,}000 \\\\\n&= -\\text{₹ }93{,}54{,}400\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹93,54,400\n\n(iii) Nifty Increases to 19,350 Points\n\nPrice Change in Futures :\n\n$\\text{Price Change} = 19{,}350 - 19{,}250 = 100$\n\nLoss per Contract :\n\n$\\text{Loss per Contract} = 100\\ \\text{points} \\times 200 = \\text{₹ }20{,}000$\n\nTotal Loss on Futures Contracts :\n\n$= 974\\ \\text{contracts} \\times \\text{₹ }20{,}000 = \\text{₹ }1{,}94{,}80{,}000$\n\nPortfolio Gain :\n\n$\\text{Percentage Change in Nifty} = (19{,}350 - 19{,}300) / 19{,}300 = 0.259\\%$\n\n$\\text{Portfolio Gain Percentage} = \\text{Effective Beta} \\times \\text{Percentage Change}$\n\n$= 1.50 \\times 0.259\\% = 0.3886\\%$\n\n$\\text{Portfolio Gain} = 0.3886\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }97{,}15{,}000$\n\nNet Profit/loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Portfolio gain} - \\text{Total loss on Futures Contracts} \\\\\n&= \\text{₹ }97{,}15{,}000 - \\text{₹ }1{,}94{,}80{,}000 = -\\text{₹ }97{,}65{,}000\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹ 97,65,000\n\nAlternative:\n\n(i) Number of Nifty Futures Contracts Needed to Hedge the Portfolio: Effective Beta :\n\n$\\text{Effective Beta} = \\text{Portfolio Beta} \\times \\text{Correlation} = 1.50 \\times 0.50 = 0.75$\n\n$\\text{Number of Contracts} = (\\text{Portfolio Value} \\times \\text{Effective Beta}) / (\\text{Futures Price} \\times \\text{Contract Size})$\n\n$\\text{Number of Contracts} = (\\text{₹ }250\\ \\text{crore} \\times 0.75) / (19{,}250 \\times 200) = 487$ contracts\n\n(ii) Gain/loss on future contract\n\nNew Nifty Index Value:\n\n$\\text{New Nifty Value} = 19{,}300 \\times (1 - 0.04) = 19{,}300 \\times 0.96 = 18{,}528$\n\nPrice Change in Futures contracts :\n\n$\\text{Price Change} = 19{,}250 - 18{,}528 = 722$\n\nGain per Contract :\n\n$\\text{Gain per Contract} = 722 \\times 200 = \\text{₹ }1{,}44{,}400$\n\nTotal Gain on Futures Contracts :\n\n$\\text{Total Gain} = 487\\ \\text{contracts} \\times \\text{₹ }1{,}44{,}400 = \\text{₹ }7{,}03{,}22{,}800$\n\nPortfolio gain/loss :\n\n$\\text{Portfolio Loss Percentage} = \\text{Effective Beta} \\times \\text{Market Decline}$\n\n$= 0.75 \\times 4\\% = 3.0\\%$\n\n$\\text{Portfolio Loss} = 3.0\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }7{,}50{,}00{,}000$\n\nNet Profit / loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Total Gain on Futures Contracts} - \\text{Portfolio Loss} \\\\\n&= \\text{₹ }7{,}03{,}22{,}800 - \\text{₹ }7{,}50{,}00{,}000 \\\\\n&= -\\text{₹ }46{,}77{,}200\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹ 46,77,200\n\n(iii) Nifty Increases to 19,350 Points\n\nPrice Change in Futures :\n\n$\\text{Price Change} = 19{,}350 - 19{,}250 = 100$\n\nLoss per Contract :\n\n$\\text{Loss per Contract} = 100\\ \\text{points} \\times 200 = \\text{₹ }20{,}000$\n\nTotal Loss on Futures Contracts :\n\n$= 487\\ \\text{contracts} \\times \\text{₹ }20{,}000 = \\text{₹ }97{,}40{,}000$\n\nPortfolio Gain :\n\n$\\text{Percentage Change in Nifty} = (19{,}350 - 19{,}300) / 19{,}300 = 0.259\\%$\n\n$\\text{Portfolio Gain Percentage} = \\text{Effective Beta} \\times \\text{Percentage Change}$\n\n$= 1.50 \\times 0.259\\% = 0.3886\\%$\n\n$\\text{Portfolio Gain} = 0.3886\\% \\times \\text{₹ }250\\ \\text{crore} = \\text{₹ }97{,}15{,}000$\n\nNet Profit/loss by hedging :\n\n$$\n\\begin{aligned}\n&= \\text{Portfolio gain} - \\text{Total loss on Futures Contracts} \\\\\n&= \\text{₹ }97{,}15{,}000 - \\text{₹ }97{,}40{,}000 = -\\text{₹ }25{,}000\n\\end{aligned}\n$$\n\nNet loss by hedging = ₹ 25,000",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.38,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "XEB Ltd., and YON Ltd., want to raise US $ 50 Million each. They have been offered the following rates per annum :\n\n| Company | Fixed (%) | Floating |\n|---|---|---|\n| XEB Ltd. | 7.5 | LIBOR + 25 bps |\n| YON Ltd. | 8.45 | LIBOR + 37 bps |\n\nBank B, on a commission of 0.2 % (fully borne by YON) is arranging an interest rate swap between XEB and YON. XEB wants a floating rate and YON wants a fixed rate.\n\nRequired :\n(i) Design and Assess the payables and receivables on the Swap (in %) given that the benefits (after Commission) are shared between XEB Ltd. and YON Ltd. in the ratio 60 : 40.\n(ii) Assess what will be the effective rate of Interest payable by XEB Ltd. and YON Ltd. and their respective gains (in %) due to the Swap.\n(iii) Assess how many dollar does each save per annum due to the Swap.",
+    "parent_ref": "6",
+    "explanation_md": "(i)\n| Company | Fixed (%) | Floating |\n|---|---|---|\n| XEB Ltd. | 7.5 | LIBOR + 25 bps. |\n| YON Ltd. | 8.45 | LIBOR + 37 bps. |\n| Differential | 0.95 | 0.12 |\n| Net difference | 0.95 – 0.12 = 0.83 | |\n| Bank's Commission | 0.20 | |\n| Balance Gain (0.83–0.20) = 0.63 | 60 % x 0.63 = 0.378 | 40% x 0.63 = 0.252 |\n\n(ii) & (iii)\n| | XEB Ltd. | YON Ltd. |\n|---|---|---|\n| Borrow | At fixed rate 7.5 % | At floating rate LIBOR + 0.37 % |\n| Pay Bank | (7.5 %) | (LIBOR + 0.37 %) |\n| Collect differential from YON 7.5 % - (LIBOR + 0.25 %) | + 7.25 % - LIBOR | (7.25 % - LIBOR) |\n| Pay Bank's Commission | | (0.2) |\n| Receive gain from YON | + 0.378 | (0.378) |\n| Net interest = Effective rate of interest | – 0.25 – LIBOR + 0.378 = (LIBOR – 0.128) | (7.25 + 0.37 + 0.2 + 0.378) = 8.198 |\n| Original Interest | LIBOR + 0.25 % | 8.45 % |\n| Gain p.a. due to the swap | 0.378 % | 0.252 % |\n| Gain in dollars p.a. | 0.378 % x 50 m = $ 189000 | 0.252 % x 50 m = $ 126000 |",
+    "reference_solution_md": "(i)\n| Company | Fixed (%) | Floating |\n|---|---|---|\n| XEB Ltd. | 7.5 | LIBOR + 25 bps. |\n| YON Ltd. | 8.45 | LIBOR + 37 bps. |\n| Differential | 0.95 | 0.12 |\n| Net difference | 0.95 – 0.12 = 0.83 | |\n| Bank's Commission | 0.20 | |\n| Balance Gain (0.83–0.20) = 0.63 | 60 % x 0.63 = 0.378 | 40% x 0.63 = 0.252 |\n\n(ii) & (iii)\n| | XEB Ltd. | YON Ltd. |\n|---|---|---|\n| Borrow | At fixed rate 7.5 % | At floating rate LIBOR + 0.37 % |\n| Pay Bank | (7.5 %) | (LIBOR + 0.37 %) |\n| Collect differential from YON 7.5 % - (LIBOR + 0.25 %) | + 7.25 % - LIBOR | (7.25 % - LIBOR) |\n| Pay Bank's Commission | | (0.2) |\n| Receive gain from YON | + 0.378 | (0.378) |\n| Net interest = Effective rate of interest | – 0.25 – LIBOR + 0.378 = (LIBOR – 0.128) | (7.25 + 0.37 + 0.2 + 0.378) = 8.198 |\n| Original Interest | LIBOR + 0.25 % | 8.45 % |\n| Gain p.a. due to the swap | 0.378 % | 0.252 % |\n| Gain in dollars p.a. | 0.378 % x 50 m = $ 189000 | 0.252 % x 50 m = $ 126000 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "financial-derivatives-instruments-for-risk-management",
+    "mapping_confidence": 0.59,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Apex Global Ltd., an Indian multinational company, is reviewing foreign exchange market quotations to optimise its currency conversion decisions. Mr. Karan, CFO of the company, analyses the prevailing two-way spot exchange rates:\nUSD/INR : \\$ 1 = ₹ 85.20 – 85.50\nEUR/USD : € 1 = \\$ 1.1400 – 1.1450\nEUR/INR : € 1 = ₹ 95.20 – 95.90\nThe company has a Euro receivable of € 1,000,000.\n\nRequired:\n(i) Assess the cross exchange rate EUR/INR (bid-ask).\n(ii) Analyze the arbitrage profit or loss, if any, arising from converting the Euro receivable into INR.\n(iii) Assume that after 3 months, the following forward rates prevail:\nUSD/INR : \\$ 1 = ₹ 86.10 – 86.60\nEUR/INR : € 1 = ₹ 96.00 – 96.60\n(iv) Analyze whether INR has appreciated or depreciated against USD and EUR and compute the percentage change.",
+    "parent_ref": "7",
+    "explanation_md": "(i) Assessment of Cross Rate for EUR / INR :\n\n$\\text{EUR / INR} = \\text{EUR / USD} \\times \\text{USD / INR}$\n\nBid Rate $= 1.1400 \\times 85.20 = 97.128 = 97.13$\n\nAsk Rate $= 1.1450 \\times 85.50 = 97.8975 = 97.90$\n\nCross Rate $=$ ₹ 97.13 / 97.90\n\n(ii) Analysis of Arbitrage Profit / Loss :\n\nCross Route (EUR → USD → INR)\n\nEUR → USD (Sell EUR at Bid) $= 1000000 \\times 1.1400 = \\text{USD }1140000$\n\nUSD → INR (Sell USD at Bid) $= 1140000 \\times 85.20 = \\text{₹ }97128000$\n\nINR via Cross Route = ₹ 97128000\n\nDirect Route (EUR → INR)\n\nSell EUR at Bid $= 1000000 \\times 95.20 = \\text{₹ }95200000$\n\nINR via Direct Route = ₹ 95200000\n\nArbitrage Profit : $97128000 - 95200000 = \\text{₹ }1928000$\n\n(iii) Analysis of Appreciation / Depreciation of INR:\n\nSince the rates are in Bid-Ask form we need to calculate the mid-rate to determine the Appreciation / Depreciation of INR.\n\nAgainst USD(Mid rate):\n\nSpot mid rate $= (85.20 + 85.50) / 2 = 85.35$\n\nForward mid rate $= (86.10 + 86.60) / 2 = 86.35$\n\n% Change $[(86.35 - 85.35) / 85.35] \\times 100 = 1.17\\%$\n\nINR depreciated by 1.17 %\n\nAgainst EUR(Mid rate):\n\nSpot mid rate $= (95.20 + 95.90) / 2 = 95.55$\n\nForward mid rate $= (96 + 96.60) / 2 = 96.30$\n\n% Change $[(96.30 - 95.55) / 95.55] \\times 100 = 0.78\\%$\n\nINR depreciated by 0.78 %\n\nAlternative:\n\nAgainst USD (Ask Rate):\n\n% Change $(86.60 - 85.50) / 85.50 = 1.29\\%$\n\nINR depreciated by 1.29 %\n\nAgainst EUR (Ask Rate):\n\n% Change $(96.60 - 95.90) / 95.90 = 0.73\\%$\n\nINR depreciated by 0.73 %\n\nAlternative:\n\nAgainst USD (Bid Rate):\n\n% Change $(86.10 - 85.20) / 85.20 = 1.06\\%$\n\nINR depreciated by 1.06 %\n\nAgainst EUR (Bid Rate):\n\n% Change $(96.00 - 95.20) / 95.20 = 0.84\\%$\n\nINR depreciated by 0.84 %",
+    "reference_solution_md": "(i) Assessment of Cross Rate for EUR / INR :\n\n$\\text{EUR / INR} = \\text{EUR / USD} \\times \\text{USD / INR}$\n\nBid Rate $= 1.1400 \\times 85.20 = 97.128 = 97.13$\n\nAsk Rate $= 1.1450 \\times 85.50 = 97.8975 = 97.90$\n\nCross Rate $=$ ₹ 97.13 / 97.90\n\n(ii) Analysis of Arbitrage Profit / Loss :\n\nCross Route (EUR → USD → INR)\n\nEUR → USD (Sell EUR at Bid) $= 1000000 \\times 1.1400 = \\text{USD }1140000$\n\nUSD → INR (Sell USD at Bid) $= 1140000 \\times 85.20 = \\text{₹ }97128000$\n\nINR via Cross Route = ₹ 97128000\n\nDirect Route (EUR → INR)\n\nSell EUR at Bid $= 1000000 \\times 95.20 = \\text{₹ }95200000$\n\nINR via Direct Route = ₹ 95200000\n\nArbitrage Profit : $97128000 - 95200000 = \\text{₹ }1928000$\n\n(iii) Analysis of Appreciation / Depreciation of INR:\n\nSince the rates are in Bid-Ask form we need to calculate the mid-rate to determine the Appreciation / Depreciation of INR.\n\nAgainst USD(Mid rate):\n\nSpot mid rate $= (85.20 + 85.50) / 2 = 85.35$\n\nForward mid rate $= (86.10 + 86.60) / 2 = 86.35$\n\n% Change $[(86.35 - 85.35) / 85.35] \\times 100 = 1.17\\%$\n\nINR depreciated by 1.17 %\n\nAgainst EUR(Mid rate):\n\nSpot mid rate $= (95.20 + 95.90) / 2 = 95.55$\n\nForward mid rate $= (96 + 96.60) / 2 = 96.30$\n\n% Change $[(96.30 - 95.55) / 95.55] \\times 100 = 0.78\\%$\n\nINR depreciated by 0.78 %\n\nAlternative:\n\nAgainst USD (Ask Rate):\n\n% Change $(86.60 - 85.50) / 85.50 = 1.29\\%$\n\nINR depreciated by 1.29 %\n\nAgainst EUR (Ask Rate):\n\n% Change $(96.60 - 95.90) / 95.90 = 0.73\\%$\n\nINR depreciated by 0.73 %\n\nAlternative:\n\nAgainst USD (Bid Rate):\n\n% Change $(86.10 - 85.20) / 85.20 = 1.06\\%$\n\nINR depreciated by 1.06 %\n\nAgainst EUR (Bid Rate):\n\n% Change $(96.00 - 95.20) / 95.20 = 0.84\\%$\n\nINR depreciated by 0.84 %",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.78,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Orion Techno Exports Ltd., an Indian multinational company engaged in importing precision components from Japan and exporting finished goods to the United States, is exposed to foreign exchange risk due to its international operations. The company is required to make a payment of ¥ 600 million to its Japanese supplier and is also expecting to receive $ 12 million from its US customer, both payable and receivable respectively after a period of three months.\n\nIn order to evaluate suitable hedging strategies, the Chief Financial Officer, Mr. Niten, has gathered the following information from the foreign exchange market. The current spot exchange rates are quoted at ₹ 89.20 / 89.60 per US Dollar and ₹ 0.5800 / 0.5850 per Japanese Yen, while the three-month forward rates are quoted at ₹ 90.20 / 90.80 per US Dollar and ₹ 0.5950 / 0.6000 per Japanese Yen.\n\nFurther, the company has access to international money markets where the borrowing and lending interest rates (per annum) are as follows: for Indian Rupee, the rate of interest is 8% for lending and current Indian borrowing rate is 9%; for US Dollar, the borrowing and lending rates are 6.5% and 5.5% respectively; and for Japanese Yen, the borrowing and lending rates are 0.6% and 0.5% respectively.\n\nRequired:\n(i) Analyze Forward Market Hedge or Money Market Hedge for the Yen Payable and advise which one is recommended.\n(ii) Analyze Forward Market Hedge or Money Market Hedge for the Dollar Receivable and advise which one is recommended.",
+    "parent_ref": "7",
+    "explanation_md": "(i) Analysis of Payable of ¥ 600 Million after 3 Months.\nCovering through forward market :\nRupee outflow = ¥ 600 Million x 0.60 = ₹ 360.00 Million\nCovering through Money market :\nBorrow rupee, convert into yen spot and invest for 3 months.\nYen to be invested = 600 / [1+(0.5% x 3/12)] or (1.00125) = ¥ 599.25 million\nRupee amount to be borrowed = ¥ 599.25 million x 0.5850 = ₹ 350.56 million\nRupee amount repayable = ₹ 350.56 x [1+(9% x 3/12)] or (1.0225) = ₹ 358.45 million\nRecommendation : Outflow through money market is lower than the forward market cover. So money market cover is preferable.\n(ii) Analysis of Receivable of $ 12 million after 3 Months :\n(a) Covering through forward market : Rupee inflow = $ 12 million x ₹ 90.20 per $ = ₹ 1082.40 Million\n(b) Covering through Money market :\nBorrow $, convert into rupee spot and invest for 3 months.\n$ amount to be borrowed = 12 / [1+(6.5% x 3/12)] or 1.01625 = $ 11.81 Million\nRupee inflow at Spot = $ 11.81 million x ₹ 89.20 per $ = ₹ 1053.45 million\nRupee inflow after 3 months = ₹ 1053.45 x [1+(8% x 3/12)] or 1.02 = ₹ 1074.52 million\n(c) Recommendation : Inflow through forward market cover is higher than the money market cover. So, Forward market cover is preferable.",
+    "reference_solution_md": "(i) Analysis of Payable of ¥ 600 Million after 3 Months.\nCovering through forward market :\nRupee outflow = ¥ 600 Million x 0.60 = ₹ 360.00 Million\nCovering through Money market :\nBorrow rupee, convert into yen spot and invest for 3 months.\nYen to be invested = 600 / [1+(0.5% x 3/12)] or (1.00125) = ¥ 599.25 million\nRupee amount to be borrowed = ¥ 599.25 million x 0.5850 = ₹ 350.56 million\nRupee amount repayable = ₹ 350.56 x [1+(9% x 3/12)] or (1.0225) = ₹ 358.45 million\nRecommendation : Outflow through money market is lower than the forward market cover. So money market cover is preferable.\n(ii) Analysis of Receivable of $ 12 million after 3 Months :\n(a) Covering through forward market : Rupee inflow = $ 12 million x ₹ 90.20 per $ = ₹ 1082.40 Million\n(b) Covering through Money market :\nBorrow $, convert into rupee spot and invest for 3 months.\n$ amount to be borrowed = 12 / [1+(6.5% x 3/12)] or 1.01625 = $ 11.81 Million\nRupee inflow at Spot = $ 11.81 million x ₹ 89.20 per $ = ₹ 1053.45 million\nRupee inflow after 3 months = ₹ 1053.45 x [1+(8% x 3/12)] or 1.02 = ₹ 1074.52 million\n(c) Recommendation : Inflow through forward market cover is higher than the money market cover. So, Forward market cover is preferable.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.51,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "5",
+    "kind": "long_form",
+    "stem_md": "\"The Digital Finance Cube captures various technology-enabled financial activities through its business function dimension.\" – In this context, explain the constituents of digital finance business functions.",
+    "parent_ref": "8",
+    "explanation_md": "Constituents of Digital Finance Business Functions :\n(I) Digital Financing: Digital financing include\n(1) Invoice financing and invoice factoring i.e., borrowing against or selling its accounts receivables to any third party.\n(2) Electronic Invoicing i.e., generating and automated processing of invoices.\n(3) Lease Financing i.e., use of assets that is owned by the finance provider.\n(4) Crowdfunding i.e., raising money through small contributions from a large number of people.\n(II) Digital Investments :\nThis includes investment advisory services including arrangement of transactions. For example, online brokerage, mobile and social trading in B2C area, high frequency and algorithmic B2B trading.\n(III) Digital Money :\nIt includes all digital innovations in how money and currency are created, stored, valued, regulated or exchanged.\n(IV) Digital Payments :\nThis refers to electronic payments through wallets or UPIs.\n(V) Digital Insurance :\nIn B2B space, digital insurance platforms provide a number of value-added services including data analytics. In B2C space, it provides innovative services to customers.\n(VI) Digital Finance Advice :\nThis includes aggregators who provide comparative quotes of financial services",
+    "reference_solution_md": "Constituents of Digital Finance Business Functions :\n(I) Digital Financing: Digital financing include\n(1) Invoice financing and invoice factoring i.e., borrowing against or selling its accounts receivables to any third party.\n(2) Electronic Invoicing i.e., generating and automated processing of invoices.\n(3) Lease Financing i.e., use of assets that is owned by the finance provider.\n(4) Crowdfunding i.e., raising money through small contributions from a large number of people.\n(II) Digital Investments :\nThis includes investment advisory services including arrangement of transactions. For example, online brokerage, mobile and social trading in B2C area, high frequency and algorithmic B2B trading.\n(III) Digital Money :\nIt includes all digital innovations in how money and currency are created, stored, valued, regulated or exchanged.\n(IV) Digital Payments :\nThis refers to electronic payments through wallets or UPIs.\n(V) Digital Insurance :\nIn B2B space, digital insurance platforms provide a number of value-added services including data analytics. In B2C space, it provides innovative services to customers.\n(VI) Digital Finance Advice :\nThis includes aggregators who provide comparative quotes of financial services",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "digital-finance",
+    "mapping_confidence": 0.9,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "5",
+    "kind": "long_form",
+    "stem_md": "\"ADRs act as a bridge between foreign companies and U.S. investors.\" – In this context, append the concept of ADR and discuss its advantages.",
+    "parent_ref": "8",
+    "explanation_md": "Concept of ADR:\nAn American Depositary Receipt (ADR) is a certificate that represent shares of a foreign stock owned and issued by a U.S. bank. The foreign shares are usually held in custody overseas, but the certificates trade in the U.S. Through this system, a large number of foreign-based companies are actively traded on one of the three major U.S. equity markets (the NYSE, AMEX or Nasdaq).\n\nADRs provide the following advantages :\n(i) Access to Large Capital.\n(ii) Access to Foreign Exchange.\n(iii) No Change in the Shareholding / voting pattern.\n(iv) Increased recognition for the Company internationally by bankers, customers, etc.\n(v) No Exchange Rate risk since the Company pays interest and dividends in Indian Rupees.",
+    "reference_solution_md": "Concept of ADR:\nAn American Depositary Receipt (ADR) is a certificate that represent shares of a foreign stock owned and issued by a U.S. bank. The foreign shares are usually held in custody overseas, but the certificates trade in the U.S. Through this system, a large number of foreign-based companies are actively traded on one of the three major U.S. equity markets (the NYSE, AMEX or Nasdaq).\n\nADRs provide the following advantages :\n(i) Access to Large Capital.\n(ii) Access to Foreign Exchange.\n(iii) No Change in the Shareholding / voting pattern.\n(iv) Increased recognition for the Company internationally by bankers, customers, etc.\n(v) No Exchange Rate risk since the Company pays interest and dividends in Indian Rupees.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "foreign-exchange-market",
+    "mapping_confidence": 0.69,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(c)",
+    "number_label": "8(c)",
+    "ref_suffix": "q8c",
+    "depth": 1,
+    "sort_order": 38,
+    "is_leaf": true,
+    "marks": "4",
+    "kind": "long_form",
+    "stem_md": "\"Securitization involves multiple participants working together to convert financial assets into tradable securities.\" – In this context, allign the parties involved in a securitization process. (Any Four)",
+    "parent_ref": "8",
+    "explanation_md": "A typical Securitization involves the following parties:\n(i) Originator: An originator actually creates a securitized asset. This entity generates (originates) or owns the defined or identifiable cash flow (that is, an income stream from receivables).\n(ii) Arranger: An originator usually appoints a financial institution to design and set up the securitization structure. It is known as arranger.\n(iii) Special Purpose Vehicle: This is an entity established by the Originator to specifically purchase the assets and realize their off-balance-sheet treatment for legal and accounting purposes.\n(iv) Investors: In a securitization process, typically, financial institutions, insurance companies, pension funds, hedge funds, companies, high net worth individuals are the investors\n(v) Servicers: SPV appoints the servicer to administer and collect the underlying receivables in the capacity of SPV's agent for a servicing fee stipulated under the servicing agreement.\n(vi) Rating Agencies: Rating agencies rate the securities to indicate whether the SPV has a strong or weak capacity to pay interest and principal.\n(vii) Enhancement Providers: They provides credit enhancements to the asset-backed securities.\n(viii) Regulators: They issues various regulations that guides and regulates the securitization process.",
+    "reference_solution_md": "A typical Securitization involves the following parties:\n(i) Originator: An originator actually creates a securitized asset. This entity generates (originates) or owns the defined or identifiable cash flow (that is, an income stream from receivables).\n(ii) Arranger: An originator usually appoints a financial institution to design and set up the securitization structure. It is known as arranger.\n(iii) Special Purpose Vehicle: This is an entity established by the Originator to specifically purchase the assets and realize their off-balance-sheet treatment for legal and accounting purposes.\n(iv) Investors: In a securitization process, typically, financial institutions, insurance companies, pension funds, hedge funds, companies, high net worth individuals are the investors\n(v) Servicers: SPV appoints the servicer to administer and collect the underlying receivables in the capacity of SPV's agent for a servicing fee stipulated under the servicing agreement.\n(vi) Rating Agencies: Rating agencies rate the securities to indicate whether the SPV has a strong or weak capacity to pay interest and principal.\n(vii) Enhancement Providers: They provides credit enhancements to the asset-backed securities.\n(viii) Regulators: They issues various regulations that guides and regulates the securitization process.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "securitization",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(xiii)": [
+   "Printed key (B) agrees with stored key B; stem and options unchanged."
+  ],
+  "2(a)": [
+   "Total of depreciation column (661.77) restored from print."
+  ],
+  "3(a)": [
+   "Print uses * for multiplication in the Standard Deviation formula; kept as *."
+  ],
+  "5(b)": [
+   "Alternative: print shows \"Return (%)\" directly followed by the fraction without \"=\"; \"=\" added by typesetting."
+  ],
+  "6(a)": [
+   "Print has misprint \"₹ 14,06,456,00\" in the net profit line (total gain printed as 14,06,45,600 above); kept as printed. Sub-headings and \"Effective Beta :\" heading restored from print."
+  ],
+  "7(a)": [
+   "Dollar signs in stem escaped as \\$."
+  ]
+ },
+ "review_decisions": {
+  "1(v)": {
+   "verdict": "approve",
+   "reason": "Stem table and options match the question paper; stored key A equals the printed key (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key 70.41 differs from the RSI computed from the data (about 70.5); kept as printed."
+   ],
+   "by": "claude-review"
+  },
+  "1(xiii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the question paper; stored key B equals the printed key (B).",
+   "fixes": [],
+   "printed_issues": [
+    "Stem wording 'trade USD 10,00,000 : by USD via GBP' is garbled in print."
+   ],
+   "by": "claude-review"
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem, contribution, depreciation, operating inflow, outflow, terminal inflow and NPV tables, with the alternative, match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Two alternative NPVs (1,230.21 and 1,230.52); salvage tax shown as -0.71."
+   ],
+   "by": "claude-review"
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem and answer for both lease structures plus the advice match the print.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem, PV table and answer (i)-(ii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer says 'ZS Ltd.' for Zenith Systems Ltd."
+   ],
+   "by": "claude-review"
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and answer (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Decision column labels stock B 'Overvalued' although its given return (20%) is below its CAPM return (21.56%), and stock A 'Undervalued', as printed."
+   ],
+   "by": "claude-review"
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem tables and the main and alternative solutions in (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Alternative solution uses weights 0.3478/0.6522 against 0.35/0.65 in the main solution."
+   ],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and the main and alternative solutions in (i)-(iii) match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Net profit line prints '₹ 14,06,456,00' against total gain ₹ 14,06,45,600 above; two solutions with 974 and 487 contracts."
+   ],
+   "by": "claude-review"
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Stem and both swap tables match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Print shows 'LIBOR + 0.37 %' and a differential row; YON effective rate sums to 8.198 as printed."
+   ],
+   "by": "claude-review"
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem rate lines and answer (i)-(iii) with alternatives match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Question item (iii) is only an assumption line; the printed answer numbers the appreciation analysis as (iii); several alternatives for the percentage change."
+   ],
+   "by": "claude-review"
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the forward and money market hedge workings with recommendations match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Forward cover for the yen uses 0.60 (ask) and money market uses spot 0.5850, some rates differ from the strictly applicable bid/ask."
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 30,
+  "draft_parts": 0,
+  "answered": 30
+ }
+}

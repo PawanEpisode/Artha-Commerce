@@ -1,0 +1,58 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p19-2025-12",
+ "items": {
+  "1(vi)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key B equals printed key (B).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(vii)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answer prints '(A/B/C/D)' (every option accepted), so no key can be given.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer accepts every option (A/B/C/D) for this MCQ."
+   ]
+  },
+  "1(xiii)": {
+   "verdict": "approve",
+   "reason": "Stem and options match the print; stored key C equals printed key (C).",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(xiv)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answer prints '(C/D)', two accepted options, so the stored single key C is not unambiguous.",
+   "fixes": [],
+   "printed_issues": [
+    "Option (D) 'Either (A) or (B)' is inconsistent with key (C)."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Both sub-part stems and the suggested answer table and text compared with the print; figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "7(b)": {
+   "verdict": "approve",
+   "reason": "Stem tables and the suggested answer working tables compared with the print; all figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer prints 'Total 300562.00' and 'Total Custom duty payable 58797.20' as plain figures; total line mixes CIF into the sum."
+   ]
+  },
+  "8(b)": {
+   "verdict": "approve",
+   "reason": "Stem and the suggested answer tables compared with the print; all text and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Print '1.17.000' (for 1,17,000).",
+    "Print 'Machinery sent to job worker (ITC claimed FY 2022-23' has an unclosed bracket.",
+    "12 quarters and 60% printed for 01/04/2022 to 15/01/2025."
+   ]
+  }
+ }
+}

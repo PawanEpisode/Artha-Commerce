@@ -1,0 +1,3219 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "workbook",
+ "course": "cma",
+ "level": "final",
+ "scheme": "2022",
+ "paper": "17",
+ "paper_number": 17,
+ "subject_key": "cost-and-management-audit",
+ "source": {
+  "source_kind": "institute_mat",
+  "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+  "source_file": "numerical-workbooks/WorkBook_Paper17.pdf",
+  "source_year": 2025,
+  "edition": "First Edition       :   March 2025"
+ },
+ "parser_problems": [],
+ "counts": {
+  "items": 53,
+  "ok": 53,
+  "needs_review": 0
+ },
+ "items": [
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q1",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Security Expenses\nSecurities Expenses for Company X are provided in CRA 3 as mentioned below showing substantial increase of 25 % in Current Year as compared to Previous Year\n₹ in Lacs\n\n| For Current Year | 500 |\n|---|---|\n| For Previous Year | 400 |\n\nAs Cost Auditor, which probable areas you will look into it for increase of 25 % and suggestions, if any, you shall offer",
+    "marks": "7",
+    "explanation_md": "Probable areas Cost Auditor shall look into :\n1\\) Due to normal inflation\n2\\) Due to increase in scope with existing plants\nAreas which were previously not covered are now also covered\n3\\) Due to substantial expansion of existing plants requiring additional security people\n4\\) Due to commissioning of new projects, requiring additional security people\n5\\) Plants which are under commissioning, security cost thereof should have been charged to Project Cost, have been charged to Relevant GL of P&L .\n**Probable Suggestions: For 3 & 4**\nEnsure that during negotiations, price advantage is taken due to additional scope\nIf not taken, same to be taken during the next negotiation at the time of renewal\n5\\) Transfer it to project cost – capitalise it",
+    "rubric": {
+     "reference_solution_md": "Probable areas Cost Auditor shall look into :\n1\\) Due to normal inflation\n2\\) Due to increase in scope with existing plants\nAreas which were previously not covered are now also covered\n3\\) Due to substantial expansion of existing plants requiring additional security people\n4\\) Due to commissioning of new projects, requiring additional security people\n5\\) Plants which are under commissioning, security cost thereof should have been charged to Project Cost, have been charged to Relevant GL of P&L .\n**Probable Suggestions: For 3 & 4**\nEnsure that during negotiations, price advantage is taken due to additional scope\nIf not taken, same to be taken during the next negotiation at the time of renewal\n5\\) Transfer it to project cost – capitalise it",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q1",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.27,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 7,
+    "printed_number": 1,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q2",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Capacity Utilisation\nDuring the course of audit of CRA 3, substantial less capacity utilisation of Product A is noticed in current year as compared to previous year as mentioned below :\nCapacity Utilisation of Product A\n\n| In Current Year | 65 % |\n|---|---|\n| In Previous Year | 85 % |\n\nAs a Cost Auditor, what factors you would look into which might have contributed to it and corresponding suggestions you will offer to the management.",
+    "marks": "7",
+    "explanation_md": "Illustrative list of the factors that would be looked into it.\n1\\) Poor Market Demand – Explore new market\n2\\) Supplier has started its captive consumption, resulting into its restricted supply for the company – Explore New Vendors\n3\\) Due to shortage of Raw Material – Explore New Vendors\n4\\) Due to Break Down of Plant & Machinery\nMake Preventive Maintenance a regular exercise\n5\\) Due to shortage of Electricity\nExplore the possibility of putting up of own power generating plant\n6\\) Due to Labour Strike\nHR should strive to maintain amicable relationship between management & union",
+    "rubric": {
+     "reference_solution_md": "Illustrative list of the factors that would be looked into it.\n1\\) Poor Market Demand – Explore new market\n2\\) Supplier has started its captive consumption, resulting into its restricted supply for the company – Explore New Vendors\n3\\) Due to shortage of Raw Material – Explore New Vendors\n4\\) Due to Break Down of Plant & Machinery\nMake Preventive Maintenance a regular exercise\n5\\) Due to shortage of Electricity\nExplore the possibility of putting up of own power generating plant\n6\\) Due to Labour Strike\nHR should strive to maintain amicable relationship between management & union",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q2",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.21,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 8,
+    "printed_number": 2,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q3",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Repairs Expenses\nDuring the Course of Audit of Abridge Cost Statement of CRA-3, substantial increase in Repairs Cost is observed as mentioned below :\n₹ in Lacs\n\n| Current Year | 4,000 |\n|---|---|\n| Previous Year | 3,200 |\n\nPlease state as a Cost Auditor which factors you would like to see for this increase with corresponding suggestions if any",
+    "marks": "7",
+    "explanation_md": "Illustrative List of Areas that Cost Auditor shall look into:\n1\\) Normal Inflation – it is acceptable.\n2\\) Due to Increase in Scope of Repairs Activity – It is acceptable.\n3\\) Previously , repairs jobs that were done inhouse, are now given to out side parties with proven expertise in the form of AMC/ARC to take benefit of their expertise\n4\\) Due to substantial expansion of existing plants requiring additional AMC/ARC\n5\\) Due to Commissioning of New Projects for which additional AMCs/ARC s are taken\n**Probable Suggestions of Cost Auditor**\nFor 3) above, To ensure that AMC/ARC have been taken from parties with proven track record\nFor 4) above, In case of substantial expansion, whether negotiation is properly done to take advantage of lower rate due to additional work offered.\nFor 5) above, Similarly, in case of AMC/ARC for new projects, ensure that lower rate has been bargained to take advantage of  additional work offered.",
+    "rubric": {
+     "reference_solution_md": "Illustrative List of Areas that Cost Auditor shall look into:\n1\\) Normal Inflation – it is acceptable.\n2\\) Due to Increase in Scope of Repairs Activity – It is acceptable.\n3\\) Previously , repairs jobs that were done inhouse, are now given to out side parties with proven expertise in the form of AMC/ARC to take benefit of their expertise\n4\\) Due to substantial expansion of existing plants requiring additional AMC/ARC\n5\\) Due to Commissioning of New Projects for which additional AMCs/ARC s are taken\n**Probable Suggestions of Cost Auditor**\nFor 3) above, To ensure that AMC/ARC have been taken from parties with proven track record\nFor 4) above, In case of substantial expansion, whether negotiation is properly done to take advantage of lower rate due to additional work offered.\nFor 5) above, Similarly, in case of AMC/ARC for new projects, ensure that lower rate has been bargained to take advantage of  additional work offered.",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q3",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.24,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 8,
+    "printed_number": 3,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q4",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Electricity Cost\nDuring Cost Audit of Abridged Cost Statement of CRA-3, Cost Auditor has come across substantial increase in Electricity Cost which are mentioned as below :\n₹ in Lacs\n\n| Current Year | 90,000 |\n|---|---|\n| Previous Year | 75,000 |\n\nAs a Cost Auditor, which areas you would look into for possible reasons that might have contributed this substantial increase and what possible solutions you shall offer, where ever possible.",
+    "marks": "7",
+    "explanation_md": "Illustrative list of areas the Cost Auditor shall look into :\n1\\) Company has gas based power plant and cost of Gas has substantially gone up\n**Probable Solution:**\n● Advise for corresponding increase in selling price if possible to offset the rise\n● Advise to look for  exploring the reduction in other cost components, where possible\n2\\) Explore the possibility of putting up wind mills and solar, if electricity is a major cost component\n3\\) Existing Plant & Machinery are old, with out dated technology, consuming more electricity\n**Probable Solution:**\n● Explore the possibility for replacing it with energy saving plant and machinery after proper Cost benefit analysis\n4\\) Due to substantial expansion of existing plants – here it is acceptable.\n5\\) Due to commissioning of new project – here it is acceptable.\n6\\) Due to more production achieved in current year – it is acceptable.",
+    "rubric": {
+     "reference_solution_md": "Illustrative list of areas the Cost Auditor shall look into :\n1\\) Company has gas based power plant and cost of Gas has substantially gone up\n**Probable Solution:**\n● Advise for corresponding increase in selling price if possible to offset the rise\n● Advise to look for  exploring the reduction in other cost components, where possible\n2\\) Explore the possibility of putting up wind mills and solar, if electricity is a major cost component\n3\\) Existing Plant & Machinery are old, with out dated technology, consuming more electricity\n**Probable Solution:**\n● Explore the possibility for replacing it with energy saving plant and machinery after proper Cost benefit analysis\n4\\) Due to substantial expansion of existing plants – here it is acceptable.\n5\\) Due to commissioning of new project – here it is acceptable.\n6\\) Due to more production achieved in current year – it is acceptable.",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q4",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.2,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 9,
+    "printed_number": 4,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q5",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Raw Material Cost\nDuring the Audit of Cost Records and Cost Audit Report in form CRA-3, Cost Auditor has noticed substantial increase( 20 % ) in Raw Material Cost as mentioned below :\n₹ in Lacs\n\n| In Current Year | 130000 |\n|---|---|\n| In Previous Year | 108000 |\n\nAs Cost Auditor, what possible factors you would attribute to this increase and what remedies you would suggest, where possible",
+    "marks": "7",
+    "explanation_md": "Following can be the possible reasons :\n1\\) Company has new project going on. Raw Material Consumed during trial run is charged to Revenue GL of Raw Material.\nSo this cost need to be transferred from Raw Material Cost to Project Cost\n2\\) Due to substantial expansion of existing plant – It is acceptable.\nCost Auditor can advise  to take advantage of quantity discount during negotiation due to increased requirement of quantity\n3\\) Due to Commissioning of new Plants – It is acceptable.\nHere also, Cost Auditor can advise  to take advantage of quantity discount during negotiation due to increased requirement of quantity\n4\\) Due to emergency purchase, material is acquired at substantial higher rate\nCost Auditor should insist for proper co-ordination among – sales, production and purchase department",
+    "rubric": {
+     "reference_solution_md": "Following can be the possible reasons :\n1\\) Company has new project going on. Raw Material Consumed during trial run is charged to Revenue GL of Raw Material.\nSo this cost need to be transferred from Raw Material Cost to Project Cost\n2\\) Due to substantial expansion of existing plant – It is acceptable.\nCost Auditor can advise  to take advantage of quantity discount during negotiation due to increased requirement of quantity\n3\\) Due to Commissioning of new Plants – It is acceptable.\nHere also, Cost Auditor can advise  to take advantage of quantity discount during negotiation due to increased requirement of quantity\n4\\) Due to emergency purchase, material is acquired at substantial higher rate\nCost Auditor should insist for proper co-ordination among – sales, production and purchase department",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q5",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.18,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 10,
+    "printed_number": 5,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q6",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Packing Material Cost\nDuring the course of Cost Audit of CRA-3, substantial increase in the cost of packing material is observed in current year as compared to previous year as mentioned below :\n₹ in Lacs\n\n| Current Year | 6,000 |\n|---|---|\n| Previous Year | 5,000 |\n\nAs substantial increase of 20 % is observed, As Cost Auditor, what possible factors you would attribute to this increase and what remedies you would suggest, where possible",
+    "marks": "7",
+    "explanation_md": "Probable Reasons :\n1\\) General Inflation\n2\\) Substantial Increase in Procurement Rates\n3\\) Due to substantial Expansion\n4\\) Due to new projects\n5\\) Product can be sold both in Tanker and in carboys. During the year, it is sold more in Carboys\n6\\) Due to more production\n**Suggestions:**\n1\\) Have proper bargaining\n2\\) Explore new vendors to obtain competitive price advantage\n3\\) When product is sold more in carboys, advise the management that Invoice Value should cover the Packing Material Cost\n4\\) When 2 plants producing the same product, bargain the quantity discount\n5\\) For additional quantity due to substantial expansion / new projects, bargain for quantitative discounts\n6\\) For additional quantity due to more production, bargain for quantity discount\n7\\) Company may explore the possibility of inhouse production, after proper cost benefit analysis, to take advantage of reduced cost & sustainable supply",
+    "rubric": {
+     "reference_solution_md": "Probable Reasons :\n1\\) General Inflation\n2\\) Substantial Increase in Procurement Rates\n3\\) Due to substantial Expansion\n4\\) Due to new projects\n5\\) Product can be sold both in Tanker and in carboys. During the year, it is sold more in Carboys\n6\\) Due to more production\n**Suggestions:**\n1\\) Have proper bargaining\n2\\) Explore new vendors to obtain competitive price advantage\n3\\) When product is sold more in carboys, advise the management that Invoice Value should cover the Packing Material Cost\n4\\) When 2 plants producing the same product, bargain the quantity discount\n5\\) For additional quantity due to substantial expansion / new projects, bargain for quantitative discounts\n6\\) For additional quantity due to more production, bargain for quantity discount\n7\\) Company may explore the possibility of inhouse production, after proper cost benefit analysis, to take advantage of reduced cost & sustainable supply",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q6",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.21,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 10,
+    "printed_number": 6,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q7",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Employee Cost\nDuring the cost audit of CRA 3, substantial increase of 20% in employee cost is observed in current year as compared to previous year as mentioned below:\n₹ in Lacs\n\n| Current Year | 27,600 |\n|---|---|\n| Previous Year | 23,000 |\n\nAs Cost Auditor, what possible factors you would attribute to this increase and what remedies you would suggest, where possible",
+    "marks": "7",
+    "explanation_md": "Probable Reasons and solutions:\n1\\) Some projects are going on and cost of employees being engaged in Project, instead of being capitalised, are taken to revenue\nPass the transfer entry – transferring from revenue GL of Employee cost to Project cost being capitalised.\n2\\) It may be effect of union settlement which usually takes place every 4 years\nEnsure that settlement impact of current year is considered as employee cost of current year and settlement impact of previous year is considered in reconciliation.\n3\\) More employees are recruited due to substantial expansion of existing plants and/or commissioning of new plants.\nEnsure that capacity utilisation is satisfactorily achieved keeping per unit fixed cost comparable to existing plant.\n4\\) More leave encashment being applied by employees during the year\n5\\) Substantial increament resulting from handsome profits of the company\nThis is acceptable as it will motivate the employees creating sense of belonging",
+    "rubric": {
+     "reference_solution_md": "Probable Reasons and solutions:\n1\\) Some projects are going on and cost of employees being engaged in Project, instead of being capitalised, are taken to revenue\nPass the transfer entry – transferring from revenue GL of Employee cost to Project cost being capitalised.\n2\\) It may be effect of union settlement which usually takes place every 4 years\nEnsure that settlement impact of current year is considered as employee cost of current year and settlement impact of previous year is considered in reconciliation.\n3\\) More employees are recruited due to substantial expansion of existing plants and/or commissioning of new plants.\nEnsure that capacity utilisation is satisfactorily achieved keeping per unit fixed cost comparable to existing plant.\n4\\) More leave encashment being applied by employees during the year\n5\\) Substantial increament resulting from handsome profits of the company\nThis is acceptable as it will motivate the employees creating sense of belonging",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q7",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.21,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 11,
+    "printed_number": 7,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q8",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Profit Reconciliation as per Part D2 of CRA 3\nFollowing data are available for company A\nPlease prepare Reconciliation Statement\n\n| Sr. No. | Particulars | Value ₹ in Cr. |\n|---|---|---|\n| 1 | Profit as per Cost Records | 100 |\n| 2 | Demurrage for Raw Material | 2 |\n| 3 | Previous Year Debit Note included in Raw Material Cost | 3 |\n| 4 | Previous Year Settlement paid during the year and booked in Employee Cost | 5 |\n| 5 | Interest for Delayed Payment of PF booked in Current Year as Employee Cost | 2 |\n| 6 | Insurance Claim Received of Previous Year | 2 |\n\nPlease prepare Reconciliation Statement showing Profit as per Financial Accounts.",
+    "marks": "7",
+    "explanation_md": "| Sr. No. | Particulars | Value ₹ in Cr. |\n|---|---|---|\n| 1 | Profit as per Cost Records | 100 |\n| 2 | Less: Expenses not considered in Cost  Accounts but considered in Financial Accounts |  |\n|  | Demmurage | (2) |\n|  | Debit Note of Previous Year | (3) |\n|  | Previous Year Settlement | (5) |\n|  | Interest on delayed deposits of PF | (2) |\n|  | Total | 88 |\n| 3 | Add : Insurance Claim not considered in cost accounts | 2 |\n|  | Profit as per Financial Accounts | 90 |",
+    "rubric": {
+     "reference_solution_md": "| Sr. No. | Particulars | Value ₹ in Cr. |\n|---|---|---|\n| 1 | Profit as per Cost Records | 100 |\n| 2 | Less: Expenses not considered in Cost  Accounts but considered in Financial Accounts |  |\n|  | Demmurage | (2) |\n|  | Debit Note of Previous Year | (3) |\n|  | Previous Year Settlement | (5) |\n|  | Interest on delayed deposits of PF | (2) |\n|  | Total | 88 |\n| 3 | Add : Insurance Claim not considered in cost accounts | 2 |\n|  | Profit as per Financial Accounts | 90 |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q8",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.37,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 12,
+    "printed_number": 8,
+    "typeset": true,
+    "typeset_notes": [
+     "Stem prints \"Demurrage\" but solution prints \"Demmurage\": kept as printed"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q9",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Inventory of Raw Materials\nFollowing data are made available from Cost Records of Company A\n₹ in Lacs\n\n| Inventory of Raw Materials | 7,300 |\n|---|---|\n| Consumption of Raw Materials | 94,000 |\n| Consumption Of Raw Materials per Day | $94000 / 360 = 261$ Lacs per Day |\n\nSo Inventory in terms of No of days requirement $= 7300 / 261 = 28$ days of requirement\nManagement has desired to reduce this Inventory level to 20 days of requirement.\nAs a Cost Auditor, Please advise the management steps to be taken :",
+    "marks": "7",
+    "explanation_md": "Reducing Inventory Levels of Raw Material depends upon the following sub factors:\n1\\) Reducing the lead time between purchase order and delivery of material\nBy expanding vendor base\nMore competition shall bring down lead time\nBy having more vendors situated near to the site\nIt shall reduce the transportation time\n2\\) Reducing the material content\nThrough Research & Development\nBy exploring new vendors who can offer superior quality of raw material\nWhere reduced usage shall more then offset higher prices paid\n3\\) Reducing the Procurement Price\nBy exploring new vendors – competition shall bring down the price\nTaking advantage of Quantity Discount by combining the requirement of 2 or more plants",
+    "rubric": {
+     "reference_solution_md": "Reducing Inventory Levels of Raw Material depends upon the following sub factors:\n1\\) Reducing the lead time between purchase order and delivery of material\nBy expanding vendor base\nMore competition shall bring down lead time\nBy having more vendors situated near to the site\nIt shall reduce the transportation time\n2\\) Reducing the material content\nThrough Research & Development\nBy exploring new vendors who can offer superior quality of raw material\nWhere reduced usage shall more then offset higher prices paid\n3\\) Reducing the Procurement Price\nBy exploring new vendors – competition shall bring down the price\nTaking advantage of Quantity Discount by combining the requirement of 2 or more plants",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q9",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.31,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 13,
+    "printed_number": 9,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q10",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Raw Material Inventory\n**Inventory Holding vs Lead Time to Procure the Raw Material**\nCompany A of which you are a Cost Auditor has required to devise Format to monitor Raw Material Inventory in terms of Days requirement vs Lead Time",
+    "marks": "7",
+    "explanation_md": "Following Format has been advised by the Cost Auditor to monitor actual inventory of Raw Material vis a vis their lead time\nMonitoring of Column 5 & 6 shall ensure against both overstocking of raw materials as well as understocking of the same\n\n| Sr No | Raw Materials Consumption (Quantity) | Inventory (Quantity) | Per Day Requirement (Quantity) | Inventory in terms of days requirement | Lead Time required to procure the Inventory In days |\n|---|---|---|---|---|---|\n| 1 | 2 | 3 | 4 | 5 | 6 |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n\n**Note for Students**\n\n$\\text{Column 4} = \\text{Column 2} / 360\\ \\text{days}$\n\n$\\text{Columb 5} = \\text{Column 3} / \\text{Column 4}$\n\nColumn 6 to be obtained from Purchase Department",
+    "rubric": {
+     "reference_solution_md": "Following Format has been advised by the Cost Auditor to monitor actual inventory of Raw Material vis a vis their lead time\nMonitoring of Column 5 & 6 shall ensure against both overstocking of raw materials as well as understocking of the same\n\n| Sr No | Raw Materials Consumption (Quantity) | Inventory (Quantity) | Per Day Requirement (Quantity) | Inventory in terms of days requirement | Lead Time required to procure the Inventory In days |\n|---|---|---|---|---|---|\n| 1 | 2 | 3 | 4 | 5 | 6 |\n|  |  |  |  |  |  |\n|  |  |  |  |  |  |\n\n**Note for Students**\n\n$\\text{Column 4} = \\text{Column 2} / 360\\ \\text{days}$\n\n$\\text{Columb 5} = \\text{Column 3} / \\text{Column 4}$\n\nColumn 6 to be obtained from Purchase Department",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q10",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.27,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 13,
+    "printed_number": 10,
+    "typeset": true,
+    "typeset_notes": [
+     "Printed typo \"Columb 5\" kept as printed"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q11",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Format of CRA 3\nCompany A has for the 1st time come under the purview of Cost Audit of which you are appointed as Cost Auditor and you have been advised to provide contents of Annexure to CRA 3 in Tabular Form",
+    "marks": "7",
+    "explanation_md": "Contents of Annexure to CRA 3 in Tebular Form\n\n**PART : A**\n\n| 1 | General Information |\n|---|---|\n| 2 | General Details of Cost Auditor |\n| 3 | Cost Accounting Policy |\n| 4 | Products Details (for the Company as a whole) |\n\n**PART : B**\n\n| 1 | Quantitative Information (for each product separately with CTA Heading) |\n|---|---|\n| 2 | Abridged Cost Statement (for each product separately with CTA Heading) |\n| 2A | Details of Materials Consumed (for each product separately with CTA Heading) |\n| 2B | Details of Utilities Consumed (for each product separately with CTA Heading) |\n| 2C | Details of Industry Specific Operating Expenses (for each product separately with CTA Heading) |\n\n**PART : D**\n\n| 1 | Products and Services Profitability Statement (For Audited products / services) |\n|---|---|\n| 2 | Profit Reconciliation (for the company as a whole) |\n| 3 | Value Addition and Distribution of Earnings (for the company as a whole) |\n| 4 | Financial Position and Ratio Analysis (for the company as a whole) |\n| 5 | Related Party Transaction (for the company as a whole) |\n| 6 | Reconciliation of Indirect Taxes (for the company as a whole) |\n\nAs Part C is for Service Sector which is not being relevant here is not provided in this table.",
+    "rubric": {
+     "reference_solution_md": "Contents of Annexure to CRA 3 in Tebular Form\n\n**PART : A**\n\n| 1 | General Information |\n|---|---|\n| 2 | General Details of Cost Auditor |\n| 3 | Cost Accounting Policy |\n| 4 | Products Details (for the Company as a whole) |\n\n**PART : B**\n\n| 1 | Quantitative Information (for each product separately with CTA Heading) |\n|---|---|\n| 2 | Abridged Cost Statement (for each product separately with CTA Heading) |\n| 2A | Details of Materials Consumed (for each product separately with CTA Heading) |\n| 2B | Details of Utilities Consumed (for each product separately with CTA Heading) |\n| 2C | Details of Industry Specific Operating Expenses (for each product separately with CTA Heading) |\n\n**PART : D**\n\n| 1 | Products and Services Profitability Statement (For Audited products / services) |\n|---|---|\n| 2 | Profit Reconciliation (for the company as a whole) |\n| 3 | Value Addition and Distribution of Earnings (for the company as a whole) |\n| 4 | Financial Position and Ratio Analysis (for the company as a whole) |\n| 5 | Related Party Transaction (for the company as a whole) |\n| 6 | Reconciliation of Indirect Taxes (for the company as a whole) |\n\nAs Part C is for Service Sector which is not being relevant here is not provided in this table.",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q11",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.14,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 14,
+    "printed_number": 11,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q12",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Output of Cost Centres\nTo enable build up of Cost Records, you as Cost Auditor has been advised output of the following Cost Centres:\n1\\) Diesel Generating Set\n2\\) Boiler\n3\\) Air Compressor",
+    "marks": "7",
+    "explanation_md": "| **Cost Centre** | **Output** |\n|---|---|\n| Diesel Generating Set | Electricity |\n| Boiler | Steam |\n| Air Compressor | Instrument Air |",
+    "rubric": {
+     "reference_solution_md": "| **Cost Centre** | **Output** |\n|---|---|\n| Diesel Generating Set | Electricity |\n| Boiler | Steam |\n| Air Compressor | Instrument Air |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q12",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.33,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 15,
+    "printed_number": 12,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch1:q13",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data are available for Inventory of Raw Material A\n\n| Inventory | Aging | Original Lab Report Purity % | Revised Lab Report Purity % | Original Value |\n|---|---|---|---|---|\n| 100 MT | 1 month old | 100 | 100 | 100000 |\n| 100 MT | 2 month old | 100 | 95 | 90000 |\n| 100 MT | 3 month old | 100 | 90 | 80000 |\n|  |  |  |  | 270000 |\n\n1 month old was bought at 1000 per MT\n2 month old was bought at 900 per MT\n3 month old was bought at 800 per MT\nPlease calculate value of  Inventory of Raw Material A for Cost Records and Cost Audit.",
+    "marks": "7",
+    "explanation_md": "| Inventory | Aging | Revised Lab Report Purity % | Purchase Rate | Revised Rate | Revised Value |\n|---|---|---|---|---|---|\n| 100 MT | 1 month old | 100 | 1000 | 1000 | 100000 |\n| 100 MT | 2 month old | 95 | 900 | 855 | 85500 |\n| 100 MT | 3 month old | 90 | 800 | 720 | 72000 |\n|  |  |  |  |  | 257500 |\n\nSo now both in financial accounts as well as cost accounts, this inventory shall be carried at\nRevised value of 257500\nFor decrease in value of 12500\nFinancial JV shall be passed in the books of accounts\n***Debiting:*** Loss due to decrease in the usage value\n***Crediting:*** Raw Material Inventory\n\n**CASE STUDY**\n\n**Case Study 1: (Cost Records and Audit) Rules, 2014 (as amended)**\nProducts of Company G are covered both under cost records, Rule 3, and cost audit, rule 4, of companies (Cost Records and Audit) Amendment Rules 2014\nSo it needs to prepare its cost audit report in Form CRA 3.\nForm CRA 3 is  prescribed by Rule 6(4) of the Companies Cost Records and Audit Rules 2014\nContents of Cost Audit Report which is to be prepared as per Format prescribed by Form CRA 3 of Rule 6(4) of the Companies Cost Records and Audit Rules 2014 are as mentioned below\n\n**Certificate of Cost Auditor**\n\n**Annexure to the Cost Audit Report**\n\n**Part - A**\n\n| 1 | General Information |\n|---|---|\n| 2 | General Details of Cost Auditor |\n| 3 | Cost Accounting Policy |\n| 4 | Product / Service Details (for the company as a whole) |\n\n**Part - B : For Manufacturing Section**\n\n| 1 | Quantity Information (For each Product separately with CTA Heading) |\n|---|---|\n| 2 | Abridged Cost Statement (For each Product separately with CTA Heading) |\n| 2A | Details of Materials Consumed (For each Product separately with CTA Heading) |\n| 2B | Details of Utilities Consumed (For each Product separately with CTA Heading) |\n| 2C | Details of Industry Specific Operating Expenses (For each Product separately with CTA Heading) |\n\n**Pact - C : For Service Sector**\n\n| 1 | Quantity Information (for each service separately with service code if applicable) |\n|---|---|\n| 2 | Abridged Cost Statement (for each service separately with service code if applicable) |\n| 2A | Details of Materials Consumed (for each service separately with service code if applicable) |\n| 2B | Details of Utilities Consumed (for each service separately with service code if applicable) |\n| 2C | Details of Industry Specific Expenses (for each service separately with service code if applicable) |\n\n**Part - D**\n\n| 1 | Product and Service Profitability Statement (for audited products / services) |\n|---|---|\n| 2 | Profit Reconciliation (for the company as a whole) |\n| 3 | Value Addition and Distribution of Earnings (for the Company as a whole) |\n| 4 | Financial Position and Ratio Analysis (for the company as a whole) |\n| 5 | Related Party Transactions (for the company as a whole) |\n| 6 | Reconciliation of Indirect Taxes (for the company as a whole) |\n\n**Multiple Choice Questions (MCQs):**\n1\\. General Information is to be reported in which of the following Part of Form CRA 3?\na) Part A\nb) Part B\nc) Part C\nd) Part D\n2\\. Details of Material Consumed in 2A for Manufacturing Section is to be reported in which Part of CRA 3?\na) Part A\nb) Part B\nc) Part C\nd) Part D\n3\\. Identification of Cost Centres are to be reported in\na) General Information\nb) General Details of Cost Auditor\nc) Cost Accounting Policy\nd) Value Addition and Distribution of Earnings\n4\\. Value Additions and Distribution of Earnings are to be reported as per\na) Production Records\nb) Utility Records\nc) Human Resources Records\nd) Financial Records\n5\\. Related Party Transactions are to be reported for\na) Cost Centres\nb) Product\nc) Plant\nd) Company\n6\\. SRN number of CRA 2 is to be reported in\na) General Information\nb) General Details of Cost Auditor\nc) Cost Accounting Policy\nd) Reconciliation of Indirect Taxes\n7\\. Transfer Price and Normal Price are reported in\na) Profit Reconciliation\nb) Value Addition and Distribution of Earnings\nc) Financial Position and Ratio Analysis\nd) Related Party Transactions\n8\\. Profit Reconciliation is to be reported for\na) Cost Centre\nb) Product\nc) Plant\nd) Company\n9\\. Corporate Identity Number of the Company is reported in\na) General Information\nb) General Details of Cost Auditor\nc) Product / Service Details\nd) Profit Reconciliation\n10\\. Difference in valuation of stock between financial accounts and cost accounts are to be reported in\na) Product and Service Profitability Statement\nb) Profit Reconciliation\nc) Value Addition and Distribution of Earnings\n4\\) Financial Position and Ratio Analysis\n11\\. PAN of Cost Auditor / Cost Auditor’s Firm is to be reported in\na) General Information\nb) General Details of Cost Auditor\nc) Cost Accounting Policy\nd) Product / Service Details\n\n**Answer:**\n\n| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| a | b | c | d | d | b | d | d | a | b | b |",
+    "rubric": {
+     "reference_solution_md": "| Inventory | Aging | Revised Lab Report Purity % | Purchase Rate | Revised Rate | Revised Value |\n|---|---|---|---|---|---|\n| 100 MT | 1 month old | 100 | 1000 | 1000 | 100000 |\n| 100 MT | 2 month old | 95 | 900 | 855 | 85500 |\n| 100 MT | 3 month old | 90 | 800 | 720 | 72000 |\n|  |  |  |  |  | 257500 |\n\nSo now both in financial accounts as well as cost accounts, this inventory shall be carried at\nRevised value of 257500\nFor decrease in value of 12500\nFinancial JV shall be passed in the books of accounts\n***Debiting:*** Loss due to decrease in the usage value\n***Crediting:*** Raw Material Inventory\n\n**CASE STUDY**\n\n**Case Study 1: (Cost Records and Audit) Rules, 2014 (as amended)**\nProducts of Company G are covered both under cost records, Rule 3, and cost audit, rule 4, of companies (Cost Records and Audit) Amendment Rules 2014\nSo it needs to prepare its cost audit report in Form CRA 3.\nForm CRA 3 is  prescribed by Rule 6(4) of the Companies Cost Records and Audit Rules 2014\nContents of Cost Audit Report which is to be prepared as per Format prescribed by Form CRA 3 of Rule 6(4) of the Companies Cost Records and Audit Rules 2014 are as mentioned below\n\n**Certificate of Cost Auditor**\n\n**Annexure to the Cost Audit Report**\n\n**Part - A**\n\n| 1 | General Information |\n|---|---|\n| 2 | General Details of Cost Auditor |\n| 3 | Cost Accounting Policy |\n| 4 | Product / Service Details (for the company as a whole) |\n\n**Part - B : For Manufacturing Section**\n\n| 1 | Quantity Information (For each Product separately with CTA Heading) |\n|---|---|\n| 2 | Abridged Cost Statement (For each Product separately with CTA Heading) |\n| 2A | Details of Materials Consumed (For each Product separately with CTA Heading) |\n| 2B | Details of Utilities Consumed (For each Product separately with CTA Heading) |\n| 2C | Details of Industry Specific Operating Expenses (For each Product separately with CTA Heading) |\n\n**Pact - C : For Service Sector**\n\n| 1 | Quantity Information (for each service separately with service code if applicable) |\n|---|---|\n| 2 | Abridged Cost Statement (for each service separately with service code if applicable) |\n| 2A | Details of Materials Consumed (for each service separately with service code if applicable) |\n| 2B | Details of Utilities Consumed (for each service separately with service code if applicable) |\n| 2C | Details of Industry Specific Expenses (for each service separately with service code if applicable) |\n\n**Part - D**\n\n| 1 | Product and Service Profitability Statement (for audited products / services) |\n|---|---|\n| 2 | Profit Reconciliation (for the company as a whole) |\n| 3 | Value Addition and Distribution of Earnings (for the Company as a whole) |\n| 4 | Financial Position and Ratio Analysis (for the company as a whole) |\n| 5 | Related Party Transactions (for the company as a whole) |\n| 6 | Reconciliation of Indirect Taxes (for the company as a whole) |\n\n**Multiple Choice Questions (MCQs):**\n1\\. General Information is to be reported in which of the following Part of Form CRA 3?\na) Part A\nb) Part B\nc) Part C\nd) Part D\n2\\. Details of Material Consumed in 2A for Manufacturing Section is to be reported in which Part of CRA 3?\na) Part A\nb) Part B\nc) Part C\nd) Part D\n3\\. Identification of Cost Centres are to be reported in\na) General Information\nb) General Details of Cost Auditor\nc) Cost Accounting Policy\nd) Value Addition and Distribution of Earnings\n4\\. Value Additions and Distribution of Earnings are to be reported as per\na) Production Records\nb) Utility Records\nc) Human Resources Records\nd) Financial Records\n5\\. Related Party Transactions are to be reported for\na) Cost Centres\nb) Product\nc) Plant\nd) Company\n6\\. SRN number of CRA 2 is to be reported in\na) General Information\nb) General Details of Cost Auditor\nc) Cost Accounting Policy\nd) Reconciliation of Indirect Taxes\n7\\. Transfer Price and Normal Price are reported in\na) Profit Reconciliation\nb) Value Addition and Distribution of Earnings\nc) Financial Position and Ratio Analysis\nd) Related Party Transactions\n8\\. Profit Reconciliation is to be reported for\na) Cost Centre\nb) Product\nc) Plant\nd) Company\n9\\. Corporate Identity Number of the Company is reported in\na) General Information\nb) General Details of Cost Auditor\nc) Product / Service Details\nd) Profit Reconciliation\n10\\. Difference in valuation of stock between financial accounts and cost accounts are to be reported in\na) Product and Service Profitability Statement\nb) Profit Reconciliation\nc) Value Addition and Distribution of Earnings\n4\\) Financial Position and Ratio Analysis\n11\\. PAN of Cost Auditor / Cost Auditor’s Firm is to be reported in\na) General Information\nb) General Details of Cost Auditor\nc) Cost Accounting Policy\nd) Product / Service Details\n\n**Answer:**\n\n| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| a | b | c | d | d | b | d | d | a | b | b |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch1:q13",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.22,
+    "runner_up": "operational-audit-and-internal-audit-under-companies-act-2013"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Companies (Cost Records and Audit) Rules, 2014 (as amended)",
+    "page": 15,
+    "printed_number": 13,
+    "typeset": true,
+    "typeset_notes": [
+     "Explanation includes the Case Study and MCQs that follow Illustration 13 in the input; MCQ option \"4)\" under Q10 printed as such"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q1",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following are the cost components\nWhich Cost Components are relevant for Cost Sheet of Production on Job Work Basis?\n\n| **Variable Cost Component** |  |\n|---|---|\n| Raw Materials |  |\n| Utilities |  |\n| Electricity |  |\n| Steam |  |\n| Raw Water |  |\n| Filtered Water |  |\n| Demineralised Water |  |\n| Cooling Water |  |\n| Chilled Water |  |\n| Compressed Air |  |\n| Nitrogen |  |\n| Packing Material |  |\n| Job Work Charges |  |\n| **Fixed Cost Components** |  |\n| Consumable Stores |  |\n| Repairs |  |\n| Employee Cost |  |\n| Insurance |  |\n| Depreciation |  |\n| Overheads |  |",
+    "marks": "7",
+    "explanation_md": "Cost Components for Job Work Cost Sheet as per CAS 10\n\n| **Variable Cost Components** |  |\n|---|---|\n| Raw Material |  |\n| Packing Material |  |\n| Job Work Charges |  |\n| **Fixed Cost Component** |  |\n| Employee Cost |  |\n\n**Note 1 for students**\nPlant & Machinery are usually owned by the 3rd party (Job Work Party)\nSo following cost components are incurred by Job Work Party for which it charges Job Work Charges\n\n| Utilities |  |\n|---|---|\n| Electricity |  |\n| Steam |  |\n| Raw Water |  |\n| Filtered Water |  |\n| Demineralised Water |  |\n| Cooling Water |  |\n| Chilled Water |  |\n| Compressed Air |  |\n| Nitrogen |  |\n| Consumable Stores |  |\n| Repairs |  |\n| Insurance |  |\n| Depreciation |  |\n| Overheads |  |\n| plus reasonable margin |  |\n\n**Note 2 for students**\nUsually Company has dedicated department to oversee Job Work Operation by 3rd party.\nSo, employees / executives employed in the department shall appear as Employee Cost.\n\n**CAS 6 : RAW MATERIAL**",
+    "rubric": {
+     "reference_solution_md": "Cost Components for Job Work Cost Sheet as per CAS 10\n\n| **Variable Cost Components** |  |\n|---|---|\n| Raw Material |  |\n| Packing Material |  |\n| Job Work Charges |  |\n| **Fixed Cost Component** |  |\n| Employee Cost |  |\n\n**Note 1 for students**\nPlant & Machinery are usually owned by the 3rd party (Job Work Party)\nSo following cost components are incurred by Job Work Party for which it charges Job Work Charges\n\n| Utilities |  |\n|---|---|\n| Electricity |  |\n| Steam |  |\n| Raw Water |  |\n| Filtered Water |  |\n| Demineralised Water |  |\n| Cooling Water |  |\n| Chilled Water |  |\n| Compressed Air |  |\n| Nitrogen |  |\n| Consumable Stores |  |\n| Repairs |  |\n| Insurance |  |\n| Depreciation |  |\n| Overheads |  |\n| plus reasonable margin |  |\n\n**Note 2 for students**\nUsually Company has dedicated department to oversee Job Work Operation by 3rd party.\nSo, employees / executives employed in the department shall appear as Employee Cost.\n\n**CAS 6 : RAW MATERIAL**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q1",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.75,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 19,
+    "printed_number": 1,
+    "typeset": true,
+    "typeset_notes": [
+     "Trailing section heading \"CAS 6 : RAW MATERIAL\" kept as it is in the input explanation"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q2",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "**Foregn Exchange Difference between date of payment and date of transaction**\n\n| Qty imported | 100 MT |\n|---|---|\n| Purchase Price | \\$ 100 |\n| Exchage Rate on Date of GRV | \\$ 80 |\n| Exchange Rate on Date of Receipt of Invoice | \\$ 82 |\n| Exchange Rate on the Date of Payment | \\$ 84 |\n\nAt what rate purchase shall be booked in the books of accounts?",
+    "marks": "7",
+    "explanation_md": "Purchase shall be booked in books of accounts at the Exchange Rate on the date of transaction. As transaction Date is GRV Date, purchaseshall be booked at \\$ 80.\nSo, it shall be booked at $= 100\\ \\text{MT} \\times 100\\ \\char\"24 \\ @\\ 80\\ \\char\"24  = 800000$.\nAs Payment rate is higher then GRV Rate, difference shall get treated as overheads $= 840000 - 800000 = 40000$",
+    "rubric": {
+     "reference_solution_md": "Purchase shall be booked in books of accounts at the Exchange Rate on the date of transaction. As transaction Date is GRV Date, purchaseshall be booked at \\$ 80.\nSo, it shall be booked at $= 100\\ \\text{MT} \\times 100\\ \\char\"24 \\ @\\ 80\\ \\char\"24  = 800000$.\nAs Payment rate is higher then GRV Rate, difference shall get treated as overheads $= 840000 - 800000 = 40000$",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q2",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 21,
+    "printed_number": 2,
+    "typeset": true,
+    "typeset_notes": [],
+    "review": {
+     "verdict": "approve",
+     "reason": "Compared stem table and solution with p.21; all figures and wording match print.",
+     "fixes": [],
+     "printed_issues": [
+      "Typos Foregn, Exchage, purchaseshall, then kept as printed"
+     ],
+     "by": "claude-review"
+    }
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q3",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Match the Cost Components mentioned in Table A with corresponding Cost Centres mentioned in Table B\n\n| Table A |  | Table B |  |\n|---|---|---|---|\n| Cost Components |  | Cost Accounting Standards |  |\n| 1 | Raw Material | I | CAS-7 |\n| 2 | Electricity | II | CAS-9 |\n| 3 | Packing Material | III | CAS-11 |\n| 4 | Employee Cost | IV | CAS-8 |\n| 5 | Repairs to Plant and Machinery | V | CAS-12 |\n| 6 | Depreciation | VI | CAS-17 |\n| 7 | Printing and Stationery | VII | CAS-6 |\n| 8 | Interest on Borrowing | VIII | CAS-16 |",
+    "marks": "7",
+    "explanation_md": "Cost Components in Table A is matched with Cost Centres in Table B\n\n| Table A |  | Table B |  |\n|---|---|---|---|\n| Cost Components |  | Cost Accounting Standards |  |\n| 1 | Raw Material | VII | CAS-6 |\n| 2 | Electricity | IV | CAS-8 |\n| 3 | Packing Material | II | CAS-9 |\n| 4 | Employee Cost | I | CAS-7 |\n| 5 | Repairs to Plant and Machinery | V | CAS-12 |\n| 6 | Depreciation | VIII | CAS-16 |\n| 7 | Printing and Stationery | III | CAS-11 |\n| 8 | Interest on Borrowing | VI | CAS-17 |",
+    "rubric": {
+     "reference_solution_md": "Cost Components in Table A is matched with Cost Centres in Table B\n\n| Table A |  | Table B |  |\n|---|---|---|---|\n| Cost Components |  | Cost Accounting Standards |  |\n| 1 | Raw Material | VII | CAS-6 |\n| 2 | Electricity | IV | CAS-8 |\n| 3 | Packing Material | II | CAS-9 |\n| 4 | Employee Cost | I | CAS-7 |\n| 5 | Repairs to Plant and Machinery | V | CAS-12 |\n| 6 | Depreciation | VIII | CAS-16 |\n| 7 | Printing and Stationery | III | CAS-11 |\n| 8 | Interest on Borrowing | VI | CAS-17 |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q3",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.72,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 21,
+    "printed_number": 3,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q4",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "**Following Data are collected from Trial Balance of A ltd**\n● Please Indicate Applicable Cost Accounting Standards against each Cost Component.\n● Consumption of Raw Material - Indigenio\n● Consumption of Raw Material - Ind Jobwo\n● Consumption of Raw Material - Imported\n● Consumption of Raw Material - Imp Jobwo\n● Basic Salary\n● DA\n● HRA\n● CCA\n● Int.On Ecb Loan Of Us\\$ 40 Mn. - ICICI B\n● Realised Exchange Rate Variation\n● Depreciation Factory Building\n● Depreciation Non-Factory Building\n● Depreciation P & M\n● Depreciation Furniture,Fixture Office E\n● Water Charges\n● Natural Gas Cons for Fuel\n● Cons. - Stores & Spares Indigenious\n● Cons. - Stores & Spares Imported\n● Repairs, Maint & Erection Plant & Mech.\n● Repairs, Maint & Erection Plant & Mech.\n● Jobwork (Processing) Charges\n● Job Work Charges of FG & SFG (TMD)\n● Consumption of Packaging Material Indig\n● Consumption of Packaging Material Ind J\n● Postage Expenses\n● Telephone Expenses\n● Mobile Phone Expenses\n● Printing And Stationery",
+    "marks": "7",
+    "explanation_md": "| Cost Accounting Standard indicated/mentioned against each cost component | CAS |\n|---|---|\n| Consumption of Raw Material - Indigenio | CAS-6 |\n| Consumption of Raw Material - Ind Jobwo | CAS-6 |\n| Consumption of Raw Material - Imported | CAS-6 |\n| Consumption of Raw Material - Imp Jobwo | CAS-6 |\n| Basic Salary | CAS-7 |\n| DA | CAS-7 |\n| HRA | CAS-7 |\n| CCA | CAS-7 |\n| Int.On Ecb Loan of . - Icici B | CAS-17 |\n| Realised Exchange Rate Variation | CAS-11 |\n| Depreciation Factory Building | CAS-16 |\n| Depreciation Non-Factory Building | CAS-16 |\n| Depreciation P & M | CAS-16 |\n| Depreciation Furniture,Fixture Office E | CAS-16 |\n| Water Charges | CAS-8 |\n| Natural Gas Cons for Fuel | CAS-8 |\n| Cons. - Stores & Spares Indigenious | CAS-6 |\n| Cons. - Stores & Spares Imported | CAS-6 |\n| Repairs, Maint & Erection Plant & Mech. | CAS-12 |\n| Repairs, Maint & Erection Plant & Mech. | CAS-12 |\n| Jobwork (Processing) Charges | CAS-10 Direct Expenses |\n| Job Work Charges of FG & SFG (TMD) | CAS-10 Direct Expenses |\n| Consumption of Packaging Material Indig | CAS-9 |\n| Consumption of Packaging Material Ind J | CAS-9 |\n| Postage Expenses | CAS-11 |\n| Telephone Expenses | CAS-11 |\n| Mobile Phone Expenses | CAS-11 |\n| Printing And Stationery | CAS-11 |\n\n**CAS 2 : CAPACITY DETERMINATION**",
+    "rubric": {
+     "reference_solution_md": "| Cost Accounting Standard indicated/mentioned against each cost component | CAS |\n|---|---|\n| Consumption of Raw Material - Indigenio | CAS-6 |\n| Consumption of Raw Material - Ind Jobwo | CAS-6 |\n| Consumption of Raw Material - Imported | CAS-6 |\n| Consumption of Raw Material - Imp Jobwo | CAS-6 |\n| Basic Salary | CAS-7 |\n| DA | CAS-7 |\n| HRA | CAS-7 |\n| CCA | CAS-7 |\n| Int.On Ecb Loan of . - Icici B | CAS-17 |\n| Realised Exchange Rate Variation | CAS-11 |\n| Depreciation Factory Building | CAS-16 |\n| Depreciation Non-Factory Building | CAS-16 |\n| Depreciation P & M | CAS-16 |\n| Depreciation Furniture,Fixture Office E | CAS-16 |\n| Water Charges | CAS-8 |\n| Natural Gas Cons for Fuel | CAS-8 |\n| Cons. - Stores & Spares Indigenious | CAS-6 |\n| Cons. - Stores & Spares Imported | CAS-6 |\n| Repairs, Maint & Erection Plant & Mech. | CAS-12 |\n| Repairs, Maint & Erection Plant & Mech. | CAS-12 |\n| Jobwork (Processing) Charges | CAS-10 Direct Expenses |\n| Job Work Charges of FG & SFG (TMD) | CAS-10 Direct Expenses |\n| Consumption of Packaging Material Indig | CAS-9 |\n| Consumption of Packaging Material Ind J | CAS-9 |\n| Postage Expenses | CAS-11 |\n| Telephone Expenses | CAS-11 |\n| Mobile Phone Expenses | CAS-11 |\n| Printing And Stationery | CAS-11 |\n\n**CAS 2 : CAPACITY DETERMINATION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q4",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.72,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 22,
+    "printed_number": 4,
+    "typeset": true,
+    "typeset_notes": [
+     "\"Direct Expenses\" is printed outside the table, beside CAS-10; merged into the CAS-10 cell",
+     "Trailing section heading kept as in input"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q5",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "**Product A of Company B passes through following 3 cost centres ( processes) before it emerges as finished product**\n\n| Process D | Reactor | Capacity is100 MT |\n|---|---|---|\n| Process E | Centrifuge | Capacity is 90 MT |\n| Process F | Dryer | Capacity is 85 MT |\n\nAs a Cost Auditor, you are asked to work out Installed Capacity of the Product for Cost Audit Report CRA 3 Part B 1",
+    "marks": "7",
+    "explanation_md": "Here 3 different processes have 3 different Capacities. So, least of these 3 capacities shall be the limiting factor which shall be considered as Installed Capacity which is 85 MT of Process F Dryer.\nSo, here at a time, company can manufacture 85 MT of Product A which is its installed capacity.\nSo, actual production of Product A shall be compared against its installed capacity of 85 MT for ascertaining its capacity utilisation and for other internal & external reporting.",
+    "rubric": {
+     "reference_solution_md": "Here 3 different processes have 3 different Capacities. So, least of these 3 capacities shall be the limiting factor which shall be considered as Installed Capacity which is 85 MT of Process F Dryer.\nSo, here at a time, company can manufacture 85 MT of Product A which is its installed capacity.\nSo, actual production of Product A shall be compared against its installed capacity of 85 MT for ascertaining its capacity utilisation and for other internal & external reporting.",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q5",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.65,
+    "runner_up": "internal-control-and-internal-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 24,
+    "printed_number": 5,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q6",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "From below mentioned particulars of GLs, please advise appropriate CAS applicable against each of these GLs Payment of Placement Agency Cost\n● Advertising for Recruitment\n● Interest penalty paid for delayed payment of Provident Fund\n● Remuneration paid to Executive Director\n● Remuneration paid to Non Executive Director\n● Bonus\n● Leave Encashment\n● Basic Salary\n● Dearness Allowance\n● Conveyance Allowance",
+    "marks": "7",
+    "explanation_md": "Appropriate Applicable GLs are mentioned against each of these GLs\n\n| Payment of Placement Agency Cost | CAS 11 | Overhead |\n|---|---|---|\n| Advertising for Recruitment | CAS 11 | Overhead |\n| Interest penalty paid for delayed payment of Provident Fund |  | Non Cost Item |\n| Remuneration paid to Executive Director | CAS 7 | Employee Cost |\n| Remuneration paid to Non Executive Director | CAS 11 | Overhead |\n| Bonus | CAS 7 | Employee Cost |\n| Leave Encashment | CAS 7 | Employee Cost |\n| Basic Salary | CAS 7 | Employee Cost |\n| Dearness Allowance | CAS 7 | Employee Cost |\n| Conveyance Allowance | CAS 7 | Employee Cost |\n\n**CAS 6: RAW MATERIAL COST**",
+    "rubric": {
+     "reference_solution_md": "Appropriate Applicable GLs are mentioned against each of these GLs\n\n| Payment of Placement Agency Cost | CAS 11 | Overhead |\n|---|---|---|\n| Advertising for Recruitment | CAS 11 | Overhead |\n| Interest penalty paid for delayed payment of Provident Fund |  | Non Cost Item |\n| Remuneration paid to Executive Director | CAS 7 | Employee Cost |\n| Remuneration paid to Non Executive Director | CAS 11 | Overhead |\n| Bonus | CAS 7 | Employee Cost |\n| Leave Encashment | CAS 7 | Employee Cost |\n| Basic Salary | CAS 7 | Employee Cost |\n| Dearness Allowance | CAS 7 | Employee Cost |\n| Conveyance Allowance | CAS 7 | Employee Cost |\n\n**CAS 6: RAW MATERIAL COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q6",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 24,
+    "printed_number": 6,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q7",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "From the following Data available for Company X for Raw Material Y, as a cost auditor, please advise cost components to be considered for cost records for Raw Material as per CAS 6\n\n|  | ₹ in Lacs |\n|---|---|\n| Raw Material Cost | 70 |\n| Utilities Cost | 20 |\n| Fixed Cost | 10 |\n\nMoreover, it is further provided that Raw Material Cost, inter alia, consists of the following:\n\n| Debit Note of Current Year | 5 |\n|---|---|\n| Debit Note of Previous Year | 7 |\n| Credit Note of Current Year | 2 |\n| Credit Note of Previous Year | 1 |",
+    "marks": "7",
+    "explanation_md": "So Raw  Material as per CAS 6 shall be worked out as mentioned below\n\n| Raw Material Cost as provided in Financial Books of Accounts | 70 |\n|---|---|\n| Less: Debit Note of Previous Year | 7 |\n|  | 63 |\n| Add: Credit Note of Previous Year | 1 |\n|  | 64 |\n\nThis is because Previous Year’sDebits n Previous Year’s Credit do not pertain to operations of Current Year.\nAnd resultant total expenses shall be\n\n| Raw Material Cost as per CAS 6 | 64 |\n|---|---|\n| Utilities Cost | 20 |\n| Fixed Cost | 10 |\n\n**Note for Students**\n**Debit Note:**\nGL RM is debited\nRM is increased\nSo, to nullify the effect of Previous Year Debit Note, RM is to be decreased.\n**Credit Notes:**\nGL RM is credited\nRM is decreased\nSo, to nullify the effect of Previous Year Credit Note, RM is to be increased.\n\n**CAS 8 : UTILITIES COST**",
+    "rubric": {
+     "reference_solution_md": "So Raw  Material as per CAS 6 shall be worked out as mentioned below\n\n| Raw Material Cost as provided in Financial Books of Accounts | 70 |\n|---|---|\n| Less: Debit Note of Previous Year | 7 |\n|  | 63 |\n| Add: Credit Note of Previous Year | 1 |\n|  | 64 |\n\nThis is because Previous Year’sDebits n Previous Year’s Credit do not pertain to operations of Current Year.\nAnd resultant total expenses shall be\n\n| Raw Material Cost as per CAS 6 | 64 |\n|---|---|\n| Utilities Cost | 20 |\n| Fixed Cost | 10 |\n\n**Note for Students**\n**Debit Note:**\nGL RM is debited\nRM is increased\nSo, to nullify the effect of Previous Year Debit Note, RM is to be decreased.\n**Credit Notes:**\nGL RM is credited\nRM is decreased\nSo, to nullify the effect of Previous Year Credit Note, RM is to be increased.\n\n**CAS 8 : UTILITIES COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q7",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 25,
+    "printed_number": 7,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q8",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company A has procured Electricity from following 3 sources during the year\n\n|  | Units | Rate | ₹ Lacs |\n|---|---|---|---|\n| State Board | 7500000 | 6 | 450 |\n| Private Player | 5000000 | 5.5 | 275 |\n| Own Power Generating Plant | 20000000 | 4 | 800 |\n| Total | 32500000 | 4.69 | 1525 |\n\nCompany is manufacturing 3 products X, Y, and Z\nElectricity consumed by all these 3 products are mentioned below\n20000000 kwh have been consumed by Product X\n7500000 kwh electricity have been consumed by Product Y\n5000000 kwh electricity have been consumed by Product Z\nAt what rate, electricity cost shall appear in Product Cost Sheets of X,Y, and Z?",
+    "marks": "7",
+    "explanation_md": "As per CAS 8, average rate of Electricity shall apply to all the products\nIn the given case, Average rate is ₹ 4.69 / kwh. So, electricity cost will appear as given below in Product Cost Sheets of X,Y and Z.\n\n|  | Units | Rate | ₹ Lacs |\n|---|---|---|---|\n| Product X | 20000000 | 4.6923 | 938.46 |\n| Product Y | 7500000 | 4.6923 | 351.92 |\n| Product Z | 5000000 | 4.6923 | 234.62 |\n| Total | 32500000 | 4.6923 | 1525 |\n| Control |  |  | 1525 |\n\n**CAS 8 : UTILITIES COST**",
+    "rubric": {
+     "reference_solution_md": "As per CAS 8, average rate of Electricity shall apply to all the products\nIn the given case, Average rate is ₹ 4.69 / kwh. So, electricity cost will appear as given below in Product Cost Sheets of X,Y and Z.\n\n|  | Units | Rate | ₹ Lacs |\n|---|---|---|---|\n| Product X | 20000000 | 4.6923 | 938.46 |\n| Product Y | 7500000 | 4.6923 | 351.92 |\n| Product Z | 5000000 | 4.6923 | 234.62 |\n| Total | 32500000 | 4.6923 | 1525 |\n| Control |  |  | 1525 |\n\n**CAS 8 : UTILITIES COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q8",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 26,
+    "printed_number": 8,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q9",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data are given with respect to Electricity Units and Value.\nAs a Cost Auditor please advise the management how Electricity Cost shall be worked out in accordance with CAS 8\n\n| Sources of Electricity | Units | Rate |\n|---|---|---|\n| Electricity Purchased from State Board | 10000000 | 7 |\n| Electricity Purchased from Private Sector | 10000000 | 6 |\n| Electricity from Own Power Plant | 70000000 | 4.5 |\n| Electricity from Wind Mills |  |  |\n| Cost of Electricity | 10000000 | 3 |\n| Credit for Electricity | 10000000 | 5.5 |\n\nWork out the following\ni) Total Electricity Cost\nii) Average Rate of Electricity",
+    "marks": "7",
+    "explanation_md": "i) Total Electricity Cost\n\n|  | Units | Rate | ₹ Lacs |\n|---|---|---|---|\n| Electricity Purchased from State Board | 10000000 | 7 | 700 |\n| Electricity Purchased from Private Sector | 10000000 | 6 | 600 |\n| Electricity from Own Power Plant | 70000000 | 4.5 | 3150 |\n| Electricity from Wind Mills |  |  |  |\n| Cost of Electricity | 10000000 | 3 | 300 |\n| Gross Electricity Cost | 100000000 |  | 4750 |\n|  |  |  |  |\n| Credit for Electricity from Wind mills | 10000000 | 5.5 | 550 |\n|  |  |  |  |\n| Net Electricity Cost | 100000000 | 4.2 | 4200 |\n\nSo, total electricity units which have gone to process is 10 crore kwh. Total Cost of Electricity for Cost Records shall be ₹ 4,200 Lacs net of Wind Mill Credit.\nii) Average Rate of Electricity Net of Wind Mill Credit shall be ₹ 4.2 per kwh.\n\n**CAS 7 : EMPLOYEE COST**",
+    "rubric": {
+     "reference_solution_md": "i) Total Electricity Cost\n\n|  | Units | Rate | ₹ Lacs |\n|---|---|---|---|\n| Electricity Purchased from State Board | 10000000 | 7 | 700 |\n| Electricity Purchased from Private Sector | 10000000 | 6 | 600 |\n| Electricity from Own Power Plant | 70000000 | 4.5 | 3150 |\n| Electricity from Wind Mills |  |  |  |\n| Cost of Electricity | 10000000 | 3 | 300 |\n| Gross Electricity Cost | 100000000 |  | 4750 |\n|  |  |  |  |\n| Credit for Electricity from Wind mills | 10000000 | 5.5 | 550 |\n|  |  |  |  |\n| Net Electricity Cost | 100000000 | 4.2 | 4200 |\n\nSo, total electricity units which have gone to process is 10 crore kwh. Total Cost of Electricity for Cost Records shall be ₹ 4,200 Lacs net of Wind Mill Credit.\nii) Average Rate of Electricity Net of Wind Mill Credit shall be ₹ 4.2 per kwh.\n\n**CAS 7 : EMPLOYEE COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q9",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 27,
+    "printed_number": 9,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q10",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following date are made available with respect to Employee Cost of the Company.\nAs a Cost Auditor , please advise company how to work out employee cost as per CAS 7.\n\n|  | ₹ in Crores |\n|---|---|\n| Employee Cost as per Books of Accounts | 100 |\n\nThis includes the following\n\n| Value of Employee Settlement of Previous Year | 10 |\n|---|---|\n| Value of Interest Penalty for delayed depositing of PF | 5 |",
+    "marks": "7",
+    "explanation_md": "Employee Cost for Cost Records in accordance with CAS 7 shall be as mentioned below\n\n| Employee Cost as per Books of Accounts | 100 |\n|---|---|\n| Less: Value of Employee Settlement of Previous Year | 10 |\n| Value of Interest Penalty for delayed depositing of PF | 5 |\n| Employee Cost as per CAS 7 for Cost Records | 85 |\n\n**Note for students:**\nAny Previous Year Debit or Credit or any abnormal expenditure or any penalty shall not form part of cost records as they shall not pertain to operations of current year.\n\n**CAS 11 : ADMINISTRATIVE OVERHEADS**",
+    "rubric": {
+     "reference_solution_md": "Employee Cost for Cost Records in accordance with CAS 7 shall be as mentioned below\n\n| Employee Cost as per Books of Accounts | 100 |\n|---|---|\n| Less: Value of Employee Settlement of Previous Year | 10 |\n| Value of Interest Penalty for delayed depositing of PF | 5 |\n| Employee Cost as per CAS 7 for Cost Records | 85 |\n\n**Note for students:**\nAny Previous Year Debit or Credit or any abnormal expenditure or any penalty shall not form part of cost records as they shall not pertain to operations of current year.\n\n**CAS 11 : ADMINISTRATIVE OVERHEADS**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q10",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 28,
+    "printed_number": 10,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q11",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following Overhead Expenses are listed below\nPlease specify which Expenses shall be considered as per CAS 11\n● Printing & Stationery\n● Travelling Domestic\n● Travelling Export\n● Corporate Social Responsibility\n● Remuneration of Financial Auditors\n● Remuneration of Internal Auditors\n● Remuneration of Cost Auditors\n● Remuneration of GST Auditors\n● Remuneration of Secretarial Auditor\n● Donation",
+    "marks": "7",
+    "explanation_md": "1\\. Following shall be considered as per CAS 11\n● Printing & Stationery\n● Travelling Domestic\n● Travelling Export\n● Remuneration of Financial Auditors\n● Remuneration of Internal Auditors\n● Remuneration of Cost Auditors\n● Remuneration of GST Auditors\n● Remuneration of Secretarial Auditor\n2\\. Following two shall be treated as non cost items\n● Corporate Social Responsibility\n● Donation\n**Note 1 for students:**\nBoth the expenditure incurred on CSR activities and also any income generated from such activities shall be treated as non cost items in the cost statements.\n**Note 2 for students:**\nDonation being both non operational as well as descretionery nature of expenditure, should not be consideded as cost items in the cost statements.\n\n**CAS 6 : RAW MATERIAL**",
+    "rubric": {
+     "reference_solution_md": "1\\. Following shall be considered as per CAS 11\n● Printing & Stationery\n● Travelling Domestic\n● Travelling Export\n● Remuneration of Financial Auditors\n● Remuneration of Internal Auditors\n● Remuneration of Cost Auditors\n● Remuneration of GST Auditors\n● Remuneration of Secretarial Auditor\n2\\. Following two shall be treated as non cost items\n● Corporate Social Responsibility\n● Donation\n**Note 1 for students:**\nBoth the expenditure incurred on CSR activities and also any income generated from such activities shall be treated as non cost items in the cost statements.\n**Note 2 for students:**\nDonation being both non operational as well as descretionery nature of expenditure, should not be consideded as cost items in the cost statements.\n\n**CAS 6 : RAW MATERIAL**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q11",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.49,
+    "runner_up": "internal-control-and-internal-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 28,
+    "printed_number": 11,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q12",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Given below are data partaining to Raw Materials consumed in the process\n\n| Particulars | Quantity | Rate | Value in ₹ Lacs |\n|---|---|---|---|\n| Imported | 10000 | 100 | 10 |\n| Local | 20000 | 90 | 18 |\n| Self Manufactured Raw Material | 30000 | 75 | 22.5 |\n\nPlease work out the following as per CAS 6\n1\\. Raw Material Quantity that will go to the Production\n2\\. Raw Material Value that will be charged to the Production\n3\\. Rate of Raw Material at which it will be chaged to Production",
+    "marks": "7",
+    "explanation_md": "Working:\n\n| Particulars | Quantity (kg) | Rate (₹/kg) | Value in ₹ Lacs |\n|---|---|---|---|\n| Imported | 10000 | 100 | 10 |\n| Local | 20000 | 90 | 18 |\n| Self Manufactured Raw Material | 30000 | 75 | 22.5 |\n| Total | 60000 | 84.17 | 50.5 |\n\n1\\. Raw Material Quantity that will go to the Production 60000 kg.\n2\\. Raw Material Value that will be charged to the Production 50.5 lacs\n3\\. Rate of Raw Material at which it will be chaged to Production 84.17 (₹/kg)\n\n**CAS 10 : DIRECT EXPENSES**",
+    "rubric": {
+     "reference_solution_md": "Working:\n\n| Particulars | Quantity (kg) | Rate (₹/kg) | Value in ₹ Lacs |\n|---|---|---|---|\n| Imported | 10000 | 100 | 10 |\n| Local | 20000 | 90 | 18 |\n| Self Manufactured Raw Material | 30000 | 75 | 22.5 |\n| Total | 60000 | 84.17 | 50.5 |\n\n1\\. Raw Material Quantity that will go to the Production 60000 kg.\n2\\. Raw Material Value that will be charged to the Production 50.5 lacs\n3\\. Rate of Raw Material at which it will be chaged to Production 84.17 (₹/kg)\n\n**CAS 10 : DIRECT EXPENSES**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q12",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 29,
+    "printed_number": 12,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q13",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company X is getting manufactured Product Y on Job Work Basis\nDuring year it has incurred Rs 5 Crore on Job Work Charges\nPlease answer the following.\n1\\. Which CAS shall be applicable for Job Work Charges?\n2\\. Whether it shall be shown as separate line item in the cost sheet?\n3\\. What advantages company shall derive by showing it as separate Line Item apart from compliance with the applicable CAS?",
+    "marks": "7",
+    "explanation_md": "1\\. CAS 10 Direct Expenses is applicable for Job Work Charges.\n2\\. As separate CAS 10 is mandated for Job Work Charges being Direct Expense, it shall be shown as separate Line Item in Product Cost Sheet.\n3\\. It shall serve as Management Information System which shall help in monitoring its selling price vis a vis Job Work Charges as usually it forms substantial part of cost of production apart from Raw Material Cost.\n\n**CAS 6 : RAW MATERIAL**",
+    "rubric": {
+     "reference_solution_md": "1\\. CAS 10 Direct Expenses is applicable for Job Work Charges.\n2\\. As separate CAS 10 is mandated for Job Work Charges being Direct Expense, it shall be shown as separate Line Item in Product Cost Sheet.\n3\\. It shall serve as Management Information System which shall help in monitoring its selling price vis a vis Job Work Charges as usually it forms substantial part of cost of production apart from Raw Material Cost.\n\n**CAS 6 : RAW MATERIAL**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q13",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 30,
+    "printed_number": 13,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q14",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data are given for Raw Material X used in Product A and Product B\n\n| Particulars | Quantity | Rate | Value in ₹ Lacs |\n|---|---|---|---|\n| Used in Product A | 10000 | 10 | 1 |\n| Recovered but not saleable | 500 | nil | nil |\n| Used in Product B | 7000 | 10 | 0.7 |\n| Recovered and saleable | 500 | 2 | 0.01 |\n\nCalculate the Raw Material Cost for Product A & Product B",
+    "marks": "7",
+    "explanation_md": "According to CAS 6, credit for sale of recovered raw material should be given to the product which has given rise to this recovered raw material and which is saleable\nIn the given situation,\nRaw Material X used in Product A is recovered but not saleable.\nWhereas Raw Material X used in Product B is recovered and saleable also.\nSo, accordingly Raw Material Cost for Product A and Product B shall be calculated as mentioned below\n\n| Particulars | Quantity | Rate | Value in ₹ Lacs |\n|---|---|---|---|\n| Used in Product A | 10000 | 10 | 1 |\n| Recovered but not saleable | 500 | 0 | 0 |\n|  |  |  | 1 |\n| Used in Product B | 7000 | 10 | 0.7 |\n| Recovered and saleable | 500 | 2 | 0.01 |\n|  |  |  | 0.69 |\n\nSo for Product A : Cost of Raw Material X shall be ₹ 1 Lac.\nFor Product B : Cost of Raw Material X shall be ₹ 0.69 Lac.\n\n**CAS 6 : RAW MATERIAL COST**",
+    "rubric": {
+     "reference_solution_md": "According to CAS 6, credit for sale of recovered raw material should be given to the product which has given rise to this recovered raw material and which is saleable\nIn the given situation,\nRaw Material X used in Product A is recovered but not saleable.\nWhereas Raw Material X used in Product B is recovered and saleable also.\nSo, accordingly Raw Material Cost for Product A and Product B shall be calculated as mentioned below\n\n| Particulars | Quantity | Rate | Value in ₹ Lacs |\n|---|---|---|---|\n| Used in Product A | 10000 | 10 | 1 |\n| Recovered but not saleable | 500 | 0 | 0 |\n|  |  |  | 1 |\n| Used in Product B | 7000 | 10 | 0.7 |\n| Recovered and saleable | 500 | 2 | 0.01 |\n|  |  |  | 0.69 |\n\nSo for Product A : Cost of Raw Material X shall be ₹ 1 Lac.\nFor Product B : Cost of Raw Material X shall be ₹ 0.69 Lac.\n\n**CAS 6 : RAW MATERIAL COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q14",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 31,
+    "printed_number": 14,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q15",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following Particulars are provided for Raw Material X\n\n| Purchase Value of Raw Material as per Bill | 100000 |\n|---|---|\n| Transportation Charges | 1000 |\n| Demmurage paid | 7000 |\n\nPlease calculate cost of raw material for cost records as per CAS 6",
+    "marks": "7",
+    "explanation_md": "Cost of Raw Material for Cost Records as per CAS 6\n\n| Purchase Value of Raw Material as per Bill | 100000 |\n|---|---|\n| Transportation Charges | 1000 |\n| Total | 101000 |\n\nDemmurage being penalty shall not form part of raw material cost, it shall be reflected as non cost item, part of reconciliation statement.\n\n**CAS 6 : RAW MATERIAL COST**",
+    "rubric": {
+     "reference_solution_md": "Cost of Raw Material for Cost Records as per CAS 6\n\n| Purchase Value of Raw Material as per Bill | 100000 |\n|---|---|\n| Transportation Charges | 1000 |\n| Total | 101000 |\n\nDemmurage being penalty shall not form part of raw material cost, it shall be reflected as non cost item, part of reconciliation statement.\n\n**CAS 6 : RAW MATERIAL COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q15",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 31,
+    "printed_number": 15,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q16",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Raw Material X is supplied by supplier A, B & C\nIt is used in Product D, E & F\n\n| Purchased from Supplier A | 1000 kg @ 25 | consumed by Product D |\n|---|---|---|\n| Purchaed from Supplier B | 2000 kg @ 27 | consumed by Product E |\n| Purchased from Supplier C | 1500 kg @ 23 | consumed by Product F |\n\nApplying CAS 6, what shall be the rate and value of Raw Material X in Product D, Product E & Product F?",
+    "marks": "7",
+    "explanation_md": "Raw Material X purchased from 3 different suppliers A, B and C in 3 different quantities and at 3 different rates at 25, 27 & 23 shall be applied at weightage average rate to Products D, E & F so as to avoid either under charging or over charging of cost to any of these 3 products D, E & F.\nAnd that is the spirit of CAS 6\nSo weightage average rate that shall be applicable shall be as mentioned below\n\n| Prom Supplier A | 1000 | 25 | 25000 |\n|---|---|---|---|\n| From Supplier B | 2000 | 27 | 54000 |\n| From Supplier C | 1500 | 23 | 34500 |\n| Total | 4500 | 25.22 | 113500 |\n\nSo quantity, rate & value of Raw Material X in Product D, E & F shall be as mentioned below\n\n| Product D | 1000 | 25.22 | 25222.22222 |\n|---|---|---|---|\n| Product E | 2000 | 25.22 | 50444.44444 |\n| Product F | 1500 | 25.22 | 37833.33333 |\n|  | 4500 | 25.22 | 113500 |\n\n**CAS 2 : CAPACITY DETERMINATION**",
+    "rubric": {
+     "reference_solution_md": "Raw Material X purchased from 3 different suppliers A, B and C in 3 different quantities and at 3 different rates at 25, 27 & 23 shall be applied at weightage average rate to Products D, E & F so as to avoid either under charging or over charging of cost to any of these 3 products D, E & F.\nAnd that is the spirit of CAS 6\nSo weightage average rate that shall be applicable shall be as mentioned below\n\n| Prom Supplier A | 1000 | 25 | 25000 |\n|---|---|---|---|\n| From Supplier B | 2000 | 27 | 54000 |\n| From Supplier C | 1500 | 23 | 34500 |\n| Total | 4500 | 25.22 | 113500 |\n\nSo quantity, rate & value of Raw Material X in Product D, E & F shall be as mentioned below\n\n| Product D | 1000 | 25.22 | 25222.22222 |\n|---|---|---|---|\n| Product E | 2000 | 25.22 | 50444.44444 |\n| Product F | 1500 | 25.22 | 37833.33333 |\n|  | 4500 | 25.22 | 113500 |\n\n**CAS 2 : CAPACITY DETERMINATION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q16",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 32,
+    "printed_number": 16,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q17",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data are available with respect to cost elements\n\n| Particulars | ₹ Lacs |\n|---|---|\n| Raw Material | 70 |\n| Variable Cost | 10 |\n| Fixed Cost | 30 |\n|  | 110 |\n\n$\\text{Actual Capacity Utilisation} = 50\\% = 50000\\ \\text{units}$\n\n$\\text{Normal Capacity Utilisation of last 3 years} = 80\\% = 80000\\ \\text{units}$\n\nPlease work out the fixed cost for cost records as per CAS 2",
+    "marks": "7",
+    "explanation_md": "As per CAS 2, capacity utilisation shall be considered as per actual capacity utilisation as the same is significantly less then the normal capacity utilisation.\nHere normal capacity utilisation achieved in last 3 years is 80%.\nHowever, actual capacity utilisation achieved is 50%.\nSo, fixed cost equivalent to 50% shall be considered for cost records and for pricing decision $= 30 \\div 80000 \\times 50000 = 18.75$.\nSo, cost that shall be considered for cost records & for pricing shall be\n\n| Particulars | ₹ Lacs |\n|---|---|\n| Raw Material | 70 |\n| Variable Cost | 10 |\n| Fixed Cost | 18.75 |\n|  | 98.75 |\n\nFixed Cost relatable to significant under utilised capacity which is in this case is $(30 - 18.75) = 11.25$ lacs shall be reported as non cost item to be part of reconciliation statement.\n\n$\\text{Control} = 110 - 98.75 = 11.25$.\n\n**CAS 6 : RAW MATERIAL COST**",
+    "rubric": {
+     "reference_solution_md": "As per CAS 2, capacity utilisation shall be considered as per actual capacity utilisation as the same is significantly less then the normal capacity utilisation.\nHere normal capacity utilisation achieved in last 3 years is 80%.\nHowever, actual capacity utilisation achieved is 50%.\nSo, fixed cost equivalent to 50% shall be considered for cost records and for pricing decision $= 30 \\div 80000 \\times 50000 = 18.75$.\nSo, cost that shall be considered for cost records & for pricing shall be\n\n| Particulars | ₹ Lacs |\n|---|---|\n| Raw Material | 70 |\n| Variable Cost | 10 |\n| Fixed Cost | 18.75 |\n|  | 98.75 |\n\nFixed Cost relatable to significant under utilised capacity which is in this case is $(30 - 18.75) = 11.25$ lacs shall be reported as non cost item to be part of reconciliation statement.\n\n$\\text{Control} = 110 - 98.75 = 11.25$.\n\n**CAS 6 : RAW MATERIAL COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q17",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 33,
+    "printed_number": 17,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q18",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "From the data given below, please work out asper CAS 6 the rate at which Raw Material shall appear in Product Cost Sheet?\n\n| Raw Material X Purchased | 1000 MT |\n|---|---|\n| Normal Evaporation Loss 2 % | 20 |\n| Purcase Rate | 10000 |\n| Purchase Value | 100 ₹ Lacs |",
+    "marks": "7",
+    "explanation_md": "As per CAS 6, Raw Material Rate shall be worked out as mentioned below\nQuantity available for consumption after normal loss\n\n| Raw Material X Purchased | 1000 MT |\n|---|---|\n| Normal Evaporation Loss 2 % | 20 MT |\n| Quantity available for consumption | 980 MT |\n| Purchase Value | 100 ₹ Lacs |\n\nSo, purchase value of 100 lacs shall be divided by 980 MT and the rate shall be arrived at $= 100 \\times 100000/980 = 10204.08163$.\nSo, though original purchase was purchased at 10000 but after reducing the normal evaporation loss of 20, it shall appear in product cost sheet at the rate of 10204 with total value of 100 lacs remaining the same.\n\n**CAS 8 : UTILITIES COST**",
+    "rubric": {
+     "reference_solution_md": "As per CAS 6, Raw Material Rate shall be worked out as mentioned below\nQuantity available for consumption after normal loss\n\n| Raw Material X Purchased | 1000 MT |\n|---|---|\n| Normal Evaporation Loss 2 % | 20 MT |\n| Quantity available for consumption | 980 MT |\n| Purchase Value | 100 ₹ Lacs |\n\nSo, purchase value of 100 lacs shall be divided by 980 MT and the rate shall be arrived at $= 100 \\times 100000/980 = 10204.08163$.\nSo, though original purchase was purchased at 10000 but after reducing the normal evaporation loss of 20, it shall appear in product cost sheet at the rate of 10204 with total value of 100 lacs remaining the same.\n\n**CAS 8 : UTILITIES COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q18",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 33,
+    "printed_number": 18,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q19",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data are made available with respect to Steam\nGross Generation of Steam 350000 MT\nNormal Line Losses 5%\nSteam Value 9000 Lac\nAt what rate, steam shall be charged to the Product ?",
+    "marks": "7",
+    "explanation_md": "| Steam Generation | 350000 MT |\n|---|---|\n| Normal Line Loss | 5% |\n| Normal Line Loss | 17500 MT |\n| So Quantity of Steam available for Productive Usage | 332500 MT |\n| Value of Steam | 9000 Lac |\n\nRate of Steam at which it shall be charged to the Product $(9000 \\times 100000/332500)$ 2707\nSo, it shall be charged at 2707 per MT to Product.\n\n**CAS 6 : CONSUMABLE STORES**",
+    "rubric": {
+     "reference_solution_md": "| Steam Generation | 350000 MT |\n|---|---|\n| Normal Line Loss | 5% |\n| Normal Line Loss | 17500 MT |\n| So Quantity of Steam available for Productive Usage | 332500 MT |\n| Value of Steam | 9000 Lac |\n\nRate of Steam at which it shall be charged to the Product $(9000 \\times 100000/332500)$ 2707\nSo, it shall be charged at 2707 per MT to Product.\n\n**CAS 6 : CONSUMABLE STORES**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q19",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 34,
+    "printed_number": 19,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q20",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following details are extrated from financial books of accounts for consumable stores\n\n| Particulars |  | ₹ Lacs |\n|---|---|---|\n| Stores & Spares Consumed | Indigenous | 6000 |\n| Stores & Spares Consumed | Imported | 1000 |\n\nFollowing questions are required to be answered.\n1\\. Which CAS is applicable for consumable stores?\n2\\. How Company can comply with these standards?\n3\\. Which benefits are derived by complying with this CAS apart from complying with Statutory Requirements?",
+    "marks": "7",
+    "explanation_md": "1\\. CAS 6 is applicable to Consumable Stores\n2\\. Company can comply with this standard by ensuring the following\n● Maintenance of Quantity and Value Records for all consumable stores items\n● Receipt, Issue and Balances\n● Showing expenses on Consumable Stores as a separate line item in Product Cost Sheet\n3\\. Benefits which company shall derive by complying with this standard\n● It shall help in monitoring the inventory level of all important consumable stores on perpetual basis\n● This shall ensure uninterrupted running of the plant\n● Moreover, showing as a separate line item shall serve the purpose of MIS Report with respect to expense on consumable stores, both in totality & per unit of product\n\n**CAS 12 : REPAIRS COST**",
+    "rubric": {
+     "reference_solution_md": "1\\. CAS 6 is applicable to Consumable Stores\n2\\. Company can comply with this standard by ensuring the following\n● Maintenance of Quantity and Value Records for all consumable stores items\n● Receipt, Issue and Balances\n● Showing expenses on Consumable Stores as a separate line item in Product Cost Sheet\n3\\. Benefits which company shall derive by complying with this standard\n● It shall help in monitoring the inventory level of all important consumable stores on perpetual basis\n● This shall ensure uninterrupted running of the plant\n● Moreover, showing as a separate line item shall serve the purpose of MIS Report with respect to expense on consumable stores, both in totality & per unit of product\n\n**CAS 12 : REPAIRS COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q20",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.7,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 35,
+    "printed_number": 20,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q21",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data about Repairs Cost have been extracted from Financial Books of Accounts\n\n| Particulars | ₹ Lacs |\n|---|---|\n| Repairs to Building | 100 |\n| Repairs to Plant & Machinery | 4100 |\n| Repairs to Furniture & Fixures | 400 |\n\nWhich CAS shall be applicable ?\nHow Company shall be able to comply with this CAS ?\nWhat benefits Company Shall derive by complying with these CAS ?",
+    "marks": "7",
+    "explanation_md": "1\\. CAS 12 shall be applicable\n2\\. Company shall be able to comply with this CAS by ensuring the following\n● As required by CRA 1, by maitaining proper records of Repairs & Maintenance Cost incurred by various cost centres\n● This shall inter alia include expenses on various AMC / ARC with respect to various\n● Production Cost Centres like Reactor, Centrifuge, Dryer\n● As required by CAS 12, by showing it as separate line item in Product Cost Sheet\n3\\. Apart from complying with CAS 12, it will also serve as Management Information System, whereby company shall be able to relate the incidence of repairs expenses with age of various equipments / plant & machinery. Also there is a practice in the Industry to express Repairs Cost as % of Net Asset Value.\n\n**CAS 16 : DEPRECIATION**",
+    "rubric": {
+     "reference_solution_md": "1\\. CAS 12 shall be applicable\n2\\. Company shall be able to comply with this CAS by ensuring the following\n● As required by CRA 1, by maitaining proper records of Repairs & Maintenance Cost incurred by various cost centres\n● This shall inter alia include expenses on various AMC / ARC with respect to various\n● Production Cost Centres like Reactor, Centrifuge, Dryer\n● As required by CAS 12, by showing it as separate line item in Product Cost Sheet\n3\\. Apart from complying with CAS 12, it will also serve as Management Information System, whereby company shall be able to relate the incidence of repairs expenses with age of various equipments / plant & machinery. Also there is a practice in the Industry to express Repairs Cost as % of Net Asset Value.\n\n**CAS 16 : DEPRECIATION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q21",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.76,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 35,
+    "printed_number": 21,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q22",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following Data are extracted from the books of accounts for Depreciation\n\n| Particulars | ₹ Lacs |\n|---|---|\n| Depreciation Factory Building | 900 |\n| Depreciation Plant & Machinery | 17500 |\n| Depreciation Furniture & Fixtures | 110 |\n| Depreciation Vehicles | 14 |\n\nWhich CAS shall be applicable ?\nHow Company shall be able to comply with this CAS ?\nWhat benefits Company shall derive by complying with this CAS ?",
+    "marks": "7",
+    "explanation_md": "1\\. Applicable CAS is 16\n2\\. As required by CRA 1, by maintaining proper records for Assets which are used for Production. Also known as Cost Centrewise Fixed Assest Register. By showing Depreciation for Production Cost Centre as separate Line Item in Product Cost Sheet\n3\\. Depreciation per Unit of Production shall be an indicator of capacity utilisation\nWhether Capacity Utilisation is optimum or under utilised that shall be usually reflected by Depreciation Per Unit of Product.\n\n**CAS 9 : PACKING MATERIAL COST**",
+    "rubric": {
+     "reference_solution_md": "1\\. Applicable CAS is 16\n2\\. As required by CRA 1, by maintaining proper records for Assets which are used for Production. Also known as Cost Centrewise Fixed Assest Register. By showing Depreciation for Production Cost Centre as separate Line Item in Product Cost Sheet\n3\\. Depreciation per Unit of Production shall be an indicator of capacity utilisation\nWhether Capacity Utilisation is optimum or under utilised that shall be usually reflected by Depreciation Per Unit of Product.\n\n**CAS 9 : PACKING MATERIAL COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q22",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.76,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 36,
+    "printed_number": 22,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q23",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data are available with respect to Fibre Drum Used in the Company\n\n| Particulars | Qty | Rate | Value |\n|---|---|---|---|\n| Fibre Drum Used for Packing | 4000 | 550 | 22 |\n| Fibre Drum used for Material Handling | 200 | 550 | 1.1 |\n\nHow above shall be trated in Cost Records keeping in view its compliance with CAS 9",
+    "marks": "7",
+    "explanation_md": "1\\. Value of Fibre Drum used for Packing shall be shown as separate Line Item as Packing Cost in Product Cost Sheet\n2\\. Value of Fibre Drum used as Material Handling shall be shown as separate line item as Material Hadling Cost in the Cost Sheet of the Product for which these are used.\nIf not possible to show as separate line item, then may be shown as Production Overheads.\n\n**CAS 7 : EMPLOYEE COST**",
+    "rubric": {
+     "reference_solution_md": "1\\. Value of Fibre Drum used for Packing shall be shown as separate Line Item as Packing Cost in Product Cost Sheet\n2\\. Value of Fibre Drum used as Material Handling shall be shown as separate line item as Material Hadling Cost in the Cost Sheet of the Product for which these are used.\nIf not possible to show as separate line item, then may be shown as Production Overheads.\n\n**CAS 7 : EMPLOYEE COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q23",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 37,
+    "printed_number": 23,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q24",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Following data are available with respect to Employee Cost\n\n| Particulars | ₹ Lacs |\n|---|---|\n| Gross Pay | 12,00,000 |\n| Tax Paid | 2,40,000 |\n| Net Pay | 9,60,000 |\n\nTo comply with CAS 7, as cost auditor which employee cost you shall consider for Cost Records ?",
+    "marks": "7",
+    "explanation_md": "As per CAS 7, Gross Pay shall be considered for Cost Records which in this case is 1200000\n**Reasons:**\n1\\. Company has shelved out ₹ 12 Lacs\n2\\. Out of which ₹ 9.6 Lacs have gone to the kitty of Employee\n3\\. Whereas balance ₹ 2.4 Lacs have gone to the kitty of Government\n4\\. And CAS 7 deals with ₹ 12 Lacs and not with ₹ 9.6 Lacs and ₹ 2.4 Lacs\n\n**CAS 2 : CAPACITY DETERMINATION**",
+    "rubric": {
+     "reference_solution_md": "As per CAS 7, Gross Pay shall be considered for Cost Records which in this case is 1200000\n**Reasons:**\n1\\. Company has shelved out ₹ 12 Lacs\n2\\. Out of which ₹ 9.6 Lacs have gone to the kitty of Employee\n3\\. Whereas balance ₹ 2.4 Lacs have gone to the kitty of Government\n4\\. And CAS 7 deals with ₹ 12 Lacs and not with ₹ 9.6 Lacs and ₹ 2.4 Lacs\n\n**CAS 2 : CAPACITY DETERMINATION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q24",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.74,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 37,
+    "printed_number": 24,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q25",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company G is making Product C\nCapacity to manufacture Product C is 800 mt per day\nFor the period April to Dec, Product C is manufactured @ 800 mt per day\nFrom 1st January, Company G has enhanced the capacity of Product C to 1200 mt per day\nDuring the year, Company G has manufactured Product C as mentioned below\n\n| Particulars | Qty (mt) |\n|---|---|\n| 30 days × 9 months × 800 mt per day | 216000 |\n| 30 days × 3 months × 1150 mt per day | 103500 |\n|  | 319500 |\n\nCompany has given its cost records to cost auditor providing the capacity utilisation as mentioned below\n\n| Particulars |  |\n|---|---|\n| installed capacity considered is $360 \\times 1200$ mt per day | 432000 |\n| capacity utilisation given is $319500 / 432000$ | 73.96 |",
+    "marks": "7",
+    "explanation_md": "Cost Auditor has reworked installed capacity considering CAS 2\ninstalled capacity for 1st 9 months is 800 mt per day\ninstalled capacity for next 3 months is 1200 mt per day\n\n| Particulars |  |\n|---|---|\n| so reworked installed capacity shall be $= 30 \\times 9 \\times 800 + 30 \\times 3 \\times 1200$ | 324000 |\n| actual production is | 319500 |\n| capacity utilisation as per CAS 2 shall be $319500 / 324000$ | 98.61 |\n\nSo, installed capacity is reworked from 432000 mt to 324000 mt.\nSo, reworked capacity utilisation shall be 98.61 % and not 73.96 %.\n**Note for Students:**\n● Installed capacity should be worked keeping in view 800 mt per day for 1st 9 months and 1200 mt per day for next 3 months.\n● 7 days annual maintenance is not considered both for working out installed capacity and actual production.\n\n**CAS : CSR CONTRIBUTION**",
+    "rubric": {
+     "reference_solution_md": "Cost Auditor has reworked installed capacity considering CAS 2\ninstalled capacity for 1st 9 months is 800 mt per day\ninstalled capacity for next 3 months is 1200 mt per day\n\n| Particulars |  |\n|---|---|\n| so reworked installed capacity shall be $= 30 \\times 9 \\times 800 + 30 \\times 3 \\times 1200$ | 324000 |\n| actual production is | 319500 |\n| capacity utilisation as per CAS 2 shall be $319500 / 324000$ | 98.61 |\n\nSo, installed capacity is reworked from 432000 mt to 324000 mt.\nSo, reworked capacity utilisation shall be 98.61 % and not 73.96 %.\n**Note for Students:**\n● Installed capacity should be worked keeping in view 800 mt per day for 1st 9 months and 1200 mt per day for next 3 months.\n● 7 days annual maintenance is not considered both for working out installed capacity and actual production.\n\n**CAS : CSR CONTRIBUTION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q25",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.75,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 38,
+    "printed_number": 25,
+    "typeset": true,
+    "typeset_notes": [
+     "Stem table row \"30 days × 3 months × 1150 mt\" vs later 1200 mt per day: kept as printed"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q26",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company A has following GL in its Financial Accounts\nCSR Contribution to Company’s Education Society\nAs a Cost Auditor, please advise its treatment in Cost Records as per relevant CAS",
+    "marks": "7",
+    "explanation_md": "All CSR expenses are incurred in activities that are in the nature of philanthropic activities whose present or future economis benefits do not flow to the company or any surplus/profits arising from such activities can not be recognised as business profits of the company.\nHence, CSR expenses are not included in cost records\nTherefore, both the expenditure on CSR Activities and also any income generated from such activities shall be treated as non cost items in the cost statements of the company.\n\n**CAS 8 : UTILITIES COST**",
+    "rubric": {
+     "reference_solution_md": "All CSR expenses are incurred in activities that are in the nature of philanthropic activities whose present or future economis benefits do not flow to the company or any surplus/profits arising from such activities can not be recognised as business profits of the company.\nHence, CSR expenses are not included in cost records\nTherefore, both the expenditure on CSR Activities and also any income generated from such activities shall be treated as non cost items in the cost statements of the company.\n\n**CAS 8 : UTILITIES COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q26",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.76,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 39,
+    "printed_number": 26,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q27",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company G obtains Electricity from Private Player G for which it has a following  Financial GL in Books of Accounts\nElectricity from Private Player G ₹600 Cr.\nThis value includes payment of ₹ 40 Cr related to Previous Year which was under dispute and payment for which has been released during the Current Year.\nAs a Cost Auditor please advise the management how Electricity Cost shall be worked out in accordance with CAS 8.",
+    "marks": "7",
+    "explanation_md": "Electricity Cost in accordance with CAS 8\n\n| Particulars | ₹ Cr. |\n|---|---|\n| Electricity from Private Player G | 600 |\n| Less: Payment of 40 Cr related to previous year made during the current year | 40 |\n|  | 560 |\n\n**Note for students:**\nIn Cost Records, value of this GL shall be considered of ₹ 560 Cr.\n₹ 40 Cr shall be reflected in Reconciliation Statement.\n\n**CAS 6 : RAW MATERIAL COST**",
+    "rubric": {
+     "reference_solution_md": "Electricity Cost in accordance with CAS 8\n\n| Particulars | ₹ Cr. |\n|---|---|\n| Electricity from Private Player G | 600 |\n| Less: Payment of 40 Cr related to previous year made during the current year | 40 |\n|  | 560 |\n\n**Note for students:**\nIn Cost Records, value of this GL shall be considered of ₹ 560 Cr.\n₹ 40 Cr shall be reflected in Reconciliation Statement.\n\n**CAS 6 : RAW MATERIAL COST**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q27",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 39,
+    "printed_number": 27,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q28",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "During the course of audit of Cost Records, Cost Auditor has come across the following financial GL\n\n| Particulars | ₹ Lacs |\n|---|---|\n| Raw Material Consumed during Trial Run | 1000 |\n| Raw Material Consumed for Commercial Production | 7000 |\n\nAs a Cost Auditor, please advise value to be considered in Product Cost Sheet as per CAS 6 ?",
+    "marks": "7",
+    "explanation_md": "As per CAS 6, this shall be treated as mentioned below\nRaw Material Consumed during Trial Run ₹ 1000 Lacs\nThis shall not become part of Product Cost Sheet\nIt shall be shown in Profit Reconciliation Statement\nIt shall be capitalised in the cost of project for which trail run is undertaken\nRaw Material Consumed for Commercial Production ₹ 7000 Lacs\nThis shall become part of Product Cost Sheet.\n**Note for students:**\nRaw Material Consumed during Trial Run of ₹ 1,000 Lacs shall become part of Project Cost and shall be capitalised  Eventually, there shall be transfer entry.\n**Debit** : Project Cost\n**Credit** : Raw Material Consumed during trial run\nSo after this transfer entry, there is no such GL and so no need to show it in Reconciliation Statement.\n\n**CAS 2 : CAPACITY DETERMINATION**",
+    "rubric": {
+     "reference_solution_md": "As per CAS 6, this shall be treated as mentioned below\nRaw Material Consumed during Trial Run ₹ 1000 Lacs\nThis shall not become part of Product Cost Sheet\nIt shall be shown in Profit Reconciliation Statement\nIt shall be capitalised in the cost of project for which trail run is undertaken\nRaw Material Consumed for Commercial Production ₹ 7000 Lacs\nThis shall become part of Product Cost Sheet.\n**Note for students:**\nRaw Material Consumed during Trial Run of ₹ 1,000 Lacs shall become part of Project Cost and shall be capitalised  Eventually, there shall be transfer entry.\n**Debit** : Project Cost\n**Credit** : Raw Material Consumed during trial run\nSo after this transfer entry, there is no such GL and so no need to show it in Reconciliation Statement.\n\n**CAS 2 : CAPACITY DETERMINATION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q28",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.72,
+    "runner_up": "cost-auditing-and-assurance-standards"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 40,
+    "printed_number": 28,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q29",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company G is manufacturing Product C having its By Product BP Installed Capacity to Manufacture C is 1200 MT per day for 358 days with total 365 days available and 7 days for annual planned maintenance.\nSo installed capacity shall be $358 \\times 1200 = 429600$ MT\nNow Ratio of By Product BP is for 1 MT of Product C, By Product BP shall be 1 MT\nHowever company can utilise / sale / dispose of only 1100 MT of By Product BP per day\nSo total By Product BP company can utilise / sale / dispose shall be $1100 \\times 358 = 393800$ MT\nDuring the year Company has produced 354420 MT of Product C\nAs a Cost Auditor, please calculate Capacity Utilisation as per CAS 2",
+    "marks": "7",
+    "explanation_md": "Capacity Utilisation for Product C as per CAS 2 shall be worked out as mentioned below\n\n| Installed Capacity ($1100 \\times 358$) | 393800 MT |\n|---|---|\n| Actual Production | 354420 MT |\n| Capacity Utilisation shall be $(394420 / 393800 \\times 100)$ | 90% |\n\nSo capacity Utilisation as per CAS 2 for Product C shall be 90 % for Cost Audit Purpose as well as for any Internal and External Reporting.\n**Note for Students:**\n\n| As per specification provided by supplier of technology, Company G can make $1200 \\times 358$ of Product C | 429600 MT |\n|---|---|\n| However, to utilise / sale / dispose of resultant by product BP is limiting factor which is 1100 MT per day converting it annually, it comes to $1100 \\times 358$ | 393800 MT |\n\nSo, for CAS 2, Installed capacity of Product C shall be considered as 393800 MT and not 429600 MT for the year.\n\n**CAS 2: CAPACITY DETERMINATION**",
+    "rubric": {
+     "reference_solution_md": "Capacity Utilisation for Product C as per CAS 2 shall be worked out as mentioned below\n\n| Installed Capacity ($1100 \\times 358$) | 393800 MT |\n|---|---|\n| Actual Production | 354420 MT |\n| Capacity Utilisation shall be $(394420 / 393800 \\times 100)$ | 90% |\n\nSo capacity Utilisation as per CAS 2 for Product C shall be 90 % for Cost Audit Purpose as well as for any Internal and External Reporting.\n**Note for Students:**\n\n| As per specification provided by supplier of technology, Company G can make $1200 \\times 358$ of Product C | 429600 MT |\n|---|---|\n| However, to utilise / sale / dispose of resultant by product BP is limiting factor which is 1100 MT per day converting it annually, it comes to $1100 \\times 358$ | 393800 MT |\n\nSo, for CAS 2, Installed capacity of Product C shall be considered as 393800 MT and not 429600 MT for the year.\n\n**CAS 2: CAPACITY DETERMINATION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q29",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.66,
+    "runner_up": "internal-control-and-internal-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 40,
+    "printed_number": 29,
+    "typeset": true,
+    "typeset_notes": [
+     "Printed \"394420 / 393800 × 100\" in the solution table (production is 354420 elsewhere): kept as printed",
+     "Printed result 90% kept"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch2:q30",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company G is manufacturing Product C. Its Installed Capacity for April to Sep is 800 MT per Day. It has enhance Capacity of Product C to 1200 MT per Day. During the Year Company has manufactured Product C\n\n| April to Sep $(30 \\times 6 \\times 800)$ | 144000 |\n|---|---|\n| Oct to March $(30 \\times 6-7 \\times 1150)$ | 198950 |\n|  | 342950 |\n| Installed Capacity $(30 \\times 12-7 \\times 800)$ | 282400 |\n| Capacity Utilisation Reported | 121.4412 |\n\nIn CRA 3, in Part B 1, Company has reported Capacity Utilisation as 121.44% and given it to Cost Auditor for audit. How Cost Auditor shall work out Capacity Utilisation as per CAS 2?",
+    "marks": "7",
+    "explanation_md": "It needs to be made clear that CAS 2 does not permit reporting or endorsing of capacity utilisation of more then 100%. Reason being no plant / equipment can produce more then its rated capacity.\nSo, here it to be ensured that installed capacity has been correctly worked out as per CAS 2\nSo, installed capacity as per CAS 2 shall be worked as mentioned below\n\n| April to Sep $(30 \\times 6 \\times 800)$ | 144000 |\n|---|---|\n| Oct to March $(30 \\times 6-7 \\times 1200)$ | 207600 |\n|  | 351600 |\n| Actual Production |  |\n| April to Sep | 144000 |\n| Oct to March | 198950 |\n|  | 342950 |\n\n$\\text{Capacity utilisation shall be } (342950 / 351600 \\times 100) = 97.53981797$\nSo, capacity utilisation as per CAS 2 shall be 97.54 % which shall be reported in CRA 3, Part B 1, Quantitative Information.",
+    "rubric": {
+     "reference_solution_md": "It needs to be made clear that CAS 2 does not permit reporting or endorsing of capacity utilisation of more then 100%. Reason being no plant / equipment can produce more then its rated capacity.\nSo, here it to be ensured that installed capacity has been correctly worked out as per CAS 2\nSo, installed capacity as per CAS 2 shall be worked as mentioned below\n\n| April to Sep $(30 \\times 6 \\times 800)$ | 144000 |\n|---|---|\n| Oct to March $(30 \\times 6-7 \\times 1200)$ | 207600 |\n|  | 351600 |\n| Actual Production |  |\n| April to Sep | 144000 |\n| Oct to March | 198950 |\n|  | 342950 |\n\n$\\text{Capacity utilisation shall be } (342950 / 351600 \\times 100) = 97.53981797$\nSo, capacity utilisation as per CAS 2 shall be 97.54 % which shall be reported in CRA 3, Part B 1, Quantitative Information.",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch2:q30",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.68,
+    "runner_up": "management-reporting-issues-and-analysis"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Overview of Cost Accounting Standards and GACAP",
+    "page": 41,
+    "printed_number": 30,
+    "typeset": true,
+    "typeset_notes": [
+     "Printed \"6-7\" inside (30 × 6-7 × 1150) kept as printed (apparent misprint)"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q1",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Negotiating Job Work through own manufactured Cost Sheet\nCompany A manufactures Product X cost sheet of which is given below\nDue to increase in demand, it wants to manufacture additional quantity throgh job work by 3rd party\n**Cost of Production - Product X**\n\n| Sl. No. | Particulars | Amount ₹ Lacs | Cost (₹) / MT |\n|---|---|---|---|\n|  | Production | 36204 |  |\n|  |  |  |  |\n| (A) | Variable Cost |  |  |\n| 1 | Raw Material Consumption | 12377.16 | 34187.27 |\n| 2 | Electricity Charges | 40.54 | 111.98 |\n| 3 | Packing Material Consumption | 466.66 | 1288.97 |\n|  | Total Variable Cost (A) | 12884.36 | 35588.22 |\n| (B) | Fixed Cost |  |  |\n| 1 | Stores, Spares, Repairs & Maintenance | 261.93 | 723.48 |\n| 2 | Factory Overhead & Pollution Control | 32.53 | 89.85 |\n| 3 | Insurance | 10.62 | 29.33 |\n| 4 | Employee's Cost | 100.00 | 276.21 |\n| 5 | Administration & Other Overhead | 140.59 | 388.33 |\n| 6 | Marketing Expenses | 372.27 | 1028.25 |\n| 7 | Interest | 7.19 | 19.86 |\n| 8 | Depreciation | 271.55 | 750.04 |\n|  | Total Fixed Cost (B) | 1196.67 | 3305.35 |\n|  |  |  |  |\n|  | Total Cost (A+B) | 14081.03 | 38893.57 |\n\nCompany wants to negotiate job work charges with the help of this cost sheet. Please advise, how job work charges shall be nogotiated based on this Cost Sheet ?",
+    "marks": "7",
+    "explanation_md": "While negotiation, following points should be noted\n**Cost that shall be incurred by the company for job work through 3rd party**\nJob Work Charges that should be comparable to conversion cost of self manufactured plus reasonable profit say 10 %\n**Cost incurred for self manufactured**\n\n|  | ₹ Lacs | ₹ / MT |\n|---|---|---|\n| Electricity Charges | 40.54 | 111.98 |\n| Stores, Spares, Repairs & Maintenance | 261.93 | 723.48 |\n| Factory Overhead & Pollution Control | 32.53 | 89.85 |\n| Insurance | 10.62 | 29.33 |\n| Depreciation | 271.55 | 750.04 |\n| Employee Cost | 100.00 | 276.00 |\n| Administration & Other Overhead | 140.59 | 388.33 |\n| Interest | 7.19 | 19.86 |\n|  | 864.94 | 2388.87 |\n| Plus Margin 10 % |  | 238.89 |\n|  |  | 2627.76 |\n\nSo, company should negotiate job work on the basis of conversion charges plus margin for self manufactured  which is ₹ 2,627 per MT. Marketing Expenses is not considered in above calculation as it is not part of conversion cost.\n\n**Capacity Utilisation**",
+    "rubric": {
+     "reference_solution_md": "While negotiation, following points should be noted\n**Cost that shall be incurred by the company for job work through 3rd party**\nJob Work Charges that should be comparable to conversion cost of self manufactured plus reasonable profit say 10 %\n**Cost incurred for self manufactured**\n\n|  | ₹ Lacs | ₹ / MT |\n|---|---|---|\n| Electricity Charges | 40.54 | 111.98 |\n| Stores, Spares, Repairs & Maintenance | 261.93 | 723.48 |\n| Factory Overhead & Pollution Control | 32.53 | 89.85 |\n| Insurance | 10.62 | 29.33 |\n| Depreciation | 271.55 | 750.04 |\n| Employee Cost | 100.00 | 276.00 |\n| Administration & Other Overhead | 140.59 | 388.33 |\n| Interest | 7.19 | 19.86 |\n|  | 864.94 | 2388.87 |\n| Plus Margin 10 % |  | 238.89 |\n|  |  | 2627.76 |\n\nSo, company should negotiate job work on the basis of conversion charges plus margin for self manufactured  which is ₹ 2,627 per MT. Marketing Expenses is not considered in above calculation as it is not part of conversion cost.\n\n**Capacity Utilisation**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q1",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.75,
+    "runner_up": "internal-control-and-internal-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 43,
+    "printed_number": 1,
+    "typeset": true,
+    "typeset_notes": [
+     "Solution prints Employee Cost 276.00 whereas cost sheet prints 276.21: kept as printed",
+     "Left-hand merged cell of the solution table shown as text above the table",
+     "Trailing heading \"Capacity Utilisation\" kept as in input"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q2",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Company X is manufacturing Product Y which is presently being operated at 50% of its installed capacity. Due to increase in its market demand, now its management has desired to operate it at 75 % capacity to meet its increasing demand.\nIts cost structure at 50% capacity is as given below.\nInstalled Capacity of Product Y is 100000 Units\n\n| Sl. No. | Particulars |  |\n|---|---|---|\n|  | **Variable Cost** |  |\n| 1 | Raw Material (1 Unit per Unit of Product Y) | ₹ 7000 per Unit |\n| 2 | Packing Material (1 Unit per Unit of Product Y) | ₹ 100 per unit |\n| 3 | Utilities (1 Unit per Unit of Product Y) | ₹ 2000 per unit |\n|  | **Fixed Cost** | ₹ |\n| 1 | Employee Cost | 10,00,00,000 |\n| 2 | Consumable Stores | 2,50,00,000 |\n| 3 | Repaires | 1,00,00,000 |\n| 4 | Depreciation | 1,00,00,000 |\n| 5 | Insurance | 10,00,000 |\n| 6 | Overheads | 70,00,000 |\n\nFollowing points may please be considered\n1\\. Historical past data shows that at 75% capacity, specific utilities consumption shall be 0.9 unit per Unit of Product Y\n2\\. Discussion with In Charge of Maintenance provides for 10% increase in Consumable Stores & Repairs Expenses for 75% capacity\n3\\. Management has decided to consider 5% increase in Overheads\nPlease work out the cost advantage occuring due to operating at higher capacity of 75%",
+    "marks": "7",
+    "explanation_md": "Working for 50 % capacity (For Reference Please)\nProduction / sale = 50000\n\n| **Particulars** | **₹ Lacs** | **₹ / Unit** |\n|---|---|---|\n| **Variable Cost** |  |  |\n| Raw Material | **3,500** | 7,000 |\n| Utilities | 1,000 | 2,000 |\n| Packing | 50 | 100 |\n|  | **4,550** | 9,100 |\n|  |  | 9100 |\n| **Fixed Cost** |  |  |\n| Employee Cost | 1,000 | 2,000 |\n| Consumable Stores | 250 | 500 |\n| Repaires | 100 | 200 |\n| Depreciation | 100 | 200 |\n| Insurance | 10 | 20 |\n| Overheads | 70 | 140 |\n|  | 1,530 | 3,060 |\n|  |  | 3,060 |\n|  |  | 12,160 |\n|  |  | 12,160 |\n\nWorking for 75 % capacity (For Reference Please)\nProduction / sale = 75000\n\n| Particulars | ₹ Lacs | ₹ / Unit |\n|---|---|---|\n| **Variable Cost** |  |  |\n| Raw Material | 5,250 | 7,000 |\n| Utilities | 1,350 | 1,800 |\n| Packing | 75 | 100 |\n|  | 6,675 | 8,900 |\n|  |  | 8,900 |\n| **Fixed Cost** |  |  |\n| Employee Cost | 1,000 | 1,333 |\n| Consumable Stores | 275 | 367 |\n| Repaires | 110 | 147 |\n| Depreciation | 100 | 133 |\n| Insurance | 10 | 13 |\n| Overheads | 73.5 | 98 |\n|  | 1,568.5 | 2,091 |\n|  |  | 2,091.333 |\n|  |  | 1,0991.33 |\n|  |  | 1,0991.33 |\n\nGain to the Company\n\n| In Variable Cost | 9,100 | 8,900 | 200 |\n|---|---|---|---|\n| In Fixed Cost | 3,060 | 2,091 | 969 |\n| In Total Cost | 12,160 | 10,991 | 1,169 |",
+    "rubric": {
+     "reference_solution_md": "Working for 50 % capacity (For Reference Please)\nProduction / sale = 50000\n\n| **Particulars** | **₹ Lacs** | **₹ / Unit** |\n|---|---|---|\n| **Variable Cost** |  |  |\n| Raw Material | **3,500** | 7,000 |\n| Utilities | 1,000 | 2,000 |\n| Packing | 50 | 100 |\n|  | **4,550** | 9,100 |\n|  |  | 9100 |\n| **Fixed Cost** |  |  |\n| Employee Cost | 1,000 | 2,000 |\n| Consumable Stores | 250 | 500 |\n| Repaires | 100 | 200 |\n| Depreciation | 100 | 200 |\n| Insurance | 10 | 20 |\n| Overheads | 70 | 140 |\n|  | 1,530 | 3,060 |\n|  |  | 3,060 |\n|  |  | 12,160 |\n|  |  | 12,160 |\n\nWorking for 75 % capacity (For Reference Please)\nProduction / sale = 75000\n\n| Particulars | ₹ Lacs | ₹ / Unit |\n|---|---|---|\n| **Variable Cost** |  |  |\n| Raw Material | 5,250 | 7,000 |\n| Utilities | 1,350 | 1,800 |\n| Packing | 75 | 100 |\n|  | 6,675 | 8,900 |\n|  |  | 8,900 |\n| **Fixed Cost** |  |  |\n| Employee Cost | 1,000 | 1,333 |\n| Consumable Stores | 275 | 367 |\n| Repaires | 110 | 147 |\n| Depreciation | 100 | 133 |\n| Insurance | 10 | 13 |\n| Overheads | 73.5 | 98 |\n|  | 1,568.5 | 2,091 |\n|  |  | 2,091.333 |\n|  |  | 1,0991.33 |\n|  |  | 1,0991.33 |\n\nGain to the Company\n\n| In Variable Cost | 9,100 | 8,900 | 200 |\n|---|---|---|---|\n| In Fixed Cost | 3,060 | 2,091 | 969 |\n| In Total Cost | 12,160 | 10,991 | 1,169 |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q2",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.72,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 44,
+    "printed_number": 2,
+    "typeset": true,
+    "typeset_notes": [
+     "Printed \"1,0991.33\" (apparently 10,991.33) and \"2,091.333\" kept as printed"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q3",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Maximum Permissible Cost of Raw Material Y\nFollowing data are avalable from Cost Records of Company X which manufactures Product Y using Raw Material Z which constitutes major cost of Product Y\n\n| Selling Price | 86,002 ₹ / MT |\n|---|---|\n| Desired Margin | 15% of selling price |\n| Content of Raw Material Z in product Y | 2.165536 MT per MT of Product Y |\n| Conversion Cost of Product Y | 25,882 ₹ / MT |\n| Cost of Other Raw Material in Product Y | 10,008 ₹ / MT |\n\nAs a Cost Auditor of the Company, you are required to advise for Maximum Permissible Cost at which Raw Material Z should be procured ?",
+    "marks": "7",
+    "explanation_md": "Working done by Cost Auditor\n\n| 1 | Selling price of Product Y | 86,002 ₹ / MT |\n|---|---|---|\n| 2 | Less: Desired Margin | 12,900 ₹ / MT |\n| 3 | Target Cost of Product Y ( Maximum Permissible Cost of Product Y) | 73,102 ₹ / MT |\n| 4 | Less: Conversion Cost | 25,882 ₹ / MT |\n| 5 | Total Raw Material Cost of Product Y | 47,220 ₹ / MT |\n| 6 | Less : Cost of Other Raw Material | 10,008 ₹ / MT |\n| 7 | Maximum Permissible Cost of Raw Material Z | 37,212 ₹ / MT |\n| 8 | Usage of Raw Material Z in Product Y | 2.165536 MT / MT |\n| 9 | Maximum Permissible Procurement Cost of Key Raw Material Z | 17,183.5949 ₹ / MT |\n\nSo, Maximum Permissible Cost of Raw Material Y works out to be 17,184 ₹ / Mt.\n\n**PRICING DECISION**",
+    "rubric": {
+     "reference_solution_md": "Working done by Cost Auditor\n\n| 1 | Selling price of Product Y | 86,002 ₹ / MT |\n|---|---|---|\n| 2 | Less: Desired Margin | 12,900 ₹ / MT |\n| 3 | Target Cost of Product Y ( Maximum Permissible Cost of Product Y) | 73,102 ₹ / MT |\n| 4 | Less: Conversion Cost | 25,882 ₹ / MT |\n| 5 | Total Raw Material Cost of Product Y | 47,220 ₹ / MT |\n| 6 | Less : Cost of Other Raw Material | 10,008 ₹ / MT |\n| 7 | Maximum Permissible Cost of Raw Material Z | 37,212 ₹ / MT |\n| 8 | Usage of Raw Material Z in Product Y | 2.165536 MT / MT |\n| 9 | Maximum Permissible Procurement Cost of Key Raw Material Z | 17,183.5949 ₹ / MT |\n\nSo, Maximum Permissible Cost of Raw Material Y works out to be 17,184 ₹ / Mt.\n\n**PRICING DECISION**",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q3",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 46,
+    "printed_number": 3,
+    "typeset": true,
+    "typeset_notes": [
+     "Closing sentence says \"Raw Material Y\" where Z is meant: kept as printed"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q4",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "During the course of discussion with marketing people, cost auditor has come to know that product, which is produced both as liquid and as powder is priced at weighted average same price.\nAs a cost auditor, what you would look into and which advise you will offer ?",
+    "marks": "7",
+    "explanation_md": "1st cost auditor throughly understood the process of both the products, liquid and powder. Powder is 1 additional step after liquid stage in which liquid is dried using dryer. So, it will be incorrect to have single uniform weighted average costing & pricing from them. So, for powder, cost auditor suggested additional cost centre in which liquid shall be the raw material to which additional conversion cost incurred at dryer stage shall be added, its costing shall be arrived at and shall be priced accordingly.",
+    "rubric": {
+     "reference_solution_md": "1st cost auditor throughly understood the process of both the products, liquid and powder. Powder is 1 additional step after liquid stage in which liquid is dried using dryer. So, it will be incorrect to have single uniform weighted average costing & pricing from them. So, for powder, cost auditor suggested additional cost centre in which liquid shall be the raw material to which additional conversion cost incurred at dryer stage shall be added, its costing shall be arrived at and shall be priced accordingly.",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q4",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.76,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 47,
+    "printed_number": 4,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q5",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Below mentioned data are provided\n\n| Selling Price | 86,000 ₹ / MT |\n|---|---|\n| Variable Cost | 47,187 ₹ / MT |\n| Fixed Cost | ₹ 4,557 Lacs |\n\nPlease calculate the following\n1\\. Break even point in units and in rupees\n2\\. Number of units that must be sold to earn profits of ₹ 6 crore per year",
+    "marks": "7",
+    "explanation_md": "1\\.\n\n| Selling Price | 86,000 ₹ / MT |\n|---|---|\n| Variable Cost | 47,187 ₹ / MT |\n| Contribution | 38,813 ₹ / MT |\n\n$\\text{Break even point} = \\text{Fixed Cost} / \\text{Contribution per unit}$\n\n$\\text{Break Even Point in Units} = 11{,}740.91\\ \\text{MT}$\n\n$\\text{Break even point in rupees} = 10{,}097.26\\ \\text{₹ Lacs}$\n\n2\\. No of units that must be sold to earn profit of ₹ 6 crore per year\n\n$\\text{Desired Profit} / \\text{Contribution per unit} = 1546\\ \\text{MT}$\n\n3\\.\n\n| So Break Even Units are | 11,741 MT |\n|---|---|\n| Units to earn desired profit of ₹ 6 Crore | 1,546 MT |\n|  | 13,287 MT |\n\nSo at sale of 13287 units, after meeting BEP, there shall be desired profit of ₹ 6 Crore\n4\\. Check Point\n\n| Units Sold | 13,287 MT |\n|---|---|\n| Contribution per Unit | 38,813 ₹/MT |\n| Total Contribution | 5,157 ₹/Lacs |\n| Less Fixed Cost | 4,557 ₹/Lacs |\n| Desired Profit | 600 ₹/Lacs |",
+    "rubric": {
+     "reference_solution_md": "1\\.\n\n| Selling Price | 86,000 ₹ / MT |\n|---|---|\n| Variable Cost | 47,187 ₹ / MT |\n| Contribution | 38,813 ₹ / MT |\n\n$\\text{Break even point} = \\text{Fixed Cost} / \\text{Contribution per unit}$\n\n$\\text{Break Even Point in Units} = 11{,}740.91\\ \\text{MT}$\n\n$\\text{Break even point in rupees} = 10{,}097.26\\ \\text{₹ Lacs}$\n\n2\\. No of units that must be sold to earn profit of ₹ 6 crore per year\n\n$\\text{Desired Profit} / \\text{Contribution per unit} = 1546\\ \\text{MT}$\n\n3\\.\n\n| So Break Even Units are | 11,741 MT |\n|---|---|\n| Units to earn desired profit of ₹ 6 Crore | 1,546 MT |\n|  | 13,287 MT |\n\nSo at sale of 13287 units, after meeting BEP, there shall be desired profit of ₹ 6 Crore\n4\\. Check Point\n\n| Units Sold | 13,287 MT |\n|---|---|\n| Contribution per Unit | 38,813 ₹/MT |\n| Total Contribution | 5,157 ₹/Lacs |\n| Less Fixed Cost | 4,557 ₹/Lacs |\n| Desired Profit | 600 ₹/Lacs |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q5",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 48,
+    "printed_number": 5,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q6",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Variable Cost and Fixed Cost For Contribution Analysis and Break Even Point\nGiven below are list of cost components\nPlease mark against each cost component whether variable or fixed\nThis shall facitilate working out contribution & break even point\n● Raw Material\n● Electricity\n● Cooling Water\n● Chilled Water\n● Filtered Water\n● Demineralised Water\n● Steam\n● Compressed Air\n● Packing\n● Consumable Stores\n● Repairs Cost\n● Employee Cost\n● Insurance\n● Depreciation\n● Overheads",
+    "marks": "7",
+    "explanation_md": "| Raw Material | Variable |\n|---|---|\n| Electricity | Variable |\n| Cooling Water | Variable |\n| Chilled Water | Variable |\n| Filtered Water | Variable |\n| Demineralised Water | Variable |\n| Steam | Variable |\n| Compressed Air | Variable |\n| Consumable Stores | Variable |\n| Packing | Variable |\n| Repairs Cost | Fixed |\n| Employee Cost | Fixed |\n| Insurance | Fixed |\n| Depreciation | Fixed |\n| Overheads | Fixed |",
+    "rubric": {
+     "reference_solution_md": "| Raw Material | Variable |\n|---|---|\n| Electricity | Variable |\n| Cooling Water | Variable |\n| Chilled Water | Variable |\n| Filtered Water | Variable |\n| Demineralised Water | Variable |\n| Steam | Variable |\n| Compressed Air | Variable |\n| Consumable Stores | Variable |\n| Packing | Variable |\n| Repairs Cost | Fixed |\n| Employee Cost | Fixed |\n| Insurance | Fixed |\n| Depreciation | Fixed |\n| Overheads | Fixed |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q6",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 1,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.79,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 49,
+    "printed_number": 6,
+    "typeset": true,
+    "typeset_notes": []
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q7",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Optimum Product Mix\n● Company X is manufacturing 2 products\n● Product A and Product B\n● Both are manufactured from same Plant & Machinery\n● At a time either A can be made or B can be made\n● Process Cycle time for both Product is same which is 67 MT per day\n● Contribution for Product A is 40000 per MT and Product B is 30000 per MT\n● Market can absorb 14000 MT each of Product A and Product B\n● Fixed Cost per Annum 4,500 ₹ Lacs\nAs a Cost Auditor, you are advised for Optimum Product Mix of Product A and Product B",
+    "marks": "7",
+    "explanation_md": "As Product A Contribute more, 1st management should cater 14000 of Product A to the Market\n\n| Total no of Days that shall be required | $14000 / 67$ | 208.9552239 days | 209 |\n|---|---|---|---|\n| Total contribution from 14000 MT | $14000 \\times 40000$ | 5,600 ₹ Lacs |  |\n\nIn balance $(355 - 209 = 146)$ days, Total production, sale and contribution from Product B shall be\n\n| $146 \\times 67$ | 9782 MT |\n|---|---|\n| Contribution per MT | 30,000 ₹ /MT |\n| Total Contribution | 2,934.6 ₹ Lacs |\n\nSo, following shall be optimum product mix\n\n$\\text{Product A} = 14000\\ \\text{MT} \\ \\&\\ 67\\ \\text{MT per Day} = 14000 / 67 = 208.9552239 = 209\\ \\text{days}.$\n\n$\\text{Product B} = (355 - 209) = 146\\ \\text{days} \\times 67\\ \\text{mt per day} = 9782\\ \\text{mt}.$\n\n| No of Days for Product A | 209 days |\n|---|---|\n| No of Days for Product B | 146 days |\n|  | 355 days |\n| for annual maintenance | 10 days |\n|  | 365 days |\n\nQty that shall be manufactured\nProduct A = 14000 MT\nProduct B = 9782 MT\n\nTotal Contribution\n\n| Product A | 14000 MT | 40000 | 5600 |\n|---|---|---|---|\n| Product B | 9782 MT | 30000 | 2935 |\n| Total Contribution |  |  | 8535 |\n\nTotal Profit\n\n| Contribution | 8535 |\n|---|---|\n| Fixed Cost | 4500 |\n| Profit | 4035 |\n\n**Note for Students:**\n1\\. Capacity to manufacture is $(355 \\times 67) = 23785$ MT\nEither 23785 MT of Product A or 23785 MT of Product B or any in between combination can be manufactured\n2\\. Contribution\n\n| Product A | 40,000 ₹ /MT |\n|---|---|\n| Product B | 30,000 ₹ /MT |\n\n3\\. Market can absorb\n\n| Product A | 14000 MT |\n|---|---|\n| Product B | 14000 MT |\n\n4\\. So eventually, to maximise profit, company shall manufacture n sale\n\n| Product A | 14000 MT |\n|---|---|\n| Product B | 9782 MT |",
+    "rubric": {
+     "reference_solution_md": "As Product A Contribute more, 1st management should cater 14000 of Product A to the Market\n\n| Total no of Days that shall be required | $14000 / 67$ | 208.9552239 days | 209 |\n|---|---|---|---|\n| Total contribution from 14000 MT | $14000 \\times 40000$ | 5,600 ₹ Lacs |  |\n\nIn balance $(355 - 209 = 146)$ days, Total production, sale and contribution from Product B shall be\n\n| $146 \\times 67$ | 9782 MT |\n|---|---|\n| Contribution per MT | 30,000 ₹ /MT |\n| Total Contribution | 2,934.6 ₹ Lacs |\n\nSo, following shall be optimum product mix\n\n$\\text{Product A} = 14000\\ \\text{MT} \\ \\&\\ 67\\ \\text{MT per Day} = 14000 / 67 = 208.9552239 = 209\\ \\text{days}.$\n\n$\\text{Product B} = (355 - 209) = 146\\ \\text{days} \\times 67\\ \\text{mt per day} = 9782\\ \\text{mt}.$\n\n| No of Days for Product A | 209 days |\n|---|---|\n| No of Days for Product B | 146 days |\n|  | 355 days |\n| for annual maintenance | 10 days |\n|  | 365 days |\n\nQty that shall be manufactured\nProduct A = 14000 MT\nProduct B = 9782 MT\n\nTotal Contribution\n\n| Product A | 14000 MT | 40000 | 5600 |\n|---|---|---|---|\n| Product B | 9782 MT | 30000 | 2935 |\n| Total Contribution |  |  | 8535 |\n\nTotal Profit\n\n| Contribution | 8535 |\n|---|---|\n| Fixed Cost | 4500 |\n| Profit | 4035 |\n\n**Note for Students:**\n1\\. Capacity to manufacture is $(355 \\times 67) = 23785$ MT\nEither 23785 MT of Product A or 23785 MT of Product B or any in between combination can be manufactured\n2\\. Contribution\n\n| Product A | 40,000 ₹ /MT |\n|---|---|\n| Product B | 30,000 ₹ /MT |\n\n3\\. Market can absorb\n\n| Product A | 14000 MT |\n|---|---|\n| Product B | 14000 MT |\n\n4\\. So eventually, to maximise profit, company shall manufacture n sale\n\n| Product A | 14000 MT |\n|---|---|\n| Product B | 9782 MT |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q7",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.72,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 50,
+    "printed_number": 7,
+    "typeset": true,
+    "typeset_notes": [
+     "Table rows \"for annual maintenance 10 days\" and \"365 days\" assumed to belong to the days table (page break not seen)"
+    ],
+    "review": {
+     "verdict": "approve",
+     "reason": "Compared with pp.50-52 (table is wholly on p.51, so no page-break issue); all tables, figures and notes match the print.",
+     "fixes": [],
+     "printed_issues": [
+      "Note 4 \"manufacture n sale\" and 355 vs 365 days as printed"
+     ],
+     "by": "claude-review"
+    }
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q8",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Contribution and Profitability\n\nFollowing data are made available by Company X for its Product A\n\n| | ₹ Lacs |\n|---|---|\n| Sales | 24,475 |\n| Less: Variable Cost | 13,429 |\n| Contribution | 11,046 |\n| Less Fixed Cost | 4,557 |\n| Profit | 6,489 |\n\nFrom the Above Data, Cost Auditor is asked to advise for the following\n\n1. P / V Ratio\n\n2. Break even point of sales (in ₹ Lacs)\n\n3. Contribution at Break Even point of sales (in ₹ Lacs)\n\n4. Profit at Actual Sales",
+    "marks": "7",
+    "explanation_md": "| | |\n|---|---|\n| 1. P / V Ratio (contribution / sales × 100) | 45.13 |\n| 2. Break even point of sales ( in ₹ Lacs) (fixed expenses / p/v ratio) | 10097.1 |\n| 3. Contribution at Break Even point of sales ( in ₹ Lacs) at break even point, sales is 10097 lacs contribution % is 45.13 So, contribution shall be sales at bep × p/v ratio (which is equal to fixed cost) | 4557 |\n\n4. Profit at Actual Sales\n\n| | |\n|---|---|\n| Actual Sales | 24475 |\n| Sales at BEP | 10097.1 |\n| Sales above BEP | 14378 |\n| P/V Ratio | 45.13 |\n| Contribution | 6489 |",
+    "rubric": {
+     "reference_solution_md": "| | |\n|---|---|\n| 1. P / V Ratio (contribution / sales × 100) | 45.13 |\n| 2. Break even point of sales ( in ₹ Lacs) (fixed expenses / p/v ratio) | 10097.1 |\n| 3. Contribution at Break Even point of sales ( in ₹ Lacs) at break even point, sales is 10097 lacs contribution % is 45.13 So, contribution shall be sales at bep × p/v ratio (which is equal to fixed cost) | 4557 |\n\n4. Profit at Actual Sales\n\n| | |\n|---|---|\n| Actual Sales | 24475 |\n| Sales at BEP | 10097.1 |\n| Sales above BEP | 14378 |\n| P/V Ratio | 45.13 |\n| Contribution | 6489 |",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q8",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 3,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 52,
+    "printed_number": 8,
+    "typeset": true,
+    "typeset_notes": [
+     "Solution table printed as a boxed table; kept as 2-column table with empty header row; multi-line cell 3 joined into one cell"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q9",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Internal Bench Marking\n\nCompany A manufactures Product B at 2 different locations C and D, cost of which is given as mentioned below\n\n| | Product B At Location C (₹ / MT) | % | Product B At Location D (₹ / MT) | % | ₹ / MT | % |\n|---|---|---|---|---|---|---|\n| **Variable Cost Elements** | | | | | | |\n| Raw Material | 4250 | 0.15 | 4600 | 0.15 | | |\n| Electricity | 14781 | 0.53 | 17067 | 0.56 | | |\n| Water, Fuel n Natural Gas | 1925 | 0.07 | 1672 | 0.05 | | |\n| Packing Material | 1000 | 0.04 | 1000 | 0.03 | | |\n| Total Variable Cost | 21956 | | 24339 | | 2383 | |\n| **Fixed Cost Elements** | | | | | | |\n| Stores & Spares | 678 | 0.02 | 738 | 0.02 | | |\n| Repaires | 452 | 0.02 | 492 | 0.02 | | |\n| Insurance | 150 | 0.01 | 112 | 0.00 | | |\n| Employee Cost | 2700 | 0.10 | 2500 | 0.08 | | |\n| Administration Overheads | 255 | 0.01 | 275 | 0.01 | | |\n| Interest | 70 | 0.00 | 43 | 0.00 | | |\n| Depreciation | 1630 | 0.06 | 2186 | 0.07 | | |\n| Total Fixed Cost | 5935 | | 6346 | | 411 | |\n| Total Cost | 27891 | | 30685 | | 2794 | 10.02 |\n\nCompany has decided to bench mark performance of Product B at Location C and Location D\n\nPlease advise the company which areas company should focus to bench mark ?",
+    "marks": "7",
+    "explanation_md": "Following factors shall be looked in to it which may offer scope for Cost optimisation and therefore, profit improvement\n\n1. Raw Material:\n\n● Uniform Purchase Policy\n\n● Uniform Vendor Base\n\n● Possibility to combine purchase order to get quantity discount\n\n● Monitoring / controlling / reducing Input Output Ratio\n\n2. Electricity:\n\n● Explore Energy Efficient Plant & Machinery\n\n● Explore the possibility of putting up wind mills, solar\n\n3. Consumable Stores:\n\n● Purchase should be from OEM ( Original Equipment Manufacture)\n\n4. Repairs:\n\n● Have well laid down policy to award AMC / ARC to trusted Vendors with proven track record\n\n5. Employee Cost and Depreciation:\n\n● Ensure optimum capacity utilisation\n\n6. Overheads:\n\n● Look for descretionery / non value adding items",
+    "rubric": {
+     "reference_solution_md": "Following factors shall be looked in to it which may offer scope for Cost optimisation and therefore, profit improvement\n\n1. Raw Material:\n\n● Uniform Purchase Policy\n\n● Uniform Vendor Base\n\n● Possibility to combine purchase order to get quantity discount\n\n● Monitoring / controlling / reducing Input Output Ratio\n\n2. Electricity:\n\n● Explore Energy Efficient Plant & Machinery\n\n● Explore the possibility of putting up wind mills, solar\n\n3. Consumable Stores:\n\n● Purchase should be from OEM ( Original Equipment Manufacture)\n\n4. Repairs:\n\n● Have well laid down policy to award AMC / ARC to trusted Vendors with proven track record\n\n5. Employee Cost and Depreciation:\n\n● Ensure optimum capacity utilisation\n\n6. Overheads:\n\n● Look for descretionery / non value adding items",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q9",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 4,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.77,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 53,
+    "printed_number": 9,
+    "typeset": true,
+    "typeset_notes": [
+     "Printed 'Repaires', 'descretionery' kept as printed",
+     "Bullets kept as printed bullet glyphs"
+    ]
+   }
+  },
+  {
+   "external_ref": "workbook:cma-final:p17:ch3:q10",
+   "origin_module": "workbook",
+   "status": "ok",
+   "review_reasons": [],
+   "payload": {
+    "kind": "long_form",
+    "stem_md": "Negotiating for Job Work Charges\n\nCompany G gets Product A manufactured on Job Work Bases from Job Worker B\n\n10000 MT per year are manufactured @ 6000 per MT\n\nJob Work Charges are 10% of total cost.\n\nNow due to increase in demand, company wants to have another 2000 mt through Job Work Basis\n\nIt is not possible for Job Worker B to make any additional quantity as it has reached 100 % capacity\n\nSo Company G has turned to another Job Worker S to make it who has got surplus capacity\n\nS has quated @ 6250 per MT.\n\nShould Company accept this quote and go for additional 2000 mt ?",
+    "marks": "7",
+    "explanation_md": "Assuming other costs shall remain more or less constant, an increase of 250 shall make Job Work Charges as $6250 / 60250 = 10.37344\\,\\%$\n\nAs Product is having increasing demand, it is reasonable to assume that Product is enjoing good contribution and good profitability\n\nSo, with .37% incresase in job work charges, it shall still enjoy good contribution & good profitability\n\nSo, it should accept this quote and go for additional 2000 mt\n\nTotal increase in cost shall be $250 / 60000 = 0.416667\\,\\%$ increase on original cost.\n\n**Conclusion:**\n\nIn either of the following 2 situation, company should accept this quote of 6250 and go for additional 2000 mt as product is in good demand enjoiying good contribution and good profitability.\n\n1. It is not possible to reduce other cost components or increase selling price by 250.\n\n2. It is possible to reduce other cost component or increase selling price by 250.",
+    "rubric": {
+     "reference_solution_md": "Assuming other costs shall remain more or less constant, an increase of 250 shall make Job Work Charges as $6250 / 60250 = 10.37344\\,\\%$\n\nAs Product is having increasing demand, it is reasonable to assume that Product is enjoing good contribution and good profitability\n\nSo, with .37% incresase in job work charges, it shall still enjoy good contribution & good profitability\n\nSo, it should accept this quote and go for additional 2000 mt\n\nTotal increase in cost shall be $250 / 60000 = 0.416667\\,\\%$ increase on original cost.\n\n**Conclusion:**\n\nIn either of the following 2 situation, company should accept this quote of 6250 and go for additional 2000 mt as product is in good demand enjoiying good contribution and good profitability.\n\n1. It is not possible to reduce other cost components or increase selling price by 250.\n\n2. It is possible to reduce other cost component or increase selling price by 250.",
+     "steps": [
+      {
+       "title": "Complete solution and working notes",
+       "description_md": "Self-assess against the Institute's worked solution.",
+       "marks": "7",
+       "kind": "concept",
+       "mandatory": true,
+       "partial_allowed": true
+      }
+     ]
+    },
+    "labels": {
+     "source_kind": "institute_mat",
+     "source_name": "ICMAI Work Book, Paper 17: Cost and Management Audit",
+     "source_ref": "workbook:cma-final:p17:ch3:q10",
+     "source_year": 2025,
+     "source_term_code": "",
+     "difficulty": 2,
+     "tags": [
+      "workbook",
+      "paper:17"
+     ],
+     "nature": "practical"
+    },
+    "mapping": [
+     {
+      "course": "cma",
+      "level": "final",
+      "subject_key": "cost-and-management-audit",
+      "chapter_key": "management-reporting-issues-and-analysis",
+      "primary": true
+     }
+    ]
+   },
+   "mapping_meta": {
+    "confidence": 0.79,
+    "runner_up": "basics-of-management-audit"
+   },
+   "marks_source": "inferred",
+   "evidence": {
+    "chapter_title": "Management Reporting Issues and Analysis",
+    "page": 54,
+    "printed_number": 10,
+    "typeset": true,
+    "typeset_notes": [
+     "Page-banner 'CASE STUDY' omitted; Case Studies 1-3 (PDF pp.55-56) are a separate section but were in the input explanation so kept as-is - consider splitting from this item",
+     "Typos (incresase, enjoiying, quated) kept as printed",
+     "Inline slash expressions kept as printed, not stacked"
+    ],
+    "review": {
+     "verdict": "approve",
+     "reason": "Stem and solution match pp.54-55; the Case Study 1-3 MCQ section (separate section under CASE STUDY banner) had leaked into the explanation and was removed.",
+     "fixes": [
+      "Removed Case Studies 1-3 (MCQ on Productivity) from explanation_md; they belong to a separate section"
+     ],
+     "printed_issues": [
+      "Typos incresase, enjoiying, enjoing, quated kept as printed",
+      "Printed 6250/60250 uses 60250 though cost base is 60000"
+     ],
+     "by": "claude-review"
+    }
+   }
+  }
+ ]
+}

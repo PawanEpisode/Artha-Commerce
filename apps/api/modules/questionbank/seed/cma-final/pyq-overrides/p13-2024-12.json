@@ -1,0 +1,58 @@
+{
+ "schema": "artha.qboverride.v1",
+ "paper": "13",
+ "term_code": "2024-12",
+ "note": "Direct edits made to the seed JSON by the owner. Applied last by build_pyq_seed so a rebuild never loses them.",
+ "parts": {
+  "1(x)": {
+   "stem_md": "For the purposes of the Competition Act, 2002, the turnover threshold for individual company, operating in India, in combination is ₹ ______ crores.",
+   "options": [
+    {
+     "body_md": "5,000",
+     "is_correct": false
+    },
+    {
+     "body_md": "7,000",
+     "is_correct": false
+    },
+    {
+     "body_md": "8,000",
+     "is_correct": true
+    },
+    {
+     "body_md": "10,000",
+     "is_correct": false
+    }
+   ],
+   "kind": "mcq_single",
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true
+  },
+  "1(xii)": {
+   "stem_md": "In case of life insurance and motor accident insurance, the insurable interest must be present.",
+   "options": [
+    {
+     "body_md": "at the time of taking the policy.",
+     "is_correct": true
+    },
+    {
+     "body_md": "at the time of death or accident.",
+     "is_correct": false
+    },
+    {
+     "body_md": "both at the time of taking the policy as well as at the time of death or accident.",
+     "is_correct": false
+    },
+    {
+     "body_md": "at none of these times.",
+     "is_correct": false
+    }
+   ],
+   "kind": "mcq_single",
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true
+  }
+ }
+}

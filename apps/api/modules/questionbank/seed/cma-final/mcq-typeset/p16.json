@@ -1,0 +1,184 @@
+{
+  "schema": "artha.qbtypeset.v1",
+  "paper": "p16",
+  "items": {
+    "mcq:cma-final:p16:q002": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q011": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q017": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q039": {
+      "confidence": "high",
+      "review": [
+        "'3/4th' is printed inline as text; left plain"
+      ]
+    },
+    "mcq:cma-final:p16:q044": {
+      "confidence": "high",
+      "review": [
+        "print shows department data as an aligned text table; left as stored"
+      ]
+    },
+    "mcq:cma-final:p16:q056": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q060": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q067": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q071": {
+      "stem_md": "The Objective Function of a LPP is $Z = 3x_1 + 2x_2$. If $x_1 = 10$ and $x_2 = 5$ then the value of Z is –",
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p16:q087": {
+      "stem_md": "In an Assignment matrix of size $(5 \\times 5)$, the total number of decision variables in the objective function is –",
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p16:q098": {
+      "options": [
+        {
+          "key": "A",
+          "body_md": "Equal to $m \\times n$, where $m$ = No. of rows & $n$ = No. of columns"
+        },
+        {
+          "key": "B",
+          "body_md": "Equal to each other"
+        },
+        {
+          "key": "C",
+          "body_md": "Equal to $m + n$, where $m$ = No. of rows & $n$ = No. of columns"
+        },
+        {
+          "key": "D",
+          "body_md": "Equal to the Order of the matrix"
+        }
+      ],
+      "confidence": "high",
+      "review": [
+        "print writes 'm x n' with the letter x; read as multiplication"
+      ]
+    },
+    "mcq:cma-final:p16:q124": {
+      "confidence": "high",
+      "review": [
+        "print has the distribution table flattened into the stem (no space after 'arrivals.'); kept as printed"
+      ]
+    },
+    "mcq:cma-final:p16:q127": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q147": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q161": {
+      "stem_md": "In the expression $D = AC - B^2$ used for describing the sufficient conditions for unconstrained optimization involving two variables ($x$ and $t$), the meaning of A and C are –",
+      "options": [
+        {
+          "key": "A",
+          "body_md": "$2^{\\text{nd}}$ order partial derivative of the objective function ($f$) with respect to $x$ and $y$ respectively."
+        },
+        {
+          "key": "B",
+          "body_md": "$2^{\\text{nd}}$ order partial derivative of $\\partial f/\\partial x$ with respect to $y$"
+        },
+        {
+          "key": "C",
+          "body_md": "Both (a) and (b)"
+        },
+        {
+          "key": "D",
+          "body_md": "none of the above"
+        }
+      ],
+      "confidence": "high",
+      "review": [
+        "print says 'variables (x and t)' while options use x and y; kept as printed",
+        "ordinal 'nd' as superscript"
+      ]
+    },
+    "mcq:cma-final:p16:q164": {
+      "options": [
+        {
+          "key": "A",
+          "body_md": "$0 \\le \\alpha \\le 1$ and high value of $\\alpha$ is used for stable demand."
+        },
+        {
+          "key": "B",
+          "body_md": "$0 \\le \\alpha \\le 1$ and high value of $\\alpha$ is used for unstable demand."
+        },
+        {
+          "key": "C",
+          "body_md": "$\\alpha \\ge 1$ and high value of $\\alpha$ is used for stable demand."
+        },
+        {
+          "key": "D",
+          "body_md": "$\\alpha \\le 0$ and high value of $\\alpha$ is used for unstable demand."
+        }
+      ],
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p16:q166": {
+      "stem_md": "In a Time Series forecasting model, the demands for five time periods are 10, 13, 15, 18 and 22. A linear regression fit resulted in the equation $y = 6.9 + 2.9t$, where $y$ is the forecast for the period $t$. The sum of the absolute deviations for the five data with respect to their corresponding forecasts (taking $t = 1$ for the first one) is;",
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p16:q169": {
+      "options": [
+        {
+          "key": "A",
+          "body_md": "$F = a - bt$"
+        },
+        {
+          "key": "B",
+          "body_md": "$F = a + bt$"
+        },
+        {
+          "key": "C",
+          "body_md": "$F = 2a - bt$"
+        },
+        {
+          "key": "D",
+          "body_md": "$F = 2a + bt$"
+        }
+      ],
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p16:q170": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q171": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q205": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q214": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q234": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q250": {
+      "confidence": "high"
+    },
+    "mcq:cma-final:p16:q270": {
+      "confidence": "high",
+      "review": [
+        "'3/4th' is printed inline as text; left plain"
+      ]
+    },
+    "mcq:cma-final:p16:q273": {
+      "confidence": "high"
+    }
+  }
+}

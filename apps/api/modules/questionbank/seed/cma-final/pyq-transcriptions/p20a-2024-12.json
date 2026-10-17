@@ -1,0 +1,676 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p20a",
+ "term_code": "2024-12",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Q1 is split into 1(a) (i)-(x) 2x10=20 and 1(b) (xi)-(xv) 2x5=10 with a common scenario (repeated in stems of (xi)-(xv)).",
+  "qp.pdf page 12 is a blank/show-through page with no question content.",
+  "Q1(xiv) keyed D (printed); a judgment question, not verifiable from scenario alone."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Answer to Question No. 1 which is compulsory",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "(a) Choose the correct answer from the given alternatives. 2×10=20 [parts (i)-(x)]\n(b) Parts (xi)-(xv) are based on a common scenario, 5×2=10 (scenario repeated in each of those parts' stems).",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Performance management is a key concept in the field of __________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Human Resource Management"
+        },
+        {
+         "key": "B",
+         "body_md": "Financial Management"
+        },
+        {
+         "key": "C",
+         "body_md": "Technical Analysis"
+        },
+        {
+         "key": "D",
+         "body_md": "Marketing Management"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which model has a tactical orientation in evaluating the financial performance of an organization?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Customer lifetime value model"
+        },
+        {
+         "key": "B",
+         "body_md": "Customer profitability analysis"
+        },
+        {
+         "key": "C",
+         "body_md": "Balanced Scorecard"
+        },
+        {
+         "key": "D",
+         "body_md": "Six Sigma"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Mura and Muri refer to _____ and _____ respectively.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "unevenness, waste"
+        },
+        {
+         "key": "B",
+         "body_md": "unevenness, overburden"
+        },
+        {
+         "key": "C",
+         "body_md": "overburden, waste"
+        },
+        {
+         "key": "D",
+         "body_md": "overburden, poka-yoke"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "If the price (P) is equal to average cost (AC), what is the profit condition of the firm?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "The firm incurs a loss."
+        },
+        {
+         "key": "B",
+         "body_md": "The firm breaks even."
+        },
+        {
+         "key": "C",
+         "body_md": "The firms earn super normal profit."
+        },
+        {
+         "key": "D",
+         "body_md": "The firm shuts down."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "What type of risk is associated with the difficulty of selling an asset quickly without a price discount?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Liquidity risk"
+        },
+        {
+         "key": "B",
+         "body_md": "Credit risk"
+        },
+        {
+         "key": "C",
+         "body_md": "Market risk"
+        },
+        {
+         "key": "D",
+         "body_md": "Operational risk"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The 10 year Government bond yield is 7.5% and the BSE Sensex return over the last one year is 15%. Assuming the company's Beta is 1.2, what is the required return on equity?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "15.6 Percent"
+        },
+        {
+         "key": "B",
+         "body_md": "16.6 Percent"
+        },
+        {
+         "key": "C",
+         "body_md": "16.5 Percent"
+        },
+        {
+         "key": "D",
+         "body_md": "17 Percent"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "X Ltd has ₹100 crores worth of common equity on its Balance Sheet comprising of 50 lakhs shares. The company's Market Value Added (MVA) is ₹24 crores. What is company's stock price?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "230"
+        },
+        {
+         "key": "B",
+         "body_md": "238"
+        },
+        {
+         "key": "C",
+         "body_md": "248"
+        },
+        {
+         "key": "D",
+         "body_md": "264"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "If the combined entity is more than the sum of its parts, the transaction is said to have created ______.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Combined Value"
+        },
+        {
+         "key": "B",
+         "body_md": "Net Worth"
+        },
+        {
+         "key": "C",
+         "body_md": "Synergies"
+        },
+        {
+         "key": "D",
+         "body_md": "Economic gains"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "The number of shares outstanding as on 31/03/2024 for A Ltd. is 10 lakhs and it has reported a net profit of ₹ 20 lakhs for FY 2023-24. The company decides to repurchase 20% shares at ₹ 32 per share. If the P/E ratio remains unchanged after repurchase, the post buy-back price per share is _________.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 40"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 32"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 25"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 16"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Smith Ltd. has announced issue of warrants on 1:1 basis for its equity shareholders. The warrants are convertible at an exercise price of ₹ 15. Warrants are detachable and trading at ₹ 7. What is the minimum price of the warrant if the current price of the stock is ₹ 20?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 4"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 5"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 7"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 15"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions:\n\nSupreme Toy Manufacturing Co. is a medium-sized manufacturing firm specializing in industrial equipment. It has been operating for 20 years and has built a strong reputation within its niche, serving clients across the automotive, construction, and aerospace industries. The company has two manufacturing plants: Plant A, which focuses on automotive components, and Plant B, which focuses on construction and aerospace components.\n\nDespite consistent growth for a decade, Supreme Toy Manufacturing Co. has faced economic challenges in recent years due to rising raw material costs, increased labor expenses, and disruptions in the supply chain. The firm is under pressure to improve efficiency to maintain its competitive edge.\n\nCompany Overview\nRevenue from Operations: ₹ 50 million (2023)\nNet Income: ₹ 3 million (2023)\nAverage Assets: ₹ 25 million (2023)\nEmployee Count: 200 (100 at each plant)\nGross Profit Margin: 20% (2023), a drop from 25% (2022)\nOperating Margin: 10% (2023), a decrease from 15% (2022)\nReturn on Investment (ROI): 12% (2023), down from 18% (2022)\nProduction Lines: Plant A has 3 production lines (automotive components), and Plant B has 2 production lines (construction and aerospace components)\nDowntime: Average of 10% across all production lines, with peaks of 15% during maintenance periods\nLabor Costs: ₹ 20 million (2023), a 10% increase from 2022\nRaw Material Costs: ₹ 15 million (2023), up by 15% from 2022 due to global supply chain disruptions\n\nAnswer the following questions based on the above scenario. 5×2=10\n\nChoose the correct answer from the given four alternatives:\n\nGiven the data about raw material costs, overheads, and labour costs, which strategy would likely have the most significant impact on Supreme's operating margin?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Reduce overheads through energy saving measures"
+        },
+        {
+         "key": "B",
+         "body_md": "Increasing output per labor hour"
+        },
+        {
+         "key": "C",
+         "body_md": "Lowering raw material costs by finding alternative suppliers"
+        },
+        {
+         "key": "D",
+         "body_md": "Implementing price adjustments to align with industry standards"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions:\n\nSupreme Toy Manufacturing Co. is a medium-sized manufacturing firm specializing in industrial equipment. It has been operating for 20 years and has built a strong reputation within its niche, serving clients across the automotive, construction, and aerospace industries. The company has two manufacturing plants: Plant A, which focuses on automotive components, and Plant B, which focuses on construction and aerospace components.\n\nDespite consistent growth for a decade, Supreme Toy Manufacturing Co. has faced economic challenges in recent years due to rising raw material costs, increased labor expenses, and disruptions in the supply chain. The firm is under pressure to improve efficiency to maintain its competitive edge.\n\nCompany Overview\nRevenue from Operations: ₹ 50 million (2023)\nNet Income: ₹ 3 million (2023)\nAverage Assets: ₹ 25 million (2023)\nEmployee Count: 200 (100 at each plant)\nGross Profit Margin: 20% (2023), a drop from 25% (2022)\nOperating Margin: 10% (2023), a decrease from 15% (2022)\nReturn on Investment (ROI): 12% (2023), down from 18% (2022)\nProduction Lines: Plant A has 3 production lines (automotive components), and Plant B has 2 production lines (construction and aerospace components)\nDowntime: Average of 10% across all production lines, with peaks of 15% during maintenance periods\nLabor Costs: ₹ 20 million (2023), a 10% increase from 2022\nRaw Material Costs: ₹ 15 million (2023), up by 15% from 2022 due to global supply chain disruptions\n\nAnswer the following questions based on the above scenario. 5×2=10\n\nChoose the correct answer from the given four alternatives:\n\nIf Supreme Manufacturing Co. were to invest in new machinery to improve productivity, which of the following would be the most likely outcome?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Decrease in downtime and increase in output per machine hour"
+        },
+        {
+         "key": "B",
+         "body_md": "Increase in energy consumption and decrease in output per labor hour"
+        },
+        {
+         "key": "C",
+         "body_md": "Increase in raw material waste and decrease in production costs"
+        },
+        {
+         "key": "D",
+         "body_md": "Increase in operating margin with no change in net income"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions:\n\nSupreme Toy Manufacturing Co. is a medium-sized manufacturing firm specializing in industrial equipment. It has been operating for 20 years and has built a strong reputation within its niche, serving clients across the automotive, construction, and aerospace industries. The company has two manufacturing plants: Plant A, which focuses on automotive components, and Plant B, which focuses on construction and aerospace components.\n\nDespite consistent growth for a decade, Supreme Toy Manufacturing Co. has faced economic challenges in recent years due to rising raw material costs, increased labor expenses, and disruptions in the supply chain. The firm is under pressure to improve efficiency to maintain its competitive edge.\n\nCompany Overview\nRevenue from Operations: ₹ 50 million (2023)\nNet Income: ₹ 3 million (2023)\nAverage Assets: ₹ 25 million (2023)\nEmployee Count: 200 (100 at each plant)\nGross Profit Margin: 20% (2023), a drop from 25% (2022)\nOperating Margin: 10% (2023), a decrease from 15% (2022)\nReturn on Investment (ROI): 12% (2023), down from 18% (2022)\nProduction Lines: Plant A has 3 production lines (automotive components), and Plant B has 2 production lines (construction and aerospace components)\nDowntime: Average of 10% across all production lines, with peaks of 15% during maintenance periods\nLabor Costs: ₹ 20 million (2023), a 10% increase from 2022\nRaw Material Costs: ₹ 15 million (2023), up by 15% from 2022 due to global supply chain disruptions\n\nAnswer the following questions based on the above scenario. 5×2=10\n\nChoose the correct answer from the given four alternatives:\n\nGiven Supreme Manufacturing Co's average downtime rate of 10% and its peaks of 15%, which strategy would be most effective in addressing productivity issues?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Implementing predictive maintenance to reduce downtime"
+        },
+        {
+         "key": "B",
+         "body_md": "Increasing labor hours to offset production delays"
+        },
+        {
+         "key": "C",
+         "body_md": "Reducing the number of production lines to focus on core products"
+        },
+        {
+         "key": "D",
+         "body_md": "Outsourcing part of the production to reduce labor costs"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions:\n\nSupreme Toy Manufacturing Co. is a medium-sized manufacturing firm specializing in industrial equipment. It has been operating for 20 years and has built a strong reputation within its niche, serving clients across the automotive, construction, and aerospace industries. The company has two manufacturing plants: Plant A, which focuses on automotive components, and Plant B, which focuses on construction and aerospace components.\n\nDespite consistent growth for a decade, Supreme Toy Manufacturing Co. has faced economic challenges in recent years due to rising raw material costs, increased labor expenses, and disruptions in the supply chain. The firm is under pressure to improve efficiency to maintain its competitive edge.\n\nCompany Overview\nRevenue from Operations: ₹ 50 million (2023)\nNet Income: ₹ 3 million (2023)\nAverage Assets: ₹ 25 million (2023)\nEmployee Count: 200 (100 at each plant)\nGross Profit Margin: 20% (2023), a drop from 25% (2022)\nOperating Margin: 10% (2023), a decrease from 15% (2022)\nReturn on Investment (ROI): 12% (2023), down from 18% (2022)\nProduction Lines: Plant A has 3 production lines (automotive components), and Plant B has 2 production lines (construction and aerospace components)\nDowntime: Average of 10% across all production lines, with peaks of 15% during maintenance periods\nLabor Costs: ₹ 20 million (2023), a 10% increase from 2022\nRaw Material Costs: ₹ 15 million (2023), up by 15% from 2022 due to global supply chain disruptions\n\nAnswer the following questions based on the above scenario. 5×2=10\n\nChoose the correct answer from the given four alternatives:\n\nConsidering the trends in gross margin and operating margin, which of the following is the most plausible reasons for the company's declining profitability?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Poor Customer relationship and shift in the loyal customer base"
+        },
+        {
+         "key": "B",
+         "body_md": "Workers' unrest and poor productivity"
+        },
+        {
+         "key": "C",
+         "body_md": "Strained relations with the suppliers"
+        },
+        {
+         "key": "D",
+         "body_md": "High maintenance cost due to outdated machinery"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "**Scenario (common to (xi)-(xv)):** Read the following scenario and answer the following questions:\n\nSupreme Toy Manufacturing Co. is a medium-sized manufacturing firm specializing in industrial equipment. It has been operating for 20 years and has built a strong reputation within its niche, serving clients across the automotive, construction, and aerospace industries. The company has two manufacturing plants: Plant A, which focuses on automotive components, and Plant B, which focuses on construction and aerospace components.\n\nDespite consistent growth for a decade, Supreme Toy Manufacturing Co. has faced economic challenges in recent years due to rising raw material costs, increased labor expenses, and disruptions in the supply chain. The firm is under pressure to improve efficiency to maintain its competitive edge.\n\nCompany Overview\nRevenue from Operations: ₹ 50 million (2023)\nNet Income: ₹ 3 million (2023)\nAverage Assets: ₹ 25 million (2023)\nEmployee Count: 200 (100 at each plant)\nGross Profit Margin: 20% (2023), a drop from 25% (2022)\nOperating Margin: 10% (2023), a decrease from 15% (2022)\nReturn on Investment (ROI): 12% (2023), down from 18% (2022)\nProduction Lines: Plant A has 3 production lines (automotive components), and Plant B has 2 production lines (construction and aerospace components)\nDowntime: Average of 10% across all production lines, with peaks of 15% during maintenance periods\nLabor Costs: ₹ 20 million (2023), a 10% increase from 2022\nRaw Material Costs: ₹ 15 million (2023), up by 15% from 2022 due to global supply chain disruptions\n\nAnswer the following questions based on the above scenario. 5×2=10\n\nChoose the correct answer from the given four alternatives:\n\nIf equity multiplier is 2.5, ROE of Supreme Manufacturing Co. for 2023 is",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "30%"
+        },
+        {
+         "key": "B",
+         "body_md": "3%"
+        },
+        {
+         "key": "C",
+         "body_md": "0.3%"
+        },
+        {
+         "key": "D",
+         "body_md": "300%"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Section – B, Business Valuation. Answer any five questions from Question No.2 to Question No.8 in Section B. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "An efficiently operated Order to Cash (O2C) process creates a seamless value chain between the customer and the business. In light of the statement, briefly discuss the practices used for optimisation of O2C process.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The Practices used for Optimization of O2C Process are as follows:\n(i) Automation of administrative tasks:\nWith the level of technological development available today, automation of office and administration has become a basic requirement. Manual processing of administrative tasks is error prone. Automation increases efficiency of repetitive tasks like billing, invoice collection, payment collection, and credit management.\n(ii) Standardization of the O2C process for the entire company:\nThe company should be able to standardize the O2C process for all the product lines irrespective of its size. Standard measures would include efforts to decrease the O2C cycle time. Even a small diminution of the O2C cycle time would result in increased release of working capital that would relieve financial stress on the day-to-day activities.\n(iii) Preparation of electronic invoices:\nIt is already noted that manual processing is error prone and may create inefficient operations. Electronic invoices are important aspect of the automation process and would ultimately lead to increased customer satisfaction.\n(iv) Re-evaluation of credit policies:\nIt is important that companies re-evaluate the credit policies in order to optimise resources, reduce credit risk, and improve cash flow. This is an important measure for ensuring an optimised O2C cycle time.\n(v) Efficiency in billing process:\nAutomated billing system along with real time billing improves customer satisfaction and improves O2C process efficiency. This is a crucial aspect in the service industry. For example, in a hospital, automated real time billing procedure facilitates quick discharge of patients and leads to customer satisfaction.\n(vi) Automated accounts receivable:\nAutomated accounts receivable (AR) is the order of the day and many organisations are taking up the route as it benefits the organisation in managing repetitive tasks like scheduling payment reminders, archiving customer responses, enabling online payments and settling disputes.\n(vii) Data management:\nVarious data management software are being used by organisations which brings in consistency across all the sub processes of the O2C cycle. Availability of data creates a transparent environment which improves the decision-making process and helps the credit management.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Examine the various types of benchmarking, with a focus on how they are categorized based on the nature of the business and the specific practices or processes being benchmarked.",
+       "options": [],
+       "correct": null,
+       "answer_md": "The four types of benchmarking classified according to the nature of the business they serve are enumerated below :\n(i) Internal benchmarking:\nin which comparisons are made between various Department within the same organisation. For example, in an undergraduate college, the number of classes taken in a particular department, say English department may be compared with the Benchmark, say the Philosophy department, which is considered so as it is the best department in the college in terms of final result.\n(ii) Competitive benchmarking:\nin which comparisons are made with direct competitors. For example, in XYZ College, the number of classes taken in a particular department, say English department may be compared with the number of classes taken in the English department of MNK College both of which caters to same area and thus compete with each other regarding the number of students' admittance.\n(iii) Industry benchmarking:\nin which the benchmarking partner is not a direct competitor, but does share the same industry as one's organisation. In the example cited in (b) above, if the colleges do not compete with each other regarding students' admittance, then the same is an example of industry benchmarking.\n(iv) Generic benchmarking:\nGeneric benchmarking broadly conceptualizes unrelated business processes or functions that can be practiced in the same or similar ways regardless of the Industry.\n\nThe four types of benchmarking categorized based on the specific practices or processes being benchmarked are aligned below:\n(i) Product benchmarking:\nThis is an age old practice of product oriented reverse engineering. Every organization buys its rival's products and tears down to find out how the features and performances etc., compare with its products. This could be the starting point for improvement.\n(ii) Process benchmarking:\nProcess benchmarking is a crucial first step. It constitutes comparing and analysing the business processes of an organisation with those processes that are considered the best practices in the industry.\n(iii) Performance benchmarking:\nPerformance benchmarking involves gathering and comparing quantitative data (i.e., measures or key performance indicators). It compares performances; and\n(iv) Strategic benchmarking:\nstrategic benchmarking is comparing improvements in strategic performance of an organisation to that of performance leaders in similar field of activity, in addition to comparing them to the past performance of the organisation itself.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Given the cost function of a firm\nCost = 300x – 10x² + (1/3)x³,\n**Calculate:**\n(i) Output at which Marginal Cost is minimum.\n(ii) Output at which Average Cost is minimum.\n(iii) Output at which Marginal Cost = Average Cost.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Cost = 300x – 10x² + (1/3)x³\nMarginal Cost = dc/dx = 300 – 20x + x² (say, y)\nIn order that MC is minimum first derivative must be equal to zero and 2nd derivative must be positive.\nTherefore dy/dx = –20 + 2x = 0, i.e. 2x – 20 = 0\nx = 10\nd²y/dx² = 2, which is positive. It is minimum at x = 10.\n\n(ii) Average Cost = 300 – 10x + (1/3)x² (y say)\ndy/dx = –10 + (2/3)x = 0\nx = 30/2 = 15\nd²y/dx² = 2/3 > 0,\nTherefore, Average Cost is minimum of output at x = 15\n\n(iii) Output at which Marginal Cost = Average Cost\n300 – 20x + x² = 300 – 10x + (1/3)x²\n–20x + 10x + x² – (1/3)x² = 0\n–10x + (2/3)x² = 0\n–30x + 2x² = 0 (after multiplying by 3)\n2x² – 30x = 0\n2x(x – 15) = 0\nx – 15 = 0\nTherefore, x = 15",
+       "confidence": "medium",
+       "review": [
+        "Answer text reconstructed from garbled math extraction (signs/operators lost in aid.txt); formulas re-typed on a best-effort basis from the visible structure."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "What is Risk Retention? What are the reasons for adopting a Risk Retention strategy?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Risk Retention denotes acceptance of the loss or benefit arising out of a risk when it takes place. In short, it is also termed as self-insurance. This strategy is viable when the risks are small enough to be transferred at a cost that may be higher than the loss arising out of the risk itself. On the other hand, the risk can be so big that it cannot be transferred or insured. Such risks will have to be phased out when the eventuality occurs. War is an example as also are 'Acts of God' such as earthquakes and floods.\n\nThe reasons for risk retention can be cited are as follows:\n(1) Non-insurable business risks are borne for appropriate returns. It is well known a proverb that \"no risk, no gain\". If everything is predictable to mathematical precision, profits would not have arisen. But business is not a blind speculation. It involves vision to foresee future situations, strategies for keeping ahead of competition (in some way or the other) and finally, leadership for translating envisioned strategies into actions and results.\n(2) Sometimes, such risks are so small that they are ignored and/or phased out when they surface.\n(3) This method is also useful when the probability of occurrence is very low and a reserve built within the system over a period can take care of such losses arising out of risk retention. This is normally resorted to in businesses against credit risks that are inherent due to marketing on credit basis.\n(4) In some cases, the subject, who is susceptible to risk, also becomes fully aware of the nature of risk. In these situations, there is a certain amount of preparedness in the system due to risk retention.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Following financial extracts are provided from the accounts of Lotus Ltd. Using Du Pont analysis, **compare** the performance of the company over the years in terms of amounts and in terms of ratios.\n\n(₹ in Crore)\n\nParticulars | 2023 | 2022 | 2021 | 2020\n---|---|---|---|---\nNet Income | 438 | 423 | 410 | 395\nRevenue | 2620 | 2450 | 2340 | 2240\nAssets | 1588 | 1468 | 1400 | 1335\nEquity | 790 | 726 | 685 | 650",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Du-Pont Analysis of Lotus Ltd:\n\nParticulars | 2023 | 2022 | 2021 | 2020 | Comment\n---|---|---|---|---|---\nNet income (₹ in crore) | 438 | 423 | 410 | 395 | Growing\nRevenue (₹ in crore) | 2620 | 2450 | 2340 | 2240 | Growing\nAssets (₹ in crore) | 1588 | 1468 | 1400 | 1335 | Growing\nEquity (₹ in crore) | 790 | 726 | 685 | 650 | Growing\nDUPONT ANALYSIS | | | | |\nProfit Margin = Net income/Revenue | 16.72% | 17.27% | 17.52% | 17.63% | Declining\nAsset Turnover = Revenue/Assets | 1.65 | 1.67 | 1.67 | 1.68 | Declining\nROA (Return on Assets) = Profit Margin × Assets Turnover (%) | 27.59 | 28.84 | 29.26 | 29.62 | Declining\nEquity Multiplier = Assets/Equity | 2.01 | 2.02 | 2.04 | 2.05 | Declining\nROE = (Return on Equity) = ROA × Equity Multiplier (%) | 55.46 | 58.26 | 59.69 | 60.72 | Declining\n\nProfit margin which measures the operational efficiency is declining continuously.\n\n(ii) Sales/ Total Assets at 1.65 indicates that assets are managed efficiently, although the same is also in the declining trend. The reason being the rate of increase in assets and rate of increase in revenue are mostly same in 2021 & 2022 whereas in 2023, the rate of increase in revenue is less than that of assets, as evident from the following calculations:\n\n | 2023 | 2022 | 2021\n---|---|---|---\nRate of Increase in Assets (%) as compared to previous year | 8.17 | 4.86 | 4.87\nRate of Increase in Revenue (%) as compared to previous year | 6.94 | 4.70 | 4.46\n\nBecause of declining profit margin as well as asset turnover, ROA is also in declining trend.\n\n(iii) Equity multiplier is also declining because the rate at which equity is increasing is more than of assets as is evident from the following calculations:\n\n | 2023 | 2022 | 2021\n---|---|---|---\nRate of Increase in Assets (%) as compared to previous year | 8.17 | 4.86 | 4.87\nRate of Increase in Equity (%) as compared to previous year | 8.82 | 5.99 | 5.38\n\nBecause of declining trend both in ROA & Equity Multiplier, the ROE is also exhibiting a declining trend over the years.",
+       "confidence": "high",
+       "review": [
+        "Answer's ROA/ROE rows (27.59, 55.46 etc.) are printed as such in the suggested answer; they do not match Margin x Turnover as percentages (e.g. 16.72% x 1.65 = 27.59 is shown in per cent of ratio), kept verbatim."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Fairy Tale Co. Ltd. has applied for a loan at Maharashtra Credit Bank. Sri Arun Pilgaonkar, the credit analyst of the bank is apprehensive of manipulations in operations as he fears that earnings manipulation is the most distinctive aspect of financial distress. He desires to calculate the Beneish M Score as this according to him is the best model to predict the degree of earnings manipulation.\n\nFor this purpose, he furnishes the eight indices as stipulated by the said model:\n\nIndex | Score\n---|---\nDSRI | 0.500\nGMI | 1.210\nAQI | 0.810\nSGI | 1.250\nDEPI | 0.904\nSGAI | 0.730\nLVGI | 0.400\nTATA | 0.005\n\n**Required:**\n**Calculate** Beneish M-score of the company and advise Sri Pilgaonkar whether the company is susceptible to earnings manipulation.\n[Note: Restrict your calculations up to three decimal places]",
+       "options": [],
+       "correct": null,
+       "answer_md": "Beneish M-Score:\n\nIndex | Individual Score | Coefficient | Composite Score\n---|---|---|---\nDSRI | 0.500 | 0.920 | 0.460\nGMI | 1.210 | 0.528 | 0.639\nAQI | 0.810 | 0.404 | 0.327\nSGI | 1.250 | 0.892 | 1.115\nDEPI | 0.904 | 0.115 | 0.104\nSGAI | 0.730 | -0.172 | -0.126\nLVGI | 0.400 | -0.327 | -0.131\nTATA | 0.005 | 4.679 | 0.023\nTOTAL | | | 2.411\n | | | -4.840\nBeneish M-Score | | | -2.429\n\nAdvice:\nAs per Beneish M model, if the score is less than the cut off score (-2.22) then the company is not manipulating the earnings and if the score is greater than the cut off score then it advocates that company may be manipulating its earnings.\n\nIn the case of Fairy Tale Company, the Beneish M score is calculated as -2.429 which is less than the cut off M score of -2.22. This suggests that the company is not manipulating its earnings.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Smart Limited is deciding whether to pay out ₹ 4,00,000 in excess cash in the form of an extra dividend or go in for share repurchase. Current earnings are ₹ 2 per share and the stock sells for ₹ 20. The market value Balance Sheet currently is as follows:\n\n(₹ in 000)\n\nLiabilities | Amount (INR) | Assets | Amount (INR)\n---|---|---|---\nEquity (F.V. ₹ 10) | 1700 | Assets other than cash | 1900\nDebt | 600 | Cash | 400\n | 2300 | | 2300\n\n**Required:**\n(i) Evaluate the two alternatives in terms of the effect on the price per share of the stock, the EPS and the P/E Ratio.\n(ii) Which alternative is a better decision for the Company? Why?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Assumption: The P/E of the stock remains the same under both alternatives.\n\nAlternative I:\nPay ₹ 400 thousand in the form of dividend\nNumber of shares = (1700/10) = 170 thousand\nDividend per share = (400/170) = ₹ 2.35 per share\nPE Ratio is 20/2 = 10\n\nAs P/E is constant, the share price depends only on earning power of the company and suppose earnings are going to remain at ₹ 2 per share, then the price will remain at ₹ 20 per share.\n\nAlternative II:\nRepurchase 400 thousand worth of shares\nNumber of shares repurchased = (400/20) thousand = 20 thousand shares.\nShares remaining = 170 – 20 = 150 thousand shares\nChanged EPS = 2 × (170/150) = ₹ 2.27\nPE Ratio continues to be same that is 10\nRevised Price = 2.27 × 10 = ₹ 22.70\n\n(ii) Decision :\nAlternative II is better as the price of the share increases to ₹ 22.70 from ₹ 20.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "The following information is available pertaining to Sundar Televisions Ltd. for the financial year ending on 31.03.2024.\n\nParticulars | Amount (₹ in Crores)\n---|---\nSales | 250\nProfit after tax | 40\nBook value | 100\n\nThe valuer appointed by the company believes that 50% weightage should be given to the earnings in valuation process. He also believes that equal weightage may be given to sales and book value. He has identified three firms viz., Alpha Ltd, Beta Ltd., and Gamma Ltd., which are comparable to the operations of Smart Televisions Ltd.\n\nParticulars | Alpha Ltd. (₹ in Crores) | Beta Ltd. (₹ in Crores) | Gamma Ltd. (₹ in Crores)\n---|---|---|---\nSales | 190 | 210 | 270\nProfit after tax | 30 | 44 | 50\nBook value | 96 | 110 | 128\nMarket value | 230 | 290 | 440\n\n**Required:**\nCompute the value of Sundar Televisions Ltd. using the comparable firm's approach.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Valuation multiples for the comparable firms can be calculated as follows:\n\nParticulars | Alpha Ltd | Beta Ltd | Gamma Ltd | Average\n---|---|---|---|---\nPrice/Sales Ratio | 1.21 | 1.38 | 1.63 | 1.41\nPrice/Earnings Ratio | 7.67 | 6.59 | 8.80 | 7.69\nPrice/Book Value Ratio | 2.40 | 2.64 | 3.44 | 2.83\n\nApplying the multiples calculated in Step 1, the value of Sundar Televisions Ltd. can be calculated as follows:\n\nParticulars | Average Multiple | Parameter | Value ₹ Crores\n---|---|---|---\nPrice/Sales Ratio | 1.41 | 250.00 | 352.50\nPrice/Earnings Ratio | 7.69 | 40.00 | 307.60\nPrice/Book Value Ratio | 2.83 | 100.00 | 283.00\n\nBy applying the weightage to the P/S ratio, P/E ratio and P/BV ratio we get:\n[(352.50 × 1) + (307.60 × 2) + (283.00 × 1)] / (1+2+1) = 312.675, i.e. ₹ 312.675 crore is the value.\nTherefore, the value of Sundar Televisions Ltd. is ₹ 312.675 Crore.",
+       "confidence": "high",
+       "review": [
+        "Stem as printed refers to 'Sundar Televisions Ltd.' in the data and 'Smart Televisions Ltd.' in the comparables sentence (printed inconsistency, kept)."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Pinnacle Venture, PE (Private Equity) investor is considering investing INR 4000 million in the equity of Best Systems, a start-up IT company. Pinnacle Venture's required rate of return from this investment is 40 percent and its planned holding period is 5 years. Best Systems has projected an EBITDA of INR 5000 million for year 5. An EBITDA multiple of 6 for year 5 is considered reasonable. At the end of year 5, Best Systems is likely to have a debt of INR 2000 million and a cash balance of INR 600 million.\n\n**Required:**\n(i) What ownership share in Best Systems should Pinnacle Venture ask for?\n(ii) What is the post-money investment value of Best Systems equity?\n(iii) What is the pre-money investment value of Best Systems?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Required rate of return of Pinnacle Venture (KPE) = 40%.\nRequired value PE Investments 6 = 4000 × 5.3782 = ₹ 21513 million.\n\nEstimated Equity Value 6 = 5000 × 6 + 600 – 2000 = ₹ 28600 million.\n\nOwnership Share in the Best Systems:\n21513 / 28600 × 100 = 75.22 %\n\n(ii) Post-Money Investment Value of the Best Systems' Equity :\n4000 / 0.7522 = ₹ 5317.73 million\n\n(iii) Pre-Money Investment Value of the Best Systems' Equity\n= 5317.73 – 4000 = ₹ 1317.73 million",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer labels the year as '6' ('Required value PE Investments 6', 'Estimated Equity Value 6') although the holding period is 5 years; kept as printed."
+       ]
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "HDC Limited has announced issue of warrant on 1:1 basis for its equity shareholders. The current price of the stock is ₹ 10 and warrants are convertible at an exercise price of ₹ 11.71 per share. Warrants are detachable and are trading at ₹ 3.\n\n**Required:**\n(i) What is the minimum price of the Warrant?\n(ii) What is the warrant premium?\n(iii) Now had the current price been ₹ 16.38, what is the minimum price and warrant premium? (Consider that warrants are tradable at ₹ 9.75).",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Minimum Price of the Warrant :\n= (10.00 – 11.71) × 1.0 = (-) ₹ 1.71\n\nThus, the minimum price on this warrant is considered to be zero, because the price cannot be negative. Since shares are traded at ₹ 10, the warrant holders will not pay ₹ 11.71 to purchase the same stock.\n(ii) Warrant Premium\n= 3 – 0 = ₹ 3\n(iii) When Current price = ₹ 16.38 :\n(a) Minimum price of Warrant :\n= (16.38 – 11.71) × 1.0 = ₹ 4.67\n(b) Warrant Premium :\n= ₹ 9.75 – ₹ 4.67 = ₹ 5.08",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Sandy Co. is contemplating the acquisition of Vindi Co. The values of the two companies are ₹ 20 lakh and ₹ 10 lakh respectively. Sandy Co. estimates that by combining the two firms, it will reduce marketing and other administrative costs by ₹ 50,000 per year in perpetuity. Sandy Co. can either pay ₹ 14 lakh cash or offer a 50% holding in Sandy Co. The opportunity cost of capital is 10%.\n\n**Required:**\n(i) What is the gain from the merger?\n(ii) What is the cost of the cash offer?\n(iii) What is the cost of the stock alternative?",
+       "options": [],
+       "correct": null,
+       "answer_md": "Let the value of Sandy Co. and Vindi Co. be represented as PVS and PVV and the value of the combined firm PVSV.\n(i) Gain from the Merger:\nGain from the merger = reduction of costs due to the merger.\nSandy Co estimates that by combining the two companies, it will reduce marketing and administrative costs by ₹ 50000 per year perpetually.\nCost of capital = 10%\nHence, PV of gain = ₹ 50000/10% = ₹ 500000\n(ii) Cost of the Cash Offer:\n= ₹ 1400000 – ₹ 1000000 = ₹ 400000\n(iii) Cost of the Stock Alternative:\nWhen the sellers receive N shares worth PVSV, the cost is given as\nCost = N X PVSV – PVV\nHere, 50% of the combined value of the firm is paid as stock.\nCombined Firm Value = Gain + (PVS + PVV)\n= ₹ 500000 + ₹ (2000000 + 1000000) = ₹ 3500000.\nHence Value of Stock offered = 0.50 × ₹ 3500000 = ₹ 1750000.\nHence, cost of the stock alternative = ₹ 1750000 – ₹ 1000000.\n= ₹ 750000.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Tarun Ltd. is considering the takeover of Arun Ltd. and Barun Ltd. The financial data for the three companies are as follows:\n\n | Tarun Ltd. | Arun Ltd. | Barun Ltd.\n---|---|---|---\nEquity Share Capital of ₹ 10 each (₹ million) | 450 | 180 | 90\nEarnings (₹ millions) | 90 | 18 | 18\nMarket Price of each share (₹) | 60 | 37 | 46\n\n**Required:**\n(i) Will you recommend the merger of either/both of the companies?\n(ii) Analyze independently and justify your answer.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) & (ii) Calculation of P/E Ratio\n\nParticulars | Tarun Ltd. | Arun Ltd. | Barun Ltd.\n---|---|---|---\nNo. of Equity Shares (in million) | 45 | 18 | 9\nEarnings (₹ millions) | 90 | 18 | 18\nEPS (₹) | 2 | 1 | 2\nMarket Price of each share (₹) | 60 | 37 | 46\nP/E Ratio | 30 | 37 | 23\n\nAnalysis of EPS of Tarun Ltd. after acquisition of Arun Ltd. & Barun Ltd.\n\nParticulars | Tarun Ltd. | Arun Ltd. | Barun Ltd.\n---|---|---|---\nExchange ratio in Tarun Ltd. | | 1.23 | 0.77\nValue of Shares (₹ million) | 2700 | 666 | 414\nNo. of Tarun Ltd. shares to be given (million) | | 666/60=11.10 | 414/60 =6.9\nTotal Earnings after acquisition (₹ millions) for both options | | 108 | 108\nTotal No. of Shares (million) | | 56.10 | 51.9\nE.P.S. (₹) | | 1.93 | 2.08\n\nRecommendation & Justification:\nYes, the Merger with only Barun Ltd. will be recommended to increase the value to the Shareholders of Tarun Ltd.\n\nSince after merger of Tarun Ltd. with Barun Ltd, combined EPS is higher than the earlier pre-merger EPS of Tarun Ltd. on the other hand, after merger of Tarun Ltd. with Arun Ltd., combined EPS is lower than the earlier pre-merger EPS of Tarun Ltd. the merger with only Barun Ltd. is suggested.",
+       "confidence": "medium",
+       "review": [
+        "Stem table read from image; the 'Equity Share Capital' row label is partially clipped but figures 450/180/90 are clear.",
+        "Table in suggested answer reconstructed from text layout; cell alignment (exchange ratio, shares) is best-effort."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Mr. Jagdish owns a Drug Store, located in Maliwara Ghaziabad. The drug store sells pharmaceuticals, cosmetics, toiletries, magazines, and various novelties. The most recent annual net income statement of drug store is as follows:\n\n | Amount in ₹\n---|---\nSales revenue | 18,00,000\n**Costs:** |\nCost of goods sold | 12,60,000\nWages and Salaries | 2,00,000\nRent | 1,20,000\nDepreciation | 60,000\nUtilities | 40,000\nMiscellaneous | 30,000\n**Total costs** | 17,10,000\n**Net profit before tax** | 90,000\n\nDrug Store's sales and expenses have remained relatively constant over the past few years and are expected to continue unchanged in the near future. To increase sales, Drug Store is considering using some floor space for a small soda fountain. Drug Store would operate the soda fountain for an initial three-year period and then would re-evaluate its profitability. The soda fountain would require an incremental investment of ₹ 20,000 to lease furniture, equipment, utensils, and so on. This is the only capital investment required during the three-year period. At the end of that time, additional capital would be required to continue operating the soda fountain, and no capital would be recovered if it were shut down. The soda fountain is expected to have annual sales of ₹ 100,000 and food and materials expenses of ₹ 20,000 per year. The soda fountain is also expected to increase wage and salary expenses by 8% and utility expenses by 5%. Because the soda fountain will reduce the floor space available for display of other merchandise, sales of non-soda fountain items are expected to decline by 10%.\n\n**Required:**\n(i) Calculate net incremental cash flows for the soda fountain.\n(ii) Assume that Drug Store has the capital necessary to install the soda fountain and that he places a 12% opportunity cost on those funds. Should the soda fountain be installed? Why or why not?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) The relevant annual cash flows from the proposed soda fountain are:\n\n | Amount in ₹\n---|---\nIncremental revenue | 100000\nIncrement Cost : |\nFood and materials | 20000\nWages and salaries | 16000\nUtilities | 2000\nOpportunity Cost: Profit contribution lost on regular sales | 54000\nTotal incremental cost | 92000\nNet incremental annual cash flow | 8000\n\n(ii) Incremental investment ₹ 20000\nNo, the NPV for the proposed soda fountain should be calculated to determine the economic viability of the project.\nNPV = (Incremental annual cash flow) (PVIFA, N = 3, i = 12%) – ₹ 20000\n= ₹ 8000 (2.4018) – ₹ 20000\n= –₹ 785.60 (A Loss)\nBecause NPV < 0, Drug Store should not undertake the soda fountain investment project",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Acquiring company is considering the acquisition of Target Company in a stock-for-stock transaction in which target Company would receive ₹ 90 for each share of its common stock. The Acquiring company does not expect any change in its price/ earnings ratio multiple after the merger and chooses to value the Target Company conservatively by assuming no earnings growth due to synergy.\n\nThe following additional information is available:\n\nParticulars | Acquiring | Target\n---|---|---\nEarnings | ₹ 2,50,000 | ₹ 72,500\nNumber of Shares | 1,10,000 | 20,000\nMarket Price per Share | ₹ 50 | ₹ 60\n\n**Required:**\nCalculate:\n(i) The purchase price premium\n(ii) The exchange ratio\n(iii) The number of new shares issued by the acquiring company\n(iv) Post-merger EPS of the combined firms\n(v) Pre-merger EPS of the Acquiring company\n(vi) Pre-merger P/E ratio\n(vii) Post-merger share price",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Purchase price premium = 90/60 = 1.5\n\n(ii) Exchange Ratio = 90/50 = 1.8\nAcquiring company issues 1.8 shares of stock for each of Target Company's stock.\n\n(iii) New shares issued by acquiring Company = 20000 x 1.8 = 36000 Nos.\n\n(iv) Post-merger EPS of the combined Companies.\nCombined Earnings = (250000 + 72500) = ₹ 322500\nTotal Shares outstanding of the New Entity = 110000 + 36000 = 146000\nEPS = ₹ 322500 ÷ 146000 = ₹ 2.209\n\n(v) Pre-merger EPS of the acquiring company\nEPS = 250000/110000 = ₹ 2.273\n\n(vi) Pre-merger P/E = 50/2.273 = 22.00\n\n(vii) Post-merger share price = 2.209 × 22.00 = ₹ 48.60 (as compared to ₹ 50 Pre-merger)",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

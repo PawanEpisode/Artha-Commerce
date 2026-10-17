@@ -1,0 +1,107 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p18-2026-06",
+ "items": {
+  "1(i)": {
+   "verdict": "approve",
+   "reason": "Compared stem and options with the printed paper and the printed key (C); all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem says carrying amount 'after' depreciation with remaining life 9 years, yet key C divides (29,00,000 - 1,00,000) by 8 years; Ind AS 36 is cited though revaluation is Ind AS 16."
+   ]
+  },
+  "2(a)": {
+   "verdict": "approve",
+   "reason": "Stem bullets and requirements and the four answer tables match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Deferred tax expense table prints '(15000)' without a comma and a '-' as the label of the 21,000 row.",
+    "Answer deducts the brought-forward loss of 1,50,000 and recognises no DTA on it; net DTL 81,000 includes 60,000 charged to OCI while total tax expense is 5,07,000."
+   ]
+  },
+  "2(b)": {
+   "verdict": "approve",
+   "reason": "Stem table and requirements and the answer match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer amortises 2025-26 for a full year though the asset was brought into use on 31.3.2025."
+   ]
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Compared stem, additional information and all four printed solutions with the print; found the proposed-dividend note incomplete and a misprint corrected.",
+   "fixes": [
+    "Note 1 restored with its printed line 'Dividend proposed for equity shareholders (Rs. 1.50 per share) 525.00' and Total.",
+    "'Trademarks' restored to the printed 'Trademrks' in the balance sheet."
+   ],
+   "stem_md": "The following is the Balance Sheet of Nakul Ltd. as at 31st March, 2026. Based upon the said Balance Sheet and other details, you are required to calculate the value of goodwill at 3 years' purchase of super profits, if any, earned by the company in the previous 4 completed accounting years.\n\n| Particulars | ₹ in lakhs |\n|---|---|\n| **I ASSETS** | |\n| (1) Non-current assets — | |\n| (a) Property, plant and equipment | 4,637.50 |\n| (b) Other intangible assets (Patents and Trademrks) | 239.40 |\n| (c) Financial assets — Investments (9% non-trade) | 420.00 |\n| (d) Other non-current assets | 14.00 |\n| (2) Current assets | 898.10 |\n| **Total assets** | **6,209.00** |\n| **II EQUITY AND LIABILITIES** | |\n| (1) Equity | |\n| (a) Equity share capital (3.5 crore equity shares of ₹10 each) | 3,500.00 |\n| (b) Other equity (Reserve and surplus) | 2,296.00 |\n| (2) Current liabilities — | |\n| (a) Financial liabilities — Trade payables | 397.60 |\n| (b) Provisions (current tax) | 15.40 |\n| **Total equity and liabilities** | **6,209.00** |\n\nNotes to accounts (₹ in lakhs)\n\n1. Proposed dividend\n\n| | ₹ in lakhs |\n|---|---|\n| Dividend proposed for equity shareholders (Rs. 1.50 per share) | 525.00 |\n| **Total** | **525.00** |\n\nAdditional Information:\n(i) The profits before tax for the 4 years have been as under:\n\n| Year ended 31st March | ₹ in lakhs |\n|---|---|\n| 2022 | 2,233.00 |\n| 2023 | 1,750.00 |\n| 2024 | 2,175.60 |\n| 2025 | 2,030.00 |\n\n(ii) The rate of income-tax for the accounting year 2021-22 was 40%. Thereafter, it has been 38% for all the years so far. However, for the accounting year 2025-26, it will be 35%.\n\n(iii) In the accounting year 2021-22, the company earned an extraordinary income of ₹0.70 crore because of a special foreign contract. In August 2022, there was a fire due to which the company lost property worth ₹35 lakhs and the insurance policy did not cover the loss.\n\n(iv) 9% non-trade investments were purchased at par by the company on 1st April, 2023.\n\n(v) The normal rate of return in the industry to which the company belongs is 20% of closing capital employed. It is important to note that the company's shareholders, in their general meeting, have passed a resolution sanctioning the directors an additional remuneration of ₹35 lakhs every year beginning from the accounting year 2025-26.",
+   "printed_issues": [
+    "Balance sheet prints 'Patents and Trademrks'.",
+    "Answer gives four solutions (goodwill 644.175 and 959.175) depending on treatment of proposed dividend."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem and both printed solutions (main and alternative) with tables and journals match the print; the PV factor table layout was restored.",
+   "fixes": [
+    "PV factor table restored to the printed rows Year / PV Factor."
+   ],
+   "stem_md": "C Ltd. issued 5,000, 8% Convertible Debentures of ₹100 each at par on 1st April, 2025. The terms of issue are as follows:\n\n- Total face value / gross proceeds: ₹5,00,000\n- Coupon rate: 8% p.a., payable annually\n- Maturity: 3 years, redeemable on 31st March, 2028\n- The holder has the option, at maturity, either to receive cash equal to face value, or to convert each debenture into 10 equity shares of ₹10 each.\n- The prevailing market interest rate for similar debentures without the conversion option is 12% p.a.\n- Transaction costs directly attributable to the issue amount to ₹10,000.\n- Ignore tax effects.\n\nPresent value factors at 12%:\n\n| Year | 1 | 2 | 3 |\n|---|---|---|---|\n| PV Factor | 0.8929 | 0.7972 | 0.7118 |\n\nAdditional information: After allocation of transaction costs, the effective interest rate (EIR) applicable to the liability component may be taken as 12.82% p.a.\n\nRequired:\n(i) Analyze the liability component and equity component of the compound financial instrument at initial recognition.\n(ii) Allocate the transaction costs between liability and equity components.\n(iii) Prepare the amortization table of the liability component for 3 years using the Effective Interest Rate method.\n(iv) Prepare journal entries for the first year only in the books of C Ltd.",
+   "printed_issues": [
+    "Finance cost cells for 31.03.2028 carry an asterisk with no printed footnote.",
+    "Closing amortised cost 4,78,656 in the main solution vs 4,78,657.16 in the alternative (rounding)."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Balance sheet, scheme, journal entries and reconstruction account match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer does not use General Reserve of 50,000 or the Secured Bank Loan."
+   ]
+  },
+  "5": {
+   "verdict": "approve",
+   "reason": "Stem, both balance sheets, notes and working notes match the print; restored the printed heading wording.",
+   "fixes": [
+    "Heading 'Balance Sheet as at' restored to the printed 'Balance Sheet ss at'."
+   ],
+   "answer_md": "**XY Ltd. Balance Sheet ss at 31st March, 2026** (₹ in lakh)\n\n| Particulars | Note No. | Figures as at 31st March, 2026 |\n|---|---|---|\n| **I ASSETS** | | |\n| (1) Non-current assets | | |\n| (a) Property, plant and equipment | 1 | 32,000 |\n| (b) Financial assets (Investments) | 2 | 2,600 |\n| (2) Current assets | 3 | 23,000 |\n| **Total assets** | | **57,600** |\n| **II EQUITY AND LIABILITIES** | | |\n| EQUITY | | |\n| Equity share capital | 4 | 30,000 |\n| Other equity | 5 | 11,600 |\n| Liabilities | | |\n| (1) Non-current liabilities: Financial liabilities (Borrowings) | 6 | 10,000 |\n| (2) Current liabilities | 7 | 6,000 |\n| **Total equity and liabilities** | | **57,600** |\n\n**Notes to Accounts (₹ in lakh)**\n\n1. Property, plant and equipment: Carrying amount of PPE of Y Ltd. 16,000; Fair value of PPE of X Ltd. 16,000; Total 32,000\n\n2. Financial assets (Investments): Carrying amount of investments of Y Ltd. 1,000; Fair value of investments of X Ltd. 1,600; Total 2,600\n\n3. Current assets: Carrying amount of current assets of Y Ltd. 13,000; Fair value of current assets of X Ltd. 10,000; Total 23,000\n\n4. Equity share capital: Authorised ?; Issued ?; Subscribed and fully paid: 3,000 lakh equity shares of ₹ 10 each 30,000\n\n5. Other equity\n\n| Particulars | ₹ in lakh |\n|---|---|\n| Other equity of Y Ltd. | 2,000 |\n| Capital reserve (Gain on bargain purchase) [Working Note (iv)] | 4,600 |\n| Securities premium (on issue of 1,000 lakh shares @ ₹ 5 each) [Working Note (iii)] | 5,000 |\n| Total | 11,600 |\n\n6. Financial liabilities (Borrowings): Carrying amount of borrowings of Y Ltd. 6,000; Fair value of borrowings of X Ltd. 4,000; Total 10,000\n\n7. Current liabilities: Carrying amount of current liabilities of Y Ltd. 2,000; Fair value of current liabilities of X Ltd. 4,000; Total 6,000\n\n**Working Notes**\n\n(i) Identifying Nature of business combination and acquirer and acquiree\nY Ltd. is the legal acquiree but it is the accounting acquirer as per Ind AS 103 because the previous shareholders of Y Ltd. obtain control over the merged entity XY Ltd. X Ltd. is both the legal acquiree and accounting acquiree. Hence, the business combination indicates a reverse acquisition as per Ind AS 103. Consequently, the assets and liabilities of Y Ltd. would be recorded at their carrying amounts and those of X Ltd. would be recorded at fair values in the Balance Sheet of XY Ltd. after merger.\n\n(ii) Computation of share of X Ltd. and Y Ltd. in the merged company, XY Ltd.\n\n| Particulars | X Ltd. (₹ in lakh) | Y Ltd. (₹ in lakh) |\n|---|---|---|\n| Fair value of business | 15,000 | 30,000 |\n| Share of each company in the merged company | 1/3 (15,000/45,000) | 2/3 (30,000/45,000) |\n\n(iii) Computation of consideration payable by Y Ltd. to X Ltd.\n\n| Particulars | |\n|---|---|\n| Fair value per share of Y Ltd. (₹ 30,000 lakh/2,000 lakh) | ₹15 |\n| Consideration payable by Y Ltd. to X Ltd. (₹15,000 lakh/₹15) | 1,000 lakh shares |\n| Number of shares held by Y Ltd. in XY Ltd. for 2/3rd share | 2,000 lakhs |\n| Number of shares held by X Ltd. in XY Ltd. for 1/3rd share | 1,000 lakhs |\n| Total consideration payable by Y Ltd. to X Ltd. (1,000 equity shares of ₹ 10 each at ₹ 15 each) | ₹15,000 lakh |\n\n(iv) Computation of gain on bargain purchase\n\n| Particulars | ₹ in lakh |\n|---|---|\n| (A) Total identifiable assets acquired at fair values | - |\n| Property, plant and equipment | 16,000 |\n| Investments | 1,600 |\n| Current assets | 10,000 |\n| Total assets | 27,600 |\n| (B) Total identifiable liabilities acquired at fair values | - |\n| Borrowing | 4,000 |\n| Current liabilities | 4,000 |\n| Total liabilities | 8,000 |\n| (C) Net assets acquired at fair values (A-B) | 19,600 |\n| (D) Purchase consideration [Working Note (iii) above] | 15,000 |\n| (E) Gain on bargain purchase (C-D) | 4,600 |",
+   "printed_issues": [
+    "Heading prints 'Balance Sheet ss at 31st March, 2026'.",
+    "Investments of X Ltd. are taken at 1,600 (carrying amount) as fair value."
+   ]
+  },
+  "6": {
+   "verdict": "approve",
+   "reason": "Stem balance sheets and information and the consolidated balance sheet, notes and working notes match the print; restored two printed misprints.",
+   "fixes": [
+    "Title restored with the printed stray ']' after 2026.",
+    "'LIABILITIES' restored to the printed 'LIABILIITES'."
+   ],
+   "printed_issues": [
+    "Title prints a stray ']' and the heading 'LIABILIITES'.",
+    "Stem says ₹40 lakh premium over market price ₹18 per share but consideration is ₹5,800 lakh.",
+    "Trade receivables carry ₹20 lakh due from M Ltd. in the stem but ₹10 lakh due to N Ltd. in payables; answer uses 10 + 10 cash in transit.",
+    "Answer refers to Working Note (vii) for PPE which is not given."
+   ]
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem table and the computation with working notes (i) to (vii) match the print; restored a printed stray bracket.",
+   "fixes": [
+    "Working note (ii) restored with the printed extra ')' after the closing ']'."
+   ],
+   "answer_md": "**Computation of Economic Value Added (EVA) of Rajat Industries Ltd. (RIL)**\n\n| Particulars | ₹ in lakh |\n|---|---|\n| (A) Net operating profit after tax [Working Note (vi)] | 1,293.60 |\n| (B) Cost of operating capital employed $= [ \\text{Weighted average cost of capital } \\times \\text{ operating capital employed} ] = [ \\text{₹ } 7{,}000 \\text{ lakh } \\times 13.68 \\% ]$ | 957.60 |\n| (C) Economic Value Added (EVA) $[A - B]$ | 336 |\n\n**Working Notes:**\n(i) Computation of cost of debt:\n\n$$\n\\text{Cost of debt} = \\text{Interest rate}(1 - \\text{tax rate}) = 12\\%(1 - 0.30) = 8.40\\%\n$$\n\n(ii) Computation of cost of equity:\n\n$$\n\\begin{aligned}\n\\text{Cost of equity} &= \\text{Risk-free rate} + (\\text{Beta} \\times \\text{equity market rate risk premium})\\\\\n&= 9\\% + [1.5 \\times (13\\% - 9\\%)]) = 9\\% + 6\\% = 15\\%\n\\end{aligned}\n$$\n\n(iii) Computation of total capital employed:\n\n$$\n\\begin{aligned}\n\\text{Total capital employed} &= \\text{Share capital} + 12\\%\\text{ debentures} + \\text{Securities premium} + \\text{Free reserve} + \\text{Capital reserve}\\\\\n&= \\text{₹ }4{,}429.60\\text{ lakh}\\ (4{,}42{,}960 \\times \\text{₹ }1{,}000) + \\text{₹ }1{,}400\\text{ lakh}\\ (1{,}40{,}00{,}000 \\times \\text{₹ }10) + \\text{₹ }434\\text{ lakh} + \\text{₹ }431.20\\text{ lakh} + \\text{₹ }305.20\\text{ lakh}\\\\\n&= \\text{₹ }7{,}000\\text{ lakh}\n\\end{aligned}\n$$\n\n(iv) Computation of weighted average cost of capital:\n\n$$\n[(\\text{₹ }1{,}400\\text{ lakh}/\\text{₹ }7{,}000\\text{ lakh}) \\times 8.40\\%] + [\\text{₹ }5{,}600\\text{ lakh}/\\text{₹ }7{,}000\\text{ lakh}) \\times 15\\%] = 1.68\\% + 12\\% = 13.68\\%\n$$\n\n(v) Computation of profit before interest and tax:\n\n$$\n\\begin{aligned}\n\\text{Financial leverage} &= \\text{Profit before interest and tax}/(\\text{Profit before interest and tax} - \\text{interest})\\\\\n\\text{i.e., } 1.1 &= \\text{PBIT}/(\\text{PBIT} - \\text{₹ }168\\text{ lakh})\\\\\n\\text{or, } 1.1\\ \\text{PBIT} - \\text{₹ }184.8\\text{ lakh} &= \\text{PBIT};\\ \\text{or } 0.1\\ \\text{PBIT} = \\text{₹ }184.8\\text{ lakh};\\\\\n\\text{or } \\text{PBIT} &= \\text{₹ }184.8\\text{ lakh}/0.1 = \\text{₹ }1{,}848\\text{ lakh}\n\\end{aligned}\n$$\n\n(vi) Computation of net operating profit after tax:\n\n$$\n\\begin{aligned}\n\\text{Net operating profit after tax} &= \\text{Profit before interest and tax} - \\text{tax}\\\\\n&= \\text{₹ }1{,}848\\text{ lakh} - (\\text{₹ }1{,}848\\text{ lakh} \\times 30\\%) = \\text{₹ }1{,}293.60\\text{ lakh}\n\\end{aligned}\n$$\n\n(vii) Computation of operating capital employed: It is equal to total capital employed i.e., ₹ 7,000 lakh because there are no non-operating assets to be deducted from and no other non-interest-bearing operating liabilities to be added to total capital employed.",
+   "printed_issues": [
+    "Note (ii) has an extra closing bracket and note (iv) has unbalanced brackets in '[₹5,600 lakh/₹7,000 lakh) x 15%]'.",
+    "Note (vii) prints '₹ 7,000 lakh' in bold; note (v) uses interest ₹168 lakh."
+   ]
+  },
+  "8(c)": {
+   "verdict": "approve",
+   "reason": "Stem, requirements and both computations match the print; marks 4 confirmed.",
+   "fixes": []
+  }
+ }
+}

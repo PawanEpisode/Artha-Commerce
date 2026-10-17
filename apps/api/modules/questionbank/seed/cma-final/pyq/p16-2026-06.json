@@ -1,0 +1,1020 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "16",
+ "source_file": "pyq-transcriptions/p16-2026-06.json",
+ "paper_review": [
+  "Suggested answers published by ICMAI for June 2026 were added (answer text typeset from the printed pages)."
+ ],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p16:2026-06",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "strategic-cost-management",
+  "term_code": "2026-06",
+  "title": "CMA Final June 2026: Strategic Cost Management (Paper 16)",
+  "paper_code": "P16",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Answer all the questions. Each question carries two marks.  2×15=30 (Choose the correct option from the four alternatives given)",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "LDT Manufacturers is evaluating its research and development programs for the upcoming year. The four products under consideration all appear to offer favourable profitability if they can be carried out successfully. But, due to budget constraint one product can be launched. The following information is relevant:\n\n| Product | Probability of Success: Commercially | Probability of Success: Technically | Expected Profit (₹ in Crore) |\n|---|---|---|---|\n| P01 | 0.7 | 0.4 | 10 |\n| P02 | 0.8 | 0.5 | 12 |\n| P03 | 0.5 | 0.9 | 9 |\n| P04 | 0.4 | 0.8 | 14 |\n\nWhich product should be launched?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "P01",
+      "is_correct": false
+     },
+     {
+      "body_md": "P02",
+      "is_correct": true
+     },
+     {
+      "body_md": "P03",
+      "is_correct": false
+     },
+     {
+      "body_md": "P04",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.43,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A company has a break-even point when sales are ₹ 3,20,000 and variable cost at that level of sales are ₹ 2,00,000. How much would P/V ratio increase or decrease if variable expenses are dropped by ₹ 30,000?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Increase by 27.5%",
+      "is_correct": false
+     },
+     {
+      "body_md": "Increase by 9.375%",
+      "is_correct": true
+     },
+     {
+      "body_md": "Decrease by 9.375%",
+      "is_correct": false
+     },
+     {
+      "body_md": "Increase by 37.5%",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.62,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A firm has a fixed cost of ₹ 1,00,000 and a break-even sale of ₹ 8,00,000. What is its projected profit at ₹ 12,00,000 sales?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 50,000",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 1,50,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 2,00,000",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "AON Ltd. following Activity Based Costing expected to place a total of 2,895 purchase orders at a total cost of ₹ 1,10,010. These costs are expected to occur at a constant rate throughout the budget year, which is divided into 13 four-week periods. During the four-week period ended on 30th September, 2025, a total of 210 purchase orders were placed at a cost of ₹ 7,650. The over-recovery of these costs for the four-week period was",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 330",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 350",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 370",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 390",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.26,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "AB Ltd. uses standard cost system. The following information pertains to direct labour for Product X for the month of March, 2026:\n\nStandard rate per hour = ₹ 8\n\nActual rate per hour = ₹ 8.40\n\nStandard hours allowed for actual production = 2000 hours\n\nLabour Efficiency variance = ₹ 1,600 (Adverse)\n\nWhat were the actual hours worked?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "1,800",
+      "is_correct": false
+     },
+     {
+      "body_md": "1,810",
+      "is_correct": false
+     },
+     {
+      "body_md": "2,200",
+      "is_correct": true
+     },
+     {
+      "body_md": "2,190",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.95,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A firm is required to procure three items I, II & III from three vendors V1, V2 & V3 respectively. The quoted prices in Rupees are given in the table below. The management policy clearly states that each item should be procured from only one vendor and each vendor should supply only one item. The minimum total cost of procurement following the principle of Assignment is\n\n| ITEMS | V1 | V2 | V3 |\n|---|---|---|---|\n| I | 220 | 240 | 260 |\n| II | 230 | 280 | 280 |\n| III | 250 | 290 | 330 |\n\n(VENDORS: V1, V2, V3)",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 750",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 770",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 780",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 790",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.16,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The daily demand for a product follows the distribution below:\n\n| Demand(units) | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Probability | 0.10 | 0.20 | 0.30 | 0.20 | 0.20 |\n\nRandom number intervals are assigned as below:\n\n| 00-09 | 10-29 | 30-59 | 60-79 | 80-99 |\n|---|---|---|---|---|\n| 0 | 1 | 2 | 3 | 4 |\n\nA simulation is run for 4 days using the random numbers:\n14,67,85,33\n\nWhat is the average simulated demand over these 4 days?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "2 units",
+      "is_correct": false
+     },
+     {
+      "body_md": "2.25 units",
+      "is_correct": false
+     },
+     {
+      "body_md": "2.50 units",
+      "is_correct": true
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Ross Ltd., has developed a new product and just completed the manufacture of first four units of the product. If the first unit took 4 hours to manufacture and the first 4 units together took 11.56 hours to produce, the Learning Curve (LC) rate would be",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "69.50 %",
+      "is_correct": false
+     },
+     {
+      "body_md": "75.00 %",
+      "is_correct": false
+     },
+     {
+      "body_md": "80.10 %",
+      "is_correct": false
+     },
+     {
+      "body_md": "85.00 %",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "learning-curve",
+    "mapping_confidence": 0.5,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "QuickBooks is primarily used for:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Data visualization and dashboard creation",
+      "is_correct": false
+     },
+     {
+      "body_md": "Accounting and financial management",
+      "is_correct": true
+     },
+     {
+      "body_md": "Statistical analysis and modeling",
+      "is_correct": false
+     },
+     {
+      "body_md": "Database management",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which one of the following is true for a Blue Ocean Strategy?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Exploit existing demand",
+      "is_correct": false
+     },
+     {
+      "body_md": "Beat the competition",
+      "is_correct": false
+     },
+     {
+      "body_md": "Make the competition irrelevant",
+      "is_correct": true
+     },
+     {
+      "body_md": "Make the value-cost trade off",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "introduction-to-strategic-cost-management",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The higher the actual hours worked",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "the lower is the capacity usage ratio.",
+      "is_correct": false
+     },
+     {
+      "body_md": "the higher is the capacity usage ratio.",
+      "is_correct": false
+     },
+     {
+      "body_md": "the lower is the capacity utilisation ratio.",
+      "is_correct": false
+     },
+     {
+      "body_md": "the higher is the capacity utilisation ratio.",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.62,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A Kanban is a visual signal that indicates that it is time to replenish stock and possibly reorder. In which of the following this is referred to?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "JIT Systems",
+      "is_correct": true
+     },
+     {
+      "body_md": "JIT Strategy",
+      "is_correct": false
+     },
+     {
+      "body_md": "Both (A) and (B)",
+      "is_correct": false
+     },
+     {
+      "body_md": "None of the above",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "activity-based-management-and-just-in-time-jit",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Uniform Costing may not be successfully applied in the following case:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "In a single enterprise having a number of branches, each of which manufactures the same set of products with the same facilities",
+      "is_correct": false
+     },
+     {
+      "body_md": "In a number of entities in the same industry bound by a trade association",
+      "is_correct": false
+     },
+     {
+      "body_md": "In a number of units across different geographical locations manufacturing one or more of a given set of products",
+      "is_correct": false
+     },
+     {
+      "body_md": "In different branches of the same company, each branch making a different product using a unique process",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "A major risk in implementing Business Process Reengineering is",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "over dependence on Information Technology.",
+      "is_correct": false
+     },
+     {
+      "body_md": "increase in product prices.",
+      "is_correct": false
+     },
+     {
+      "body_md": "reduced market share.",
+      "is_correct": false
+     },
+     {
+      "body_md": "employee resistance to change.",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "business-application-of-maxima-and-minima",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Marketing department of Axis Ltd. estimates that 40,000 of new mixers could be sold annually at a price of ₹ 60 each. To design, develop and produce these new mixers, an investment of ₹ 40,00,000 would be required. The company desires a 15% return on investment (ROI). Given these data, the target cost to manufacture and sell one mixer will be :",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "₹ 37.50",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 40.00",
+      "is_correct": false
+     },
+     {
+      "body_md": "₹ 45.00",
+      "is_correct": true
+     },
+     {
+      "body_md": "₹ 48.60",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "introduction-to-tools-for-data-analytics",
+    "mapping_confidence": 0.67,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "ref_suffix": "q2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": true,
+    "marks": "14",
+    "kind": "long_form",
+    "stem_md": "MHT Limited is currently manufacturing 5000 units of the product ‘MH 100’ annually making full use of its machine capacity. The selling price and total costs per unit associated with ‘MH 100’ are as follows :\n\n| | ₹ | ₹ |\n|---|---|---|\n| Selling price per unit | | 900 |\n| Costs per unit : | | |\n| Direct materials | 200 | |\n| Variable machine operating costs (₹ 100 per machine hour) | 150 | |\n| Manufacturing overhead costs | 180 | |\n| Marketing and administrative costs | 200 | 730 |\n| Operating income per unit of ‘MH 100’ | | 170 |\n\nMHT Limited can sell additional 3000 units of ‘MH 100’, if it can outsource those additional units.\n\nRex Limited, a supplier of quality products, has agreed to supply upto 6000 units of ‘MH 100’ per year at a price of ₹ 650 per unit delivered at MHT’s factory.\n\nMHT Limited can use its facility to produce an alternative product ‘MH 200’. It can sell up to 12000 units of ‘MH 200’ annually. Estimated selling price and total costs per unit to manufacture and sell 12000 units of ‘MH 200’ are as follows :\n\n| | ₹ | ₹ |\n|---|---|---|\n| Selling price per unit | | 600 |\n| Costs per units : | | |\n| Direct materials | 200 | |\n| Variable machine operating costs (₹ 100 per machine hour) | 50 | |\n| Manufacturing overheads costs | 60 | |\n| Marketing and administrative costs | 110 | 420 |\n| Operating income per unit of ‘MH 200’ | | 180 |\n\nOther information pertaining to the operation of MHT Limited is as follows :\n(I) MHT Limited use machine hours as the basis for assigning fixed manufacturing overhead. The fixed manufacturing overhead for the current year is ₹ 3,00,000. These costs will not be affected by the product-mix decision.\n(II) Variable marketing and administrative costs per unit for various products are as follows :\n\n| | | |\n|---|---|---|\n| Manufactured | ‘MH 100’ | ₹ 80 |\n| Purchased | ‘MH 100’ | ₹ 40 |\n| Manufactured | ‘MH 200’ | ₹ 60 |\n\nFixed marketing and administrative costs for the current year is ₹ 6,00,000.\n\nRequired :\n(i) Assess the contribution per unit of manufactured ‘MH 100’ and manufactured ‘MH 200’.\n(ii) Assess the contribution per unit between manufactured ‘MH 100’ and purchased ‘MH 100’.\n(iii) Calculate the quantity of each product that MHT Limited should manufacture and/or purchase to maximize operating income.",
+    "choice_group_ref": "secB",
+    "explanation_md": "It is given that \"Manufacturing overhead costs\" of ₹180 per unit for MH 100 and ₹60 per unit for MH 200, without explicitly separating them into fixed and variable components.\n\nSince MHT uses machine hours as the basis for assigning fixed manufacturing overhead and total fixed manufacturing overhead is given as ₹3,00,000, we should first determine the fixed overhead absorbed per unit and then derive the variable manufacturing overhead.\n\nCalculation of Machine hours for the production of one unit of each of the two products:\n\n| Product | Variable machine operating costs (₹) | Hourly Rate (₹) | Machine Hours per unit |\n|---|---|---|---|\n| MH 100 | 150 | 100 | 1.50 |\n| MH 200 | 50 | 100 | 0.50 |\n\n(a) Calculation of Fixed Manufacturing Overhead Rate:\n\nCurrent production = 5,000 units\n\n$$\n\\begin{aligned}\n\\text{Machine hours used} &= 5{,}000 \\times 1.5 \\text{ hrs} = 7{,}500 \\text{ hrs} \\\\\n\\text{Fixed overhead rate / machine hour} &= \\frac{\\text{₹ }3{,}00{,}000}{7{,}500} = \\text{₹ }40 \\text{ per machine hour}\n\\end{aligned}\n$$\n\n(b) Calculation of Variable Manufacturing Overhead Rate:\n\nMH 100:\n\n$$\n\\begin{aligned}\n\\text{Fixed Overhead absorbed per unit} &= \\text{₹ }40 \\times 1.5 = \\text{₹ }60 \\\\\n\\text{Variable Manufacturing Overhead} &= \\text{₹ }180 - \\text{₹ }60 = \\text{₹ }120\n\\end{aligned}\n$$\n\nMH 200:\n\n$$\n\\begin{aligned}\n\\text{Fixed Overhead absorbed per unit} &= \\text{₹ }40 \\times 0.5 = \\text{₹ }20 \\\\\n\\text{Variable Manufacturing Overhead} &= \\text{₹ }60 - \\text{₹ }20 = \\text{₹ }40\n\\end{aligned}\n$$\n\nCalculation of Variable costs of production of \"MH 100\" and \"MH 200\":\n\n| Per unit | 'MH 100' (₹) | 'MH 200' (₹) |\n|---|---|---|\n| Direct materials | 200 | 200 |\n| Variable machine operating costs | 150 | 50 |\n| Variable manufacturing overheads [Note 2 (b)] | 120 | 40 |\n| Total variable cost of production per units | 470 | 290 |\n\n(i) Calculation showing Contribution per unit of manufactured \"MH 100\" and manufactured \"MH 200\":\n\n| | Manufactured 'MH 100' (₹) | Manufactured 'MH 200' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | 290 |\n| Variable marketing and administrative cost | 80 | 60 |\n| Total variable cost per unit: (A) | 550 | 350 |\n| Selling price per units (B) | 900 | 600 |\n| Contribution per unit {(B) - (A)} | 350 | 250 |\n\n(ii) Calculation showing Contribution per unit of manufactured \"MH 100\" and purchased \"MH 100\":\n\n| | Manufactured 'MH 100' (₹) | Purchased 'MH 100' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | -- |\n| Purchase price | -- | 650 |\n| Variable marketing and administrative cost | 80 | 40 |\n| Total Variable cost per unit: (A) | 550 | 690 |\n| Selling price per unit: (B) | 900 | 900 |\n| Contribution per unit {(B) - (A)} | 350 | 210 |\n\n(iii) To determine the optimal mix, we rank products by contribution per machine hour (i.e. the limiting factor).\n\n| | Manufactured 'MH 100' | Manufactured 'MH 200' |\n|---|---|---|\n| Contribution per unit (₹) | 350 | 250 |\n| Machine Hour per unit (Hr) | 1.50 | 0.50 |\n| Contribution per hour (₹) | 233 (350 / 1.5) | 500 (250 / 0.5) |\n| RANKING | II | I |\n\nIf it is decided to manufacture MH 200, there is profit from MH 200 undoubtedly but at the same time the ability to manufacture MH 100 in-house is also lost. Because MH 100 can be bought from Rex Limited to fulfill the orders, the real question is: \"Is the extra profit earned from manufacturing MH 200 high enough to cover the extra cost of buying MH 100 from a supplier instead of making it inhouse?\"\n\nIf we strictly compare Manufacture MH 100 vs. Manufacture MH 200 without considering the buy option, we would miss the most profitable strategy. Accordingly, the following analysis is made:\n\n| | ₹ per unit |\n|---|---|\n| Variable Cost to manufacture MH 100 | 550 |\n| Purchase Cost | 690 |\n| Incremental Cost of Buying (690 - 550) | 140 |\n\nTo justify buying MH 100 so that the machines can be freed up for MH 200, MH 200 must generate enough additional contribution to cover that ₹140 \"penalty.\" To replace 1 unit of MH 100 (1.5 hours), 3 units of MH 200 can be manufactured.\n\nThose 3 units of MH 200 bring in ₹750 in contribution. The 1 unit of MH 100 gave up making would have brought in ₹350.\n\nNet Gain in manufacturing MH 200 is: ₹750 - ₹350 = ₹400.\n\nConclusion: Since ₹400 (the gain from switching) is much higher than ₹140 (the cost of buying the unit), the decision to switch is confirmed.\n\nCalculation of Quantity of each product that MHT Limited should manufacture to maximize income:\n\n| Product | Ranking | Production | Machine hours per unit | Machine Hours used | Balance Machine Hours |\n|---|---|---|---|---|---|\n| | | | | | 7,500 |\n| MH 200 | I | 12,000 | 0.5 | 6,000 | 1,500 |\n| MH 100 | II | 1,000 | 1.5 | 1,500 | - |\n\nCalculation of Quantity of MH 100 to be purchased:\n\n| | |\n|---|---|\n| Total Demand for MH 100 | 8,000 units |\n| Quantity Produced | 1,000 units |\n| Unmet Demand | 7,000 units |\n| Purchase Limit fixed by Rex Ltd | 6,000 units |\n| Quantity to be purchased | 6,000 units |\n\nThe Optimal Product Mix to maximise operating Income is:\n\n- Manufacture 12,000 units of MH 200.\n- Manufacture 1,000 units of MH 100.\n- Purchase 6,000 units of MH 100.\n\nAlternative Solution:\n\n(a) Calculation of Fixed Manufacturing Overhead Rate:\n\nFor MH 100\n\n$$\n\\text{Fixed overhead rate per unit} = \\frac{\\text{₹ }3{,}00{,}000}{5{,}000} = \\text{₹ }60 \\text{ per unit}\n$$\n\nFor MH 200\n\n$$\n\\text{Fixed overhead rate per unit} = \\frac{\\text{₹ }3{,}00{,}000}{12{,}000} = \\text{₹ }25 \\text{ per unit}\n$$\n\n(b) Calculation of Variable Manufacturing Overhead Rate:\n\nMH 100:\n\n$$\n\\text{Variable Manufacturing Overhead} = \\text{₹ }180 - \\text{₹ }60 = \\text{₹ }120\n$$\n\nMH 200:\n\n$$\n\\text{Variable Manufacturing Overhead} = \\text{₹ }60 - \\text{₹ }25 = \\text{₹ }35\n$$\n\nCalculation of Variable costs of production of \"MH 100\" and \"MH 200\":\n\n| Per unit | 'MH 100' (₹) | 'MH 200' (₹) |\n|---|---|---|\n| Direct materials | 200 | 200 |\n| Variable machine operating costs | 150 | 50 |\n| Variable manufacturing overheads [Note 2 (b)] | 120 | 35 |\n| Total variable cost of production per units | 470 | 285 |\n\n(i) Calculation showing Contribution per unit of manufactured \"MH 100\" and manufactured \"MH 200\":\n\n| | Manufactured 'MH 100' (₹) | Manufactured 'MH 200' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | 285 |\n| Variable marketing and administrative cost | 80 | 60 |\n| Total variable cost per unit: (A) | 550 | 345 |\n| Selling price per units (B) | 900 | 600 |\n| Contribution per unit {(B) - (A)} | 350 | 255 |\n\n(ii) Calculation showing Contribution per unit of manufactured \"MH 100\" and purchased \"MH 100\":\n\n| | Manufactured 'MH 100' (₹) | Purchased 'MH 100' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | -- |\n| Purchase price | -- | 650 |\n| Variable marketing and administrative cost | 80 | 40 |\n| Total Variable cost per unit: (A) | 550 | 690 |\n| Selling price per unit: (B) | 900 | 900 |\n| Contribution per unit {(B) - (A)} | 350 | 210 |\n\n(iii) To determine the optimal mix, we rank products by contribution per machine hour (i.e. the limiting factor).\n\n| | Manufactured 'MH 100' | Manufactured 'MH 200' |\n|---|---|---|\n| Contribution per unit (₹) | 350 | 255 |\n| Machine Hour per unit (Hr) | 1.50 | 0.50 |\n| Contribution per hour (₹) | 233 (350 / 1.5) | 510 (255 / 0.5) |\n| RANKING | II | I |\n\nIf it is decided to manufacture MH 200, there is profit from MH 200 undoubtedly but at the same time the ability to manufacture MH 100 in-house is also lost. Because MH 100 can be bought from Rex Limited to fulfill the orders, the real question is: \"Is the extra profit earned from manufacturing MH 200 high enough to cover the extra cost of buying MH 100 from a supplier instead of making it inhouse?\"\n\nIf we strictly compare Manufacture MH 100 vs. Manufacture MH 200 without considering the buy option, we would miss the most profitable strategy. Accordingly, the following analysis is made:\n\n| | ₹ per unit |\n|---|---|\n| Variable Cost to manufacture MH 100 | 550 |\n| Purchase Cost | 690 |\n| Incremental Cost of Buying (690 - 550) | 140 |\n\nTo justify buying MH 100 so that the machines can be freed up for MH 200, MH 200 must generate enough additional contribution to cover that ₹140 \"penalty.\" To replace 1 unit of MH 100 (1.5 hours), 3 units of MH 200 can be manufactured.\n\nThose 3 units of MH 200 bring in ₹750 in contribution. The 1 unit of MH 100 gave up making would have brought in ₹350.\n\nNet Gain in manufacturing MH 200 is: ₹750 - ₹350 = ₹400.\n\nConclusion: Since ₹400 (the gain from switching) is much higher than ₹140 (the cost of buying the unit), the decision to switch is confirmed.\n\nCalculation of Quantity of each product that MHT Limited should manufacture to maximize income:\n\n| Product | Ranking | Production | Machine hours per unit | Machine Hours used | Balance Machine Hours |\n|---|---|---|---|---|---|\n| | | | | | 7,500 |\n| MH 200 | I | 12,000 | 0.5 | 6,000 | 1,500 |\n| MH 100 | II | 1,000 | 1.5 | 1,500 | - |\n\nCalculation of Quantity of MH 100 to be purchased:\n\n| | |\n|---|---|\n| Total Demand for MH 100 | 8,000 units |\n| Quantity Produced | 1,000 units |\n| Unmet Demand | 7,000 units |\n| Purchase Limit fixed by Rex Ltd | 6,000 units |\n| Quantity to be purchased | 6,000 units |\n\nThe Optimal Product Mix to maximise operating Income is:\n\n- Manufacture 12,000 units of MH 200.\n- Manufacture 1,000 units of MH 100.\n- Purchase 6,000 units of MH 100.",
+    "reference_solution_md": "It is given that \"Manufacturing overhead costs\" of ₹180 per unit for MH 100 and ₹60 per unit for MH 200, without explicitly separating them into fixed and variable components.\n\nSince MHT uses machine hours as the basis for assigning fixed manufacturing overhead and total fixed manufacturing overhead is given as ₹3,00,000, we should first determine the fixed overhead absorbed per unit and then derive the variable manufacturing overhead.\n\nCalculation of Machine hours for the production of one unit of each of the two products:\n\n| Product | Variable machine operating costs (₹) | Hourly Rate (₹) | Machine Hours per unit |\n|---|---|---|---|\n| MH 100 | 150 | 100 | 1.50 |\n| MH 200 | 50 | 100 | 0.50 |\n\n(a) Calculation of Fixed Manufacturing Overhead Rate:\n\nCurrent production = 5,000 units\n\n$$\n\\begin{aligned}\n\\text{Machine hours used} &= 5{,}000 \\times 1.5 \\text{ hrs} = 7{,}500 \\text{ hrs} \\\\\n\\text{Fixed overhead rate / machine hour} &= \\frac{\\text{₹ }3{,}00{,}000}{7{,}500} = \\text{₹ }40 \\text{ per machine hour}\n\\end{aligned}\n$$\n\n(b) Calculation of Variable Manufacturing Overhead Rate:\n\nMH 100:\n\n$$\n\\begin{aligned}\n\\text{Fixed Overhead absorbed per unit} &= \\text{₹ }40 \\times 1.5 = \\text{₹ }60 \\\\\n\\text{Variable Manufacturing Overhead} &= \\text{₹ }180 - \\text{₹ }60 = \\text{₹ }120\n\\end{aligned}\n$$\n\nMH 200:\n\n$$\n\\begin{aligned}\n\\text{Fixed Overhead absorbed per unit} &= \\text{₹ }40 \\times 0.5 = \\text{₹ }20 \\\\\n\\text{Variable Manufacturing Overhead} &= \\text{₹ }60 - \\text{₹ }20 = \\text{₹ }40\n\\end{aligned}\n$$\n\nCalculation of Variable costs of production of \"MH 100\" and \"MH 200\":\n\n| Per unit | 'MH 100' (₹) | 'MH 200' (₹) |\n|---|---|---|\n| Direct materials | 200 | 200 |\n| Variable machine operating costs | 150 | 50 |\n| Variable manufacturing overheads [Note 2 (b)] | 120 | 40 |\n| Total variable cost of production per units | 470 | 290 |\n\n(i) Calculation showing Contribution per unit of manufactured \"MH 100\" and manufactured \"MH 200\":\n\n| | Manufactured 'MH 100' (₹) | Manufactured 'MH 200' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | 290 |\n| Variable marketing and administrative cost | 80 | 60 |\n| Total variable cost per unit: (A) | 550 | 350 |\n| Selling price per units (B) | 900 | 600 |\n| Contribution per unit {(B) - (A)} | 350 | 250 |\n\n(ii) Calculation showing Contribution per unit of manufactured \"MH 100\" and purchased \"MH 100\":\n\n| | Manufactured 'MH 100' (₹) | Purchased 'MH 100' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | -- |\n| Purchase price | -- | 650 |\n| Variable marketing and administrative cost | 80 | 40 |\n| Total Variable cost per unit: (A) | 550 | 690 |\n| Selling price per unit: (B) | 900 | 900 |\n| Contribution per unit {(B) - (A)} | 350 | 210 |\n\n(iii) To determine the optimal mix, we rank products by contribution per machine hour (i.e. the limiting factor).\n\n| | Manufactured 'MH 100' | Manufactured 'MH 200' |\n|---|---|---|\n| Contribution per unit (₹) | 350 | 250 |\n| Machine Hour per unit (Hr) | 1.50 | 0.50 |\n| Contribution per hour (₹) | 233 (350 / 1.5) | 500 (250 / 0.5) |\n| RANKING | II | I |\n\nIf it is decided to manufacture MH 200, there is profit from MH 200 undoubtedly but at the same time the ability to manufacture MH 100 in-house is also lost. Because MH 100 can be bought from Rex Limited to fulfill the orders, the real question is: \"Is the extra profit earned from manufacturing MH 200 high enough to cover the extra cost of buying MH 100 from a supplier instead of making it inhouse?\"\n\nIf we strictly compare Manufacture MH 100 vs. Manufacture MH 200 without considering the buy option, we would miss the most profitable strategy. Accordingly, the following analysis is made:\n\n| | ₹ per unit |\n|---|---|\n| Variable Cost to manufacture MH 100 | 550 |\n| Purchase Cost | 690 |\n| Incremental Cost of Buying (690 - 550) | 140 |\n\nTo justify buying MH 100 so that the machines can be freed up for MH 200, MH 200 must generate enough additional contribution to cover that ₹140 \"penalty.\" To replace 1 unit of MH 100 (1.5 hours), 3 units of MH 200 can be manufactured.\n\nThose 3 units of MH 200 bring in ₹750 in contribution. The 1 unit of MH 100 gave up making would have brought in ₹350.\n\nNet Gain in manufacturing MH 200 is: ₹750 - ₹350 = ₹400.\n\nConclusion: Since ₹400 (the gain from switching) is much higher than ₹140 (the cost of buying the unit), the decision to switch is confirmed.\n\nCalculation of Quantity of each product that MHT Limited should manufacture to maximize income:\n\n| Product | Ranking | Production | Machine hours per unit | Machine Hours used | Balance Machine Hours |\n|---|---|---|---|---|---|\n| | | | | | 7,500 |\n| MH 200 | I | 12,000 | 0.5 | 6,000 | 1,500 |\n| MH 100 | II | 1,000 | 1.5 | 1,500 | - |\n\nCalculation of Quantity of MH 100 to be purchased:\n\n| | |\n|---|---|\n| Total Demand for MH 100 | 8,000 units |\n| Quantity Produced | 1,000 units |\n| Unmet Demand | 7,000 units |\n| Purchase Limit fixed by Rex Ltd | 6,000 units |\n| Quantity to be purchased | 6,000 units |\n\nThe Optimal Product Mix to maximise operating Income is:\n\n- Manufacture 12,000 units of MH 200.\n- Manufacture 1,000 units of MH 100.\n- Purchase 6,000 units of MH 100.\n\nAlternative Solution:\n\n(a) Calculation of Fixed Manufacturing Overhead Rate:\n\nFor MH 100\n\n$$\n\\text{Fixed overhead rate per unit} = \\frac{\\text{₹ }3{,}00{,}000}{5{,}000} = \\text{₹ }60 \\text{ per unit}\n$$\n\nFor MH 200\n\n$$\n\\text{Fixed overhead rate per unit} = \\frac{\\text{₹ }3{,}00{,}000}{12{,}000} = \\text{₹ }25 \\text{ per unit}\n$$\n\n(b) Calculation of Variable Manufacturing Overhead Rate:\n\nMH 100:\n\n$$\n\\text{Variable Manufacturing Overhead} = \\text{₹ }180 - \\text{₹ }60 = \\text{₹ }120\n$$\n\nMH 200:\n\n$$\n\\text{Variable Manufacturing Overhead} = \\text{₹ }60 - \\text{₹ }25 = \\text{₹ }35\n$$\n\nCalculation of Variable costs of production of \"MH 100\" and \"MH 200\":\n\n| Per unit | 'MH 100' (₹) | 'MH 200' (₹) |\n|---|---|---|\n| Direct materials | 200 | 200 |\n| Variable machine operating costs | 150 | 50 |\n| Variable manufacturing overheads [Note 2 (b)] | 120 | 35 |\n| Total variable cost of production per units | 470 | 285 |\n\n(i) Calculation showing Contribution per unit of manufactured \"MH 100\" and manufactured \"MH 200\":\n\n| | Manufactured 'MH 100' (₹) | Manufactured 'MH 200' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | 285 |\n| Variable marketing and administrative cost | 80 | 60 |\n| Total variable cost per unit: (A) | 550 | 345 |\n| Selling price per units (B) | 900 | 600 |\n| Contribution per unit {(B) - (A)} | 350 | 255 |\n\n(ii) Calculation showing Contribution per unit of manufactured \"MH 100\" and purchased \"MH 100\":\n\n| | Manufactured 'MH 100' (₹) | Purchased 'MH 100' (₹) |\n|---|---|---|\n| Variable cost of production (Note 3) | 470 | -- |\n| Purchase price | -- | 650 |\n| Variable marketing and administrative cost | 80 | 40 |\n| Total Variable cost per unit: (A) | 550 | 690 |\n| Selling price per unit: (B) | 900 | 900 |\n| Contribution per unit {(B) - (A)} | 350 | 210 |\n\n(iii) To determine the optimal mix, we rank products by contribution per machine hour (i.e. the limiting factor).\n\n| | Manufactured 'MH 100' | Manufactured 'MH 200' |\n|---|---|---|\n| Contribution per unit (₹) | 350 | 255 |\n| Machine Hour per unit (Hr) | 1.50 | 0.50 |\n| Contribution per hour (₹) | 233 (350 / 1.5) | 510 (255 / 0.5) |\n| RANKING | II | I |\n\nIf it is decided to manufacture MH 200, there is profit from MH 200 undoubtedly but at the same time the ability to manufacture MH 100 in-house is also lost. Because MH 100 can be bought from Rex Limited to fulfill the orders, the real question is: \"Is the extra profit earned from manufacturing MH 200 high enough to cover the extra cost of buying MH 100 from a supplier instead of making it inhouse?\"\n\nIf we strictly compare Manufacture MH 100 vs. Manufacture MH 200 without considering the buy option, we would miss the most profitable strategy. Accordingly, the following analysis is made:\n\n| | ₹ per unit |\n|---|---|\n| Variable Cost to manufacture MH 100 | 550 |\n| Purchase Cost | 690 |\n| Incremental Cost of Buying (690 - 550) | 140 |\n\nTo justify buying MH 100 so that the machines can be freed up for MH 200, MH 200 must generate enough additional contribution to cover that ₹140 \"penalty.\" To replace 1 unit of MH 100 (1.5 hours), 3 units of MH 200 can be manufactured.\n\nThose 3 units of MH 200 bring in ₹750 in contribution. The 1 unit of MH 100 gave up making would have brought in ₹350.\n\nNet Gain in manufacturing MH 200 is: ₹750 - ₹350 = ₹400.\n\nConclusion: Since ₹400 (the gain from switching) is much higher than ₹140 (the cost of buying the unit), the decision to switch is confirmed.\n\nCalculation of Quantity of each product that MHT Limited should manufacture to maximize income:\n\n| Product | Ranking | Production | Machine hours per unit | Machine Hours used | Balance Machine Hours |\n|---|---|---|---|---|---|\n| | | | | | 7,500 |\n| MH 200 | I | 12,000 | 0.5 | 6,000 | 1,500 |\n| MH 100 | II | 1,000 | 1.5 | 1,500 | - |\n\nCalculation of Quantity of MH 100 to be purchased:\n\n| | |\n|---|---|\n| Total Demand for MH 100 | 8,000 units |\n| Quantity Produced | 1,000 units |\n| Unmet Demand | 7,000 units |\n| Purchase Limit fixed by Rex Ltd | 6,000 units |\n| Quantity to be purchased | 6,000 units |\n\nThe Optimal Product Mix to maximise operating Income is:\n\n- Manufacture 12,000 units of MH 200.\n- Manufacture 1,000 units of MH 100.\n- Purchase 6,000 units of MH 100.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.16,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 18,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Global Multinational Ltd. (GML) is organized on decentralized lines, with each manufacturing division operating as a separate profit centre. Each division has full authority to decide on sale of the division’s output to outsiders and to other divisions.\n\nDivision Dx had always purchased its requirements of a component from Division Dz but when informed that Division Dz was increasing its selling price to ₹ 150, the manager of Division Dx decided to look at outside suppliers. Division Dx can buy the components from an outside supplier for ₹ 135. But Division Dz refuses to lower its price in view of its need to maintain its return on the investment.\n\nThe top management has the following information:\n• Dx’s annual purchase of the component : 1,000 units.\n• Dz’s variable costs per unit : ₹ 120.\n• Dz’s fixed cost per unit : ₹ 20\n\nRequired:\nFrom the viewpoint of the company as a whole analyze and assess the following situations:\n(i) Will the company as a whole benefit, if Division Dx buys the component at ₹ 135 from an outside supplier?\n(ii) If Division Dz did not produce the material for Division Dx, it could use the facilities for other activities resulting in a cash operating savings of ₹ 18,000. Should Division Dx then purchase from outside sources?\n(iii) Suppose there is no alternative use of Division Dz’s facilities and the market price per unit for the component drops by ₹ 20. Should Division Dx now buy from outside?",
+    "parent_ref": "3",
+    "explanation_md": "(i) Division Dx buying the component at ₹135 from an outside supplier:\n\n| | ₹ |\n|---|---|\n| Purchase cost (from outside supplier) (1,000 units × ₹135 p.u.) | 1,35,000.00 |\n| Less: Saving in variable cost of Division Dz by reducing division's output (1,000 units x ₹120 p.u.) | 1,20,000.00 |\n| Net loss | 15,000.00 |\n\nObservation: The company as a whole will incur a loss of ₹15,000 if Division Dx buys the component from an outside supplier at ₹135 p.u.\n\n(ii) Division Dx buying the component at ₹135 from an outside supplier and Division Dz saving ₹18,000:\n\n| | ₹ |\n|---|---|\n| Purchase cost (from outside supplier) (1,000 units x ₹135 p.u.) | 1,35,000.00 |\n| Less: | |\n| a. Saving in variable cost of Division Dz by reducing division's output (1,000 units × ₹120 p.u.) | 1,20,000.00 |\n| b. Operating savings by using facilities for other activities | 18,000.00 |\n| c. Total Savings | 1,38,000.00 |\n| Net Gain | 3,000.00 |\n\nObservation: The company as a whole will benefit by ₹3,000 if Division Dx buys the component from an outside supplier at ₹135 p.u. and Division Dz's facilities are used for other activities.\n\n(iii) There is no alternative use of Division Dz's facilities and the market price per unit for the component drops by ₹20:\n\n| | ₹ |\n|---|---|\n| Purchase cost (from outside supplier) (1,000 units × ₹115 p.u.) | 1,15,000.00 |\n| Less: Saving in variable cost of Division Dz by reducing division's output (1,000 units × ₹120 p.u.) | 1,20,000.00 |\n| Net Gain | 5,000.00 |\n\nObservation: The company as a whole will benefit by ₹5,000 if Division Dx buys the component from an outside supplier at ₹115 p.u.\n\nAlternative Solution:\n\n(i) Range Analysis for Buying at ₹135\n\nCalculate Minimum Transfer Price (Division Dz Perspective)\n\n- Variable cost = ₹120.\n- Opportunity cost = ₹0 (as there is no mention of lost sales or alternative uses yet).\n- Minimum TP = ₹120.\n\nCalculate Maximum Transfer Price (Division Dx Perspective)\n\n- The maximum Dx will pay is the cost of the outside supplier: ₹135.\n\nEvaluate the Range\n\n- Any price between ₹120 and ₹135 benefits the company.\n- Because Division Dz is insisting on ₹150, they are above the maximum price Division Dx is willing to pay.\n- However, from a company viewpoint, as long as the internal cost (₹120) is lower than the outside price (₹135), the company loses ₹15 per unit (₹135 - ₹120) if Dx buys outside and total loss is ₹15,000.\n\n(ii) Range Analysis with Alternative Use (₹18,000 savings)\n\nCalculate Minimum Transfer Price (Division Dz Perspective)\n\n- Variable cost = ₹120.\n- Opportunity cost per unit = Total savings lost / Units = ₹18,000 / 1,000 units = ₹18 per unit.\n- Minimum TP = ₹120 + ₹18 = ₹138.\n\nCalculate Maximum Transfer Price (Division Dx Perspective)\n\n- External market price = ₹135.\n\nEvaluate the Range\n\n- In this case, the Minimum Transfer Price (₹138) is higher than the Maximum Transfer Price (₹135).\n- Conclusion: There is no \"win-win\" range. It is cheaper for the company to let Division Dx buy outside for ₹135 and allow Division Dz to realize the ₹18,000 savings. The company as a whole will benefit by ₹3,000.\n\n(iii) Range Analysis if Market Price Drops by ₹20:\n\nCalculate Minimum Transfer Price (Division Dz Perspective)\n\n- With no alternative use, the opportunity cost returns to ₹0.\n- Minimum TP = ₹120.\n\nCalculate Maximum Transfer Price (Division Dx Perspective)\n\n- New external price = ₹135 - ₹20 = ₹115.\n\nEvaluate the Range\n\n- The Minimum Transfer Price (₹120) is now higher than the Maximum Transfer Price (₹115).\n- Conclusion: Even without alternative facilities, the company is better off if Division Dx buys from the outside supplier because the external cost (₹115) is lower than the company's own variable production cost (₹120). The company as a whole will benefit by ₹5,000.",
+    "reference_solution_md": "(i) Division Dx buying the component at ₹135 from an outside supplier:\n\n| | ₹ |\n|---|---|\n| Purchase cost (from outside supplier) (1,000 units × ₹135 p.u.) | 1,35,000.00 |\n| Less: Saving in variable cost of Division Dz by reducing division's output (1,000 units x ₹120 p.u.) | 1,20,000.00 |\n| Net loss | 15,000.00 |\n\nObservation: The company as a whole will incur a loss of ₹15,000 if Division Dx buys the component from an outside supplier at ₹135 p.u.\n\n(ii) Division Dx buying the component at ₹135 from an outside supplier and Division Dz saving ₹18,000:\n\n| | ₹ |\n|---|---|\n| Purchase cost (from outside supplier) (1,000 units x ₹135 p.u.) | 1,35,000.00 |\n| Less: | |\n| a. Saving in variable cost of Division Dz by reducing division's output (1,000 units × ₹120 p.u.) | 1,20,000.00 |\n| b. Operating savings by using facilities for other activities | 18,000.00 |\n| c. Total Savings | 1,38,000.00 |\n| Net Gain | 3,000.00 |\n\nObservation: The company as a whole will benefit by ₹3,000 if Division Dx buys the component from an outside supplier at ₹135 p.u. and Division Dz's facilities are used for other activities.\n\n(iii) There is no alternative use of Division Dz's facilities and the market price per unit for the component drops by ₹20:\n\n| | ₹ |\n|---|---|\n| Purchase cost (from outside supplier) (1,000 units × ₹115 p.u.) | 1,15,000.00 |\n| Less: Saving in variable cost of Division Dz by reducing division's output (1,000 units × ₹120 p.u.) | 1,20,000.00 |\n| Net Gain | 5,000.00 |\n\nObservation: The company as a whole will benefit by ₹5,000 if Division Dx buys the component from an outside supplier at ₹115 p.u.\n\nAlternative Solution:\n\n(i) Range Analysis for Buying at ₹135\n\nCalculate Minimum Transfer Price (Division Dz Perspective)\n\n- Variable cost = ₹120.\n- Opportunity cost = ₹0 (as there is no mention of lost sales or alternative uses yet).\n- Minimum TP = ₹120.\n\nCalculate Maximum Transfer Price (Division Dx Perspective)\n\n- The maximum Dx will pay is the cost of the outside supplier: ₹135.\n\nEvaluate the Range\n\n- Any price between ₹120 and ₹135 benefits the company.\n- Because Division Dz is insisting on ₹150, they are above the maximum price Division Dx is willing to pay.\n- However, from a company viewpoint, as long as the internal cost (₹120) is lower than the outside price (₹135), the company loses ₹15 per unit (₹135 - ₹120) if Dx buys outside and total loss is ₹15,000.\n\n(ii) Range Analysis with Alternative Use (₹18,000 savings)\n\nCalculate Minimum Transfer Price (Division Dz Perspective)\n\n- Variable cost = ₹120.\n- Opportunity cost per unit = Total savings lost / Units = ₹18,000 / 1,000 units = ₹18 per unit.\n- Minimum TP = ₹120 + ₹18 = ₹138.\n\nCalculate Maximum Transfer Price (Division Dx Perspective)\n\n- External market price = ₹135.\n\nEvaluate the Range\n\n- In this case, the Minimum Transfer Price (₹138) is higher than the Maximum Transfer Price (₹135).\n- Conclusion: There is no \"win-win\" range. It is cheaper for the company to let Division Dx buy outside for ₹135 and allow Division Dz to realize the ₹18,000 savings. The company as a whole will benefit by ₹3,000.\n\n(iii) Range Analysis if Market Price Drops by ₹20:\n\nCalculate Minimum Transfer Price (Division Dz Perspective)\n\n- With no alternative use, the opportunity cost returns to ₹0.\n- Minimum TP = ₹120.\n\nCalculate Maximum Transfer Price (Division Dx Perspective)\n\n- New external price = ₹135 - ₹20 = ₹115.\n\nEvaluate the Range\n\n- The Minimum Transfer Price (₹120) is now higher than the Maximum Transfer Price (₹115).\n- Conclusion: Even without alternative facilities, the company is better off if Division Dx buys from the outside supplier because the external cost (₹115) is lower than the company's own variable production cost (₹120). The company as a whole will benefit by ₹5,000.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.33,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 20,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "BEE Ltd. sells its product at ₹ 1,000 per unit. Due to competition, its competitors are likely to reduce price by 15%. BEE wants to respond aggressively by cutting price by 20% and expects that the present volume of 1,50,000 units p.a. will increase to 2,00,000. BEE wants to earn a 10% target profit on sales. Based on a detailed value engineering the comparative position is given below:\n\n| Particulars | Existing (₹) | Target (₹) |\n|---|---|---|\n| Direct material cost per unit | 400 | 385 |\n| Direct manufacturing labour cost per unit | 55 | 50 |\n| Direct machinery costs per unit | 70 | 60 |\n| Direct manufacturing costs per unit | 525 | 495 |\n| Manufacturing overheads: | | |\n| No. of orders (₹ 80 per order) | 22,500 | 21,250 |\n| Testing hours (₹ 2 per hour) | 45,00,000 | 30,00,000 |\n| Units reworked (₹ 100 per unit) | 12,000 | 13,000 |\n\nManufacturing overheads are allocated using relevant cost drivers. Other operating costs per unit for the expected volume are estimated as follows:\n\n| | |\n|---|---|\n| Research & Design | 50 |\n| Marketing & Customer Service | 130 |\n| Total | 180 |\n\nRequired:\n(i) Calculate target costs per unit and target costs for the proposed volume showing break up of different elements.\n(ii) Prepare target product profitability statement.",
+    "parent_ref": "3",
+    "explanation_md": "(i) Calculation of target costs per unit and target costs for the proposed volume showing break up of different elements:\n\nTarget Cost per unit:\n\n| | |\n|---|---|\n| Target selling price: ₹1,000 less 20% | ₹ 800 |\n| Less: Target profit margin (10%) | ₹ 80 |\n| Target costs per unit | ₹ 720 |\n\nElement wise break-up of ₹720 per unit:\n\n| Serial | Particulars | ₹ Per Unit | ₹ Per Unit (Total) |\n|---|---|---|---|\n| 1 | Direct Manufacturing Costs | | |\n| a | Direct materials | 385 | |\n| b | Direct manufacturing labour | 50 | |\n| c | Direct machining costs | 60 | |\n| d | Sub Total (a to c) | | 495 |\n| 2 | Manufacturing Overheads | | |\n| a | Ordering and receiving (21,250 × ₹80) ÷ 2,00,000 | 8.50 | |\n| b | Testing and inspection (30,00,000 × ₹2) ÷ 2,00,000 | 30.00 | |\n| c | Rework (13,000 × ₹100) ÷ 2,00,000 | 6.50 | |\n| d | Sub Total (a to c) | | 45 |\n| 3 | Total manufacturing costs (1+2) | | 540 |\n| 4 | Other operating costs | | |\n| a | Research and Design | 50 | |\n| b | Marketing and Customer service | 130 | |\n| c | Sub Total (a to b) | | 180 |\n| 5 | Total Cost (3+4) | | 720 |\n\n(ii) Target Product Profitability:\n\n| Serial | Particulars | Per unit (₹) | 2,00,000 units (₹) |\n|---|---|---|---|\n| 1 | Sales | 800 | 16,00,00,000 |\n| 2 | Costs of goods sold: | | |\n| a | Direct materials | 385 | 7,70,00,000 |\n| b | Direct labour | 50 | 1,00,00,000 |\n| c | Direct machining costs | 60 | 1,20,00,000 |\n| d | Subtotal (a to c) | 495 | 9,90,00,000 |\n| 3 | Manufacturing overheads | 45 | 90,00,000 |\n| 4 | Total manufacturing costs (2+3) | 540 | 10,80,00,000 |\n| 5 | Gross margin (1-4) | 260 | 5,20,00,000 |\n| 6 | Other Operating costs | | |\n| a | Research and Design | 50 | 1,00,00,000 |\n| b | Marketing and customer service | 130 | 2,60,00,000 |\n| c | Sub Total (a to b) | 180 | 3,60,00,000 |\n| 7 | Operating profit (5-6) | 80 | 1,60,00,000 |",
+    "reference_solution_md": "(i) Calculation of target costs per unit and target costs for the proposed volume showing break up of different elements:\n\nTarget Cost per unit:\n\n| | |\n|---|---|\n| Target selling price: ₹1,000 less 20% | ₹ 800 |\n| Less: Target profit margin (10%) | ₹ 80 |\n| Target costs per unit | ₹ 720 |\n\nElement wise break-up of ₹720 per unit:\n\n| Serial | Particulars | ₹ Per Unit | ₹ Per Unit (Total) |\n|---|---|---|---|\n| 1 | Direct Manufacturing Costs | | |\n| a | Direct materials | 385 | |\n| b | Direct manufacturing labour | 50 | |\n| c | Direct machining costs | 60 | |\n| d | Sub Total (a to c) | | 495 |\n| 2 | Manufacturing Overheads | | |\n| a | Ordering and receiving (21,250 × ₹80) ÷ 2,00,000 | 8.50 | |\n| b | Testing and inspection (30,00,000 × ₹2) ÷ 2,00,000 | 30.00 | |\n| c | Rework (13,000 × ₹100) ÷ 2,00,000 | 6.50 | |\n| d | Sub Total (a to c) | | 45 |\n| 3 | Total manufacturing costs (1+2) | | 540 |\n| 4 | Other operating costs | | |\n| a | Research and Design | 50 | |\n| b | Marketing and Customer service | 130 | |\n| c | Sub Total (a to b) | | 180 |\n| 5 | Total Cost (3+4) | | 720 |\n\n(ii) Target Product Profitability:\n\n| Serial | Particulars | Per unit (₹) | 2,00,000 units (₹) |\n|---|---|---|---|\n| 1 | Sales | 800 | 16,00,00,000 |\n| 2 | Costs of goods sold: | | |\n| a | Direct materials | 385 | 7,70,00,000 |\n| b | Direct labour | 50 | 1,00,00,000 |\n| c | Direct machining costs | 60 | 1,20,00,000 |\n| d | Subtotal (a to c) | 495 | 9,90,00,000 |\n| 3 | Manufacturing overheads | 45 | 90,00,000 |\n| 4 | Total manufacturing costs (2+3) | 540 | 10,80,00,000 |\n| 5 | Gross margin (1-4) | 260 | 5,20,00,000 |\n| 6 | Other Operating costs | | |\n| a | Research and Design | 50 | 1,00,00,000 |\n| b | Marketing and customer service | 130 | 2,60,00,000 |\n| c | Sub Total (a to b) | 180 | 3,60,00,000 |\n| 7 | Operating profit (5-6) | 80 | 1,60,00,000 |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.21,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 21,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "MOKN Ltd., manufactures four products, namely A, B, C and D using the same plant and process. The following information relates to a production period.\n\n| Product | A | B | C | D |\n|---|---|---|---|---|\n| Output in Units | 720 | 600 | 480 | 504 |\n\nThe four products are similar and are usually produced in production runs of 24 units and sold in batches of 12 units. The total overheads incurred by the company for the period are as follows :\n\n| | ₹ |\n|---|---|\n| Machine operation and maintenance cost | 63,000 |\n| Setup costs | 20,000 |\n| Store receiving | 15,000 |\n| Inspection | 10,000 |\n| Material handling and dispatch | 2,592 |\n\nDuring the period the following cost drivers are to be used for the overhead cost:\n\n| Cost | Cost Driver |\n|---|---|\n| Setup cost | No. of production runs |\n| Store receiving | Requisitions raised |\n| Inspection | No. of production runs |\n| Material handling and dispatch | Orders executed |\n\nIt is also determined that :\n• Machine operation and maintenance cost should be apportioned between setup cost, store receiving and inspection activity in the ratio 4 : 3 : 2.\n• Number of requisition raised on store is 50 for each product and the no. of orders executed is 192, each order being for a batch of 12 units of a product.\n\nRequired :\n(i) Analyze the Activity Based Costing Recovery Rate.\n(ii) Assess the total overhead costs per unit of each product using Activity Based Costing.",
+    "parent_ref": "4",
+    "explanation_md": "(i) Calculation of Number of Production Runs and Number of Batches:\n\n| Product | A | B | C | D | Total |\n|---|---|---|---|---|---|\n| (a) Output Quantity | 720 units | 600 units | 480 units | 504 units | 2304 |\n| (b) Quantity per Production Run | 24 units | 24 units | 24 units | 24 units | 96 units |\n| (c) Number of Production Runs (a ÷ b) | 30 runs | 25 runs | 20 runs | 21 runs | 96 runs |\n| (d) Quantity per Batch Order | 12 units | 12 units | 12 units | 12 units | 48 units |\n| (e) Number of Batches (a ÷ d) | 60 batches | 50 batches | 40 batches | 42 batches | 192 batches |\n\nNote:\n\nMachine Operation and Maintenance Cost amounting to ₹63,000 is apportioned among the first three activities in the ratio of 4:3:2. Accordingly, the costs allocated to the respective activities are ₹28,000, ₹21,000 and ₹14,000.\n\nCalculation of Activity Based Costing Recovery Rate:\n\n| Activity | Activity Cost Pool | Cost Driver | Quantity | ABC RATE |\n|---|---|---|---|---|\n| Set Up | 20,000 + 28,000 = ₹ 48,000 | No. of Production Runs | 96 | ₹ 500 per Run |\n| Stores Receiving | 15,000 + 21,000 = ₹36,000 | Requisitions raised | 50 x 4 = 200 | ₹ 180 per Reqn. |\n| Inspection | 10,000 +14,000 = ₹ 24,000 | No. of Production Runs | 96 | ₹ 250 per Run |\n| Material Handling | Given = ₹ 2,592 | Order executed | 192 | ₹ 13.5 per Batch |\n\n(ii) Computation of OH Costs using Activity Based Costing System:\n\n| | A (₹) | B (₹) | C (₹) | D (₹) | Total (₹) |\n|---|---|---|---|---|---|\n| Setup | 500 x 30 = 15,000 | 500 x 25 = 12,500 | 500 x 20 = 10,000 | 500 x 21 = 10,500 | 48,000 |\n| Stores Receiving | 9,000 | 9,000 | 9,000 | 9,000 | 36,000 |\n| Inspection | 250 x 30 = 7,500 | 250 x 25 = 6,250 | 250 x 20 = 5,000 | 250 x 21 = 5,250 | 24,000 |\n| Material Handling | 13.50 x 60 = 810 | 13.50 x 50 = 675 | 13.50 x 40 = 540 | 13.50 x 42 = 567 | 2,592 |\n| (a) Total OH Cost | 32,310 | 28,425 | 24,540 | 25,317 | 1,10,592 |\n| (b) Output Quality | 720 units | 600 units | 480 units | 504 units | |\n| (c) OH Cost p.u. (a÷b) | 44.875 | 47.375 | 51.125 | 50.232 | |",
+    "reference_solution_md": "(i) Calculation of Number of Production Runs and Number of Batches:\n\n| Product | A | B | C | D | Total |\n|---|---|---|---|---|---|\n| (a) Output Quantity | 720 units | 600 units | 480 units | 504 units | 2304 |\n| (b) Quantity per Production Run | 24 units | 24 units | 24 units | 24 units | 96 units |\n| (c) Number of Production Runs (a ÷ b) | 30 runs | 25 runs | 20 runs | 21 runs | 96 runs |\n| (d) Quantity per Batch Order | 12 units | 12 units | 12 units | 12 units | 48 units |\n| (e) Number of Batches (a ÷ d) | 60 batches | 50 batches | 40 batches | 42 batches | 192 batches |\n\nNote:\n\nMachine Operation and Maintenance Cost amounting to ₹63,000 is apportioned among the first three activities in the ratio of 4:3:2. Accordingly, the costs allocated to the respective activities are ₹28,000, ₹21,000 and ₹14,000.\n\nCalculation of Activity Based Costing Recovery Rate:\n\n| Activity | Activity Cost Pool | Cost Driver | Quantity | ABC RATE |\n|---|---|---|---|---|\n| Set Up | 20,000 + 28,000 = ₹ 48,000 | No. of Production Runs | 96 | ₹ 500 per Run |\n| Stores Receiving | 15,000 + 21,000 = ₹36,000 | Requisitions raised | 50 x 4 = 200 | ₹ 180 per Reqn. |\n| Inspection | 10,000 +14,000 = ₹ 24,000 | No. of Production Runs | 96 | ₹ 250 per Run |\n| Material Handling | Given = ₹ 2,592 | Order executed | 192 | ₹ 13.5 per Batch |\n\n(ii) Computation of OH Costs using Activity Based Costing System:\n\n| | A (₹) | B (₹) | C (₹) | D (₹) | Total (₹) |\n|---|---|---|---|---|---|\n| Setup | 500 x 30 = 15,000 | 500 x 25 = 12,500 | 500 x 20 = 10,000 | 500 x 21 = 10,500 | 48,000 |\n| Stores Receiving | 9,000 | 9,000 | 9,000 | 9,000 | 36,000 |\n| Inspection | 250 x 30 = 7,500 | 250 x 25 = 6,250 | 250 x 20 = 5,000 | 250 x 21 = 5,250 | 24,000 |\n| Material Handling | 13.50 x 60 = 810 | 13.50 x 50 = 675 | 13.50 x 40 = 540 | 13.50 x 42 = 567 | 2,592 |\n| (a) Total OH Cost | 32,310 | 28,425 | 24,540 | 25,317 | 1,10,592 |\n| (b) Output Quality | 720 units | 600 units | 480 units | 504 units | |\n| (c) OH Cost p.u. (a÷b) | 44.875 | 47.375 | 51.125 | 50.232 | |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "decision-making-techniques-case-study-based-approach",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 23,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Apply the classification of Cost of Quality to assess the following items under appropriate categories of quality costs, viz., Prevention Costs (PC), Appraisal Costs (AC), Internal Failure Costs (IFC) and External Failure Costs (EFC):\n(i) Product acceptance\n(ii) Design review\n(iii) Discount due to defects\n(iv) Re-inspection\n(v) Statistical process control activities\n(vi) Cost of field servicing\n(vii) Depreciation of testing equipment\n\n[Note: Write only the Roman numbers of the items given against appropriate categories]",
+    "parent_ref": "4",
+    "explanation_md": "The classification of the given items under different categories of Quality Costs is as follows:\n\n| SL. | Category of Quality Cost | Items |\n|---|---|---|\n| 1. | Prevention Costs | (ii), (v) |\n| 2. | Appraisal Costs | (i), (vii) |\n| 3. | Internal Failure Costs | (iv) |\n| 4. | External Failure Costs | (iii), (vi) |\n\nAlternative Solution:\n\n| Sl. No. | Particulars | Category of Quality Costs |\n|---|---|---|\n| (i) | Product acceptance | Appraisal cost |\n| (ii) | Design review | Prevention cost |\n| (iii) | Discount due to defects | External failure cost |\n| (iv) | Re-inspection | Internal failure cost |\n| (v) | Statistical process control activities | Prevention cost |\n| (vi) | Cost of field servicing | External failure cost |\n| (vii) | Depreciation on Testing Equipment | Appraisal cost |",
+    "reference_solution_md": "The classification of the given items under different categories of Quality Costs is as follows:\n\n| SL. | Category of Quality Cost | Items |\n|---|---|---|\n| 1. | Prevention Costs | (ii), (v) |\n| 2. | Appraisal Costs | (i), (vii) |\n| 3. | Internal Failure Costs | (iv) |\n| 4. | External Failure Costs | (iii), (vi) |\n\nAlternative Solution:\n\n| Sl. No. | Particulars | Category of Quality Costs |\n|---|---|---|\n| (i) | Product acceptance | Appraisal cost |\n| (ii) | Design review | Prevention cost |\n| (iii) | Discount due to defects | External failure cost |\n| (iv) | Re-inspection | Internal failure cost |\n| (v) | Statistical process control activities | Prevention cost |\n| (vi) | Cost of field servicing | External failure cost |\n| (vii) | Depreciation on Testing Equipment | Appraisal cost |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.05,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 24,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Zenith Manufacturing Ltd. produces a finished product using two grades of raw materials: Grade A (premium) and Grade B (standard). The company has been experiencing quality issues and cost overruns in their latest product line.\n\nStandard specifications of finished product:\n• Grade A material: 60 kg at ₹ 150 per kg\n• Grade B material: 40 kg at ₹ 100 per kg\n• Standard loss in process: 5% of total input\n• Standard output from 100 kg input: 95 kg of finished product\n\nActual Results for March 2026:\n• Finished output: 9,500 kg\n• Grade A used: 6,200 kg at ₹ 160 per kg\n• Grade B used: 4,500 kg at ₹ 90 per kg\n• Total actual cost: ₹ 13,97,000\n\nRequired:\nAssess comprehensive material variances: Cost, Price, Usage, Mix, and Yield Variances.",
+    "parent_ref": "5",
+    "explanation_md": "Material Cost Variance = Standard Price per unit x Standard Quantity - Actual Price per unit x Actual Quantity\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 x 6,000 - 160 x 6,200 | 92,000 (A) |\n| B | 100 x 4,000 - 90 x 4,500 | 5,000 (A) |\n| TOTAL | | 97,000 (A) |\n\nMaterial Price Variance = Actual Quantity x (Standard Price per unit - Actual Price per unit)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 6,200 (150 - 160) | 62,000 (A) |\n| B | 4,500 (100 - 90) | 45,000 (F) |\n| TOTAL | | 17,000 (A) |\n\nMaterial Usage Variance = Standard Price per unit x (Standard Quantity - Actual Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 (60/95 x 9,500 - 6,200) | 30,000 (A) |\n| B | 100 (40/95 x 9,500 - 4,500) | 50,000 (A) |\n| TOTAL | | 80,000 (A) |\n\nMaterial Mix Variance = Standard Price per unit x (Revised Standard Quantity - Actual Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 x (6,420* - 6,200) | 33,000 (F) |\n| B | 100 x (4,280* - 4,500) | 22,000 (A) |\n| TOTAL | | 11,000 (F) |\n\n*Revised Standard Quantity has been calculated by the following formula:\n\nTotal Actual Quantity/ Total Standard Quantity X Individual Standard Quantity.\n\n$$\n\\begin{aligned}\n\\text{Material A:} \\quad & \\frac{10{,}700}{100} \\times 60 = 6{,}420 \\\\\n\\text{Material B:} \\quad & \\frac{10{,}700}{100} \\times 40 = 4{,}280\n\\end{aligned}\n$$\n\nMaterial Yield Variance = Standard Cost per unit x (Actual Output - Standard Output)\n\n$$\n\\begin{aligned}\n\\text{Actual Output} &= 9{,}500 \\\\\n\\text{Standard Output for actual input} &= 10{,}700 \\times 95\\% = 10{,}165 \\\\\n\\text{Standard Cost per unit} &= (60 \\times 150 + 40 \\times 100) \\div 95 = \\text{₹ }\\frac{13{,}000}{95} \\\\\n\\text{Therefore, Material Yield Variance} &= \\frac{13{,}000}{95} \\times (9{,}500 - 10{,}165) \\\\\n&= \\frac{13{,}000}{95} \\times (-665) \\\\\n&= 91{,}000 \\text{ (A)}\n\\end{aligned}\n$$\n\nAlternative Method to Calculate Material Yield Variance:\n\nMaterial Yield Variance = Standard Price per unit x (Standard Quantity - Revised Standard Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 x (6,000 - 6,420) | 63,000 (A) |\n| B | 100 x (4,000- 4,280) | 28,000 (A) |\n| TOTAL | | 91,000 (A) |\n\nAlternative Solution\n\nWorkings for computation of Variances:\n\nM1- Actual Cost of Material used:\n\n| Material | Actual Quantity (Kg) | Actual Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 6,200 | 160 | 9,92,000 |\n| B | 4,500 | 90 | 4,05,000 |\n| TOTAL | | | 13,97,000 |\n\nM2- Standard Cost of Material used:\n\n| Material | Actual Quantity (Kg) | Standard Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 6,200 | 150 | 9,30,000 |\n| B | 4,500 | 100 | 4,50,000 |\n| TOTAL | | | 13,80,000 |\n\nM3- Standard Cost of Material if it had been used in Standard proportion:\n\n| Material | Standard Proportion | Standard Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 10,700 x 60/100 | 150 | 9,63,000 |\n| B | 10,700 x 40/100 | 100 | 4,28,000 |\n| TOTAL | | | 13,91,000 |\n\nM4- Standard Cost of output:\n\n| Material | Standard Qty for 9,500 Kg | Standard Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 10,700 x 60/95 | 150 | 9,00,000 |\n| B | 10,700 x 40/95 | 100 | 4,00,000 |\n| TOTAL | | | 13,00,000 |\n\nComputation of Material Cost Variances:\n\n| Variance | Formula | Calculation | Amount (₹) |\n|---|---|---|---|\n| Material Cost Variance | M4-M1 | 13,00,000 - 13,97,000 | 97,000 (A) |\n| Material Price Variance | M2-M1 | 13,80,000 - 13,97,000 | 17,000 (A) |\n| Material Usage Variance | M4-M2 | 13,00,000 - 13,80,000 | 80,000 (A) |\n| Material Mix Variance | M3-M2 | 13,91,000 - 13,80,000 | 11,000 (F) |\n| Material Yield Variance | M4-M3 | 13,00,000 - 13,91,000 | 91,000 (A) |",
+    "reference_solution_md": "Material Cost Variance = Standard Price per unit x Standard Quantity - Actual Price per unit x Actual Quantity\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 x 6,000 - 160 x 6,200 | 92,000 (A) |\n| B | 100 x 4,000 - 90 x 4,500 | 5,000 (A) |\n| TOTAL | | 97,000 (A) |\n\nMaterial Price Variance = Actual Quantity x (Standard Price per unit - Actual Price per unit)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 6,200 (150 - 160) | 62,000 (A) |\n| B | 4,500 (100 - 90) | 45,000 (F) |\n| TOTAL | | 17,000 (A) |\n\nMaterial Usage Variance = Standard Price per unit x (Standard Quantity - Actual Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 (60/95 x 9,500 - 6,200) | 30,000 (A) |\n| B | 100 (40/95 x 9,500 - 4,500) | 50,000 (A) |\n| TOTAL | | 80,000 (A) |\n\nMaterial Mix Variance = Standard Price per unit x (Revised Standard Quantity - Actual Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 x (6,420* - 6,200) | 33,000 (F) |\n| B | 100 x (4,280* - 4,500) | 22,000 (A) |\n| TOTAL | | 11,000 (F) |\n\n*Revised Standard Quantity has been calculated by the following formula:\n\nTotal Actual Quantity/ Total Standard Quantity X Individual Standard Quantity.\n\n$$\n\\begin{aligned}\n\\text{Material A:} \\quad & \\frac{10{,}700}{100} \\times 60 = 6{,}420 \\\\\n\\text{Material B:} \\quad & \\frac{10{,}700}{100} \\times 40 = 4{,}280\n\\end{aligned}\n$$\n\nMaterial Yield Variance = Standard Cost per unit x (Actual Output - Standard Output)\n\n$$\n\\begin{aligned}\n\\text{Actual Output} &= 9{,}500 \\\\\n\\text{Standard Output for actual input} &= 10{,}700 \\times 95\\% = 10{,}165 \\\\\n\\text{Standard Cost per unit} &= (60 \\times 150 + 40 \\times 100) \\div 95 = \\text{₹ }\\frac{13{,}000}{95} \\\\\n\\text{Therefore, Material Yield Variance} &= \\frac{13{,}000}{95} \\times (9{,}500 - 10{,}165) \\\\\n&= \\frac{13{,}000}{95} \\times (-665) \\\\\n&= 91{,}000 \\text{ (A)}\n\\end{aligned}\n$$\n\nAlternative Method to Calculate Material Yield Variance:\n\nMaterial Yield Variance = Standard Price per unit x (Standard Quantity - Revised Standard Quantity)\n\n| Material | Calculation | Variance (₹) |\n|---|---|---|\n| A | 150 x (6,000 - 6,420) | 63,000 (A) |\n| B | 100 x (4,000- 4,280) | 28,000 (A) |\n| TOTAL | | 91,000 (A) |\n\nAlternative Solution\n\nWorkings for computation of Variances:\n\nM1- Actual Cost of Material used:\n\n| Material | Actual Quantity (Kg) | Actual Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 6,200 | 160 | 9,92,000 |\n| B | 4,500 | 90 | 4,05,000 |\n| TOTAL | | | 13,97,000 |\n\nM2- Standard Cost of Material used:\n\n| Material | Actual Quantity (Kg) | Standard Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 6,200 | 150 | 9,30,000 |\n| B | 4,500 | 100 | 4,50,000 |\n| TOTAL | | | 13,80,000 |\n\nM3- Standard Cost of Material if it had been used in Standard proportion:\n\n| Material | Standard Proportion | Standard Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 10,700 x 60/100 | 150 | 9,63,000 |\n| B | 10,700 x 40/100 | 100 | 4,28,000 |\n| TOTAL | | | 13,91,000 |\n\nM4- Standard Cost of output:\n\n| Material | Standard Qty for 9,500 Kg | Standard Price (₹) | Amount (₹) |\n|---|---|---|---|\n| A | 10,700 x 60/95 | 150 | 9,00,000 |\n| B | 10,700 x 40/95 | 100 | 4,00,000 |\n| TOTAL | | | 13,00,000 |\n\nComputation of Material Cost Variances:\n\n| Variance | Formula | Calculation | Amount (₹) |\n|---|---|---|---|\n| Material Cost Variance | M4-M1 | 13,00,000 - 13,97,000 | 97,000 (A) |\n| Material Price Variance | M2-M1 | 13,80,000 - 13,97,000 | 17,000 (A) |\n| Material Usage Variance | M4-M2 | 13,00,000 - 13,80,000 | 80,000 (A) |\n| Material Mix Variance | M3-M2 | 13,91,000 - 13,80,000 | 11,000 (F) |\n| Material Yield Variance | M4-M3 | 13,00,000 - 13,91,000 | 91,000 (A) |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.82,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 26,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The standard cost data of three products X, Y and Z manufactured by Preet India Ltd. (PIL) are given below together with the budgeted sales and unit selling prices for 2025-26:\n\n| | X | Y | Z |\n|---|---|---|---|\n| Budgeted sales (units) | 25,000 | 20,000 | 15,000 |\n| Selling price per unit (₹) | 40 | 60 | 80 |\n| Cost per unit (₹) | 28 | 48 | 64 |\n\nIn April 2026, the cost department of PIL gathered the following details for 2025-26:\n\n| | X | Y | Z |\n|---|---|---|---|\n| Actual sales (units) | 20,000 | 22,000 | 16,000 |\n| Average Selling price per unit (₹) | 42 | 56 | 81 |\n| Actual Cost per unit (₹) | 30 | 50 | 63 |\n\nRequired:\n(i) Calculate Budgeted profit and Actual profit for 2025-26\n(ii) Assess the variance in profit analyzed into:\n (a) Cost Variance\n (b) Sales Price Variance\n (c) Sales Volume Variance",
+    "parent_ref": "5",
+    "explanation_md": "(i) Budgeted Profit:\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 25,000 (₹40 - ₹28) | 3,00,000 |\n| Y | 20,000 (₹60 - ₹48) | 2,40,000 |\n| Z | 15,000 (₹80 - ₹64) | 2,40,000 |\n| Total | | 7,80,000 |\n\nActual Profit:\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 20,000 (₹42 - ₹30) | 2,40,000 |\n| Y | 22,000 (₹56 - ₹50) | 1,32,000 |\n| Z | 16,000 (₹81 - ₹63) | 2,88,000 |\n| Total | | 6,60,000 |\n\n(ii) Variance in profit:\n\n$$\n\\begin{aligned}\n\\text{Variance in profit} &= \\text{Budgeted Profit} - \\text{Actual Profit} \\\\\n&= \\text{₹ }7{,}80{,}000 - \\text{₹ }6{,}60{,}000 = \\text{₹ }1{,}20{,}000 \\text{ (A)}\n\\end{aligned}\n$$\n\nThis is analysed into different causes as follows:\n\n(i) Cost Variance = Actual no. of units sold x (Standard cost - Actual cost)\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 20,000 (₹28 - ₹30) | 40,000 (A) |\n| Y | 22,000 (₹48 - ₹50) | 44,000 (A) |\n| Z | 16,000 (₹64 - ₹63) | 16,000 (F) |\n| Total | | 68,000 (A) |\n\n(ii) Sales Price Variance = Actual Sales x (Actual Price - Standard price)\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 20,000 (₹42 - ₹40) | 40,000 (F) |\n| Y | 22,000 (₹56 - ₹60) | 88,000 (A) |\n| Z | 16,000 (₹81 - ₹80) | 16,000 (F) |\n| Total | | 32,000 (A) |\n\n(iii) Sales Volume Variance = Standard profit x (Actual Sales - Budgeted Sales)\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | ₹12 (20,000 - 25,000) | 60,000 (A) |\n| Y | ₹12 (22,000 - 20,000) | 24,000 (F) |\n| Z | ₹16 (16,000 - 15,000) | 16,000 (F) |\n| Total | | 20,000 (A) |",
+    "reference_solution_md": "(i) Budgeted Profit:\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 25,000 (₹40 - ₹28) | 3,00,000 |\n| Y | 20,000 (₹60 - ₹48) | 2,40,000 |\n| Z | 15,000 (₹80 - ₹64) | 2,40,000 |\n| Total | | 7,80,000 |\n\nActual Profit:\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 20,000 (₹42 - ₹30) | 2,40,000 |\n| Y | 22,000 (₹56 - ₹50) | 1,32,000 |\n| Z | 16,000 (₹81 - ₹63) | 2,88,000 |\n| Total | | 6,60,000 |\n\n(ii) Variance in profit:\n\n$$\n\\begin{aligned}\n\\text{Variance in profit} &= \\text{Budgeted Profit} - \\text{Actual Profit} \\\\\n&= \\text{₹ }7{,}80{,}000 - \\text{₹ }6{,}60{,}000 = \\text{₹ }1{,}20{,}000 \\text{ (A)}\n\\end{aligned}\n$$\n\nThis is analysed into different causes as follows:\n\n(i) Cost Variance = Actual no. of units sold x (Standard cost - Actual cost)\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 20,000 (₹28 - ₹30) | 40,000 (A) |\n| Y | 22,000 (₹48 - ₹50) | 44,000 (A) |\n| Z | 16,000 (₹64 - ₹63) | 16,000 (F) |\n| Total | | 68,000 (A) |\n\n(ii) Sales Price Variance = Actual Sales x (Actual Price - Standard price)\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | 20,000 (₹42 - ₹40) | 40,000 (F) |\n| Y | 22,000 (₹56 - ₹60) | 88,000 (A) |\n| Z | 16,000 (₹81 - ₹80) | 16,000 (F) |\n| Total | | 32,000 (A) |\n\n(iii) Sales Volume Variance = Standard profit x (Actual Sales - Budgeted Sales)\n\n| Product | Calculation | Amount (in ₹) |\n|---|---|---|\n| X | ₹12 (20,000 - 25,000) | 60,000 (A) |\n| Y | ₹12 (22,000 - 20,000) | 24,000 (F) |\n| Z | ₹16 (16,000 - 15,000) | 16,000 (F) |\n| Total | | 20,000 (A) |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.93,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 27,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A firm produces three products A, B and C. It uses two types of raw materials I and II of which 5000 and 7500 units respectively are available. The raw material requirements per unit of the products are given below:\n\n| Raw Material | A | B | C |\n|---|---|---|---|\n| I | 3 | 4 | 5 |\n| II | 5 | 3 | 5 |\n\n(Column heading above A, B, C: Requirements per unit of Product)\n\nThe labour time for each unit of product A is twice that of product B and three times that of product C. The entire labour force of the firm can produce equivalent of 3000 units. The minimum demand of the three products is 600, 650 and 500 units respectively. Also, the ratios of the number of units produced must be equal to 2:3:4. Assume the profits per unit of A, B and C as ₹ 50, 50 and 80 respectively.\n\nDevelop a Linear Programming Model for this problem.",
+    "parent_ref": "6",
+    "explanation_md": "Let\n\n- A = units of Product A produced,\n- B = units of Product B produced,\n- C = units of Product C produced.\n\nObjective Function\n\nProfit per unit:\n\n- Product A = ₹50\n- Product B = ₹50\n- Product C = ₹80\n\nHence, the objective is to maximize total profit. The objective function may be formulated as:\n\n$$\n\\text{Maximize } Z = 50A + 50B + 80C\n$$\n\nConstraints:\n\n$$\n\\begin{aligned}\n3A + 4B + 5C &\\le 5{,}000 && \\text{(Raw material- I constraints)} \\\\\n5A + 3B + 5C &\\le 7{,}500 && \\text{(Raw material- II constraints)}\n\\end{aligned}\n$$\n\n$$\n\\begin{aligned}\nA + \\frac{B}{2} + \\frac{C}{3} &\\le 3{,}000 \\\\\nA \\ge 600,\\; B \\ge 650,\\; C &\\ge 500 && \\text{(Minimum demand constraints)} \\\\\n\\frac{A}{2} = \\frac{B}{3} &= \\frac{C}{4} && \\text{(Output Proportionality)} \\\\\nA, B, C &\\ge 0 && \\text{(Non-negativity constraints)}\n\\end{aligned}\n$$\n\nThe complete LPP may be written as:\n\n$$\n\\begin{aligned}\n\\text{Maximize } Z &= 50A + 50B + 80C \\\\\n\\text{Subject to:} \\quad & \\\\\n3A + 4B + 5C &\\le 5{,}000 \\\\\n5A + 3B + 5C &\\le 7{,}500 \\\\\nA + \\frac{B}{2} + \\frac{C}{3} &\\le 3{,}000 \\\\\nA \\ge 600,\\; B \\ge 650,\\; C &\\ge 500 && \\text{(Minimum demand constraints)} \\\\\n\\frac{A}{2} = \\frac{B}{3} &= \\frac{C}{4} && \\text{(Output Proportionality)} \\\\\nA, B, C &\\ge 0 && \\text{(Non-negativity constraints)}\n\\end{aligned}\n$$",
+    "reference_solution_md": "Let\n\n- A = units of Product A produced,\n- B = units of Product B produced,\n- C = units of Product C produced.\n\nObjective Function\n\nProfit per unit:\n\n- Product A = ₹50\n- Product B = ₹50\n- Product C = ₹80\n\nHence, the objective is to maximize total profit. The objective function may be formulated as:\n\n$$\n\\text{Maximize } Z = 50A + 50B + 80C\n$$\n\nConstraints:\n\n$$\n\\begin{aligned}\n3A + 4B + 5C &\\le 5{,}000 && \\text{(Raw material- I constraints)} \\\\\n5A + 3B + 5C &\\le 7{,}500 && \\text{(Raw material- II constraints)}\n\\end{aligned}\n$$\n\n$$\n\\begin{aligned}\nA + \\frac{B}{2} + \\frac{C}{3} &\\le 3{,}000 \\\\\nA \\ge 600,\\; B \\ge 650,\\; C &\\ge 500 && \\text{(Minimum demand constraints)} \\\\\n\\frac{A}{2} = \\frac{B}{3} &= \\frac{C}{4} && \\text{(Output Proportionality)} \\\\\nA, B, C &\\ge 0 && \\text{(Non-negativity constraints)}\n\\end{aligned}\n$$\n\nThe complete LPP may be written as:\n\n$$\n\\begin{aligned}\n\\text{Maximize } Z &= 50A + 50B + 80C \\\\\n\\text{Subject to:} \\quad & \\\\\n3A + 4B + 5C &\\le 5{,}000 \\\\\n5A + 3B + 5C &\\le 7{,}500 \\\\\nA + \\frac{B}{2} + \\frac{C}{3} &\\le 3{,}000 \\\\\nA \\ge 600,\\; B \\ge 650,\\; C &\\ge 500 && \\text{(Minimum demand constraints)} \\\\\n\\frac{A}{2} = \\frac{B}{3} &= \\frac{C}{4} && \\text{(Output Proportionality)} \\\\\nA, B, C &\\ge 0 && \\text{(Non-negativity constraints)}\n\\end{aligned}\n$$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.41,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 29,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Singh Transporters has trucks available at four different sites in the following numbers:\nSite A - 5 trucks\nSite B - 10 trucks\nSite C - 7 trucks\nSite D - 3 trucks\n\nCustomers - W, X and Y require trucks as shown below:\nCustomer W - 5 trucks\nCustomer X - 8 trucks\nCustomer Y - 10 trucks\n\nVariable costs of getting trucks to the customers are given below:\nFrom A to W = ₹ 7, to X = ₹ 3, to Y = ₹ 6\nFrom B to W = ₹ 4, to X = ₹ 6, to Y = ₹ 8\nFrom C to W = ₹ 5, to X = ₹ 8, to Y = ₹ 4\nFrom D to W = ₹ 8, to X = ₹ 4, to Y = ₹ 3\n\nDevelop the above as a transportation problem and apply Vogel’s Approximation Method to find the initial solution.",
+    "parent_ref": "6",
+    "explanation_md": "The problem given is an unbalanced one. To make it balanced we need to insert a dummy customer, say Z, with (25 - 23) = 2 trucks as it's requirement.\n\nNow, the given transportation problem may be tabulated as under:\n\n| Site/customers | W | X | Y | Z | Availability |\n|---|---|---|---|---|---|\n| A | 7 | 3 | 6 | 0 | 5 |\n| B | 4 | 6 | 8 | 0 | 10 |\n| C | 5 | 8 | 4 | 0 | 7 |\n| D | 8 | 4 | 3 | 0 | 3 |\n| Requirements | 5 | 8 | 10 | 2 | 25 |\n\nNow, using Vogel's Approximation Method (VAM) we get the Initial Feasible Solution (IFS) as put in Table -II\n\nTable -II\n\n| Site/ Customer | W | X | Y | Z | Availability | Penalty I | Penalty II | Penalty III | Penalty IV | Penalty V |\n|---|---|---|---|---|---|---|---|---|---|---|\n| A | 7 | 3 (5) | 6 | 0 | 5 | 3 | 3 | - | - | - |\n| B | 4 (5) | 6 (3) | 8 | 0 (2) | 10 | 4 | 2 | 2 | 2 | 2 |\n| C | 5 | 8 | 4 (7) | 0 | 7 | 4 | 1 | 1 | 4 | - |\n| D | 8 | 4 | 3 (3) | 0 | 3 | 3 | 1 | 1 | 1 | 1 |\n| Requirements | 5 | 8 | 10 | 2 | 25 | | | | | |\n\nThe figures in brackets are the units allocated to the cell; the other figure is the cost per unit.\n\nColumn penalties:\n\n| Penalty | W | X | Y | Z |\n|---|---|---|---|---|\n| I | 1 | 1 | 1 | 0 |\n| II | 1 | 1 | 1 | --- |\n| III | --- | 2 | 1 | --- |\n| IV | ---- | 2 | 5 | --- |",
+    "reference_solution_md": "The problem given is an unbalanced one. To make it balanced we need to insert a dummy customer, say Z, with (25 - 23) = 2 trucks as it's requirement.\n\nNow, the given transportation problem may be tabulated as under:\n\n| Site/customers | W | X | Y | Z | Availability |\n|---|---|---|---|---|---|\n| A | 7 | 3 | 6 | 0 | 5 |\n| B | 4 | 6 | 8 | 0 | 10 |\n| C | 5 | 8 | 4 | 0 | 7 |\n| D | 8 | 4 | 3 | 0 | 3 |\n| Requirements | 5 | 8 | 10 | 2 | 25 |\n\nNow, using Vogel's Approximation Method (VAM) we get the Initial Feasible Solution (IFS) as put in Table -II\n\nTable -II\n\n| Site/ Customer | W | X | Y | Z | Availability | Penalty I | Penalty II | Penalty III | Penalty IV | Penalty V |\n|---|---|---|---|---|---|---|---|---|---|---|\n| A | 7 | 3 (5) | 6 | 0 | 5 | 3 | 3 | - | - | - |\n| B | 4 (5) | 6 (3) | 8 | 0 (2) | 10 | 4 | 2 | 2 | 2 | 2 |\n| C | 5 | 8 | 4 (7) | 0 | 7 | 4 | 1 | 1 | 4 | - |\n| D | 8 | 4 | 3 (3) | 0 | 3 | 3 | 1 | 1 | 1 | 1 |\n| Requirements | 5 | 8 | 10 | 2 | 25 | | | | | |\n\nThe figures in brackets are the units allocated to the cell; the other figure is the cost per unit.\n\nColumn penalties:\n\n| Penalty | W | X | Y | Z |\n|---|---|---|---|---|\n| I | 1 | 1 | 1 | 0 |\n| II | 1 | 1 | 1 | --- |\n| III | --- | 2 | 1 | --- |\n| IV | ---- | 2 | 5 | --- |",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "transportation",
+    "mapping_confidence": 0.2,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 30,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The two breakfast food manufacturing firms A and B are competing for an increased market share. To improve its market share, both the firms decide to launch the following strategies:\nA1, B1 = Give coupons\nA2, B2 = Decrease price\nA3, B3 = Maintain present strategy\nA4, B4 = Increase advertising\n\nThe pay-off matrix, shown in the following table, describes the increase in market share for firm A and decrease in market share for firm B:\n\n| FIRM A | | B1 | B2 | B3 | B4 |\n|---|---|---|---|---|---|\n| | A1 | 35 | 35 | 25 | 5 |\n| | A2 | 30 | 20 | 15 | 0 |\n| | A3 | 40 | 50 | 0 | 10 |\n| | A4 | 55 | 60 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nSuggest the optimal strategy for Firm A and assess the value of the game.",
+    "parent_ref": "7",
+    "explanation_md": "The first step is to search for a saddle point. There is no saddle point in the problem.\n\nThe second step is to observe if the payoff matrix can be reduced in size by rules of dominance. Since each element of second row is less than the corresponding elements of first row, second row is dominated by first row because payoffs are less attractive for firm A. Thus, after deleting the second row, the reduced matrix becomes:\n\n| FIRM A | | B1 | B2 | B3 | B4 |\n|---|---|---|---|---|---|\n| | A1 | 35 | 35 | 25 | 5 |\n| | A3 | 40 | 50 | 0 | 10 |\n| | A4 | 55 | 60 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nIn the reduced matrix, each element of second column (B2) is more than the corresponding elements in first column (B1) therefore second column is dominated by first column because payoffs are less attractive (more loss) for B. Thus, after deleting the second column, the reduced matrix becomes:\n\n| FIRM A | | B1 | B3 | B4 |\n|---|---|---|---|---|\n| | A1 | 35 | 25 | 5 |\n| | A3 | 40 | 0 | 10 |\n| | A4 | 55 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nSimilarly, A3 row is dominated by A4, hence we may delete row A3 and the reduced payoff matrix is as shown:\n\n| FIRM A | | B1 | B3 | B4 |\n|---|---|---|---|---|\n| | A1 | 35 | 25 | 5 |\n| | A4 | 55 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nFurther, each element of column B1 is more than the corresponding elements of B3, hence B1 is dominated by B3.\n\n| FIRM A | | B3 | B4 |\n|---|---|---|---|\n| | A1 | 25 | 5 |\n| | A4 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nThe aforesaid reduced pay-off matrix, also does not have the saddle point. Thus, both the firms A and B use mixed strategies.\n\nFor Firm A: Let $p_1$ and $p_2$ be the probabilities of selecting strategy A1 (Give coupons) and A4 (Increase advertising) respectively. Then the expected gain to Firm A when Firm B uses its B1and B2 strategies is given by:\n\n$$\n25p_1 + 10p_2 \\text{ and } 5p_1 + 15p_2, \\text{ where } p_1 + p_2 = 1\n$$\n\nFor Firm A, the probability $p_1$ and $p_2$ should be such that expected gains under both conditions are equal, i.e.,\n\n$$\n25p_1 + 10p_2 = 5p_1 + 15p_2\n$$\n\nSolving for $p_1$ and $p_2$, we get $p_1 = \\frac{1}{5}$ and $p_2 = 1 - p_1 = 1 - \\frac{1}{5} = \\frac{4}{5}$\n\nValue of the game = Expected gain to Firm A or Expected Loss to Firm B.\n\nExpected gain of firm A:\n\n$$\n\\begin{aligned}\n\\text{(i)} \\quad 25p_1 + 10p_2 &= 25\\left(\\frac{1}{5}\\right) + 10\\left(\\frac{4}{5}\\right) = 13 \\\\\n\\text{or} \\quad & \\\\\n\\text{(ii)} \\quad 5p_1 + 15p_2 &= 5\\left(\\frac{1}{5}\\right) + 15\\left(\\frac{4}{5}\\right) = 13.\n\\end{aligned}\n$$\n\nOR\n\nExpected loss of firm B:\n\n$$\n\\begin{aligned}\n\\text{(i)} \\quad 25q_1 + 5q_2 &= 25\\left(\\frac{2}{5}\\right) + 5\\left(\\frac{3}{5}\\right) = 13 \\\\\n\\text{or} \\quad & \\\\\n\\text{(ii)} \\quad 10q_1 + 15q_2 &= 10\\left(\\frac{2}{5}\\right) + 15\\left(\\frac{3}{5}\\right) = 13\n\\end{aligned}\n$$\n\nDecision:\n\nHence, optimal strategies for both the manufacturers are that firm A should adopt strategy A1 (Give coupons) and strategy A4 while firm B should adopt strategy B3 (maintain present strategy) and strategy B4 (Increase advertising), and the value of the game is 13.",
+    "reference_solution_md": "The first step is to search for a saddle point. There is no saddle point in the problem.\n\nThe second step is to observe if the payoff matrix can be reduced in size by rules of dominance. Since each element of second row is less than the corresponding elements of first row, second row is dominated by first row because payoffs are less attractive for firm A. Thus, after deleting the second row, the reduced matrix becomes:\n\n| FIRM A | | B1 | B2 | B3 | B4 |\n|---|---|---|---|---|---|\n| | A1 | 35 | 35 | 25 | 5 |\n| | A3 | 40 | 50 | 0 | 10 |\n| | A4 | 55 | 60 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nIn the reduced matrix, each element of second column (B2) is more than the corresponding elements in first column (B1) therefore second column is dominated by first column because payoffs are less attractive (more loss) for B. Thus, after deleting the second column, the reduced matrix becomes:\n\n| FIRM A | | B1 | B3 | B4 |\n|---|---|---|---|---|\n| | A1 | 35 | 25 | 5 |\n| | A3 | 40 | 0 | 10 |\n| | A4 | 55 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nSimilarly, A3 row is dominated by A4, hence we may delete row A3 and the reduced payoff matrix is as shown:\n\n| FIRM A | | B1 | B3 | B4 |\n|---|---|---|---|---|\n| | A1 | 35 | 25 | 5 |\n| | A4 | 55 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nFurther, each element of column B1 is more than the corresponding elements of B3, hence B1 is dominated by B3.\n\n| FIRM A | | B3 | B4 |\n|---|---|---|---|\n| | A1 | 25 | 5 |\n| | A4 | 10 | 15 |\n\n(Column group heading: FIRM B)\n\nThe aforesaid reduced pay-off matrix, also does not have the saddle point. Thus, both the firms A and B use mixed strategies.\n\nFor Firm A: Let $p_1$ and $p_2$ be the probabilities of selecting strategy A1 (Give coupons) and A4 (Increase advertising) respectively. Then the expected gain to Firm A when Firm B uses its B1and B2 strategies is given by:\n\n$$\n25p_1 + 10p_2 \\text{ and } 5p_1 + 15p_2, \\text{ where } p_1 + p_2 = 1\n$$\n\nFor Firm A, the probability $p_1$ and $p_2$ should be such that expected gains under both conditions are equal, i.e.,\n\n$$\n25p_1 + 10p_2 = 5p_1 + 15p_2\n$$\n\nSolving for $p_1$ and $p_2$, we get $p_1 = \\frac{1}{5}$ and $p_2 = 1 - p_1 = 1 - \\frac{1}{5} = \\frac{4}{5}$\n\nValue of the game = Expected gain to Firm A or Expected Loss to Firm B.\n\nExpected gain of firm A:\n\n$$\n\\begin{aligned}\n\\text{(i)} \\quad 25p_1 + 10p_2 &= 25\\left(\\frac{1}{5}\\right) + 10\\left(\\frac{4}{5}\\right) = 13 \\\\\n\\text{or} \\quad & \\\\\n\\text{(ii)} \\quad 5p_1 + 15p_2 &= 5\\left(\\frac{1}{5}\\right) + 15\\left(\\frac{4}{5}\\right) = 13.\n\\end{aligned}\n$$\n\nOR\n\nExpected loss of firm B:\n\n$$\n\\begin{aligned}\n\\text{(i)} \\quad 25q_1 + 5q_2 &= 25\\left(\\frac{2}{5}\\right) + 5\\left(\\frac{3}{5}\\right) = 13 \\\\\n\\text{or} \\quad & \\\\\n\\text{(ii)} \\quad 10q_1 + 15q_2 &= 10\\left(\\frac{2}{5}\\right) + 15\\left(\\frac{3}{5}\\right) = 13\n\\end{aligned}\n$$\n\nDecision:\n\nHence, optimal strategies for both the manufacturers are that firm A should adopt strategy A1 (Give coupons) and strategy A4 while firm B should adopt strategy B3 (maintain present strategy) and strategy B4 (Increase advertising), and the value of the game is 13.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.09,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 32,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A project consists of the following activities whose time estimates are given against each as under:\n\n| Activity | Optimistic | Most Likely | Pessimistic |\n|---|---|---|---|\n| 1-2 | 3 | 6 | 15 |\n| 1-3 | 2 | 5 | 14 |\n| 1-4 | 6 | 12 | 30 |\n| 2-5 | 2 | 5 | 8 |\n| 2-6 | 5 | 11 | 17 |\n| 3-6 | 3 | 6 | 15 |\n| 4-7 | 3 | 9 | 27 |\n| 5-7 | 1 | 4 | 7 |\n| 6-7 | 4 | 19 | 28 |\n\n(Column group heading: Estimated Duration (weeks))\n\nRequired:\n(i) Develop the project network clearly showing EST and LST for each activity.\n(ii) Analyze the critical path and assess the expected project duration.\n(iii) Assess the probability that the project will be completed in 38 weeks.\n(iv) Assess what project duration will have 95% chance of completion (Z0.95 = 1.65)\n\nGiven:\n\n| Z | 0.21 | 0.41 | 0.82 |\n|---|---|---|---|\n| φ | 0.0832 | 0.1591 | 0.2939 |",
+    "parent_ref": "7",
+    "explanation_md": "(i) Project Network Diagram showing EST and LST for each activity:\n\nThe network has seven events. Each event is shown with its EST | LST, and each arrow carries the expected duration (weeks) of the activity.\n\n| Event | EST | LST |\n|---|---|---|\n| 1 | 0 | 0 |\n| 2 | 7 | 7 |\n| 3 | 6 | 11 |\n| 4 | 14 | 25 |\n| 5 | 12 | 32 |\n| 6 | 18 | 18 |\n| 7 | 36 | 36 |\n\n| Activity | Expected duration (weeks) |\n|---|---|\n| 1-2 | 7 |\n| 1-3 | 6 |\n| 1-4 | 14 |\n| 2-5 | 5 |\n| 2-6 | 11 |\n| 3-6 | 7 |\n| 4-7 | 11 |\n| 5-7 | 4 |\n| 6-7 | 18 |\n\n(ii) Critical Path and Expected Project Duration:\n\nCalculation showing expected duration and standard deviation of each activity:\n\n| Activity | Optimistic (t0) | Most Likely (tm) | Pessimistic (tp) | Expected Duration (t0+4tm+tp)/6 | Variance {(tp-t0)/6}^2 |\n|---|---|---|---|---|---|\n| 1-2 | 3 | 6 | 15 | 7 | 4 |\n| 1-3 | 2 | 5 | 14 | 6 | 4 |\n| 1-4 | 6 | 12 | 30 | 14 | 16 |\n| 2-5 | 2 | 5 | 8 | 5 | 1 |\n| 2-6 | 5 | 11 | 17 | 11 | 4 |\n| 3-6 | 3 | 6 | 15 | 7 | 4 |\n| 4-7 | 3 | 9 | 27 | 11 | 16 |\n| 5-7 | 1 | 4 | 7 | 4 | 1 |\n| 6-7 | 4 | 19 | 28 | 18 | 16 |\n\n(Column group heading: Estimated Duration (weeks))\n\nCritical path is $1 \\rightarrow 2 \\rightarrow 6 \\rightarrow 7$\n\nExpected Project Duration = 7 + 11 + 18 = 36 weeks\n\n(iii) Calculation of Probability that the project will be completed in 38 weeks:\n\n$$\n\\begin{aligned}\n\\text{Variance of the project} &= 4 + 4 + 16 = 24 \\\\\n\\text{Standard Deviation of the project} &= \\sqrt{24} = 4.90 \\\\\n\\text{Value of } Z &= \\frac{38 - 36}{4.90} = 0.41\n\\end{aligned}\n$$\n\nValue of Z =0.41 corresponds to area of 0.1591 under standard normal curve\n\nProbability that the project will be completed in 38 weeks = 0.5 +0.1591 = 0.6591 or 65.91%\n\n(iv) Project duration with 95% chance of completion:\n\nGiven that, for a 95% chance, Z = 1.65\n\n$$\n\\begin{aligned}\n1.65 &= \\frac{x - 36}{4.90} \\\\\nx - 36 &= 4.90 \\times 1.65 \\\\\nx &= 44.085 \\text{ weeks.}\n\\end{aligned}\n$$",
+    "reference_solution_md": "(i) Project Network Diagram showing EST and LST for each activity:\n\nThe network has seven events. Each event is shown with its EST | LST, and each arrow carries the expected duration (weeks) of the activity.\n\n| Event | EST | LST |\n|---|---|---|\n| 1 | 0 | 0 |\n| 2 | 7 | 7 |\n| 3 | 6 | 11 |\n| 4 | 14 | 25 |\n| 5 | 12 | 32 |\n| 6 | 18 | 18 |\n| 7 | 36 | 36 |\n\n| Activity | Expected duration (weeks) |\n|---|---|\n| 1-2 | 7 |\n| 1-3 | 6 |\n| 1-4 | 14 |\n| 2-5 | 5 |\n| 2-6 | 11 |\n| 3-6 | 7 |\n| 4-7 | 11 |\n| 5-7 | 4 |\n| 6-7 | 18 |\n\n(ii) Critical Path and Expected Project Duration:\n\nCalculation showing expected duration and standard deviation of each activity:\n\n| Activity | Optimistic (t0) | Most Likely (tm) | Pessimistic (tp) | Expected Duration (t0+4tm+tp)/6 | Variance {(tp-t0)/6}^2 |\n|---|---|---|---|---|---|\n| 1-2 | 3 | 6 | 15 | 7 | 4 |\n| 1-3 | 2 | 5 | 14 | 6 | 4 |\n| 1-4 | 6 | 12 | 30 | 14 | 16 |\n| 2-5 | 2 | 5 | 8 | 5 | 1 |\n| 2-6 | 5 | 11 | 17 | 11 | 4 |\n| 3-6 | 3 | 6 | 15 | 7 | 4 |\n| 4-7 | 3 | 9 | 27 | 11 | 16 |\n| 5-7 | 1 | 4 | 7 | 4 | 1 |\n| 6-7 | 4 | 19 | 28 | 18 | 16 |\n\n(Column group heading: Estimated Duration (weeks))\n\nCritical path is $1 \\rightarrow 2 \\rightarrow 6 \\rightarrow 7$\n\nExpected Project Duration = 7 + 11 + 18 = 36 weeks\n\n(iii) Calculation of Probability that the project will be completed in 38 weeks:\n\n$$\n\\begin{aligned}\n\\text{Variance of the project} &= 4 + 4 + 16 = 24 \\\\\n\\text{Standard Deviation of the project} &= \\sqrt{24} = 4.90 \\\\\n\\text{Value of } Z &= \\frac{38 - 36}{4.90} = 0.41\n\\end{aligned}\n$$\n\nValue of Z =0.41 corresponds to area of 0.1591 under standard normal curve\n\nProbability that the project will be completed in 38 weeks = 0.5 +0.1591 = 0.6591 or 65.91%\n\n(iv) Project duration with 95% chance of completion:\n\nGiven that, for a 95% chance, Z = 1.65\n\n$$\n\\begin{aligned}\n1.65 &= \\frac{x - 36}{4.90} \\\\\nx - 36 &= 4.90 \\times 1.65 \\\\\nx &= 44.085 \\text{ weeks.}\n\\end{aligned}\n$$",
+    "answer_source": "icmai_suggested",
+    "difficulty": 5,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.27,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 33,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Ajooba Ltd. manufactures pen drives. The market research department estimates that the quantity sold per day varies with price per unit as per the following equation:\nq = (900-p)/3, where q = quantity sold per day and p = price per unit.\nThe variable cost per unit is ₹ 324 and attributable fixed costs are ₹ 1,000 per day.\nThe Sales Department thinks that maximum profit coincides with maximum revenue but the managing director is not so sure.\nAs a Management Accountant you are required to analyze the position so as to confirm or refute the sales department’s assertion.",
+    "parent_ref": "8",
+    "explanation_md": "Given\n\nDemand function: $q = \\frac{900 - p}{3}$\n\nwhere,\n\n- q = Quantity demanded\n- p = Selling price per unit\n\nVariable cost = ₹324\n\nFixed Cost = ₹1,000\n\nPrice that Maximizes Profit:\n\nLet profit be X.\n\n$$\n\\begin{aligned}\nX &= pq - 324q - 1000\n\\end{aligned}\n$$\n\nSubstituting $q = \\frac{900 - p}{3}$,\n\n$$\n\\begin{aligned}\nX &= p\\left(\\frac{900 - p}{3}\\right) - 324\\left(\\frac{900 - p}{3}\\right) - 1000 \\\\\nX &= 300p - \\frac{p^2}{3} - 97{,}200 + 108p - 1000 \\\\\nX &= 408p - \\frac{p^2}{3} - 98{,}200\n\\end{aligned}\n$$\n\nFor maximum profit, $\\frac{dX}{dp} = 0$ and $\\frac{d^2X}{dp^2} < 0$\n\n$$\n\\begin{aligned}\n\\frac{dX}{dp} &= 0 \\\\\n408 - \\frac{2p}{3} &= 0 \\\\\n\\frac{2p}{3} &= 408 \\\\\np &= 408 \\times \\frac{3}{2} \\\\\np &= \\text{₹ }612\n\\end{aligned}\n$$\n\nFurther we have,\n\n$$\n\\frac{d^2X}{dp^2} = -\\frac{2}{3}\n$$\n\nSince it is negative, profit is maximum.\n\nTherefore, Profit is maximum when Price is ₹612\n\nPrice that Maximizes Revenue:\n\nLet revenue be R.\n\n$$\n\\begin{aligned}\nR &= pq \\\\\nR &= p\\left(\\frac{900 - p}{3}\\right) \\\\\nR &= 300p - \\frac{p^2}{3}\n\\end{aligned}\n$$\n\nFor maximum revenue,\n\n$$\n\\begin{aligned}\n\\frac{dR}{dp} &= 0 \\\\\n300 - \\frac{2p}{3} &= 0 \\\\\n\\frac{2p}{3} &= 300 \\\\\np &= \\frac{300 \\times 3}{2} \\\\\np &= \\text{₹ }450\n\\end{aligned}\n$$\n\nFurther, we have\n\n$$\n\\frac{d^2R}{dp^2} = -\\frac{2}{3}\n$$\n\nSince it is negative, revenue is maximum.\n\nTherefore, Revenue is maximum when Price is ₹450\n\nConclusion\n\n- Price that maximizes Profit = ₹612\n- Price that maximizes Revenue = ₹450\n\nSince the revenue-maximizing price (₹450) is different from the profit-maximizing price (₹612), the sales department's assertion is incorrect. A firm should aim to maximize profit, not merely revenue.\n\nAlternative Solution:\n\nLet revenue be R.\n\n$$\n\\begin{aligned}\nR &= pq \\\\\n\\text{Given, } q &= \\left(\\frac{900 - p}{3}\\right) \\\\\n\\text{Or, } 3q &= 900 - p \\\\\n\\text{Or, } p &= 900 - 3q \\\\\nR &= q(900 - 3q) \\\\\nR &= 900q - 3q^2\n\\end{aligned}\n$$\n\nFor maximization of Profit, Marginal Revenue = Marginal Cost\n\n$$\n\\begin{aligned}\n\\text{Marginal Revenue} = \\frac{dR}{dQ} &= 900 - 6q \\\\\n\\text{Marginal Cost} &= \\text{Variable Cost} = 324 \\\\\n\\text{Now, } 900 - 6q &= 324 \\\\\n6q &= 576 \\\\\nq &= 96 \\text{ units}\n\\end{aligned}\n$$\n\nPutting q=96 in the demand function, we have, $p = 900 - 3(96) = 612$\n\nFor Revenue maximization, MR = 0\n\n$$\n\\begin{aligned}\n900 - 6q &= 0 \\\\\n\\text{Or, } q &= 150.\n\\end{aligned}\n$$\n\nFurther,\n\n$\\frac{d^2R}{dq^2} = -6$, hence Revenue is maximum when q = 150.\n\nSubstituting q =150 into the price equation, we have, $p = 900 - 3(150) = 450$\n\nConclusion\n\nPrice that maximizes Profit = ₹612\n\nPrice that maximizes Revenue = ₹450\n\nSince the revenue-maximizing price (₹450) is different from the profit-maximizing price (₹612), the sales department's assertion is incorrect. A firm should aim to maximize profit, not merely revenue.",
+    "reference_solution_md": "Given\n\nDemand function: $q = \\frac{900 - p}{3}$\n\nwhere,\n\n- q = Quantity demanded\n- p = Selling price per unit\n\nVariable cost = ₹324\n\nFixed Cost = ₹1,000\n\nPrice that Maximizes Profit:\n\nLet profit be X.\n\n$$\n\\begin{aligned}\nX &= pq - 324q - 1000\n\\end{aligned}\n$$\n\nSubstituting $q = \\frac{900 - p}{3}$,\n\n$$\n\\begin{aligned}\nX &= p\\left(\\frac{900 - p}{3}\\right) - 324\\left(\\frac{900 - p}{3}\\right) - 1000 \\\\\nX &= 300p - \\frac{p^2}{3} - 97{,}200 + 108p - 1000 \\\\\nX &= 408p - \\frac{p^2}{3} - 98{,}200\n\\end{aligned}\n$$\n\nFor maximum profit, $\\frac{dX}{dp} = 0$ and $\\frac{d^2X}{dp^2} < 0$\n\n$$\n\\begin{aligned}\n\\frac{dX}{dp} &= 0 \\\\\n408 - \\frac{2p}{3} &= 0 \\\\\n\\frac{2p}{3} &= 408 \\\\\np &= 408 \\times \\frac{3}{2} \\\\\np &= \\text{₹ }612\n\\end{aligned}\n$$\n\nFurther we have,\n\n$$\n\\frac{d^2X}{dp^2} = -\\frac{2}{3}\n$$\n\nSince it is negative, profit is maximum.\n\nTherefore, Profit is maximum when Price is ₹612\n\nPrice that Maximizes Revenue:\n\nLet revenue be R.\n\n$$\n\\begin{aligned}\nR &= pq \\\\\nR &= p\\left(\\frac{900 - p}{3}\\right) \\\\\nR &= 300p - \\frac{p^2}{3}\n\\end{aligned}\n$$\n\nFor maximum revenue,\n\n$$\n\\begin{aligned}\n\\frac{dR}{dp} &= 0 \\\\\n300 - \\frac{2p}{3} &= 0 \\\\\n\\frac{2p}{3} &= 300 \\\\\np &= \\frac{300 \\times 3}{2} \\\\\np &= \\text{₹ }450\n\\end{aligned}\n$$\n\nFurther, we have\n\n$$\n\\frac{d^2R}{dp^2} = -\\frac{2}{3}\n$$\n\nSince it is negative, revenue is maximum.\n\nTherefore, Revenue is maximum when Price is ₹450\n\nConclusion\n\n- Price that maximizes Profit = ₹612\n- Price that maximizes Revenue = ₹450\n\nSince the revenue-maximizing price (₹450) is different from the profit-maximizing price (₹612), the sales department's assertion is incorrect. A firm should aim to maximize profit, not merely revenue.\n\nAlternative Solution:\n\nLet revenue be R.\n\n$$\n\\begin{aligned}\nR &= pq \\\\\n\\text{Given, } q &= \\left(\\frac{900 - p}{3}\\right) \\\\\n\\text{Or, } 3q &= 900 - p \\\\\n\\text{Or, } p &= 900 - 3q \\\\\nR &= q(900 - 3q) \\\\\nR &= 900q - 3q^2\n\\end{aligned}\n$$\n\nFor maximization of Profit, Marginal Revenue = Marginal Cost\n\n$$\n\\begin{aligned}\n\\text{Marginal Revenue} = \\frac{dR}{dQ} &= 900 - 6q \\\\\n\\text{Marginal Cost} &= \\text{Variable Cost} = 324 \\\\\n\\text{Now, } 900 - 6q &= 324 \\\\\n6q &= 576 \\\\\nq &= 96 \\text{ units}\n\\end{aligned}\n$$\n\nPutting q=96 in the demand function, we have, $p = 900 - 3(96) = 612$\n\nFor Revenue maximization, MR = 0\n\n$$\n\\begin{aligned}\n900 - 6q &= 0 \\\\\n\\text{Or, } q &= 150.\n\\end{aligned}\n$$\n\nFurther,\n\n$\\frac{d^2R}{dq^2} = -6$, hence Revenue is maximum when q = 150.\n\nSubstituting q =150 into the price equation, we have, $p = 900 - 3(150) = 450$\n\nConclusion\n\nPrice that maximizes Profit = ₹612\n\nPrice that maximizes Revenue = ₹450\n\nSince the revenue-maximizing price (₹450) is different from the profit-maximizing price (₹612), the sales department's assertion is incorrect. A firm should aim to maximize profit, not merely revenue.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "evaluating-performance",
+    "mapping_confidence": 0.61,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 35,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "My Fashion, a garment manufacturer, has modern outlook and they depend heavily on business forecasting methodology to plan their business activities like manufacturing, marketing, finance etc. At the beginning of the year 2026 they have forecasted data of demand of their products for the month of April as 2,00,000 units. But the actual demand turned out to be 2,10,000 units.\n\nUsing a Smoothing Coefficient of 0.1 assess the forecast demand for the following periods when the actual demands are as follows:\n\n| Period | May | June | July | August | September | October |\n|---|---|---|---|---|---|---|\n| Sales (in ’000 units) | 214 | 217 | 228 | 235 | 225 | 221 |",
+    "parent_ref": "8",
+    "explanation_md": "Given:\n\n- Initial Forecast for April = 200 units\n- Smoothing Constant ($\\alpha$) = 0.10\n\nWe have,\n\n$$\nE_t = E_{t-1} + \\alpha\\left(Y_t - E_{t-1}\\right)\n$$\n\nwhere:\n\n- $E_t$ = New Forecast\n- $E_{t-1}$ = Previous Forecast\n- $Y_t$ = Actual Sales\n\n| Month | Actual Sales (Given) | Old Forecast Et-1 (Only for April) | Corrections α (Yt - Et-1) | New Forecast Et = Et-1 + α (Yt - Et-1) | Forecast Error Et - Yt |\n|---|---|---|---|---|---|\n| April | 210 | 200.00 | 1.00 | 201.00 | 9.00 |\n| May | 214 | 201.00 | 1.30 | 202.30 | 11.70 |\n| June | 217 | 202.30 | 1.47 | 203.77 | 13.23 |\n| July | 228 | 203.77 | 2.42 | 206.19 | 21.81 |\n| August | 235 | 206.19 | 2.88 | 209.07 | 25.93 |\n| September | 225 | 209.07 | 1.59 | 210.66 | 14.34 |\n| October | 221 | 210.67 | 1.03 | 211.69 | 9.31 |\n\n(Forecast Demands are in '000 units)",
+    "reference_solution_md": "Given:\n\n- Initial Forecast for April = 200 units\n- Smoothing Constant ($\\alpha$) = 0.10\n\nWe have,\n\n$$\nE_t = E_{t-1} + \\alpha\\left(Y_t - E_{t-1}\\right)\n$$\n\nwhere:\n\n- $E_t$ = New Forecast\n- $E_{t-1}$ = Previous Forecast\n- $Y_t$ = Actual Sales\n\n| Month | Actual Sales (Given) | Old Forecast Et-1 (Only for April) | Corrections α (Yt - Et-1) | New Forecast Et = Et-1 + α (Yt - Et-1) | Forecast Error Et - Yt |\n|---|---|---|---|---|---|\n| April | 210 | 200.00 | 1.00 | 201.00 | 9.00 |\n| May | 214 | 201.00 | 1.30 | 202.30 | 11.70 |\n| June | 217 | 202.30 | 1.47 | 203.77 | 13.23 |\n| July | 228 | 203.77 | 2.42 | 206.19 | 21.81 |\n| August | 235 | 206.19 | 2.88 | 209.07 | 25.93 |\n| September | 225 | 209.07 | 1.59 | 210.66 | 14.34 |\n| October | 221 | 210.67 | 1.03 | 211.69 | 9.31 |\n\n(Forecast Demands are in '000 units)",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "business-forecasting-models-time-series-and-regression-analysis",
+    "mapping_confidence": 0.73,
+    "mapping_state": "confirmed",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {
+  "1(xi)": [
+   "Institute printed (B/D); chose D: with capacity usage ratio = budgeted hours / maximum possible hours (independent of actual hours) and capacity utilisation ratio = actual hours worked / maximum possible hours, a higher number of actual hours raises only the utilisation ratio. Based on standard ICMAI/CIMA definitions; web search gave no decisive page."
+  ],
+  "4(a)": [
+   "Printed totals in rows (b) and (d) of the first table (96 units, 48 units) kept as printed."
+  ],
+  "6(b)": [
+   "Table II is an image; allocations read from circled figures (A-X 5, B-W 5, B-X 3, B-Z 2, C-Y 7, D-Y 3); the Institute prints no total cost."
+  ],
+  "7(a)": [
+   "Printed text reads 'when Firm B uses its B1and B2 strategies' for the reduced matrix whose columns are B3 and B4; kept as printed (misprint)."
+  ],
+  "7(b)": [
+   "Network diagram is a figure in the PDF; transcribed as event table (EST|LST) and activity durations read from the figure."
+  ],
+  "8(b)": [
+   "Printed new forecast for September 210.66 while next old forecast is printed 210.67; kept as printed."
+  ]
+ },
+ "review_decisions": {
+  "2": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. 14 marks printed once for the whole question.",
+   "fixes": [],
+   "printed_issues": [
+    "Answer refers to 'Note 2(b)' and 'Note 3' that are not defined",
+    "Alternative solution uses 255/510 per hour vs 250/500 in the main solution; same mix"
+   ],
+   "by": "claude-review"
+  },
+  "3(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. Price printed ₹ 1,000.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches. Figures flagged by the text check were formatting only.",
+   "fixes": [],
+   "printed_issues": [
+    "Printed M4 working '10,700 x 60/95' yields amounts that correspond to 9,500"
+   ],
+   "by": "claude-review"
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [
+    "Stem: '₹ 50, 50 and 80' as printed (rupee sign was repeated on each figure)"
+   ],
+   "printed_issues": [],
+   "by": "claude-review"
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem and suggested answer checked against the question-paper and suggested-answer page images; every figure matches.",
+   "fixes": [],
+   "printed_issues": [],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 28,
+  "draft_parts": 0,
+  "answered": 28
+ }
+}

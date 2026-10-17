@@ -1,0 +1,19 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p19-2025-06",
+ "items": {
+  "5(b)": {
+   "answer_md": "Determination of value under rule 32(2)(b) of the CGST Rules, 2017\nThird proviso to rule 32(2)(a) stipulates that a person supplying the services in relation to the purchase or sale of foreign currency, including money changing may exercise the option to ascertain the value in terms of rule 32(2)(b) for a financial year and such option shall not be withdrawn during the remaining part of that financial year.\n\nRule 32(2)(b) provides that value in relation to the supply of foreign currency, including money changing shall be deemed to be\n\n| S. No. | Currency exchanged | Value of supply |\n|---|---|---|\n| 1. | Up to ₹ 1,00,000 | 1% of the gross amount of currency exchanged OR ₹ 250 whichever is higher |\n| 2. | Exceeding ₹ 1,00,000 and up to ₹ 10,00,000 | ₹ 1,000 + 0.50% of the (gross amount of currency exchanged - ₹ 1,00,000) |\n| 3. | Exceeding ₹ 10,00,000 | ₹ 5,500 + 0.1% of the (gross amount of currency exchanged - ₹ 10,00,000) OR ₹ 60,000 whichever is lower |\n\nThus, the value of supply in the given cases would be computed as under:\n(i) Gross amount of currency exchanged $= \\text{₹ }83 \\times \\text{USD }280 = \\text{₹ }23{,}240$. Since the gross amount of currency exchanged is less than ₹ 1,00,000, value of supply is 1% of the gross amount of currency exchanged [1% of ₹ 23240] i.e., ₹ 232.40 or ₹ 250, whichever is higher. $= \\text{₹ }250$\n\n(ii) Gross amount of currency exchanged $= \\text{₹ }82.50 \\times \\text{USD }2{,}400 = \\text{₹ }198000$. Since the gross amount of currency exchanged exceeds ₹ 1,00,000, but less than ₹ 10,00,000, value of supply is $\\text{₹ }1{,}000 + 0.50\\%\\text{ of }\\text{₹ }(1{,}98{,}000 - 1{,}00{,}000)$. $= \\text{₹ }1490$\n\nRBI rate is irrelevant for this purpose",
+   "confidence": "high",
+   "review": [
+    "Stem is prose with plain numbers; unchanged."
+   ]
+  },
+  "8(b)": {
+   "confidence": "high",
+   "review": [
+    "No mathematical content; existing text matches print."
+   ]
+  }
+ }
+}

@@ -1,0 +1,398 @@
+{
+ "schema": "artha.qbreview.v1",
+ "paper": "p14",
+ "items": {
+  "workbook:cma-final:p14:ch1:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Equivalent PV row prints [DC] without a division sign"
+   ]
+  },
+  "workbook:cma-final:p14:ch1:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Solution uses PVIFA 2.4868 (elsewhere 2.4869)"
+   ]
+  },
+  "workbook:cma-final:p14:ch1:q8": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem table year headings read 1, 2, 2, 4, 5",
+    "Denominator subscript printed K e-g"
+   ]
+  },
+  "workbook:cma-final:p14:ch1:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Year 4 revenue working prints 1,07 instead of 1.07"
+   ]
+  },
+  "workbook:cma-final:p14:ch1:q14": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch2:q4": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Alternative method (c) uses PVIFA 2.7232 after printing 2.7273"
+   ]
+  },
+  "workbook:cma-final:p14:ch2:q5": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "NPV line printed without minus/brackets as 11,556.50 (7,000 + 3,995.05)"
+   ]
+  },
+  "workbook:cma-final:p14:ch2:q6": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch2:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Block labelled (iii) in solution though it is the new product",
+    "Total budgeted profits printed 1,80,000 and 8,80,000"
+   ]
+  },
+  "workbook:cma-final:p14:ch2:q12": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Worst NPV printed 65,293 with no minus sign",
+    "Best PV total printed 537178 without commas",
+    "Decision tree diagram reproduced as text block"
+   ]
+  },
+  "workbook:cma-final:p14:ch2:q14": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution to the printed pages cell by cell and line by line; text, figures, tables and maths match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Total PV of CFAT printed 3.663.22",
+    "Probability lines (iv)/(v) print ENPV > while stem says at least",
+    "Bell-curve figures omitted; their caption text kept"
+   ]
+  },
+  "workbook:cma-final:p14:ch3:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem, both option workings, the 9-column interest table and totals with pp. 35-36; all faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Unbalanced bracket in '[8,00,000 × 35%)]'"
+   ]
+  },
+  "workbook:cma-final:p14:ch3:q3": {
+   "verdict": "approve",
+   "reason": "Compared stem and both repayment tables with p. 37 cell by cell; all faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Note line prints '(138,70,395 123,84,805)' without a visible minus"
+   ]
+  },
+  "workbook:cma-final:p14:ch3:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem, buying table, WDV/sale workings and lease option with pp. 44-45; all faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "WDV line brackets unbalanced, no multiplication sign",
+    "Lease PVIFA printed at 15% though question says 16%",
+    "Year 5 PV of CFAT printed 385,322"
+   ]
+  },
+  "workbook:cma-final:p14:ch4:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution with p. 46; formula and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Second-term denominator printed (0.20 + 0.15)^7"
+   ]
+  },
+  "workbook:cma-final:p14:ch4:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem and YTM working with p. 49; 372 appears in the print; all steps match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch5:q2": {
+   "verdict": "approve",
+   "reason": "Compared with p. 53; text matches, but the question asks for monthly and annual rates (two quantities), so it cannot be a single-number numeric item; converted to long_form.",
+   "fixes": [],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p14:ch5:q4": {
+   "verdict": "approve",
+   "reason": "Compared with p. 54; both parts and figures match.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch5:q8": {
+   "verdict": "approve",
+   "reason": "Compared stem table and solution table with pp. 55-56; match.",
+   "fixes": [],
+   "printed_issues": [
+    "Part (b) uses NAV 31.3755 while (a) gives 31.4755"
+   ]
+  },
+  "workbook:cma-final:p14:ch5:q9": {
+   "verdict": "approve",
+   "reason": "Compared stem, data table and solution table across pp. 56-57; match.",
+   "fixes": [],
+   "printed_issues": [
+    "Net unrealised gains printed '(280 160)' without minus",
+    "NAV divides by 240 though units are 250 Crores"
+   ]
+  },
+  "workbook:cma-final:p14:ch5:q10": {
+   "verdict": "approve",
+   "reason": "Compared stem and solution table with p. 57; all cells match.",
+   "fixes": [],
+   "printed_issues": [
+    "Capital gain for MF P printed (21.40 - 21.50) = 0.10",
+    "MF R date 01.03.2023 with 1-month holding"
+   ]
+  },
+  "workbook:cma-final:p14:ch5:q11": {
+   "verdict": "approve",
+   "reason": "Compared stem and three solution tables with pp. 57-58; all rows and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Mismatched brackets in dividend reinvestment row"
+   ]
+  },
+  "workbook:cma-final:p14:ch5:q13": {
+   "verdict": "approve",
+   "reason": "Compared stem, NAV table and the 12-row solution table cell by cell with pp.59-60; all match.",
+   "fixes": [],
+   "printed_issues": [
+    "Print misprint/format: 'Jenson's Alpha' in stem vs 'Jensen's' in solution; 'C -- B' heading as printed."
+   ]
+  },
+  "workbook:cma-final:p14:ch6:q2": {
+   "verdict": "approve",
+   "reason": "Stem and one-line solution match the print.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch6:q6": {
+   "verdict": "approve",
+   "reason": "All sub-parts (a)-(d), the data table and working match pp.64-65, including the printed oddities.",
+   "fixes": [],
+   "printed_issues": [
+    "Covariance formula printed under a square root; variance terms printed as (0.6)^2 x (0.6)^2; (c) asks coefficient of variation but solution does not give it."
+   ]
+  },
+  "workbook:cma-final:p14:ch6:q8": {
+   "verdict": "approve",
+   "reason": "Stem and working match p.66; kept printed r = -0.925 working.",
+   "fixes": [],
+   "printed_issues": [
+    "'1 = 4 + 6.25 + 10.r' and r=-0.925 as printed (sqrt not applied)."
+   ]
+  },
+  "workbook:cma-final:p14:ch6:q9": {
+   "verdict": "approve",
+   "reason": "Stem table and parts (a)-(c) match p.67 digit for digit.",
+   "fixes": [],
+   "printed_issues": [
+    "Stray r_{A,B} after (+1) in (b); (1+P_A)^2 and +42 P_A^2 term in (c) as printed."
+   ]
+  },
+  "workbook:cma-final:p14:ch6:q11": {
+   "verdict": "approve",
+   "reason": "Stem and solution match p.68-69, but the question asks for the proportion in both LEMON and MANGO (two quantities) while the key is only the MANGO figure, so converted to long_form.",
+   "fixes": [
+    "numeric -> long_form: asks for two proportions (Lemon and Mango)"
+   ],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p14:ch6:q12": {
+   "verdict": "approve",
+   "reason": "Data table, explanation, systematic/unsystematic table and part (b) match p.69; no neighbouring content leaked.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch7:q1": {
+   "verdict": "approve",
+   "reason": "Stem bullets and solution match p.70; single quantity, printed answer 1.00 equals key.",
+   "fixes": [],
+   "printed_issues": [],
+   "numeric_key": {
+    "numeric_value": "1.00",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Taken from the last line of the Institute's worked solution: β = (σe/σm) × re,m = 0.12/0.09 × 0.75 = 1.00"
+   }
+  },
+  "workbook:cma-final:p14:ch7:q2": {
+   "verdict": "approve",
+   "reason": "Stem and solution match p.70; single quantity, printed 1.4489 i.e. 1.45 equals key.",
+   "fixes": [],
+   "printed_issues": [],
+   "numeric_key": {
+    "numeric_value": "1.45",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Taken from the last line of the Institute's worked solution: = 1.1163 + 0.3326 = 1.4489 i.e., 1.45"
+   }
+  },
+  "workbook:cma-final:p14:ch7:q4": {
+   "verdict": "approve",
+   "reason": "Stem and solution match p.71-72; single quantity 0.1275 equals key.",
+   "fixes": [],
+   "printed_issues": [],
+   "numeric_key": {
+    "numeric_value": "0.1275",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Taken from the last line of the Institute's worked solution: E(Re) = Rf + β e (RM ─ Rf) = 0.06 + 0.75(0.15 ─ 0.06) = 0.1275."
+   }
+  },
+  "workbook:cma-final:p14:ch7:q6": {
+   "verdict": "approve",
+   "reason": "Stem table, both solution tables and the working (including (b) before (a) order) match pp.72-73.",
+   "fixes": [],
+   "printed_issues": [
+    "Stock return cells print '(16.70 12.70)' with no visible minus; simple average beta printed over 75,000 instead of 4; R_f = 12.70."
+   ]
+  },
+  "workbook:cma-final:p14:ch7:q7": {
+   "verdict": "approve",
+   "reason": "Compared stem table and full solution (tables, Rm, weighted beta, Rf working, final CAPM table) with pages 79-80; faithful.",
+   "fixes": [],
+   "printed_issues": [
+    "Stray \"λβ\" after the Rf equation",
+    "Beta factor column in final table (0.6, 0.8, 0.6, 1.0) differs from betas used in formulas (0.7, 0.9, 0.6, 1.0)",
+    "Minus signs not visible in \"(26.07 11.21)\" cells"
+   ]
+  },
+  "workbook:cma-final:p14:ch7:q10": {
+   "verdict": "approve",
+   "reason": "Stem and solution match page 82; one quantity asked, printed final answer 55.04 lakhs equals key.",
+   "fixes": [],
+   "printed_issues": [
+    "(σ1)2 + (σ1)2 printed, second term should be σ2"
+   ],
+   "numeric_key": {
+    "numeric_value": "55.04",
+    "tolerance_rel": "0.01",
+    "unit": "lakhs",
+    "key_note": "Taken from the last line of the Institute's worked solution: Value-at Risk = 2.33 × 7.47 × √ 10 = 55.04 lakhs."
+   }
+  },
+  "workbook:cma-final:p14:ch8:q4": {
+   "verdict": "approve",
+   "reason": "Stem and solution tables match pages 83-84. Question asks for intrinsic and time values for six cases, not one number, and the auto key 8 is only one table cell, so converted to long_form.",
+   "fixes": [
+    "numeric_key set to null (multi-quantity question)"
+   ],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p14:ch8:q13": {
+   "verdict": "approve",
+   "reason": "Stem and solution match page 87; single quantity, final answer 81 equals key.",
+   "fixes": [],
+   "printed_issues": [],
+   "numeric_key": {
+    "numeric_value": "81",
+    "tolerance_rel": "0.01",
+    "unit": "",
+    "key_note": "Taken from the last line of the Institute's worked solution: Fair value of futures = (P ─ I). er.n =      81."
+   }
+  },
+  "workbook:cma-final:p14:ch8:q18": {
+   "verdict": "approve",
+   "reason": "Compared with page 91-92: all data, d1/d2, N(d), call value, put-call parity and put value present and ordered.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch8:q19": {
+   "verdict": "approve",
+   "reason": "Rate table, text, swap diagram (redrawn as text with same labels and arrow directions), net costs and comment match page 92; no chapter heading leaked.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "workbook:cma-final:p14:ch9:q5": {
+   "verdict": "approve",
+   "reason": "Stem and solution match page 95; one quantity, 11.25% equals key.",
+   "fixes": [],
+   "printed_issues": [
+    "Solution assigns S = 84.50 and F = 80.00, swapped relative to the question"
+   ],
+   "numeric_key": {
+    "numeric_value": "11.25",
+    "tolerance_rel": "0.01",
+    "unit": "%",
+    "key_note": "Taken from the last line of the Institute's worked solution: Forward premium = [(F - S)/S]×100×(12/n) = [(84.50 - 80.00)/80.00]×100×(12/6) = 11.25%."
+   }
+  },
+  "workbook:cma-final:p14:ch9:q6": {
+   "verdict": "approve",
+   "reason": "Stem and solution match page 95. The question asks for quotes for both US$/GBP and GBP/US$ (bid and ask), and the key 1.6000 is only the ask of one, so converted to long_form.",
+   "fixes": [
+    "numeric_key set to null (multi-quantity question)"
+   ],
+   "printed_issues": [],
+   "numeric_key": null
+  },
+  "workbook:cma-final:p14:ch9:q9": {
+   "verdict": "approve",
+   "reason": "Stem and solution match page 96; single quantity, 6.14% equals key.",
+   "fixes": [],
+   "printed_issues": [],
+   "numeric_key": {
+    "numeric_value": "6.14",
+    "tolerance_rel": "0.01",
+    "unit": "%",
+    "key_note": "Taken from the last line of the Institute's worked solution: Rate of return = (11.60/189)×100 = 6.14%."
+   }
+  },
+  "workbook:cma-final:p14:ch9:q11": {
+   "verdict": "approve",
+   "reason": "Compared stem table and all six computations with page 98 cell by cell; one wording deviation fixed.",
+   "fixes": [
+    "Computation of F: \"is at premium\" corrected to printed \"is at a premium\""
+   ],
+   "printed_issues": [],
+   "explanation_md": "Here, we assume that FF is home currency and US\\$ is foreign currency.\n\n$$\\text{As per Interest Rate Parity theorem, Forward rate} = \\text{Spot rate} \\times \\frac{(1 + I_{h})}{(1 + I_{f})}$$\n\n$$\\text{Rate of forward premium} = \\frac{F - S}{S} \\times \\frac{12}{n} \\times 100$$\n\nThe missing figures have been calculated as follows:\n\n**Computation of A** (3 months)\n\n$$\\begin{aligned}F &= S \\times \\frac{(1 + r_{h})}{(1 + r_{f})} \\\\ &= 7.05 \\times \\frac{\\left(1 + \\frac{0.195}{4}\\right)}{\\left(1 + \\frac{0.115}{4}\\right)} = \\mathbf{7.1871}\\end{aligned}$$\n\n**Computation of B** (3 months)\n\nSince, forward rate > spot rate, the forward rate is at a premium.\n\n$$\\begin{aligned}\\text{Rate of forward premium} &= \\frac{F - S}{S} \\times \\frac{12}{n} \\times 100 \\\\ &= \\frac{(7.1871 - 7.05)}{7.05} \\times \\frac{12}{3} \\times 100 \\\\ &= \\mathbf{7.78\\%.}\\end{aligned}$$\n\n**Computation of D** (6 months)\n\n$$\\frac{D - 7.05}{7.05} \\times \\frac{12}{6} \\times 100 = 6.3$$\n\n$$D = \\frac{6.3 \\times 7.05 \\times 6}{12 \\times 100} + 7.05 = \\mathbf{7.27.}$$\n\n**Computation of C** (6 months)\n\n$$F = S \\times \\frac{(1 + r_{h})}{(1 + r_{f})}$$\n\n$$\\left(1 + \\frac{C}{2}\\right) = \\frac{7.27}{7.05} \\times \\left(1 + \\frac{0.1225}{2}\\right)$$\n\nSolving $\\mathbf{C = 18.87\\%.}$\n\n**Computation of E** (1 year)\n\n$$F = S \\times \\frac{(1 + r_{h})}{(1 + r_{f})}$$\n\n$$(1 + r_{f}) = \\frac{7.05 \\times (1 + 0.20)}{7.52} = 1.125$$\n\n$$\\mathbf{E} = r_{f} = \\mathbf{0.125}\\text{ i.e. }\\mathbf{12.50\\%.}$$\n\n**Computation of F** (1 year)\n\nAs F > S, the forward rate is at a premium.\n\n$$\\begin{aligned}\\text{Rate of premium} &= \\frac{F - S}{S} \\times \\frac{12}{n} \\times 100 \\\\ &= \\frac{7.52 - 7.05}{7.05} \\times \\frac{12}{12} \\times 100 \\\\ &= \\mathbf{6.67\\%.}\\end{aligned}$$"
+  },
+  "workbook:cma-final:p14:ch9:q12": {
+   "verdict": "approve",
+   "reason": "Stem, hint, CCR working, steps and result match pages 98-99; no picture needed.",
+   "fixes": [],
+   "printed_issues": [
+    "Final line \"£ (101,613.21 = £ 1,613.21\" unclosed bracket, missing 100,000",
+    "Hint CCR 101.7656 - 108.8843 vs solution 101.77 - 108.88"
+   ]
+  },
+  "workbook:cma-final:p14:ch9:q14": {
+   "verdict": "approve",
+   "reason": "Stem and solution (a)-(c) match pages 100; notes page dropped.",
+   "fixes": [],
+   "printed_issues": [
+    "Unclosed bracket in [(1+0.07)/(1+0.04) − 1"
+   ]
+  }
+ }
+}

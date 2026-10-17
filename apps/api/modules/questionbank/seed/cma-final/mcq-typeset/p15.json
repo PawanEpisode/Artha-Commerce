@@ -1,0 +1,80 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "paper": "p15",
+ "items": {
+  "mcq:cma-final:p15:q004": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q011": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q013": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q015": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q018": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q019": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q020": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q021": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q022": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q044": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q054": {
+   "confidence": "high",
+   "review": [
+    "Misprints 'filling', 'July ,' kept as printed (print not viewed; page 4)"
+   ]
+  },
+  "mcq:cma-final:p15:q063": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q064": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q073": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q106": {
+   "confidence": "high",
+   "review": []
+  },
+  "mcq:cma-final:p15:q140": {
+   "confidence": "high",
+   "review": [
+    "Print has 'Valueof' in option A; kept as printed"
+   ]
+  },
+  "mcq:cma-final:p15:q155": {
+   "confidence": "high",
+   "review": [
+    "Misprint 'payable. on' kept as printed"
+   ]
+  }
+ }
+}

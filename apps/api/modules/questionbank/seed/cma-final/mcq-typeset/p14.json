@@ -1,0 +1,146 @@
+{
+  "schema": "artha.qbtypeset.v1",
+  "paper": "p14",
+  "items": {
+    "mcq:cma-final:p14:q002": {
+      "confidence": "high",
+      "review": [
+        "Print uses slash form 'Profit after Tax/Average Investment) x 100', kept plain; option B printed 'Opening' struck out and hand-corrected to 'Closing' (stored text already says Closing)."
+      ]
+    },
+    "mcq:cma-final:p14:q020": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q025": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q042": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q048": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q071": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q130": {
+      "confidence": "high",
+      "review": [
+        "Plain text, PVIF given inline kept plain."
+      ]
+    },
+    "mcq:cma-final:p14:q149": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q153": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q165": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q174": {
+      "confidence": "high",
+      "review": [
+        "Removed (cid:9) tab artefacts; rebuilt the printed NPV/probability list as a table."
+      ],
+      "stem_md": "The probability distribution of a project’s NPV is given below:\n\n| NPV (₹) | Probability |\n|---|---|\n| 25,000 | 0.1 |\n| 50,000 | 0.3 |\n| 1,00,000 | 0.4 |\n| 1,20,000 | 0.2 |\n\nIf the initial cost of the project is ₹2,00,000, the Profitability Index (PI) of the project is:"
+    },
+    "mcq:cma-final:p14:q184": {
+      "confidence": "high",
+      "review": [
+        "Rp and Rf appear as plain-size letters in the print; read as subscripts R_p, R_f."
+      ],
+      "stem_md": "The following information is available for a mutual fund scheme:\n\nPortfolio Return ($R_p$) = 22%\n\nRisk (Standard Deviation, $\\sigma$) = 25%\n\nBeta ($\\beta$) = 0.80\n\nRisk-free Rate ($R_f$) = 19%\n\nWhat is the Treynor’s Ratio of the mutual fund?"
+    },
+    "mcq:cma-final:p14:q193": {
+      "confidence": "high",
+      "review": [],
+      "stem_md": "The probability distribution of security N is given below:\n\n| Probability | Return |\n|---|---|\n| 0.167 | 60 |\n| 0.333 | 30 |\n| 0.500 | 20 |\n\nThe risk (standard deviation) of the return of the security is approximately:"
+    },
+    "mcq:cma-final:p14:q196": {
+      "confidence": "high",
+      "review": [],
+      "stem_md": "Security A: $\\sigma = 12\\%$, Weight = 0.5\n\nSecurity B: $\\sigma = 8\\%$, Weight = 0.5\n\nCorrelation = 0.\n\nPortfolio Risk = ?"
+    },
+    "mcq:cma-final:p14:q197": {
+      "confidence": "high",
+      "review": [],
+      "stem_md": "A ($\\sigma = 20\\%$, weight = 0.6), B ($\\sigma = 10\\%$, weight = 0.4), correlation = 0.5.\n\nFind portfolio $\\sigma$."
+    },
+    "mcq:cma-final:p14:q198": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q199": {
+      "confidence": "high",
+      "review": [],
+      "stem_md": "Portfolio return = 14%, risk-free = 6%, portfolio $\\sigma = 12\\%$. Sharpe Ratio = ?"
+    },
+    "mcq:cma-final:p14:q200": {
+      "confidence": "high",
+      "review": [
+        "Rf, Rm read as subscripts."
+      ],
+      "stem_md": "$R_f = 5\\%$, $\\beta = 1.2$, $R_m = 14\\%$.\n\nFind expected return."
+    },
+    "mcq:cma-final:p14:q201": {
+      "confidence": "high",
+      "review": [
+        "Printed 'ρ = –1' with en dash, typeset as minus; page was not in page_hint (found on PDF p22)."
+      ],
+      "stem_md": "$\\sigma_A = 10\\%$, $\\sigma_B = 20\\%$, $\\rho = -1$.\n\nWeight of A for zero-risk = ?"
+    },
+    "mcq:cma-final:p14:q202": {
+      "confidence": "high",
+      "review": [],
+      "stem_md": "Portfolio return = 13%, risk-free = 6%, $\\beta = 1.1$. Treynor Ratio = ?"
+    },
+    "mcq:cma-final:p14:q203": {
+      "confidence": "high",
+      "review": [
+        "Rf, Rm read as subscripts."
+      ],
+      "stem_md": "Portfolio return = 15%, $R_f = 5\\%$, $\\beta = 1.2$, $R_m = 12\\%$.\n\nAlpha = ?"
+    },
+    "mcq:cma-final:p14:q212": {
+      "confidence": "high",
+      "review": []
+    },
+    "mcq:cma-final:p14:q214": {
+      "confidence": "high",
+      "review": [
+        "Rf read as subscript."
+      ],
+      "stem_md": "If a stock has expected return = 15%, $\\beta = 1.5$, $R_f = 5\\%$, Market premium = 8%, is the stock overvalued or undervalued?"
+    },
+    "mcq:cma-final:p14:q215": {
+      "confidence": "high",
+      "review": [],
+      "stem_md": "A stock has a beta ($\\beta$) of 0.75. What does this indicate about the stock’s volatility relative to the market?"
+    },
+    "mcq:cma-final:p14:q216": {
+      "confidence": "high",
+      "review": [],
+      "stem_md": "Market risk premium = 10%, $\\beta = 1.8$. What is stock’s risk premium?"
+    },
+    "mcq:cma-final:p14:q221": {
+      "confidence": "high",
+      "review": [
+        "Dollar signs escaped as \\$."
+      ],
+      "stem_md": "ABC Ltd., a valued customer engaged in import business, needs to remit EURO 1 million to its European exporter. The following spot rates are available:\n\n₹/US\\$ = ₹85.47/85.57\n\nUS\\$/€ = \\$0.8501/0.8505\n\nIf the bank charges a margin of 0.50%, what rate will the banker quote to ABC Ltd.?"
+    },
+    "mcq:cma-final:p14:q232": {
+      "confidence": "high",
+      "review": []
+    }
+  }
+}

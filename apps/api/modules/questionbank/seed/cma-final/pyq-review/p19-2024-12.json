@@ -1,0 +1,44 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p19-2024-12",
+ "items": {
+  "1(v)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answer prints '(C/ D)', two accepted options, so the stored single key C is not unambiguous.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(ix)": {
+   "verdict": "hold",
+   "reason": "Stem, table and options match the print, but the suggested answer prints '(A/ B/ C/ D)' (every option accepted), so no key can be given.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer accepts every option (A/ B/ C/ D) for this MCQ."
+   ]
+  },
+  "1(xi)": {
+   "verdict": "approve",
+   "reason": "Stem and all four options compared with the print; stored key D equals printed key (D).",
+   "fixes": [],
+   "printed_issues": [
+    "Stem prints the last price as '₹ 2100' (likely meant ₹ 100); kept as printed."
+   ]
+  },
+  "1(xv)": {
+   "verdict": "hold",
+   "reason": "Stem and options match the print, but the suggested answer prints '(A/ B)', two accepted options, so the stored single key A is not unambiguous.",
+   "fixes": [],
+   "printed_issues": [
+    "Stem prints 'Full from of IIN'."
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem and table compared with the print; suggested answer text, table, day count and both interest figures match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Print gives alternative interest figures (365 vs 366 days)."
+   ]
+  }
+ }
+}

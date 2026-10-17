@@ -1,0 +1,665 @@
+{
+ "schema": "artha.pyq-transcription.v1",
+ "paper": "p15",
+ "term_code": "2024-06",
+ "total_marks": 100,
+ "duration_minutes": 180,
+ "answers_source": "suggested_answer_pdf",
+ "review": [
+  "Page 1 instructions: figures in margin indicate full marks; assumptions may be made; all workings must form part of the relevant answer."
+ ],
+ "sections": [
+  {
+   "label": "A",
+   "instruction_md": "Section-A (Answer Question No. 1 which is compulsory)",
+   "choice": {
+    "rule": "compulsory"
+   },
+   "questions": [
+    {
+     "number": "1",
+     "marks": 30,
+     "intro_md": "Choose the correct alternative from the four alternatives given. 2×15=30",
+     "parts": [
+      {
+       "label": "(i)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Vinayak (P) Ltd. has total income (computed) of ₹ 32,00,000 for the assessment year 2024-25. It has not opted sections 115BA or 115BAA or 115BAB. Its annual turnover was always less than ₹ 50 crores. How much is the income tax payable by Vinayak (P) Ltd. for the assessment year 2024-25 (including surcharge and HEC)?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 8,32,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 9,98,400"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 10,98,240"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 13,31,200"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Balu is employed in ABC Ltd. from 1st November, 2023 after he discontinued his proprietary business in textiles. He was given rent-free accommodation at Kolkata from the same date. His basic salary was ₹ 1,00,000 per month and DA ₹ 50,000 per month (eligible for retirement benefits). How much is the perquisite value of rent-free accommodation in the hands of Balu for the assessment year 2024-25?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 1,80,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 1,12,500"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 75,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 37,500"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Kailash is a resident individual who owns an apartment in Singapore acquired on 19.08.2020. He had disclosed only 60% of its value in his income-tax returns. The Assessing Officer received this information of partial non-disclosure on 18.02.2024 and issued a notice under section 10 of the Black Money (Undisclosed Foreign Income and Assets) and Imposition of Tax Act, 2015 on 10.04.2024. What would be value of asset liable to tax under the said Act?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Fair Market Value of the asset as on 19.08.2020"
+        },
+        {
+         "key": "B",
+         "body_md": "40% of fair market value of the asset as on 19.08.2020"
+        },
+        {
+         "key": "C",
+         "body_md": "40% of fair market value of the asset as on 01.04.2024"
+        },
+        {
+         "key": "D",
+         "body_md": "40% of fair market value of the asset as on 01.04.2023"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(iv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Chinta Co-operative Society is engaged in manufacturing activity and was set up and registered on 20th April, 2023. Its total income (computed) for the previous year 2023-24 was ₹ 22,50,000. How much is the income tax payable by it under section 115BAE of the Act? Note: Consider both surcharge and HEC.",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 7,02,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 5,85,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 4,68,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 3,86,100"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": [
+        "Option D printed as '₹ 3,86,100' in image (OCR read 3,86,100 too)."
+       ]
+      },
+      {
+       "label": "(v)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "TBF Ltd., an Indian company deducted ₹ 1,20,000 from various payments as TDS for the first quarter of financial year 2023-24. However, it has failed to file TDS return for the said quarter. How much shall be the amount of fee payable by it for default in furnishing TDS return?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 100 for every day during which the failure continues subject to a maximum of ₹ 1,20,000."
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 100 for every day during which the failure continues subject to a maximum of ₹ 1,00,000."
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 200 for every day during which the failure continues subject to a maximum of ₹ 1,20,000."
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 200 for every day during which the failure continues subject to a maximum of ₹ 1,00,000."
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": [
+        "A stray handwritten tick-mark appears near option (A) in the scan; ignored."
+       ]
+      },
+      {
+       "label": "(vi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Anil a resident has derived (i) short-term capital gain of ₹ 35,000 from sale of shares (STT paid); (ii) long-term capital gain of ₹ 80,000 from sale of shares (STT paid); and (iii) ₹ 9,000 on sale of crypto currency held for 38 months. How much is the total amount of tax payable by Anil in respect of the capital gains? (ignore surcharge and HEC)",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Nil"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 5,550"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 6,600"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 7,950"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(vii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Tarun, a resident sold Virtual Digital Asset (VDA) with the help of a broker through an Exchange. The sale consideration was ₹ 6,05,000 (excluding GST / commission). How much is the amount of TDS applicable in respect of sale of VDA?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 60,500"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 30,250"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 12,100"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 6,050"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(viii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Raghav Industries (P) Ltd. was subjected to a search under section 132 and a sum of ₹ 300 lakhs by way of cash was found as undisclosed income. Raghav Industries (P) Ltd. has unabsorbed depreciation of ₹ 200 lakhs. How much of the unabsorbed depreciation is eligible for set off against cash found as a result of search, representing undisclosed income?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "NIL"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 200 lakhs"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 100 lakhs"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 50 lakhs"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(ix)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Swami sold his residential house on 21st April, 2023 for ₹ 110 lakhs and earned long-term capital gains of ₹ 60 lakhs. He bought a new residential house in March, 2024 for ₹ 55 lakhs in order to claim eligible exemption under the Income-tax Act. What would you call this action of Swami reinvesting the long-term capital gain by way of acquisition of a new residential house?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Tax Planning"
+        },
+        {
+         "key": "B",
+         "body_md": "Tax Evasion"
+        },
+        {
+         "key": "C",
+         "body_md": "Tax Management"
+        },
+        {
+         "key": "D",
+         "body_md": "Tax Avoidance"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(x)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Higgs Ltd. which has entered into international transactions attracting transfer pricing provisions, declared a final dividend of 10% on its paid-up capital of ₹ 20 crores on 23.08.2024. It has received dividend of ₹ 80 lakhs (gross) on 23.11.2023 from a business trust. How much is the quantum of deduction allowable under section 80 M?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 200 lakhs"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 80 lakhs"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 120 lakhs"
+        },
+        {
+         "key": "D",
+         "body_md": "NIL as the dividend received is liable to tax."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xi)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "For Roberts Inc. of Italy which of the following would mean that it has a Permanent Establishment (PE) in India?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Use of facilities solely for the purpose of storage or display of goods belonging to the enterprise."
+        },
+        {
+         "key": "B",
+         "body_md": "Operating a factory in India."
+        },
+        {
+         "key": "C",
+         "body_md": "Maintenance of goods belonging to the enterprise solely for the purpose of processing by another enterprise."
+        },
+        {
+         "key": "D",
+         "body_md": "Maintenance of a fixed place of business solely for the purpose of purchasing goods or merchandise or of collecting information, for the enterprise."
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "What is Berry Ratio in relation to the computation of the arm’s length price of an international transaction?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Gross profit / Operating expenses"
+        },
+        {
+         "key": "B",
+         "body_md": "EBITDA / Shareholders funds"
+        },
+        {
+         "key": "C",
+         "body_md": "Net profit / Gross profit"
+        },
+        {
+         "key": "D",
+         "body_md": "Long term debts / Shareholders funds"
+        }
+       ],
+       "correct": "A",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiii)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "While determining the ALP of the transactions between A Ltd., Mumbai and its holding company Bee Inc., UK, there was an addition of ₹ 300 lakhs to the total income of A Ltd. How much should be paid by way of tax (including surcharge and HEC) by A Ltd. in order to avoid secondary adjustment?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 93,60,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 62,89,920"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 54,00,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 46,80,000"
+        }
+       ],
+       "correct": "B",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xiv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Mittal Ltd., Pune exported goods to its holding company Glory Ltd., UK for ₹ 20 crore and it has failed to keep and maintain information and documents in respect of ₹ 5 crore. How much is the quantum of penalty leviable for such failure in the hands of Mittal Ltd.?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "₹ 1,50,000"
+        },
+        {
+         "key": "B",
+         "body_md": "₹ 5,00,000"
+        },
+        {
+         "key": "C",
+         "body_md": "₹ 10,00,000"
+        },
+        {
+         "key": "D",
+         "body_md": "₹ 25,00,000"
+        }
+       ],
+       "correct": "C",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(xv)",
+       "kind": "mcq_single",
+       "marks": 2,
+       "stem_md": "Which of the following method of computing arm’s length price is not a ‘Transaction Based Method’?",
+       "options": [
+        {
+         "key": "A",
+         "body_md": "Comparable Uncontrolled Price Method"
+        },
+        {
+         "key": "B",
+         "body_md": "Resale Price Method"
+        },
+        {
+         "key": "C",
+         "body_md": "Cost Plus Method"
+        },
+        {
+         "key": "D",
+         "body_md": "Profit Split Method"
+        }
+       ],
+       "correct": "D",
+       "answer_md": "",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "B",
+   "instruction_md": "Answer any five questions from Question No. 2 to Question No 8. Each question carries 14 marks. 14×5=70",
+   "choice": {
+    "rule": "any_n_of_m",
+    "pick": 5,
+    "of": 7
+   },
+   "questions": [
+    {
+     "number": "2",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "",
+       "kind": "long_form",
+       "marks": 14,
+       "stem_md": "Moonshine Ltd. engaged in manufacturing activity was incorporated in the year 2010. It has reported a Net Profit of ₹ 82,00,000 for the year ended 31st March, 2024 in its Statement of Profit and Loss. The following information is given to you:\n\n(i) Opening stock ₹ 36,00,000. It is undervalued by 10%.\n(ii) Closing stock ₹ 33,00,000. It is overvalued by 10%.\n(iii) Employees contribution to recognized provident fund ₹ 24 lakhs. Of this, ₹ 4,00,000 representing contribution for 2 months was remitted 10 days beyond the prescribed ‘due date’.\n(iv) Employer’s contribution to recognized provident fund ₹ 24 lakhs. The whole amount of the entire year was remitted on 21.05.2024.\n(v) Paid commission to Mr. Quinto, a non-resident agent for procuring orders for sale of goods in Japan ₹ 3 lakhs. No tax was deducted at source though the entire payment was made before the end of the previous year.\n(vi) Depreciation debited in the books ₹ 16,50,000. Depreciation under section 32 in respect of assets other than (vii) below, computed as per Income-tax rules, 1962 was ₹ 19,50,000.\n(vii) Acquired a machinery for ₹ 20 lakhs on 05.08.2023. It was installed and put to use from 10.10.2023.\n(viii) Paid as interest for late filing of GST return ₹ 50,000.\n(ix) Paid ₹ 2,00,000 by way of fee for increasing its authorized share capital.\n(x) A vacant plot was sold for ₹ 24 lakhs to Jupiter (P) Ltd. being its wholly owned subsidiary company. The stamp duty value of the plot was ₹ 30 lakhs. The profit on sale of plot as per books of account of ₹ 10 lakhs is credited in the Statement of Profit and Loss.\n(xi) On 1st August, 2023, the company sold a factory building for ₹ 80 lakhs (being the only building owned by it). The WDV of the building as on 1st April, 2023 was ₹ 34 lakhs. The building was used for business for the past 7 years. The company bought capital gain bonds of NHAI for ₹ 46 lakhs in November, 2023 for the purpose of availing exemption under section 54EC.\n\nThe company has not opted for section 115BAA. You are requested to assess the total income of Moonshine Ltd. for the assessment year 2024-25 by giving reasons for treatment of each item given above.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Total income of Moonshine Ltd for the Asst. Year 2024-25\n\nProfits and gains of Business or profession:\nNet Profit as per Statement of Profit and Loss: 82,00,000\nAdd:\n- Employees contribution to recognized provident fund ₹ 24 lakhs. Of the same, ₹ 4 lakh was remitted with a delay of 10 days. Since the remittance was made beyond the due date, not eligible for deduction under section 36(1)(va): 4,00,000\n- Commission paid to non-resident Quinto for procuring orders without deduction of tax at source: Nil. Since the payment was made outside India it is not chargeable to tax and no tax deduction is warranted under section 195. Therefore, there is no disallowance under section 40(a)(i).\n- Employer’s contribution to recognized provident fund: Nil. Since the payment was made before the ‘due date’ for filing the return of income under section 139(1) it is eligible for deduction under section 43B.\n- Interest paid for late filing of GST return is allowable deduction: Nil\n- Fee paid for increasing the authorized share capital is not an allowable expenditure as that would permanently change the capital structure of the company: 2,00,000\n- Depreciation debited to Statement of Profit and Loss: 16,50,000\nSub-total: 1,04,50,000\nLess:\n- Depreciation as per Income-tax rules, 1962: 19,50,000\n- Depreciation in respect of new plant and machinery: 1,50,000\n- Additional depreciation: 2,00,000\n- Opening stock undervalued by 10%: 4,00,000\n- Closing stock overvalued by 10%: 3,00,000\n- Profit on sale of plot to wholly owned subsidiary company credited to Statement of Profit and Loss: 10,00,000\nTotal deductions: 40,00,000\nProfits and gains of business or profession: 64,50,000\n\nCapital Gains:\nSale of vacant plot to wholly owned Indian subsidiary company is not regarded as ‘transfer’ as per section 47(iv): Nil\nSale of factory building: 80,00,000\nLess: WDV of building as on 01.04.2023: 34,00,000\n= 46,00,000\nLess: Exemption under section 54EC (The asset was sold on 1st August, 2023. The investment was made in section 54EC bonds in November, 2023 which is within 6 months after the date of transfer. Hence, exemption is allowable.): 46,00,000\nShort-term capital gain: Nil\nTotal Income: 64,50,000",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer printed in column layout; transcribed as list, figures unchanged. Suggested answer's treatment of opening/closing stock and depreciation lines kept as printed.",
+        "Q2 (vii) assumed to relate to Moonshine's machinery; image checked."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "3",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Amar (aged 35) owns 2 residential house properties, of which, one is used for own residential purpose and the other is let out for a monthly rent of ₹ 50,000. He bought these houses by taking housing loan from SBI. During the financial year 2023-24, he paid interest on housing loan amounting to ₹ 2,50,000 each for both the houses and total principal repayment of ₹ 2,00,000. He is doing business by name Mercury Traders in which his income (computed) amounts to ₹ 11,80,000.\n\nDetermine his income as per section 115BAC and regular provisions. Also suggest which one should be opted by Amar for the assessment year 2024-25.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Total income and tax payable as per normal provisions (Old regime)\n\nIncome from House property (Let out)\nRent Received: 6,00,000\nLess: Standard Deduction @30%: 1,80,000\nLess: Interest on Loan: 2,50,000\n= 1,70,000\nIncome from House property (Self-occupied)\nRent Received: Nil\nLess: Interest on Loan: 2,00,000\n= (2,00,000)\nIncome/(loss) from house property: (30,000)\nIncome from Business – Mercury Traders (computed): 11,80,000\nGross total income: 11,50,000\nLess: Deduction under section 80C in respect of housing loan principal repaid: 1,50,000\nTotal income: 10,00,000\n\nComputation of tax liability\nTax on 10,00,000: 1,12,500\nAdd: Cess @4%: 4,500\nTotal tax payable as per normal provisions: 1,17,000\n\nComputation of total income and tax payable as per section 115BAC\nIncome from house property (let out) as computed above: 1,70,000\nIncome from business: 11,80,000\nTotal income as per section 115BAC: 13,50,000\nComputation of tax liability\nTax on 13,50,000: 1,20,000\nAdd Cess @4%: 4,800\nTotal tax payable as per section 115BAC: 1,24,800\nSince, the total tax payable is higher in new regime i.e. section 115BAC, the assessee Amar should opt out of section 115BAC",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "MNO (P) Ltd. requires ₹ 100 lakhs for expansion of business. The entity has three options:\n\n| Particulars | Option 1 (₹) | Option 2 (₹) | Option 3 (₹) |\n|---|---|---|---|\n| Equity Share of ₹ 10 each | 80,00,000 | 60,00,000 | 40,00,000 |\n| 12% Debentures | 20,00,000 | 30,00,000 | 60,00,000 |\n| 14% Loan from Bank | — | 10,00,000 | — |\n\nRate of return on capital infused is expected @ 15% (before tax) and the income-tax rate is 31.2%. Suggest which of the option should be selected by MNO (P) Ltd. by showing your calculations to justify the same.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Selection of correct option for expansion by MNO (P) Ltd\n\n| Particulars | Option 1 | Option 2 | Option 3 |\n|---|---|---|---|\n| Capital employed | 100 lakhs | 100 lakhs | 100 lakhs |\n| Return on investment @ 15% | 15,00,000 | 15,00,000 | 15,00,000 |\n| Commitments: | | | |\n| Debenture interest @ 12% | 2,40,000 | 3,60,000 | 7,20,000 |\n| Bank interest @14% | Nil | 1,40,000 | Nil |\n| | 2,40,000 | 5,00,000 | 7,20,000 |\n| Profit before tax | 12,60,000 | 10,00,000 | 7,80,000 |\n| Less: Income tax @ 31.2% | 3,93,120 | 3,12,000 | 2,43,360 |\n| Profit after tax | 8,66,880 | 6,88,000 | 5,36,640 |\n| Profit after tax on capital employed | 8.67% | 6.88% | 5.37% |\n\nConclusion: Since Option 1 gives maximum profit after payment of tax MNO (P) Ltd may be advised to opt for the same.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "4",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Rosy (P) Ltd. incorporated in April, 2018 is engaged in manufacturing activity with 4 equal shareholders. The company has paid up share capital of ₹ 40 lakhs with each equity share of ₹ 10 each, fully paid up. As per the provisions of Income-tax Act, 1961 it has the following as on 31st March, 2023: (i) Brought forward business loss ₹ 30 lakhs; and (ii) Unabsorbed depreciation ₹ 20 lakhs. For the previous year 2023-24 also it is expected that the company would have unabsorbed depreciation of ₹ 10 lakhs though it would not have any business loss for the year as per the provisions of Income-tax Act, 1961. The Board of Directors of the company desire to carry out business restructuring by issuing equity shares for ₹ 160 lakhs to new investors in March, 2024.\n\nRequired :\n(i) Discuss the tax consequences of the proposal of Rosy (P) Ltd.\n(ii) What would be your answer in case Rosy (P) Ltd. is an eligible start-up in terms of section 80-IAC?",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Tax consequence of the proposal of Rosy (P) Ltd:\nSection 79(1) of the Income-tax Act, 1961 says that in the case of a company in which public are not substantially interested and not being an eligible start-up referred to in section 80-IAC, no loss incurred in any previous year prior to that previous year would be eligible for carry forward and set off against the income of the previous year, unless on the last day of the previous year, the shares of the company carrying not less than 51% of the voting power were beneficially held by persons who beneficially held shares of the company carrying not less than 51% of the voting power on the last day of the year or years in which the loss was incurred.\n\nTherefore, induction of new shareholders would lead to the business loss as on 31.03.2023 being not eligible for set off since the existing shareholders would hold less than 51% of the voting power on the last day of the previous year ending 31st March, 2024. Therefore, the brought forward business loss could not be set off by Rosy (P) Ltd when new shareholders are inducted into the company before 31st March, 2024.\n\nThis would not however impact the carry forward and set off of unabsorbed depreciation of Rosy (P) Ltd. This would cover even unabsorbed depreciation brought forward and current year unabsorbed depreciation of ₹ 10 lakhs.\n\n(ii) In case Rosy (P) Ltd is an eligible start-up in terms of section 80-IAC:\nIn case Rosy (P) Ltd is an eligible start-up then the proviso to section 79(1) would be applicable. The brought forward business loss and unabsorbed depreciation would be eligible for carry forward and set off in the future assessment years subject to the satisfaction of the following conditions:\n(a) The company must be a closely held company – which is satisfied in this case.\n(b) The company is an eligible start-up – this is also presumed to be satisfied.\n(c) All the 4 shareholders of the company who held shares on the last day of the previous year in which the loss was incurred continue to hold those shares on the last day of the previous year in which the loss is sought to be carried forward and set off against the income of the said year; The percentage of shareholding will not be considered and it is enough that the existing shareholder continue to hold those shares even though it may be very less percentage of the total shares. The condition is continuance of the same shareholding without transfer / dilution.\n(d) Such loss incurred during the period of 10 years beginning from the year of incorporation of the company is eligible for such benefit.\n\nTherefore, if Rosy (P) Ltd is an eligible start-up, the change in shareholding pattern will not impact both business loss and unabsorbed depreciation for carry forward and set off. However, this is subject to the condition that the shareholders who held the shares when the company incurred loss continue to hold shares even in assessment years in which it is sought to be set off.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Dravid (age 45) is a non-resident but an Indian citizen. On 11.04.2021, he bought 10,000 equity shares of PQR Ltd., a listed Indian Company for USD 5 per share. Dravid sold all the shares on 12.06.2023 for ₹ 770 per share (STT paid). Out of the sale proceeds, Dravid bought 11,550 equity shares of another listed Indian company by name EFG Ltd. on 13.07.2023 for ₹ 500 per share. Also, he subscribed to REC bonds for ₹ 10 lakhs on 15.09.2023. The buying and selling rates of US Dollars on different dates are as follows:\n\n| Date | TT Buying Rate | TT Selling Rate |\n|---|---|---|\n| 11.04.2021 | 70 | 74 |\n| 12.06.2023 | 76 | 78 |\n| 13.07.2023 | 80 | 84 |\n\nCost inflation index F.Y.2021-22 = 317; F.Y.2023-24 = 348\n\nAssess the capital gain of non-resident Dravid for the assessment year 2024-25.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Long-term capital gain of Non-resident Dravid\nNote: Since the assessee Dravid is a non-resident who held shares of the Indian company which were acquired by utilising foreign currency, the first proviso to section 48 (no indexation benefit would be available) and Rule 115A shall apply.\n\nSales consideration (USD): 1,00,000 [average of USD rate on the date of sale]\nNet sale consideration: 1,00,000\nNo indexation benefit\nLess: Cost of acquisition (Average USD rate on the date of acquisition, i.e., 11.04.21 – 10,000 shares X USD 5): 50,000 [Since the buying rate is already in USD so no need to convert i.e divided by 72 (The Average USD rate on the date of acquisition)]\nLong-term capital gains (USD): 50,000\nLong-term capital gains in INR (Buying rate as on the date of sale): ₹ 38,00,000\nLess: Exemption under section 115F: ₹ 28,50,000\nExemption under section 54EC in respect of REC capital gain bonds not allowed: Nil, since it is not a capital gain from land or building or both. Also, Chapter XII-A does not allow such exemption other than exemption contained in section 115F.\nLong-term capital gain: ₹ 9,50,000",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer is internally garbled (mentions 'divided by 72' average rate not in question); copied as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "5",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Briefly state remedial measures and time limit to the assessee who is aggrieved of the following:\n(i) Order passed under section 143(3) by the Assessing Officer.\n(ii) Order passed under section 263 by the Commissioner of Income-tax.\n(iii) Order passed under section 254 by ITAT.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Order passed under section 143(3) by the Assessing Officer:\nAn assessee, aggrieved by the order passed under section 143(3) by the Assessing Officer, can file an appeal before the Joint Commissioner (Appeals)* under section 246 or the Commissioner of Income tax (Appeals) under section 246(A)(1).\nThe time limit for filing appeal is within 30 days of the date of service of the notice of demand relating to the assessment.\nHowever, where the assessee does not want to prefer an appeal, then he can move a revision petition before the Principal Commissioner or Commissioner of Income Tax under section 264.\nThe time limit is within one year from the date on which the order was communicated to him or the date, on which he otherwise came to know of it, whichever is earlier.\n\n(ii) Order passed under section 263 by the Commissioner of Income-tax\nAn assessee aggrieved by the order passed under section 263 by the Commissioner of Income-tax can file an appeal to the Income-tax Appellate Tribunal under section 253(1)(c).\nThe time limit is within 60 days of the date on which the order sought to be appealed against is communicated to the assessee.\n\n(iii) Order passed by ITAT under section 254\nAn assessee aggrieved by the order passed under section 254 by the Income-tax Appellate Tribunal can file an appeal before the High Court under section 260A.\nThe time limit is within 120 days from the date of receipt of order of Income Tax Appellate Tribunal.\nHowever, such appeal can be filed only where the order gives rise to a substantial question of law.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Julian (P) Ltd. provides the following information in respect of plant and equipment for the year ended 31st March, 2024:\n\nBlock 1 – Plant and machinery (Rate of Depreciation 15%)\n(i) Opening WDV ₹ 15,00,000\n(ii) Purchase of a new plant on 31.10.2023 (put to use on 30th November, 2023)\nOriginal cost of the plant ₹ 12,00,000\nTrade discount 10%\nTotal amount paid ₹ 10,80,000\n(iii) Expenses on installation of plant ₹ 40,000.\n(iv) Cost of stand by equipment required for operating the new plant ₹ 80,000.\n(v) Cost of machinery spare parts ₹ 70,000.\n\nAlso, it gave the value of securities held as stock in trade as on 31st March, 2024 as under:\n\n| Security | A | B | C | D | Total | E | F | G | H | Total |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Category | Equity shares | Equity shares | Equity shares | Equity shares | | Debt security | Debt security | Debt security | Debt security | |\n| Actual cost of purchase | 100 | 120 | 140 | 200 | 560 | 150 | 105 | 125 | 220 | 600 |\n| Net realisable value as on 31.03.2024 | 75 | 150 | 120 | 190 | 535 | 160 | 90 | 135 | 230 | 615 |\n\nYou are required to compute (i) depreciation on plant and equipment; and (ii) carrying value of securities as per applicable Income Computation and Disclosure Standards for the assessment year 2024-25.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Disclosure as per ICDS V – In respect of plant and equipment (₹)\nOpening WDV (1st April, 2023): 15,00,000\nAdd: Assets acquired during the year (used for less than 180 days)\nPurchase cost (after allowing trade discount): 10,80,000\nAdd: Cost of installation: 40,000\nAdd: Stand by equipment: 80,000\nAdd: Cost of machinery spares: Nil\nNote: As per ICDS V, these are charged to Statement of Profit and Loss and are not to be added to the cost of machine.\nSub-total (additions): 12,00,000\nTotal: 27,00,000\nLess: Depreciation rate @15%\nOn opening WDV @15%: 2,25,000\nOn Addition @7.50% (Since used for less than 180 days): 90,000\nTotal depreciation: (3,15,000)\nWDV as on 31st March 2024: 23,85,000\n\nComputation of value of security as per ICDS VIII\nSecurities held as stock in trade shall be valued at actual cost initially recognised or the net realisable value at the end of the year, whichever is lower.\nThe comparison of actual cost initially recognised and net realisable value shall be done category-wise (viz. shares; debt securities; convertible debentures and any other securities) and not each individual security.\nIn respect of equity shares the actual cost ₹ 560 which is more than NRV which is ₹ 535 and therefore the NRV ₹ 535 would be adopted.\nIn respect of debt security the actual cost ₹ 600 is less than NRV of ₹ 615 and therefore actual cost ₹ 600 would be adopted.",
+       "confidence": "medium",
+       "review": [
+        "Securities table: category header spans (equity A-D, debt E-H) as printed; reconstructed into markdown."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "6",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Explain methods of Bilateral relief in Double Taxation Avoidance Agreements (DTAAs) and briefly state how unilateral relief is provided in the Income-tax Act, 1961.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Methods of Bilateral relief in Double Taxation Avoidance Agreements (DTAAs)\nBilateral Relief: In cases where there is DTAA between two tax jurisdictions, Bilateral relief is provided.\nThere are two ways by which the jurisdictions may agree to provide relief from double taxation viz. Exemption method and Credit method.\n\nExemption Method:\nIn this method, one country provides an exemption to such type of income, which is generally the country of residence.\n(i) Full Exemption Method: Under this method, income earned in the State of source is fully exempt in the State of residence.\n(ii) Exemption with progression: Under this method, income from the State of source is considered by the State of residence only for rate purposes.\n\nCredit Method:\nIn this method, the taxpayer remains liable in the country of residence on his / its global income. However, as far as the quantum of tax liabilities is concerned, credit or deduction for tax paid in the source country is given by the country of residence against its domestic law as if the foreign tax were paid to the country of residence itself.\n(i) Full credit: Total tax paid in the State of source is allowed as credit against the tax payable in country of residence.\n(ii) Ordinary Credit: State of residence allows credit of tax paid in the State of source restricted to the part of income-tax which is attributable to the income taxable in the State of residence.\n(iii) Tax Sparing: State of residence allows credit for deemed tax paid on income which is otherwise exempt from tax in the country of source.\n(iv) Underlying tax credit: Credit is allowed to resident not only for the taxes withheld against the dividend income but also for the taxes paid on the underlying profits out of which dividend is paid by a company in the overseas jurisdiction. However, underlying credit may only apply if satisfaction of substantial shareholding requirement is met.\n\nUnilateral method of relief provided in the Income-tax Act, 1961:\nSection 91 of the Income-tax Act contains unilateral relief where there is no DTAA between India and foreign jurisdiction.\nIf any person resident in India proves that his income which accrued or arose outside India and he has paid tax thereon he shall be entitled to the deduction from the Indian income-tax payable of a sum calculated on such doubly taxed income at the Indian rate of tax or the rate of tax in the said foreign country whichever is lower or at the Indian rate if both the rates are equal.\nIndian rate of tax means the rate determined by dividing the amount of Indian income-tax (including surcharge and cess) by the total income. Such rate is applied on the foreign income by way of relief under section 91.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Madhu, an Indian resident aged 34 is a trainer in marketing. He takes online classes for persons resident in Country Y. For the year ended 31st March, 2024, he gives the following details about his income:\n(i) Dividend from Indian Companies ₹ 2,87,500. Interest on moneys borrowed for investment in shares ₹ 90,000.\n(ii) Amount received from online classes from Country Y residents ₹ 45,000 p.m. Tax rate on such income in Country Y 15% without any basic exemption limit.\n(iii) Long-term capital gains on sale of listed shares of Indian companies (STT paid) ₹ 26,00,000 (computed without indexation) and ₹ 24,00,000 (computed with indexation). Capital gain was computed without considering the investment of ₹ 10,00,000 in capital gain bonds of REC within the prescribed time.\nIndia does not have DTAA with Country Y. You are required to assess the total income of Madhu and tax payable in India assuming that he opted out of section 115BAC.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Total Income of Madhu for the Asst. Year 2024-25 (₹)\nProfits and gains of Business or profession\nFees from online marketing classes: 5,40,000\nCapital gains\nLong-term capital gains: 26,00,000\nLess: Exemption U/s.54EC in respect of capital gain bonds of REC acquired within the prescribed time of 6 months from the date of transfer: Not available\n= 26,00,000\nIncome from other sources\nDividends from Indian companies: 2,87,500\nLess: Interest on moneys borrowed for acquisition of shares ₹ 90,000. But the deduction is limited to 20% of dividend income: 57,500\n= 2,30,000\nTotal income: 33,70,000\nTax on total income\nTax on LTCG: 2,50,000\nTax on remaining Income (Slab Rate): 66,500\n= 3,16,500\nAdd: Cess: 12,660\nIndian tax payable (A): 3,29,160\nAverage rate of tax in India: 9.77%\nLess: Double taxation relief U/s. (B): 52,758\nTax payable (A) – (B): 2,76,402\nRound off: 2,76,400",
+       "confidence": "medium",
+       "review": [
+        "Suggested answer's slab-rate/LTCG working not shown in detail; transcribed as printed."
+       ]
+      }
+     ]
+    },
+    {
+     "number": "7",
+     "marks": 14,
+     "intro_md": "",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Fast Growth Ltd. is an Indian company belonging to Bolo Group and it is engaged in sale of air-conditioners throughout India. Eric Inc. of USA having 28% shareholding in Fast Growth Ltd. is engaged in manufacture of air-conditioners and belongs to Bolo Group. During the financial year 2023-24, Fast Growth Ltd. purchased 20,000 air-conditioners manufactured by Eric Inc. of USA for a price of ₹ 70,000 per unit. Identical units manufactured by unrelated parties were purchased by it at ₹ 65,000 per unit. Eric Inc. gave credit period of 1 month to Fast Growth Ltd. and whereas unrelated parties gave credit period of 2 months to Fast Growth Ltd. The cost of capital may be taken @12% per annum and the supply be assumed as uniform throughout the year.\n\nRequired :\n(i) Determine the ALP per unit and the income addition, if any, to be made to the total income of Fast Growth Ltd. for the assessment year 2024-25; (ii) If primary adjustment is proposed to be made by Fast Growth Ltd. on suo moto basis state the time limit for repatriation of excess money; (iii) State the consequence of non-repatriation of excess money; (iv) Tax liability if such repatriation of excess funds is not opted by Fast Growth Ltd.; and (v) Consequence of repatriation of money by Zeet Inc. of Canada being another company belonging to Bolo Group.",
+       "options": [],
+       "correct": null,
+       "answer_md": "ALP and other consequences of Fast Growth Ltd for the Asst. Year 2024-25\n(i) Determination of ALP – CUP Method\nTwo enterprises are deemed to be associated enterprise if one enterprise, directly or indirectly holds shares carrying not less than 26% of the voting power in the other enterprise.\nIn this case, Eric Inc. has 28% shareholding in Fast Growth Ltd. Hence, they are associated enterprises and transfer pricing provisions would apply.\nSince details of comparable uncontrolled transitions are available, CUP method will be the most ideal method to adopt for determining the ALP.\nPrice per unit to unrelated parties: ₹ 65,000\nLess: Excess credit period allowed by unrelated parties: ₹ 650\nALP per unit: ₹ 64,350\nPrice charged to associated enterprise: ₹ 70,000\nAdjustment in ALP per unit: ₹ 5,650\nTotal income to be increased by way of primary adjustment: ₹ 11.30 cr.\n\n(ii) Time limit for repatriation\nAs the primary adjustment by way of ALP exceeds ₹ 1 crore, the assessee Fast Growth Ltd must carry out secondary adjustment. The time limit for secondary adjustment is 90 days from the ‘due date’ of filing of return under section 139(1). Thus, it must be counted from 30th November, 2024. The same will be 28th Feb., 2025.\n\n(iii) Consequence of non-repatriation\nIf the amount of primary adjustment is not brought into India within the specified time it shall be deemed to be an advance and liable for interest.\nThe interest chargeable: where the transaction is in Indian rupee, at the 1 year marginal cost of fund lending rate (MCLR) of SBI as on 1st day of April, of the relevant PY (here 1-4-2024) + 3.25%\nIf the transaction is in foreign currency, the interest shall be at 6 months London Interbank Offered Rate (LIBOR) as on 30th September of the relevant previous year i.e. 30.09.2024 + 3%.\n\n(iv) Opting for non-repatriation\nIn case Fast Growth Ltd does not want repatriation of primary adjustment then it can pay tax at 20.9664% on ₹ 11.30 crores being ₹ 2,36,92,032.\n\n(v) Remittance by another associated enterprise\nIf the amount of primary adjustment is remitted by some other concern of the same group such remittance is also to be deemed as repatriation by the foreign entity viz. Eric Inc. in this case. Then also, secondary adjustment is not required.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "On 01.04.2023, Deer Ltd. an Indian company borrowed ₹ 120 crore from Shine Inc. a company incorporated in Country Z for interest @ 8% per annum. The said loan is repayable in a period of 8 years. The loan was guaranteed by Tiger Inc. of Country Z who has 33% shareholding in Deer Ltd. and who deposited matching amount of loan with Shine Inc.\n\nFor the year ended 31st March, 2024 Deer Ltd reported a Net Profit of ₹ 5 crores after debiting (i) interest on the above loan ₹ 9 crore; (ii) provision for income-tax ₹ 3 crore; (iii) depreciation ₹ 5 crore; and (iv) amortisation ₹ 2 crore.\n\nDeer Ltd. wants to know how much of interest paid to Shine Inc. is eligible for deduction while computing the income under the head ‘Profits and gains of business or profession’ and your answer must explain the legal position besides computation of interest allowable or otherwise.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Condition for allowance of deduction of interest to AEs under section 94B:\nDeer Ltd being an Indian company as borrower incurs interest expenditure in respect of any debt issued by its non-resident associated enterprise and where such interest exceeds ₹ 1 crore, interest paid or payable in excess of 30% of EBITDA shall not be allowed as deduction as per section 94B.\nWhere the debt is issued by a lender who is not associated but an associated enterprise has guaranteed such lending being explicit or implicit guarantee or by making deposit matching with the amount of funds given by the lender, such debt shall be deemed to have been issued by the associated enterprise and therefore the limitation of interest deduction would apply.\nIn this case, Tiger Inc. has 33% shareholding in Deer Ltd and therefore they are deemed to be associated enterprise. Since the loan is guaranteed by Tiger Inc. to the lender Shine Inc. the interest limitation contained in section 94B would apply.\n\nComputation of EBITDA (₹ in Cr.)\nNet Profit: 5.00\nAdd: Interest: 9.00\nProvision for taxation: 3.00\nDepreciation: 5.00\nAmortisation: 2.00\nEBITDA (Amount allowable as deduction): 24.00\n30% EBITDA is the amount eligible for deduction (A): 7.20\nActual interest payable on the borrowing (B): 9.00\nInterest liable for disallowance (B)-(A): 1.80\nThe disallowed interest is eligible for carry forward to subsequent 8 assessment years immediately succeeding the assessment year 2024-25 for claiming the deduction against the income computed under the head ‘Profits and gains of business or profession’ to the extent of maximum allowable interest expenditure.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    },
+    {
+     "number": "8",
+     "marks": 14,
+     "intro_md": "Present your answer for the following situations under the headings: (i) Issue involved; (ii) Provisions applicable; (iii) Analysis of the issue; and (iv) Conclusion.",
+     "parts": [
+      {
+       "label": "(a)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "KL Ltd. is an Indian company engaged in the business of leasing and hire purchase of capital equipments by Indian entities (being its borrowing customers). For the purpose of its business activities viz. leasing and hire purchase, it borrowed USD 7,00,000 from a foreign company. Due to exchange fluctuations the loan amount repaid was higher by ₹ 10 lakhs. It claimed the excess payment due to exchange fluctuation as an expenditure under section 37(1). The Assessing Officer was of the view that it was financed by the assessee KL Ltd. for the purpose of purchase of capital asset by the customers in lease / hire purchase by them.\n\n(i) Discuss the validity of the claim of the assessee as regards excess payment made due to exchange fluctuation; and (ii) Will your answer be different, in case the assessee has not claimed the same as revenue expenditure originally but makes a fresh claim before the appellate tribunal.",
+       "options": [],
+       "correct": null,
+       "answer_md": "(i) Exchange fluctuation loss whether revenue expenditure\n\nIssue involved\nWhether the increase in liability due to exchange fluctuation upon repayment to a foreign company of a loan obtained by the assessee for the purpose of its business, which is financing i.e. leasing / hire purchase activity, is allowable as revenue expenditure under section 37(1)?\n\nProvisions Applicable\nUnder section 37, any expenditure (not being in the nature of expenditure described in sections 30 to 36), and not being in the nature of capital expenditure or personal expenses of the assessee, incurred wholly and exclusively for the purposes of the business shall be allowed in computing the business income.\n\nAnalysis of the Issue\nThe main line of business of KL Ltd is financing its customers i.e. lease / hire purchase. Such customers may use the borrowings for acquiring capital assets. Both the activities (i.e.) lending and usage are independent of each other.\nAs far as KL Ltd is concerned, the borrowing is for the purpose of its business. There is no provision which compels a taxpayer engaged in leasing / hire purchase activities, to capitalize the exchange fluctuation loss. It is an expenditure incurred wholly and exclusively for the purposes of its business. Hence it can claim the same as business expenditure.\nOnly where an assessee who has borrowed funds for acquiring machinery it has to be capitalized where the increase in borrowing is due to exchange fluctuations\n\nConclusion:\nThe increase in liability due to exchange fluctuation arising to the lender for the borrowing made to do regular business activity, can be claimed by KL Ltd as revenue expenditure.\n\n(ii) In case it is a fresh claim for the first time before the ITAT\nThe issue involved is whether a new claim can be raised before the ITAT for the first time under section 254.\nProvision applicable: Section 254 empowers the Appellate Tribunal to pass such order thereon as it thinks fit, after giving both the parties to the appeal an opportunity of being heard.\nAnalysis of the issue: The restriction in powers to accept a new claim would apply to the “assessing authority” but would not impinge upon the plenary powers of the Tribunal bestowed under section 254.\nConclusion:\nHence, ITAT can entertain a new claim and since only legal issue is involved (whether the expenditure omitted to be claimed but allowable as revenue expenditure), the same can be entertained by the ITAT.",
+       "confidence": "high",
+       "review": []
+      },
+      {
+       "label": "(b)",
+       "kind": "long_form",
+       "marks": 7,
+       "stem_md": "Shakti (P) Ltd., an Indian company earned fee for technical services from Power Inc., a company resident in USA amounting to ₹ 2 crores. The company paid ₹ 30 lakhs as federal taxes in USA. During the course of assessment proceedings in India, the Assessing Officer allowed the foreign tax credit to the extent of ₹ 20 lakhs only from income-tax payable in India by Shakti (P) Ltd. The company accepted the non-allowance of foreign tax credit to the extent of ₹ 10 lakhs, however it wants to claim deduction of the disallowed portion of foreign tax as business expenditure deductible from its income chargeable to tax in India.\n\nDiscuss the correctness of the assessee’s claim.",
+       "options": [],
+       "correct": null,
+       "answer_md": "Deduction of tax paid in foreign country for which FTC is denied\n(i) Issue Involved\nWhether tax paid in foreign country for which foreign tax credit under sections 90/91 of the Income-tax Act not allowed by the Assessing Officer can be claimed as business expenditure?\n\n(ii) Provisions applicable\nSection 2(43) of the Income-tax Act defines “tax” to mean income-tax chargeable under the provisions of the Income-tax Act, 1961.\nSection 40(a)(ii) of the Income-tax Act disallows any tax paid on the income of the assessee.\nExplanation 1 to section 40(a)(ii) provides that whenever an assessee is eligible for relief under section 90 or section 91 of the Act, the sum paid on account of any rate or tax levied shall also be liable for disallowance under section 40(a)(ii). In other words, if it is not eligible for section 90 or section 91 relief it is not liable for disallowance under section 40(a)(ii).\n\n(iii) Analysis of the issue\nThe occasion to insert Explanation 1 to section 40(a)(ii) arose as assessees were claiming to be entitled to obtain necessary credit to the extent of tax paid abroad under section 90 or section 91 of the Income-tax Act, 1961, and also claim the benefit of tax paid abroad as business expenditure on account of it not being covered by section 40(a)(ii).\nThe Bombay High Court in the case of Reliance Infrastructure Ltd. v CIT (2016) 390 ITR 271 (Bom) held that section 91 excludes taxes on income which is deemed to accrue or arise in India. However, where the income does not accrue or arise in India the tax paid thereon is not hit by section 40(a)(ii). Thus, that much of tax to the extent not covered by section 40(a)(ii) is eligible for deduction as business expenditure.\n\n(iv) Conclusion\nThus, the assessee’s contention is tenable in law.",
+       "confidence": "high",
+       "review": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

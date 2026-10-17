@@ -1,0 +1,34 @@
+{
+ "schema": "artha.qbreview.v1",
+ "paper": "p17",
+ "items": {
+  "workbook:cma-final:p17:ch2:q2": {
+   "verdict": "approve",
+   "reason": "Compared stem table and solution with p.21; all figures and wording match print.",
+   "fixes": [],
+   "printed_issues": [
+    "Typos Foregn, Exchage, purchaseshall, then kept as printed"
+   ]
+  },
+  "workbook:cma-final:p17:ch3:q7": {
+   "verdict": "approve",
+   "reason": "Compared with pp.50-52 (table is wholly on p.51, so no page-break issue); all tables, figures and notes match the print.",
+   "fixes": [],
+   "printed_issues": [
+    "Note 4 \"manufacture n sale\" and 355 vs 365 days as printed"
+   ]
+  },
+  "workbook:cma-final:p17:ch3:q10": {
+   "verdict": "approve",
+   "reason": "Stem and solution match pp.54-55; the Case Study 1-3 MCQ section (separate section under CASE STUDY banner) had leaked into the explanation and was removed.",
+   "fixes": [
+    "Removed Case Studies 1-3 (MCQ on Productivity) from explanation_md; they belong to a separate section"
+   ],
+   "explanation_md": "Assuming other costs shall remain more or less constant, an increase of 250 shall make Job Work Charges as $6250 / 60250 = 10.37344\\,\\%$\n\nAs Product is having increasing demand, it is reasonable to assume that Product is enjoing good contribution and good profitability\n\nSo, with .37% incresase in job work charges, it shall still enjoy good contribution & good profitability\n\nSo, it should accept this quote and go for additional 2000 mt\n\nTotal increase in cost shall be $250 / 60000 = 0.416667\\,\\%$ increase on original cost.\n\n**Conclusion:**\n\nIn either of the following 2 situation, company should accept this quote of 6250 and go for additional 2000 mt as product is in good demand enjoiying good contribution and good profitability.\n\n1. It is not possible to reduce other cost components or increase selling price by 250.\n\n2. It is possible to reduce other cost component or increase selling price by 250.",
+   "printed_issues": [
+    "Typos incresase, enjoiying, enjoing, quated kept as printed",
+    "Printed 6250/60250 uses 60250 though cost base is 60000"
+   ]
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p15-2023-12",
+ "items": {
+  "1(xii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the print; stored key C equals the printed key (xii) (C).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key is UN Model; OECD Model may be the more commonly cited answer."
+   ]
+  },
+  "2": {
+   "verdict": "approve",
+   "reason": "Compared stored text with the printed question and suggested answer (final figures only, as printed); text and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives final figures only, no working."
+   ]
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Compared stored text with the printed question and suggested answer (final figures only, as printed); text and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives final figure only."
+   ]
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Compared stored text with the printed question and suggested answer (final figures only, as printed); text and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives final figures only."
+   ]
+  },
+  "5(b)": {
+   "verdict": "approve",
+   "reason": "Compared stored text with the printed question and suggested answer (final figures only, as printed); text and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives final figure only."
+   ]
+  },
+  "6(b)": {
+   "verdict": "approve",
+   "reason": "Compared stored text with the printed question and suggested answer (final figures only, as printed); text and figures match.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives final figures only."
+   ]
+  }
+ }
+}

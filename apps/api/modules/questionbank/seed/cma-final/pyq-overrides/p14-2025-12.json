@@ -1,0 +1,33 @@
+{
+ "schema": "artha.qboverride.v1",
+ "paper": "14",
+ "term_code": "2025-12",
+ "note": "Direct edits made to the seed JSON by the owner. Applied last by build_pyq_seed so a rebuild never loses them.",
+ "parts": {
+  "1(iii)": {
+   "stem_md": "The following information is extracted from the Project of PAM Ltd. :\n\n| Expected Cash Flow (₹) | Probability |\n|---|---|\n| 10,000 | 0.70 |\n| 20,000 | 0.30 |\n\nAmount in lieu of Expected Cash Flow = ₹ 12,000.\nThe certainty equivalent co-efficient is",
+   "options": [
+    {
+     "body_md": "1.083",
+     "is_correct": true
+    },
+    {
+     "body_md": "1.00",
+     "is_correct": false
+    },
+    {
+     "body_md": "0.920",
+     "is_correct": false
+    },
+    {
+     "body_md": "None of the above",
+     "is_correct": false
+    }
+   ],
+   "explanation_md": "",
+   "reference_solution_md": null,
+   "publish": true,
+   "kind": "mcq_single"
+  }
+ }
+}

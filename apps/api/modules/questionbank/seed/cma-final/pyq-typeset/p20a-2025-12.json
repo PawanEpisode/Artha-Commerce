@@ -1,0 +1,65 @@
+{
+ "schema": "artha.qbtypeset.v1",
+ "file": "p20a-2025-12",
+ "items": {
+  "1(xi)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiii)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xiv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "1(xv)": {
+   "confidence": "high",
+   "review": [
+    "Existing text matches print; no mathematical typesetting needed. Printed key agrees with stored key."
+   ]
+  },
+  "3(a)": {
+   "stem_md": "A producer sells a product in two distinct markets: Market X and Market Y. The demand functions in each market are given by:\nMarket X : $Q_1 = 21 - 0.1P_1$\nMarket Y : $Q_2 = 50 - 0.4P_2$\nThe total cost of production is given by $\\text{TC} = 2000 + 10Q$ where $Q = Q_1 + Q_2$.\nThe producer must charge the same price in both markets.\n\n**Required :**\n**Analyze** the price that the producer will charge in order to maximize profits and also **Assess** the maximum profit.",
+   "answer_md": "Calculation of profit maximization price and associated profit\nWhen the producer does not discriminate between market X & market Y and charges the same price, the two demand functions can be aggregated and $P_1$ and $P_2$ may be replaced by a uniform price, say $P$.\n\nThus, we have $Q = Q_1 + Q_2 = (21 - 0.1P) + (50 - 0.4P) = 71 - 0.5P$\nOr, $P = 142 - 2Q$\nThe total revenue is given by\n$\\text{TR} = P \\times Q = (142 - 2Q) \\times Q = 142Q - 2Q^2$\n$\\text{MR} = d/dQ\\,(142Q - 2Q^2) = 142 - 4Q$\n\n$\\text{Marginal Cost} = d/dQ\\,(2000 + 10Q) = 10$\nFor maximization of profit, $\\text{MR} = \\text{MC}$\n$142 - 4Q = 10$\n$Q = 33$\n\nPutting $Q = 33$ in the equation $P = 142 - 2Q$, we get $P = 76$\nTherefore, the profit maximizing price is 76.\n\nAssessment of Maximum Profit (Rs)\n$\\text{Profit} = \\text{TR} - \\text{TC} = P \\times Q - (2000 + 10Q)$\n$= 33 \\times 76 - (2000 + 10 \\times 33) = 178$\nThe associated profit is 178",
+   "confidence": "high",
+   "review": [
+    "Print shows 'Q1', 'P1' etc. without subscript formatting; typeset as Q_1, P_1 (same meaning)."
+   ]
+  },
+  "5(a)": {
+   "answer_md": "Computation of Present Value (PV) of Cash Flows\n\nYEAR | Cashflows (₹ in Lakh) | Discount Rate PVIF (15%) | Present Value ₹ in Lakh\n---|---|---|---\n1 | (10) (Negative) | 0.8696 | (8.696)\n2 | 5 | 0.7562 | 3.781\n3 | 10 | 0.6576 | 6.576\n4 | 15 | 0.5718 | 8.577\n5 | 20 | 0.4972 | 9.944\nTOTAL | | | 20.182\n\nAssessment of Value of Firm:\n(i) Total sum of present value = ₹ 20.18\n(ii) $\\text{Terminal Value}_t = (\\text{Cash Flow}_{t+1} / r - g_{\\text{stable}})$\n$\\text{Cash Flow}_{t+1} = \\text{Cash Flow}_t(1 + g)$\n$= \\text{₹ }20(1 + 0.05) = 21$ Lakhs.\n$\\text{Terminal Value} = 21 / (0.08 - 0.05)$\n$= \\text{₹ }700$ Lakhs.\n$\\text{Present Value of Terminal Value} = \\text{₹ }700 \\times (0.4972) = \\text{₹ }348.04$ Lakh\n$\\text{Value of the Firm} = \\text{₹ }(20.18 + 348.04) = \\text{₹ }368.22$ Lakh",
+   "confidence": "high",
+   "review": [
+    "Print shows 'Terminal Value t', 'Cash Flow t+1' with the t / t+1 as plain text (not visibly subscripted); typeset as subscripts."
+   ]
+  },
+  "7(a)": {
+   "answer_md": "(i) Calculation of Swap Ratio:\n\nParticulars | RAJ Ltd. | PREET Ltd.\n---|---|---\nEAT (₹) | 2000 lakh | 400 lakh\nNo of shares outstanding | 200 lakh | 100 lakh\nP/E Ratio | 10 | 5\nEPS (₹) | $2000/200 = 10$ | $400/100 = 4$\nMarket Price /Share $(\\text{EPS} \\times \\text{P/E})$ (₹) | 100 | 20\n\nTherefore, swap ratio in terms of market prices $= \\text{MPS of target firm} / \\text{MPS of acquiring firm} = 20/100 = 0.20$ i.e. 1 share of RAJ Ltd for 5 Shares of Preet Ltd.\n\n(ii) Calculation of Market Price after acquisition:\nEPS of Raj Ltd. after acquisition $= (2000 + 400) / (200 + 0.2 \\times 100)$\n$= 2400 / 220 = \\text{₹ }10.91$\n\nTherefore, expected market price per share of RAJ Ltd. with the same P/E Ratio of 10 will be $= \\text{EPS} \\times \\text{P/E} = \\text{₹ }10.91 \\times 10 = \\text{₹ }109.10$\n\n(iii) Calculation of Gain / Loss to the shareholders:\n\n | Total | RAJ Ltd. | PREET Ltd.\n---|---|---|---\nNo. of shares after acquisition | 220 lakhs | 200 lakhs | 20 lakhs\nMPS after acquisition | ₹ 109.10 | ₹ 109.10 | ₹ 109.10\nTotal Market Value | ₹ 24002 lakhs | ₹ 21820 lakhs | ₹ 2182 lakhs\nExisting Market Value | ₹ 22000 lakhs | ₹ 20000 lakhs | ₹ 2000 lakhs\nGain to shareholders | ₹ 2002 lakhs | ₹ 1820 lakhs | ₹ 182 lakhs",
+   "confidence": "high",
+   "review": [
+    "Stem table unchanged."
+   ]
+  },
+  "7(b)": {
+   "answer_md": "(i) Calculation of post-acquisition benefit:\nRate of Return required by the investors of BODON Ltd. is given by\n$K_e = (D_1 / P) + g = 1/15 + 0.07 = 0.1367$ or 13.67%\nIf $g = 8\\%$, market price per share of BODON Ltd. $= 1 \\times 1.08 / (0.1367 - 0.08)$\n$= \\text{₹ }19.05$\n$\\text{Benefits of acquisition} = \\text{PV of BODON Ltd. with merger} - \\text{PV of BODON Ltd. without merger}$\n$= (19.05 - 15) \\times 20{,}00{,}000 = \\text{₹ }81{,}00{,}000$\n\n(ii) Cost of acquisition to DODON Ltd.:\n1. If it pays cash compensation of ₹ 17 per share:\n$\\text{Cost of acquisition} = \\text{Cash Compensation} - \\text{PV of BODON Ltd.}$\n$= (17 \\times 20{,}00{,}000) - (15 \\times 20{,}00{,}000)$\n$= \\text{₹ }40$ lakh\n\n2. If offers one share for every three shares:\nIn this case share of BODON Ltd. in the combined entity will be\n$= (1/3 \\times 20{,}00{,}000) / (60{,}00{,}000 + 1/3 \\times 20{,}00{,}000) = 0.10$\n$\\text{Value of the merged entity} = \\text{Value of DODON Ltd.} + \\text{Value of BODON Ltd} + \\text{Synergy}$\n$= (60\\text{ lakh} \\times \\text{₹ }48) + (20\\text{ lakh} \\times \\text{₹ }15) + 81\\text{ lakh}$\n$= \\text{₹ }3{,}261\\text{ lakh}$\nCost of acquisition to DODON Ltd. given the exchange ratio,\n$= \\text{The value of what BODON's shareholder's get} - \\text{the value what they give up}$\n$= 0.10 \\times 3{,}261 - 300 = \\text{₹ }26.10\\text{ lakh}$",
+   "confidence": "high",
+   "review": [
+    "Printed 'shareholder's' (apostrophe) kept as printed. Stem table unchanged."
+   ]
+  }
+ }
+}

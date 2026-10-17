@@ -1,0 +1,1040 @@
+{
+ "schema": "artha.qbseed.v1",
+ "kind": "pyq",
+ "paper": "17",
+ "source_file": "pyq-transcriptions/p17-2023-12.json",
+ "paper_review": [],
+ "payload": {
+  "schema": "artha.paper.v1",
+  "external_ref": "pyq:cma-final:p17:2023-12",
+  "course_code": "cma",
+  "level_code": "final",
+  "subject_key": "cost-and-management-audit",
+  "term_code": "2023-12",
+  "title": "CMA Final December 2023: Cost and Management Audit (Paper 17)",
+  "paper_code": "P17",
+  "total_marks": "100",
+  "duration_minutes": 180,
+  "delivery": "hosted",
+  "rights_basis": "institute_material",
+  "source_name": "ICMAI",
+  "answers_status": "complete",
+  "marks_note": "",
+  "links": [],
+  "choice_groups": [
+   {
+    "ref": "secA",
+    "label": "A: compulsory",
+    "rule_kind": "compulsory",
+    "pick_count": 1,
+    "of_count": 1,
+    "section_label": "A",
+    "sort_order": 0
+   },
+   {
+    "ref": "secB",
+    "label": "B: answer any 5 of 7",
+    "rule_kind": "any_n_of_m",
+    "pick_count": 5,
+    "of_count": 7,
+    "section_label": "B",
+    "sort_order": 1
+   }
+  ],
+  "parts": [
+   {
+    "ref": "1",
+    "number_label": "1",
+    "depth": 0,
+    "sort_order": 1,
+    "is_leaf": false,
+    "marks": "30",
+    "kind": "long_form",
+    "descriptor": "Choose the correct option: 2×15=30",
+    "choice_group_ref": "secA"
+   },
+   {
+    "ref": "1(i)",
+    "number_label": "1(i)",
+    "ref_suffix": "q1i",
+    "depth": 1,
+    "sort_order": 2,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Cost Audit was first introduced for ____________ industry.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Cement",
+      "is_correct": true
+     },
+     {
+      "body_md": "Iron and Steel",
+      "is_correct": false
+     },
+     {
+      "body_md": "Jute",
+      "is_correct": false
+     },
+     {
+      "body_md": "Sugar",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "audit-of-different-service-organisations",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ii)",
+    "number_label": "1(ii)",
+    "ref_suffix": "q1ii",
+    "depth": 1,
+    "sort_order": 3,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following type of Electricity Company is under the purview of regulated Sector?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Engaged in Generation",
+      "is_correct": false
+     },
+     {
+      "body_md": "Engaged in Transmission",
+      "is_correct": false
+     },
+     {
+      "body_md": "Engaged in Distribution and Supply",
+      "is_correct": false
+     },
+     {
+      "body_md": "All of the above",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "information-systems-security-audit",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iii)",
+    "number_label": "1(iii)",
+    "ref_suffix": "q1iii",
+    "depth": 1,
+    "sort_order": 4,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Every Cost Auditor, who conducts an audit of the cost records of a company, shall submit the cost audit report in Form ____________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "CRA-1",
+      "is_correct": false
+     },
+     {
+      "body_md": "CRA-2",
+      "is_correct": false
+     },
+     {
+      "body_md": "CRA-3",
+      "is_correct": true
+     },
+     {
+      "body_md": "CRA-4",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "operational-audit-and-internal-audit-under-companies-act-2013",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(iv)",
+    "number_label": "1(iv)",
+    "ref_suffix": "q1iv",
+    "depth": 1,
+    "sort_order": 5,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The appointment of Cost Auditor is defined under section ____________ of the Companies Act, 2013.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "148(2)",
+      "is_correct": false
+     },
+     {
+      "body_md": "148(3)",
+      "is_correct": true
+     },
+     {
+      "body_md": "144(3)",
+      "is_correct": false
+     },
+     {
+      "body_md": "139",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "cost-auditor",
+    "mapping_confidence": 0.32,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(v)",
+    "number_label": "1(v)",
+    "ref_suffix": "q1v",
+    "depth": 1,
+    "sort_order": 6,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "As per Rule 6 of the Companies (Cost Records and Audit) Rules, 2014, the casual vacancy caused due to death of Cost Auditor to be filled within ____________ days.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "30",
+      "is_correct": true
+     },
+     {
+      "body_md": "60",
+      "is_correct": false
+     },
+     {
+      "body_md": "90",
+      "is_correct": false
+     },
+     {
+      "body_md": "180",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "companies-cost-records-and-audit-rules-2014-as-amended",
+    "mapping_confidence": 0.18,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(vi)",
+    "number_label": "1(vi)",
+    "ref_suffix": "q1vi",
+    "depth": 1,
+    "sort_order": 7,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Cost Accounting Standard 17 deals with ____________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Selling and Distribution Overheads",
+      "is_correct": false
+     },
+     {
+      "body_md": "Depreciation and Amortisation",
+      "is_correct": false
+     },
+     {
+      "body_md": "Interest and Finance Charges",
+      "is_correct": true
+     },
+     {
+      "body_md": "Research and Development Cost",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "overview-of-cost-accounting-standards-and-gacap",
+    "mapping_confidence": 0.62,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(vii)",
+    "number_label": "1(vii)",
+    "ref_suffix": "q1vii",
+    "depth": 1,
+    "sort_order": 8,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The difference between the time for which employees are paid/payable to employees and the employees' time booked against cost objects is ____________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Normal labour hours",
+      "is_correct": false
+     },
+     {
+      "body_md": "Working time",
+      "is_correct": false
+     },
+     {
+      "body_md": "Idle time",
+      "is_correct": true
+     },
+     {
+      "body_md": "Unpaid time",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "basics-of-cost-audit",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(viii)",
+    "number_label": "1(viii)",
+    "ref_suffix": "q1viii",
+    "depth": 1,
+    "sort_order": 9,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is not part of the Employee Cost as per CAS-7?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Leave with pay",
+      "is_correct": false
+     },
+     {
+      "body_md": "Medical benefits to the employees and dependents",
+      "is_correct": false
+     },
+     {
+      "body_md": "Compensation for lay-off period",
+      "is_correct": true
+     },
+     {
+      "body_md": "Cost of Employees' Stock Option",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "basics-of-cost-audit",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(ix)",
+    "number_label": "1(ix)",
+    "ref_suffix": "q1ix",
+    "depth": 1,
+    "sort_order": 10,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following statements is true about Management Audit?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "The management audit is made compulsory and statutory.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Management audit is a programme of one year.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Management audit cannot be conducted by an independent person.",
+      "is_correct": false
+     },
+     {
+      "body_md": "No time limit can be fixed for submission of the report under management audit.",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "management-audit-in-different-functions",
+    "mapping_confidence": 0.05,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(x)",
+    "number_label": "1(x)",
+    "ref_suffix": "q1x",
+    "depth": 1,
+    "sort_order": 11,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The backbone of any organisation is ____________.",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Information",
+      "is_correct": true
+     },
+     {
+      "body_md": "Employee",
+      "is_correct": false
+     },
+     {
+      "body_md": "Management",
+      "is_correct": false
+     },
+     {
+      "body_md": "Capital",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "audit-of-different-service-organisations",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "1(xi)",
+    "number_label": "1(xi)",
+    "ref_suffix": "q1xi",
+    "depth": 1,
+    "sort_order": 12,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which one of the following KPI is used to measure the productivity and efficiency of labour?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Production per machine hour",
+      "is_correct": false
+     },
+     {
+      "body_md": "Contribution per unit of material",
+      "is_correct": false
+     },
+     {
+      "body_md": "Production per man-hour",
+      "is_correct": true
+     },
+     {
+      "body_md": "Growth in machine capacity utilization",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "management-reporting-issues-and-analysis",
+    "mapping_confidence": 0.33,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xii)",
+    "number_label": "1(xii)",
+    "ref_suffix": "q1xii",
+    "depth": 1,
+    "sort_order": 13,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "The consumer service audit critically examines:",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Outstanding payment of consumers",
+      "is_correct": false
+     },
+     {
+      "body_md": "Price consumers are ready to pay for particular product service",
+      "is_correct": false
+     },
+     {
+      "body_md": "Appraise management of business enterprise of responsibility towards consumers",
+      "is_correct": true
+     },
+     {
+      "body_md": "Demand of a product by consumers",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "audit-of-different-service-organisations",
+    "mapping_confidence": 0.31,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiii)",
+    "number_label": "1(xiii)",
+    "ref_suffix": "q1xiii",
+    "depth": 1,
+    "sort_order": 14,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Field Balance Sheet approach to Audit can be applied in case of audit of",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Societies registered as Club.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Self-Help Group for collective earning.",
+      "is_correct": true
+     },
+     {
+      "body_md": "Local Body registered as Corporate.",
+      "is_correct": false
+     },
+     {
+      "body_md": "Cooperative Societies registered under specific law in force.",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "audit-of-different-service-organisations",
+    "mapping_confidence": 0.07,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xiv)",
+    "number_label": "1(xiv)",
+    "ref_suffix": "q1xiv",
+    "depth": 1,
+    "sort_order": 15,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is not likely to be a fraud risk factor relating to management characteristics?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Tax evasion",
+      "is_correct": false
+     },
+     {
+      "body_md": "Failure to correct known weakness in internal control system",
+      "is_correct": false
+     },
+     {
+      "body_md": "Adoption of conservative accounting principles",
+      "is_correct": true
+     },
+     {
+      "body_md": "High management turnover",
+      "is_correct": false
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "basics-of-management-audit",
+    "mapping_confidence": 0.17,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "1(xv)",
+    "number_label": "1(xv)",
+    "ref_suffix": "q1xv",
+    "depth": 1,
+    "sort_order": 16,
+    "is_leaf": true,
+    "marks": "2",
+    "kind": "mcq_single",
+    "stem_md": "Which of the following is not prescribed in the provision of the Prevention of Money Laundering Act, 2002?",
+    "parent_ref": "1",
+    "options": [
+     {
+      "body_md": "Seizure of Property",
+      "is_correct": false
+     },
+     {
+      "body_md": "Attachment of Property",
+      "is_correct": false
+     },
+     {
+      "body_md": "Confiscation of Property",
+      "is_correct": false
+     },
+     {
+      "body_md": "Life Imprisonment",
+      "is_correct": true
+     }
+    ],
+    "explanation_md": "",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "anti-money-laundering",
+    "mapping_confidence": 0.59,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "2",
+    "number_label": "2",
+    "depth": 0,
+    "sort_order": 17,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "2(a)",
+    "number_label": "2(a)",
+    "ref_suffix": "q2a",
+    "depth": 1,
+    "sort_order": 18,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What are the benefits of Cost Audit?",
+    "parent_ref": "2",
+    "explanation_md": "Benefits of Cost Audit:\n\nThe Expert committee formed by the Government of India to study the Cost Audit scenario in the country,\nhighlighted the following benefits of cost information:\n\n (a) Cost information enables the organization to structure the cost, understand it and use it for\n       communicating with the stakeholders.\n (b) Costing is an important tool in assessing organizational performance in terms of shareholder and\n       stakeholder value. It informs how profits and value are created, and how efficiently and effectively\n       operational processes transform input into output. It contributes to the data input on economy level\n       parameters like resources efficiency, waste management, resources allocation policies, etc.\n (c) Costing includes product, process, and resource-related information covering the functions of the\n       organization and its value chain. Costing information can be used to appraise actual performance in\n       the context of implemented strategies.\n (d) Good practice in costing should support a range of both regular and non-routine decisions when\n       designing products and services to:\n     • meet customer expectations and profitability targets;\n     • assist in continuous improvements in resources utilisation; and\n     • guide product mix and investment decisions.\n (e) Working from a common data source (or a single set of sources) also helps to ensure that output\n       reports for different audiences are reconcilable with each other.\n (f) Integrating databases and information systems can help to provide useful costing information more\n       efficiently as well as reducing source data manipulation.",
+    "reference_solution_md": "Benefits of Cost Audit:\n\nThe Expert committee formed by the Government of India to study the Cost Audit scenario in the country,\nhighlighted the following benefits of cost information:\n\n (a) Cost information enables the organization to structure the cost, understand it and use it for\n       communicating with the stakeholders.\n (b) Costing is an important tool in assessing organizational performance in terms of shareholder and\n       stakeholder value. It informs how profits and value are created, and how efficiently and effectively\n       operational processes transform input into output. It contributes to the data input on economy level\n       parameters like resources efficiency, waste management, resources allocation policies, etc.\n (c) Costing includes product, process, and resource-related information covering the functions of the\n       organization and its value chain. Costing information can be used to appraise actual performance in\n       the context of implemented strategies.\n (d) Good practice in costing should support a range of both regular and non-routine decisions when\n       designing products and services to:\n     • meet customer expectations and profitability targets;\n     • assist in continuous improvements in resources utilisation; and\n     • guide product mix and investment decisions.\n (e) Working from a common data source (or a single set of sources) also helps to ensure that output\n       reports for different audiences are reconcilable with each other.\n (f) Integrating databases and information systems can help to provide useful costing information more\n       efficiently as well as reducing source data manipulation.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "management-audit-in-different-functions",
+    "mapping_confidence": 0.06,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "2(b)",
+    "number_label": "2(b)",
+    "ref_suffix": "q2b",
+    "depth": 1,
+    "sort_order": 19,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Explain the term \"Normal capacity vis a vis installed capacity\" as defined in the Form CRA 1.",
+    "parent_ref": "2",
+    "explanation_md": "Para 18 of Form CRA 1 of CCRA Rules, 2014 states that Installed capacity is determined based on:\n (i) Manufacturers‘ Technical specifications\n (ii) Capacities of individual or inter-related production centres\n (iii) Operational constraints or capacity of critical machines or\n (iv) Number of shifts\n\nNormal capacity shall be determined vis-a-vis installed capacity after carrying out following adjustments:\n (i)    Holidays, normal shut down days and normal idle time,\n (ii)   Normal time lost in batch change over,\n (iii) Time lost due to preventive maintenance and normal break downs of equipment‘s,\n (iv)   Loss in efficiency due to ageing of the equipment, or\n (v)    Number of shifts.",
+    "reference_solution_md": "Para 18 of Form CRA 1 of CCRA Rules, 2014 states that Installed capacity is determined based on:\n (i) Manufacturers‘ Technical specifications\n (ii) Capacities of individual or inter-related production centres\n (iii) Operational constraints or capacity of critical machines or\n (iv) Number of shifts\n\nNormal capacity shall be determined vis-a-vis installed capacity after carrying out following adjustments:\n (i)    Holidays, normal shut down days and normal idle time,\n (ii)   Normal time lost in batch change over,\n (iii) Time lost due to preventive maintenance and normal break downs of equipment‘s,\n (iv)   Loss in efficiency due to ageing of the equipment, or\n (v)    Number of shifts.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "management-reporting-issues-and-analysis",
+    "mapping_confidence": 0.1,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3",
+    "number_label": "3",
+    "depth": 0,
+    "sort_order": 20,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "3(a)",
+    "number_label": "3(a)",
+    "ref_suffix": "q3a",
+    "depth": 1,
+    "sort_order": 21,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "State the procedure of appointment and fixing the remuneration of Cost Auditor.",
+    "parent_ref": "3",
+    "explanation_md": "Rule 14 of the Companies (Audit and Auditors) Rules, 2014 has laid down the procedure of appointment and\nfixing the remuneration of a cost auditor.\n\nRemuneration of the Cost Auditor:\nFor the purpose of section 148(3)—\n (a)\n         in the case of companies which are required to constitute an audit committee—\n (i) the Board shall appoint an individual, who is a cost accountant in practice, or a firm of cost\n       accountants in practice, as cost auditor on the recommendations of the Audit committee, which shall\n       also recommend remuneration for such cost auditor;\n (ii) the remuneration recommended by the Audit Committee under (i) shall be considered and approved\n\n       by the Board of Directors and ratified subsequently by the shareholders;\n\n (b)   in the case of other companies which are not required to constitute an audit committee, the Board\n       shall appoint an individual, who is a cost accountant in practice or a firm of cost accountants in\n\n       practice as cost auditor and the remuneration of such cost auditor shall be ratified by shareholders\n       subsequently.",
+    "reference_solution_md": "Rule 14 of the Companies (Audit and Auditors) Rules, 2014 has laid down the procedure of appointment and\nfixing the remuneration of a cost auditor.\n\nRemuneration of the Cost Auditor:\nFor the purpose of section 148(3)—\n (a)\n         in the case of companies which are required to constitute an audit committee—\n (i) the Board shall appoint an individual, who is a cost accountant in practice, or a firm of cost\n       accountants in practice, as cost auditor on the recommendations of the Audit committee, which shall\n       also recommend remuneration for such cost auditor;\n (ii) the remuneration recommended by the Audit Committee under (i) shall be considered and approved\n\n       by the Board of Directors and ratified subsequently by the shareholders;\n\n (b)   in the case of other companies which are not required to constitute an audit committee, the Board\n       shall appoint an individual, who is a cost accountant in practice or a firm of cost accountants in\n\n       practice as cost auditor and the remuneration of such cost auditor shall be ratified by shareholders\n       subsequently.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "cost-auditor",
+    "mapping_confidence": 0.04,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "3(b)",
+    "number_label": "3(b)",
+    "ref_suffix": "q3b",
+    "depth": 1,
+    "sort_order": 22,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What are the important factors to be considered in planning the Cost Audit Assignment?",
+    "parent_ref": "3",
+    "explanation_md": "Factors In Planning Cost Audit Assignment:\nIn planning the audit assignment, certain important factors are taken into consideration, viz.\n  (a) Requirement of audit personnel for the assignment\n  (b) Documentation of the audit procedures and of evidences\n  (c) Quality control exercised over performance of the assignment, etc.\n\nAudit personnel for the assignment\nExperience and training of audit personnel engaged for the assignment should be considered particularly\nkeeping in view the relevant industry. Prior practical experience of the industry helps in carrying out the\nstudy of the system and procedures in vogue. For this purpose, two pronged approaches may be adopted by\nthe cost auditors. First, a study of the industry and the second, study of the Annual Reports of the auditee\ncompany for the past at least 5 years.\nThe cost audit team to whom the assignment is to be delegated need appropriate direction and supervision. It\nis therefore, essential that they accomplish the following tasks:\n\n (i)   Physical inspection of the activities and the area where they are performed;\n (ii)  Knowledge of the key personnel responsible for the activities and for the maintenance of cost\n       records;\n (iii) Physical inspection of the cost accounting records and other records relating to activities;\n (iv) Study of the statements of budgets, plans and strategies relating to activities;\n (v) Study of the Cost Accounting system used and the basis according to relevant CAS.\n       The audit personnel should be asked to collect the documentary evidences for the above tasks and file\n       in the relevant cost audit file for future reference.\n\nDocumentation of the audit procedures and of evidences\nThe cost auditor should document all matters which are important in providing evidence to support the\nopinion given in the report. Documentation means the working papers prepared by and for, or obtained and\nretained by the cost auditor in connection with the performance of the audit or compliance function.\nWorking papers record the evidence resulting from the work performed, to support the cost auditors‘\nopinion. It is important to remember that the documents may include issues beyond accounting data as other\ninformation such as production schedule, quantitative and statistical data, etc. may be required for\npreparation of performance analysis.\nThe daily worksheets should include all queries raised, with it was discussed and how, and if they were\n\nsatisfied. Use of standardised working papers such as, checklists, confirmation forms, standard letters, etc.\nmay improve the efficiency with which such working papers are prepared and reviewed. Schedules,\nstatements, analyses and other documents prepared by the entity may be utilised and treated a part of the\nworking papers, only after being satisfied that the materials have been properly prepared with due care.\nWorking paper management improves the productivity of the audit assignment undertaken. The essentiality\nis that of quick retrieval of information from the files of working papers. Working paper file contains details\nrelating to the financial year under reference. This file should be properly indexed and divided into\nconvenient sections.\n\nThe cost auditor and his team should adopt appropriate procedures for maintaining the confidentiality and\nsafe custody of the working papers and for retaining them for a period sufficient to meet the needs of the\npractice and in accordance with legal and professional requirements of retention of records.\n\nQuality control over performance of the assignment\nSupervision and control involves direction, review and monitoring of the audit assignment in hand. The\n\npersonnel carrying out these responsibilities generally perform the following functions during the course of\naudit.\n (a) Monitoring the progress of the preparation / maintenance of cost accounting records;\n (b) Reviewing that the audit assistants do have necessary skill and competence to understand the system\n       and procedure to carry out the assigned tasks as per the overall plan;\n (c) Being aware of the cost accounting and auditing questions raised during carrying out of the\n       assignment and assessing their significance and modifying the plan and programme, as considered\n       necessary; and\n (d) Removing the differences of professional judgement between the personnel and deciding the level\n       which is appropriate for reference purpose.",
+    "reference_solution_md": "Factors In Planning Cost Audit Assignment:\nIn planning the audit assignment, certain important factors are taken into consideration, viz.\n  (a) Requirement of audit personnel for the assignment\n  (b) Documentation of the audit procedures and of evidences\n  (c) Quality control exercised over performance of the assignment, etc.\n\nAudit personnel for the assignment\nExperience and training of audit personnel engaged for the assignment should be considered particularly\nkeeping in view the relevant industry. Prior practical experience of the industry helps in carrying out the\nstudy of the system and procedures in vogue. For this purpose, two pronged approaches may be adopted by\nthe cost auditors. First, a study of the industry and the second, study of the Annual Reports of the auditee\ncompany for the past at least 5 years.\nThe cost audit team to whom the assignment is to be delegated need appropriate direction and supervision. It\nis therefore, essential that they accomplish the following tasks:\n\n (i)   Physical inspection of the activities and the area where they are performed;\n (ii)  Knowledge of the key personnel responsible for the activities and for the maintenance of cost\n       records;\n (iii) Physical inspection of the cost accounting records and other records relating to activities;\n (iv) Study of the statements of budgets, plans and strategies relating to activities;\n (v) Study of the Cost Accounting system used and the basis according to relevant CAS.\n       The audit personnel should be asked to collect the documentary evidences for the above tasks and file\n       in the relevant cost audit file for future reference.\n\nDocumentation of the audit procedures and of evidences\nThe cost auditor should document all matters which are important in providing evidence to support the\nopinion given in the report. Documentation means the working papers prepared by and for, or obtained and\nretained by the cost auditor in connection with the performance of the audit or compliance function.\nWorking papers record the evidence resulting from the work performed, to support the cost auditors‘\nopinion. It is important to remember that the documents may include issues beyond accounting data as other\ninformation such as production schedule, quantitative and statistical data, etc. may be required for\npreparation of performance analysis.\nThe daily worksheets should include all queries raised, with it was discussed and how, and if they were\n\nsatisfied. Use of standardised working papers such as, checklists, confirmation forms, standard letters, etc.\nmay improve the efficiency with which such working papers are prepared and reviewed. Schedules,\nstatements, analyses and other documents prepared by the entity may be utilised and treated a part of the\nworking papers, only after being satisfied that the materials have been properly prepared with due care.\nWorking paper management improves the productivity of the audit assignment undertaken. The essentiality\nis that of quick retrieval of information from the files of working papers. Working paper file contains details\nrelating to the financial year under reference. This file should be properly indexed and divided into\nconvenient sections.\n\nThe cost auditor and his team should adopt appropriate procedures for maintaining the confidentiality and\nsafe custody of the working papers and for retaining them for a period sufficient to meet the needs of the\npractice and in accordance with legal and professional requirements of retention of records.\n\nQuality control over performance of the assignment\nSupervision and control involves direction, review and monitoring of the audit assignment in hand. The\n\npersonnel carrying out these responsibilities generally perform the following functions during the course of\naudit.\n (a) Monitoring the progress of the preparation / maintenance of cost accounting records;\n (b) Reviewing that the audit assistants do have necessary skill and competence to understand the system\n       and procedure to carry out the assigned tasks as per the overall plan;\n (c) Being aware of the cost accounting and auditing questions raised during carrying out of the\n       assignment and assessing their significance and modifying the plan and programme, as considered\n       necessary; and\n (d) Removing the differences of professional judgement between the personnel and deciding the level\n       which is appropriate for reference purpose.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "internal-control-and-internal-audit",
+    "mapping_confidence": 0.05,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "4",
+    "number_label": "4",
+    "depth": 0,
+    "sort_order": 23,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "4(a)",
+    "number_label": "4(a)",
+    "ref_suffix": "q4a",
+    "depth": 1,
+    "sort_order": 24,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "Purchase of Materials ₹ 4,00,000 (inclusive of GST of ₹ 20,800; Fee on Board ₹ 18,000; Import Duty paid ₹ 12,000; Freight inward ₹ 22,000; Insurance paid for import by sea ₹ 12,000; Rebates allowed ₹ 6,000; Cash discount ₹ 4,000; Subsidy received from the Government for importation of these materials ₹ 22,000. Compute from the foregoing data the landed cost of material (i.e. value of receipt of material).",
+    "parent_ref": "4",
+    "explanation_md": "Value of Receipt of Material = ₹ 4,15,200",
+    "reference_solution_md": "Value of Receipt of Material = ₹ 4,15,200",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "audit-of-different-service-organisations",
+    "mapping_confidence": 1.0,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "4(b)",
+    "number_label": "4(b)",
+    "ref_suffix": "q4b",
+    "depth": 1,
+    "sort_order": 25,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "A steel company which produces Iron Casting Pipes and Rod Iron is covered under the Cost Audit according to the Companies (Cost Records and Audit) Rules, 2014. From the expenditure data relating to 2022-23, determine the Employees Cost according to Cost Accounting Standard-7.\n\n| Sl. No. | Particulars | In lakh (₹) |\n|---|---|---|\n| A | Salary, wages and other allowances | 1,700 |\n| B | Bonus | 210 |\n| C | Contribution to Provident Fund | 190 |\n| D | Wages to contractor's employees | 350 |\n| E | Employees' welfare | 140 |\n| F | Abnormal cost due to strike | 128 |\n| G | VRS payment for closure of Rod Iron section of the plant to the extent not amortized | 112 |\n| H | Compensation paid against the past periods against Court order | 225 |\n| I | Arrear Salary for the year 2021-22 | 97 |\n| J | Remuneration of Full-time Director | 85 |",
+    "parent_ref": "4",
+    "explanation_md": "Employees Cost of Steel Company Limited for the year 2022-23 = ₹ 2,675 (in lakh)",
+    "reference_solution_md": "Employees Cost of Steel Company Limited for the year 2022-23 = ₹ 2,675 (in lakh)",
+    "answer_source": "icmai_suggested",
+    "difficulty": 3,
+    "chapter_key": "operational-audit-and-internal-audit-under-companies-act-2013",
+    "mapping_confidence": 0.21,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5",
+    "number_label": "5",
+    "depth": 0,
+    "sort_order": 26,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "5(a)",
+    "number_label": "5(a)",
+    "ref_suffix": "q5a",
+    "depth": 1,
+    "sort_order": 27,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "ABC Ltd. showed a profit for the year 2022-23 as ₹ 37,46,700. During the course of Cost Audit, the following transactions were noticed:\n\n(i) An old machine with net value of ₹ 7,54,000 was sold off for ₹ 10,50,000.\n(ii) Dividend income was received amounting to ₹ 97,500 from investments.\n(iii) A sum of ₹ 67,000 was spent towards CSR commitment.\n(iv) The company was engaged in trading activity where purchase of goods was ₹ 14,50,000 and sales was ₹ 14,42,700, after incurring ₹ 40,500 as expenditure.\n(v) Some renovation work was carried out at a cost of ₹ 8,50,000 and its useful life was only for five years.\n(vi) The closing inventory of raw material was undervalued- ₹ 28,000 and that of finished goods was overvalued- ₹ 67,800 in the financial records.\n\nWork out the Profit as per the Cost Accounts.",
+    "parent_ref": "5",
+    "explanation_md": "Profit as per Cost Accounts = ₹ 41,08,200",
+    "reference_solution_md": "Profit as per Cost Accounts = ₹ 41,08,200",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "audit-of-different-service-organisations",
+    "mapping_confidence": 0.08,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "5(b)",
+    "number_label": "5(b)",
+    "ref_suffix": "q5b",
+    "depth": 1,
+    "sort_order": 28,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "In a company, the Management on a source information, is of the view that there is embezzlement of cash receipts. As a Forensic Auditor how would you proceed to verify?",
+    "parent_ref": "5",
+    "explanation_md": "The forensic audit investigation is the utilization of specialized investigation skills to conduct the forensic\naudit engagements in such a manner that the outcome can be presented in a court of law as evidence. The\nauditor should use an approach considering both the aspects of\n    i)         whether the fraud could have occurred and\n    ii)        whether the fraud could not have occurred.\n\nWith this approach, the forensic auditors will be able to bring the reality closer to the general public,\nespecially the circumstances where perception and reality are not aligned.\nAn auditor can follow a multi-step method for fact-finding in case of forensic audit engagements:\n  Accept the forensic audit assignment. It is always useful to carry out a preliminary investigation prior\n      to development of a detailed plan of action.\n  Evaluate the allegations or suspicions. Set out the objectives to be achieved and Conduct due diligence\n    background notes.\n  Complete the preliminary stage of the investigation. The evidence should be sufficient to ultimately\n\n    identify the fraudster, the mechanics of the fraud scheme, and the amount of financial loss suffered.\n  Check the prediction assuming that there will be litigation.\n       i.\n      ii.\n     iii.\n            Begin with an external investigation.\n            Gathering the required proofs and evidence.\n            Preparing report on findings.",
+    "reference_solution_md": "The forensic audit investigation is the utilization of specialized investigation skills to conduct the forensic\naudit engagements in such a manner that the outcome can be presented in a court of law as evidence. The\nauditor should use an approach considering both the aspects of\n    i)         whether the fraud could have occurred and\n    ii)        whether the fraud could not have occurred.\n\nWith this approach, the forensic auditors will be able to bring the reality closer to the general public,\nespecially the circumstances where perception and reality are not aligned.\nAn auditor can follow a multi-step method for fact-finding in case of forensic audit engagements:\n  Accept the forensic audit assignment. It is always useful to carry out a preliminary investigation prior\n      to development of a detailed plan of action.\n  Evaluate the allegations or suspicions. Set out the objectives to be achieved and Conduct due diligence\n    background notes.\n  Complete the preliminary stage of the investigation. The evidence should be sufficient to ultimately\n\n    identify the fraudster, the mechanics of the fraud scheme, and the amount of financial loss suffered.\n  Check the prediction assuming that there will be litigation.\n       i.\n      ii.\n     iii.\n            Begin with an external investigation.\n            Gathering the required proofs and evidence.\n            Preparing report on findings.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "forensic-audit",
+    "mapping_confidence": 0.46,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6",
+    "number_label": "6",
+    "depth": 0,
+    "sort_order": 29,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "6(a)",
+    "number_label": "6(a)",
+    "ref_suffix": "q6a",
+    "depth": 1,
+    "sort_order": 30,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "The Cost Audit Report in CRA 3 as submitted by the Cost Auditor contains more of Management Audit Basics than mere data of production and services. Comment on the same justifying reasons.",
+    "parent_ref": "6",
+    "explanation_md": "i.   The Cost Auditor has to report in CRA 3, whether the Cost Accounting System followed in a\n               manufacturing unit is adequate for determination of the fair cost of production.\n      ii.      He has to report on the financial performance of the company as well as of the product under\n               cost audit, along with various ratios and offer comments on the ratios.\n\n     iii.      He has to indicate the percentage of production in relation to the installed capacity expressed in\n               appropriate units of measurement.\n\nManagement by exception\na) He has also to state reasons for the shortfall in production bringing out clearly the extent to which they\n   are controllable both in short term as well as long term.\nb) He has to give observations as regards variations, if any, in the rate of major raw materials, power and\n   fuel, etc. in terms of rate per unit as compared to previous year, if any.\nc) He has to give details of wages and salaries including direct labor cost per unit of output and as\n   compared to the previous year.\nd) He has to indicate the amount of overheads along with reasons for any significant variations in\n   expenditure incurred against the items of factory, administration, selling and distribution overheads as\n   compared with previous two years.\n\nRemedial Actions:\nIn this case the following position emerges: the Cost Auditor may offer suggestions as regard the following\nmatters for improvements in performance of the company under audit with reference to:-\n(a) Rectification of general imbalance in production facilities\n(b) Fuller utilization of installed capacity\n(c) Concentration on areas offering scope for cost reduction, increased productivity and key limiting factors\n    causing production bottlenecks; and\n(d) Suggesting improved inventory policies.",
+    "reference_solution_md": "i.   The Cost Auditor has to report in CRA 3, whether the Cost Accounting System followed in a\n               manufacturing unit is adequate for determination of the fair cost of production.\n      ii.      He has to report on the financial performance of the company as well as of the product under\n               cost audit, along with various ratios and offer comments on the ratios.\n\n     iii.      He has to indicate the percentage of production in relation to the installed capacity expressed in\n               appropriate units of measurement.\n\nManagement by exception\na) He has also to state reasons for the shortfall in production bringing out clearly the extent to which they\n   are controllable both in short term as well as long term.\nb) He has to give observations as regards variations, if any, in the rate of major raw materials, power and\n   fuel, etc. in terms of rate per unit as compared to previous year, if any.\nc) He has to give details of wages and salaries including direct labor cost per unit of output and as\n   compared to the previous year.\nd) He has to indicate the amount of overheads along with reasons for any significant variations in\n   expenditure incurred against the items of factory, administration, selling and distribution overheads as\n   compared with previous two years.\n\nRemedial Actions:\nIn this case the following position emerges: the Cost Auditor may offer suggestions as regard the following\nmatters for improvements in performance of the company under audit with reference to:-\n(a) Rectification of general imbalance in production facilities\n(b) Fuller utilization of installed capacity\n(c) Concentration on areas offering scope for cost reduction, increased productivity and key limiting factors\n    causing production bottlenecks; and\n(d) Suggesting improved inventory policies.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "basics-of-management-audit",
+    "mapping_confidence": 0.02,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "6(b)",
+    "number_label": "6(b)",
+    "ref_suffix": "q6b",
+    "depth": 1,
+    "sort_order": 31,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What is Cyber Security and Computer Forensics? Explain the difference between the two.",
+    "parent_ref": "6",
+    "explanation_md": "Cyber Security:\nCyber Security is a professional discipline that is about creating defensive measures to protect against cyber\nattacks. People working in this industry may have a wide range of information technology (IT) skills\nincluding programming, operating systems and networking. The primary goal of any cyber security\nprofessional is to create a network or system that is impossible to breach, thereby protecting the information\nwithin the network.\nOne important note about cyber security is that it is almost entirely about prevention. Even more niche\npositions like ethical hackers, only use their offensive skills to test networks and improve them.\nCyber Security encompasses many protocols that are used in the real world. Things like setting user\npermissions, establishing file transfer protocols (FTPs) and requiring secure, frequently changing passwords\nare all vital elements of cyber security. It is not just up to one individual, everyone in an organisation needs\nto practice safe computer usage for security to be maintained.\n\nComputer Forensics:\n\nComputer Forensics is the practice of recovering data from a device, often to uncover evidence of criminal\nactivity. The practice itself is reactionary, meaning that it only takes place after an incident has occurred and\nis not concerned with preventing the incident itself.\nComputer forensics jobs typically serve one of two purposes. They either assist with an investigation or help\npeople and companies recover data that has been lost. In the first instance, a computer forensics specialist\nwill be given access to a suspect‘s device, such as laptop, desktop, or smartphone. Once they have the\ndevice, they begin using a variety of skills, such as programming, hardware knowledge, and software\nknowledge, to locate valuable data. In a law enforcement case, they will ideally uncover data that is of value\n\nto the prosecution and can be presented in a court of law. To do this, the data must be recovered in a very\nparticular manner that does not violate the suspect‘s rights.\nSometimes, computer forensics specialists are called in to help a company recover lost data. While the\n\npurpose of the assignment differs greatly from uncovering evidence of criminal activities, the processes used\nto recover the lost data are very similar. The main difference in the execution of these tasks is that the\n\nparticular processes required to create court-admissible evidence do not need to be followed in this case. In\nsome cases, if the data is lost as a result of cybercrime, the computer forensics expert may be tasked with\nrecovering the data and identifying the perpetrator of the crime.\nCyber Security v/s. Computer Forensics:\nCyber security is focused on prevention, while computer forensics is about recovery and reaction. Despite\nthe differences, both are meant to protect data, programs, networks and other digital assets. Cyber security\nhelps to prevent cybercrimes from happening, while computer forensics helps recover data when an attack\ndoes occur and also helps identify the culprit behind the crime.\nIt helps to think of cyber security professionals as a security company and to think of computer forensics\nexperts as investigators.",
+    "reference_solution_md": "Cyber Security:\nCyber Security is a professional discipline that is about creating defensive measures to protect against cyber\nattacks. People working in this industry may have a wide range of information technology (IT) skills\nincluding programming, operating systems and networking. The primary goal of any cyber security\nprofessional is to create a network or system that is impossible to breach, thereby protecting the information\nwithin the network.\nOne important note about cyber security is that it is almost entirely about prevention. Even more niche\npositions like ethical hackers, only use their offensive skills to test networks and improve them.\nCyber Security encompasses many protocols that are used in the real world. Things like setting user\npermissions, establishing file transfer protocols (FTPs) and requiring secure, frequently changing passwords\nare all vital elements of cyber security. It is not just up to one individual, everyone in an organisation needs\nto practice safe computer usage for security to be maintained.\n\nComputer Forensics:\n\nComputer Forensics is the practice of recovering data from a device, often to uncover evidence of criminal\nactivity. The practice itself is reactionary, meaning that it only takes place after an incident has occurred and\nis not concerned with preventing the incident itself.\nComputer forensics jobs typically serve one of two purposes. They either assist with an investigation or help\npeople and companies recover data that has been lost. In the first instance, a computer forensics specialist\nwill be given access to a suspect‘s device, such as laptop, desktop, or smartphone. Once they have the\ndevice, they begin using a variety of skills, such as programming, hardware knowledge, and software\nknowledge, to locate valuable data. In a law enforcement case, they will ideally uncover data that is of value\n\nto the prosecution and can be presented in a court of law. To do this, the data must be recovered in a very\nparticular manner that does not violate the suspect‘s rights.\nSometimes, computer forensics specialists are called in to help a company recover lost data. While the\n\npurpose of the assignment differs greatly from uncovering evidence of criminal activities, the processes used\nto recover the lost data are very similar. The main difference in the execution of these tasks is that the\n\nparticular processes required to create court-admissible evidence do not need to be followed in this case. In\nsome cases, if the data is lost as a result of cybercrime, the computer forensics expert may be tasked with\nrecovering the data and identifying the perpetrator of the crime.\nCyber Security v/s. Computer Forensics:\nCyber security is focused on prevention, while computer forensics is about recovery and reaction. Despite\nthe differences, both are meant to protect data, programs, networks and other digital assets. Cyber security\nhelps to prevent cybercrimes from happening, while computer forensics helps recover data when an attack\ndoes occur and also helps identify the culprit behind the crime.\nIt helps to think of cyber security professionals as a security company and to think of computer forensics\nexperts as investigators.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "information-systems-security-audit",
+    "mapping_confidence": 0.73,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "7",
+    "number_label": "7",
+    "depth": 0,
+    "sort_order": 32,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "7(a)",
+    "number_label": "7(a)",
+    "ref_suffix": "q7a",
+    "depth": 1,
+    "sort_order": 33,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "XYZ Ltd., has planned for an investment of ₹1,000 lakh with a 50% loan from Banks at 12% interest.\n\nDirect Cost for the year ₹ 580 lakhs, 50% of which is Material Cost.\n\nOther expenses are at ₹ 100 lakh. The goods will be sold at 150% of the direct cost.\n\nThe tax rate is assumed at 30%.\n\nYou are required to determine:\n(i) Net profit margin\n(ii) Return on Assets\n(iii) Return on owner's equity\n(iv) Asset Turnover\n(v) Inventory Turnover",
+    "parent_ref": "7",
+    "explanation_md": "(i) Net Profit Margin = 10.46%\n\n(ii) Return on Assets = 9.10%\n\n(iii) Return on Equity = 18.20%\n\n(iv) Asset Turnover = 0.87 Times\n\n(v) Inventory Turnover = 33.33%",
+    "reference_solution_md": "(i) Net Profit Margin = 10.46%\n\n(ii) Return on Assets = 9.10%\n\n(iii) Return on Equity = 18.20%\n\n(iv) Asset Turnover = 0.87 Times\n\n(v) Inventory Turnover = 33.33%",
+    "answer_source": "icmai_suggested",
+    "difficulty": 4,
+    "chapter_key": "cost-audit-programme",
+    "mapping_confidence": 0.0,
+    "mapping_state": "pending",
+    "publish": true
+   },
+   {
+    "ref": "7(b)",
+    "number_label": "7(b)",
+    "ref_suffix": "q7b",
+    "depth": 1,
+    "sort_order": 34,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "How do you evaluate the Personnel Development? Explain in detail.",
+    "parent_ref": "7",
+    "explanation_md": "Evaluation of Personnel Development:\nThe best, most loyal employees are often people who started near the bottom of the organisational chart and\nworked their way up the ladder with the help, support, and encouragement of their manager/employer. That\nhelp, support, and encouragement are all part of employee development. In a well-managed company, there\nare systems in place to provide appropriate development opportunities and resources. In addition, managers\nare trained to support their team members with coaching, meaningful feedback, and in some cases-\nmentorship.\nManagers have an important role to play in ensuring development of people. Some of the most important\nthings a manager can do for their team members are:\n     Delegating responsibility rather than fixing problems before they arise.\n     Honest and candid feedback for the development\n     Offering or suggesting specific appropriate development opportunities to employees\n     Motivating for additional risk and reward.\n     Demonstrating the meaning of true LEADERSHIP attributes ( L.E.A.D.E.R.S.H.I.P. – Loyalty,\n        Empathy, Accountability, Determination and Dutifulness, Encouragement, Respect, Selfless,\n        Humble, Integrity and Innovation, Passion)\n\nFormal Employee Development Strategies:\n   A. Imparting general and specific training. Training on development of ―Soft skills‖ (interpersonal\n      communication, public speaking, negotiation, leadership skills, etc.) will improve ability of the\n      people aspiring for self-growth.                       tu\n   B. Psychometric studies to understand mentality to function in leadership roles, often also resorted to\n      assess.\n\nInformal Employee Development Strategies:\nIn addition to formal employee development, many corporations offer informal development options. These\noften take the form of on-the-job training, shadowing, mentorship, or similar experiences that allow newer\nemployees to learn from seniors. In addition, managers may choose to coach promising employees to\n\nprepare them for more challenging roles.\n\nPerformance Evaluation:\nMost companies conduct annual performance evaluations of employees against the task assigned in their\nKey Result Area.\nThe ‗goal setting exercise‘ determines the role and assignment of broad areas. Periodical review exercise is\ncarried out to evaluate and track the shortfall in achievement. Any mid-term intervention or changes also can\nbe given effect based on the requirement. Annual review (performance appraisal) is a agglomeration of\nearlier period/s of the appraisal period. The basic objective is to provide feedback to employees for their role\nand organisational requirement.\n     Rating Scales allow managers to rate the quality of an employee‘s performance or skills based on\n        numerical values, wherein minimum and maximum is specified. Actual ratings given and accepted\n        by employee placed normally in a ‗bell curve‘ to identify top performers out of the total population.\n\n      3600 Feedback mechanism perused in progressive Organisations where employees‘ managers,\n       subordinates, and peers to provide feedback about performance of the employee from every angle.\n       This can be a very useful form of evaluation, as some individuals can be wonderful managers, but\n       have a difficult time interacting with peers or vice versa. By gathering a wide range of perspectives,\n       managers can pinpoint areas of strength and opportunities for growth. On the other hand, this\n          approach can be problematic, if the employee in question is less popular for any reason, or if a\n          supervisee is unhappy about being disciplined.\n\n          Management by Objectives is a personalized evaluation technique that measures the individual\n          employee‘s achievement by comparing the employee to objectives agreed upon the prior year. For\n          example, the employee and manager may have agreed on a particular sales objective, at the end of\n          the year, the employee‘s actual sales can be compared positively or negatively to the individualized\n          objective.",
+    "reference_solution_md": "Evaluation of Personnel Development:\nThe best, most loyal employees are often people who started near the bottom of the organisational chart and\nworked their way up the ladder with the help, support, and encouragement of their manager/employer. That\nhelp, support, and encouragement are all part of employee development. In a well-managed company, there\nare systems in place to provide appropriate development opportunities and resources. In addition, managers\nare trained to support their team members with coaching, meaningful feedback, and in some cases-\nmentorship.\nManagers have an important role to play in ensuring development of people. Some of the most important\nthings a manager can do for their team members are:\n     Delegating responsibility rather than fixing problems before they arise.\n     Honest and candid feedback for the development\n     Offering or suggesting specific appropriate development opportunities to employees\n     Motivating for additional risk and reward.\n     Demonstrating the meaning of true LEADERSHIP attributes ( L.E.A.D.E.R.S.H.I.P. – Loyalty,\n        Empathy, Accountability, Determination and Dutifulness, Encouragement, Respect, Selfless,\n        Humble, Integrity and Innovation, Passion)\n\nFormal Employee Development Strategies:\n   A. Imparting general and specific training. Training on development of ―Soft skills‖ (interpersonal\n      communication, public speaking, negotiation, leadership skills, etc.) will improve ability of the\n      people aspiring for self-growth.                       tu\n   B. Psychometric studies to understand mentality to function in leadership roles, often also resorted to\n      assess.\n\nInformal Employee Development Strategies:\nIn addition to formal employee development, many corporations offer informal development options. These\noften take the form of on-the-job training, shadowing, mentorship, or similar experiences that allow newer\nemployees to learn from seniors. In addition, managers may choose to coach promising employees to\n\nprepare them for more challenging roles.\n\nPerformance Evaluation:\nMost companies conduct annual performance evaluations of employees against the task assigned in their\nKey Result Area.\nThe ‗goal setting exercise‘ determines the role and assignment of broad areas. Periodical review exercise is\ncarried out to evaluate and track the shortfall in achievement. Any mid-term intervention or changes also can\nbe given effect based on the requirement. Annual review (performance appraisal) is a agglomeration of\nearlier period/s of the appraisal period. The basic objective is to provide feedback to employees for their role\nand organisational requirement.\n     Rating Scales allow managers to rate the quality of an employee‘s performance or skills based on\n        numerical values, wherein minimum and maximum is specified. Actual ratings given and accepted\n        by employee placed normally in a ‗bell curve‘ to identify top performers out of the total population.\n\n      3600 Feedback mechanism perused in progressive Organisations where employees‘ managers,\n       subordinates, and peers to provide feedback about performance of the employee from every angle.\n       This can be a very useful form of evaluation, as some individuals can be wonderful managers, but\n       have a difficult time interacting with peers or vice versa. By gathering a wide range of perspectives,\n       managers can pinpoint areas of strength and opportunities for growth. On the other hand, this\n          approach can be problematic, if the employee in question is less popular for any reason, or if a\n          supervisee is unhappy about being disciplined.\n\n          Management by Objectives is a personalized evaluation technique that measures the individual\n          employee‘s achievement by comparing the employee to objectives agreed upon the prior year. For\n          example, the employee and manager may have agreed on a particular sales objective, at the end of\n          the year, the employee‘s actual sales can be compared positively or negatively to the individualized\n          objective.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "management-audit-in-different-functions",
+    "mapping_confidence": 0.63,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8",
+    "number_label": "8",
+    "depth": 0,
+    "sort_order": 35,
+    "is_leaf": false,
+    "marks": "14",
+    "kind": "long_form",
+    "descriptor": "",
+    "choice_group_ref": "secB"
+   },
+   {
+    "ref": "8(a)",
+    "number_label": "8(a)",
+    "ref_suffix": "q8a",
+    "depth": 1,
+    "sort_order": 36,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "What is the necessity of Internal Audit? Explain.",
+    "parent_ref": "8",
+    "explanation_md": "Necessity of Internal Audit\n   i.  Internal Audit assists management to improve internal controls by identifying weaknesses in systems\n       and provides an opportunity to correct those weaknesses. Internal auditors deal withissues that are\n       important to the continued existence and prosperity of any organisation.\n\n ii.      It helps to detect errors and frauds and provides suggestions to rectify the same and to pre-empt\n          possibility of recurrence.\n iii.     It steps in time to detect the misuse of resources, which helps to reduce infructuous\n\n          unnecessary expenses.\n iv.      It helps in improving the processes and workflow. It also works as a morale check.\n  v.      The Internal audit checks the books of accounts, detects errors and frauds and helps in its correction\n          which makes the act of External/Statutory Auditor easier. He can rely on the internal audit reports\n          and reduce the audit time.\n vi.      The vigil by Internal Audit team and timely intervention, keeps operating staff on their toes for\n          keeping Books updated.\nvii.      Independent review of operations/business.",
+    "reference_solution_md": "Necessity of Internal Audit\n   i.  Internal Audit assists management to improve internal controls by identifying weaknesses in systems\n       and provides an opportunity to correct those weaknesses. Internal auditors deal withissues that are\n       important to the continued existence and prosperity of any organisation.\n\n ii.      It helps to detect errors and frauds and provides suggestions to rectify the same and to pre-empt\n          possibility of recurrence.\n iii.     It steps in time to detect the misuse of resources, which helps to reduce infructuous\n\n          unnecessary expenses.\n iv.      It helps in improving the processes and workflow. It also works as a morale check.\n  v.      The Internal audit checks the books of accounts, detects errors and frauds and helps in its correction\n          which makes the act of External/Statutory Auditor easier. He can rely on the internal audit reports\n          and reduce the audit time.\n vi.      The vigil by Internal Audit team and timely intervention, keeps operating staff on their toes for\n          keeping Books updated.\nvii.      Independent review of operations/business.",
+    "answer_source": "icmai_suggested",
+    "difficulty": 1,
+    "chapter_key": "internal-control-and-internal-audit",
+    "mapping_confidence": 0.53,
+    "mapping_state": "confirmed",
+    "publish": true
+   },
+   {
+    "ref": "8(b)",
+    "number_label": "8(b)",
+    "ref_suffix": "q8b",
+    "depth": 1,
+    "sort_order": 37,
+    "is_leaf": true,
+    "marks": "7",
+    "kind": "long_form",
+    "stem_md": "State the special steps to be taken by the Auditor related to the audit of an Educational Institution and that of students.",
+    "parent_ref": "8",
+    "explanation_md": "The special steps involved in the audit of an educational institution include a variety of conventional and\nspecial type of audit of documents:\n\nExamination of basic Constitution of the Institution:\n   (i)   Documents relating to formation of the institution, affiliation, Management structure, Governing\n\n         Body, ownership, etc. requires due attention for fund monitoring, donation, spent approval\n         process, affiliation fees payment, etc.\n   (ii)  Examine the Trust Deed, or Regulations in the case of school or college and note all the\n         provisions affecting accounts. In the case of a university, refer to the Act of Legislature and the\n         Regulations framed thereunder.\n   (iii) Approving authority for expense, fund transfer, bank account operation, etc. Read through the\n         minutes of the meetings of the Managing Committee or Governing Body, noting resolutions\n         affecting accounts.\n   (iv)  To see that these have been duly complied with, especially the decisions as regards the operation\n         of bank accounts and sanctioning of expenditure.\n\nFor examination data relating to students:\n\n       (a) Semester / Class-wise Student Register with details of Student name, address, Aadhar No./Card,\n           Guardian details, Contact No., etc. and fee structure (full fees, half fees, sanctioned waiver, etc.)\n           mapped for ensuring accuracy of collection.\n\n(b) Where collection through direct Banking takes place, the Bank Statement to be equated with ‗fees\n    receivable/ recoverable‘ for completeness check and proper revenue /collection (advance/ arrear)\n    recognition.\n\n(c) Fees collected and Fees Book counterfoil reconciliation also can be carried out for fees collected at\n    the Counter. Collection against every student, whose names are appearing in the ‗Student Register‘ to\n    be validated and unpaid ones to be followed-up.\n\n(d) Updation of ‗Student Register‘ w.r.t discontinued, transferred students, drop-outs, etc. to be carried\n    out on timely basis.\n\n(e) Fees condonation by appropriate authority to be considered for reconciliation between receivable fees\n    and received.\n\n(f) Admission and other collections (late fees, transfer charges etc.) need to be tracked for separately and\n    booked under appropriate Account Heads.\n\n(g) Confirm that hostel dues were recovered before students‘ accounts were closed and their caution\n    deposits appropriately adjusted/refunded.\n\n(h) Verify other sources of income (rental income from landed property with the rent rolls, bank Fixed\n\n    Deposit interest from Deposit Certificates, etc.)\n\n                                 _____________________________",
+    "reference_solution_md": "The special steps involved in the audit of an educational institution include a variety of conventional and\nspecial type of audit of documents:\n\nExamination of basic Constitution of the Institution:\n   (i)   Documents relating to formation of the institution, affiliation, Management structure, Governing\n\n         Body, ownership, etc. requires due attention for fund monitoring, donation, spent approval\n         process, affiliation fees payment, etc.\n   (ii)  Examine the Trust Deed, or Regulations in the case of school or college and note all the\n         provisions affecting accounts. In the case of a university, refer to the Act of Legislature and the\n         Regulations framed thereunder.\n   (iii) Approving authority for expense, fund transfer, bank account operation, etc. Read through the\n         minutes of the meetings of the Managing Committee or Governing Body, noting resolutions\n         affecting accounts.\n   (iv)  To see that these have been duly complied with, especially the decisions as regards the operation\n         of bank accounts and sanctioning of expenditure.\n\nFor examination data relating to students:\n\n       (a) Semester / Class-wise Student Register with details of Student name, address, Aadhar No./Card,\n           Guardian details, Contact No., etc. and fee structure (full fees, half fees, sanctioned waiver, etc.)\n           mapped for ensuring accuracy of collection.\n\n(b) Where collection through direct Banking takes place, the Bank Statement to be equated with ‗fees\n    receivable/ recoverable‘ for completeness check and proper revenue /collection (advance/ arrear)\n    recognition.\n\n(c) Fees collected and Fees Book counterfoil reconciliation also can be carried out for fees collected at\n    the Counter. Collection against every student, whose names are appearing in the ‗Student Register‘ to\n    be validated and unpaid ones to be followed-up.\n\n(d) Updation of ‗Student Register‘ w.r.t discontinued, transferred students, drop-outs, etc. to be carried\n    out on timely basis.\n\n(e) Fees condonation by appropriate authority to be considered for reconciliation between receivable fees\n    and received.\n\n(f) Admission and other collections (late fees, transfer charges etc.) need to be tracked for separately and\n    booked under appropriate Account Heads.\n\n(g) Confirm that hostel dues were recovered before students‘ accounts were closed and their caution\n    deposits appropriately adjusted/refunded.\n\n(h) Verify other sources of income (rental income from landed property with the rent rolls, bank Fixed\n\n    Deposit interest from Deposit Certificates, etc.)\n\n                                 _____________________________",
+    "answer_source": "icmai_suggested",
+    "difficulty": 2,
+    "chapter_key": "cost-audit-documentation-audit-process-and-execution",
+    "mapping_confidence": 0.22,
+    "mapping_state": "pending",
+    "publish": true
+   }
+  ]
+ },
+ "review": [],
+ "typeset_notes": {},
+ "review_decisions": {
+  "1(x)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper; stored key A equals printed key (x) (A).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (A) Information for 'backbone of any organisation' looks doubtful (Employee would be expected); kept as printed"
+   ],
+   "by": "claude-review"
+  },
+  "1(xiii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the question paper; stored key B equals printed key (xiii) (B).",
+   "fixes": [],
+   "printed_issues": [
+    "Printed key (B) Self-Help Group looks doubtful against option D (Cooperative Societies); kept as printed"
+   ],
+   "by": "claude-review"
+  },
+  "4(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; suggested answer prints only the final figure ₹ 4,15,200 and the stored answer is the same.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only the final figure without working",
+    "Opening bracket in the stem is never closed, as printed"
+   ],
+   "by": "claude-review"
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem and expenditure table match the print digit for digit; answer is the printed final figure ₹ 2,675 lakh.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only the final figure without working"
+   ],
+   "by": "claude-review"
+  },
+  "5(a)": {
+   "verdict": "approve",
+   "reason": "Stem with transactions (i)-(vi) matches the print; answer is the printed final figure ₹ 41,08,200.",
+   "fixes": [],
+   "printed_issues": [
+    "Suggested answer gives only the final figure without working"
+   ],
+   "by": "claude-review"
+  },
+  "7(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print; the five printed results match the suggested answer, only the stored layout (indented lines that would render as code) was rebuilt.",
+   "fixes": [
+    "Removed the leading spaces/tabs so each printed result is its own paragraph; figures unchanged"
+   ],
+   "printed_issues": [
+    "Suggested answer gives only final figures",
+    "Inventory Turnover printed as 33.33% instead of times; kept as printed",
+    "Printed label 'Return on Equity' where the question says return on owner's equity"
+   ],
+   "by": "claude-review"
+  }
+ },
+ "case_groups": [],
+ "owner_overrides": [],
+ "counts": {
+  "leaves": 29,
+  "draft_parts": 0,
+  "answered": 29
+ }
+}

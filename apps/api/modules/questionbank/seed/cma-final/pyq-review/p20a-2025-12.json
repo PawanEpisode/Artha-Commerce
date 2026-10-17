@@ -1,0 +1,48 @@
+{
+ "schema": "artha.qbreview.v1",
+ "name": "p20a-2025-12",
+ "items": {
+  "1(iii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the printed question; stored key B equals the printed key (iii) (B) in the suggested answers.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "1(vii)": {
+   "verdict": "approve",
+   "reason": "Stem and four options match the printed question; stored key C equals the printed key (vii) (C) in the suggested answers.",
+   "fixes": [],
+   "printed_issues": []
+  },
+  "4(b)": {
+   "verdict": "approve",
+   "reason": "Stem data table and requirement match the question paper; the Z-score table and advice match the printed answer, including figures 6.47 and 7.34.",
+   "fixes": [],
+   "printed_issues": [
+    "Question gives Total Assets equal to Total Liabilities (10,00,000 and 12,00,000), as printed."
+   ]
+  },
+  "6(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print. The year-wise working table, an image in the stored text, was read from the printed page and inserted; the PV row sums to 98.90 as printed.",
+   "fixes": [
+    "Inserted the printed year-wise working table (years 0 to 10) in place of the missing-table placeholder."
+   ],
+   "answer_md": "The copyrights valuation can be done using the Market or Income or even Cost Approach. By applying the Income approach the value of Copyrights are as follows:\n(Amount in ₹ Lakh)\n\n| Year | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Annual Increase | -- | 5% | 5% | 5% | 5% | 5% | 2% | 2% | 2% | 2% | 2% |\n| Book Price (₹) | 1,750 |  |  |  |  |  |  |  |  |  |  |\n| Unit Sales per Year | 2,500 |  |  |  |  |  |  |  |  |  |  |\n| Revenue\\* | 43.75 |  |  |  |  |  |  |  |  |  |  |\n| Less: Costs\\* @70% | 30.63 |  |  |  |  |  |  |  |  |  |  |\n| Cash Flows\\* | 13.13 | 13.78 | 14.47 | 15.19 | 15.95 | 16.75 | 17.09 | 17.43 | 17.78 | 18.13 | 18.49 |\n| PV Factor @ 10% |  | 0.909 | 0.826 | 0.751 | 0.683 | 0.621 | 0.564 | 0.513 | 0.467 | 0.424 | 0.386 |\n| PV of Future Cash Flows\\* |  | 12.53 | 11.95 | 11.41 | 10.90 | 10.40 | 9.64 | 8.94 | 8.30 | 7.69 | 7.14 |\n\n\nValue of Copyrights (Year 1 To 10) (₹ In Lakh):\n12.53 + 11.95 + 11.41 + 10.90 + 10.40 + 9.64 + 8.94 + 8.30 + 7.69 + 7.14 = ₹ 98.90 Lakh",
+   "printed_issues": [
+    "Book price, unit sales, revenue and cost cells for years 1 to 10 are blank in the print; cash flow row begins at 13.78 for year 1."
+   ]
+  },
+  "8(a)": {
+   "verdict": "approve",
+   "reason": "Stem matches the print. The main Customer-Profitability Analysis Statement, an image in the suggested answer and missing from the stored text, was read from the page and prepended; working notes and comment match the print.",
+   "fixes": [
+    "Added the printed Customer-Profitability Analysis Statement table before the working notes."
+   ],
+   "answer_md": "**CUSTOMER-PROFITABILITY ANALYSIS**\n\n|  | A | B | C | D |\n|---|---|---|---|---|\n| Units Sold | 60,000 | 35,000 | 20,000 | 15,000 |\n| List Price | Rs.2,000 | Rs.2,000 | Rs.2,000 | Rs.2,000 |\n| Price Discount (%) | 5% | 3% | 1% | 0 |\n| Price Discount (Rs.) | Rs.100 | Rs.60 | Rs.20 | 0 |\n| Invoice Price | Rs.1,900 | Rs.1,940 | Rs.1,980 | Rs.2000 |\n| **Revenue** | **Rs.11,40,00,000** | **Rs.6,79,00,000** | **Rs.3,96,00,000** | **Rs.3,00,00,000** |\n| Less: Cost of Goods Sold @ Rs. 800 per unit | Rs.4,80,00,000 | Rs.2,80,00,000 | Rs.1,60,00,000 | Rs.1,20,00,000 |\n| **GROSS MARGIN** | **Rs.6,60,00,000** | **Rs.3,99,00,000** | **Rs.2,36,00,000** | **Rs.1,80,00,000** |\n| **CUSTOMER-LEVEL COSTS : [WN : (I) & (II)]** |  |  |  |  |\n| Number of purchase orders @ Rs. 66.67 | Rs.2,40,000 | Rs.2,00,000 | Rs.1,20,000 | Rs.80,000 |\n| Number of sales visits @ Rs. 80 | Rs.72,000 | Rs.60,000 | Rs.48,000 | Rs.36,000 |\n| Number of deliveries @ Rs. 3 | Rs.18,000 | Rs.9,000 | Rs.6,000 | Rs.4,500 |\n| Set Up and Inspection @ 50 | Rs.1,50,000 | Rs.1,20,000 | Rs.72,000 | Rs.12,000 |\n| Kilometres travelled per delivery @ Rs. 1.60 | Rs.1,040 | Rs.2,496 | Rs.4,160 | Rs.1,264 |\n| Number of expedited deliveries @ Rs. 300 | Rs.48,000 | Rs.0 | Rs.96,000 | Rs.0 |\n| **TOTAL CUSTOMER-LEVEL COST** | **Rs.5,29,040** | **Rs.3,91,496** | **Rs.3,46,160** | **Rs.1,33,764** |\n| **CUSTOMER-LEVEL OPERATING PROFIT** | **Rs.6,54,70,960** | **Rs.3,95,08,504** | **Rs.2,32,53,840** | **Rs.1,78,66,236** |\n|  | **A** | **B** | **C** | **D** |\n| Units sold | 60,000 | 35,000 | 20,000 | 15,000 |\n| Customer level per unit operating profit | Rs.1091.18 | Rs.1128.81 | Rs.1162.69 | Rs.1191.08 |\n\nWORKING NOTES:\n\n(I) CUSTOMER-LEVEL COSTS:\n\n | Total Cost (₹) | Total Number | Cost Per Unit or Activity (₹)\n---|---|---|---\nPurchase orders | 6,40,000 | 9,600 | 66.67\nSales visits | 2,16,000 | 2,700 | 80.00\nDeliveries | 37,500 | 12,500 | 3\nSet Up and Inspection | 3,54,000 | 7,080 | 50\nDelivery for Km travelled | 8,960 | 5,600 | 1.60\nExpedited deliveries | 1,44,000 | 480 | 300.00\n\n(II) Customers | A | B | C | D\n---|---|---|---|---\nNumber of Purchase orders | 3,600 | 3,000 | 1,800 | 1,200\nNumber of Sales Visits | 900 | 750 | 600 | 450\nNumber of Deliveries | 6,000 | 3,000 | 2,000 | 1,500\nSet Up and Inspection | 3,000 | 2,400 | 1,440 | 240\nKilometres travelled per delivery | 650 | 1,560 | 2,600 | 790\nNumber of expedited deliveries | 160 | 0 | 320 | 0\n\nComment:\nIt is seen that in terms of total customer level profitability the net operating profit from customers is highest for A, followed by B, then C & finally D. However, it is seen that in terms of per unit sold customer level operating profit D is most profitable at ₹ 1191.08 per unit, followed by C at ₹ 1162.69, B at ₹ 1128.81 and A at ₹ 1091.18. In terms of total profitability, the rank is A, B, C & D. however considering that per unit profitability is higher for D followed by C, B & A attempt should be made to increase sales volumes of D & C to earn higher profitability.",
+   "printed_issues": [
+    "Statement prints amounts with 'Rs.' rather than the rupee sign, and shows D's invoice price as Rs.2000 and discount as 0."
+   ]
+  }
+ }
+}
