@@ -74,7 +74,6 @@ import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course
 import { Route as AppAnalyticsShareTokenRouteImport } from './routes/app.analytics.share.$token'
 import { Route as AppMcqSetsIndexRouteImport } from './routes/app.mcq.sets.index'
 import { Route as AppMcqSetsSlugRouteImport } from './routes/app.mcq.sets.$slug'
-import { Route as AppMcqSubjectsSubjectRouteImport } from './routes/app.mcq.subjects.$subject'
 import { Route as AppNotesSubjectIndexRouteImport } from './routes/app.notes.$subject.index'
 import { Route as AppNotesSubjectChapterRouteImport } from './routes/app.notes.$subject.$chapter'
 import { Route as AppNotesNNoteIdRouteImport } from './routes/app.notes.n.$noteId'
@@ -92,12 +91,14 @@ import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllab
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
 import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$course.$level.index'
+import { Route as AppMcqSubjectsSubjectIndexRouteImport } from './routes/app.mcq.subjects.$subject.index'
 import { Route as AppPracticeSessionIdIndexRouteImport } from './routes/app.practice.session.$id.index'
 import { Route as AppPracticeSessionIdReviewRouteImport } from './routes/app.practice.session.$id.review'
 import { Route as AppRecallReviewSummarySessionIdRouteImport } from './routes/app.recall.review.summary.$sessionId'
 import { Route as CoursesCourseLevelSubjectIndexRouteImport } from './routes/courses.$course.$level.$subject.index'
 import { Route as CoursesCourseLevelSubjectChapterRouteImport } from './routes/courses.$course.$level.$subject.$chapter'
 import { Route as CoursesCourseLevelSubjectMcqsRouteImport } from './routes/courses.$course.$level.$subject.mcqs'
+import { Route as AppMcqSubjectsSubjectChaptersChapterRouteImport } from './routes/app.mcq.subjects.$subject.chapters.$chapter'
 import { Route as CoursesCourseLevelSubjectChapterPreviousYearQuestionsRouteImport } from './routes/courses.$course.$level.$subject.$chapter.previous-year-questions'
 import { Route as CoursesCourseLevelSubjectChapterQuestionsRouteImport } from './routes/courses.$course.$level.$subject.$chapter.questions'
 import { Route as OgCoursesCourseLevelSubjectChapterRouteImport } from './routes/og.courses.$course.$level.$subject.$chapter'
@@ -428,11 +429,6 @@ const AppMcqSetsSlugRoute = AppMcqSetsSlugRouteImport.update({
   path: '/mcq/sets/$slug',
   getParentRoute: () => AppRoute,
 } as any)
-const AppMcqSubjectsSubjectRoute = AppMcqSubjectsSubjectRouteImport.update({
-  id: '/mcq/subjects/$subject',
-  path: '/mcq/subjects/$subject',
-  getParentRoute: () => AppRoute,
-} as any)
 const AppNotesSubjectIndexRoute = AppNotesSubjectIndexRouteImport.update({
   id: '/notes/$subject/',
   path: '/notes/$subject/',
@@ -519,6 +515,12 @@ const CoursesCourseLevelIndexRoute = CoursesCourseLevelIndexRouteImport.update({
   path: '/courses/$course/$level/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppMcqSubjectsSubjectIndexRoute =
+  AppMcqSubjectsSubjectIndexRouteImport.update({
+    id: '/mcq/subjects/$subject/',
+    path: '/mcq/subjects/$subject/',
+    getParentRoute: () => AppRoute,
+  } as any)
 const AppPracticeSessionIdIndexRoute =
   AppPracticeSessionIdIndexRouteImport.update({
     id: '/practice/session/$id/',
@@ -554,6 +556,12 @@ const CoursesCourseLevelSubjectMcqsRoute =
     id: '/courses/$course/$level/$subject/mcqs',
     path: '/courses/$course/$level/$subject/mcqs',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const AppMcqSubjectsSubjectChaptersChapterRoute =
+  AppMcqSubjectsSubjectChaptersChapterRouteImport.update({
+    id: '/mcq/subjects/$subject/chapters/$chapter',
+    path: '/mcq/subjects/$subject/chapters/$chapter',
+    getParentRoute: () => AppRoute,
   } as any)
 const CoursesCourseLevelSubjectChapterPreviousYearQuestionsRoute =
   CoursesCourseLevelSubjectChapterPreviousYearQuestionsRouteImport.update({
@@ -639,7 +647,6 @@ export interface FileRoutesByFullPath {
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
-  '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
@@ -662,8 +669,10 @@ export interface FileRoutesByFullPath {
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   '/courses/$course/$level/$subject/mcqs': typeof CoursesCourseLevelSubjectMcqsRoute
+  '/app/mcq/subjects/$subject/': typeof AppMcqSubjectsSubjectIndexRoute
   '/app/practice/session/$id/': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
+  '/app/mcq/subjects/$subject/chapters/$chapter': typeof AppMcqSubjectsSubjectChaptersChapterRoute
   '/courses/$course/$level/$subject/$chapter/previous-year-questions': typeof CoursesCourseLevelSubjectChapterPreviousYearQuestionsRoute
   '/courses/$course/$level/$subject/$chapter/questions': typeof CoursesCourseLevelSubjectChapterQuestionsRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
@@ -731,7 +740,6 @@ export interface FileRoutesByTo {
   '/courses/$course': typeof CoursesCourseIndexRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
-  '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
@@ -754,8 +762,10 @@ export interface FileRoutesByTo {
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   '/courses/$course/$level/$subject/mcqs': typeof CoursesCourseLevelSubjectMcqsRoute
+  '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectIndexRoute
   '/app/practice/session/$id': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject': typeof CoursesCourseLevelSubjectIndexRoute
+  '/app/mcq/subjects/$subject/chapters/$chapter': typeof AppMcqSubjectsSubjectChaptersChapterRoute
   '/courses/$course/$level/$subject/$chapter/previous-year-questions': typeof CoursesCourseLevelSubjectChapterPreviousYearQuestionsRoute
   '/courses/$course/$level/$subject/$chapter/questions': typeof CoursesCourseLevelSubjectChapterQuestionsRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
@@ -826,7 +836,6 @@ export interface FileRoutesById {
   '/courses/$course/': typeof CoursesCourseIndexRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
-  '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
@@ -849,8 +858,10 @@ export interface FileRoutesById {
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   '/courses/$course/$level/$subject/mcqs': typeof CoursesCourseLevelSubjectMcqsRoute
+  '/app/mcq/subjects/$subject/': typeof AppMcqSubjectsSubjectIndexRoute
   '/app/practice/session/$id/': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
+  '/app/mcq/subjects/$subject/chapters/$chapter': typeof AppMcqSubjectsSubjectChaptersChapterRoute
   '/courses/$course/$level/$subject/$chapter/previous-year-questions': typeof CoursesCourseLevelSubjectChapterPreviousYearQuestionsRoute
   '/courses/$course/$level/$subject/$chapter/questions': typeof CoursesCourseLevelSubjectChapterQuestionsRoute
   '/og/courses/$course/$level/$subject/$chapter': typeof OgCoursesCourseLevelSubjectChapterRoute
@@ -922,7 +933,6 @@ export interface FileRouteTypes {
     | '/courses/$course/'
     | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
-    | '/app/mcq/subjects/$subject'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
@@ -945,8 +955,10 @@ export interface FileRouteTypes {
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/mcqs'
+    | '/app/mcq/subjects/$subject/'
     | '/app/practice/session/$id/'
     | '/courses/$course/$level/$subject/'
+    | '/app/mcq/subjects/$subject/chapters/$chapter'
     | '/courses/$course/$level/$subject/$chapter/previous-year-questions'
     | '/courses/$course/$level/$subject/$chapter/questions'
     | '/og/courses/$course/$level/$subject/$chapter'
@@ -1014,7 +1026,6 @@ export interface FileRouteTypes {
     | '/courses/$course'
     | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
-    | '/app/mcq/subjects/$subject'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
@@ -1037,8 +1048,10 @@ export interface FileRouteTypes {
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/mcqs'
+    | '/app/mcq/subjects/$subject'
     | '/app/practice/session/$id'
     | '/courses/$course/$level/$subject'
+    | '/app/mcq/subjects/$subject/chapters/$chapter'
     | '/courses/$course/$level/$subject/$chapter/previous-year-questions'
     | '/courses/$course/$level/$subject/$chapter/questions'
     | '/og/courses/$course/$level/$subject/$chapter'
@@ -1108,7 +1121,6 @@ export interface FileRouteTypes {
     | '/courses/$course/'
     | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
-    | '/app/mcq/subjects/$subject'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
@@ -1131,8 +1143,10 @@ export interface FileRouteTypes {
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/mcqs'
+    | '/app/mcq/subjects/$subject/'
     | '/app/practice/session/$id/'
     | '/courses/$course/$level/$subject/'
+    | '/app/mcq/subjects/$subject/chapters/$chapter'
     | '/courses/$course/$level/$subject/$chapter/previous-year-questions'
     | '/courses/$course/$level/$subject/$chapter/questions'
     | '/og/courses/$course/$level/$subject/$chapter'
@@ -1619,13 +1633,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppMcqSetsSlugRouteImport
       parentRoute: typeof AppRoute
     }
-    '/app/mcq/subjects/$subject': {
-      id: '/app/mcq/subjects/$subject'
-      path: '/mcq/subjects/$subject'
-      fullPath: '/app/mcq/subjects/$subject'
-      preLoaderRoute: typeof AppMcqSubjectsSubjectRouteImport
-      parentRoute: typeof AppRoute
-    }
     '/app/notes/$subject/': {
       id: '/app/notes/$subject/'
       path: '/notes/$subject'
@@ -1745,6 +1752,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseLevelIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/mcq/subjects/$subject/': {
+      id: '/app/mcq/subjects/$subject/'
+      path: '/mcq/subjects/$subject'
+      fullPath: '/app/mcq/subjects/$subject/'
+      preLoaderRoute: typeof AppMcqSubjectsSubjectIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/practice/session/$id/': {
       id: '/app/practice/session/$id/'
       path: '/practice/session/$id'
@@ -1786,6 +1800,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/courses/$course/$level/$subject/mcqs'
       preLoaderRoute: typeof CoursesCourseLevelSubjectMcqsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/app/mcq/subjects/$subject/chapters/$chapter': {
+      id: '/app/mcq/subjects/$subject/chapters/$chapter'
+      path: '/mcq/subjects/$subject/chapters/$chapter'
+      fullPath: '/app/mcq/subjects/$subject/chapters/$chapter'
+      preLoaderRoute: typeof AppMcqSubjectsSubjectChaptersChapterRouteImport
+      parentRoute: typeof AppRoute
     }
     '/courses/$course/$level/$subject/$chapter/previous-year-questions': {
       id: '/courses/$course/$level/$subject/$chapter/previous-year-questions'
@@ -1871,7 +1892,6 @@ interface AppRouteChildren {
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
   AppAnalyticsShareTokenRoute: typeof AppAnalyticsShareTokenRoute
   AppMcqSetsSlugRoute: typeof AppMcqSetsSlugRoute
-  AppMcqSubjectsSubjectRoute: typeof AppMcqSubjectsSubjectRoute
   AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
   AppNotesNNoteIdRoute: typeof AppNotesNNoteIdRoute
   AppNotesPdfDocIdRoute: typeof AppNotesPdfDocIdRoute
@@ -1891,7 +1911,9 @@ interface AppRouteChildren {
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
   AppPracticeSessionIdReviewRoute: typeof AppPracticeSessionIdReviewRoute
   AppRecallReviewSummarySessionIdRoute: typeof AppRecallReviewSummarySessionIdRoute
+  AppMcqSubjectsSubjectIndexRoute: typeof AppMcqSubjectsSubjectIndexRoute
   AppPracticeSessionIdIndexRoute: typeof AppPracticeSessionIdIndexRoute
+  AppMcqSubjectsSubjectChaptersChapterRoute: typeof AppMcqSubjectsSubjectChaptersChapterRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
@@ -1940,7 +1962,6 @@ const AppRouteChildren: AppRouteChildren = {
   AppTrackerIndexRoute: AppTrackerIndexRoute,
   AppAnalyticsShareTokenRoute: AppAnalyticsShareTokenRoute,
   AppMcqSetsSlugRoute: AppMcqSetsSlugRoute,
-  AppMcqSubjectsSubjectRoute: AppMcqSubjectsSubjectRoute,
   AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,
   AppNotesNNoteIdRoute: AppNotesNNoteIdRoute,
   AppNotesPdfDocIdRoute: AppNotesPdfDocIdRoute,
@@ -1960,7 +1981,10 @@ const AppRouteChildren: AppRouteChildren = {
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
   AppPracticeSessionIdReviewRoute: AppPracticeSessionIdReviewRoute,
   AppRecallReviewSummarySessionIdRoute: AppRecallReviewSummarySessionIdRoute,
+  AppMcqSubjectsSubjectIndexRoute: AppMcqSubjectsSubjectIndexRoute,
   AppPracticeSessionIdIndexRoute: AppPracticeSessionIdIndexRoute,
+  AppMcqSubjectsSubjectChaptersChapterRoute:
+    AppMcqSubjectsSubjectChaptersChapterRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)

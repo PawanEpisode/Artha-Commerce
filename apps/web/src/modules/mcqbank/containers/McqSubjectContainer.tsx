@@ -38,6 +38,7 @@ export function McqSubjectContainer({ subjectKey }: McqSubjectContainerProps) {
         subject_key: subjectKey,
         count: 10,
         mode: 'chapter_quiz',
+        feedback_policy: 'instant',
       })
       navigate({
         to: '/app/practice/session/$id',

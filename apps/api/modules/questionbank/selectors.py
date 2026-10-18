@@ -16,7 +16,7 @@ from typing import Any, Literal
 from django.db.models import Count, Q
 from django.utils import timezone
 
-from .domain.filters import QuestionFilter
+from .domain.filters import KIND_GROUPS, QuestionFilter
 from .models import (
     CollectionItem,
     Question,
@@ -164,8 +164,10 @@ def _apply_filters(qs, viewer_id: uuid.UUID | None, flt: QuestionFilter):
     if flt.get("subject_key"):
         qs = qs.filter(subject_key=flt["subject_key"])
 
-    if flt.get("chapter_ids"):
-        ch_ids = flt["chapter_ids"]
+    ch_ids = list(flt.get("chapter_ids") or [])
+    if flt.get("chapter_id"):
+        ch_ids.append(flt["chapter_id"])
+    if ch_ids:
         if flt.get("include_secondary", False):
             matching_q_ids = QuestionTopic.objects.filter(
                 chapter_id__in=ch_ids, status=QuestionTopic.Status.CONFIRMED
@@ -179,6 +181,10 @@ def _apply_filters(qs, viewer_id: uuid.UUID | None, flt: QuestionFilter):
 
     if flt.get("kinds"):
         qs = qs.filter(kind__in=flt["kinds"])
+    if flt.get("kind_groups"):
+        # An unknown group matches nothing, never everything.
+        group_kinds = {k for g in flt["kind_groups"] for k in KIND_GROUPS.get(g, ())}
+        qs = qs.filter(kind__in=group_kinds)
     if flt.get("source_kinds"):
         qs = qs.filter(source_kind__in=flt["source_kinds"])
     if flt.get("ownership"):

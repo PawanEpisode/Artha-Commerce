@@ -2,15 +2,17 @@ import type { QuestionSearchParams } from './types'
 
 /**
  * Translates the screen's search params (URL names) into the question bank API's QuestionFilter names
- * (`apps/api/modules/questionbank/domain/filters.py`): the API reads `kinds`, `year_from`/`year_to` and `term_codes`,
+ * (`apps/api/modules/questionbank/domain/filters.py`): the API reads `kinds`, `kind_groups`, `subject_key`, `chapter_ids`, `year_from`/`year_to` and `term_codes`,
  * and silently ignores unknown keys, so sending `kind=` used to leave the list unfiltered.
  */
 export function buildQuestionQuery(params: QuestionSearchParams): URLSearchParams {
   const query = new URLSearchParams()
   if (params.q) query.set('q', params.q)
-  if (params.subject) query.set('subject', params.subject)
+  if (params.subject) query.set('subject_key', params.subject)
   if (params.chapter) query.set('chapter', params.chapter)
+  if (params.chapterId) query.set('chapter_ids', params.chapterId)
   if (params.kind) query.set('kinds', params.kind)
+  if (params.kindGroup) query.set('kind_groups', params.kindGroup)
   if (params.difficulty) query.set('difficulty', String(params.difficulty))
   if (params.year) {
     query.set('year_from', String(params.year))

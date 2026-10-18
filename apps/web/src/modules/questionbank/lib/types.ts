@@ -102,7 +102,11 @@ export interface QuestionSearchParams {
   q?: string
   subject?: string
   chapter?: string
+  /** One chapter by id (the API's `chapter_ids`). `chapter` above is a key the API does not filter on. */
+  chapterId?: string
   kind?: QuestionKind
+  /** A named group of kinds, e.g. `choice` for everything answered by picking an option. */
+  kindGroup?: string
   difficulty?: number
   year?: number
   term?: string

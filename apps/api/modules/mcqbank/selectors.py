@@ -178,6 +178,8 @@ def chapter_detail(
         user_id, {"chapter_id": chapter.id, "difficulty": [5], "kind_groups": ["choice"]}
     )
 
+    available = qb_selectors.count_matching(user_id, {"chapter_id": chapter.id, "kind_groups": ["choice"]})
+
     # Sets in this chapter
     sets = list_sets(user_id, subject_key=subject_key, chapter_key=chapter_key).get("items", [])
 
@@ -186,6 +188,7 @@ def chapter_detail(
         "chapter_key": chapter.key,
         "name": chapter.name,
         "section": getattr(chapter, "section", ""),
+        "available": available,
         "topics": topic_cards,
         "difficulty_split": {"easy": easy, "medium": med, "hard": hard},
         "sets": sets,

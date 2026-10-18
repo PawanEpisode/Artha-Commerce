@@ -16,6 +16,14 @@ describe('buildQuestionQuery', () => {
     expect(q.get('term_codes')).toBe('may')
   })
 
+  it('sends a chapter id and a kind group under the names the API filters on', () => {
+    const q = buildQuestionQuery({ subject: 'law', chapterId: 'abc', kindGroup: 'choice' })
+    expect(q.get('subject_key')).toBe('law')
+    expect(q.get('chapter_ids')).toBe('abc')
+    expect(q.get('kind_groups')).toBe('choice')
+    expect(q.has('subject')).toBe(false)
+  })
+
   it('omits empty params', () => {
     expect(buildQuestionQuery({}).toString()).toBe('')
   })

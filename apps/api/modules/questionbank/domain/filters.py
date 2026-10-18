@@ -10,12 +10,20 @@ from decimal import Decimal, InvalidOperation
 from typing import Any, Literal, TypedDict
 
 
+# Named groups of question kinds. "choice" is what the MCQ Bank serves: anything answered by picking an option.
+KIND_GROUPS: dict[str, tuple[str, ...]] = {
+    "choice": ("mcq_single", "mcq_multi", "true_false"),
+}
+
+
 class QuestionFilter(TypedDict, total=False):
     scope: Literal["public", "mine", "collection"]
     course: str
     level: str
     subject_key: str
     chapter_ids: list[uuid.UUID]
+    chapter_id: uuid.UUID  # one chapter; same as chapter_ids=[chapter_id]
+    kind_groups: list[str]  # keys of KIND_GROUPS, narrows `kinds`
     topic_id: uuid.UUID
     include_secondary: bool
     scheme: Literal["current", "any"]
@@ -61,6 +69,9 @@ def parse_filter_params(params: dict[str, Any]) -> QuestionFilter:
             raw_ids = [s.strip() for s in raw_ids.split(",") if s.strip()]
         flt["chapter_ids"] = [uuid.UUID(str(ch)) for ch in raw_ids]
 
+    if "chapter_id" in params and params["chapter_id"]:
+        flt["chapter_id"] = uuid.UUID(str(params["chapter_id"]))
+
     if "topic_id" in params and params["topic_id"]:
         flt["topic_id"] = uuid.UUID(str(params["topic_id"]))
 
@@ -82,7 +93,7 @@ def parse_filter_params(params: dict[str, Any]) -> QuestionFilter:
                 return [str(s).strip() for s in val if str(s).strip()]
         return None
 
-    for list_key in ("kinds", "source_kinds", "ownership", "term_codes", "bloom", "nature", "tags", "reference_keys"):
+    for list_key in ("kinds", "kind_groups", "source_kinds", "ownership", "term_codes", "bloom", "nature", "tags", "reference_keys"):
         parsed = _parse_str_list(list_key)
         if parsed:
             flt[list_key] = parsed  # type: ignore[literal-required]

@@ -352,7 +352,7 @@ def next_round(user_id: uuid.UUID, run_id: uuid.UUID, *, round_no: int) -> dict[
             run=run,
             round_no=round_no,
             defaults={
-                "session_id": session.id,
+                "session_id": session.session_id,
                 "state": "open",
                 "theta_before": est.theta,
                 "theta_after": est.theta,
@@ -364,7 +364,7 @@ def next_round(user_id: uuid.UUID, run_id: uuid.UUID, *, round_no: int) -> dict[
 
     return {
         "round_no": round_no,
-        "session_id": session.id,
+        "session_id": session.session_id,
         "theta": est.theta,
     }
 

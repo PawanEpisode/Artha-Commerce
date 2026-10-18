@@ -10,6 +10,7 @@ import uuid
 
 from django.http import Http404
 from django.utils import timezone
+from pydantic import ValidationError as PydanticValidationError
 from rest_framework import status
 from rest_framework.exceptions import PermissionDenied, ValidationError
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -73,6 +74,28 @@ def _check_adaptive_flags(request) -> None:
     user_id = request.user.id if getattr(request.user, "is_authenticated", False) else None
     if not flag_enabled("mcq_adaptive", user_id, strict=True):
         raise PermissionDenied("Feature disabled: mcq_adaptive")
+
+
+def _start_practice_session(**kwargs) -> Response:
+    """
+    Creates a practice session and answers `{"session_id"}`. Known practice errors become clean 4xx answers in the
+    API's error shape instead of an unhandled exception (an HTML 500 the web cannot read).
+    """
+    try:
+        session = practice_services.create_session(**kwargs)
+    except practice_services.PickerEmpty:
+        return _start_error(
+            "picker_empty", "No questions are available for this selection yet.", status.HTTP_422_UNPROCESSABLE_ENTITY
+        )
+    except (practice_services.UnsupportedOrigin, practice_services.ModeNotAllowed) as exc:
+        return _start_error("invalid_session_request", str(exc), status.HTTP_400_BAD_REQUEST)
+    except PydanticValidationError:
+        return _start_error("invalid_spec", "The practice selection is not valid.", status.HTTP_400_BAD_REQUEST)
+    return Response({"session_id": str(session.session_id)}, status=status.HTTP_201_CREATED)
+
+
+def _start_error(code: str, message: str, http_status: int) -> Response:
+    return Response({"error": {"code": code, "message": message, "details": None}}, status=http_status)
 
 
 class McqBaseView(APIView):
@@ -162,16 +185,16 @@ class QuickStartView(McqBaseView):
             spec = sugg["spec"]
             picker = "mcq_blueprint"
 
-        session = practice_services.create_session(
+        return _start_practice_session(
             user_id=request.user.id,
             mode=mode,
             picker=picker,
             spec=spec,
             origin_module="mcq_bank",
             origin_ref="quick_start",
+            feedback_policy=cd.get("feedback_policy"),
             client_id=client_id,
         )
-        return Response({"session_id": str(session.id)}, status=status.HTTP_201_CREATED)
 
 
 class SetsListView(McqBaseView):
@@ -229,7 +252,7 @@ class SetPracticeStartView(McqBaseView):
             "order": "set",
         }
         client_id = uuid.uuid4()
-        session = practice_services.create_session(
+        return _start_practice_session(
             user_id=request.user.id,
             mode="chapter_quiz",
             picker="mcq_set",
@@ -238,7 +261,6 @@ class SetPracticeStartView(McqBaseView):
             origin_ref=f"set:{mcq_set.id}",
             client_id=client_id,
         )
-        return Response({"session_id": str(session.id)}, status=status.HTTP_201_CREATED)
 
 
 class SetClickView(McqBaseView):
@@ -323,7 +345,7 @@ class PresetUseView(McqBaseView):
 
     def post(self, request, preset_id: uuid.UUID):
         session_args = use_preset(request.user.id, preset_id)
-        session = practice_services.create_session(
+        return _start_practice_session(
             user_id=request.user.id,
             mode=session_args["mode"],
             picker=session_args["picker"],
@@ -334,7 +356,6 @@ class PresetUseView(McqBaseView):
             origin_ref=session_args["origin_ref"],
             client_id=uuid.uuid4(),
         )
-        return Response({"session_id": str(session.id)}, status=status.HTTP_201_CREATED)
 
 
 class PresetDetailView(McqBaseView):

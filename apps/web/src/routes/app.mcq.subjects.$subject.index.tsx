@@ -3,7 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { McqSubjectContainer } from '~/modules/mcqbank'
 import { buildHead } from '~/modules/seo'
 
-export const Route = createFileRoute('/app/mcq/subjects/$subject')({
+export const Route = createFileRoute('/app/mcq/subjects/$subject/')({
   head: ({ params }) =>
     buildHead({
       title: `MCQs: ${params.subject}`,

@@ -9,6 +9,9 @@ from decimal import Decimal
 
 from rest_framework import serializers
 
+# Matches `McqBlueprintPickerSpec.count` (le=100): the most questions one quick session can hold.
+MAX_QUICK_PRACTICE_COUNT = 100
+
 
 class ExternalLogCreateSerializer(serializers.Serializer):
     set_id = serializers.UUIDField()
@@ -40,8 +43,11 @@ class SavePresetSerializer(serializers.Serializer):
 class StartQuickPracticeSerializer(serializers.Serializer):
     chapter_id = serializers.UUIDField(required=False, allow_null=True)
     subject_key = serializers.CharField(max_length=80, required=False)
-    count = serializers.IntegerField(default=10, min_value=1, max_value=50)
+    count = serializers.IntegerField(default=10, min_value=1, max_value=MAX_QUICK_PRACTICE_COUNT)
     mode = serializers.ChoiceField(choices=["untimed", "timed", "chapter_quiz", "revision"], default="chapter_quiz")
+    # "instant" shows right and wrong after every answer; "at_end" holds the markings until submit.
+    # Left out, the mode decides (chapter_quiz holds them until the end).
+    feedback_policy = serializers.ChoiceField(choices=["instant", "at_end"], required=False)
     client_id = serializers.UUIDField(default=uuid.uuid4)
 
 

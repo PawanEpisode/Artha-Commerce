@@ -1,6 +1,8 @@
 import {
   Badge,
   Bookmark,
+  ChevronDown,
+  ChevronRight,
   CircleAlert,
   CircleCheck,
   CircleX,
@@ -14,7 +16,7 @@ import {
   TableRow,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
-import type { ReactNode } from 'react'
+import { Fragment, type ReactNode } from 'react'
 
 import { DIFFICULTY_LABELS, formatMarks, kindLabel } from '../lib/labels'
 import type { QuestionCardData } from '../lib/types'
@@ -25,6 +27,13 @@ interface QuestionTableProps {
   showOverlay?: boolean
   /** Link each stem to its detail page. Off on public pages, where the detail page needs a sign-in. */
   linked?: boolean
+  /**
+   * Makes every row openable: a chevron button before the stem and a full-width row below it holding what
+   * `renderExpanded` returns. The caller owns which rows are open.
+   */
+  renderExpanded?: (question: QuestionCardData) => ReactNode
+  expandedIds?: ReadonlySet<string>
+  onToggleExpanded?: (questionId: string) => void
   className?: string
 }
 
@@ -82,11 +91,27 @@ export function ResultLabel({ result }: { result?: string | null }): ReactNode {
 }
 
 /** The question list as a dense table: stem first (a real link), then kind, marks, difficulty, source and your result. */
-export function QuestionTable({ questions, showOverlay = true, linked = true, className }: QuestionTableProps) {
+export function QuestionTable({
+  questions,
+  showOverlay = true,
+  linked = true,
+  renderExpanded,
+  expandedIds,
+  onToggleExpanded,
+  className,
+}: QuestionTableProps) {
+  const expandable = Boolean(renderExpanded)
+  // Wider than the columns a phone shows, which is fine for a spanning cell.
+  const columnCount = 5 + (showOverlay ? 1 : 0) + (expandable ? 1 : 0)
   return (
     <DataTable className={className}>
       <TableHeader>
         <TableRow className="hover:bg-transparent">
+          {expandable ? (
+            <TableHead className="w-9">
+              <span className="sr-only">Options and answer</span>
+            </TableHead>
+          ) : null}
           <TableHead>Question</TableHead>
           <TableHead className="hidden sm:table-cell">Kind</TableHead>
           <TableHead className="hidden text-right sm:table-cell">Marks</TableHead>
@@ -96,55 +121,90 @@ export function QuestionTable({ questions, showOverlay = true, linked = true, cl
         </TableRow>
       </TableHeader>
       <TableBody>
-        {questions.map((q) => (
-          <TableRow key={q.id}>
-            <TableCell className="min-w-48 py-2">
-              <div className="flex items-start gap-2">
-                {linked ? (
-                  <Link
-                    to="/app/questions/$id"
-                    params={{ id: q.id }}
-                    className={`${STEM} rounded-sm outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50`}
+        {questions.map((q) => {
+          const isOpen = expandable && Boolean(expandedIds?.has(q.id))
+          const panelId = `question-panel-${q.id}`
+          return (
+            <Fragment key={q.id}>
+              <TableRow>
+                {expandable ? (
+                  <TableCell className="w-9 py-2 align-top">
+                    <button
+                      type="button"
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
+                      aria-label={`${isOpen ? 'Hide' : 'Show'} options and answer: ${q.stem_head}`}
+                      onClick={() => onToggleExpanded?.(q.id)}
+                      className="grid size-7 place-items-center rounded-md text-muted-foreground outline-none hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50 pointer-coarse:size-11"
+                    >
+                      {isOpen ? (
+                        <ChevronDown aria-hidden className="size-4" />
+                      ) : (
+                        <ChevronRight aria-hidden className="size-4" />
+                      )}
+                    </button>
+                  </TableCell>
+                ) : null}
+                <TableCell className="min-w-48 py-2">
+                  <div className="flex items-start gap-2">
+                    {linked ? (
+                      <Link
+                        to="/app/questions/$id"
+                        params={{ id: q.id }}
+                        className={`${STEM} rounded-sm outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50`}
+                      >
+                        {q.stem_head}
+                      </Link>
+                    ) : (
+                      <p className={STEM}>{q.stem_head}</p>
+                    )}
+                    <span className="flex shrink-0 items-center gap-1.5 pt-0.5">
+                      {q.is_verified ? (
+                        <span role="img" aria-label="Verified" title="Verified" className="text-success-fg">
+                          <ShieldCheck aria-hidden className="size-3.5" />
+                        </span>
+                      ) : null}
+                      {q.is_bookmarked ? (
+                        <span role="img" aria-label="Bookmarked" title="Bookmarked" className="text-warning">
+                          <Bookmark aria-hidden className="size-3.5 fill-warning" />
+                        </span>
+                      ) : null}
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-xs text-muted-foreground sm:hidden">
+                    {kindLabel(q.kind)} · {formatMarks(q.marks)}
+                  </p>
+                </TableCell>
+                <TableCell className="hidden sm:table-cell">
+                  <Badge variant="outline">{kindLabel(q.kind)}</Badge>
+                </TableCell>
+                <TableCell className="hidden text-right tabular-nums sm:table-cell">{Number(q.marks)}</TableCell>
+                <TableCell className="hidden md:table-cell">
+                  <DifficultyDots level={q.difficulty} />
+                </TableCell>
+                <TableCell className="hidden max-w-48 truncate text-muted-foreground md:table-cell">
+                  {sourceText(q) || '-'}
+                </TableCell>
+                {showOverlay ? (
+                  <TableCell className="text-xs whitespace-nowrap">
+                    <ResultLabel result={q.last_result} />
+                  </TableCell>
+                ) : null}
+              </TableRow>
+              {isOpen ? (
+                <TableRow className="hover:bg-transparent">
+                  <TableCell
+                    id={panelId}
+                    colSpan={columnCount}
+                    className="bg-muted/30 px-3 py-3 whitespace-normal sm:px-4"
                   >
-                    {q.stem_head}
-                  </Link>
-                ) : (
-                  <p className={STEM}>{q.stem_head}</p>
-                )}
-                <span className="flex shrink-0 items-center gap-1.5 pt-0.5">
-                  {q.is_verified ? (
-                    <span role="img" aria-label="Verified" title="Verified" className="text-success-fg">
-                      <ShieldCheck aria-hidden className="size-3.5" />
-                    </span>
-                  ) : null}
-                  {q.is_bookmarked ? (
-                    <span role="img" aria-label="Bookmarked" title="Bookmarked" className="text-warning">
-                      <Bookmark aria-hidden className="size-3.5 fill-warning" />
-                    </span>
-                  ) : null}
-                </span>
-              </div>
-              <p className="mt-0.5 text-xs text-muted-foreground sm:hidden">
-                {kindLabel(q.kind)} · {formatMarks(q.marks)}
-              </p>
-            </TableCell>
-            <TableCell className="hidden sm:table-cell">
-              <Badge variant="outline">{kindLabel(q.kind)}</Badge>
-            </TableCell>
-            <TableCell className="hidden text-right tabular-nums sm:table-cell">{Number(q.marks)}</TableCell>
-            <TableCell className="hidden md:table-cell">
-              <DifficultyDots level={q.difficulty} />
-            </TableCell>
-            <TableCell className="hidden max-w-48 truncate text-muted-foreground md:table-cell">
-              {sourceText(q) || '-'}
-            </TableCell>
-            {showOverlay ? (
-              <TableCell className="text-xs whitespace-nowrap">
-                <ResultLabel result={q.last_result} />
-              </TableCell>
-            ) : null}
-          </TableRow>
-        ))}
+                    {renderExpanded?.(q)}
+                  </TableCell>
+                </TableRow>
+              ) : null}
+            </Fragment>
+          )
+        })}
       </TableBody>
     </DataTable>
   )

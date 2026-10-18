@@ -14,10 +14,12 @@ import {
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
+import { ChapterPracticeBar } from '../components/ChapterPracticeBar'
 import { ExternalLogDialog } from '../components/ExternalLogDialog'
 import { SetsTable } from '../components/SetsTable'
 import { getChapterDetail, startQuickPractice, startSetPractice } from '../lib/api'
-import type { ChapterDetailData, McqSetCard } from '../lib/types'
+import type { ChapterDetailData, McqSetCard, PracticeFeedback } from '../lib/types'
+import { ChapterQuestionsContainer } from './ChapterQuestionsContainer'
 
 interface McqChapterDetailContainerProps {
   subjectKey: string
@@ -35,7 +37,8 @@ export function McqChapterDetailContainer({ subjectKey, chapterKey }: McqChapter
     async function load() {
       try {
         const detail = await getChapterDetail(subjectKey, chapterKey)
-        setData(detail)
+        // The API answers `{}` for a chapter it does not know.
+        setData(detail?.chapter_id ? detail : null)
       } catch (err: unknown) {
         toastApiError(err, 'Failed to load chapter details')
       } finally {
@@ -45,15 +48,16 @@ export function McqChapterDetailContainer({ subjectKey, chapterKey }: McqChapter
     load()
   }, [subjectKey, chapterKey])
 
-  async function handleQuickPractice() {
-    if (!data) return
+  async function handleStartPractice(count: number, feedback: PracticeFeedback) {
+    if (!data || isStarting) return
     try {
       setIsStarting(true)
       const res = await startQuickPractice({
         chapter_id: data.chapter_id,
         subject_key: subjectKey,
-        count: 10,
+        count,
         mode: 'chapter_quiz',
+        feedback_policy: feedback,
       })
       navigate({
         to: '/app/practice/session/$id',
@@ -121,7 +125,7 @@ export function McqChapterDetailContainer({ subjectKey, chapterKey }: McqChapter
         }
         description="Chapter breakdown, difficulty distribution, and targeted practice sets."
         actions={
-          <Button disabled={isStarting || totalDiff === 0} onClick={handleQuickPractice}>
+          <Button disabled={isStarting || data.available === 0} onClick={() => handleStartPractice(10, 'instant')}>
             <Play aria-hidden className="size-3.5 fill-current" />
             Start 10 MCQs
           </Button>
@@ -167,6 +171,10 @@ export function McqChapterDetailContainer({ subjectKey, chapterKey }: McqChapter
           </CardContent>
         </Card>
       </div>
+
+      <ChapterPracticeBar available={data.available} isStarting={isStarting} onStart={handleStartPractice} />
+
+      <ChapterQuestionsContainer key={data.chapter_id} chapterId={data.chapter_id} />
 
       {data.sets.length > 0 && (
         <section className="space-y-2">

@@ -65,6 +65,8 @@ export interface ChapterDetailData {
   chapter_key: string
   name: string
   section: string
+  /** Choice questions in the chapter (counted up to 1000). */
+  available: number
   topics: TopicCard[]
   difficulty_split: {
     easy: number
@@ -109,11 +111,15 @@ export interface ExternalLogPayload {
   client_id?: string
 }
 
+/** `instant` marks right and wrong after each answer; `at_end` holds the markings until the session is submitted. */
+export type PracticeFeedback = 'instant' | 'at_end'
+
 export interface StartQuickPracticePayload {
   chapter_id?: string
   subject_key?: string
   count?: number
   mode?: 'untimed' | 'timed' | 'chapter_quiz' | 'revision'
+  feedback_policy?: PracticeFeedback
   client_id?: string
 }
 

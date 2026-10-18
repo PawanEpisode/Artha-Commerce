@@ -5,8 +5,6 @@ import {
   ButtonLink,
   Card,
   CardContent,
-  Check,
-  CircleX,
   Flag,
   Page,
   PageHeader,
@@ -20,6 +18,7 @@ import { RichText } from '~/lib/richtext'
 import { useFeatureFlag } from '~/modules/observability'
 import { QuestionCardButton } from '~/modules/recall'
 
+import { QuestionOptionsList } from '../components/QuestionOptionsList'
 import { DifficultyDots } from '../components/QuestionTable'
 import { ReportErrorDialog } from '../components/ReportErrorDialog'
 import { getPlayableQuestion, getReviewQuestion } from '../lib/api'
@@ -139,7 +138,6 @@ export function QuestionDetailContainer({ questionId }: QuestionDetailContainerP
   const verified = labels?.verified === true
   const negative = Number(data.negative_marks) > 0
   const numericKey = data.kind === 'numeric' ? numericKeyText(data.numeric_key) : null
-  const hasAnswerKey = data.correct_option_ids.length > 0
 
   return (
     <Page>
@@ -162,46 +160,7 @@ export function QuestionDetailContainer({ questionId }: QuestionDetailContainerP
               {data.options && data.options.length > 0 && (
                 <div className="space-y-2">
                   <h2 className="text-[11px] font-medium tracking-wide text-muted-foreground uppercase">Options</h2>
-                  <ul className="space-y-1.5">
-                    {data.options.map((opt, idx) => {
-                      const isCorrect = data.correct_option_ids.includes(opt.id)
-                      const wrong = hasAnswerKey && !isCorrect
-                      const letter = String.fromCharCode(65 + idx)
-                      return (
-                        <li
-                          key={opt.id}
-                          className={`flex min-h-10 items-center gap-2.5 rounded-md border px-2.5 py-1.5 ${
-                            isCorrect ? 'border-success-border bg-success-bg' : 'border-border bg-card'
-                          }`}
-                        >
-                          <span
-                            aria-hidden
-                            className={`grid size-6 shrink-0 place-items-center rounded-md text-xs font-semibold ${
-                              isCorrect
-                                ? 'border border-success-border bg-card text-success-fg'
-                                : 'bg-muted text-foreground'
-                            }`}
-                          >
-                            {letter}
-                          </span>
-                          <div className="min-w-0 flex-1">
-                            <span className="sr-only">Option {letter}. </span>
-                            <RichText markdown={opt.body_md} profile="question" className={QUESTION_TEXT_CLASS} />
-                          </div>
-                          {isCorrect && (
-                            <span className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-success-fg">
-                              <Check aria-hidden className="size-3.5" /> Correct
-                            </span>
-                          )}
-                          {wrong && (
-                            <span className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
-                              <CircleX aria-hidden className="size-3.5" /> Incorrect
-                            </span>
-                          )}
-                        </li>
-                      )
-                    })}
-                  </ul>
+                  <QuestionOptionsList options={data.options} correctOptionIds={data.correct_option_ids} revealed />
                 </div>
               )}
 

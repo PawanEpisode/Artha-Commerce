@@ -21,7 +21,7 @@ interface ChaptersTableProps {
   isStarting?: boolean
 }
 
-/** Chapters of a subject as a table: coverage, recent accuracy, what is unseen, wrong or due, and a quick 10-MCQ start. */
+/** Chapters of a subject as a table (each name opens the chapter's questions): coverage, recent accuracy, what is unseen, wrong or due, and a quick 10-MCQ start. */
 export function ChaptersTable({ chapters, subjectKey, onQuickPractice, isStarting }: ChaptersTableProps) {
   return (
     <DataTable>
@@ -46,8 +46,8 @@ export function ChaptersTable({ chapters, subjectKey, onQuickPractice, isStartin
             <TableRow key={ch.chapter_id}>
               <TableCell className="min-w-40 py-2">
                 <Link
-                  to="/app/mcq/subjects/$subject"
-                  params={{ subject: subjectKey }}
+                  to="/app/mcq/subjects/$subject/chapters/$chapter"
+                  params={{ subject: subjectKey, chapter: ch.chapter_key }}
                   className="line-clamp-2 rounded-sm font-medium text-foreground outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring/50"
                 >
                   {ch.name}
