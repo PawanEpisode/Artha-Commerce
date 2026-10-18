@@ -227,13 +227,26 @@ def test_adaptive_run_and_stop():
 def test_seed_commands():
     from django.core.management import call_command
 
-    # Run seed_cma_pyq
-    call_command("seed_cma_pyq")
-    from modules.pyq.models import PyqPaper
+    from modules.pyq.models import PaperLink, PyqPaper
+    from modules.syllabus.models import Course
 
-    assert PyqPaper.objects.filter(course__code="cma").count() >= 5
-
-    # Run seed_mcq_bank
     call_command("seed_mcq_bank")
     assert PatternProfile.objects.filter(course__code="cma").count() >= 6
-    assert McqSet.objects.filter(course__code="cma").count() >= 4
+    assert McqSet.objects.filter(course__code="cma").count() >= 1
+    assert not McqSet.objects.filter(source_url__startswith="https://icmai.in/upload/Students/").exists()
+
+    # The retired paper seeder only removes the empty shells (and made-up links) an earlier run left behind.
+    course = Course.objects.get(code="cma")
+    shell = PyqPaper.objects.create(
+        course=course,
+        level=McqSet.objects.filter(course=course).first().level,
+        subject_key="cost-accounting",
+        term_code="2024-06",
+        external_ref="pyq:cma:intermediate:cost-accounting:2024-06",
+        title="shell",
+        total_marks=100,
+    )
+    PaperLink.objects.create(paper=shell, link_kind="paper", url="https://icmai.in/upload/Students/x.pdf")
+    call_command("seed_cma_pyq")
+    assert not PyqPaper.objects.filter(pk=shell.pk).exists()
+    assert not PaperLink.objects.filter(url__startswith="https://icmai.in/upload/Students/").exists()

@@ -2,10 +2,11 @@
 Tests for pure fact builder and content hash calculation.
 """
 
-from decimal import Decimal
 import uuid
 from datetime import date
-from modules.analytics.domain.facts import build_facts, compute_content_hash
+from decimal import Decimal
+
+from modules.analytics.domain.facts import build_facts
 
 
 def test_build_facts_aggregation_and_hash():

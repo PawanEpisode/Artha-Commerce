@@ -29,7 +29,9 @@ export interface PyqPaperLink {
   id: string
   link_kind: string
   label: string
+  /** Empty for a PDF we host: it opens in the PDF reader instead of leaving for another site. */
   url: string
+  hosted: boolean
   host: string
   page_hint: string
   link_status: string

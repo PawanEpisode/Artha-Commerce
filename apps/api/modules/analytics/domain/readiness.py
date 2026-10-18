@@ -16,8 +16,6 @@ from .limits import (
     BAND_MAX_HALFWIDTH,
     BAND_MEDIUM_CUTOFF,
     BAND_MISSING_ADD,
-    DEFAULT_HALF_LIFE_DAYS,
-    DEFAULT_LOOKBACK_FACTOR,
     DEFAULT_WEIGHT_ACCURACY,
     DEFAULT_WEIGHT_BREADTH,
     DEFAULT_WEIGHT_COVERAGE,
@@ -30,7 +28,6 @@ from .limits import (
     MIN_ANSWERS_SUBJECT,
     MIN_DAYS_SUBJECT,
     MIN_WEIGHT_SHARE,
-    RECENT_WINDOW_DAYS,
     STALE_AFTER_DAYS,
 )
 from .maths import compute_time_decay_weight

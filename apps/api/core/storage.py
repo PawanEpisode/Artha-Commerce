@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 
 TIMEOUT = httpx.Timeout(10.0, connect=3.0)
 READ_TIMEOUT = httpx.Timeout(30.0, connect=3.0)  # a range read moves megabytes
+UPLOAD_TIMEOUT = httpx.Timeout(300.0, connect=3.0)  # a server-side upload of a whole past paper (tens of MB)
 READ_URL_SECONDS = 120
 
 
@@ -60,11 +61,18 @@ class SupabaseStorage:
         self._headers = service_role_headers(service_key)
 
     def _request(
-        self, method: str, url: str, *, headers: dict[str, str] | None = None, allow: tuple[int, ...] = (), **kwargs
+        self,
+        method: str,
+        url: str,
+        *,
+        headers: dict[str, str] | None = None,
+        allow: tuple[int, ...] = (),
+        timeout: httpx.Timeout = TIMEOUT,
+        **kwargs,
     ) -> httpx.Response:
         try:
             response = httpx.request(
-                method, url, headers={**self._headers, **(headers or {})}, timeout=TIMEOUT, **kwargs
+                method, url, headers={**self._headers, **(headers or {})}, timeout=timeout, **kwargs
             )
         except httpx.HTTPError as exc:
             raise StorageError(f"Storage unreachable: {type(exc).__name__}") from exc
@@ -82,6 +90,7 @@ class SupabaseStorage:
                 "cache-control": cache_control,
                 "x-upsert": "false",
             },
+            timeout=UPLOAD_TIMEOUT if len(data) > 1024 * 1024 else TIMEOUT,
         )
 
     def delete(self, bucket: str, paths: list[str]) -> None:

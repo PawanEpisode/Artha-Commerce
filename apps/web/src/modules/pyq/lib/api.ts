@@ -30,6 +30,14 @@ export async function getPaperDetail(idOrRef: string): Promise<PyqPaperDetail | 
   }
 }
 
+/**
+ * Opens a PDF we host: adds it to the student's PDF library (once) and returns the document the reader opens, where they
+ * can read, highlight and mark it. Needs sign-in and the PDF reader to be on for the student.
+ */
+export async function openHostedPaper(paperId: string, linkId: string): Promise<{ document_id: string }> {
+  return await api<{ document_id: string }>(`/pyq/papers/${paperId}/links/${linkId}/open/`, { method: 'POST' })
+}
+
 export async function getChapterPyqs(
   chapterId: string,
   options?: { scheme_relation?: string },

@@ -5,11 +5,10 @@ Scoped to requesting student, with ETag 304 handling and fail-closed flag guards
 
 from __future__ import annotations
 
-from dataclasses import asdict
 import hashlib
 import uuid
+from dataclasses import asdict
 from datetime import date, timedelta
-from decimal import Decimal
 
 from django.http import HttpResponse
 from django.utils import timezone
@@ -224,13 +223,13 @@ class ReadinessView(APIView):
             ],
             "levers": [
                 {
-                    "action": l.action,
-                    "impact_points": l.impact_points,
-                    "target_type": l.target_type,
-                    "target_id": l.target_id,
-                    "target_name": l.target_name,
+                    "action": lever.action,
+                    "impact_points": lever.impact_points,
+                    "target_type": lever.target_type,
+                    "target_id": lever.target_id,
+                    "target_name": lever.target_name,
                 }
-                for l in res.levers
+                for lever in res.levers
             ],
         })
 

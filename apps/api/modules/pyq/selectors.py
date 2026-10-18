@@ -180,6 +180,7 @@ def get_paper_detail(
             "link_kind": link.link_kind,
             "label": link.label,
             "url": link.url,
+            "hosted": link.attachment_id is not None,
             "host": link.host,
             "page_hint": link.page_hint,
             "link_status": link.link_status,

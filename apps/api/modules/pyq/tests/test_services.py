@@ -37,7 +37,7 @@ def sample_paper_payload(syllabus_tree):
             {
                 "link_kind": "paper",
                 "label": "Official QP",
-                "url": "https://icmai.in/upload/Students/Question_Papers/Inter_June2024.pdf",
+                "url": "https://arthacommerce.com/papers/inter-june-2024.pdf",
             }
         ],
         "choice_groups": [
@@ -191,3 +191,30 @@ def test_timed_paper_cannot_be_paused_but_untimed_can(sample_paper_payload):
 
     assert Session.objects.get(id=timed["session_id"]).status != Session.Status.PAUSED
     assert Session.objects.get(id=untimed["session_id"]).status == Session.Status.PAUSED
+
+
+@pytest.mark.django_db
+def test_reimporting_a_paper_keeps_its_hosted_pdf_and_replaces_outside_links(sample_paper_payload, tmp_path):
+    from modules.pyq import hosted
+    from modules.pyq.domain.sources import SourceFile
+    from modules.pyq.models import PaperLink
+
+    class Store:
+        def upload(self, bucket, path, data, **kw): ...
+        def delete(self, bucket, paths): ...
+
+    editor_id = uuid.uuid4()
+    paper = import_paper(editor_id, sample_paper_payload).paper
+    pdf = tmp_path / "paper.pdf"
+    pdf.write_bytes(b"%PDF-1.7 hosted")
+    hosted.publish_pdf(paper, SourceFile(pdf, "7", "2024-06", "paper", "Question Paper (PDF)"), store=Store())
+
+    import_paper(editor_id, sample_paper_payload)
+
+    paper.refresh_from_db()
+    links = list(PaperLink.objects.filter(paper=paper))
+    assert [lnk.attachment_id is not None for lnk in links].count(True) == 1  # the hosted PDF survived
+    assert sum(1 for lnk in links if lnk.url) == len(
+        sample_paper_payload.get("links", [])
+    )  # outside links re-created once
+    assert paper.delivery == PyqPaper.Delivery.HOSTED

@@ -13,6 +13,7 @@ from .views import (
     EditorPublishPaperView,
     EditorWithdrawPaperView,
     PaperDetailView,
+    PaperLinkOpenView,
     PaperPracticeStartView,
     PapersListView,
 )
@@ -23,6 +24,7 @@ urlpatterns = [
     # Student / Public
     path("papers/", PapersListView.as_view(), name="paper-list"),
     path("papers/<str:pk>/", PaperDetailView.as_view(), name="paper-detail"),
+    path("papers/<str:pk>/links/<str:link_id>/open/", PaperLinkOpenView.as_view(), name="paper-link-open"),
     path("papers/<str:pk>/practice/", PaperPracticeStartView.as_view(), name="paper-practice-start"),
     path("chapters/<str:chapter_id>/", ChapterPyqsView.as_view(), name="chapter-pyqs"),
     path("chapters/<str:chapter_id>/practice/", ChapterPracticeStartView.as_view(), name="chapter-practice-start"),

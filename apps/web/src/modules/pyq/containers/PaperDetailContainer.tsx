@@ -8,12 +8,14 @@ import {
   Card,
   CardContent,
   Clock,
+  FileText,
   Page,
   PageHeader,
   Play,
   Skeleton,
   StatTile,
   toast,
+  toastApiError,
 } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
@@ -21,7 +23,7 @@ import * as React from 'react'
 import { useFeatureFlag } from '~/modules/observability'
 
 import { PaperQuestionTree } from '../components/PaperQuestionTree'
-import { getPaperDetail, startPaperPractice } from '../lib/api'
+import { getPaperDetail, openHostedPaper, startPaperPractice } from '../lib/api'
 import { levelLabel, marksText, termLabel } from '../lib/labels'
 import type { PyqPaperDetail } from '../lib/types'
 
@@ -36,6 +38,7 @@ export function PaperDetailContainer({ paperId }: PaperDetailContainerProps) {
   const [loading, setLoading] = React.useState(true)
   const [paper, setPaper] = React.useState<PyqPaperDetail | null>(null)
   const [isStarting, setIsStarting] = React.useState(false)
+  const [openingLink, setOpeningLink] = React.useState<string | null>(null)
   const [error, setError] = React.useState<string | null>(null)
 
   React.useEffect(() => {
@@ -64,6 +67,18 @@ export function PaperDetailContainer({ paperId }: PaperDetailContainerProps) {
       active = false
     }
   }, [enabled, paperId])
+
+  const handleOpenHosted = async (linkId: string) => {
+    setOpeningLink(linkId)
+    try {
+      const { document_id } = await openHostedPaper(paperId, linkId)
+      await navigate({ to: '/app/notes/pdf/$docId', params: { docId: document_id }, search: {} })
+    } catch (err) {
+      toastApiError(err, 'Could not open this paper. Please try again.')
+    } finally {
+      setOpeningLink(null)
+    }
+  }
 
   const handleStartPractice = async (mode: 'untimed' | 'timed') => {
     if (!paper) return
@@ -173,20 +188,33 @@ export function PaperDetailContainer({ paperId }: PaperDetailContainerProps) {
           {paper.links.length > 0 && (
             <Card>
               <CardContent className="space-y-2">
-                <h2 className="text-sm font-semibold text-foreground">Official ICMAI documents</h2>
+                <h2 className="text-sm font-semibold text-foreground">Paper documents</h2>
                 <ul className="space-y-1.5 text-[13px]">
                   {paper.links.map((link) => (
                     <li key={link.id}>
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
-                      >
-                        <ArrowUpRight aria-hidden className="size-3.5 shrink-0" />
-                        <span>{link.label || 'Official Document'}</span>
-                        <span className="font-mono text-xs text-muted-foreground">({link.host})</span>
-                      </a>
+                      {link.hosted ? (
+                        <button
+                          type="button"
+                          disabled={openingLink !== null}
+                          onClick={() => void handleOpenHosted(link.id)}
+                          className="inline-flex items-center gap-1.5 rounded-sm font-medium text-primary outline-none hover:underline focus-visible:ring-[3px] focus-visible:ring-ring/40 disabled:opacity-60"
+                        >
+                          <FileText aria-hidden className="size-3.5 shrink-0" />
+                          <span>{openingLink === link.id ? 'Opening…' : link.label || 'Open in reader'}</span>
+                          <span className="text-xs text-muted-foreground">(read and highlight)</span>
+                        </button>
+                      ) : (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="inline-flex items-center gap-1.5 font-medium text-primary hover:underline"
+                        >
+                          <ArrowUpRight aria-hidden className="size-3.5 shrink-0" />
+                          <span>{link.label || 'Official Document'}</span>
+                          <span className="font-mono text-xs text-muted-foreground">({link.host})</span>
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

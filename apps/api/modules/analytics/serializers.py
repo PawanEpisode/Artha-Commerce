@@ -6,10 +6,11 @@ from __future__ import annotations
 
 import uuid
 from decimal import Decimal
+
 from django.utils import timezone
 from rest_framework import serializers
 
-from .models import Goal, Report, Settings, Share
+from .models import Goal, Settings
 
 
 class BuildFixSetSerializer(serializers.Serializer):
@@ -75,7 +76,7 @@ class GoalSerializer(serializers.ModelSerializer):
             try:
                 attrs["target"] = Decimal(str(attrs.pop("target_value")))
             except Exception:
-                raise serializers.ValidationError({"target_value": "Invalid target value."})
+                raise serializers.ValidationError({"target_value": "Invalid target value."}) from None
         if not attrs.get("metric"):
             attrs["metric"] = "questions"
         if not attrs.get("period"):
@@ -120,7 +121,7 @@ class SettingsSerializer(serializers.ModelSerializer):
                     dec = dec / Decimal("100.0")
                 return round(dec, 2)
             except Exception:
-                raise serializers.ValidationError("Enter a valid target accuracy (e.g. 0.85 or 85).")
+                raise serializers.ValidationError("Enter a valid target accuracy (e.g. 0.85 or 85).") from None
         return None
 
 

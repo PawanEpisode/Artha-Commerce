@@ -11,34 +11,24 @@ from datetime import date, timedelta
 from decimal import Decimal
 from typing import Any
 
-from django.db.models import Avg, Count, F, Max, Q, Sum
+from django.db.models import Count, Max, Sum
 from django.utils import timezone
 
-from .domain.diagnosis import TimeVsScoreClass, diagnose_time_vs_score
+from .domain.diagnosis import diagnose_time_vs_score
 from .domain.limits import (
-    DEFAULT_TARGET_ACCURACY,
-    MIN_ANSWERS_CHAPTER,
     MIN_ANSWERS_TOPIC,
 )
 from .domain.maths import (
     beta_shrinkage,
-    compute_pace_ratio,
-    compute_time_decay_weight,
     wilson_score_interval,
 )
 from .domain.readiness import ReadinessResult, compute_readiness
-from .domain.speed import SpeedFlag, categorize_speed
 from .integrations import coverage as coverage_adapter
 from .integrations import syllabus as syllabus_adapter
 from .integrations import tracking as tracking_adapter
 from .models import (
     ChapterFact,
-    Goal,
     MistakeTag,
-    ReadinessProfile,
-    ReadinessSnapshot,
-    SessionRun,
-    Settings,
     TopicFact,
     UserState,
 )

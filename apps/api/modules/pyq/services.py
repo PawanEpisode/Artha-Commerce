@@ -158,7 +158,8 @@ def import_paper(
     )
 
     # Clean previous children on re-import
-    paper.links.all().delete()
+    # Hosted PDFs are published by `publish_pyq_pdfs`, not carried by the payload: a re-import keeps them.
+    paper.links.filter(attachment_id__isnull=True).delete()
     paper.choice_groups.all().delete()
     paper.questions.all().delete()
 
@@ -172,6 +173,10 @@ def import_paper(
             host=link.get("host", ""),
             page_hint=link.get("page_hint", ""),
         )
+    if paper.links.filter(attachment_id__isnull=False).exists() and paper.delivery != PyqPaper.Delivery.HOSTED:
+        paper.delivery = PyqPaper.Delivery.HOSTED
+        paper.rights_basis = paper.rights_basis or PyqPaper.RightsBasis.INSTITUTE_MATERIAL
+        paper.save(update_fields=["delivery", "rights_basis"])
 
     # 2. Create ChoiceGroups
     cg_ref_map: dict[str, ChoiceGroup] = {}

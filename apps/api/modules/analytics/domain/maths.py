@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import math
 from decimal import Decimal
-from typing import Tuple
 
 from .limits import (
     DEFAULT_HALF_LIFE_DAYS,
@@ -23,7 +22,7 @@ def wilson_score_interval(
     correct: float | Decimal,
     total: int,
     confidence_z: float = 1.96,
-) -> Tuple[float, float, float]:
+) -> tuple[float, float, float]:
     """
     Computes Wilson score confidence interval (center, lower, upper).
     Returns (center, lower, upper) in [0.0, 1.0].

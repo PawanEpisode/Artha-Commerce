@@ -29,11 +29,11 @@ class SessionRun(models.Model):
     session_created_at = models.DateTimeField()
     local_date = models.DateField(db_index=True)
     tz = models.CharField(max_length=64, default="Asia/Kolkata")
-    content_hash = models.CharField(max_length=64, null=True, blank=True)
+    content_hash = models.CharField(max_length=64, null=True, blank=True)  # noqa: DJ001 - NULL is not computed yet; an empty string is a hash
     fact_rows = models.SmallIntegerField(default=0)
     state = models.CharField(max_length=16, choices=State.choices, default=State.OK)
     attempts = models.SmallIntegerField(default=0)
-    last_error = models.CharField(max_length=300, null=True, blank=True)
+    last_error = models.CharField(max_length=300, null=True, blank=True)  # noqa: DJ001 - NULL is no error; an empty string is a message
     first_refreshed_at = models.DateTimeField(null=True, blank=True)
     refreshed_at = models.DateTimeField(default=timezone.now)
     created_at = models.DateTimeField(default=timezone.now)
@@ -186,7 +186,7 @@ class UserState(models.Model):
     last_session_at = models.DateTimeField(null=True, blank=True)
     reconciled_until = models.DateTimeField(null=True, blank=True)
     backfill_status = models.CharField(max_length=16, default="none")
-    backfill_cursor = models.TextField(null=True, blank=True)
+    backfill_cursor = models.TextField(null=True, blank=True)  # noqa: DJ001 - NULL is no cursor; an empty string is a position
     backfilled_at = models.DateTimeField(null=True, blank=True)
     data_deleted_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
@@ -251,7 +251,7 @@ class ReadinessSnapshot(models.Model):
     snapshot_date = models.DateField(db_index=True)
     score = models.DecimalField(max_digits=4, decimal_places=1, null=True, blank=True)
     half_width = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
-    confidence = models.CharField(max_length=16, null=True, blank=True)
+    confidence = models.CharField(max_length=16, null=True, blank=True)  # noqa: DJ001 - NULL is not rated; an empty string is a rating
     state = models.CharField(max_length=16)
     profile = models.ForeignKey(ReadinessProfile, on_delete=models.RESTRICT, related_name="+")
     formula_version = models.IntegerField(default=1)
@@ -283,7 +283,7 @@ class Goal(models.Model):
     user_id = models.UUIDField(db_index=True)
     metric = models.CharField(max_length=32)  # 'questions', 'accuracy'
     period = models.CharField(max_length=16)  # 'daily', 'weekly', 'none'
-    subject_key = models.CharField(max_length=80, null=True, blank=True)
+    subject_key = models.CharField(max_length=80, null=True, blank=True)  # noqa: DJ001 - NULL is all subjects; an empty string is not a key
     target = models.DecimalField(max_digits=6, decimal_places=2)
     effective_from = models.DateField()
     effective_to = models.DateField(null=True, blank=True)
@@ -346,7 +346,7 @@ class Report(models.Model):
     data = models.JSONField(null=True, blank=True)
     data_as_of = models.DateTimeField(null=True, blank=True)
     attachment_id = models.UUIDField(null=True, blank=True)
-    error_code = models.CharField(max_length=32, null=True, blank=True)
+    error_code = models.CharField(max_length=32, null=True, blank=True)  # noqa: DJ001 - NULL is no error; an empty string is a code
     requested_at = models.DateTimeField(default=timezone.now)
     started_at = models.DateTimeField(null=True, blank=True)
     finished_at = models.DateTimeField(null=True, blank=True)

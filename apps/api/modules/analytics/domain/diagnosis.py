@@ -7,6 +7,7 @@ are NOT the answer (e.g. concept confusion requiring practice, not re-reading).
 from __future__ import annotations
 
 from decimal import Decimal
+
 from django.db.models import TextChoices
 
 

@@ -271,7 +271,10 @@ class PaperLink(models.Model):
     paper = models.ForeignKey(PyqPaper, on_delete=models.CASCADE, related_name="links")
     link_kind = models.CharField(max_length=24, choices=LinkKind.choices)
     label = models.CharField(max_length=120, blank=True, default="")
-    url = models.URLField(max_length=500)
+    # An outside link (allow-listed host) or, for a PDF we host, empty with `attachment_id` set.
+    url = models.URLField(max_length=500, blank=True, default="")
+    # The platform-owned `media.Attachment` (private bucket) opened in the PDF reader. By value, like other cross-module ids.
+    attachment_id = models.UUIDField(null=True, blank=True)
     host = models.CharField(max_length=120, blank=True, default="")
     page_hint = models.CharField(max_length=32, blank=True, default="")
     link_status = models.CharField(max_length=16, choices=LinkStatus.choices, default=LinkStatus.UNCHECKED)
@@ -283,6 +286,10 @@ class PaperLink(models.Model):
         db_table = "pyq_paperlink"
         constraints = [
             models.UniqueConstraint(fields=["paper", "link_kind", "url"], name="uq_pyq_paperlink_kind_url"),
+            models.CheckConstraint(
+                condition=~models.Q(url="") | models.Q(attachment_id__isnull=False),
+                name="pyq_paperlink_url_or_attachment",
+            ),
         ]
         indexes = [
             models.Index(fields=["paper"], name="pyq_pl_paper_idx"),
@@ -290,7 +297,7 @@ class PaperLink(models.Model):
         ]
 
     def __str__(self) -> str:
-        return f"PaperLink({self.paper.external_ref}: {self.link_kind} -> {self.url})"
+        return f"PaperLink({self.paper.external_ref}: {self.link_kind} -> {self.url or self.attachment_id})"
 
 
 class AskedCache(models.Model):

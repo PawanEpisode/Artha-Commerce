@@ -18,7 +18,6 @@ from django.utils import timezone
 from .domain.facts import build_facts
 from .domain.limits import FIX_SET_DEFAULT_SIZE, FIX_SET_MAX_SIZE, FIX_SET_MIN_SIZE
 from .domain.readiness import ReadinessResult
-from .integrations import coverage as coverage_adapter
 from .integrations import practice as practice_adapter
 from .integrations import questionbank as qb_adapter
 from .integrations import syllabus as syllabus_adapter

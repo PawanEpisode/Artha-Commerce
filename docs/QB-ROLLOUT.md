@@ -28,12 +28,15 @@ Flags `question_bank`, `pyq_bank`, and `mcq_bank` stay **off** (at 0%) until you
      ```
    - (Note: on local SQLite tests, non-partitioned tables are automatically used; on PostgreSQL, this ensures future monthly tables exist for `practice_attemptanswer`).
 
-4. **Seed authentic CMA Intermediate & Final materials**:
-   - Past examination papers (June 2024, Dec 2023, June 2023 with official ICMAI PDF links, section trees & choice rules):
+4. **Seed CMA materials**:
+   - Past examination papers come from the institute PDFs: `load_question_bank_seed`, then host the PDFs themselves so students
+     read and mark them in our PDF reader (steps in `docs/PYQ-HOSTED-PDFS.md`):
      ```bash
-     python manage.py seed_cma_pyq
+     python manage.py publish_pyq_pdfs --dry-run   # read the list
+     python manage.py publish_pyq_pdfs
      ```
-   - MCQ Bank presets, official ICMAI Directorate of Studies MCQ booklets, and high-yield platform sprint:
+   - `seed_cma_pyq` is retired: it only removes the empty paper shells (and made-up icmai.in links) an earlier run left.
+   - MCQ Bank pattern profiles and the high-yield platform sprint (also removes the fabricated link-out booklets):
      ```bash
      python manage.py seed_mcq_bank
      ```
@@ -51,8 +54,9 @@ Flags `question_bank`, `pyq_bank`, and `mcq_bank` stay **off** (at 0%) until you
 Content can be added and managed in three ways:
 
 1. **Seed Management Commands**:
-   - `python manage.py seed_cma_pyq`: Seeds verified ICMAI exam papers with links and question trees.
-   - `python manage.py seed_mcq_bank`: Seeds verified CMA 2022 exam pattern profiles (15 MCQs x 2 marks = 30 marks) and booklets.
+   - `python manage.py publish_pyq_pdfs`: Hosts the past-paper PDFs from source-material in the private notes bucket and links them to their papers.
+   - `python manage.py seed_cma_pyq`: Retired; removes empty legacy paper shells and their made-up links.
+   - `python manage.py seed_mcq_bank`: Seeds CMA 2022 exam pattern profiles (15 MCQs x 2 marks = 30 marks) and the platform sprint; removes the fabricated link-out booklets.
 
 2. **Staff Web UI (Bulk CSV Importer & Review Queue)**:
    - Navigate to `/app/questions/editor` (requires staff permission `questionbank.manage_questions` or `is_staff`).
@@ -88,7 +92,7 @@ Rules the loader keeps: it goes through `upsert_from_source` and `pyq.services.i
 anything with a doubt (key not matched, transcriber note, no answer published) loads as an unpublished draft and is never
 published, even with `--publish`; an item the question kinds cannot hold as a draft (an MCQ with no key at all, a workbook
 item with no solution) is skipped and reported with the reason; a paper is published only when none of its parts is in doubt.
-An empty paper shell left by the early `seed_cma_pyq` command is adopted (its links are kept); a paper that already has
+An empty paper shell left by the early `seed_cma_pyq` command is adopted (its made-up links are dropped); a paper that already has
 questions is never touched.
 
 Order on the dev database: `load_question_bank_seed --dry-run`, read the report, load, then `repair_question_bank --dry-run`

@@ -2,8 +2,8 @@
 Tests for readiness computation engine (gates, components, levers, confidence).
 """
 
-from decimal import Decimal
 import uuid
+
 from modules.analytics.domain.readiness import compute_readiness
 
 

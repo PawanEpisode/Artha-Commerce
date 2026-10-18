@@ -87,63 +87,14 @@ class Command(BaseCommand):
 
             self.stdout.write(self.style.SUCCESS("  ✓ Seeded 6 verified CMA 2022 exam pattern profiles."))
 
-            # 2. Official Link-Out Sets
-            linkout_sets = [
-                {
-                    "slug": "icmai-mcq-booklet-paper-5",
-                    "title": "ICMAI Official MCQ Booklet: Business Laws and Ethics",
-                    "description": "Comprehensive objective question compilation released by Directorate of Studies, ICMAI.",
-                    "subject_key": "business-laws-and-ethics",
-                    "source_name": "ICMAI DoS",
-                    "source_url": "https://icmai.in/upload/Students/Question-Paper/June-2024/Inter-P05.pdf",
-                    "question_count": 150,
-                    "est_minutes": 180,
-                },
-                {
-                    "slug": "icmai-mcq-booklet-paper-7",
-                    "title": "ICMAI Official MCQ Booklet: Direct and Indirect Taxation",
-                    "description": "Official objective test questions covering Income Tax and GST released by ICMAI.",
-                    "subject_key": "direct-and-indirect-taxation",
-                    "source_name": "ICMAI DoS",
-                    "source_url": "https://icmai.in/upload/Students/Question-Paper/June-2024/Inter-P07.pdf",
-                    "question_count": 200,
-                    "est_minutes": 240,
-                },
-                {
-                    "slug": "icmai-mcq-booklet-paper-8",
-                    "title": "ICMAI Official MCQ Booklet: Cost Accounting",
-                    "description": "Standard objective questions by ICMAI on marginal costing, standard costing, and cost sheets.",
-                    "subject_key": "cost-accounting",
-                    "source_name": "ICMAI DoS",
-                    "source_url": "https://icmai.in/upload/Students/Question-Paper/June-2024/Inter-P08.pdf",
-                    "question_count": 180,
-                    "est_minutes": 200,
-                },
-            ]
-
-            for sdata in linkout_sets:
-                subj = Subject.objects.filter(key=sdata["subject_key"]).first()
-                McqSet.objects.update_or_create(
-                    slug=sdata["slug"],
-                    defaults={
-                        "title": sdata["title"],
-                        "description": sdata["description"],
-                        "set_kind": McqSet.SetKind.INSTITUTE_MCQ,
-                        "delivery": McqSet.Delivery.LINK_OUT,
-                        "source_name": sdata["source_name"],
-                        "source_url": sdata["source_url"],
-                        "source_kind": "institute_mcq",
-                        "course": course,
-                        "level": inter_level,
-                        "subject_key": sdata["subject_key"],
-                        "subject": subj,
-                        "question_count": sdata["question_count"],
-                        "est_minutes": sdata["est_minutes"],
-                        "status": McqSet.Status.PUBLISHED,
-                        "verified": True,
-                        "published_at": datetime.datetime.now(datetime.UTC),
-                    },
-                )
+            # 2. The early seed listed three "official MCQ booklets" that pointed at guessed icmai.in addresses, with
+            # invented question counts. They were never real files, so earlier runs' rows are removed. Real institute PDFs
+            # are hosted by us and opened in the PDF reader (see `publish_pyq_pdfs`); they are not link-outs.
+            removed, _ = McqSet.objects.filter(
+                delivery=McqSet.Delivery.LINK_OUT, source_url__startswith="https://icmai.in/upload/Students/"
+            ).delete()
+            if removed:
+                self.stdout.write(self.style.WARNING(f"  - Removed {removed} fabricated ICMAI link-out set(s)."))
 
             # 3. Platform Hosted Practice Sets
             tax_subj = Subject.objects.filter(key="direct-and-indirect-taxation").first()

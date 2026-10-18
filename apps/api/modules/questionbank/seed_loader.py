@@ -105,9 +105,10 @@ def load_item_seed(path: Path, *, publish: bool, actor_id: uuid.UUID = SEED_ACTO
 
 def _adopt_legacy_shell(payload: dict[str, Any], report: LoadReport, *, replace: bool, actor_id: uuid.UUID) -> bool:
     """
-    The early `seed_cma_pyq` command left empty paper shells (official links, no questions) under another external_ref. They
-    hold the paper's natural key, so the import would fail on the unique constraint. An empty shell is adopted: it takes our
-    external_ref and its links are kept. A paper that already has questions is never touched; it is reported instead.
+    The early `seed_cma_pyq` command left empty paper shells (no questions) under another external_ref. They hold the
+    paper's natural key, so the import would fail on the unique constraint. An empty shell is adopted: it takes our
+    external_ref. Its links are NOT kept: they were guessed institute addresses that were never real, and our own hosted
+    PDFs are attached by `publish_pyq_pdfs`. A paper that already has questions is never touched; it is reported instead.
     Returns False when the paper has to be skipped.
     """
     clash = (
@@ -126,13 +127,6 @@ def _adopt_legacy_shell(payload: dict[str, Any], report: LoadReport, *, replace:
     if clash.questions.exists() and replace:
         # Withdrawn (not deleted) and moved out of the way of the natural key. Its questions stay in the bank untouched;
         # `repair_question_bank` deals with filler.
-        payload["links"] = [
-            *payload.get("links", []),
-            *[
-                {"link_kind": k.link_kind, "label": k.label, "url": k.url, "host": k.host, "page_hint": k.page_hint}
-                for k in clash.links.all()
-            ],
-        ]
         withdraw_paper(actor_id, clash.id, PyqPaper.WithdrawnReason.REPLACED)
         clash.variant = "legacy-seed"
         clash.save(update_fields=["variant", "updated_at"])
@@ -146,17 +140,8 @@ def _adopt_legacy_shell(payload: dict[str, Any], report: LoadReport, *, replace:
             "Nothing was changed. Rerun with --replace-legacy to withdraw it and load this paper instead."
         )
         return False
-    kept = [
-        {
-            "link_kind": link.link_kind,
-            "label": link.label,
-            "url": link.url,
-            "host": link.host,
-            "page_hint": link.page_hint,
-        }
-        for link in clash.links.all()
-    ]
-    payload["links"] = [*payload.get("links", []), *kept]
+    dropped = clash.links.filter(attachment_id__isnull=True).count()
+    clash.links.filter(attachment_id__isnull=True).delete()
     clash.external_ref = payload["external_ref"]
     fields = ["external_ref", "updated_at"]
     if clash.status == PyqPaper.Status.PUBLISHED:
@@ -164,7 +149,7 @@ def _adopt_legacy_shell(payload: dict[str, Any], report: LoadReport, *, replace:
         clash.status, clash.published_at = PyqPaper.Status.DRAFT, None
         fields += ["status", "published_at"]
     clash.save(update_fields=fields)
-    report.notes.append(f"adopted the empty legacy paper '{clash.title}' and kept its {len(kept)} link(s)")
+    report.notes.append(f"adopted the empty legacy paper '{clash.title}' and dropped its {dropped} made-up link(s)")
     return True
 
 

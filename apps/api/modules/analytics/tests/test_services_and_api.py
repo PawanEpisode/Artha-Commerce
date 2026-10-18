@@ -2,27 +2,24 @@
 Integration tests for Analytics services, idempotency, and API endpoints.
 """
 
-from decimal import Decimal
 import uuid
-from datetime import date, timedelta
+from datetime import date
+from decimal import Decimal
+
 import pytest
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils import timezone
 from rest_framework.test import APIClient
 
-from modules.analytics import selectors, services
+from modules.analytics import services
 from modules.analytics.models import (
     ChapterFact,
-    MistakeTag,
     ReadinessProfile,
-    Report,
     SessionRun,
-    Settings,
-    TopicFact,
     UserState,
 )
-from modules.syllabus.models import Course, Scheme, Level, Subject, Chapter
+from modules.syllabus.models import Chapter, Course, Level, Scheme, Subject
 
 User = get_user_model()
 

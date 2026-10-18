@@ -3,8 +3,8 @@ Tests for domain mathematical calculations (Wilson score, decay, shrinkage, spee
 """
 
 from decimal import Decimal
-import pytest
-from modules.analytics.domain.limits import DEFAULT_HALF_LIFE_DAYS
+
+from modules.analytics.domain.diagnosis import TimeVsScoreClass, diagnose_time_vs_score
 from modules.analytics.domain.maths import (
     beta_shrinkage,
     compute_pace_ratio,
@@ -12,7 +12,6 @@ from modules.analytics.domain.maths import (
     wilson_score_interval,
 )
 from modules.analytics.domain.speed import SpeedFlag, categorize_speed
-from modules.analytics.domain.diagnosis import TimeVsScoreClass, diagnose_time_vs_score
 
 
 def test_wilson_score_empty():

@@ -7,7 +7,7 @@ from __future__ import annotations
 import uuid
 from typing import Any
 
-from modules.syllabus.models import Chapter, Course, Level, Subject, Topic
+from modules.syllabus.models import Chapter, Subject, Topic
 
 
 def get_subject_by_key_or_id(subject_id_or_key: str | uuid.UUID) -> dict[str, Any] | None:

@@ -16,6 +16,7 @@ from rest_framework.views import APIView
 
 from core.feature_flags import flag_enabled
 
+from . import hosted
 from .domain.importer import SchemaError
 from .permissions import IsEditor
 from .selectors import get_paper_detail, list_chapter_pyqs, list_papers
@@ -108,6 +109,32 @@ class PaperPracticeStartView(PyqBaseView):
             )
 
         return Response(result, status=status.HTTP_201_CREATED)
+
+
+class PaperLinkOpenView(PyqBaseView):
+    """
+    Opens a hosted paper PDF: adds it to the student's PDF library and returns the document the reader opens. Needs the
+    student's `notes_pdf` flag, since the reader is the notes reader.
+    """
+
+    permission_classes = [IsAuthenticated]
+    throttle_scope = "qb_write"
+
+    def post(self, request, pk, link_id):
+        if not (
+            flag_enabled("notes", request.user.id, strict=True)
+            and flag_enabled("notes_pdf", request.user.id, strict=True)
+        ):
+            raise PermissionDenied("Feature disabled: notes_pdf")
+        try:
+            paper_id, link_uuid = uuid.UUID(str(pk)), uuid.UUID(str(link_id))
+        except ValueError:
+            raise Http404("Invalid id") from None
+        try:
+            document_id = hosted.open_link(request.user.id, paper_id, link_uuid)
+        except hosted.PaperLink.DoesNotExist:
+            raise Http404("Hosted paper not found.") from None
+        return Response({"document_id": str(document_id)})
 
 
 class ChapterPyqsView(PyqBaseView):

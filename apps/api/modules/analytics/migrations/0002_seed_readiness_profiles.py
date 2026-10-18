@@ -2,9 +2,10 @@
 Seed default readiness profiles for CA, CS, and CMA (F-10 ERD section 4).
 """
 
+import uuid
 from datetime import date
 from decimal import Decimal
-import uuid
+
 from django.db import migrations
 
 

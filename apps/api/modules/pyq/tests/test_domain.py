@@ -65,7 +65,7 @@ def test_choice_group_rules_validation():
 
 def test_link_validation():
     # Valid official links
-    valid, host, _ = validate_paper_link("https://icmai.in/upload/Students/Question_Papers/Inter_June2024.pdf")
+    valid, host, _ = validate_paper_link("https://icmai.in/papers/inter-june-2024.pdf")
     assert valid is True
     assert host == "icmai.in"
 

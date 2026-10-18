@@ -5,9 +5,11 @@ Usage:
 """
 
 import uuid
+
 from django.core.management.base import BaseCommand
-from modules.practice.models import Session
+
 from modules.analytics import services
+from modules.practice.models import Session
 
 
 class Command(BaseCommand):

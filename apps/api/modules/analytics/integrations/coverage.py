@@ -6,7 +6,6 @@ from __future__ import annotations
 
 import logging
 import uuid
-from typing import Any
 
 from modules.coverage import selectors as coverage_selectors
 from modules.coverage.models import Rollup

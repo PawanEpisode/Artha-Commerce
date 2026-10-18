@@ -246,7 +246,7 @@ def test_paper_level_layout_notes_do_not_block_publishing(cma_final, seed_root):
     assert PyqPaper.objects.get(term_code="2024-06").status == PyqPaper.Status.PUBLISHED
 
 
-def test_an_empty_legacy_paper_shell_is_adopted_and_keeps_its_links(cma_final, seed_root):
+def test_an_empty_legacy_paper_shell_is_adopted_and_its_made_up_links_are_dropped(cma_final, seed_root):
     from modules.pyq.models import PaperLink
 
     seed = _pyq_seed(_transcription("2024-06"))
@@ -274,7 +274,7 @@ def test_an_empty_legacy_paper_shell_is_adopted_and_keeps_its_links(cma_final, s
     )  # questions are keyed by the seed's own refs, so they are reused
     shell.refresh_from_db()
     assert shell.external_ref == payload["external_ref"] and shell.status == PyqPaper.Status.DRAFT
-    assert list(shell.links.values_list("url", flat=True)) == ["https://icmai.in/x"]
+    assert shell.links.count() == 0  # the guessed institute address is gone; hosted PDFs are attached separately
     assert PyqPaper.objects.count() == 1
 
 

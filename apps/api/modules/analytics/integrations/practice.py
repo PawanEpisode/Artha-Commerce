@@ -6,10 +6,8 @@ Isolated in an adapter so the domain and services do not import practice models 
 from __future__ import annotations
 
 import uuid
-from decimal import Decimal
 from typing import Any
 
-from modules.practice import selectors as practice_selectors
 from modules.practice import services as practice_services
 from modules.practice.models import AttemptAnswer, Session
 

@@ -9,7 +9,6 @@ import uuid
 from decimal import Decimal, InvalidOperation
 from typing import Any, Literal, TypedDict
 
-
 # Named groups of question kinds. "choice" is what the MCQ Bank serves: anything answered by picking an option.
 KIND_GROUPS: dict[str, tuple[str, ...]] = {
     "choice": ("mcq_single", "mcq_multi", "true_false"),
@@ -93,7 +92,17 @@ def parse_filter_params(params: dict[str, Any]) -> QuestionFilter:
                 return [str(s).strip() for s in val if str(s).strip()]
         return None
 
-    for list_key in ("kinds", "kind_groups", "source_kinds", "ownership", "term_codes", "bloom", "nature", "tags", "reference_keys"):
+    for list_key in (
+        "kinds",
+        "kind_groups",
+        "source_kinds",
+        "ownership",
+        "term_codes",
+        "bloom",
+        "nature",
+        "tags",
+        "reference_keys",
+    ):
         parsed = _parse_str_list(list_key)
         if parsed:
             flt[list_key] = parsed  # type: ignore[literal-required]
