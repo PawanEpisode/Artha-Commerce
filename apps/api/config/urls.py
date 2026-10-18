@@ -24,4 +24,5 @@ urlpatterns = [
     path("api/v1/pyq/", include("modules.pyq.urls")),
     path("api/v1/mcq/", include("modules.mcqbank.urls")),
     path("api/v1/analytics/", include("modules.analytics.urls")),
+    path("api/v1/paperanalysis/", include("modules.paperanalysis.urls")),
 ]

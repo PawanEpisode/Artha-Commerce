@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     "modules.pyq",
     "modules.mcqbank",
     "modules.analytics",
+    "modules.paperanalysis",
 ]
 
 MIDDLEWARE = [
@@ -200,6 +201,12 @@ REST_FRAMEWORK = {
         "qb_export": "6/hour",
         "qb_import": "5/day",
         "legal_notice": "5/hour",
+        # F-11 paperanalysis (PRD 9)
+        "pa_read": "120/min",
+        "pa_compute": "30/min",
+        "pa_write": "60/min",
+        "pa_admin": "300/min",
+        "pa_ai": "30/hour",
     },
     "UNAUTHENTICATED_USER": None,
 }

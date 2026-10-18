@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "paperanalysis_paper_published",
+  "type": "object",
+  "required": ["paper_id", "subject_key", "scheme_id", "term_code", "paper_kind", "chapter_ids", "is_limited", "stats_version"],
+  "properties": {
+    "paper_id": { "type": "string", "format": "uuid" },
+    "subject_key": { "type": "string" },
+    "scheme_id": { "type": "string", "format": "uuid" },
+    "term_code": { "type": "string" },
+    "paper_kind": { "type": "string" },
+    "chapter_ids": { "type": "array", "items": { "type": "string", "format": "uuid" } },
+    "is_limited": { "type": "boolean" },
+    "stats_version": { "type": "integer" }
+  },
+  "additionalProperties": false
+}

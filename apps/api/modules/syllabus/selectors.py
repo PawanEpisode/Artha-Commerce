@@ -2,9 +2,11 @@
 
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
+from decimal import Decimal
+import hashlib
 from uuid import UUID
 
-from django.db.models import Prefetch, Q, QuerySet
+from django.db.models import Count, Max, Prefetch, Q, QuerySet
 
 from .models import Chapter, ChapterMap, Course, ExamTerm, Level, Scheme, Subject, SyllabusGroup, Topic
 
@@ -370,3 +372,169 @@ def chapter_maps_from(from_chapter_ids: Sequence[UUID], to_scheme_id: UUID) -> l
         .values_list("from_chapter_id", "to_chapter_id", "relation", "carry_ratio", "needs_review")
     )
     return [ChapterMapRow(f, t, rel, float(ratio), bool(review)) for f, t, rel, ratio, review in rows]
+
+
+# ---- F-11 Paper Analysis extensions ---------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class ChapterDTO:
+    id: UUID
+    key: str
+    name: str
+    subject_id: UUID
+    section: str
+    marks_min: Decimal | None
+    marks_max: Decimal | None
+    weight_source: str
+    est_study_minutes: int | None
+    topic_count: int
+    sort_order: int
+    is_active: bool
+
+
+@dataclass(frozen=True)
+class SubjectDTO:
+    id: UUID
+    key: str
+    name: str
+    total_marks: int
+    scheme_id: UUID
+    level_id: UUID
+    paper_number: int | None
+
+
+@dataclass(frozen=True)
+class MapEdge:
+    from_chapter_id: UUID
+    to_chapter_id: UUID
+    relation: str
+    carry_ratio: float
+    needs_review: bool
+    confidence: float | None
+
+
+@dataclass(frozen=True)
+class SchemeDTO:
+    id: UUID
+    code: str
+    name: str
+    level_id: UUID
+    status: str
+
+
+def chapter_dtos(subject_id: UUID) -> list[ChapterDTO]:
+    """Active and inactive chapters of a subject as clean DTOs with topic counts."""
+    chapters = (
+        Chapter.objects.filter(subject_id=subject_id)
+        .annotate(topic_count=Count("topics", filter=Q(topics__is_active=True)))
+        .order_by("sort_order", "key")
+    )
+    return [
+        ChapterDTO(
+            id=c.id,
+            key=c.key,
+            name=c.name,
+            subject_id=c.subject_id,
+            section=c.section,
+            marks_min=c.marks_min,
+            marks_max=c.marks_max,
+            weight_source=c.weight_source,
+            est_study_minutes=c.est_study_minutes,
+            topic_count=c.topic_count,
+            sort_order=c.sort_order,
+            is_active=c.is_active,
+        )
+        for c in chapters
+    ]
+
+
+def subject_dto(subject_id: UUID) -> SubjectDTO | None:
+    """Subject details as a clean DTO."""
+    subj = Subject.objects.select_related("scheme").filter(pk=subject_id).first()
+    if not subj:
+        return None
+    return SubjectDTO(
+        id=subj.id,
+        key=subj.key,
+        name=subj.name,
+        total_marks=subj.total_marks or 100,
+        scheme_id=subj.scheme_id,
+        level_id=subj.scheme.level_id,
+        paper_number=subj.paper_number,
+    )
+
+
+def chapter_map_edges(to_scheme_id: UUID, from_scheme_id: UUID | None = None) -> list[MapEdge]:
+    """Edges landing in to_scheme_id, optionally from from_scheme_id."""
+    qs = ChapterMap.objects.filter(
+        to_chapter__subject__scheme_id=to_scheme_id,
+        to_chapter__is_active=True,
+    )
+    if from_scheme_id is not None:
+        qs = qs.filter(from_chapter__subject__scheme_id=from_scheme_id)
+
+    rows = qs.order_by("from_chapter_id", "to_chapter_id").values_list(
+        "from_chapter_id", "to_chapter_id", "relation", "carry_ratio", "needs_review", "confidence"
+    )
+    return [
+        MapEdge(
+            from_chapter_id=f,
+            to_chapter_id=t,
+            relation=rel,
+            carry_ratio=float(ratio),
+            needs_review=bool(review),
+            confidence=float(conf) if conf is not None else None,
+        )
+        for f, t, rel, ratio, review, conf in rows
+    ]
+
+
+def chapter_map_stamp(scheme_id: UUID) -> str:
+    """Stable stamp of chapter mappings landing in this scheme for cache invalidation."""
+    agg = ChapterMap.objects.filter(to_chapter__subject__scheme_id=scheme_id).aggregate(
+        cnt=Count("id"),
+        latest=Max("updated_at"),
+    )
+    seed = f"{scheme_id}:{agg['cnt']}:{agg['latest']}"
+    return hashlib.sha1(seed.encode("utf-8")).hexdigest()
+
+
+def scheme_for_term(level_id: UUID, term_code: str) -> SchemeDTO | None:
+    """The scheme in force for an exam term in a given level."""
+    # Find exam term
+    term = ExamTerm.objects.filter(level_id=level_id, code=term_code).first()
+    if term:
+        # Scheme that encompasses this term
+        scheme = (
+            Scheme.objects.filter(
+                level_id=level_id,
+                from_term__code__lte=term_code,
+            )
+            .filter(Q(to_term__isnull=True) | Q(to_term__code__gte=term_code))
+            .order_by("-from_term__code")
+            .first()
+        )
+        if scheme:
+            return SchemeDTO(
+                id=scheme.id,
+                code=scheme.code,
+                name=scheme.name,
+                level_id=scheme.level_id,
+                status=scheme.status,
+            )
+
+    # Fallback to current published scheme
+    level = Level.objects.filter(pk=level_id).first()
+    if level:
+        curr = get_current_scheme(level)
+        if curr:
+            return SchemeDTO(
+                id=curr.id,
+                code=curr.code,
+                name=curr.name,
+                level_id=curr.level_id,
+                status=curr.status,
+            )
+    return None
+

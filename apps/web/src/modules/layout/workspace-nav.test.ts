@@ -15,6 +15,7 @@ const off = {
   pyq_bank: false,
   mcq_bank: false,
   performance_analytics: false,
+  paper_analysis: false,
 }
 
 describe('visibleLinks', () => {
@@ -25,6 +26,7 @@ describe('visibleLinks', () => {
       '/app/focus',
       '/app/tracker',
       '/app/syllabus',
+      '/app/analysis',
       '/app/revision',
       '/app/notifications',
       '/app/notes',
@@ -43,6 +45,7 @@ describe('visibleLinks', () => {
       '/app/settings/notes',
       '/app/settings/recall',
       '/app/settings/notifications',
+      '/app/settings/analysis',
       '/app/account',
     ])
   })
@@ -105,5 +108,19 @@ describe('visibleLinks', () => {
     expect(visibleLinks(STUDY_LINKS, { ...off, performance_analytics: true }).map((link) => link.to)).toEqual([
       '/app/analytics',
     ])
+  })
+
+  it('shows Paper Analysis and its settings only when the paper_analysis flag is on', () => {
+    expect(visibleLinks(STUDY_LINKS, off).map((link) => link.to)).not.toContain('/app/analysis')
+    expect(visibleLinks(STUDY_LINKS, { ...off, paper_analysis: true }).map((link) => link.to)).toEqual([
+      '/app/analysis',
+    ])
+    expect(visibleLinks(SETTINGS_LINKS, off).map((link) => link.to)).not.toContain('/app/settings/analysis')
+    expect(visibleLinks(SETTINGS_LINKS, { ...off, paper_analysis: true }).map((link) => link.to)).toEqual([
+      '/app/settings/analysis',
+      '/app/account',
+    ])
+    const analysis = STUDY_LINKS.find((link) => link.to === '/app/analysis')
+    expect(analysis?.children?.map((c) => c.to)).toEqual(['/app/analysis/plan', '/app/analysis/plan/active'])
   })
 })

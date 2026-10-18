@@ -13,6 +13,7 @@ import {
   PenLine,
   RefreshCw,
   Settings,
+  Sigma,
   Target,
   Timer,
   TrendingUp,
@@ -30,6 +31,7 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/focus': Timer,
   '/app/tracker': Clock,
   '/app/syllabus': ListChecks,
+  '/app/analysis': Sigma,
   '/app/notes': Notebook,
   '/app/recall': Layers,
   '/app/questions': FileText,
@@ -42,6 +44,7 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/settings/coverage': ListChecks,
   '/app/settings/notes': Notebook,
   '/app/settings/notifications': Bell,
+  '/app/settings/analysis': Settings,
   '/app/account': Settings,
 }
 

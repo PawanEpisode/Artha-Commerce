@@ -19,6 +19,7 @@ export function useWorkspaceNav() {
     pyq_bank: useFeatureFlag('pyq_bank', { strict: true }),
     mcq_bank: useFeatureFlag('mcq_bank', { strict: true }),
     performance_analytics: useFeatureFlag('performance_analytics'),
+    paper_analysis: useFeatureFlag('paper_analysis', { strict: true }),
   }
   const { data } = useBootstrap()
   return {

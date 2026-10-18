@@ -31,6 +31,8 @@ import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-passw
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
+import { Route as AppAnalysisIndexRouteImport } from './routes/app.analysis.index'
+import { Route as AppAnalysisPlanRouteImport } from './routes/app.analysis.plan'
 import { Route as AppAnalyticsIndexRouteImport } from './routes/app.analytics.index'
 import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
 import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
@@ -55,6 +57,7 @@ import { Route as AppRecallForgottenRouteImport } from './routes/app.recall.forg
 import { Route as AppRecallQuickRouteImport } from './routes/app.recall.quick'
 import { Route as AppRecallStatsRouteImport } from './routes/app.recall.stats'
 import { Route as AppRecallSuggestionsRouteImport } from './routes/app.recall.suggestions'
+import { Route as AppSettingsAnalysisRouteImport } from './routes/app.settings.analysis'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
 import { Route as AppSettingsNotesRouteImport } from './routes/app.settings.notes'
@@ -71,6 +74,9 @@ import { Route as AppTrackerLogRouteImport } from './routes/app.tracker.log'
 import { Route as AppTrackerReportsRouteImport } from './routes/app.tracker.reports'
 import { Route as CoursesCourseIndexRouteImport } from './routes/courses.$course.index'
 import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course'
+import { Route as AppAnalysisSubjectKeyIndexRouteImport } from './routes/app.analysis.$subjectKey.index'
+import { Route as AppAnalysisSubjectKeyChapterKeyRouteImport } from './routes/app.analysis.$subjectKey.$chapterKey'
+import { Route as AppAnalysisPlanActiveRouteImport } from './routes/app.analysis.plan.active'
 import { Route as AppAnalyticsShareTokenRouteImport } from './routes/app.analytics.share.$token'
 import { Route as AppMcqSetsIndexRouteImport } from './routes/app.mcq.sets.index'
 import { Route as AppMcqSetsSlugRouteImport } from './routes/app.mcq.sets.$slug'
@@ -91,6 +97,8 @@ import { Route as AppSyllabusSubjectIndexRouteImport } from './routes/app.syllab
 import { Route as AppSyllabusSubjectChapterRouteImport } from './routes/app.syllabus.$subject.$chapter'
 import { Route as AppTrackerDayDateRouteImport } from './routes/app.tracker.day.$date'
 import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$course.$level.index'
+import { Route as AppAdminAnalysisPapersIndexRouteImport } from './routes/app.admin.analysis.papers.index'
+import { Route as AppAdminAnalysisPapersPaperIdRouteImport } from './routes/app.admin.analysis.papers.$paperId'
 import { Route as AppMcqSubjectsSubjectIndexRouteImport } from './routes/app.mcq.subjects.$subject.index'
 import { Route as AppPracticeSessionIdIndexRouteImport } from './routes/app.practice.session.$id.index'
 import { Route as AppPracticeSessionIdReviewRouteImport } from './routes/app.practice.session.$id.review'
@@ -98,6 +106,7 @@ import { Route as AppRecallReviewSummarySessionIdRouteImport } from './routes/ap
 import { Route as CoursesCourseLevelSubjectIndexRouteImport } from './routes/courses.$course.$level.$subject.index'
 import { Route as CoursesCourseLevelSubjectChapterRouteImport } from './routes/courses.$course.$level.$subject.$chapter'
 import { Route as CoursesCourseLevelSubjectMcqsRouteImport } from './routes/courses.$course.$level.$subject.mcqs'
+import { Route as CoursesCourseLevelSubjectPaperAnalysisRouteImport } from './routes/courses.$course.$level.$subject.paper-analysis'
 import { Route as AppMcqSubjectsSubjectChaptersChapterRouteImport } from './routes/app.mcq.subjects.$subject.chapters.$chapter'
 import { Route as CoursesCourseLevelSubjectChapterPreviousYearQuestionsRouteImport } from './routes/courses.$course.$level.$subject.$chapter.previous-year-questions'
 import { Route as CoursesCourseLevelSubjectChapterQuestionsRouteImport } from './routes/courses.$course.$level.$subject.$chapter.questions'
@@ -212,6 +221,16 @@ const FeaturesSlugRoute = FeaturesSlugRouteImport.update({
   id: '/features/$slug',
   path: '/features/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AppAnalysisIndexRoute = AppAnalysisIndexRouteImport.update({
+  id: '/analysis/',
+  path: '/analysis/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAnalysisPlanRoute = AppAnalysisPlanRouteImport.update({
+  id: '/analysis/plan',
+  path: '/analysis/plan',
+  getParentRoute: () => AppRoute,
 } as any)
 const AppAnalyticsIndexRoute = AppAnalyticsIndexRouteImport.update({
   id: '/analytics/',
@@ -333,6 +352,11 @@ const AppRecallSuggestionsRoute = AppRecallSuggestionsRouteImport.update({
   path: '/recall/suggestions',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsAnalysisRoute = AppSettingsAnalysisRouteImport.update({
+  id: '/settings/analysis',
+  path: '/settings/analysis',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
   id: '/settings/coverage',
   path: '/settings/coverage',
@@ -413,6 +437,23 @@ const OgCoursesCourseRoute = OgCoursesCourseRouteImport.update({
   id: '/og/courses/$course',
   path: '/og/courses/$course',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AppAnalysisSubjectKeyIndexRoute =
+  AppAnalysisSubjectKeyIndexRouteImport.update({
+    id: '/analysis/$subjectKey/',
+    path: '/analysis/$subjectKey/',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppAnalysisSubjectKeyChapterKeyRoute =
+  AppAnalysisSubjectKeyChapterKeyRouteImport.update({
+    id: '/analysis/$subjectKey/$chapterKey',
+    path: '/analysis/$subjectKey/$chapterKey',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppAnalysisPlanActiveRoute = AppAnalysisPlanActiveRouteImport.update({
+  id: '/active',
+  path: '/active',
+  getParentRoute: () => AppAnalysisPlanRoute,
 } as any)
 const AppAnalyticsShareTokenRoute = AppAnalyticsShareTokenRouteImport.update({
   id: '/analytics/share/$token',
@@ -515,6 +556,18 @@ const CoursesCourseLevelIndexRoute = CoursesCourseLevelIndexRouteImport.update({
   path: '/courses/$course/$level/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppAdminAnalysisPapersIndexRoute =
+  AppAdminAnalysisPapersIndexRouteImport.update({
+    id: '/admin/analysis/papers/',
+    path: '/admin/analysis/papers/',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppAdminAnalysisPapersPaperIdRoute =
+  AppAdminAnalysisPapersPaperIdRouteImport.update({
+    id: '/admin/analysis/papers/$paperId',
+    path: '/admin/analysis/papers/$paperId',
+    getParentRoute: () => AppRoute,
+  } as any)
 const AppMcqSubjectsSubjectIndexRoute =
   AppMcqSubjectsSubjectIndexRouteImport.update({
     id: '/mcq/subjects/$subject/',
@@ -555,6 +608,12 @@ const CoursesCourseLevelSubjectMcqsRoute =
   CoursesCourseLevelSubjectMcqsRouteImport.update({
     id: '/courses/$course/$level/$subject/mcqs',
     path: '/courses/$course/$level/$subject/mcqs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CoursesCourseLevelSubjectPaperAnalysisRoute =
+  CoursesCourseLevelSubjectPaperAnalysisRouteImport.update({
+    id: '/courses/$course/$level/$subject/paper-analysis',
+    path: '/courses/$course/$level/$subject/paper-analysis',
     getParentRoute: () => rootRouteImport,
   } as any)
 const AppMcqSubjectsSubjectChaptersChapterRoute =
@@ -605,6 +664,7 @@ export interface FileRoutesByFullPath {
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
+  '/app/analysis/plan': typeof AppAnalysisPlanRouteWithChildren
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
   '/app/notes/library': typeof AppNotesLibraryRoute
@@ -621,6 +681,7 @@ export interface FileRoutesByFullPath {
   '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/recall/suggestions': typeof AppRecallSuggestionsRoute
+  '/app/settings/analysis': typeof AppSettingsAnalysisRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
@@ -633,6 +694,7 @@ export interface FileRoutesByFullPath {
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/analysis/': typeof AppAnalysisIndexRoute
   '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/mcq/': typeof AppMcqIndexRoute
@@ -645,6 +707,8 @@ export interface FileRoutesByFullPath {
   '/app/today/': typeof AppTodayIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/analysis/$subjectKey/$chapterKey': typeof AppAnalysisSubjectKeyChapterKeyRoute
+  '/app/analysis/plan/active': typeof AppAnalysisPlanActiveRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -658,6 +722,7 @@ export interface FileRoutesByFullPath {
   '/app/recall/decks/$deckId': typeof AppRecallDecksDeckIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
+  '/app/analysis/$subjectKey/': typeof AppAnalysisSubjectKeyIndexRoute
   '/app/mcq/sets/': typeof AppMcqSetsIndexRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards/': typeof AppRecallCardsIndexRoute
@@ -665,10 +730,13 @@ export interface FileRoutesByFullPath {
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/app/admin/analysis/papers/$paperId': typeof AppAdminAnalysisPapersPaperIdRoute
   '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   '/courses/$course/$level/$subject/mcqs': typeof CoursesCourseLevelSubjectMcqsRoute
+  '/courses/$course/$level/$subject/paper-analysis': typeof CoursesCourseLevelSubjectPaperAnalysisRoute
+  '/app/admin/analysis/papers/': typeof AppAdminAnalysisPapersIndexRoute
   '/app/mcq/subjects/$subject/': typeof AppMcqSubjectsSubjectIndexRoute
   '/app/practice/session/$id/': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
@@ -698,6 +766,7 @@ export interface FileRoutesByTo {
   '/app': typeof AppIndexRoute
   '/courses': typeof CoursesIndexRoute
   '/features': typeof FeaturesIndexRoute
+  '/app/analysis/plan': typeof AppAnalysisPlanRouteWithChildren
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
   '/app/notes/library': typeof AppNotesLibraryRoute
@@ -714,6 +783,7 @@ export interface FileRoutesByTo {
   '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/recall/suggestions': typeof AppRecallSuggestionsRoute
+  '/app/settings/analysis': typeof AppSettingsAnalysisRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
@@ -726,6 +796,7 @@ export interface FileRoutesByTo {
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/analysis': typeof AppAnalysisIndexRoute
   '/app/analytics': typeof AppAnalyticsIndexRoute
   '/app/focus': typeof AppFocusIndexRoute
   '/app/mcq': typeof AppMcqIndexRoute
@@ -738,6 +809,8 @@ export interface FileRoutesByTo {
   '/app/today': typeof AppTodayIndexRoute
   '/app/tracker': typeof AppTrackerIndexRoute
   '/courses/$course': typeof CoursesCourseIndexRoute
+  '/app/analysis/$subjectKey/$chapterKey': typeof AppAnalysisSubjectKeyChapterKeyRoute
+  '/app/analysis/plan/active': typeof AppAnalysisPlanActiveRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -751,6 +824,7 @@ export interface FileRoutesByTo {
   '/app/recall/decks/$deckId': typeof AppRecallDecksDeckIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
+  '/app/analysis/$subjectKey': typeof AppAnalysisSubjectKeyIndexRoute
   '/app/mcq/sets': typeof AppMcqSetsIndexRoute
   '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards': typeof AppRecallCardsIndexRoute
@@ -758,10 +832,13 @@ export interface FileRoutesByTo {
   '/app/recall/review': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
+  '/app/admin/analysis/papers/$paperId': typeof AppAdminAnalysisPapersPaperIdRoute
   '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   '/courses/$course/$level/$subject/mcqs': typeof CoursesCourseLevelSubjectMcqsRoute
+  '/courses/$course/$level/$subject/paper-analysis': typeof CoursesCourseLevelSubjectPaperAnalysisRoute
+  '/app/admin/analysis/papers': typeof AppAdminAnalysisPapersIndexRoute
   '/app/mcq/subjects/$subject': typeof AppMcqSubjectsSubjectIndexRoute
   '/app/practice/session/$id': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject': typeof CoursesCourseLevelSubjectIndexRoute
@@ -794,6 +871,7 @@ export interface FileRoutesById {
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
+  '/app/analysis/plan': typeof AppAnalysisPlanRouteWithChildren
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
   '/app/notes/library': typeof AppNotesLibraryRoute
@@ -810,6 +888,7 @@ export interface FileRoutesById {
   '/app/recall/quick': typeof AppRecallQuickRoute
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/recall/suggestions': typeof AppRecallSuggestionsRoute
+  '/app/settings/analysis': typeof AppSettingsAnalysisRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
@@ -822,6 +901,7 @@ export interface FileRoutesById {
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/analysis/': typeof AppAnalysisIndexRoute
   '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
   '/app/mcq/': typeof AppMcqIndexRoute
@@ -834,6 +914,8 @@ export interface FileRoutesById {
   '/app/today/': typeof AppTodayIndexRoute
   '/app/tracker/': typeof AppTrackerIndexRoute
   '/courses/$course/': typeof CoursesCourseIndexRoute
+  '/app/analysis/$subjectKey/$chapterKey': typeof AppAnalysisSubjectKeyChapterKeyRoute
+  '/app/analysis/plan/active': typeof AppAnalysisPlanActiveRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
@@ -847,6 +929,7 @@ export interface FileRoutesById {
   '/app/recall/decks/$deckId': typeof AppRecallDecksDeckIdRoute
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
+  '/app/analysis/$subjectKey/': typeof AppAnalysisSubjectKeyIndexRoute
   '/app/mcq/sets/': typeof AppMcqSetsIndexRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards/': typeof AppRecallCardsIndexRoute
@@ -854,10 +937,13 @@ export interface FileRoutesById {
   '/app/recall/review/': typeof AppRecallReviewIndexRoute
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
+  '/app/admin/analysis/papers/$paperId': typeof AppAdminAnalysisPapersPaperIdRoute
   '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   '/courses/$course/$level/$subject/mcqs': typeof CoursesCourseLevelSubjectMcqsRoute
+  '/courses/$course/$level/$subject/paper-analysis': typeof CoursesCourseLevelSubjectPaperAnalysisRoute
+  '/app/admin/analysis/papers/': typeof AppAdminAnalysisPapersIndexRoute
   '/app/mcq/subjects/$subject/': typeof AppMcqSubjectsSubjectIndexRoute
   '/app/practice/session/$id/': typeof AppPracticeSessionIdIndexRoute
   '/courses/$course/$level/$subject/': typeof CoursesCourseLevelSubjectIndexRoute
@@ -891,6 +977,7 @@ export interface FileRouteTypes {
     | '/app/'
     | '/courses/'
     | '/features/'
+    | '/app/analysis/plan'
     | '/app/focus/history'
     | '/app/focus/mini'
     | '/app/notes/library'
@@ -907,6 +994,7 @@ export interface FileRouteTypes {
     | '/app/recall/quick'
     | '/app/recall/stats'
     | '/app/recall/suggestions'
+    | '/app/settings/analysis'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
@@ -919,6 +1007,7 @@ export interface FileRouteTypes {
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/analysis/'
     | '/app/analytics/'
     | '/app/focus/'
     | '/app/mcq/'
@@ -931,6 +1020,8 @@ export interface FileRouteTypes {
     | '/app/today/'
     | '/app/tracker/'
     | '/courses/$course/'
+    | '/app/analysis/$subjectKey/$chapterKey'
+    | '/app/analysis/plan/active'
     | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
     | '/app/notes/$subject/$chapter'
@@ -944,6 +1035,7 @@ export interface FileRouteTypes {
     | '/app/recall/decks/$deckId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
+    | '/app/analysis/$subjectKey/'
     | '/app/mcq/sets/'
     | '/app/notes/$subject/'
     | '/app/recall/cards/'
@@ -951,10 +1043,13 @@ export interface FileRouteTypes {
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
+    | '/app/admin/analysis/papers/$paperId'
     | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/mcqs'
+    | '/courses/$course/$level/$subject/paper-analysis'
+    | '/app/admin/analysis/papers/'
     | '/app/mcq/subjects/$subject/'
     | '/app/practice/session/$id/'
     | '/courses/$course/$level/$subject/'
@@ -984,6 +1079,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/courses'
     | '/features'
+    | '/app/analysis/plan'
     | '/app/focus/history'
     | '/app/focus/mini'
     | '/app/notes/library'
@@ -1000,6 +1096,7 @@ export interface FileRouteTypes {
     | '/app/recall/quick'
     | '/app/recall/stats'
     | '/app/recall/suggestions'
+    | '/app/settings/analysis'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
@@ -1012,6 +1109,7 @@ export interface FileRouteTypes {
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/analysis'
     | '/app/analytics'
     | '/app/focus'
     | '/app/mcq'
@@ -1024,6 +1122,8 @@ export interface FileRouteTypes {
     | '/app/today'
     | '/app/tracker'
     | '/courses/$course'
+    | '/app/analysis/$subjectKey/$chapterKey'
+    | '/app/analysis/plan/active'
     | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
     | '/app/notes/$subject/$chapter'
@@ -1037,6 +1137,7 @@ export interface FileRouteTypes {
     | '/app/recall/decks/$deckId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
+    | '/app/analysis/$subjectKey'
     | '/app/mcq/sets'
     | '/app/notes/$subject'
     | '/app/recall/cards'
@@ -1044,10 +1145,13 @@ export interface FileRouteTypes {
     | '/app/recall/review'
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
+    | '/app/admin/analysis/papers/$paperId'
     | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/mcqs'
+    | '/courses/$course/$level/$subject/paper-analysis'
+    | '/app/admin/analysis/papers'
     | '/app/mcq/subjects/$subject'
     | '/app/practice/session/$id'
     | '/courses/$course/$level/$subject'
@@ -1079,6 +1183,7 @@ export interface FileRouteTypes {
     | '/app/'
     | '/courses/'
     | '/features/'
+    | '/app/analysis/plan'
     | '/app/focus/history'
     | '/app/focus/mini'
     | '/app/notes/library'
@@ -1095,6 +1200,7 @@ export interface FileRouteTypes {
     | '/app/recall/quick'
     | '/app/recall/stats'
     | '/app/recall/suggestions'
+    | '/app/settings/analysis'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
@@ -1107,6 +1213,7 @@ export interface FileRouteTypes {
     | '/app/tracker/log'
     | '/app/tracker/reports'
     | '/og/courses/$course'
+    | '/app/analysis/'
     | '/app/analytics/'
     | '/app/focus/'
     | '/app/mcq/'
@@ -1119,6 +1226,8 @@ export interface FileRouteTypes {
     | '/app/today/'
     | '/app/tracker/'
     | '/courses/$course/'
+    | '/app/analysis/$subjectKey/$chapterKey'
+    | '/app/analysis/plan/active'
     | '/app/analytics/share/$token'
     | '/app/mcq/sets/$slug'
     | '/app/notes/$subject/$chapter'
@@ -1132,6 +1241,7 @@ export interface FileRouteTypes {
     | '/app/recall/decks/$deckId'
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
+    | '/app/analysis/$subjectKey/'
     | '/app/mcq/sets/'
     | '/app/notes/$subject/'
     | '/app/recall/cards/'
@@ -1139,10 +1249,13 @@ export interface FileRouteTypes {
     | '/app/recall/review/'
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
+    | '/app/admin/analysis/papers/$paperId'
     | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
     | '/courses/$course/$level/$subject/mcqs'
+    | '/courses/$course/$level/$subject/paper-analysis'
+    | '/app/admin/analysis/papers/'
     | '/app/mcq/subjects/$subject/'
     | '/app/practice/session/$id/'
     | '/courses/$course/$level/$subject/'
@@ -1173,6 +1286,7 @@ export interface RootRouteChildren {
   CoursesCourseLevelIndexRoute: typeof CoursesCourseLevelIndexRoute
   CoursesCourseLevelSubjectChapterRoute: typeof CoursesCourseLevelSubjectChapterRouteWithChildren
   CoursesCourseLevelSubjectMcqsRoute: typeof CoursesCourseLevelSubjectMcqsRoute
+  CoursesCourseLevelSubjectPaperAnalysisRoute: typeof CoursesCourseLevelSubjectPaperAnalysisRoute
   CoursesCourseLevelSubjectIndexRoute: typeof CoursesCourseLevelSubjectIndexRoute
 }
 
@@ -1331,6 +1445,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/features/$slug'
       preLoaderRoute: typeof FeaturesSlugRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/app/analysis/': {
+      id: '/app/analysis/'
+      path: '/analysis'
+      fullPath: '/app/analysis/'
+      preLoaderRoute: typeof AppAnalysisIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/analysis/plan': {
+      id: '/app/analysis/plan'
+      path: '/analysis/plan'
+      fullPath: '/app/analysis/plan'
+      preLoaderRoute: typeof AppAnalysisPlanRouteImport
+      parentRoute: typeof AppRoute
     }
     '/app/analytics/': {
       id: '/app/analytics/'
@@ -1500,6 +1628,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRecallSuggestionsRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings/analysis': {
+      id: '/app/settings/analysis'
+      path: '/settings/analysis'
+      fullPath: '/app/settings/analysis'
+      preLoaderRoute: typeof AppSettingsAnalysisRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/coverage': {
       id: '/app/settings/coverage'
       path: '/settings/coverage'
@@ -1611,6 +1746,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/og/courses/$course'
       preLoaderRoute: typeof OgCoursesCourseRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/app/analysis/$subjectKey/': {
+      id: '/app/analysis/$subjectKey/'
+      path: '/analysis/$subjectKey'
+      fullPath: '/app/analysis/$subjectKey/'
+      preLoaderRoute: typeof AppAnalysisSubjectKeyIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/analysis/$subjectKey/$chapterKey': {
+      id: '/app/analysis/$subjectKey/$chapterKey'
+      path: '/analysis/$subjectKey/$chapterKey'
+      fullPath: '/app/analysis/$subjectKey/$chapterKey'
+      preLoaderRoute: typeof AppAnalysisSubjectKeyChapterKeyRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/analysis/plan/active': {
+      id: '/app/analysis/plan/active'
+      path: '/active'
+      fullPath: '/app/analysis/plan/active'
+      preLoaderRoute: typeof AppAnalysisPlanActiveRouteImport
+      parentRoute: typeof AppAnalysisPlanRoute
     }
     '/app/analytics/share/$token': {
       id: '/app/analytics/share/$token'
@@ -1752,6 +1908,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseLevelIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/admin/analysis/papers/': {
+      id: '/app/admin/analysis/papers/'
+      path: '/admin/analysis/papers'
+      fullPath: '/app/admin/analysis/papers/'
+      preLoaderRoute: typeof AppAdminAnalysisPapersIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/analysis/papers/$paperId': {
+      id: '/app/admin/analysis/papers/$paperId'
+      path: '/admin/analysis/papers/$paperId'
+      fullPath: '/app/admin/analysis/papers/$paperId'
+      preLoaderRoute: typeof AppAdminAnalysisPapersPaperIdRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/mcq/subjects/$subject/': {
       id: '/app/mcq/subjects/$subject/'
       path: '/mcq/subjects/$subject'
@@ -1801,6 +1971,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseLevelSubjectMcqsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/courses/$course/$level/$subject/paper-analysis': {
+      id: '/courses/$course/$level/$subject/paper-analysis'
+      path: '/courses/$course/$level/$subject/paper-analysis'
+      fullPath: '/courses/$course/$level/$subject/paper-analysis'
+      preLoaderRoute: typeof CoursesCourseLevelSubjectPaperAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app/mcq/subjects/$subject/chapters/$chapter': {
       id: '/app/mcq/subjects/$subject/chapters/$chapter'
       path: '/mcq/subjects/$subject/chapters/$chapter'
@@ -1846,6 +2023,18 @@ const AppTodayRouteWithChildren = AppTodayRoute._addFileChildren(
   AppTodayRouteChildren,
 )
 
+interface AppAnalysisPlanRouteChildren {
+  AppAnalysisPlanActiveRoute: typeof AppAnalysisPlanActiveRoute
+}
+
+const AppAnalysisPlanRouteChildren: AppAnalysisPlanRouteChildren = {
+  AppAnalysisPlanActiveRoute: AppAnalysisPlanActiveRoute,
+}
+
+const AppAnalysisPlanRouteWithChildren = AppAnalysisPlanRoute._addFileChildren(
+  AppAnalysisPlanRouteChildren,
+)
+
 interface AppRouteChildren {
   AppAccountRoute: typeof AppAccountRoute
   AppNotificationsRoute: typeof AppNotificationsRoute
@@ -1854,6 +2043,7 @@ interface AppRouteChildren {
   AppRevisionRoute: typeof AppRevisionRoute
   AppTodayRoute: typeof AppTodayRouteWithChildren
   AppIndexRoute: typeof AppIndexRoute
+  AppAnalysisPlanRoute: typeof AppAnalysisPlanRouteWithChildren
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppFocusMiniRoute: typeof AppFocusMiniRoute
   AppNotesLibraryRoute: typeof AppNotesLibraryRoute
@@ -1870,6 +2060,7 @@ interface AppRouteChildren {
   AppRecallQuickRoute: typeof AppRecallQuickRoute
   AppRecallStatsRoute: typeof AppRecallStatsRoute
   AppRecallSuggestionsRoute: typeof AppRecallSuggestionsRoute
+  AppSettingsAnalysisRoute: typeof AppSettingsAnalysisRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
   AppSettingsNotesRoute: typeof AppSettingsNotesRoute
@@ -1880,6 +2071,7 @@ interface AppRouteChildren {
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
   AppTrackerReportsRoute: typeof AppTrackerReportsRoute
+  AppAnalysisIndexRoute: typeof AppAnalysisIndexRoute
   AppAnalyticsIndexRoute: typeof AppAnalyticsIndexRoute
   AppFocusIndexRoute: typeof AppFocusIndexRoute
   AppMcqIndexRoute: typeof AppMcqIndexRoute
@@ -1890,6 +2082,7 @@ interface AppRouteChildren {
   AppRecallIndexRoute: typeof AppRecallIndexRoute
   AppSyllabusIndexRoute: typeof AppSyllabusIndexRoute
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
+  AppAnalysisSubjectKeyChapterKeyRoute: typeof AppAnalysisSubjectKeyChapterKeyRoute
   AppAnalyticsShareTokenRoute: typeof AppAnalyticsShareTokenRoute
   AppMcqSetsSlugRoute: typeof AppMcqSetsSlugRoute
   AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
@@ -1903,14 +2096,17 @@ interface AppRouteChildren {
   AppRecallDecksDeckIdRoute: typeof AppRecallDecksDeckIdRoute
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
+  AppAnalysisSubjectKeyIndexRoute: typeof AppAnalysisSubjectKeyIndexRoute
   AppMcqSetsIndexRoute: typeof AppMcqSetsIndexRoute
   AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
   AppRecallCardsIndexRoute: typeof AppRecallCardsIndexRoute
   AppRecallDecksIndexRoute: typeof AppRecallDecksIndexRoute
   AppRecallReviewIndexRoute: typeof AppRecallReviewIndexRoute
   AppSyllabusSubjectIndexRoute: typeof AppSyllabusSubjectIndexRoute
+  AppAdminAnalysisPapersPaperIdRoute: typeof AppAdminAnalysisPapersPaperIdRoute
   AppPracticeSessionIdReviewRoute: typeof AppPracticeSessionIdReviewRoute
   AppRecallReviewSummarySessionIdRoute: typeof AppRecallReviewSummarySessionIdRoute
+  AppAdminAnalysisPapersIndexRoute: typeof AppAdminAnalysisPapersIndexRoute
   AppMcqSubjectsSubjectIndexRoute: typeof AppMcqSubjectsSubjectIndexRoute
   AppPracticeSessionIdIndexRoute: typeof AppPracticeSessionIdIndexRoute
   AppMcqSubjectsSubjectChaptersChapterRoute: typeof AppMcqSubjectsSubjectChaptersChapterRoute
@@ -1924,6 +2120,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppRevisionRoute: AppRevisionRoute,
   AppTodayRoute: AppTodayRouteWithChildren,
   AppIndexRoute: AppIndexRoute,
+  AppAnalysisPlanRoute: AppAnalysisPlanRouteWithChildren,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppFocusMiniRoute: AppFocusMiniRoute,
   AppNotesLibraryRoute: AppNotesLibraryRoute,
@@ -1940,6 +2137,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppRecallQuickRoute: AppRecallQuickRoute,
   AppRecallStatsRoute: AppRecallStatsRoute,
   AppRecallSuggestionsRoute: AppRecallSuggestionsRoute,
+  AppSettingsAnalysisRoute: AppSettingsAnalysisRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,
   AppSettingsNotesRoute: AppSettingsNotesRoute,
@@ -1950,6 +2148,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,
   AppTrackerReportsRoute: AppTrackerReportsRoute,
+  AppAnalysisIndexRoute: AppAnalysisIndexRoute,
   AppAnalyticsIndexRoute: AppAnalyticsIndexRoute,
   AppFocusIndexRoute: AppFocusIndexRoute,
   AppMcqIndexRoute: AppMcqIndexRoute,
@@ -1960,6 +2159,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppRecallIndexRoute: AppRecallIndexRoute,
   AppSyllabusIndexRoute: AppSyllabusIndexRoute,
   AppTrackerIndexRoute: AppTrackerIndexRoute,
+  AppAnalysisSubjectKeyChapterKeyRoute: AppAnalysisSubjectKeyChapterKeyRoute,
   AppAnalyticsShareTokenRoute: AppAnalyticsShareTokenRoute,
   AppMcqSetsSlugRoute: AppMcqSetsSlugRoute,
   AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,
@@ -1973,14 +2173,17 @@ const AppRouteChildren: AppRouteChildren = {
   AppRecallDecksDeckIdRoute: AppRecallDecksDeckIdRoute,
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
+  AppAnalysisSubjectKeyIndexRoute: AppAnalysisSubjectKeyIndexRoute,
   AppMcqSetsIndexRoute: AppMcqSetsIndexRoute,
   AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,
   AppRecallCardsIndexRoute: AppRecallCardsIndexRoute,
   AppRecallDecksIndexRoute: AppRecallDecksIndexRoute,
   AppRecallReviewIndexRoute: AppRecallReviewIndexRoute,
   AppSyllabusSubjectIndexRoute: AppSyllabusSubjectIndexRoute,
+  AppAdminAnalysisPapersPaperIdRoute: AppAdminAnalysisPapersPaperIdRoute,
   AppPracticeSessionIdReviewRoute: AppPracticeSessionIdReviewRoute,
   AppRecallReviewSummarySessionIdRoute: AppRecallReviewSummarySessionIdRoute,
+  AppAdminAnalysisPapersIndexRoute: AppAdminAnalysisPapersIndexRoute,
   AppMcqSubjectsSubjectIndexRoute: AppMcqSubjectsSubjectIndexRoute,
   AppPracticeSessionIdIndexRoute: AppPracticeSessionIdIndexRoute,
   AppMcqSubjectsSubjectChaptersChapterRoute:
@@ -2042,6 +2245,8 @@ const rootRouteChildren: RootRouteChildren = {
   CoursesCourseLevelSubjectChapterRoute:
     CoursesCourseLevelSubjectChapterRouteWithChildren,
   CoursesCourseLevelSubjectMcqsRoute: CoursesCourseLevelSubjectMcqsRoute,
+  CoursesCourseLevelSubjectPaperAnalysisRoute:
+    CoursesCourseLevelSubjectPaperAnalysisRoute,
   CoursesCourseLevelSubjectIndexRoute: CoursesCourseLevelSubjectIndexRoute,
 }
 export const routeTree = rootRouteImport

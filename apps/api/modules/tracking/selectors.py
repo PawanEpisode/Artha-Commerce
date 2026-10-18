@@ -9,6 +9,7 @@ from __future__ import annotations
 import base64
 import hashlib
 from collections import defaultdict
+from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta
 from uuid import UUID
@@ -704,3 +705,46 @@ def _plain(obj) -> dict | None:
             value.isoformat() if hasattr(value, "isoformat") else str(value) if hasattr(value, "hex") else value
         )
     return out
+
+
+# ---- F-11 Paper Analysis extension -----------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class ChapterTime:
+    chapter_id: UUID
+    seconds: int
+    last_tracked_at: date | None
+
+
+def seconds_by_chapter(user_id: UUID, chapter_ids: Sequence[UUID]) -> dict[UUID, ChapterTime]:
+    """Total focus seconds and last date by chapter for personal pace calculations."""
+    if not chapter_ids:
+        return {}
+    qs = (
+        StudySession.objects.filter(user_id=user_id, chapter_id__in=list(chapter_ids))
+        .values("chapter_id")
+        .annotate(
+            total_sec=Sum("focus_seconds"),
+            last_date=Max("study_date"),
+        )
+    )
+    result = {}
+    for r in qs:
+        cid = r["chapter_id"]
+        result[cid] = ChapterTime(
+            chapter_id=cid,
+            seconds=int(r["total_sec"] or 0),
+            last_tracked_at=r["last_date"],
+        )
+    for cid in chapter_ids:
+        if cid not in result:
+            result[cid] = ChapterTime(chapter_id=cid, seconds=0, last_tracked_at=None)
+    return result
+
+
+def student_tz(user_id: UUID) -> str:
+    """The student's time zone."""
+    settings = settings_or_default(user_id)
+    return getattr(settings, "tz", "Asia/Kolkata")
+

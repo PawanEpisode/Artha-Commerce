@@ -19,7 +19,8 @@ def flag_required(flag: str, error: type[Exception] = FeatureDisabled, *, strict
 
     class FlagEnabled(BasePermission):
         def has_permission(self, request, view):
-            if not flag_enabled(flag, request.user.id, strict=strict):
+            user_id = getattr(request.user, "id", None) if request.user and request.user.is_authenticated else None
+            if not flag_enabled(flag, user_id, strict=strict):
                 raise error
             return True
 

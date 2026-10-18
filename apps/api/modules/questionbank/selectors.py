@@ -19,6 +19,7 @@ from django.utils import timezone
 from .domain.filters import KIND_GROUPS, QuestionFilter
 from .models import (
     CollectionItem,
+    DuplicateLink,
     Option,
     Question,
     QuestionTopic,
@@ -760,3 +761,41 @@ def taxonomy_of(question_ids: Sequence[uuid.UUID]) -> dict[uuid.UUID, list[Mappi
             )
         )
     return res
+
+
+# ---- F-11 Paper Analysis extensions ---------------------------------------------------------
+
+
+def stem_text(question_ids: Sequence[uuid.UUID]) -> dict[uuid.UUID, str]:
+    """Plain text stems of questions (live version if present, else current)."""
+    if not question_ids:
+        return {}
+    questions = (
+        Question.objects.filter(id__in=list(question_ids))
+        .select_related("live_version", "current_version")
+    )
+    result = {}
+    for q in questions:
+        v = q.live_version or q.current_version
+        result[q.id] = v.stem_md if v else ""
+    return result
+
+
+def duplicate_cluster_ids(question_ids: Sequence[uuid.UUID]) -> dict[uuid.UUID, list[uuid.UUID]]:
+    """Groups confirmed duplicate questions into clusters."""
+    if not question_ids:
+        return {}
+    q_list = list(question_ids)
+    links = DuplicateLink.objects.filter(
+        Q(question_id__in=q_list) | Q(other_question_id__in=q_list),
+        status="confirmed",
+    ).values_list("question_id", "other_question_id")
+
+    clusters: dict[uuid.UUID, set[uuid.UUID]] = {qid: {qid} for qid in q_list}
+    for src, tgt in links:
+        if src in clusters:
+            clusters[src].add(tgt)
+        if tgt in clusters:
+            clusters[tgt].add(src)
+    return {qid: sorted(clust) for qid, clust in clusters.items()}
+

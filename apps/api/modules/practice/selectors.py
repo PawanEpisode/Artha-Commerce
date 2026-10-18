@@ -13,7 +13,7 @@ from datetime import timedelta
 from decimal import Decimal
 from typing import Any
 
-from django.db.models import Avg, Count, Max, Q
+from django.db.models import Avg, Count, Max, Q, Sum
 from django.utils import timezone
 
 from modules.questionbank import selectors as qb_selectors
@@ -502,3 +502,35 @@ def list_bookmarks(
         next_cursor = base64.urlsafe_b64encode(raw_cur.encode()).decode()
 
     return Page(items=items, next_cursor=next_cursor)
+
+
+# ---- F-11 Paper Analysis extension -----------------------------------------------------------
+
+
+def accuracy(
+    user_id: uuid.UUID,
+    chapter_ids: Sequence[uuid.UUID],
+    by: str = "chapter",
+) -> dict[uuid.UUID, dict[str, Any]]:
+    """Accuracy stats (answered, correct) by chapter for a student."""
+    if not chapter_ids:
+        return {}
+    states = (
+        QuestionState.objects.filter(user_id=user_id, chapter_id__in=list(chapter_ids))
+        .values("chapter_id")
+        .annotate(
+            answered=Sum("attempts"),
+            correct=Sum("correct_count"),
+        )
+    )
+    res = {}
+    for r in states:
+        res[r["chapter_id"]] = {
+            "answered": int(r["answered"] or 0),
+            "correct": int(r["correct"] or 0),
+        }
+    for cid in chapter_ids:
+        if cid not in res:
+            res[cid] = {"answered": 0, "correct": 0}
+    return res
+

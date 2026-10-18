@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date
+from uuid import UUID
 from zoneinfo import ZoneInfo
 
 from django.db.models import Q, QuerySet
@@ -547,3 +548,38 @@ def study_state(user_id, enrollment: Enrollment, tz: str = "UTC") -> StudyState:
         subjects=tuple(out),
         had_activity=any(r.last_studied_on for sub in out for r in sub.chapters),
     )
+
+
+# ---- F-11 Paper Analysis extension -----------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class ExamContext:
+    enrollment_id: UUID
+    scheme_id: UUID
+    level_id: UUID
+    exam_date: date | None
+    term_code: str | None
+    daily_hours: float | None
+    subject_ids: list[UUID]
+
+
+def exam_context(user_id: UUID, enrollment_id: UUID | None = None) -> ExamContext | None:
+    """The student's study context for analysis and planning."""
+    enr = get_active_enrollment(user_id, enrollment_id=enrollment_id)
+    if enr is None:
+        return None
+    exam_date = exam_date_of(enr)
+    subject_ids = list(enr.scheme.subjects.filter(is_active=True).values_list("id", flat=True))
+    daily_hours = float(enr.daily_minutes / 60.0) if enr.daily_minutes else None
+    term_code = enr.target_term.code if enr.target_term else None
+    return ExamContext(
+        enrollment_id=enr.id,
+        scheme_id=enr.scheme_id,
+        level_id=enr.scheme.level_id,
+        exam_date=exam_date,
+        term_code=term_code,
+        daily_hours=daily_hours,
+        subject_ids=subject_ids,
+    )
+

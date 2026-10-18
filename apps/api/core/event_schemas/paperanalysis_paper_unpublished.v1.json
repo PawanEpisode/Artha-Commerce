@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "paperanalysis_paper_unpublished",
+  "type": "object",
+  "required": ["paper_id", "subject_key", "reason"],
+  "properties": {
+    "paper_id": { "type": "string", "format": "uuid" },
+    "subject_key": { "type": "string" },
+    "reason": { "type": "string" }
+  },
+  "additionalProperties": false
+}

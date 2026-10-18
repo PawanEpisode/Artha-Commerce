@@ -12,6 +12,7 @@ export type WorkspaceFlag =
   | 'pyq_bank'
   | 'mcq_bank'
   | 'performance_analytics'
+  | 'paper_analysis'
 
 /** A page inside a section. Shown under its section in the sidebar while that section is open. */
 export interface WorkspaceSubLink {
@@ -34,6 +35,8 @@ export interface WorkspaceSubLink {
     | '/app/practice/bookmarks'
     | '/app/practice/mistakes'
     | '/app/mcq/sets'
+    | '/app/analysis/plan'
+    | '/app/analysis/plan/active'
   label: string
 }
 
@@ -54,12 +57,14 @@ export interface WorkspaceLink {
     | '/app/pyq'
     | '/app/mcq'
     | '/app/analytics'
+    | '/app/analysis'
     | '/app/settings/today'
     | '/app/settings/focus'
     | '/app/settings/tracker'
     | '/app/settings/coverage'
     | '/app/settings/notes'
     | '/app/settings/notifications'
+    | '/app/settings/analysis'
     | '/app/account'
   label: string
   description?: string
@@ -120,6 +125,17 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     label: 'My coverage',
     description: 'Tick chapters and see what is left.',
     flag: 'syllabus_coverage',
+  },
+  {
+    to: '/app/analysis',
+    group: 'plan',
+    label: 'Paper Analysis',
+    description: 'Exam trends, chapter priorities, and high-yield study plans.',
+    flag: 'paper_analysis',
+    children: [
+      { to: '/app/analysis/plan', label: 'N-days planner' },
+      { to: '/app/analysis/plan/active', label: 'Active plan' },
+    ],
   },
   {
     to: '/app/revision',
@@ -220,6 +236,7 @@ export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
   { to: '/app/settings/notes', label: 'Notes settings', flag: 'notes' },
   { to: '/app/settings/recall', label: 'Revision settings', flag: 'recall_system' },
   { to: '/app/settings/notifications', label: 'Notification settings', flag: 'notifications_ui' },
+  { to: '/app/settings/analysis', label: 'Paper analysis settings', flag: 'paper_analysis' },
   { to: '/app/account', label: 'Account' },
 ]
 
@@ -236,6 +253,7 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   pyq_bank: true,
   mcq_bank: true,
   performance_analytics: true,
+  paper_analysis: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

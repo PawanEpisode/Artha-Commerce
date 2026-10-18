@@ -24,6 +24,8 @@ APP_LABELS = (
     "practice",
     "pyq",
     "mcqbank",
+    "analytics",
+    "paperanalysis",
 )
 
 

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "paperanalysis_stats_refreshed",
+  "type": "object",
+  "required": ["subject_key", "scheme_ids", "stats_version"],
+  "properties": {
+    "subject_key": { "type": "string" },
+    "scheme_ids": { "type": "array", "items": { "type": "string", "format": "uuid" } },
+    "stats_version": { "type": "integer" }
+  },
+  "additionalProperties": false
+}
