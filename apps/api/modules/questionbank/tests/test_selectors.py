@@ -144,3 +144,29 @@ def test_get_gradables_and_get_review_view():
     assert review.explanation_md == payload["explanation_md"]
     assert len(review.options) == 2
     assert any(opt["is_correct"] for opt in review.options)
+
+
+def test_get_gradables_uses_constant_queries(django_assert_max_num_queries):
+    """Starting a whole past paper resolves 100+ questions; the cost must not grow per question."""
+    refs = []
+    for i in range(12):
+        payload = {
+            "kind": "mcq_single",
+            "stem_md": f"Question {i}?",
+            "explanation_md": "Because.",
+            "options": [
+                {"body_md": "Right", "is_correct": True},
+                {"body_md": "Wrong", "is_correct": False},
+            ],
+            "marks": Decimal("1.0"),
+        }
+        q = create_draft(USER, payload)
+        ver = publish_version(EDITOR, q.current_version.id, visibility="public")
+        refs.append((q.id, ver.id))
+    refs.append((refs[0][0], None))  # unpinned ref resolves through the live version
+
+    with django_assert_max_num_queries(6):
+        gradables = get_gradables(refs)
+
+    assert len(gradables) == 12
+    assert all(len(g.correct_option_ids) == 1 and len(g.options) == 2 for g in gradables.values())

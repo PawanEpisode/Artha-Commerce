@@ -417,7 +417,7 @@ def start_paper_session(
     Launches an F-06 practice session for an entire past paper.
     Orders leaf items in printed sort order with frozen marks.
     """
-    paper = PyqPaper.objects.prefetch_related("questions__question").get(id=paper_id)
+    paper = PyqPaper.objects.get(id=paper_id)
     leaf_pqs = (
         paper.questions.filter(is_leaf=True, question__isnull=False).order_by("sort_order").select_related("question")
     )

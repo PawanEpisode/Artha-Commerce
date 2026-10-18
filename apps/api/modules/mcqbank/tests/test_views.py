@@ -66,6 +66,26 @@ def test_subject_tiles(api, syllabus_tree):
 
 
 @pytest.mark.django_db
+def test_subject_tiles_default_to_the_students_enrolled_level(api, syllabus_tree):
+    from datetime import timedelta
+
+    from django.utils import timezone
+
+    from modules.coverage.services import create_enrollment
+
+    create_enrollment(
+        USER,
+        scheme_id=syllabus_tree.id,
+        exam_date=(timezone.now() + timedelta(days=60)).date(),
+        daily_minutes=120,
+    )
+    subject = syllabus_tree.subjects.first()
+    res = api.get(f"/mcq/subjects/{subject.key}/tiles/")  # no ?course=&level=
+    assert res.status_code == 200
+    assert [t["chapter_key"] for t in res.json_body] == [c.key for c in subject.chapters.all()]
+
+
+@pytest.mark.django_db
 def test_chapter_detail_view(api, syllabus_tree):
     course = syllabus_tree.level.course
     level = syllabus_tree.level

@@ -25,6 +25,7 @@ from .permissions import IsEditor
 from .selectors import (
     chapter_detail,
     chapter_tiles,
+    enrolled_course_level,
     external_log,
     get_set,
     home,
@@ -85,6 +86,15 @@ class McqBaseView(APIView):
 # --- Student Endpoints ------------------------------------------------------------------------
 
 
+def _course_level(request) -> tuple[str, str]:
+    """`?course=&level=` when given, otherwise what the student is enrolled in (a Final student must not get Intermediate)."""
+    enrolled_course, enrolled_level = enrolled_course_level(request.user.id)
+    return (
+        request.query_params.get("course") or enrolled_course,
+        request.query_params.get("level") or enrolled_level,
+    )
+
+
 class McqHomeView(McqBaseView):
     permission_classes = [IsAuthenticated]
     throttle_scope = "qb_read"
@@ -99,8 +109,7 @@ class SubjectTilesView(McqBaseView):
     throttle_scope = "qb_read"
 
     def get(self, request, subject_key: str):
-        course = request.query_params.get("course", "cma")
-        level = request.query_params.get("level", "intermediate")
+        course, level = _course_level(request)
         tiles = chapter_tiles(request.user.id, subject_key, course=course, level=level)
         return Response(tiles)
 
@@ -110,8 +119,7 @@ class ChapterDetailView(McqBaseView):
     throttle_scope = "qb_read"
 
     def get(self, request, subject_key: str, chapter_key: str):
-        course = request.query_params.get("course", "cma")
-        level = request.query_params.get("level", "intermediate")
+        course, level = _course_level(request)
         data = chapter_detail(request.user.id, subject_key, chapter_key, course=course, level=level)
         return Response(data)
 

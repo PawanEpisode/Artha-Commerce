@@ -442,24 +442,62 @@ def get_playable(question_id: uuid.UUID, version_id: uuid.UUID | None = None) ->
 
 
 def get_gradables(refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]]) -> dict[uuid.UUID, GradableQuestion]:
-    """Returns GradableQuestion items with correct answers for server-side grading."""
-    res: dict[uuid.UUID, GradableQuestion] = {}
+    """
+    Returns GradableQuestion items with correct answers for server-side grading.
+
+    Batched: a constant number of queries however many refs there are. Starting a whole past paper resolves
+    100+ questions in one request; one query set per question timed the request out (504) on a remote database.
+    """
+    refs = list(refs)
+    if not refs:
+        return {}
+
+    q_ids = {q_id for q_id, _ in refs}
+    questions = Question.objects.in_bulk(q_ids)
+    missing = q_ids - questions.keys()
+    if missing:
+        raise Question.DoesNotExist(f"Question {next(iter(missing))} does not exist.")
+
+    # Version per question: explicit pin, else live, else current, else a LIVE row, else the latest.
+    version_id_for: dict[uuid.UUID, uuid.UUID | None] = {}
+    needs_fallback: set[uuid.UUID] = set()
     for q_id, v_id in refs:
-        q = Question.objects.get(id=q_id)
-        v = (
-            QuestionVersion.objects.get(id=v_id)
-            if v_id
-            else (
-                q.live_version
-                or q.current_version
-                or q.versions.filter(state=QuestionVersion.State.LIVE).first()
-                or q.versions.order_by("-version_no").first()
-            )
-        )
+        q = questions[q_id]
+        chosen = v_id or q.live_version_id or q.current_version_id
+        version_id_for[q_id] = chosen
+        if not chosen:
+            needs_fallback.add(q_id)
+
+    if needs_fallback:
+        best: dict[uuid.UUID, QuestionVersion] = {}
+        for ver in QuestionVersion.objects.filter(question_id__in=needs_fallback).order_by("-version_no"):
+            current = best.get(ver.question_id)
+            is_live = ver.state == QuestionVersion.State.LIVE
+            if current is None or (is_live and current.state != QuestionVersion.State.LIVE):
+                best[ver.question_id] = ver
+        for q_id, ver in best.items():
+            version_id_for[q_id] = ver.id
+
+    version_ids = {v for v in version_id_for.values() if v}
+    versions = {
+        v.id: v
+        for v in QuestionVersion.objects.filter(id__in=version_ids)
+        .select_related("answer_key", "rubric")
+        .prefetch_related("options")
+    }
+    for explicit in {v_id for _, v_id in refs if v_id}:
+        if explicit not in versions:
+            raise QuestionVersion.DoesNotExist(f"QuestionVersion {explicit} does not exist.")
+
+    res: dict[uuid.UUID, GradableQuestion] = {}
+    for q_id, _ in refs:
+        v = versions.get(version_id_for.get(q_id))
         if not v:
             continue
+        q = questions[q_id]
 
-        correct_opt_ids = list(v.options.filter(is_correct=True).values_list("id", flat=True))
+        all_options = list(v.options.all())
+        correct_opt_ids = [opt.id for opt in all_options if opt.is_correct]
         num_key = None
         key = getattr(v, "answer_key", None)
         if key:
@@ -484,7 +522,7 @@ def get_gradables(refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]]) -> dict[uu
                     "feedback_md": opt.feedback_md or "",
                 },
             )()
-            for opt in v.options.all()
+            for opt in all_options
         ]
 
         res[q_id] = GradableQuestion(

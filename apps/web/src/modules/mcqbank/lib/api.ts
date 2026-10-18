@@ -26,8 +26,9 @@ export async function getSubjectTiles(
 
   const qs = query.toString()
   const path = `/mcq/subjects/${subjectKey}/tiles/${qs ? `?${qs}` : ''}`
-  const res = await api<{ items: ChapterTile[] }>(path)
-  return res.items
+  // The API returns the tiles as a bare list; older builds wrapped them in `{ items }`.
+  const res = await api<ChapterTile[] | { items?: ChapterTile[] }>(path)
+  return Array.isArray(res) ? res : (res?.items ?? [])
 }
 
 export async function getChapterDetail(

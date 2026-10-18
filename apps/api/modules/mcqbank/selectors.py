@@ -25,6 +25,15 @@ from .domain.suggest import ChapterMetrics, rank_suggestions
 from .models import ExternalLog, McqSet, PatternProfile, RefSource, TestPreset
 
 
+def enrolled_course_level(user_id: uuid.UUID) -> tuple[str, str]:
+    """The course and level the student is working on (CMA Intermediate when nothing is set)."""
+    summary = coverage_selectors.course_summary(user_id)
+    return (
+        summary.course_code if summary else "cma",
+        summary.level_code if summary else "intermediate",
+    )
+
+
 def home(user_id: uuid.UUID) -> dict[str, Any]:
     """Returns MCQ Home view: suggestion, open sessions, due count, subject cards."""
     summary = coverage_selectors.course_summary(user_id)
