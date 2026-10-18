@@ -7,7 +7,6 @@ import {
   Card,
   CircleCheck,
   CircleX,
-  Countdown,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -30,14 +29,17 @@ import {
   toast,
   toastApiError,
 } from '@artha/design-system'
+import { useQueryClient } from '@tanstack/react-query'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
+import { ApiError } from '~/lib/api'
 import { RichText } from '~/lib/richtext'
 import { useFeatureFlag } from '~/modules/observability'
 import { kindLabel, QUESTION_TEXT_CLASS, ReportErrorDialog } from '~/modules/questionbank'
 import { QuestionCardButton } from '~/modules/recall'
 
+import { usePracticeClock } from '../hooks/usePracticeClock'
 import {
   checkAnswer,
   getSession,
@@ -46,8 +48,11 @@ import {
   resumeSession,
   saveAnswer,
   setQuestionState,
+  startSession,
   submitSession,
 } from '../lib/api'
+import type { ClockSource } from '../lib/clock'
+import { practiceKeys } from '../lib/keys'
 import type { SessionItemView, SessionView } from '../lib/types'
 
 interface PracticePlayerProps {
@@ -58,6 +63,11 @@ interface PracticePlayerProps {
 export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: PracticePlayerProps) {
   const enabled = useFeatureFlag('question_bank', { strict: true })
   const navigate = useNavigate()
+  const queryClient = useQueryClient()
+  const refreshDock = React.useCallback(
+    () => queryClient.invalidateQueries({ queryKey: practiceKeys.active }),
+    [queryClient],
+  )
 
   const [session, setSession] = React.useState<SessionView | null>(null)
   const [loading, setLoading] = React.useState(true)
@@ -68,6 +78,9 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
   const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [isChecking, setIsChecking] = React.useState(false)
   const [isOffline, setIsOffline] = React.useState(false)
+  // When the session (and so its server clock) reached this device, for the clock and the expiry check.
+  const [receivedAtMs, setReceivedAtMs] = React.useState(() => Date.now())
+  const expiredHandled = React.useRef(false)
 
   // Local answers state keyed by item position
   const [selectedAnswers, setSelectedAnswers] = React.useState<Record<number, string[]>>({})
@@ -93,8 +106,19 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
   const loadSession = React.useCallback(async () => {
     try {
       setLoading(true)
-      const data = await getSession(sessionId)
-      if (data.status === 'submitted') {
+      let data = await getSession(sessionId)
+      // The clock starts when the student opens the session, not at their first answer.
+      if (data.status === 'created') {
+        try {
+          const started = await startSession(sessionId)
+          data = { ...data, ...started, items: data.items, title: data.title }
+        } catch {
+          // The session still works without a running clock; the next open tries again.
+        }
+      }
+      setReceivedAtMs(Date.now())
+      void refreshDock()
+      if (data.status === 'submitted' || data.status === 'auto_submitted') {
         navigate({ to: '/app/practice/session/$id/review', params: { id: sessionId } })
         return
       }
@@ -133,7 +157,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
     } finally {
       setLoading(false)
     }
-  }, [sessionId, navigate])
+  }, [sessionId, navigate, refreshDock])
 
   React.useEffect(() => {
     if (enabled) loadSession()
@@ -170,6 +194,19 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
     })
   }, [session, selectedAnswers, numericAnswers, markedForReview, checkedResults, currentIndex])
 
+  const answeredCount = session
+    ? session.items.filter((_, idx) => (selectedAnswers[idx]?.length ?? 0) > 0 || Boolean(numericAnswers[idx])).length
+    : 0
+
+  // The server closes a timed session when its time runs out. The next write then answers 409 `session_closed`:
+  // reload, and the student lands on the results instead of a player that can no longer save.
+  const reloadIfClosed = (err: unknown): boolean => {
+    const closed =
+      err instanceof ApiError && err.status === 409 && (err.body as { code?: string } | null)?.code === 'session_closed'
+    if (closed) void loadSession()
+    return closed
+  }
+
   const handleSelectOption = async (optionId: string) => {
     if (!currentItem) return
     const isMulti = currentItem.kind === 'mcq_multi'
@@ -194,6 +231,8 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
     } catch (err) {
       if (err instanceof QueuedOffline) {
         setIsOffline(true)
+      } else {
+        reloadIfClosed(err)
       }
     }
   }
@@ -213,6 +252,8 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
       } catch (err) {
         if (err instanceof QueuedOffline) {
           setIsOffline(true)
+        } else {
+          reloadIfClosed(err)
         }
       }
     }
@@ -228,8 +269,9 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
         selected_option_ids: selectedAnswers[currentIndex] || [],
         flagged: nextVal,
       })
-    } catch {
-      // Offline safe
+    } catch (err) {
+      // Offline safe; a closed session reloads to its results.
+      reloadIfClosed(err)
     }
   }
 
@@ -257,7 +299,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
       })
       setCheckedResults((prev) => ({ ...prev, [currentIndex]: res }))
     } catch (err) {
-      toastApiError(err, 'Could not check answer.')
+      if (!reloadIfClosed(err)) toastApiError(err, 'Could not check answer.')
     } finally {
       setIsChecking(false)
     }
@@ -266,16 +308,16 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
   const handlePause = async () => {
     try {
       await pauseSession(sessionId)
-      loadSession()
+      void loadSession()
     } catch (err) {
-      toastApiError(err, 'Could not pause session.')
+      if (!reloadIfClosed(err)) toastApiError(err, 'Could not pause session.')
     }
   }
 
   const handleResume = async () => {
     try {
       await resumeSession(sessionId)
-      loadSession()
+      void loadSession()
     } catch (err) {
       toastApiError(err, 'Could not resume session.')
     }
@@ -285,6 +327,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
     setIsSubmitting(true)
     try {
       await submitSession(sessionId)
+      void refreshDock()
       navigate({ to: '/app/practice/session/$id/review', params: { id: sessionId } })
     } catch (err) {
       toastApiError(err, 'Could not submit session.')
@@ -292,6 +335,18 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
       setIsSubmitting(false)
     }
   }
+
+  const clockSource: ClockSource | null = session ? { ...session, receivedAtMs } : null
+  const clock = usePracticeClock(clockSource)
+  const timeIsUp = clock?.kind === 'countdown' && clock.expired && session?.status === 'in_progress'
+  React.useEffect(() => {
+    if (!timeIsUp || expiredHandled.current) return
+    expiredHandled.current = true
+    toast.info('Time is up. Your answers were submitted.')
+    void handleSubmit()
+    // handleSubmit only reads the session id, which the effect already depends on through the clock.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timeIsUp])
 
   if (!enabled) {
     return (
@@ -372,12 +427,7 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Timer in timed modes */}
-          {session.time_limit_seconds && (
-            <Countdown secondsRemaining={session.time_limit_seconds} onExpire={handleSubmit} size="sm" />
-          )}
-
-          {session.mode !== 'exam' && (
+          {session.allow_pause && (
             <Button variant="ghost" size="sm" onClick={handlePause} title="Pause session">
               <Pause className="size-4" />
             </Button>
@@ -673,8 +723,8 @@ export function PracticePlayerContainer({ sessionId, initialPosition = 1 }: Prac
           <DialogHeader>
             <DialogTitle>Submit practice test?</DialogTitle>
             <DialogDescription>
-              You have answered {Object.keys(selectedAnswers).length + Object.keys(numericAnswers).length} of{' '}
-              {session.question_count} questions. Unanswered questions will be marked as skipped.
+              You have answered {answeredCount} of {session.question_count} questions. Unanswered questions will be
+              marked as skipped.
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end gap-2 pt-4">

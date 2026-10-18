@@ -13,12 +13,13 @@ from dataclasses import dataclass, field
 from decimal import Decimal
 from typing import Any, Literal
 
-from django.db.models import Count, Q
+from django.db.models import Count, Prefetch, Q
 from django.utils import timezone
 
 from .domain.filters import KIND_GROUPS, QuestionFilter
 from .models import (
     CollectionItem,
+    Option,
     Question,
     QuestionTopic,
     QuestionVersion,
@@ -380,71 +381,142 @@ def can_view(viewer_id: uuid.UUID | str | None, question_id: uuid.UUID, *, token
     return False
 
 
+def _resolve_versions(
+    refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]],
+    questions: dict[uuid.UUID, Question],
+    *,
+    prefetch_rubric_steps: bool = False,
+) -> dict[uuid.UUID, QuestionVersion]:
+    """
+    One version per question, in a constant number of queries: the pinned version, else live, else current, else a
+    LIVE row, else the latest. Options, answer key and rubric come with it.
+    """
+    chosen: dict[uuid.UUID, uuid.UUID | None] = {}
+    needs_fallback: set[uuid.UUID] = set()
+    for q_id, v_id in refs:
+        q = questions[q_id]
+        chosen[q_id] = v_id or q.live_version_id or q.current_version_id
+        if not chosen[q_id]:
+            needs_fallback.add(q_id)
+
+    if needs_fallback:
+        best: dict[uuid.UUID, QuestionVersion] = {}
+        for ver in QuestionVersion.objects.filter(question_id__in=needs_fallback).order_by("-version_no"):
+            current = best.get(ver.question_id)
+            is_live = ver.state == QuestionVersion.State.LIVE
+            if current is None or (is_live and current.state != QuestionVersion.State.LIVE):
+                best[ver.question_id] = ver
+        for q_id, ver in best.items():
+            chosen[q_id] = ver.id
+        for q_id in needs_fallback - best.keys():
+            raise ValueError(f"Question {q_id} has no version.")
+
+    prefetches: list[Any] = [Prefetch("options", queryset=Option.objects.order_by("position"))]
+    if prefetch_rubric_steps:
+        prefetches.append("rubric__steps")
+    by_id = {
+        v.id: v
+        for v in QuestionVersion.objects.filter(id__in={v for v in chosen.values() if v})
+        .select_related("question", "answer_key", "rubric")
+        .prefetch_related(*prefetches)
+    }
+
+    out: dict[uuid.UUID, QuestionVersion] = {}
+    for q_id, v_id in chosen.items():
+        version = by_id.get(v_id) if v_id else None
+        if version is None or version.question_id != q_id:
+            raise QuestionVersion.DoesNotExist(f"QuestionVersion {v_id} does not exist for question {q_id}.")
+        out[q_id] = version
+    return out
+
+
+def get_playables(
+    refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]],
+) -> dict[uuid.UUID, PlayableQuestion]:
+    """
+    PlayableQuestion payloads for many questions in a constant number of queries.
+    CRITICAL: Never contains is_correct, numeric_value, tolerance, explanation, or rubric!
+    """
+    refs = list(refs)
+    if not refs:
+        return {}
+
+    q_ids = {q_id for q_id, _ in refs}
+    questions = Question.objects.select_related("parent").in_bulk(q_ids)
+    missing = q_ids - questions.keys()
+    if missing:
+        raise Question.DoesNotExist(f"Question {next(iter(missing))} does not exist.")
+
+    versions = _resolve_versions(refs, questions)
+
+    # Parent (shared passage) stems, one query for all of them.
+    parent_version_ids = {
+        q.parent.live_version_id or q.parent.current_version_id for q in questions.values() if q.parent_id and q.parent
+    } - {None}
+    parent_versions = QuestionVersion.objects.in_bulk(parent_version_ids)
+
+    res: dict[uuid.UUID, PlayableQuestion] = {}
+    for q_id in q_ids:
+        question = questions[q_id]
+        version = versions[q_id]
+
+        playable_opts = [
+            PlayableOption(id=opt.id, body_md=opt.body_md, pinned=opt.pinned) for opt in version.options.all()
+        ]
+
+        numeric_info = None
+        if question.kind == Question.Kind.NUMERIC:
+            key = getattr(version, "answer_key", None)
+            if key:
+                numeric_info = {"unit": key.unit, "unit_required": key.unit_required}
+
+        group_info = None
+        if question.parent:
+            p_ver = parent_versions.get(question.parent.live_version_id or question.parent.current_version_id)
+            group_info = {
+                "question_id": question.parent.id,
+                "stem_md": p_ver.stem_md if p_ver else "",
+                "media": [],
+            }
+
+        labels = {
+            "source_kind": question.source_kind,
+            "source_name": question.source_name,
+            "source_ref": question.source_ref,
+            "source_year": question.source_year,
+            "source_term_code": question.source_term_code,
+            "difficulty": question.difficulty,
+            "nature": question.nature,
+            "verified": question.is_verified,
+            "ownership": question.ownership,
+        }
+
+        res[q_id] = PlayableQuestion(
+            question_id=question.id,
+            version_id=version.id,
+            version_no=version.version_no,
+            kind=question.kind,
+            position=question.position,
+            group=group_info,
+            stem_md=version.stem_md,
+            marks=version.marks,
+            negative_applies=version.negative_marks is not None,
+            suggested_seconds=version.suggested_seconds,
+            options=playable_opts,
+            numeric=numeric_info,
+            labels=labels,
+            media=[],
+            needs_attention=question.needs_attention,
+        )
+    return res
+
+
 def get_playable(question_id: uuid.UUID, version_id: uuid.UUID | None = None) -> PlayableQuestion:
     """
     Returns PlayableQuestion payload.
     CRITICAL: Never contains is_correct, numeric_value, tolerance, explanation, or rubric!
     """
-    question = Question.objects.select_related("parent").get(id=question_id)
-    if version_id:
-        version = QuestionVersion.objects.get(id=version_id, question=question)
-    else:
-        version = (
-            question.live_version
-            or question.current_version
-            or question.versions.filter(state=QuestionVersion.State.LIVE).first()
-            or question.versions.order_by("-version_no").first()
-        )
-        if not version:
-            raise ValueError(f"Question {question_id} has no version.")
-
-    options = list(version.options.order_by("position").values("id", "body_md", "pinned"))
-    playable_opts = [PlayableOption(id=opt["id"], body_md=opt["body_md"], pinned=opt["pinned"]) for opt in options]
-
-    numeric_info = None
-    if question.kind == Question.Kind.NUMERIC:
-        key = getattr(version, "answer_key", None)
-        if key:
-            numeric_info = {"unit": key.unit, "unit_required": key.unit_required}
-
-    group_info = None
-    if question.parent:
-        p_ver = question.parent.live_version or question.parent.current_version
-        group_info = {
-            "question_id": question.parent.id,
-            "stem_md": p_ver.stem_md if p_ver else "",
-            "media": [],
-        }
-
-    labels = {
-        "source_kind": question.source_kind,
-        "source_name": question.source_name,
-        "source_ref": question.source_ref,
-        "source_year": question.source_year,
-        "source_term_code": question.source_term_code,
-        "difficulty": question.difficulty,
-        "nature": question.nature,
-        "verified": question.is_verified,
-        "ownership": question.ownership,
-    }
-
-    return PlayableQuestion(
-        question_id=question.id,
-        version_id=version.id,
-        version_no=version.version_no,
-        kind=question.kind,
-        position=question.position,
-        group=group_info,
-        stem_md=version.stem_md,
-        marks=version.marks,
-        negative_applies=version.negative_marks is not None,
-        suggested_seconds=version.suggested_seconds,
-        options=playable_opts,
-        numeric=numeric_info,
-        labels=labels,
-        media=[],
-        needs_attention=question.needs_attention,
-    )
+    return get_playables([(question_id, version_id)])[question_id]
 
 
 def get_gradables(refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]]) -> dict[uuid.UUID, GradableQuestion]:
@@ -554,9 +626,7 @@ def get_gradables(refs: Sequence[tuple[uuid.UUID, uuid.UUID | None]]) -> dict[uu
     return res
 
 
-def get_rubric(version_id: uuid.UUID) -> dict[str, Any]:
-    """Returns Rubric details for a question version."""
-    rubric = Rubric.objects.prefetch_related("steps").get(version_id=version_id)
+def _rubric_dict(rubric: Rubric) -> dict[str, Any]:
     steps = [
         {
             "id": step.id,
@@ -580,59 +650,94 @@ def get_rubric(version_id: uuid.UUID) -> dict[str, Any]:
     }
 
 
-def get_review_view(question_id: uuid.UUID, version_id: uuid.UUID) -> ReviewQuestion:
-    """Returns ReviewQuestion payload with answers, explanations, and option feedback."""
-    version = QuestionVersion.objects.select_related("question").get(id=version_id, question_id=question_id)
-    q = version.question
+def get_rubric(version_id: uuid.UUID) -> dict[str, Any]:
+    """Returns Rubric details for a question version."""
+    return _rubric_dict(Rubric.objects.prefetch_related("steps").get(version_id=version_id))
 
-    opts = list(version.options.order_by("position").values("id", "body_md", "is_correct", "feedback_md", "pinned"))
-    correct_opt_ids = [opt["id"] for opt in opts if opt["is_correct"]]
 
-    num_key = None
-    if hasattr(version, "answer_key"):
-        k = version.answer_key
-        num_key = {
-            "value": k.numeric_value,
-            "tolerance_abs": k.tolerance_abs,
-            "tolerance_rel": k.tolerance_rel,
-            "unit": k.unit,
+def get_review_views(
+    refs: Sequence[tuple[uuid.UUID, uuid.UUID]],
+) -> dict[uuid.UUID, ReviewQuestion]:
+    """ReviewQuestion payloads (answers, explanations, option feedback) for many questions in constant queries."""
+    refs = list(refs)
+    if not refs:
+        return {}
+
+    pinned: list[tuple[uuid.UUID, uuid.UUID | None]] = list(refs)
+    questions = Question.objects.in_bulk({q_id for q_id, _ in pinned})
+    missing = {q_id for q_id, _ in pinned} - questions.keys()
+    if missing:
+        raise QuestionVersion.DoesNotExist(f"Question {next(iter(missing))} does not exist.")
+    versions = _resolve_versions(pinned, questions, prefetch_rubric_steps=True)
+
+    res: dict[uuid.UUID, ReviewQuestion] = {}
+    for q_id, version in versions.items():
+        q = questions[q_id]
+        all_options = list(version.options.all())
+        opts = [
+            {
+                "id": o.id,
+                "body_md": o.body_md,
+                "is_correct": o.is_correct,
+                "feedback_md": o.feedback_md,
+                "pinned": o.pinned,
+            }
+            for o in all_options
+        ]
+        correct_opt_ids = [o["id"] for o in opts if o["is_correct"]]
+
+        num_key = None
+        k = getattr(version, "answer_key", None)
+        if k:
+            num_key = {
+                "value": k.numeric_value,
+                "tolerance_abs": k.tolerance_abs,
+                "tolerance_rel": k.tolerance_rel,
+                "unit": k.unit,
+            }
+
+        rubric = getattr(version, "rubric", None)
+        rubric_info = _rubric_dict(rubric) if rubric else None
+        newer_ver = q.live_version_id and q.live_version_id != version.id
+
+        labels = {
+            "source_kind": q.source_kind,
+            "source_name": q.source_name,
+            "source_ref": q.source_ref,
+            "source_year": q.source_year,
+            "source_term_code": q.source_term_code,
+            "difficulty": q.difficulty,
+            "nature": q.nature,
+            "verified": q.is_verified,
         }
 
-    rubric_info = get_rubric(version.id) if hasattr(version, "rubric") else None
-    newer_ver = q.live_version_id and q.live_version_id != version.id
+        res[q_id] = ReviewQuestion(
+            question_id=q.id,
+            version_id=version.id,
+            version_no=version.version_no,
+            kind=q.kind,
+            position=q.position,
+            stem_md=version.stem_md,
+            marks=version.marks,
+            negative_marks=version.negative_marks,
+            suggested_seconds=version.suggested_seconds,
+            options=opts,
+            correct_option_ids=correct_opt_ids,
+            numeric_key=num_key,
+            explanation_md=version.explanation_md,
+            explanation_source=version.explanation_source,
+            reference_labels=version.reference_labels,
+            rubric=rubric_info,
+            labels=labels,
+            media=[],
+            newer_version_available=bool(newer_ver),
+        )
+    return res
 
-    labels = {
-        "source_kind": q.source_kind,
-        "source_name": q.source_name,
-        "source_ref": q.source_ref,
-        "source_year": q.source_year,
-        "source_term_code": q.source_term_code,
-        "difficulty": q.difficulty,
-        "nature": q.nature,
-        "verified": q.is_verified,
-    }
 
-    return ReviewQuestion(
-        question_id=q.id,
-        version_id=version.id,
-        version_no=version.version_no,
-        kind=q.kind,
-        position=q.position,
-        stem_md=version.stem_md,
-        marks=version.marks,
-        negative_marks=version.negative_marks,
-        suggested_seconds=version.suggested_seconds,
-        options=opts,
-        correct_option_ids=correct_opt_ids,
-        numeric_key=num_key,
-        explanation_md=version.explanation_md,
-        explanation_source=version.explanation_source,
-        reference_labels=version.reference_labels,
-        rubric=rubric_info,
-        labels=labels,
-        media=[],
-        newer_version_available=bool(newer_ver),
-    )
+def get_review_view(question_id: uuid.UUID, version_id: uuid.UUID) -> ReviewQuestion:
+    """Returns ReviewQuestion payload with answers, explanations, and option feedback."""
+    return get_review_views([(question_id, version_id)])[question_id]
 
 
 def taxonomy_of(question_ids: Sequence[uuid.UUID]) -> dict[uuid.UUID, list[Mapping]]:

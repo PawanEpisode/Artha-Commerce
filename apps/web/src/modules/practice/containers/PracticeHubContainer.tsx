@@ -58,8 +58,10 @@ export function PracticeHubContainer() {
     )
   }
 
-  const openSessions = sessions.filter((s) => s.status === 'open' || s.status === 'paused')
-  const completedSessions = sessions.filter((s) => s.status === 'submitted')
+  const openSessions = sessions.filter(
+    (s) => s.status === 'created' || s.status === 'in_progress' || s.status === 'paused',
+  )
+  const completedSessions = sessions.filter((s) => s.status === 'submitted' || s.status === 'auto_submitted')
 
   return (
     <Page>

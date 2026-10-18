@@ -8,7 +8,7 @@ import random
 import uuid
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 from typing import Any, Literal
 from zoneinfo import ZoneInfo
@@ -31,6 +31,7 @@ from .domain.scoring import (
 from .domain.session import (
     calculate_deadline,
     feedback_policy_for_mode,
+    pause_allowed,
     validate_transition,
 )
 from .models import (
@@ -367,6 +368,53 @@ def create_session_from_items(
     )
 
 
+# A student's own submit or last answer can land a moment after the deadline; this keeps that race from losing work.
+EXPIRY_GRACE_SECONDS = 5
+
+
+def _is_overdue(session: Session, now: datetime) -> bool:
+    return (
+        session.status == Session.Status.IN_PROGRESS
+        and session.deadline_at is not None
+        and now > session.deadline_at + timedelta(seconds=EXPIRY_GRACE_SECONDS)
+    )
+
+
+def _expire_if_overdue(session: Session) -> bool:
+    """Auto-submit a timed session whose deadline has passed. True when this call closed it."""
+    if not _is_overdue(session, timezone.now()):
+        return False
+    submit_session(user_id=session.user_id, session_id=session.id, auto=True)
+    return True
+
+
+def expire_if_due(user_id: uuid.UUID, session_id: uuid.UUID) -> bool:
+    """Close one session if its time ran out. Safe to call on every read."""
+    session = Session.objects.filter(id=session_id, user_id=user_id).first()
+    return _expire_if_overdue(session) if session else False
+
+
+def expire_overdue_for_user(user_id: uuid.UUID) -> int:
+    """Close this student's timed sessions that ran out while the tab was closed. Returns how many."""
+    now = timezone.now()
+    overdue = Session.objects.filter(
+        user_id=user_id,
+        status=Session.Status.IN_PROGRESS,
+        deadline_at__lt=now - timedelta(seconds=EXPIRY_GRACE_SECONDS),
+    )
+    return sum(1 for session in overdue if _expire_if_overdue(session))
+
+
+def expire_overdue_sessions(limit: int = 500) -> int:
+    """Sweep for every student, for a scheduled job: sessions nobody opened again still get closed and scored."""
+    now = timezone.now()
+    overdue = Session.objects.filter(
+        status=Session.Status.IN_PROGRESS,
+        deadline_at__lt=now - timedelta(seconds=EXPIRY_GRACE_SECONDS),
+    ).order_by("deadline_at")[:limit]
+    return sum(1 for session in overdue if _expire_if_overdue(session))
+
+
 def save_answer(
     user_id: uuid.UUID | None = None,
     session_id: uuid.UUID | None = None,
@@ -392,6 +440,8 @@ def save_answer(
 
     if session.status in (Session.Status.SUBMITTED, Session.Status.AUTO_SUBMITTED, Session.Status.ABANDONED):
         raise SessionClosed(f"Cannot save answer on a {session.status} session.")
+    if _expire_if_overdue(session):
+        raise SessionClosed("Time is up. The session was submitted automatically.")
 
     now = timezone.now()
     if session.status == Session.Status.CREATED:
@@ -523,6 +573,8 @@ def check_answer(
 
     if session.status in (Session.Status.SUBMITTED, Session.Status.AUTO_SUBMITTED, Session.Status.ABANDONED):
         raise SessionClosed(f"Session is {session.status}.")
+    if _expire_if_overdue(session):
+        raise SessionClosed("Time is up. The session was submitted automatically.")
 
     if session.feedback_policy != Session.FeedbackPolicy.INSTANT:
         raise InstantFeedbackDisabled("Instant check is only available for instant feedback sessions.")
@@ -604,6 +656,32 @@ def check_answer(
     )
 
 
+def start_session(
+    user_id: uuid.UUID | None = None,
+    session_id: uuid.UUID | None = None,
+    **kwargs: Any,
+) -> None:
+    """
+    Starts the clock when the student opens the session, not when she first answers (a timed paper must not give
+    free reading time). Idempotent and race-safe: only a session still `created` changes, whoever asks first.
+    """
+    user_id = user_id or kwargs.get("user_id")
+    session_id = session_id or kwargs.get("session_id")
+    session = Session.objects.filter(id=session_id, user_id=user_id).first()
+    if not session:
+        raise SessionNotFound("Session not found.")
+    if session.status != Session.Status.CREATED:
+        return
+    now = timezone.now()
+    Session.objects.filter(id=session.id, status=Session.Status.CREATED).update(
+        status=Session.Status.IN_PROGRESS,
+        started_at=now,
+        deadline_at=calculate_deadline(now, session.time_limit_seconds, session.paused_total_seconds),
+        last_active_at=now,
+        updated_at=now,
+    )
+
+
 def pause_session(
     user_id: uuid.UUID | None = None,
     session_id: uuid.UUID | None = None,
@@ -614,15 +692,25 @@ def pause_session(
     session = Session.objects.filter(id=session_id, user_id=user_id).first()
     if not session:
         raise SessionNotFound("Session not found.")
-    if not (session.spec or {}).get("allow_pause", True):
+    if _expire_if_overdue(session):
+        raise SessionClosed("Time is up. The session was submitted automatically.")
+    if not pause_allowed(session.mode, session.spec):
         raise PauseNotAllowed("Pausing is not allowed for this session.")
+    if session.status == Session.Status.PAUSED:
+        return  # a double tap, or a second tab: already where the student wanted it
+    now = timezone.now()
+    if session.status == Session.Status.CREATED:
+        # Never answered, so the clock has not started. Pausing starts it and stops it at once.
+        session.status = Session.Status.IN_PROGRESS
+        session.started_at = now
+        session.deadline_at = calculate_deadline(now, session.time_limit_seconds, session.paused_total_seconds)
     try:
         validate_transition(session.status, Session.Status.PAUSED)
     except Exception as e:
         raise SessionClosed(str(e)) from e
     session.status = Session.Status.PAUSED
-    session.paused_at = timezone.now()
-    session.save(update_fields=["status", "paused_at", "updated_at"])
+    session.paused_at = now
+    session.save(update_fields=["status", "started_at", "deadline_at", "paused_at", "updated_at"])
 
 
 def resume_session(

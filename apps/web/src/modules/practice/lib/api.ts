@@ -8,6 +8,7 @@ import type {
   CreateSessionParams,
   MistakeReason,
   MistakeRow,
+  SessionClockView,
   SessionRow,
   SessionView,
 } from './types'
@@ -100,12 +101,23 @@ export async function setMistakeReason(
   })
 }
 
-export async function pauseSession(sessionId: string): Promise<SessionView> {
-  return await api<SessionView>(`/practice/sessions/${sessionId}/pause/`, { method: 'POST' })
+/** Starts the session clock (idempotent); answers the clock fields so the player need not refetch the session. */
+export async function startSession(sessionId: string): Promise<SessionClockView> {
+  return await api<SessionClockView>(`/practice/sessions/${sessionId}/start/`, { method: 'POST' })
 }
 
-export async function resumeSession(sessionId: string): Promise<SessionView> {
-  return await api<SessionView>(`/practice/sessions/${sessionId}/resume/`, { method: 'POST' })
+/** The student's running or paused session, or null. Small enough to poll. */
+export async function getActiveSession(): Promise<SessionClockView | null> {
+  const res = await api<{ session: SessionClockView | null }>('/practice/sessions/active/')
+  return res.session
+}
+
+export async function pauseSession(sessionId: string): Promise<{ status: string }> {
+  return await api<{ status: string }>(`/practice/sessions/${sessionId}/pause/`, { method: 'POST' })
+}
+
+export async function resumeSession(sessionId: string): Promise<{ status: string }> {
+  return await api<{ status: string }>(`/practice/sessions/${sessionId}/resume/`, { method: 'POST' })
 }
 
 export async function submitSession(sessionId: string): Promise<SessionView> {

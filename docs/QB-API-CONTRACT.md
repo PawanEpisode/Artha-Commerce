@@ -69,6 +69,8 @@ feature_disabled,validation_failed,checks_failed,invalid_operation,not_found
 | POST | `sessions/<uuid:session_id>/answers/<uuid:item_id>/` | Save student answer | `qb_write` |
 | POST | `sessions/<uuid:session_id>/answers/<uuid:item_id>/check/` | Instant answer check | `qb_write` |
 | POST | `sessions/<uuid:session_id>/answers/<uuid:item_id>/mistake-reason/` | Tag mistake reason | `qb_write` |
+| GET | `sessions/active/` | The student's running or paused session, for the docked practice timer | `qb_read` |
+| POST | `sessions/<uuid:session_id>/start/` | Start the session clock when the player opens (idempotent) | `qb_write` |
 | POST | `sessions/<uuid:session_id>/pause/` | Pause timed session | `qb_write` |
 | POST | `sessions/<uuid:session_id>/resume/` | Resume paused session | `qb_write` |
 | POST | `sessions/<uuid:session_id>/submit/` | Submit and finalize session | `qb_write` |
@@ -84,7 +86,7 @@ feature_disabled,validation_failed,checks_failed,invalid_operation,not_found
 
 ### Session View Keys
 <!-- contract:practice-session-view-keys -->
-id,mode,title,status,feedback_policy,scoring_profile,question_count,total_marks,time_limit_seconds,deadline_at,score,max_score,score_status,items
+id,mode,title,status,feedback_policy,scoring_profile,question_count,total_marks,time_limit_seconds,started_at,deadline_at,paused_at,paused_total_seconds,server_now,allow_pause,score,max_score,score_status,items
 <!-- /contract:practice-session-view-keys -->
 
 ### Session Item View Keys

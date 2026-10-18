@@ -26,6 +26,11 @@ def validate_transition(current_status: str, target_status: str) -> None:
         raise ValueError(f"Invalid session status transition from '{current_status}' to '{target_status}'.")
 
 
+def pause_allowed(mode: str, spec: dict[str, Any] | None) -> bool:
+    """Exam simulations and sessions created with `allow_pause: false` (timed past papers) cannot be paused."""
+    return mode != "exam" and bool((spec or {}).get("allow_pause", True))
+
+
 def calculate_deadline(
     started_at: datetime | None,
     time_limit_seconds: int | None,

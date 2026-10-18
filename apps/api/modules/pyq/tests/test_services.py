@@ -144,3 +144,50 @@ def test_publish_paper_and_launch_sessions(sample_paper_payload):
     ch_session_res = start_chapter_session(user_id, chapter.id, count=5)
     assert ch_session_res["question_count"] == 2
     assert ch_session_res["mode"] == "chapter_quiz"
+
+
+@pytest.mark.django_db
+def test_timed_paper_without_a_recorded_duration_still_gets_a_clock(sample_paper_payload):
+    from modules.practice.models import Session
+    from modules.pyq.services import DEFAULT_PAPER_DURATION_MINUTES
+
+    editor_id = uuid.uuid4()
+    user_id = uuid.uuid4()
+    paper = import_paper(editor_id, sample_paper_payload).paper
+    PyqPaper.objects.filter(id=paper.id).update(duration_minutes=None)
+
+    timed = start_paper_session(user_id, paper.id, mode="timed")
+    untimed = start_paper_session(user_id, paper.id, mode="untimed", client_id=uuid.uuid4())
+
+    assert Session.objects.get(id=timed["session_id"]).time_limit_seconds == DEFAULT_PAPER_DURATION_MINUTES * 60
+    assert Session.objects.get(id=untimed["session_id"]).time_limit_seconds is None
+
+
+@pytest.mark.django_db
+def test_timed_paper_uses_its_own_duration(sample_paper_payload):
+    from modules.practice.models import Session
+
+    paper = import_paper(uuid.uuid4(), sample_paper_payload).paper
+    PyqPaper.objects.filter(id=paper.id).update(duration_minutes=90)
+
+    timed = start_paper_session(uuid.uuid4(), paper.id, mode="timed")
+
+    assert Session.objects.get(id=timed["session_id"]).time_limit_seconds == 90 * 60
+
+
+@pytest.mark.django_db
+def test_timed_paper_cannot_be_paused_but_untimed_can(sample_paper_payload):
+    from modules.practice import services as practice_services
+    from modules.practice.models import Session
+
+    paper = import_paper(uuid.uuid4(), sample_paper_payload).paper
+    user_id = uuid.uuid4()
+    timed = start_paper_session(user_id, paper.id, mode="timed")
+    untimed = start_paper_session(user_id, paper.id, mode="untimed", client_id=uuid.uuid4())
+
+    with pytest.raises(practice_services.PauseNotAllowed):
+        practice_services.pause_session(user_id=user_id, session_id=timed["session_id"])
+    practice_services.pause_session(user_id=user_id, session_id=untimed["session_id"])
+
+    assert Session.objects.get(id=timed["session_id"]).status != Session.Status.PAUSED
+    assert Session.objects.get(id=untimed["session_id"]).status == Session.Status.PAUSED

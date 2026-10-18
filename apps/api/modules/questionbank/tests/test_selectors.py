@@ -8,7 +8,10 @@ from modules.questionbank.selectors import (
     count_matching,
     facets,
     get_gradables,
+    get_playable,
+    get_playables,
     get_review_view,
+    get_review_views,
     list_published,
     search_ids,
 )
@@ -170,3 +173,55 @@ def test_get_gradables_uses_constant_queries(django_assert_max_num_queries):
 
     assert len(gradables) == 12
     assert all(len(g.correct_option_ids) == 1 and len(g.options) == 2 for g in gradables.values())
+
+
+def _publish_questions(n: int) -> list[tuple]:
+    refs = []
+    for i in range(n):
+        payload = {
+            "kind": "mcq_single",
+            "stem_md": f"Question {i}?",
+            "explanation_md": "Because.",
+            "options": [
+                {"body_md": "Right", "is_correct": True, "feedback_md": "Yes"},
+                {"body_md": "Wrong", "is_correct": False, "feedback_md": "No"},
+            ],
+            "marks": Decimal("1.0"),
+        }
+        q = create_draft(USER, payload)
+        ver = publish_version(EDITOR, q.current_version.id, visibility="public")
+        refs.append((q.id, ver.id))
+    return refs
+
+
+def test_get_playables_uses_constant_queries_and_never_leaks_answers(django_assert_max_num_queries):
+    refs = _publish_questions(12)
+    refs.append((refs[0][0], None))  # unpinned ref resolves through the live version
+
+    with django_assert_max_num_queries(6):
+        playables = get_playables(refs)
+
+    assert len(playables) == 12
+    for (q_id, v_id), _ in zip(refs[:12], range(12), strict=True):
+        p = playables[q_id]
+        assert p.version_id == v_id
+        assert [o.body_md for o in p.options] == ["Right", "Wrong"]  # in author order
+        assert not hasattr(p.options[0], "is_correct")
+    # The single-question form is the batch with one entry.
+    assert get_playable(refs[3][0], refs[3][1]).stem_md == "Question 3?"
+
+
+def test_get_review_views_uses_constant_queries(django_assert_max_num_queries):
+    refs = _publish_questions(12)
+
+    with django_assert_max_num_queries(7):
+        reviews = get_review_views(refs)
+
+    assert len(reviews) == 12
+    for q_id, v_id in refs:
+        r = reviews[q_id]
+        assert r.version_id == v_id
+        assert len(r.options) == 2
+        assert [o["is_correct"] for o in r.options] == [True, False]
+        assert r.correct_option_ids == [r.options[0]["id"]]
+        assert r.explanation_md == "Because."

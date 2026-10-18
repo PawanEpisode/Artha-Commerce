@@ -1,4 +1,5 @@
 export { BookmarksContainer } from './containers/BookmarksContainer'
+export { LivePracticeTimer } from './containers/LivePracticeTimer'
 export { MistakesContainer } from './containers/MistakesContainer'
 export { PracticeBuilderContainer } from './containers/PracticeBuilderContainer'
 export { PracticeHubContainer } from './containers/PracticeHubContainer'
@@ -7,6 +8,7 @@ export { PracticeReviewContainer } from './containers/PracticeReviewContainer'
 export {
   checkAnswer,
   createSession,
+  getActiveSession,
   getBookmarks,
   getChapterProgressBatch,
   getMistakes,
@@ -19,9 +21,11 @@ export {
   saveAnswer,
   setMistakeReason,
   setQuestionState,
+  startSession,
   submitSession,
   syncPracticeQueue,
 } from './lib/api'
+export { practiceKeys } from './lib/keys'
 export type {
   AnswerResult,
   AnswerSavePayload,

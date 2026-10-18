@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export type SessionMode = 'untimed' | 'timed' | 'chapter_quiz' | 'revision' | 'custom_test' | 'exam'
-export type SessionStatus = 'open' | 'paused' | 'submitted' | 'abandoned'
+export type SessionStatus = 'created' | 'in_progress' | 'paused' | 'submitted' | 'auto_submitted' | 'abandoned'
 export type FeedbackPolicy = 'instant' | 'after_section' | 'at_end' | 'never_until_submit'
 export type ScoringProfile = 'practice' | 'official'
 export type AnswerResult = 'correct' | 'incorrect' | 'skipped' | 'partial'
@@ -46,11 +46,33 @@ export interface SessionView {
   question_count: number
   total_marks: number | string
   time_limit_seconds: number | null
+  started_at: string | null
   deadline_at: string | null
+  paused_at: string | null
+  paused_total_seconds: number
+  /** The server's time when this was sent; the clock reads time from it, not from the device. */
+  server_now: string
+  /** False for exams and timed past papers: the clock does not stop. */
+  allow_pause: boolean
   score: number | string | null
   max_score: number | string | null
   score_status: string
   items: SessionItemView[]
+}
+
+/** The few fields a clock needs about a session (what `start/` and `active/` answer). */
+export interface SessionClockView {
+  id: string
+  title: string
+  mode: SessionMode
+  status: SessionStatus
+  question_count: number
+  time_limit_seconds: number | null
+  started_at: string | null
+  deadline_at: string | null
+  paused_at: string | null
+  paused_total_seconds: number
+  server_now: string
 }
 
 export interface SessionRow {

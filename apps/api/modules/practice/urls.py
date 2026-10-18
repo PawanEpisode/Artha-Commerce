@@ -24,6 +24,8 @@ urlpatterns = [
         views.MistakeReasonView.as_view(),
         name="practice-mistake-reason",
     ),
+    path("sessions/active/", views.ActiveSessionView.as_view(), name="practice-active-session"),
+    path("sessions/<uuid:session_id>/start/", views.StartSessionView.as_view(), name="practice-start-session"),
     path("sessions/<uuid:session_id>/pause/", views.PauseSessionView.as_view(), name="practice-pause-session"),
     path("sessions/<uuid:session_id>/resume/", views.ResumeSessionView.as_view(), name="practice-resume-session"),
     path("sessions/<uuid:session_id>/submit/", views.SubmitSessionView.as_view(), name="practice-submit-session"),

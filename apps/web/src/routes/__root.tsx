@@ -18,6 +18,7 @@ import { ErrorFallback } from '~/modules/layout/ErrorFallback'
 import { NotificationsBoot } from '~/modules/notifications'
 import { ObservabilityProvider } from '~/modules/observability'
 import { PersonalizedPostAuth } from '~/modules/personalization'
+import { LivePracticeTimer } from '~/modules/practice'
 import appCss from '~/styles.css?url'
 
 // Runs before first paint so there is no theme flash (Reading is the default; System resolves by time of day).
@@ -62,6 +63,7 @@ function RootComponent() {
                     <Outlet />
                   </SiteShell>
                   <LiveMiniTimer />
+                  <LivePracticeTimer />
                 </PopOutProvider>
                 <NotificationsBoot />
                 {/* The one toaster for the whole app. Modules only call `toast.*` / their own `notify`. */}

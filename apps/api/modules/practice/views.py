@@ -58,6 +58,7 @@ class SessionListCreateView(PracticeBaseView):
         mode_filter = request.query_params.get("mode")
         origin_filter = request.query_params.get("origin")
 
+        services.expire_overdue_for_user(request.user.id)
         page = selectors.list_sessions(
             user_id=request.user.id,
             cursor=cursor,
@@ -137,6 +138,7 @@ class SessionDetailView(PracticeBaseView):
     throttle_scope = "qb_read"
 
     def get(self, request, session_id: uuid.UUID):
+        services.expire_if_due(request.user.id, session_id)
         try:
             view = selectors.get_session(request.user.id, session_id)
         except ValueError:
@@ -218,6 +220,27 @@ class CheckAnswerView(PracticeBaseView):
             return Response({"error": {"code": "invalid_item", "detail": str(e)}}, status=status.HTTP_400_BAD_REQUEST)
 
         return Response(dataclasses.asdict(feedback))
+
+
+class StartSessionView(PracticeBaseView):
+    throttle_scope = "qb_write"
+
+    def post(self, request, session_id: uuid.UUID):
+        try:
+            services.start_session(session_id=session_id, user_id=request.user.id)
+            clock = selectors.get_session_clock(request.user.id, session_id)
+        except (services.SessionNotFound, ValueError):
+            raise Http404("Session not found.") from None
+        return Response(dataclasses.asdict(clock))
+
+
+class ActiveSessionView(PracticeBaseView):
+    throttle_scope = "qb_read"
+
+    def get(self, request):
+        services.expire_overdue_for_user(request.user.id)
+        clock = selectors.get_active_session_clock(request.user.id)
+        return Response({"session": dataclasses.asdict(clock) if clock else None})
 
 
 class PauseSessionView(PracticeBaseView):

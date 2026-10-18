@@ -24,6 +24,9 @@ from .domain.importer import SchemaError, validate_paper_payload
 from .domain.marks import validate_marks_tree
 from .models import ChoiceGroup, PaperLink, PaperQuestion, PyqPaper
 
+# A timed run of a paper that does not record its own duration. The paper page tells students the same number.
+DEFAULT_PAPER_DURATION_MINUTES = 180
+
 
 @dataclass
 class ImportReport:
@@ -425,7 +428,7 @@ def start_paper_session(
     if not items:
         raise ValueError("Paper has no playable questions.")
 
-    time_limit = (paper.duration_minutes * 60) if mode == "timed" and paper.duration_minutes else None
+    time_limit = (paper.duration_minutes or DEFAULT_PAPER_DURATION_MINUTES) * 60 if mode == "timed" else None
 
     session = create_session_from_items(
         user_id=user_id,
@@ -435,6 +438,8 @@ def start_paper_session(
         mode="timed" if mode == "timed" else "untimed",
         title=paper.title,
         time_limit_seconds=time_limit,
+        # A timed paper is the exam: the clock does not stop for the student.
+        config={"allow_pause": False} if mode == "timed" else None,
         feedback_policy="at_end",
         scoring_profile="official",
         client_id=client_id or uuid.uuid4(),

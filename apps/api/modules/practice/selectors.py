@@ -9,6 +9,7 @@ import hashlib
 import uuid
 from collections.abc import Sequence
 from dataclasses import dataclass
+from datetime import timedelta
 from decimal import Decimal
 from typing import Any
 
@@ -17,7 +18,7 @@ from django.utils import timezone
 
 from modules.questionbank import selectors as qb_selectors
 
-from .domain.session import shuffle_options
+from .domain.session import pause_allowed, shuffle_options
 from .models import AttemptAnswer, QuestionState, Session
 
 
@@ -63,7 +64,12 @@ class SessionView:
     question_count: int
     total_marks: Decimal
     time_limit_seconds: int | None
+    started_at: str | None
     deadline_at: str | None
+    paused_at: str | None
+    paused_total_seconds: int
+    server_now: str  # the server's clock, so the student's screen can tell how far its own clock is off
+    allow_pause: bool
     score: Decimal | None
     max_score: Decimal | None
     score_status: str
@@ -113,6 +119,68 @@ class BookmarkRow:
     note: str
 
 
+def _iso(value) -> str | None:
+    return value.isoformat() if value else None
+
+
+# A session nobody has touched for this long is left open, not running: its clock is not offered as live.
+ACTIVE_SESSION_WINDOW = timedelta(hours=12)
+
+
+@dataclass
+class SessionClock:
+    """Just what a clock needs about one session; small enough to poll."""
+
+    id: uuid.UUID
+    title: str
+    mode: str
+    status: str
+    question_count: int
+    time_limit_seconds: int | None
+    started_at: str | None
+    deadline_at: str | None
+    paused_at: str | None
+    paused_total_seconds: int
+    server_now: str
+
+
+def _clock_of(session: Session) -> SessionClock:
+    return SessionClock(
+        id=session.id,
+        title=session.title,
+        mode=session.mode,
+        status=session.status,
+        question_count=session.question_count,
+        time_limit_seconds=session.time_limit_seconds,
+        started_at=_iso(session.started_at),
+        deadline_at=_iso(session.deadline_at),
+        paused_at=_iso(session.paused_at),
+        paused_total_seconds=session.paused_total_seconds,
+        server_now=timezone.now().isoformat(),
+    )
+
+
+def get_session_clock(user_id: uuid.UUID, session_id: uuid.UUID) -> SessionClock:
+    session = Session.objects.filter(id=session_id, user_id=user_id).first()
+    if not session:
+        raise ValueError("Session not found.")
+    return _clock_of(session)
+
+
+def get_active_session_clock(user_id: uuid.UUID) -> SessionClock | None:
+    """The student's most recently used running or paused session, if she touched it lately."""
+    session = (
+        Session.objects.filter(
+            user_id=user_id,
+            status__in=[Session.Status.IN_PROGRESS, Session.Status.PAUSED],
+            last_active_at__gte=timezone.now() - ACTIVE_SESSION_WINDOW,
+        )
+        .order_by("-last_active_at")
+        .first()
+    )
+    return _clock_of(session) if session else None
+
+
 def get_session(user_id: uuid.UUID, session_id: uuid.UUID) -> SessionView:
     """
     Retrieve session and its items.
@@ -127,10 +195,19 @@ def get_session(user_id: uuid.UUID, session_id: uuid.UUID) -> SessionView:
     answers = list(AttemptAnswer.objects.filter(session_id=session_id, user_id=user_id).order_by("position"))
 
     # Fetch playable or review questions
+    # One batched read for the whole session. A per-question lookup here timed out long sessions on a remote database.
+    refs = [(ans.question_id, ans.question_version_id) for ans in answers]
+    if is_submitted:
+        review_by_q = qb_selectors.get_review_views(refs)
+        playable_by_q: dict[uuid.UUID, Any] = {}
+    else:
+        review_by_q = {}
+        playable_by_q = qb_selectors.get_playables(refs)
+
     items: list[SessionItemView] = []
     for ans in answers:
         if is_submitted:
-            rev_q = qb_selectors.get_review_view(ans.question_id, ans.question_version_id)
+            rev_q = review_by_q[ans.question_id]
             # Full review data
             shuffled_opts = shuffle_options(
                 [
@@ -169,7 +246,7 @@ def get_session(user_id: uuid.UUID, session_id: uuid.UUID) -> SessionView:
             )
         else:
             # PLAYABLE: NO KEYS, NO EXPLANATIONS
-            playable = qb_selectors.get_playable(ans.question_id, version_id=ans.question_version_id)
+            playable = playable_by_q[ans.question_id]
             shuffled_opts = shuffle_options(
                 [
                     {
@@ -215,7 +292,12 @@ def get_session(user_id: uuid.UUID, session_id: uuid.UUID) -> SessionView:
         question_count=session.question_count,
         total_marks=session.total_marks,
         time_limit_seconds=session.time_limit_seconds,
-        deadline_at=session.deadline_at.isoformat() if session.deadline_at else None,
+        started_at=_iso(session.started_at),
+        deadline_at=_iso(session.deadline_at),
+        paused_at=_iso(session.paused_at),
+        paused_total_seconds=session.paused_total_seconds,
+        server_now=timezone.now().isoformat(),
+        allow_pause=pause_allowed(session.mode, session.spec),
         score=session.score,
         max_score=session.max_score,
         score_status=session.score_status,
