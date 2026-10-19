@@ -115,8 +115,19 @@ class ChapterStatsView(APIView):
     permission_classes = [IsAuthenticated, PaperAnalysisFlag]
 
     def get(self, request, subject_key: str) -> Response:
-        subject = get_object_or_404(Subject, key=subject_key)
+        from modules.coverage.selectors import exam_context
+
+        ctx = exam_context(request.user.id)
+        subject = None
+        if ctx and ctx.scheme_id:
+            subject = Subject.objects.filter(scheme_id=ctx.scheme_id, key=subject_key).first()
+        if not subject:
+            subject = Subject.objects.filter(key=subject_key).first()
+
         window = int(request.query_params.get("window", 6))
+        if not subject:
+            return Response({"subject_key": subject_key, "window": window, "chapters": []})
+
         stats = chapter_stats(subject.id, window=window)
         return Response({"subject_key": subject_key, "window": window, "chapters": stats})
 
@@ -125,8 +136,26 @@ class PatternsView(APIView):
     permission_classes = [IsAuthenticated, PaperAnalysisFlag]
 
     def get(self, request, subject_key: str) -> Response:
-        subject = get_object_or_404(Subject, key=subject_key)
+        from modules.coverage.selectors import exam_context
+
+        ctx = exam_context(request.user.id)
+        subject = None
+        if ctx and ctx.scheme_id:
+            subject = Subject.objects.filter(scheme_id=ctx.scheme_id, key=subject_key).first()
+        if not subject:
+            subject = Subject.objects.filter(key=subject_key).first()
+
         window = int(request.query_params.get("window", 6))
+        if not subject:
+            return Response({
+                "papers_considered": 0,
+                "avg_total_marks": 0.0,
+                "avg_attemptable_marks": 0.0,
+                "avg_optional_marks": 0.0,
+                "formats": {},
+                "sections": [],
+            })
+
         pat = patterns(subject.id, window=window)
         return Response(pat)
 
@@ -135,8 +164,10 @@ class ChapterHistoryView(APIView):
     permission_classes = [IsAuthenticated, PaperAnalysisFlag]
 
     def get(self, request, chapter_key: str) -> Response:
-        chapter = get_object_or_404(Chapter, key=chapter_key)
+        chapter = Chapter.objects.filter(key=chapter_key).first()
         window = int(request.query_params.get("window", 12))
+        if not chapter:
+            return Response({"chapter_key": chapter_key, "history": []})
         history = chapter_history(chapter.id, window=window)
         return Response({"chapter_key": chapter_key, "history": history})
 

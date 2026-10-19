@@ -71,7 +71,14 @@ def list_papers(
     status: str = "published",
     user_id: uuid.UUID | None = None,
 ) -> list[dict[str, Any]]:
-    """Lists published papers with filter parameters and user attempt count overlay."""
+    if user_id and (not course_code or not level_code):
+        from modules.coverage import selectors as coverage_selectors
+
+        summary = coverage_selectors.course_summary(user_id)
+        if summary:
+            course_code = course_code or summary.course_code
+            level_code = level_code or summary.level_code
+
     qs = PyqPaper.objects.select_related("course", "level").filter(status=status)
 
     if course_code:

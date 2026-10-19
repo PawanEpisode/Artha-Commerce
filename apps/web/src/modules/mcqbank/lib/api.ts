@@ -47,6 +47,8 @@ export async function getChapterDetail(
 
 export async function listMcqSets(filter: McqFilter = {}): Promise<McqSetCard[]> {
   const query = new URLSearchParams()
+  if (filter.course) query.set('course', filter.course)
+  if (filter.level) query.set('level', filter.level)
   if (filter.subject) query.set('subject', filter.subject)
   if (filter.chapter) query.set('chapter', filter.chapter)
   if (filter.kind) query.set('kind', filter.kind)

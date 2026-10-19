@@ -14,7 +14,7 @@ Purpose: one place that captures **exactly what was written**, organises it as f
 1. Terms and hierarchy
 2. Master flowchart
 3. Your notes, page by page (transcription as flowcharts)
-4. Main pointers with sub-pointers (F-01 to F-16)
+4. Main pointers with sub-pointers (F-01 to F-18)
 5. Cross-cutting systems (X-01 to X-05)
 6. Extra features we recommend
 7. Risks to decide on early
@@ -506,6 +506,23 @@ Personalization
  └─▶ [ADD] Later: Google photo import, per-subject targets, avatars visible to mentors (needs moderation and consent first)
 ```
 
+### F-18 Level Transition and Student Progression Engine  `[ADD]`
+
+> Detailed in `prd/F-18-level-transition-and-student-progression.md` and `erd/F-18-level-transition-and-student-progression.md`.
+
+```
+Level Transition & Progression
+ ├─▶ [NOTE] Contextual term-result prompt: ask the student if they cleared the level or have exemptions
+ ├─▶ [NOTE] Full level transition: e.g. CMA/CA Intermediate cleared -> transition to Final; archive prior syllabus, provision new syllabus tree
+ ├─▶ [NOTE] Group clearance: e.g. cleared Group 1 -> exclude Group 1 papers from active schedule, focus 100% bandwidth on Group 2
+ ├─▶ [NOTE] Paper exemptions (60+ Marks Rule): record marks, compute term validity (3-term rule or permanent 50% rule), zero remaining study hours
+ ├─▶ [NOTE] Practical training / Articleship mode: capture firm details, reduce daily study time (e.g. 2 hrs weekday / 6 hrs weekend), study pause mode during statutory audit, exam leave date
+ ├─▶ [NOTE] Past Level Vault: preserve all prior notes, PDF drawings, flashcards and test analytics in read-only mode for cross-referencing
+ ├─▶ [ADD] Strict cross-module scoping: Question Bank, MCQ Bank, PYQs, Recall decks, and Today planner strictly adhere only to active enrolled level and pending papers
+ ├─▶ [ADD] Scheme migration: map paper credits across syllabus updates (e.g. 2016 scheme to 2022 scheme)
+ └─▶ [ADD] 48-hour transition rollback from Settings to recover from accidental clicks
+```
+
 ---
 
 ## 5. Cross-cutting systems
@@ -647,6 +664,7 @@ X-03 Gamification, X-02 Context Agent, payments, mentor mode, WhatsApp channel
 | 18 | **F-16 Personalization, Onboarding, Profile and Workspace Home** | `prd/F-16-personalization-onboarding-profile.md` | `erd/F-16-personalization-onboarding-profile.md` | written (draft for review, 6 Oct 2026); **build before the practice engine** (slices S1 to S14) |
 | 19 | X-01 Notifications, X-03 Gamification | | | next to write |
 | 20 | **F-17 AI Tutor and Context Agent** (supersedes X-02) | `prd/F-17-ai-tutor-and-context-agent.md` | `erd/F-17-ai-tutor-and-context-agent.md` | written (draft for review, 11 Oct 2026); vendors Anam, Deepgram, Cartesia assessed in PRD section 14; **umbrella since 15 Oct 2026**, children F-17.1 Agent platform, F-17.2 Knowledge bases, F-17.3 Study blocks, F-17.4 Admin console, F-17.5 Widget, nudges, localisation (`prd/F-17.x-*.md`, `erd/F-17.x-*.md`), architecture `docs/F-17-ARCHITECTURE.md`, build order `docs/F-17-BUILD-WAVES.md` |
+| 21 | **F-18 Level Transition and Student Progression Engine** | `prd/F-18-level-transition-and-student-progression.md` | `erd/F-18-level-transition-and-student-progression.md` | written (draft for review, 19 Oct 2026); result prompts, full pass, group pass, 60+ exemption rules, articleship lifestyle planning & Past Level Vault |
 
 Index, build waves and open decisions: `docs/product/README.md`. Implementation audit: `docs/product/validation/`.
 

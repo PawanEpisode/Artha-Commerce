@@ -1,8 +1,10 @@
-import { Alert, Button, Card, Combobox, Page, PageHeader, toast, toastApiError } from '@artha/design-system'
+import { Alert, Badge, Button, Card, Combobox, Page, PageHeader, toast, toastApiError } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
+import { useChosenSubjects } from '~/modules/coverage'
 import { useFeatureFlag } from '~/modules/observability'
+import { useBootstrap } from '~/modules/personalization'
 
 import { createSession } from '../lib/api'
 import type { FeedbackPolicy, ScoringProfile, SessionMode } from '../lib/types'
@@ -17,22 +19,27 @@ interface PracticeBuilderProps {
   }
 }
 
-const CMA_SUBJECTS = [
-  { value: 'taxation', label: 'Direct & Indirect Taxation (Paper 7)' },
-  { value: 'costing', label: 'Cost Accounting (Paper 8)' },
-  { value: 'law', label: 'Corporate Laws & Compliance (Paper 6)' },
-  { value: 'accounts', label: 'Financial Accounting (Paper 5)' },
-  { value: 'omsm', label: 'Operations & Strategic Management (Paper 9)' },
-  { value: 'cma_final_dt', label: 'Direct Tax Laws & International Taxation (Paper 15)' },
-  { value: 'cma_final_scm', label: 'Strategic Cost Management (Paper 16)' },
-  { value: 'cma_final_sfm', label: 'Strategic Financial Management (Paper 14)' },
-]
-
 export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilderProps) {
   const enabled = useFeatureFlag('question_bank', { strict: true })
   const navigate = useNavigate()
+  const { data: bootstrapData } = useBootstrap()
+  const { subjects: chosenSubjects } = useChosenSubjects()
 
-  const [subject, setSubject] = React.useState(initialSearch.subject ?? 'taxation')
+  const subjectOptions = React.useMemo(() => {
+    return chosenSubjects.map((s) => ({
+      value: s.key,
+      label: s.paper_number ? `Paper ${s.paper_number}: ${s.name}` : s.name,
+    }))
+  }, [chosenSubjects])
+
+  const [subject, setSubject] = React.useState(initialSearch.subject ?? '')
+
+  React.useEffect(() => {
+    if (!subject && subjectOptions.length > 0) {
+      setSubject(subjectOptions[0].value)
+    }
+  }, [subject, subjectOptions])
+
   const [mode, setMode] = React.useState<SessionMode>((initialSearch.mode as SessionMode) || 'untimed')
   const [questionCount, setQuestionCount] = React.useState(Number(initialSearch.n) || 10)
   const [timeLimitMinutes, setTimeLimitMinutes] = React.useState(20)
@@ -100,8 +107,21 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
             Practice
           </Link>
         }
-        title="Build Practice Test"
-        description="Configure a targeted session with custom subjects, timing, and feedback style."
+        title={
+          <span className="inline-flex items-center gap-2">
+            Build Practice Test
+            {bootstrapData?.course ? (
+              <Badge className="font-mono">
+                {bootstrapData.course.course.name} • {bootstrapData.course.level.name}
+              </Badge>
+            ) : null}
+          </span>
+        }
+        description={
+          bootstrapData?.course
+            ? `Configure a targeted practice session for ${bootstrapData.course.course.name} ${bootstrapData.course.level.name} with custom subjects, timing, and feedback style.`
+            : 'Configure a targeted session with custom subjects, timing, and feedback style.'
+        }
       />
 
       <form onSubmit={handleStart} className="space-y-4">
@@ -110,10 +130,14 @@ export function PracticeBuilderContainer({ initialSearch = {} }: PracticeBuilder
           <div className="space-y-1.5">
             <span className="text-sm font-semibold text-foreground">Syllabus Subject</span>
             <Combobox
-              options={CMA_SUBJECTS}
+              options={
+                subjectOptions.length > 0
+                  ? subjectOptions
+                  : [{ value: subject || 'loading', label: 'Loading syllabus subjects...' }]
+              }
               value={subject}
               onChange={(val) => setSubject(val as string)}
-              placeholder="Select CMA subject..."
+              placeholder="Select syllabus subject..."
             />
           </div>
 

@@ -63,8 +63,13 @@ def get_or_create_settings(user_id: UUID) -> Settings:
 def subject_statuses(user_id: UUID, enrollment_id: UUID | None = None) -> list[dict[str, Any]]:
     """
     Returns data readiness and paper availability status for subjects.
+    Scoped to user's enrolled subjects when active context is available.
     """
-    subjects = Subject.objects.filter(is_active=True).select_related("scheme")
+    ctx = exam_context(user_id, enrollment_id)
+    if ctx and ctx.subject_ids:
+        subjects = Subject.objects.filter(id__in=ctx.subject_ids, is_active=True).select_related("scheme")
+    else:
+        subjects = Subject.objects.filter(is_active=True).select_related("scheme")
     results = []
 
     for sub in subjects:
@@ -80,6 +85,7 @@ def subject_statuses(user_id: UUID, enrollment_id: UUID | None = None) -> list[d
             "subject_id": str(sub.id),
             "subject_key": sub.key,
             "name": sub.name,
+            "subject_name": sub.name,
             "data_status": status,
             "ranking": ranking,
             "papers_published": papers_pub,
@@ -225,7 +231,7 @@ def chapter_priority(
     """
     settings = get_or_create_settings(user_id)
     ctx = exam_context(user_id, enrollment_id)
-    days_left = ctx.days_left if ctx else 45
+    days_left = max(0, (ctx.exam_date - timezone.localdate()).days) if (ctx and ctx.exam_date) else 45
 
     # Check active weightset
     active_ws = WeightSet.objects.filter(status=WeightSet.Status.ACTIVE).first()
@@ -307,6 +313,8 @@ def chapter_priority(
 
     # Compute fresh
     subjects_qs = Subject.objects.filter(is_active=True)
+    if ctx and ctx.subject_ids and not subject_key:
+        subjects_qs = subjects_qs.filter(id__in=ctx.subject_ids)
     if subject_key:
         subjects_qs = subjects_qs.filter(key=subject_key)
 

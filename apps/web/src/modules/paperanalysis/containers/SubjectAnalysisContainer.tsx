@@ -2,6 +2,8 @@ import { ConfidenceBadge, Tabs, TabsContent, TabsList, TabsTrigger } from '@arth
 import { Link } from '@tanstack/react-router'
 import * as React from 'react'
 
+import { useChosenSubjects } from '~/modules/coverage'
+
 import { DisclaimerNote } from '../components/DisclaimerNote'
 import { TierGroup } from '../components/TierGroup'
 import { usePriority, useSubjectPatterns, useSubjectStats } from '../hooks/usePaperAnalysis'
@@ -14,6 +16,9 @@ export interface SubjectAnalysisContainerProps {
 export function SubjectAnalysisContainer({ subjectKey, initialTab = 'priority' }: SubjectAnalysisContainerProps) {
   const [tab, setTab] = React.useState(initialTab)
   const [windowSize, setWindowSize] = React.useState(6)
+
+  const { subjects: chosenSubjects } = useChosenSubjects()
+  const chosenSubject = chosenSubjects.find((s) => s.key === subjectKey)
 
   const { data: priorityView, isLoading: isLoadingPriority } = usePriority({
     subjectKey,
@@ -39,8 +44,8 @@ export function SubjectAnalysisContainer({ subjectKey, initialTab = 'priority' }
           <span className="font-mono text-foreground uppercase">{subjectKey}</span>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-2xl font-bold tracking-tight text-foreground capitalize">
-            {subjectKey.replace('-', ' ')}
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">
+            {chosenSubject?.name || subjectKey.replace(/-/g, ' ')}
           </h1>
           {subjectPriority && (
             <div className="flex flex-wrap items-center gap-2">

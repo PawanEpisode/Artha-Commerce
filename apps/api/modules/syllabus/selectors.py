@@ -1,9 +1,9 @@
 """Read-only queries for the syllabus. Students only ever see `published` schemes, enrolled students also see `retired`."""
 
+import hashlib
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass, field
 from decimal import Decimal
-import hashlib
 from uuid import UUID
 
 from django.db.models import Count, Max, Prefetch, Q, QuerySet

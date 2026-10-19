@@ -1,4 +1,5 @@
 import {
+  Badge,
   ChevronsUpDown,
   DropdownMenu,
   DropdownMenuContent,
@@ -110,20 +111,31 @@ function UserMenu() {
 /** The workspace navigation: every study tool one click away, grouped, with settings and the account at the foot. */
 export function AppSidebar() {
   const { study } = useWorkspaceNav()
+  const { data: bootstrapData } = useBootstrap()
   const pathname = useLocation({ select: (l) => l.pathname })
   return (
     <Sidebar label="Workspace">
-      <SidebarHeader>
-        <Link
-          to="/app"
-          aria-label="ArthaCommerce workspace home"
-          className="flex h-8 min-w-0 items-center gap-2.5 rounded-md px-2 whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-        >
-          <LogoMark className="size-5 shrink-0" />
-          <span className="truncate text-sm font-semibold tracking-tight rail:hidden">
-            Artha<span className="text-primary">Commerce</span>
-          </span>
-        </Link>
+      <SidebarHeader className="h-auto p-2">
+        <div className="flex flex-col items-start justify-between gap-1 px-2">
+          <Link
+            to="/app"
+            aria-label="ArthaCommerce workspace home"
+            className="flex min-w-0 items-center gap-2 rounded-md whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+          >
+            <LogoMark className="size-5 shrink-0" />
+            <span className="truncate text-sm font-semibold tracking-tight rail:hidden">
+              Artha<span className="text-primary">Commerce</span>
+            </span>
+          </Link>
+          {bootstrapData?.course ? (
+            <Badge
+              variant="outline"
+              className="h-5 shrink-0 px-1.5 text-[10px] font-medium tracking-tight uppercase rail:hidden"
+            >
+              {bootstrapData.course.course.code} • {bootstrapData.course.level.name}
+            </Badge>
+          ) : null}
+        </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

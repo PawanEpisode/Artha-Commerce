@@ -207,10 +207,22 @@ class SetsListView(McqBaseView):
         kind = request.query_params.get("kind")
         term_code = request.query_params.get("term_code")
         delivery = request.query_params.get("delivery")
+        course = request.query_params.get("course")
+        level = request.query_params.get("level")
         user_id = request.user.id if getattr(request.user, "is_authenticated", False) else None
+
+        if user_id and (not course or not level):
+            from modules.coverage import selectors as coverage_selectors
+
+            summary = coverage_selectors.course_summary(user_id)
+            if summary:
+                course = course or summary.course_code
+                level = level or summary.level_code
 
         data = list_sets(
             viewer_id=user_id,
+            course_code=course,
+            level_code=level,
             subject_key=subject_key,
             chapter_key=chapter_key,
             kind=kind,

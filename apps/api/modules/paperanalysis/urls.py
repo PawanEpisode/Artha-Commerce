@@ -13,6 +13,7 @@ urlpatterns = [
     path("recommendations/", views.RecommendationsView.as_view(), name="pa-recommendations"),
     path("subjects/", views.SubjectStatusesView.as_view(), name="pa-subject-statuses"),
     path("subjects/<str:subject_key>/stats/", views.ChapterStatsView.as_view(), name="pa-chapter-stats"),
+    path("subjects/<str:subject_key>/analysis/", views.ChapterStatsView.as_view(), name="pa-chapter-analysis"),
     path("subjects/<str:subject_key>/patterns/", views.PatternsView.as_view(), name="pa-patterns"),
     path("chapters/<str:chapter_key>/history/", views.ChapterHistoryView.as_view(), name="pa-chapter-history"),
     path("asked-summary/", views.AskedSummaryView.as_view(), name="pa-asked-summary"),

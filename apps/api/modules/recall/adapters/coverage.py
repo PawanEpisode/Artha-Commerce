@@ -25,6 +25,11 @@ def exam_date(user_id):
     return coverage.exam_date_of(enrollment) if enrollment is not None else None
 
 
+def course_summary(user_id):
+    """The student's active course summary or None."""
+    return coverage.course_summary(user_id)
+
+
 def exam_at(user_id, tz: str, day_start_hour: int) -> datetime | None:
     """The exam as an instant: the first moment of its study day in the student's zone."""
     day = exam_date(user_id)

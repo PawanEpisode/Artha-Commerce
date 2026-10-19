@@ -1,5 +1,6 @@
 import {
   Alert,
+  Badge,
   Button,
   EmptyState,
   FilterChip,
@@ -18,6 +19,7 @@ import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
+import { useBootstrap } from '~/modules/personalization'
 
 import { QuestionTable, QuestionTableSkeleton } from '../components/QuestionTable'
 import { getPublicQuestions } from '../lib/api'
@@ -32,6 +34,12 @@ interface QuestionBrowserContainerProps {
 
 export function QuestionBrowserContainer({ search }: QuestionBrowserContainerProps) {
   const enabled = useFeatureFlag('question_bank', { strict: true })
+  const { data: bootstrapData } = useBootstrap()
+  const enrolledCourse = bootstrapData?.course?.course.code
+  const enrolledCourseName = bootstrapData?.course?.course.name
+  const enrolledLevel = bootstrapData?.course?.level.code
+  const enrolledLevelName = bootstrapData?.course?.level.name
+
   const navigate = useNavigate()
 
   const [loading, setLoading] = React.useState(true)
@@ -80,7 +88,13 @@ export function QuestionBrowserContainer({ search }: QuestionBrowserContainerPro
     setLoading(true)
     setError(null)
 
-    getPublicQuestions(search)
+    const effectiveParams: QuestionSearchParams = {
+      course: search.course || enrolledCourse,
+      level: search.level || enrolledLevel,
+      ...search,
+    }
+
+    getPublicQuestions(effectiveParams)
       .then((res) => {
         if (!active) return
         setQuestions(res.items)
@@ -97,13 +111,19 @@ export function QuestionBrowserContainer({ search }: QuestionBrowserContainerPro
     return () => {
       active = false
     }
-  }, [search, enabled])
+  }, [search, enabled, enrolledCourse, enrolledLevel])
 
   const handleLoadMore = async () => {
     if (!nextCursor) return
     setLoadingMore(true)
     try {
-      const res = await getPublicQuestions({ ...search, cursor: nextCursor })
+      const effectiveParams: QuestionSearchParams = {
+        course: search.course || enrolledCourse,
+        level: search.level || enrolledLevel,
+        ...search,
+        cursor: nextCursor,
+      }
+      const res = await getPublicQuestions(effectiveParams)
       setQuestions((prev) => [...prev, ...res.items])
       setNextCursor(res.next_cursor)
     } catch {
@@ -173,8 +193,21 @@ export function QuestionBrowserContainer({ search }: QuestionBrowserContainerPro
   return (
     <Page>
       <PageHeader
-        title="Question Bank"
-        description="Browse, filter and practise past paper and syllabus questions."
+        title={
+          <span className="inline-flex items-center gap-2">
+            Question Bank
+            {enrolledCourseName && enrolledLevelName ? (
+              <Badge className="font-mono">
+                {enrolledCourseName} • {enrolledLevelName}
+              </Badge>
+            ) : null}
+          </span>
+        }
+        description={
+          enrolledCourseName && enrolledLevelName
+            ? `Browse, filter and practise past paper and syllabus questions for ${enrolledCourseName} ${enrolledLevelName}.`
+            : 'Browse, filter and practise past paper and syllabus questions.'
+        }
         actions={
           <Button asChild>
             <Link

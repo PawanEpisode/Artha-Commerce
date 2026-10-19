@@ -152,10 +152,23 @@ def test_student_recommendations_and_stats(student_api, published_setup):
     assert res_sub.status_code == 200
     assert len(res_sub.json_body["subjects"]) >= 1
 
-    # Chapter stats
+    # Chapter stats via /stats/ and /analysis/ alias
     res_stats = student_api.get(f"{BASE}/subjects/{subject.key}/stats/")
     assert res_stats.status_code == 200
     assert "chapters" in res_stats.json_body
+
+    res_analysis = student_api.get(f"{BASE}/subjects/{subject.key}/analysis/")
+    assert res_analysis.status_code == 200
+    assert "chapters" in res_analysis.json_body
+
+    # Unknown subject or subject with 0 papers returns 200 with empty list
+    res_unknown = student_api.get(f"{BASE}/subjects/non-existent-subject/analysis/")
+    assert res_unknown.status_code == 200
+    assert res_unknown.json_body["chapters"] == []
+
+    # Recommendations for subject with 0 papers returns 200 (withheld ranking)
+    res_rec = student_api.get(f"{BASE}/recommendations/?subject_key=non-existent-subject")
+    assert res_rec.status_code == 200
 
     # Patterns
     res_pat = student_api.get(f"{BASE}/subjects/{subject.key}/patterns/")
@@ -166,6 +179,28 @@ def test_student_recommendations_and_stats(student_api, published_setup):
     res_hist = student_api.get(f"{BASE}/chapters/{c1.key}/history/")
     assert res_hist.status_code == 200
     assert "history" in res_hist.json_body
+
+
+@pytest.mark.django_db
+def test_recommendations_with_active_enrollment(student_api, published_setup):
+    from datetime import timedelta
+
+    from modules.coverage.models import Enrollment
+    from modules.paperanalysis.tests.conftest import USER
+
+    scheme = published_setup["scheme"]
+    Enrollment.objects.create(
+        user_id=USER,
+        scheme=scheme,
+        level=scheme.level,
+        exam_date=timezone.localdate() + timedelta(days=60),
+        status=Enrollment.Status.ACTIVE,
+    )
+
+    res = student_api.get(f"{BASE}/recommendations/")
+    assert res.status_code == 200
+    assert res.json_body["days_left"] == 60
+    assert res.json_body["exam_date_source"] == "enrolment"
 
 
 @pytest.mark.django_db

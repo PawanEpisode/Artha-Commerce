@@ -72,6 +72,17 @@ class PublicQuestionsView(QuestionBankBaseView):
 
     def get(self, request):
         flt = parse_filter_params(request.query_params.dict())
+        user_id = request.user.id if getattr(request.user, "is_authenticated", False) else None
+        if user_id and (not flt.get("course") or not flt.get("level")):
+            from modules.coverage import selectors as coverage_selectors
+
+            summary = coverage_selectors.course_summary(user_id)
+            if summary:
+                if not flt.get("course"):
+                    flt["course"] = summary.course_code
+                if not flt.get("level"):
+                    flt["level"] = summary.level_code
+
         order = request.query_params.get("order", "newest")
         cursor = request.query_params.get("cursor")
         limit = min(int(request.query_params.get("limit", 20)), 100)
@@ -115,6 +126,17 @@ class PublicFacetsView(QuestionBankBaseView):
 
     def get(self, request):
         flt = parse_filter_params(request.query_params.dict())
+        user_id = request.user.id if getattr(request.user, "is_authenticated", False) else None
+        if user_id and (not flt.get("course") or not flt.get("level")):
+            from modules.coverage import selectors as coverage_selectors
+
+            summary = coverage_selectors.course_summary(user_id)
+            if summary:
+                if not flt.get("course"):
+                    flt["course"] = summary.course_code
+                if not flt.get("level"):
+                    flt["level"] = summary.level_code
+
         dims = request.query_params.get("dims", "kind,difficulty,source_year").split(",")
         dims = [d.strip() for d in dims if d.strip()]
 

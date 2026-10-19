@@ -2,6 +2,8 @@ import { EmptyState, Page, PageHeader, Skeleton, toastApiError } from '@artha/de
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
+import { useBootstrap } from '~/modules/personalization'
+
 import { ExternalLogDialog } from '../components/ExternalLogDialog'
 import { SetsTable } from '../components/SetsTable'
 import { listMcqSets, startSetPractice } from '../lib/api'
@@ -13,12 +15,14 @@ interface McqSetsContainerProps {
   subtitle?: string
 }
 
-export function McqSetsContainer({
-  initialFilter = {},
-  title = 'MCQ Practice Sets',
-  subtitle = 'Platform-hosted high-yield sprints and official ICMAI question banks.',
-}: McqSetsContainerProps) {
+export function McqSetsContainer({ initialFilter = {}, title = 'MCQ Practice Sets', subtitle }: McqSetsContainerProps) {
   const navigate = useNavigate()
+  const { data: bootstrapData } = useBootstrap()
+  const enrolledCourse = bootstrapData?.course?.course.code
+  const enrolledCourseName = bootstrapData?.course?.course.name
+  const enrolledLevel = bootstrapData?.course?.level.code
+  const enrolledLevelName = bootstrapData?.course?.level.name
+
   const [sets, setSets] = useState<McqSetCard[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isStarting, setIsStarting] = useState(false)
@@ -29,7 +33,12 @@ export function McqSetsContainer({
   useEffect(() => {
     async function load() {
       try {
-        const items = await listMcqSets(initialFilter)
+        const effectiveFilter = {
+          ...initialFilter,
+          course: initialFilter.course || enrolledCourse,
+          level: initialFilter.level || enrolledLevel,
+        }
+        const items = await listMcqSets(effectiveFilter)
         setSets(items)
       } catch (err: unknown) {
         toastApiError(err, 'Failed to load MCQ sets')
@@ -38,7 +47,13 @@ export function McqSetsContainer({
       }
     }
     load()
-  }, [filterKey, initialFilter])
+  }, [filterKey, initialFilter, enrolledCourse, enrolledLevel])
+
+  const dynamicSubtitle =
+    subtitle ??
+    (enrolledCourseName && enrolledLevelName
+      ? `Platform-hosted high-yield sprints and official question banks for ${enrolledCourseName} ${enrolledLevelName}.`
+      : 'Platform-hosted high-yield sprints and official syllabus question banks.')
 
   async function handleStartSet(slug: string) {
     try {
@@ -74,7 +89,7 @@ export function McqSetsContainer({
           </Link>
         }
         title={title}
-        description={subtitle}
+        description={dynamicSubtitle}
       />
 
       {sets.length > 0 ? (

@@ -159,6 +159,8 @@ export interface NegativeInsightReport {
 }
 
 export const mcqFilterSchema = z.object({
+  course: z.string().optional(),
+  level: z.string().optional(),
   subject: z.string().optional(),
   chapter: z.string().optional(),
   kind: z.string().optional(),

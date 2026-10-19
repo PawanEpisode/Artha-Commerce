@@ -8,6 +8,8 @@ import type { QuestionSearchParams } from './types'
 export function buildQuestionQuery(params: QuestionSearchParams): URLSearchParams {
   const query = new URLSearchParams()
   if (params.q) query.set('q', params.q)
+  if (params.course) query.set('course', params.course)
+  if (params.level) query.set('level', params.level)
   if (params.subject) query.set('subject_key', params.subject)
   if (params.chapter) query.set('chapter', params.chapter)
   if (params.chapterId) query.set('chapter_ids', params.chapterId)

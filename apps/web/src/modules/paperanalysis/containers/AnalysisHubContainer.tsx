@@ -9,16 +9,54 @@ import {
   Skeleton,
 } from '@artha/design-system'
 import { Link } from '@tanstack/react-router'
+import * as React from 'react'
+
+import { useChosenSubjects } from '~/modules/coverage'
+import { useBootstrap } from '~/modules/personalization'
 
 import { DisclaimerNote } from '../components/DisclaimerNote'
 import { useActivePlan, useSubjectStatuses } from '../hooks/usePaperAnalysis'
 import type { SubjectStatus } from '../types'
 
 export function AnalysisHubContainer() {
-  const { data: statusesData, isLoading: isLoadingSubjects } = useSubjectStatuses()
+  const { data: bootstrapData } = useBootstrap()
+  const enrolledCourse = bootstrapData?.course?.course.name
+  const enrolledLevel = bootstrapData?.course?.level.name
+
+  const { subjects: chosenSubjects, isLoading: isLoadingChosen } = useChosenSubjects()
+  const { data: statusesData, isLoading: isLoadingStatuses } = useSubjectStatuses()
   const { data: activePlanData, isLoading: isLoadingPlan } = useActivePlan()
 
-  const subjects = statusesData?.subjects || []
+  const subjects = React.useMemo(() => {
+    const raw = statusesData?.subjects || []
+    if (!chosenSubjects || chosenSubjects.length === 0) return raw
+    const chosenMap = new Map(chosenSubjects.map((s) => [s.key, s]))
+    const filtered = raw.filter((s) => chosenMap.has(s.subject_key))
+    if (filtered.length > 0) {
+      return filtered.map((s) => ({
+        ...s,
+        subject_name: s.subject_name || chosenMap.get(s.subject_key)?.name || s.subject_key,
+      }))
+    }
+    return chosenSubjects.map((cs) => {
+      const match = raw.find((s) => s.subject_key === cs.key)
+      return (
+        match || {
+          subject_key: cs.key,
+          subject_name: cs.name,
+          data_status: 'insufficient' as const,
+          ranking: 'withheld' as const,
+          papers_published: 0,
+          papers_target: 6,
+          days_left: null,
+          seo_indexable: false,
+        }
+      )
+    })
+  }, [statusesData?.subjects, chosenSubjects])
+
+  const isLoadingSubjects = isLoadingStatuses && isLoadingChosen
+
   const activePlan = activePlanData?.plan
 
   const statusBadge = (status: SubjectStatus['data_status']) => {
@@ -43,7 +81,14 @@ export function AnalysisHubContainer() {
       {/* Page Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">Paper Analysis & Recommendations</h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground">Paper Analysis & Recommendations</h1>
+            {enrolledCourse && enrolledLevel && (
+              <Badge variant="outline" className="text-xs">
+                {enrolledCourse} • {enrolledLevel}
+              </Badge>
+            )}
+          </div>
           <p className="mt-1 text-sm text-muted-foreground">
             Historical exam patterns, priority chapter weightages, and high-yield study planning.
           </p>

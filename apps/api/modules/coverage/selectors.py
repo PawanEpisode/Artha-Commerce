@@ -570,7 +570,25 @@ def exam_context(user_id: UUID, enrollment_id: UUID | None = None) -> ExamContex
     if enr is None:
         return None
     exam_date = exam_date_of(enr)
-    subject_ids = list(enr.scheme.subjects.filter(is_active=True).values_list("id", flat=True))
+
+    # Exclude electives that belong to an elective slot but were not chosen by the student
+    from modules.syllabus.selectors import elective_slots
+
+    slots = elective_slots(enr.scheme)
+    chosen_elective_ids = set(enr.electives.values_list("subject_id", flat=True))
+    excluded_elective_ids = set()
+    for slot in slots:
+        chosen_in_slot = [opt.id for opt in slot.options if opt.id in chosen_elective_ids]
+        if chosen_in_slot:
+            for opt in slot.options:
+                if opt.id not in chosen_elective_ids:
+                    excluded_elective_ids.add(opt.id)
+
+    subject_ids = list(
+        enr.scheme.subjects.filter(is_active=True)
+        .exclude(id__in=excluded_elective_ids)
+        .values_list("id", flat=True)
+    )
     daily_hours = float(enr.daily_minutes / 60.0) if enr.daily_minutes else None
     term_code = enr.target_term.code if enr.target_term else None
     return ExamContext(

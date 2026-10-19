@@ -1,5 +1,6 @@
 import {
   Alert,
+  Badge,
   Bookmark,
   Button,
   ButtonLink,
@@ -20,23 +21,21 @@ import {
 import { Link } from '@tanstack/react-router'
 import * as React from 'react'
 
+import { useChosenSubjects } from '~/modules/coverage'
 import { useFeatureFlag } from '~/modules/observability'
+import { useBootstrap } from '~/modules/personalization'
 
 import { SessionsTable } from '../components/SessionsTable'
 import { listSessions } from '../lib/api'
 import type { SessionRow } from '../lib/types'
 
-const CMA_QUICK_CHAPTERS = [
-  { subject: 'taxation', chapter: 'gst-itc', title: 'GST: Input Tax Credit', marks: '15-20 marks' },
-  { subject: 'costing', chapter: 'standard-costing', title: 'Standard Costing & Variances', marks: '10-15 marks' },
-  { subject: 'law', chapter: 'directors', title: 'Company Law: Directors', marks: '12-16 marks' },
-  { subject: 'taxation', chapter: 'dt-capital-gains', title: 'Direct Tax: Capital Gains', marks: '10-14 marks' },
-  { subject: 'accounts', chapter: 'as-ind-as', title: 'Accounting Standards & Ind AS', marks: '15-20 marks' },
-  { subject: 'fm', chapter: 'working-capital', title: 'Working Capital Management', marks: '8-12 marks' },
-]
-
 export function PracticeHubContainer() {
   const enabled = useFeatureFlag('question_bank', { strict: true })
+  const { data: bootstrapData } = useBootstrap()
+  const { subjects: chosenSubjects } = useChosenSubjects()
+
+  const enrolledCourseName = bootstrapData?.course?.course.name
+  const enrolledLevelName = bootstrapData?.course?.level.name
 
   const [loading, setLoading] = React.useState(true)
   const [sessions, setSessions] = React.useState<SessionRow[]>([])
@@ -66,8 +65,21 @@ export function PracticeHubContainer() {
   return (
     <Page>
       <PageHeader
-        title="Practice Hub"
-        description="Solve questions, test your exam readiness, and review mistakes."
+        title={
+          <span className="inline-flex items-center gap-2">
+            Practice Hub
+            {enrolledCourseName && enrolledLevelName ? (
+              <Badge className="font-mono">
+                {enrolledCourseName} • {enrolledLevelName}
+              </Badge>
+            ) : null}
+          </span>
+        }
+        description={
+          enrolledCourseName && enrolledLevelName
+            ? `Solve questions, test exam readiness, and review mistakes for ${enrolledCourseName} ${enrolledLevelName}.`
+            : 'Solve questions, test your exam readiness, and review mistakes.'
+        }
         actions={
           <>
             <ButtonLink asChild variant="outline" size="sm">
@@ -133,37 +145,45 @@ export function PracticeHubContainer() {
 
       <section className="space-y-2">
         <div className="flex items-center justify-between gap-2">
-          <h2 className="text-sm font-semibold text-foreground">High-Yield Chapters (CMA 2022)</h2>
+          <h2 className="text-sm font-semibold text-foreground">
+            {enrolledCourseName && enrolledLevelName
+              ? `Syllabus Papers (${enrolledCourseName} ${enrolledLevelName})`
+              : 'Syllabus Papers'}
+          </h2>
           <Link to="/app/questions" className="text-xs font-medium text-primary hover:underline">
-            View all chapters
+            View all questions
           </Link>
         </div>
 
         <DataTable>
           <TableHeader>
             <TableRow className="hover:bg-transparent">
-              <TableHead>Chapter</TableHead>
-              <TableHead className="hidden sm:table-cell">Subject</TableHead>
-              <TableHead className="hidden md:table-cell">Weightage</TableHead>
+              <TableHead>Paper / Subject</TableHead>
+              <TableHead className="hidden sm:table-cell">Code</TableHead>
+              <TableHead className="hidden md:table-cell">Type</TableHead>
               <TableHead className="text-right">
                 <span className="sr-only">Action</span>
               </TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {CMA_QUICK_CHAPTERS.map((ch) => (
-              <TableRow key={ch.chapter}>
-                <TableCell className="font-medium">{ch.title}</TableCell>
-                <TableCell className="hidden text-muted-foreground capitalize sm:table-cell">{ch.subject}</TableCell>
-                <TableCell className="hidden text-muted-foreground md:table-cell">{ch.marks}</TableCell>
+            {chosenSubjects.map((sub) => (
+              <TableRow key={sub.id}>
+                <TableCell className="font-medium">
+                  {sub.paper_number ? `Paper ${sub.paper_number}: ${sub.name}` : sub.name}
+                </TableCell>
+                <TableCell className="hidden text-muted-foreground uppercase sm:table-cell">{sub.key}</TableCell>
+                <TableCell className="hidden text-muted-foreground md:table-cell">
+                  {sub.group_key ? sub.group_key.replace(/_/g, ' ') : 'Core Subject'}
+                </TableCell>
                 <TableCell className="text-right">
                   <Button size="sm" variant="outline" asChild>
                     <Link
                       to="/app/practice/new"
-                      search={{ subject: ch.subject, chapter: ch.chapter, mode: 'chapter_quiz' }}
-                      aria-label={`Practise chapter ${ch.title}`}
+                      search={{ subject: sub.key, mode: 'chapter_quiz' }}
+                      aria-label={`Practise ${sub.name}`}
                     >
-                      Practise chapter
+                      Practise subject
                     </Link>
                   </Button>
                 </TableCell>

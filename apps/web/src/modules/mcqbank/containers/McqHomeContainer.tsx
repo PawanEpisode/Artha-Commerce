@@ -20,24 +20,33 @@ import {
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
+import { useBootstrap } from '~/modules/personalization'
+
 import { ExternalLogDialog } from '../components/ExternalLogDialog'
 import { SetsTable } from '../components/SetsTable'
 import { SubjectsTable } from '../components/SubjectsTable'
 import { getMcqHome, listMcqSets, startQuickPractice, startSetPractice } from '../lib/api'
-import type { McqHomeData, McqSetCard } from '../lib/types'
+import type { McqHomeData, McqSetCard, OpenSession } from '../lib/types'
 
 export function McqHomeContainer() {
   const navigate = useNavigate()
+  const { data: bootstrapData } = useBootstrap()
   const [data, setData] = useState<McqHomeData | null>(null)
   const [featuredSets, setFeaturedSets] = useState<McqSetCard[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isStarting, setIsStarting] = useState(false)
   const [logDialogSet, setLogDialogSet] = useState<McqSetCard | null>(null)
 
+  const enrolledCourse = bootstrapData?.course?.course.code
+  const enrolledLevel = bootstrapData?.course?.level.code
+
   useEffect(() => {
     async function load() {
       try {
-        const [homeData, sets] = await Promise.all([getMcqHome(), listMcqSets({})])
+        const [homeData, sets] = await Promise.all([
+          getMcqHome(),
+          listMcqSets({ course: enrolledCourse, level: enrolledLevel }),
+        ])
         setData(homeData)
         setFeaturedSets(sets)
       } catch (err: unknown) {
@@ -47,7 +56,7 @@ export function McqHomeContainer() {
       }
     }
     load()
-  }, [])
+  }, [enrolledCourse, enrolledLevel])
 
   async function handleStartSuggested() {
     if (!data?.suggestion) return
@@ -160,7 +169,7 @@ export function McqHomeContainer() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {data.open_sessions.map((s) => (
+              {data.open_sessions.map((s: OpenSession) => (
                 <TableRow key={s.id}>
                   <TableCell className="max-w-56 truncate font-medium">{s.title}</TableCell>
                   <TableCell className="hidden text-muted-foreground capitalize sm:table-cell">

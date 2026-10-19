@@ -60,12 +60,12 @@ def _lock(user_id) -> None:
 
 def evaluate_session(user_id, session_id, *, now: datetime | None = None) -> list[Announced]:
     """Announce the chapter passes this session earned. Idempotent: a second run announces the same passes again, writes nothing."""
-    now = now or timezone.now()
     with transaction.atomic():
         _lock(user_id)
         session = RecallSession.objects.select_for_update().filter(user_id=user_id, id=session_id).first()
         if session is None or session.status == "open":
             return []  # a session that is still open will queue its own check when it closes
+        now = now or session.ended_at or session.last_event_at or timezone.now()
         carried = {p["chapter_id"]: p for p in session.chapter_passes or ()}
         found: list[tuple[str, int, float, bool]] = []  # chapter id, set size, coverage, new
         written = list(session.chapter_passes or ())

@@ -59,6 +59,13 @@ class PapersListView(PyqBaseView):
         term = request.query_params.get("term")
 
         user_id = request.user.id if getattr(request.user, "is_authenticated", False) else None
+        if user_id and (not course or not level):
+            from modules.coverage import selectors as coverage_selectors
+            summary = coverage_selectors.course_summary(user_id)
+            if summary:
+                course = course or summary.course_code
+                level = level or summary.level_code
+
         papers = list_papers(
             course_code=course,
             level_code=level,

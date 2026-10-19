@@ -18,6 +18,7 @@ import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
+import { useBootstrap } from '~/modules/personalization'
 
 import { PapersTable, PapersTableSkeleton } from '../components/PapersTable'
 import { listPapers, startPaperPractice } from '../lib/api'
@@ -27,12 +28,6 @@ import type { PyqPaperCard, PyqSearch } from '../lib/types'
 interface PyqHomeContainerProps {
   search?: PyqSearch
 }
-
-const CMA_LEVELS = [
-  { value: 'all', label: 'All Levels' },
-  { value: 'cma_intermediate', label: 'CMA Intermediate' },
-  { value: 'cma_final', label: 'CMA Final' },
-]
 
 const TERMS = [
   { value: 'all', label: 'All Terms' },
@@ -44,11 +39,16 @@ const TERMS = [
 
 export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
   const enabled = useFeatureFlag('pyq_bank', { strict: true })
+  const { data: bootstrapData } = useBootstrap()
   const navigate = useNavigate()
+
+  const enrolledCourse = bootstrapData?.course?.course.code
+  const enrolledCourseName = bootstrapData?.course?.course.name ?? 'CMA'
+  const enrolledLevel = bootstrapData?.course?.level.code
+  const enrolledLevelName = bootstrapData?.course?.level.name ?? 'Final'
 
   const [loading, setLoading] = React.useState(true)
   const [papers, setPapers] = React.useState<PyqPaperCard[]>([])
-  const [levelFilter, setLevelFilter] = React.useState(search.level || 'all')
   const [termFilter, setTermFilter] = React.useState(search.term || 'all')
   const [query, setQuery] = React.useState(search.q || '')
   const [startingPaperId, setStartingPaperId] = React.useState<string | null>(null)
@@ -60,7 +60,8 @@ export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
     setError(null)
     try {
       const items = await listPapers({
-        level: levelFilter !== 'all' ? levelFilter : undefined,
+        course: enrolledCourse,
+        level: enrolledLevel,
         term: termFilter !== 'all' ? termFilter : undefined,
       })
       setPapers(items)
@@ -69,7 +70,7 @@ export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
     } finally {
       setLoading(false)
     }
-  }, [enabled, levelFilter, termFilter])
+  }, [enabled, enrolledCourse, enrolledLevel, termFilter])
 
   React.useEffect(() => {
     fetchPapers()
@@ -112,18 +113,15 @@ export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
     )
   })
 
+  const institution = enrolledCourse === 'ca' ? 'ICAI' : enrolledCourse === 'cs' ? 'ICSI' : 'ICMAI'
+
   const resetFilters = () => {
-    setLevelFilter('all')
     setTermFilter('all')
     setQuery('')
   }
 
   const activeFilters: Array<{ key: string; label: string; onRemove: () => void }> = []
   if (query) activeFilters.push({ key: 'q', label: `Search: "${query}"`, onRemove: () => setQuery('') })
-  if (levelFilter !== 'all') {
-    const label = CMA_LEVELS.find((l) => l.value === levelFilter)?.label ?? levelFilter
-    activeFilters.push({ key: 'level', label: `Level: ${label}`, onRemove: () => setLevelFilter('all') })
-  }
   if (termFilter !== 'all') {
     const label = TERMS.find((t) => t.value === termFilter)?.label ?? termLabel(termFilter)
     activeFilters.push({ key: 'term', label: `Term: ${label}`, onRemove: () => setTermFilter('all') })
@@ -135,10 +133,12 @@ export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
         title={
           <span className="inline-flex items-center gap-2">
             Past Papers & PYQ Bank
-            <Badge className="font-mono">CMA 2022</Badge>
+            <Badge className="font-mono">
+              {enrolledCourseName} • {enrolledLevelName}
+            </Badge>
           </span>
         }
-        description="Browse, simulate and practise original ICMAI exam papers with syllabus mappings and suggested solutions."
+        description={`Browse, simulate and practise original ${institution} ${enrolledCourseName} ${enrolledLevelName} exam papers with syllabus mappings and suggested solutions.`}
         actions={
           <>
             <ButtonLink asChild variant="outline" size="sm">
@@ -168,14 +168,6 @@ export function PyqHomeContainer({ search = {} }: PyqHomeContainerProps) {
               className="w-full pl-8 sm:w-64"
             />
           </div>
-          <SelectField
-            id="pyq-level"
-            aria-label="Exam level"
-            value={levelFilter}
-            onValueChange={setLevelFilter}
-            options={CMA_LEVELS}
-            className="w-44"
-          />
           <SelectField
             id="pyq-term"
             aria-label="Exam term"

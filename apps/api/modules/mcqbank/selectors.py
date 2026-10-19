@@ -41,8 +41,18 @@ def home(user_id: uuid.UUID) -> dict[str, Any]:
     level_code = summary.level_code if summary else "intermediate"
 
     level = syllabus_selectors.get_level(course_code, level_code)
-    scheme = syllabus_selectors.get_current_scheme(level) if level else None
+    scheme = None
+    if summary and summary.scheme_id:
+        scheme = syllabus_selectors.get_scheme(summary.scheme_id)
+    if not scheme and level:
+        scheme = syllabus_selectors.get_current_scheme(level)
+
     subjects = list(syllabus_selectors.list_subjects(scheme)) if scheme else []
+    ctx = coverage_selectors.exam_context(user_id)
+    if ctx and ctx.subject_ids:
+        subject_id_set = set(ctx.subject_ids)
+        subjects = [s for s in subjects if s.id in subject_id_set]
+
     subject_cards = []
 
     for s in subjects:
@@ -283,6 +293,8 @@ def suggest_quick_set(
 def list_sets(
     viewer_id: uuid.UUID | None,
     *,
+    course_code: str | None = None,
+    level_code: str | None = None,
     subject_key: str | None = None,
     chapter_key: str | None = None,
     kind: str | None = None,
@@ -291,8 +303,19 @@ def list_sets(
     cursor: str | None = None,
     limit: int = 20,
 ) -> dict[str, Any]:
-    """Returns published MCQ sets matching filters."""
+    if viewer_id and (not course_code or not level_code):
+        from modules.coverage import selectors as coverage_selectors
+
+        summary = coverage_selectors.course_summary(viewer_id)
+        if summary:
+            course_code = course_code or summary.course_code
+            level_code = level_code or summary.level_code
+
     qs = McqSet.objects.filter(status=McqSet.Status.PUBLISHED).order_by("sort_order", "title")
+    if course_code:
+        qs = qs.filter(course__code=course_code.lower())
+    if level_code:
+        qs = qs.filter(level__code=level_code.lower())
     if subject_key:
         qs = qs.filter(subject_key=subject_key)
     if chapter_key:

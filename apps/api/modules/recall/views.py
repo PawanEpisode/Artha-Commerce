@@ -533,10 +533,20 @@ class SettingsView(RecallView):
 class DeckLibraryView(RecallView):
     def get(self, request):
         d = self.parse(serializers.DeckLibraryQuery, request.query_params).validated_data
+        course = d.get("course")
+        level = d.get("level")
+        if not course or not level:
+            from .adapters import coverage as coverage_adapter
+
+            summary = coverage_adapter.course_summary(request.user.id)
+            if summary:
+                course = course or summary.course_code
+                level = level or summary.level_code
+
         page = selectors.library(
             request.user.id,
-            course=d.get("course"),
-            level=d.get("level"),
+            course=course,
+            level=level,
             subject_key=d.get("subject_key"),
             chapter_id=d.get("chapter_id"),
             tier=d.get("tier"),

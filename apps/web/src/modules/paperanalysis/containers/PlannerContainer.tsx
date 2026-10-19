@@ -2,6 +2,8 @@ import { Badge, Button, toast } from '@artha/design-system'
 import { Link, useNavigate } from '@tanstack/react-router'
 import * as React from 'react'
 
+import { useChosenSubjects } from '~/modules/coverage'
+
 import * as api from '../api'
 import { DisclaimerNote } from '../components/DisclaimerNote'
 import { PlanBudgetForm } from '../components/PlanBudgetForm'
@@ -10,8 +12,31 @@ import type { PlanPreview } from '../types'
 
 export function PlannerContainer() {
   const navigate = useNavigate()
+  const { subjects: chosenSubjects } = useChosenSubjects()
   const { data: statusesData } = useSubjectStatuses()
-  const subjects = React.useMemo(() => statusesData?.subjects || [], [statusesData?.subjects])
+
+  const subjects = React.useMemo(() => {
+    const raw = statusesData?.subjects || []
+    if (!chosenSubjects || chosenSubjects.length === 0) return raw
+    const chosenMap = new Map(chosenSubjects.map((s) => [s.key, s]))
+    const filtered = raw.filter((s) => chosenMap.has(s.subject_key))
+    if (filtered.length > 0) {
+      return filtered.map((s) => ({
+        ...s,
+        subject_name: s.subject_name || chosenMap.get(s.subject_key)?.name || s.subject_key,
+      }))
+    }
+    return chosenSubjects.map((cs) => ({
+      subject_key: cs.key,
+      subject_name: cs.name,
+      data_status: 'insufficient' as const,
+      ranking: 'withheld' as const,
+      papers_published: 0,
+      papers_target: 6,
+      days_left: null,
+      seo_indexable: false,
+    }))
+  }, [statusesData?.subjects, chosenSubjects])
 
   const [days, setDays] = React.useState(14)
   const [hoursPerDay, setHoursPerDay] = React.useState(3.0)

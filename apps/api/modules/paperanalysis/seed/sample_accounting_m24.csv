@@ -1,0 +1,12 @@
+label,position,marks,format,nature,section,choice_group,pick_n,of_m,chapter_key,topic_key,share,source_ref,tag_hint
+1(a),1,12.0,descriptive,theory,Section A,,,,theoretical-framework,,1.0,icai:fnd:acc:m24,True or False
+1(b),2,4.0,descriptive,practical,Section A,,,,accounting-process,,1.0,icai:fnd:acc:m24,Journal entries
+1(c),3,4.0,descriptive,practical,Section A,,,,bank-reconciliation-statement,,1.0,icai:fnd:acc:m24,BRS
+2(a),4,10.0,descriptive,practical,Section B,,,,depreciation-and-amortisation,,1.0,icai:fnd:acc:m24,Depreciation
+2(b),5,10.0,descriptive,practical,Section B,,,,bills-of-exchange-and-promissory-notes,,1.0,icai:fnd:acc:m24,Bills of exchange
+3(a),6,10.0,descriptive,practical,Section B,,,,inventories,,1.0,icai:fnd:acc:m24,Inventory valuation
+3(b),7,10.0,descriptive,practical,Section B,,,,partnership-and-llp-accounts,,1.0,icai:fnd:acc:m24,Partnership admission
+4(a),8,15.0,descriptive,practical,Section B,,,,financial-statements-of-not-for-profit-organisations,,1.0,icai:fnd:acc:m24,NPO
+4(b),9,5.0,descriptive,theory,Section B,,,,accounting-process,,1.0,icai:fnd:acc:m24,Rectification of errors
+5(a),10,15.0,descriptive,practical,Section B,,,,company-accounts,,1.0,icai:fnd:acc:m24,Issue of shares
+5(b),11,5.0,descriptive,practical,Section B,,,,accounts-from-incomplete-records,,1.0,icai:fnd:acc:m24,Single entry

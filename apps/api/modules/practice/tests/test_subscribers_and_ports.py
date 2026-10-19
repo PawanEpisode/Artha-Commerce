@@ -61,6 +61,9 @@ def test_on_practice_session_completed_coverage_and_tracking(sample_questions):
 
 @pytest.mark.django_db
 def test_question_port_and_suggestion_source_port(sample_questions, qb_flag):
+    from modules.practice import ports
+
+    ports.register_ports()
     q1 = sample_questions["q1"]
     v1 = sample_questions["v1"]
     ch = sample_questions["chapter"]

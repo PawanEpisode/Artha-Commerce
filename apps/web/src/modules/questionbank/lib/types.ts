@@ -100,6 +100,8 @@ export interface QuestionFacets {
 
 export interface QuestionSearchParams {
   q?: string
+  course?: string
+  level?: string
   subject?: string
   chapter?: string
   /** One chapter by id (the API's `chapter_ids`). `chapter` above is a key the API does not filter on. */
@@ -124,6 +126,8 @@ export interface QuestionListResponse {
 
 export const questionsSearchSchema = z.object({
   q: z.string().max(200).optional().catch(undefined),
+  course: z.string().optional().catch(undefined),
+  level: z.string().optional().catch(undefined),
   subject: z.string().optional().catch(undefined),
   chapter: z.string().optional().catch(undefined),
   kind: z.string().optional().catch(undefined),
