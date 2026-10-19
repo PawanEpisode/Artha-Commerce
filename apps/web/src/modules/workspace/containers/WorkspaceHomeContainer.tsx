@@ -1,6 +1,8 @@
 import { Page } from '@artha/design-system'
 import { useRef } from 'react'
 
+import { ResultPromptBanner } from '~/modules/progression'
+
 import { useWorkspaceViewed } from '../hooks/useWorkspaceAnalytics'
 import { ContinueWidget } from './ContinueWidget'
 import { ProgressWidget } from './ProgressWidget'
@@ -21,6 +23,7 @@ export function WorkspaceHomeContainer() {
   useWorkspaceViewed(root)
   return (
     <Page ref={root}>
+      <ResultPromptBanner />
       <StudyHeader />
       <StatRow />
       <div className="grid grid-cols-1 items-stretch gap-3 md:grid-cols-2 xl:grid-cols-3 [&>*]:min-w-0">

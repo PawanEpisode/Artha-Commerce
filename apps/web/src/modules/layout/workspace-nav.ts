@@ -13,6 +13,7 @@ export type WorkspaceFlag =
   | 'mcq_bank'
   | 'performance_analytics'
   | 'paper_analysis'
+  | 'progression_engine'
 
 /** A page inside a section. Shown under its section in the sidebar while that section is open. */
 export interface WorkspaceSubLink {
@@ -58,6 +59,7 @@ export interface WorkspaceLink {
     | '/app/mcq'
     | '/app/analytics'
     | '/app/analysis'
+    | '/app/vault'
     | '/app/settings/today'
     | '/app/settings/focus'
     | '/app/settings/tracker'
@@ -65,6 +67,8 @@ export interface WorkspaceLink {
     | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/analysis'
+    | '/app/settings/progression'
+    | '/app/settings/articleship'
     | '/app/account'
   label: string
   description?: string
@@ -180,6 +184,13 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     ],
   },
   {
+    to: '/app/vault',
+    group: 'learn',
+    label: 'Past Level Vault',
+    description: 'Archived notes, annotations, and syllabus from cleared levels.',
+    flag: 'progression_engine',
+  },
+  {
     to: '/app/practice',
     group: 'practice',
     label: 'Practice',
@@ -237,6 +248,8 @@ export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
   { to: '/app/settings/recall', label: 'Revision settings', flag: 'recall_system' },
   { to: '/app/settings/notifications', label: 'Notification settings', flag: 'notifications_ui' },
   { to: '/app/settings/analysis', label: 'Paper analysis settings', flag: 'paper_analysis' },
+  { to: '/app/settings/progression', label: 'Progression settings', flag: 'progression_engine' },
+  { to: '/app/settings/articleship', label: 'Articleship settings', flag: 'progression_engine' },
   { to: '/app/account', label: 'Account' },
 ]
 
@@ -254,6 +267,7 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   mcq_bank: true,
   performance_analytics: true,
   paper_analysis: true,
+  progression_engine: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

@@ -16,6 +16,7 @@ const off = {
   mcq_bank: false,
   performance_analytics: false,
   paper_analysis: false,
+  progression_engine: false,
 }
 
 describe('visibleLinks', () => {
@@ -31,6 +32,7 @@ describe('visibleLinks', () => {
       '/app/notifications',
       '/app/notes',
       '/app/recall',
+      '/app/vault',
       '/app/practice',
       '/app/questions',
       '/app/pyq',
@@ -46,6 +48,8 @@ describe('visibleLinks', () => {
       '/app/settings/recall',
       '/app/settings/notifications',
       '/app/settings/analysis',
+      '/app/settings/progression',
+      '/app/settings/articleship',
       '/app/account',
     ])
   })
@@ -122,5 +126,18 @@ describe('visibleLinks', () => {
     ])
     const analysis = STUDY_LINKS.find((link) => link.to === '/app/analysis')
     expect(analysis?.children?.map((c) => c.to)).toEqual(['/app/analysis/plan', '/app/analysis/plan/active'])
+  })
+
+  it('shows Past Level Vault and progression settings only when the progression_engine flag is on', () => {
+    expect(visibleLinks(STUDY_LINKS, off).map((link) => link.to)).not.toContain('/app/vault')
+    expect(visibleLinks(STUDY_LINKS, { ...off, progression_engine: true }).map((link) => link.to)).toEqual([
+      '/app/vault',
+    ])
+    expect(visibleLinks(SETTINGS_LINKS, off).map((link) => link.to)).not.toContain('/app/settings/progression')
+    expect(visibleLinks(SETTINGS_LINKS, { ...off, progression_engine: true }).map((link) => link.to)).toEqual([
+      '/app/settings/progression',
+      '/app/settings/articleship',
+      '/app/account',
+    ])
   })
 })

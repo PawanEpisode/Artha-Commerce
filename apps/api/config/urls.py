@@ -25,4 +25,5 @@ urlpatterns = [
     path("api/v1/mcq/", include("modules.mcqbank.urls")),
     path("api/v1/analytics/", include("modules.analytics.urls")),
     path("api/v1/paperanalysis/", include("modules.paperanalysis.urls")),
+    path("api/v1/progression/", include("modules.progression.urls")),
 ]

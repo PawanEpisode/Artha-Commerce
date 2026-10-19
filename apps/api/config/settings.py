@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     "modules.mcqbank",
     "modules.analytics",
     "modules.paperanalysis",
+    "modules.progression",
 ]
 
 MIDDLEWARE = [

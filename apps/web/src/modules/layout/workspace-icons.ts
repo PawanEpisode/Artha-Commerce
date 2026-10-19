@@ -1,10 +1,13 @@
 import {
+  ArchiveRestore,
   Bell,
   BookOpen,
+  Briefcase,
   CalendarClock,
   Clock,
   FileClock,
   FileText,
+  GraduationCap,
   Inbox,
   Layers,
   ListChecks,
@@ -38,6 +41,7 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/pyq': FileClock,
   '/app/mcq': BookOpen,
   '/app/analytics': TrendingUp,
+  '/app/vault': ArchiveRestore,
   '/app/settings/today': CalendarClock,
   '/app/settings/focus': Timer,
   '/app/settings/tracker': Clock,
@@ -45,6 +49,8 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/settings/notes': Notebook,
   '/app/settings/notifications': Bell,
   '/app/settings/analysis': Settings,
+  '/app/settings/progression': GraduationCap,
+  '/app/settings/articleship': Briefcase,
   '/app/account': Settings,
 }
 

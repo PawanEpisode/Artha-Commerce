@@ -21,6 +21,8 @@ export {
   BookmarkPlus,
   BookOpen,
   BoxSelect,
+  Briefcase,
+  Building2,
   CalendarClock,
   CalendarDays,
   CalendarRange,

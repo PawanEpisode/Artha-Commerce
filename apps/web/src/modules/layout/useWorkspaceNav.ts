@@ -20,6 +20,7 @@ export function useWorkspaceNav() {
     mcq_bank: useFeatureFlag('mcq_bank', { strict: true }),
     performance_analytics: useFeatureFlag('performance_analytics'),
     paper_analysis: useFeatureFlag('paper_analysis', { strict: true }),
+    progression_engine: useFeatureFlag('progression_engine'),
   }
   const { data } = useBootstrap()
   return {

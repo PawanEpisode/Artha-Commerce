@@ -24,6 +24,8 @@ import { Route as AppOnboardingRouteImport } from './routes/app.onboarding'
 import { Route as AppPlannerRouteImport } from './routes/app.planner'
 import { Route as AppRevisionRouteImport } from './routes/app.revision'
 import { Route as AppTodayRouteImport } from './routes/app.today'
+import { Route as AppTransitionRouteImport } from './routes/app.transition'
+import { Route as AppVaultRouteImport } from './routes/app.vault'
 import { Route as AuthCallbackRouteImport } from './routes/auth.callback'
 import { Route as AuthConfirmRouteImport } from './routes/auth.confirm'
 import { Route as AuthForgotPasswordRouteImport } from './routes/auth.forgot-password'
@@ -58,10 +60,12 @@ import { Route as AppRecallQuickRouteImport } from './routes/app.recall.quick'
 import { Route as AppRecallStatsRouteImport } from './routes/app.recall.stats'
 import { Route as AppRecallSuggestionsRouteImport } from './routes/app.recall.suggestions'
 import { Route as AppSettingsAnalysisRouteImport } from './routes/app.settings.analysis'
+import { Route as AppSettingsArticleshipRouteImport } from './routes/app.settings.articleship'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
 import { Route as AppSettingsNotesRouteImport } from './routes/app.settings.notes'
 import { Route as AppSettingsNotificationsRouteImport } from './routes/app.settings.notifications'
+import { Route as AppSettingsProgressionRouteImport } from './routes/app.settings.progression'
 import { Route as AppSettingsRecallRouteImport } from './routes/app.settings.recall'
 import { Route as AppSettingsTodayRouteImport } from './routes/app.settings.today'
 import { Route as AppSettingsTrackerRouteImport } from './routes/app.settings.tracker'
@@ -185,6 +189,16 @@ const AppRevisionRoute = AppRevisionRouteImport.update({
 const AppTodayRoute = AppTodayRouteImport.update({
   id: '/today',
   path: '/today',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTransitionRoute = AppTransitionRouteImport.update({
+  id: '/transition',
+  path: '/transition',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppVaultRoute = AppVaultRouteImport.update({
+  id: '/vault',
+  path: '/vault',
   getParentRoute: () => AppRoute,
 } as any)
 const AuthCallbackRoute = AuthCallbackRouteImport.update({
@@ -357,6 +371,11 @@ const AppSettingsAnalysisRoute = AppSettingsAnalysisRouteImport.update({
   path: '/settings/analysis',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsArticleshipRoute = AppSettingsArticleshipRouteImport.update({
+  id: '/settings/articleship',
+  path: '/settings/articleship',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsCoverageRoute = AppSettingsCoverageRouteImport.update({
   id: '/settings/coverage',
   path: '/settings/coverage',
@@ -378,6 +397,11 @@ const AppSettingsNotificationsRoute =
     path: '/settings/notifications',
     getParentRoute: () => AppRoute,
   } as any)
+const AppSettingsProgressionRoute = AppSettingsProgressionRouteImport.update({
+  id: '/settings/progression',
+  path: '/settings/progression',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsRecallRoute = AppSettingsRecallRouteImport.update({
   id: '/settings/recall',
   path: '/settings/recall',
@@ -656,6 +680,8 @@ export interface FileRoutesByFullPath {
   '/app/planner': typeof AppPlannerRoute
   '/app/revision': typeof AppRevisionRoute
   '/app/today': typeof AppTodayRouteWithChildren
+  '/app/transition': typeof AppTransitionRoute
+  '/app/vault': typeof AppVaultRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -682,10 +708,12 @@ export interface FileRoutesByFullPath {
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/recall/suggestions': typeof AppRecallSuggestionsRoute
   '/app/settings/analysis': typeof AppSettingsAnalysisRoute
+  '/app/settings/articleship': typeof AppSettingsArticleshipRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
+  '/app/settings/progression': typeof AppSettingsProgressionRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/today': typeof AppSettingsTodayRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
@@ -758,6 +786,8 @@ export interface FileRoutesByTo {
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/planner': typeof AppPlannerRoute
   '/app/revision': typeof AppRevisionRoute
+  '/app/transition': typeof AppTransitionRoute
+  '/app/vault': typeof AppVaultRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -784,10 +814,12 @@ export interface FileRoutesByTo {
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/recall/suggestions': typeof AppRecallSuggestionsRoute
   '/app/settings/analysis': typeof AppSettingsAnalysisRoute
+  '/app/settings/articleship': typeof AppSettingsArticleshipRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
+  '/app/settings/progression': typeof AppSettingsProgressionRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/today': typeof AppSettingsTodayRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
@@ -863,6 +895,8 @@ export interface FileRoutesById {
   '/app/planner': typeof AppPlannerRoute
   '/app/revision': typeof AppRevisionRoute
   '/app/today': typeof AppTodayRouteWithChildren
+  '/app/transition': typeof AppTransitionRoute
+  '/app/vault': typeof AppVaultRoute
   '/auth/callback': typeof AuthCallbackRoute
   '/auth/confirm': typeof AuthConfirmRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
@@ -889,10 +923,12 @@ export interface FileRoutesById {
   '/app/recall/stats': typeof AppRecallStatsRoute
   '/app/recall/suggestions': typeof AppRecallSuggestionsRoute
   '/app/settings/analysis': typeof AppSettingsAnalysisRoute
+  '/app/settings/articleship': typeof AppSettingsArticleshipRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
+  '/app/settings/progression': typeof AppSettingsProgressionRoute
   '/app/settings/recall': typeof AppSettingsRecallRoute
   '/app/settings/today': typeof AppSettingsTodayRoute
   '/app/settings/tracker': typeof AppSettingsTrackerRoute
@@ -969,6 +1005,8 @@ export interface FileRouteTypes {
     | '/app/planner'
     | '/app/revision'
     | '/app/today'
+    | '/app/transition'
+    | '/app/vault'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -995,10 +1033,12 @@ export interface FileRouteTypes {
     | '/app/recall/stats'
     | '/app/recall/suggestions'
     | '/app/settings/analysis'
+    | '/app/settings/articleship'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
     | '/app/settings/notifications'
+    | '/app/settings/progression'
     | '/app/settings/recall'
     | '/app/settings/today'
     | '/app/settings/tracker'
@@ -1071,6 +1111,8 @@ export interface FileRouteTypes {
     | '/app/onboarding'
     | '/app/planner'
     | '/app/revision'
+    | '/app/transition'
+    | '/app/vault'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -1097,10 +1139,12 @@ export interface FileRouteTypes {
     | '/app/recall/stats'
     | '/app/recall/suggestions'
     | '/app/settings/analysis'
+    | '/app/settings/articleship'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
     | '/app/settings/notifications'
+    | '/app/settings/progression'
     | '/app/settings/recall'
     | '/app/settings/today'
     | '/app/settings/tracker'
@@ -1175,6 +1219,8 @@ export interface FileRouteTypes {
     | '/app/planner'
     | '/app/revision'
     | '/app/today'
+    | '/app/transition'
+    | '/app/vault'
     | '/auth/callback'
     | '/auth/confirm'
     | '/auth/forgot-password'
@@ -1201,10 +1247,12 @@ export interface FileRouteTypes {
     | '/app/recall/stats'
     | '/app/recall/suggestions'
     | '/app/settings/analysis'
+    | '/app/settings/articleship'
     | '/app/settings/coverage'
     | '/app/settings/focus'
     | '/app/settings/notes'
     | '/app/settings/notifications'
+    | '/app/settings/progression'
     | '/app/settings/recall'
     | '/app/settings/today'
     | '/app/settings/tracker'
@@ -1395,6 +1443,20 @@ declare module '@tanstack/react-router' {
       path: '/today'
       fullPath: '/app/today'
       preLoaderRoute: typeof AppTodayRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/transition': {
+      id: '/app/transition'
+      path: '/transition'
+      fullPath: '/app/transition'
+      preLoaderRoute: typeof AppTransitionRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/vault': {
+      id: '/app/vault'
+      path: '/vault'
+      fullPath: '/app/vault'
+      preLoaderRoute: typeof AppVaultRouteImport
       parentRoute: typeof AppRoute
     }
     '/auth/callback': {
@@ -1635,6 +1697,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppSettingsAnalysisRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings/articleship': {
+      id: '/app/settings/articleship'
+      path: '/settings/articleship'
+      fullPath: '/app/settings/articleship'
+      preLoaderRoute: typeof AppSettingsArticleshipRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/coverage': {
       id: '/app/settings/coverage'
       path: '/settings/coverage'
@@ -1661,6 +1730,13 @@ declare module '@tanstack/react-router' {
       path: '/settings/notifications'
       fullPath: '/app/settings/notifications'
       preLoaderRoute: typeof AppSettingsNotificationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings/progression': {
+      id: '/app/settings/progression'
+      path: '/settings/progression'
+      fullPath: '/app/settings/progression'
+      preLoaderRoute: typeof AppSettingsProgressionRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/settings/recall': {
@@ -2042,6 +2118,8 @@ interface AppRouteChildren {
   AppPlannerRoute: typeof AppPlannerRoute
   AppRevisionRoute: typeof AppRevisionRoute
   AppTodayRoute: typeof AppTodayRouteWithChildren
+  AppTransitionRoute: typeof AppTransitionRoute
+  AppVaultRoute: typeof AppVaultRoute
   AppIndexRoute: typeof AppIndexRoute
   AppAnalysisPlanRoute: typeof AppAnalysisPlanRouteWithChildren
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
@@ -2061,10 +2139,12 @@ interface AppRouteChildren {
   AppRecallStatsRoute: typeof AppRecallStatsRoute
   AppRecallSuggestionsRoute: typeof AppRecallSuggestionsRoute
   AppSettingsAnalysisRoute: typeof AppSettingsAnalysisRoute
+  AppSettingsArticleshipRoute: typeof AppSettingsArticleshipRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
   AppSettingsNotesRoute: typeof AppSettingsNotesRoute
   AppSettingsNotificationsRoute: typeof AppSettingsNotificationsRoute
+  AppSettingsProgressionRoute: typeof AppSettingsProgressionRoute
   AppSettingsRecallRoute: typeof AppSettingsRecallRoute
   AppSettingsTodayRoute: typeof AppSettingsTodayRoute
   AppSettingsTrackerRoute: typeof AppSettingsTrackerRoute
@@ -2119,6 +2199,8 @@ const AppRouteChildren: AppRouteChildren = {
   AppPlannerRoute: AppPlannerRoute,
   AppRevisionRoute: AppRevisionRoute,
   AppTodayRoute: AppTodayRouteWithChildren,
+  AppTransitionRoute: AppTransitionRoute,
+  AppVaultRoute: AppVaultRoute,
   AppIndexRoute: AppIndexRoute,
   AppAnalysisPlanRoute: AppAnalysisPlanRouteWithChildren,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
@@ -2138,10 +2220,12 @@ const AppRouteChildren: AppRouteChildren = {
   AppRecallStatsRoute: AppRecallStatsRoute,
   AppRecallSuggestionsRoute: AppRecallSuggestionsRoute,
   AppSettingsAnalysisRoute: AppSettingsAnalysisRoute,
+  AppSettingsArticleshipRoute: AppSettingsArticleshipRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,
   AppSettingsNotesRoute: AppSettingsNotesRoute,
   AppSettingsNotificationsRoute: AppSettingsNotificationsRoute,
+  AppSettingsProgressionRoute: AppSettingsProgressionRoute,
   AppSettingsRecallRoute: AppSettingsRecallRoute,
   AppSettingsTodayRoute: AppSettingsTodayRoute,
   AppSettingsTrackerRoute: AppSettingsTrackerRoute,
