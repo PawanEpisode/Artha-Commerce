@@ -166,6 +166,19 @@ export const featureBeats: readonly FeatureBeat[] = [
     cta: 'See past papers',
   },
   {
+    slug: 'amendment-updates',
+    rail: 'Amendments',
+    headline: 'Never study last attempt’s law by accident.',
+    insight:
+      'A notification on Instagram is not a study plan. Amendments matter when they are mapped to the chapter they change and to the sitting you are writing — applicable, or not, in one glance.',
+    points: [
+      'Institute announcements tied to chapters',
+      'Attempt-wise applicability',
+      'A reason to reopen the note, not another unread alert',
+    ],
+    cta: 'See amendments',
+  },
+  {
     slug: 'today',
     rail: 'Today',
     headline: 'Open the app and know what to study, paper by paper.',
@@ -216,19 +229,6 @@ export const featureBeats: readonly FeatureBeat[] = [
       'Save a useful answer into your notes',
     ],
     cta: 'How doubts will work',
-  },
-  {
-    slug: 'amendment-updates',
-    rail: 'Amendments',
-    headline: 'Never study last attempt’s law by accident.',
-    insight:
-      'A notification on Instagram is not a study plan. Amendments matter when they are mapped to the chapter they change and to the sitting you are writing — applicable, or not, in one glance.',
-    points: [
-      'Institute announcements tied to chapters',
-      'Attempt-wise applicability',
-      'A reason to reopen the note, not another unread alert',
-    ],
-    cta: 'How amendments will work',
   },
 ]
 
