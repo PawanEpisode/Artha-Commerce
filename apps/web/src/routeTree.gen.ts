@@ -17,6 +17,7 @@ import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
+import { Route as AmendmentsIndexRouteImport } from './routes/amendments.index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppAccountRouteImport } from './routes/app.account'
 import { Route as AppNotificationsRouteImport } from './routes/app.notifications'
@@ -33,6 +34,11 @@ import { Route as AuthResetPasswordRouteImport } from './routes/auth.reset-passw
 import { Route as CoursesIndexRouteImport } from './routes/courses.index'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesSlugRouteImport } from './routes/features.$slug'
+import { Route as AmendmentsCardsPublicIdRouteImport } from './routes/amendments.cards.$publicId'
+import { Route as AmendmentsDocumentsSlugRouteImport } from './routes/amendments.documents.$slug'
+import { Route as AppAmendmentsIndexRouteImport } from './routes/app.amendments.index'
+import { Route as AppAmendmentsCardIdRouteImport } from './routes/app.amendments.$cardId'
+import { Route as AppAmendmentsArchiveRouteImport } from './routes/app.amendments.archive'
 import { Route as AppAnalysisIndexRouteImport } from './routes/app.analysis.index'
 import { Route as AppAnalysisPlanRouteImport } from './routes/app.analysis.plan'
 import { Route as AppAnalyticsIndexRouteImport } from './routes/app.analytics.index'
@@ -77,6 +83,7 @@ import { Route as AppTrackerGoalsRouteImport } from './routes/app.tracker.goals'
 import { Route as AppTrackerLogRouteImport } from './routes/app.tracker.log'
 import { Route as AppTrackerReportsRouteImport } from './routes/app.tracker.reports'
 import { Route as CoursesCourseIndexRouteImport } from './routes/courses.$course.index'
+import { Route as OgAmendmentsCardIdRouteImport } from './routes/og.amendments.$cardId'
 import { Route as OgCoursesCourseRouteImport } from './routes/og.courses.$course'
 import { Route as AppAnalysisSubjectKeyIndexRouteImport } from './routes/app.analysis.$subjectKey.index'
 import { Route as AppAnalysisSubjectKeyChapterKeyRouteImport } from './routes/app.analysis.$subjectKey.$chapterKey'
@@ -154,6 +161,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const UnsubscribeRoute = UnsubscribeRouteImport.update({
   id: '/unsubscribe',
   path: '/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmendmentsIndexRoute = AmendmentsIndexRouteImport.update({
+  id: '/amendments/',
+  path: '/amendments/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppIndexRoute = AppIndexRouteImport.update({
@@ -235,6 +247,31 @@ const FeaturesSlugRoute = FeaturesSlugRouteImport.update({
   id: '/features/$slug',
   path: '/features/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AmendmentsCardsPublicIdRoute = AmendmentsCardsPublicIdRouteImport.update({
+  id: '/amendments/cards/$publicId',
+  path: '/amendments/cards/$publicId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmendmentsDocumentsSlugRoute = AmendmentsDocumentsSlugRouteImport.update({
+  id: '/amendments/documents/$slug',
+  path: '/amendments/documents/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAmendmentsIndexRoute = AppAmendmentsIndexRouteImport.update({
+  id: '/amendments/',
+  path: '/amendments/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAmendmentsCardIdRoute = AppAmendmentsCardIdRouteImport.update({
+  id: '/amendments/$cardId',
+  path: '/amendments/$cardId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAmendmentsArchiveRoute = AppAmendmentsArchiveRouteImport.update({
+  id: '/amendments/archive',
+  path: '/amendments/archive',
+  getParentRoute: () => AppRoute,
 } as any)
 const AppAnalysisIndexRoute = AppAnalysisIndexRouteImport.update({
   id: '/analysis/',
@@ -455,6 +492,11 @@ const AppTrackerReportsRoute = AppTrackerReportsRouteImport.update({
 const CoursesCourseIndexRoute = CoursesCourseIndexRouteImport.update({
   id: '/courses/$course/',
   path: '/courses/$course/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OgAmendmentsCardIdRoute = OgAmendmentsCardIdRouteImport.update({
+  id: '/og/amendments/$cardId',
+  path: '/og/amendments/$cardId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OgCoursesCourseRoute = OgCoursesCourseRouteImport.update({
@@ -687,9 +729,14 @@ export interface FileRoutesByFullPath {
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/features/$slug': typeof FeaturesSlugRoute
+  '/amendments/': typeof AmendmentsIndexRoute
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
+  '/amendments/cards/$publicId': typeof AmendmentsCardsPublicIdRoute
+  '/amendments/documents/$slug': typeof AmendmentsDocumentsSlugRoute
+  '/app/amendments/$cardId': typeof AppAmendmentsCardIdRoute
+  '/app/amendments/archive': typeof AppAmendmentsArchiveRoute
   '/app/analysis/plan': typeof AppAnalysisPlanRouteWithChildren
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
@@ -721,7 +768,9 @@ export interface FileRoutesByFullPath {
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
+  '/og/amendments/$cardId': typeof OgAmendmentsCardIdRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/amendments/': typeof AppAmendmentsIndexRoute
   '/app/analysis/': typeof AppAnalysisIndexRoute
   '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
@@ -793,9 +842,14 @@ export interface FileRoutesByTo {
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/features/$slug': typeof FeaturesSlugRoute
+  '/amendments': typeof AmendmentsIndexRoute
   '/app': typeof AppIndexRoute
   '/courses': typeof CoursesIndexRoute
   '/features': typeof FeaturesIndexRoute
+  '/amendments/cards/$publicId': typeof AmendmentsCardsPublicIdRoute
+  '/amendments/documents/$slug': typeof AmendmentsDocumentsSlugRoute
+  '/app/amendments/$cardId': typeof AppAmendmentsCardIdRoute
+  '/app/amendments/archive': typeof AppAmendmentsArchiveRoute
   '/app/analysis/plan': typeof AppAnalysisPlanRouteWithChildren
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
@@ -827,7 +881,9 @@ export interface FileRoutesByTo {
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
+  '/og/amendments/$cardId': typeof OgAmendmentsCardIdRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/amendments': typeof AppAmendmentsIndexRoute
   '/app/analysis': typeof AppAnalysisIndexRoute
   '/app/analytics': typeof AppAnalyticsIndexRoute
   '/app/focus': typeof AppFocusIndexRoute
@@ -902,9 +958,14 @@ export interface FileRoutesById {
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/features/$slug': typeof FeaturesSlugRoute
+  '/amendments/': typeof AmendmentsIndexRoute
   '/app/': typeof AppIndexRoute
   '/courses/': typeof CoursesIndexRoute
   '/features/': typeof FeaturesIndexRoute
+  '/amendments/cards/$publicId': typeof AmendmentsCardsPublicIdRoute
+  '/amendments/documents/$slug': typeof AmendmentsDocumentsSlugRoute
+  '/app/amendments/$cardId': typeof AppAmendmentsCardIdRoute
+  '/app/amendments/archive': typeof AppAmendmentsArchiveRoute
   '/app/analysis/plan': typeof AppAnalysisPlanRouteWithChildren
   '/app/focus/history': typeof AppFocusHistoryRoute
   '/app/focus/mini': typeof AppFocusMiniRoute
@@ -936,7 +997,9 @@ export interface FileRoutesById {
   '/app/tracker/goals': typeof AppTrackerGoalsRoute
   '/app/tracker/log': typeof AppTrackerLogRoute
   '/app/tracker/reports': typeof AppTrackerReportsRoute
+  '/og/amendments/$cardId': typeof OgAmendmentsCardIdRoute
   '/og/courses/$course': typeof OgCoursesCourseRouteWithChildren
+  '/app/amendments/': typeof AppAmendmentsIndexRoute
   '/app/analysis/': typeof AppAnalysisIndexRoute
   '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
@@ -1012,9 +1075,14 @@ export interface FileRouteTypes {
     | '/auth/forgot-password'
     | '/auth/reset-password'
     | '/features/$slug'
+    | '/amendments/'
     | '/app/'
     | '/courses/'
     | '/features/'
+    | '/amendments/cards/$publicId'
+    | '/amendments/documents/$slug'
+    | '/app/amendments/$cardId'
+    | '/app/amendments/archive'
     | '/app/analysis/plan'
     | '/app/focus/history'
     | '/app/focus/mini'
@@ -1046,7 +1114,9 @@ export interface FileRouteTypes {
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
+    | '/og/amendments/$cardId'
     | '/og/courses/$course'
+    | '/app/amendments/'
     | '/app/analysis/'
     | '/app/analytics/'
     | '/app/focus/'
@@ -1118,9 +1188,14 @@ export interface FileRouteTypes {
     | '/auth/forgot-password'
     | '/auth/reset-password'
     | '/features/$slug'
+    | '/amendments'
     | '/app'
     | '/courses'
     | '/features'
+    | '/amendments/cards/$publicId'
+    | '/amendments/documents/$slug'
+    | '/app/amendments/$cardId'
+    | '/app/amendments/archive'
     | '/app/analysis/plan'
     | '/app/focus/history'
     | '/app/focus/mini'
@@ -1152,7 +1227,9 @@ export interface FileRouteTypes {
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
+    | '/og/amendments/$cardId'
     | '/og/courses/$course'
+    | '/app/amendments'
     | '/app/analysis'
     | '/app/analytics'
     | '/app/focus'
@@ -1226,9 +1303,14 @@ export interface FileRouteTypes {
     | '/auth/forgot-password'
     | '/auth/reset-password'
     | '/features/$slug'
+    | '/amendments/'
     | '/app/'
     | '/courses/'
     | '/features/'
+    | '/amendments/cards/$publicId'
+    | '/amendments/documents/$slug'
+    | '/app/amendments/$cardId'
+    | '/app/amendments/archive'
     | '/app/analysis/plan'
     | '/app/focus/history'
     | '/app/focus/mini'
@@ -1260,7 +1342,9 @@ export interface FileRouteTypes {
     | '/app/tracker/goals'
     | '/app/tracker/log'
     | '/app/tracker/reports'
+    | '/og/amendments/$cardId'
     | '/og/courses/$course'
+    | '/app/amendments/'
     | '/app/analysis/'
     | '/app/analytics/'
     | '/app/focus/'
@@ -1327,8 +1411,12 @@ export interface RootRouteChildren {
   AuthForgotPasswordRoute: typeof AuthForgotPasswordRoute
   AuthResetPasswordRoute: typeof AuthResetPasswordRoute
   FeaturesSlugRoute: typeof FeaturesSlugRoute
+  AmendmentsIndexRoute: typeof AmendmentsIndexRoute
   CoursesIndexRoute: typeof CoursesIndexRoute
   FeaturesIndexRoute: typeof FeaturesIndexRoute
+  AmendmentsCardsPublicIdRoute: typeof AmendmentsCardsPublicIdRoute
+  AmendmentsDocumentsSlugRoute: typeof AmendmentsDocumentsSlugRoute
+  OgAmendmentsCardIdRoute: typeof OgAmendmentsCardIdRoute
   OgCoursesCourseRoute: typeof OgCoursesCourseRouteWithChildren
   CoursesCourseIndexRoute: typeof CoursesCourseIndexRoute
   CoursesCourseLevelIndexRoute: typeof CoursesCourseLevelIndexRoute
@@ -1394,6 +1482,13 @@ declare module '@tanstack/react-router' {
       path: '/unsubscribe'
       fullPath: '/unsubscribe'
       preLoaderRoute: typeof UnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amendments/': {
+      id: '/amendments/'
+      path: '/amendments'
+      fullPath: '/amendments/'
+      preLoaderRoute: typeof AmendmentsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app/': {
@@ -1507,6 +1602,41 @@ declare module '@tanstack/react-router' {
       fullPath: '/features/$slug'
       preLoaderRoute: typeof FeaturesSlugRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/amendments/cards/$publicId': {
+      id: '/amendments/cards/$publicId'
+      path: '/amendments/cards/$publicId'
+      fullPath: '/amendments/cards/$publicId'
+      preLoaderRoute: typeof AmendmentsCardsPublicIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amendments/documents/$slug': {
+      id: '/amendments/documents/$slug'
+      path: '/amendments/documents/$slug'
+      fullPath: '/amendments/documents/$slug'
+      preLoaderRoute: typeof AmendmentsDocumentsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/amendments/': {
+      id: '/app/amendments/'
+      path: '/amendments'
+      fullPath: '/app/amendments/'
+      preLoaderRoute: typeof AppAmendmentsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/amendments/$cardId': {
+      id: '/app/amendments/$cardId'
+      path: '/amendments/$cardId'
+      fullPath: '/app/amendments/$cardId'
+      preLoaderRoute: typeof AppAmendmentsCardIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/amendments/archive': {
+      id: '/app/amendments/archive'
+      path: '/amendments/archive'
+      fullPath: '/app/amendments/archive'
+      preLoaderRoute: typeof AppAmendmentsArchiveRouteImport
+      parentRoute: typeof AppRoute
     }
     '/app/analysis/': {
       id: '/app/analysis/'
@@ -1816,6 +1946,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoursesCourseIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/og/amendments/$cardId': {
+      id: '/og/amendments/$cardId'
+      path: '/og/amendments/$cardId'
+      fullPath: '/og/amendments/$cardId'
+      preLoaderRoute: typeof OgAmendmentsCardIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/og/courses/$course': {
       id: '/og/courses/$course'
       path: '/og/courses/$course'
@@ -2121,6 +2258,8 @@ interface AppRouteChildren {
   AppTransitionRoute: typeof AppTransitionRoute
   AppVaultRoute: typeof AppVaultRoute
   AppIndexRoute: typeof AppIndexRoute
+  AppAmendmentsCardIdRoute: typeof AppAmendmentsCardIdRoute
+  AppAmendmentsArchiveRoute: typeof AppAmendmentsArchiveRoute
   AppAnalysisPlanRoute: typeof AppAnalysisPlanRouteWithChildren
   AppFocusHistoryRoute: typeof AppFocusHistoryRoute
   AppFocusMiniRoute: typeof AppFocusMiniRoute
@@ -2151,6 +2290,7 @@ interface AppRouteChildren {
   AppTrackerGoalsRoute: typeof AppTrackerGoalsRoute
   AppTrackerLogRoute: typeof AppTrackerLogRoute
   AppTrackerReportsRoute: typeof AppTrackerReportsRoute
+  AppAmendmentsIndexRoute: typeof AppAmendmentsIndexRoute
   AppAnalysisIndexRoute: typeof AppAnalysisIndexRoute
   AppAnalyticsIndexRoute: typeof AppAnalyticsIndexRoute
   AppFocusIndexRoute: typeof AppFocusIndexRoute
@@ -2202,6 +2342,8 @@ const AppRouteChildren: AppRouteChildren = {
   AppTransitionRoute: AppTransitionRoute,
   AppVaultRoute: AppVaultRoute,
   AppIndexRoute: AppIndexRoute,
+  AppAmendmentsCardIdRoute: AppAmendmentsCardIdRoute,
+  AppAmendmentsArchiveRoute: AppAmendmentsArchiveRoute,
   AppAnalysisPlanRoute: AppAnalysisPlanRouteWithChildren,
   AppFocusHistoryRoute: AppFocusHistoryRoute,
   AppFocusMiniRoute: AppFocusMiniRoute,
@@ -2232,6 +2374,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppTrackerGoalsRoute: AppTrackerGoalsRoute,
   AppTrackerLogRoute: AppTrackerLogRoute,
   AppTrackerReportsRoute: AppTrackerReportsRoute,
+  AppAmendmentsIndexRoute: AppAmendmentsIndexRoute,
   AppAnalysisIndexRoute: AppAnalysisIndexRoute,
   AppAnalyticsIndexRoute: AppAnalyticsIndexRoute,
   AppFocusIndexRoute: AppFocusIndexRoute,
@@ -2321,8 +2464,12 @@ const rootRouteChildren: RootRouteChildren = {
   AuthForgotPasswordRoute: AuthForgotPasswordRoute,
   AuthResetPasswordRoute: AuthResetPasswordRoute,
   FeaturesSlugRoute: FeaturesSlugRoute,
+  AmendmentsIndexRoute: AmendmentsIndexRoute,
   CoursesIndexRoute: CoursesIndexRoute,
   FeaturesIndexRoute: FeaturesIndexRoute,
+  AmendmentsCardsPublicIdRoute: AmendmentsCardsPublicIdRoute,
+  AmendmentsDocumentsSlugRoute: AmendmentsDocumentsSlugRoute,
+  OgAmendmentsCardIdRoute: OgAmendmentsCardIdRoute,
   OgCoursesCourseRoute: OgCoursesCourseRouteWithChildren,
   CoursesCourseIndexRoute: CoursesCourseIndexRoute,
   CoursesCourseLevelIndexRoute: CoursesCourseLevelIndexRoute,

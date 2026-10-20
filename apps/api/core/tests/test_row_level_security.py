@@ -26,6 +26,8 @@ APP_LABELS = (
     "mcqbank",
     "analytics",
     "paperanalysis",
+    "progression",
+    "amendments",
 )
 
 
@@ -174,6 +176,20 @@ def test_the_mcqbank_tables_are_covered():
         "mcqbank_adaptiverun",
         "mcqbank_adaptiveround",
         "mcqbank_abilityestimate",
+    } <= set(TABLES)
+
+
+def test_the_amendments_tables_are_covered():
+    assert {
+        "amendments_amendment",
+        "amendments_revision",
+        "amendments_revisionsubject",
+        "amendments_revisionterm",
+        "amendments_change",
+        "amendments_changeversion",
+        "amendments_changemap",
+        "amendments_cardstate",
+        "amendments_auditlog",
     } <= set(TABLES)
 
 

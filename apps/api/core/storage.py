@@ -36,7 +36,9 @@ class SignedUpload:
 
 
 class Storage(Protocol):
-    def upload(self, bucket: str, path: str, data: bytes, *, content_type: str, cache_control: str) -> None: ...
+    def upload(
+        self, bucket: str, path: str, data: bytes, *, content_type: str, cache_control: str, upsert: bool = False
+    ) -> None: ...
 
     def delete(self, bucket: str, paths: list[str]) -> None: ...
 
@@ -80,7 +82,16 @@ class SupabaseStorage:
             raise StorageError(f"Storage answered {response.status_code}")
         return response
 
-    def upload(self, bucket: str, path: str, data: bytes, *, content_type: str, cache_control: str) -> None:
+    def upload(
+        self,
+        bucket: str,
+        path: str,
+        data: bytes,
+        *,
+        content_type: str,
+        cache_control: str,
+        upsert: bool = False,
+    ) -> None:
         self._request(
             "POST",
             f"{self._base}/object/{bucket}/{path}",
@@ -88,7 +99,7 @@ class SupabaseStorage:
             headers={
                 "content-type": content_type,
                 "cache-control": cache_control,
-                "x-upsert": "false",
+                "x-upsert": "true" if upsert else "false",
             },
             timeout=UPLOAD_TIMEOUT if len(data) > 1024 * 1024 else TIMEOUT,
         )
@@ -166,4 +177,5 @@ def get_storage() -> Storage:
 
 def public_url(bucket: str, path: str) -> str:
     """Public object URL without needing the service key (reads go through the CDN)."""
-    return f"{settings.SUPABASE_URL}/storage/v1/object/public/{bucket}/{path}"
+    base = settings.SUPABASE_URL.rstrip("/") if settings.SUPABASE_URL else "https://supabase.co"
+    return f"{base}/storage/v1/object/public/{bucket}/{path}"

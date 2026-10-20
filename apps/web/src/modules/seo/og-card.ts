@@ -96,6 +96,26 @@ export function marksLabel(min: string | null, max: string | null): string | nul
 export const courseOgPath = (course: string) => `/og/courses/${course}`
 export const chapterOgPath = (course: string, level: string, subject: string, chapter: string) =>
   `/og/courses/${course}/${level}/${subject}/${chapter}`
+export const amendmentOgPath = (publicId: string) => `/og/amendments/${publicId}`
+
+export function amendmentCard(input: {
+  title: string
+  lawLabel: string
+  provisionLabel?: string
+  courseLevel?: string
+  changeType?: string
+}): OgCard {
+  const eyebrow = input.courseLevel || 'Statutory Amendment'
+  const subtitle = input.provisionLabel ? `${input.lawLabel} · ${input.provisionLabel}` : input.lawLabel
+  const facts = ['4-Eye Verified', 'Official Source']
+  if (input.changeType) facts.unshift(input.changeType.toUpperCase())
+  return {
+    eyebrow: clamp(eyebrow, 60),
+    title: clamp(input.title, MAX_TITLE),
+    subtitle: clamp(subtitle, MAX_SUBTITLE),
+    facts: facts.map((f) => clamp(f, 24)),
+  }
+}
 
 const CACHE = 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800'
 

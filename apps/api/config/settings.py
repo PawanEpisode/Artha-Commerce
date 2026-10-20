@@ -79,6 +79,7 @@ INSTALLED_APPS = [
     "modules.analytics",
     "modules.paperanalysis",
     "modules.progression",
+    "modules.amendments",
 ]
 
 MIDDLEWARE = [
@@ -208,6 +209,12 @@ REST_FRAMEWORK = {
         "pa_write": "60/min",
         "pa_admin": "300/min",
         "pa_ai": "30/hour",
+        # F-14 amendments (ERD 7)
+        "amendments_read": "120/min",
+        "amendments_state": "120/min",
+        "amendments_bulk": "10/min",
+        "amendments_report": "10/day",
+        "amendments_public": "120/min",
     },
     "UNAUTHENTICATED_USER": None,
 }
@@ -224,6 +231,7 @@ SUPABASE_JWT_SECRET = env("SUPABASE_JWT_SECRET")  # legacy HS256 projects; asymm
 # Service-role key: Storage writes (avatars) and the Auth Admin API (account deletion). API only, never `VITE_*`, never logged.
 SUPABASE_SERVICE_ROLE_KEY = env("SUPABASE_SERVICE_ROLE_KEY")
 SUPABASE_AVATAR_BUCKET = env("SUPABASE_AVATAR_BUCKET", "avatars")
+SUPABASE_AMENDMENTS_BUCKET = env("SUPABASE_AMENDMENTS_BUCKET", "amendments")
 # POSTHOG_API_KEY is the project API key (starts with phc_), the same one the web uses as VITE_POSTHOG_KEY.
 POSTHOG_API_KEY = env("POSTHOG_API_KEY")
 POSTHOG_HOST = env("POSTHOG_HOST", "https://us.i.posthog.com")  # the real host, not the web's /ingest proxy

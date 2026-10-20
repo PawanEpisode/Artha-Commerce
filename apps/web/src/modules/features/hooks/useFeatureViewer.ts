@@ -23,6 +23,7 @@ export function useFeatureViewer(): FeatureViewer {
     pyq_bank: useFeatureFlag('pyq_bank', { strict: true }),
     question_bank: useFeatureFlag('question_bank', { strict: true }),
     mcq_bank: useFeatureFlag('mcq_bank', { strict: true }),
+    amendments: useFeatureFlag('amendments', { strict: true }),
   }
   const overview = useOverview(signedIn && flags.syllabus_coverage)
   const sessions = useSessionsPage({}, signedIn && flags.time_tracker)

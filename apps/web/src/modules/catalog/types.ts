@@ -40,6 +40,7 @@ export type LiveToolPath =
   | '/app/pyq'
   | '/app/mcq'
   | '/app/questions'
+  | '/app/amendments'
 
 export type FeatureFlagName =
   | 'focus_timer'
@@ -50,6 +51,7 @@ export type FeatureFlagName =
   | 'pyq_bank'
   | 'question_bank'
   | 'mcq_bank'
+  | 'amendments'
 
 /** Where a shipped tool opens. Absent on features that are not built yet. */
 export interface FeatureTool {

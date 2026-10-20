@@ -159,7 +159,8 @@ export const features: Feature[] = [
       'Get alerts on law amendments and institute announcements that affect your attempt, mapped to the chapters they change.',
     icon: 'bell-ring',
     highlights: ['Mapped to affected chapters', 'Attempt-wise applicability', 'Institute announcement alerts'],
-    status: 'soon',
+    status: 'live',
+    tool: { to: '/app/amendments', cta: 'View your amendments', flag: 'amendments' },
   },
 ]
 

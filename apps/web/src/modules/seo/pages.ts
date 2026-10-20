@@ -44,6 +44,13 @@ export const STATIC_PAGES = {
     image: '/og/courses.png',
     imageAlt: 'CA, CS and CMA courses, paper by paper',
   },
+  '/amendments': {
+    title: 'Statutory & Academic Amendments for CA, CS, CMA',
+    description:
+      'Official statutory amendments, notifications, and academic updates mapped to your exam attempt and syllabus chapters. 4-eye verified.',
+    image: '/og/features.png',
+    imageAlt: 'ArthaCommerce statutory and academic amendments engine',
+  },
   '/login': {
     title: 'Sign in',
     description:

@@ -13,6 +13,7 @@ const flagsOn: FeatureViewer['flags'] = {
   pyq_bank: true,
   question_bank: true,
   mcq_bank: true,
+  amendments: true,
 }
 
 const guest: FeatureViewer = { signedIn: false, flags: flagsOn }
@@ -65,6 +66,7 @@ describe('groupFeatures', () => {
       'smart-notes',
       'revision',
       'past-papers',
+      'amendment-updates',
     ])
     expect(soon.map((o) => o.feature.slug)).toContain('study-planner')
     expect(soon.some((o) => o.feature.status === 'live')).toBe(false)

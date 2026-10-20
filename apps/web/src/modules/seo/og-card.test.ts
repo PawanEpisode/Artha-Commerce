@@ -82,10 +82,29 @@ describe('cards', () => {
 
 describe('og paths', () => {
   it('point at the image routes', async () => {
-    const { courseOgPath, chapterOgPath } = await import('./og-card')
+    const { courseOgPath, chapterOgPath, amendmentOgPath } = await import('./og-card')
     expect(courseOgPath('ca')).toBe('/og/courses/ca')
     expect(chapterOgPath('ca', 'intermediate', 'taxation', 'salaries')).toBe(
       '/og/courses/ca/intermediate/taxation/salaries',
     )
+    expect(amendmentOgPath('cgst-sec-16-4')).toBe('/og/amendments/cgst-sec-16-4')
+  })
+})
+
+describe('amendmentCard', () => {
+  it('formats eyebrow, title, subtitle and facts', async () => {
+    const { amendmentCard } = await import('./og-card')
+    const card = amendmentCard({
+      title: 'Time limit for availing input tax credit under Section 16(4)',
+      lawLabel: 'CGST Act, 2017',
+      provisionLabel: 'Section 16(4)',
+      courseLevel: 'CA · Final',
+      changeType: 'modification',
+    })
+    expect(card.eyebrow).toBe('CA · Final')
+    expect(card.subtitle).toBe('CGST Act, 2017 · Section 16(4)')
+    expect(card.facts).toContain('MODIFICATION')
+    expect(card.facts).toContain('4-Eye Verified')
+    expect(card.facts).toContain('Official Source')
   })
 })

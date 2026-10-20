@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "amendment_retracted",
+  "type": "object",
+  "required": [
+    "amendment_id",
+    "revision_id",
+    "reason",
+    "chapter_ids",
+    "subject_keys",
+    "term_codes"
+  ],
+  "properties": {
+    "amendment_id": { "type": "string", "format": "uuid" },
+    "revision_id": { "type": "string", "format": "uuid" },
+    "reason": { "type": "string" },
+    "note": { "type": "string" },
+    "chapter_ids": {
+      "type": "array",
+      "items": { "type": "string", "format": "uuid" }
+    },
+    "subject_keys": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "term_codes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

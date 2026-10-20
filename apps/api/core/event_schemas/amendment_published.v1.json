@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "amendment_published",
+  "type": "object",
+  "required": [
+    "amendment_id",
+    "revision_id",
+    "revision_no",
+    "revision_kind",
+    "kind",
+    "course",
+    "level",
+    "level_id",
+    "title",
+    "terms",
+    "subjects",
+    "counts",
+    "chapters",
+    "is_reissue",
+    "path"
+  ],
+  "properties": {
+    "amendment_id": { "type": "string", "format": "uuid" },
+    "revision_id": { "type": "string", "format": "uuid" },
+    "revision_no": { "type": "integer" },
+    "revision_kind": { "type": "string" },
+    "kind": { "type": "string" },
+    "course": { "type": "string" },
+    "level": { "type": "string" },
+    "level_id": { "type": "string", "format": "uuid" },
+    "title": { "type": "string" },
+    "issued_on": { "type": ["string", "null"] },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["term_code", "applicability"],
+        "properties": {
+          "term_code": { "type": "string" },
+          "applicability": { "type": "string" },
+          "cutoff_date": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject_id", "subject_key", "scheme_id"],
+        "properties": {
+          "subject_id": { "type": "string", "format": "uuid" },
+          "subject_key": { "type": "string" },
+          "scheme_id": { "type": "string", "format": "uuid" }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["cards", "high", "normal", "low", "new", "updated", "removed"],
+      "properties": {
+        "cards": { "type": "integer" },
+        "high": { "type": "integer" },
+        "normal": { "type": "integer" },
+        "low": { "type": "integer" },
+        "new": { "type": "integer" },
+        "updated": { "type": "integer" },
+        "removed": { "type": "integer" }
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chapter_id", "chapter_key", "subject_key", "scheme_id", "cards", "high", "normal", "updated"],
+        "properties": {
+          "chapter_id": { "type": "string", "format": "uuid" },
+          "chapter_key": { "type": "string" },
+          "subject_key": { "type": "string" },
+          "scheme_id": { "type": "string", "format": "uuid" },
+          "cards": { "type": "integer" },
+          "high": { "type": "integer" },
+          "normal": { "type": "integer" },
+          "updated": { "type": "integer" }
+        }
+      }
+    },
+    "paper_level_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject_key", "cards"],
+        "properties": {
+          "subject_key": { "type": "string" },
+          "cards": { "type": "integer" }
+        }
+      }
+    },
+    "is_reissue": { "type": "boolean" },
+    "path": { "type": "string" }
+  },
+  "additionalProperties": false
+}
