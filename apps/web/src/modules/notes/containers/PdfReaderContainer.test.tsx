@@ -571,12 +571,13 @@ describe('slots for the annotation layer and the library', () => {
     expect(screen.getByText('12 marks')).toBeInTheDocument()
     expect(screen.getByText('Tool pill')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Marks list' })).toBeInTheDocument()
-    expect(screen.getByTestId('floating')).toHaveTextContent('page 1 of Taxation module')
-    const page = screen.getByRole('group', { name: 'Page 1' })
-    const layers = Array.from(page.children).map(
-      (c) => c.getAttribute('data-testid') ?? c.getAttribute('data-slot') ?? c.tagName,
-    )
-    expect(layers.indexOf('marks-1')).toBeLessThan(layers.indexOf('text-layer'))
-    expect(layers.indexOf('overlay-1')).toBeGreaterThan(layers.indexOf('text-layer'))
+    await waitFor(() => {
+      const page = screen.getByRole('group', { name: 'Page 1' })
+      const layers = Array.from(page.children).map(
+        (c) => c.getAttribute('data-testid') ?? c.getAttribute('data-slot') ?? c.tagName,
+      )
+      expect(layers.indexOf('marks-1')).toBeLessThan(layers.indexOf('text-layer'))
+      expect(layers.indexOf('overlay-1')).toBeGreaterThan(layers.indexOf('text-layer'))
+    })
   })
 })

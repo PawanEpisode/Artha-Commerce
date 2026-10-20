@@ -17,6 +17,7 @@ const off = {
   performance_analytics: false,
   paper_analysis: false,
   progression_engine: false,
+  amendments: false,
 }
 
 describe('visibleLinks', () => {
@@ -29,6 +30,7 @@ describe('visibleLinks', () => {
       '/app/syllabus',
       '/app/analysis',
       '/app/revision',
+      '/app/amendments',
       '/app/notifications',
       '/app/notes',
       '/app/recall',
@@ -139,5 +141,12 @@ describe('visibleLinks', () => {
       '/app/settings/articleship',
       '/app/account',
     ])
+  })
+
+  it('shows Amendments only when the amendments flag is on', () => {
+    expect(visibleLinks(STUDY_LINKS, off).map((link) => link.to)).not.toContain('/app/amendments')
+    expect(visibleLinks(STUDY_LINKS, { ...off, amendments: true }).map((link) => link.to)).toEqual(['/app/amendments'])
+    const amendments = STUDY_LINKS.find((link) => link.to === '/app/amendments')
+    expect(amendments?.children?.map((c) => c.to)).toEqual(['/app/amendments/archive'])
   })
 })

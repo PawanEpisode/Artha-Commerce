@@ -14,6 +14,7 @@ export type WorkspaceFlag =
   | 'performance_analytics'
   | 'paper_analysis'
   | 'progression_engine'
+  | 'amendments'
 
 /** A page inside a section. Shown under its section in the sidebar while that section is open. */
 export interface WorkspaceSubLink {
@@ -38,6 +39,7 @@ export interface WorkspaceSubLink {
     | '/app/mcq/sets'
     | '/app/analysis/plan'
     | '/app/analysis/plan/active'
+    | '/app/amendments/archive'
   label: string
 }
 
@@ -60,6 +62,7 @@ export interface WorkspaceLink {
     | '/app/analytics'
     | '/app/analysis'
     | '/app/vault'
+    | '/app/amendments'
     | '/app/settings/today'
     | '/app/settings/focus'
     | '/app/settings/tracker'
@@ -147,6 +150,14 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     label: 'Due for revision',
     description: 'Chapters to revise today.',
     flag: 'syllabus_coverage',
+  },
+  {
+    to: '/app/amendments',
+    group: 'learn',
+    label: 'Amendments',
+    description: 'Statutory and academic amendments mapped to your syllabus and attempt.',
+    flag: 'amendments',
+    children: [{ to: '/app/amendments/archive', label: 'Term archive' }],
   },
   {
     to: '/app/notifications',
@@ -268,6 +279,7 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   performance_analytics: true,
   paper_analysis: true,
   progression_engine: true,
+  amendments: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

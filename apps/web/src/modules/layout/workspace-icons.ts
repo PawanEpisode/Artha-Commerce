@@ -1,6 +1,7 @@
 import {
   ArchiveRestore,
   Bell,
+  BellRing,
   BookOpen,
   Briefcase,
   CalendarClock,
@@ -42,6 +43,7 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/mcq': BookOpen,
   '/app/analytics': TrendingUp,
   '/app/vault': ArchiveRestore,
+  '/app/amendments': BellRing,
   '/app/settings/today': CalendarClock,
   '/app/settings/focus': Timer,
   '/app/settings/tracker': Clock,
