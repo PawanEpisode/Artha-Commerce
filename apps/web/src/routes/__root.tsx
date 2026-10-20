@@ -5,6 +5,7 @@ import {
   THEME_META_COLORS,
   ThemeProvider,
   Toaster,
+  TooltipProvider,
 } from '@artha/design-system'
 import { type QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from '@tanstack/react-router'
@@ -53,25 +54,27 @@ function RootComponent() {
   return (
     <RootDocument>
       <ThemeProvider>
-        <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <ObservabilityProvider>
-              <PersonalizedPostAuth>
-                {/* The floating timer window (X-01 P4) is shared by the corner timer and the focus page. */}
-                <PopOutProvider>
-                  <SiteShell>
-                    <Outlet />
-                  </SiteShell>
-                  <LiveMiniTimer />
-                  <LivePracticeTimer />
-                </PopOutProvider>
-                <NotificationsBoot />
-                {/* The one toaster for the whole app. Modules only call `toast.*` / their own `notify`. */}
-                <Toaster />
-              </PersonalizedPostAuth>
-            </ObservabilityProvider>
-          </AuthProvider>
-        </QueryClientProvider>
+        <TooltipProvider delayDuration={200}>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <ObservabilityProvider>
+                <PersonalizedPostAuth>
+                  {/* The floating timer window (X-01 P4) is shared by the corner timer and the focus page. */}
+                  <PopOutProvider>
+                    <SiteShell>
+                      <Outlet />
+                    </SiteShell>
+                    <LiveMiniTimer />
+                    <LivePracticeTimer />
+                  </PopOutProvider>
+                  <NotificationsBoot />
+                  {/* The one toaster for the whole app. Modules only call `toast.*` / their own `notify`. */}
+                  <Toaster />
+                </PersonalizedPostAuth>
+              </ObservabilityProvider>
+            </AuthProvider>
+          </QueryClientProvider>
+        </TooltipProvider>
       </ThemeProvider>
     </RootDocument>
   )

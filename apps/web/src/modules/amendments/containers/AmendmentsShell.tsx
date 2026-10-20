@@ -1,4 +1,4 @@
-import { Alert, Button, EmptyState, Page, Skeleton, Sparkles } from '@artha/design-system'
+import { Alert, Button, EmptyState, Page, Skeleton, Sparkles, TooltipProvider } from '@artha/design-system'
 import type { ReactNode } from 'react'
 
 import { useFeatureFlag } from '~/modules/observability'
@@ -36,7 +36,7 @@ export function AmendmentsShell({
   }
 
   return (
-    <>
+    <TooltipProvider>
       {nav ? <AmendmentsNav /> : null}
       <Page width={width}>
         {isPending ? (
@@ -68,6 +68,6 @@ export function AmendmentsShell({
           children
         )}
       </Page>
-    </>
+    </TooltipProvider>
   )
 }
