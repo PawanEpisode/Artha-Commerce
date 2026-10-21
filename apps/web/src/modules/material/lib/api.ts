@@ -29,7 +29,9 @@ export async function fetchWorks(params?: {
   if (params?.q) q.set('q', params.q)
 
   const qs = q.toString()
-  return api<Work[]>(`/material/works/${qs ? `?${qs}` : ''}`)
+  const res = await api<Work[] | { works: Work[] }>(`/material/works/${qs ? `?${qs}` : ''}`)
+  if (Array.isArray(res)) return res
+  return res?.works ?? []
 }
 
 export async function fetchWork(workKey: string): Promise<Work & { editions: EditionDetail[] }> {

@@ -22,7 +22,8 @@ export function useWorks(initialFilters?: UseWorksFilters) {
     setError(null)
     fetchWorks(filters)
       .then((data) => {
-        setWorks(data || [])
+        const worksList = Array.isArray(data) ? data : ((data as { works?: Work[] })?.works ?? [])
+        setWorks(worksList)
         setIsLoading(false)
       })
       .catch((err) => {

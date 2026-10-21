@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { PdfViewerModal } from '../../mocktest/components/PdfViewerModal'
 import { EditionBanner } from '../components/EditionBanner'
 import { useWorkDetail } from '../hooks/useWorkDetail'
+import type { UnitDetail } from '../lib/types'
 
 interface WorkContainerProps {
   workKey: string
@@ -61,11 +62,13 @@ export const WorkContainer: React.FC<WorkContainerProps> = ({
   const isStale =
     currentPublishedEdition && activeEditionDetail && activeEditionDetail.id !== currentPublishedEdition.id
 
+  const targetWorkKey = work.work_key || work.slug || work.id
   const bookPdfUrl =
     activeEditionDetail?.source_url ||
     activeEditionDetail?.pdf_url ||
     currentPublishedEdition?.source_url ||
-    currentPublishedEdition?.pdf_url
+    currentPublishedEdition?.pdf_url ||
+    (work.edition as { source_url?: string | null })?.source_url
 
   const handleDismissBanner = () => {
     setIsBannerDismissed(true)
@@ -139,7 +142,7 @@ export const WorkContainer: React.FC<WorkContainerProps> = ({
                 type="button"
                 onClick={() => {
                   if (work.editions.length >= 2) {
-                    onCompareEditions(work.slug, work.editions[1].edition_key, work.editions[0].edition_key)
+                    onCompareEditions(targetWorkKey, work.editions[1].edition_key, work.editions[0].edition_key)
                   }
                 }}
                 className="inline-flex min-h-[44px] items-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-semibold hover:bg-muted"
@@ -157,7 +160,7 @@ export const WorkContainer: React.FC<WorkContainerProps> = ({
             currentEditionLabel={activeEditionDetail.label}
             latestEditionLabel={currentPublishedEdition.label}
             onCompare={() =>
-              onCompareEditions(work.slug, activeEditionDetail.edition_key, currentPublishedEdition.edition_key)
+              onCompareEditions(targetWorkKey, activeEditionDetail.edition_key, currentPublishedEdition.edition_key)
             }
             onSwitchLatest={() => {
               setSelectedEditionId(currentPublishedEdition.id)
@@ -177,30 +180,75 @@ export const WorkContainer: React.FC<WorkContainerProps> = ({
           </h2>
         </div>
 
-        {activeEditionDetail?.units && activeEditionDetail.units.length > 0 ? (
-          <div className="space-y-4">
-            {activeEditionDetail.units.map((unit) => (
-              <div key={unit.id} className="space-y-3 rounded-2xl border bg-card p-5">
-                <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-muted-foreground uppercase">
-                  <span>Unit {unit.unit_number}</span>
-                  <span>•</span>
-                  <span>{unit.title}</span>
-                </div>
+        {(() => {
+          const activeUnits = activeEditionDetail?.units || (work.edition as { units?: UnitDetail[] })?.units || []
+          const directChapters =
+            (
+              work as {
+                chapters?: Array<{ chapter_key: string; chapter_id?: string; summary?: { total_items?: number } }>
+              }
+            ).chapters || []
 
+          if (activeUnits.length > 0) {
+            return (
+              <div className="space-y-4">
+                {activeUnits.map((unit) => (
+                  <div key={unit.id} className="space-y-3 rounded-2xl border bg-card p-5">
+                    <div className="flex items-center gap-2 text-xs font-bold tracking-wider text-muted-foreground uppercase">
+                      <span>Unit {unit.unit_number}</span>
+                      <span>•</span>
+                      <span>{unit.title}</span>
+                    </div>
+
+                    <div className="divide-y divide-border/60">
+                      {unit.chapters.map((chapter) => (
+                        <button
+                          type="button"
+                          key={chapter.id}
+                          onClick={() => onSelectChapter(targetWorkKey, chapter.chapter_key)}
+                          className="group -mx-3 flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-3 text-left transition-colors hover:bg-muted/30"
+                        >
+                          <div className="space-y-0.5">
+                            <div className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
+                              {chapter.title}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {chapter.items_count} official items (illustrations & exercises)
+                            </div>
+                          </div>
+
+                          <div className="flex shrink-0 items-center gap-2">
+                            <span className="text-xs font-semibold text-muted-foreground group-hover:text-primary">
+                              Open Checklist
+                            </span>
+                            <ChevronRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )
+          }
+
+          if (directChapters.length > 0) {
+            return (
+              <div className="space-y-3 rounded-2xl border bg-card p-5">
                 <div className="divide-y divide-border/60">
-                  {unit.chapters.map((chapter) => (
+                  {directChapters.map((chapter) => (
                     <button
                       type="button"
-                      key={chapter.id}
-                      onClick={() => onSelectChapter(work.slug, chapter.chapter_key)}
+                      key={chapter.chapter_id || chapter.chapter_key}
+                      onClick={() => onSelectChapter(targetWorkKey, chapter.chapter_key)}
                       className="group -mx-3 flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-3 text-left transition-colors hover:bg-muted/30"
                     >
                       <div className="space-y-0.5">
                         <div className="text-sm font-semibold text-foreground transition-colors group-hover:text-primary">
-                          {chapter.title}
+                          {chapter.chapter_key.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
                         </div>
                         <div className="text-xs text-muted-foreground">
-                          {chapter.items_count} official items (illustrations & exercises)
+                          {chapter.summary?.total_items ?? 0} official items (illustrations & exercises)
                         </div>
                       </div>
 
@@ -214,13 +262,15 @@ export const WorkContainer: React.FC<WorkContainerProps> = ({
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="rounded-3xl border bg-muted/10 p-12 text-center text-sm text-muted-foreground">
-            No units or chapters found for this edition.
-          </div>
-        )}
+            )
+          }
+
+          return (
+            <div className="rounded-3xl border bg-muted/10 p-12 text-center text-sm text-muted-foreground">
+              No units or chapters found for this edition.
+            </div>
+          )
+        })()}
       </div>
 
       {bookPdfUrl && (

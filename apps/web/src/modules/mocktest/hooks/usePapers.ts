@@ -23,8 +23,10 @@ export function usePapers(filters?: { subject?: string; kind?: string; source?: 
     Promise.all([fetchPapers(queryFilters), fetchSeriesList(subject)])
       .then(([pRes, sRes]) => {
         if (!cancelled) {
-          setPapers(pRes.papers)
-          setSeries(sRes.series)
+          const papersList = Array.isArray(pRes) ? pRes : (pRes?.papers ?? [])
+          const seriesList = Array.isArray(sRes) ? sRes : (sRes?.series ?? [])
+          setPapers(papersList)
+          setSeries(seriesList)
           setIsLoading(false)
         }
       })

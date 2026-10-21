@@ -26,7 +26,11 @@ export async function fetchPapers(params?: {
   if (params?.status) q.set('status', params.status)
 
   const qs = q.toString()
-  return api<{ papers: MockPaperCard[] }>(`/mocktest/papers/${qs ? `?${qs}` : ''}`)
+  const res = await api<MockPaperCard[] | { papers: MockPaperCard[] }>(`/mocktest/papers/${qs ? `?${qs}` : ''}`)
+  if (Array.isArray(res)) {
+    return { papers: res }
+  }
+  return { papers: res?.papers ?? [] }
 }
 
 export async function fetchPaper(paperId: string): Promise<PaperDetail> {
@@ -41,13 +45,13 @@ export async function startAttempt(paperId: string, runMode: 'exam' | 'practice'
 }
 
 export async function acceptInstructions(attemptId: string): Promise<AttemptState> {
-  return api<AttemptState>(`/mocktest/attempts/${attemptId}/accept-instructions/`, {
+  return api<AttemptState>(`/mocktest/attempts/${attemptId}/accept/`, {
     method: 'POST',
   })
 }
 
 export async function startWriting(attemptId: string): Promise<AttemptState> {
-  return api<AttemptState>(`/mocktest/attempts/${attemptId}/start-writing/`, {
+  return api<AttemptState>(`/mocktest/attempts/${attemptId}/writing/start/`, {
     method: 'POST',
   })
 }
@@ -122,7 +126,11 @@ export async function fetchAttemptReview(
 
 export async function fetchSeriesList(subjectKey?: string): Promise<{ series: SeriesCard[] }> {
   const qs = subjectKey ? `?subject=${subjectKey}` : ''
-  return api<{ series: SeriesCard[] }>(`/mocktest/series/${qs}`)
+  const res = await api<SeriesCard[] | { series: SeriesCard[] }>(`/mocktest/series/${qs}`)
+  if (Array.isArray(res)) {
+    return { series: res }
+  }
+  return { series: res?.series ?? [] }
 }
 
 export async function fetchMockSettings(): Promise<MockTestSettings> {

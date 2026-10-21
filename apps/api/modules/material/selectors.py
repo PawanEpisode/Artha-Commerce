@@ -17,6 +17,8 @@ from .models import (
     Item,
     Progress,
     Provider,
+    Unit,
+    UnitChapter,
     UserEdition,
     UserProvider,
     Work,
@@ -86,8 +88,10 @@ def list_works(
         results.append({
             "id": str(w.id),
             "work_key": w.work_key,
+            "slug": w.work_key,
             "title": w.title,
             "kind": w.kind,
+            "course": "cma",
             "provider": {
                 "slug": w.provider.slug,
                 "name": w.provider.name,
@@ -97,6 +101,7 @@ def list_works(
             "visibility": w.visibility,
             "level": w.level_cached,
             "item_count": w.item_count_cached,
+            "chapters_count": w.item_count_cached,
             "edition": {
                 "id": str(chosen_ed.id),
                 "label": chosen_ed.label,
@@ -204,9 +209,67 @@ def get_work(
                 "counts": newer_edition.counts,
             }
 
+    # Build units and chapters
+    units_list = []
+    unit_objs = list(Unit.objects.filter(edition=edition).order_by("sort_order"))
+    if unit_objs:
+        unit_ids = [u.id for u in unit_objs]
+        mappings = UnitChapter.objects.filter(unit_id__in=unit_ids)
+        unit_map: dict[uuid.UUID, list[dict[str, Any]]] = {u.id: [] for u in unit_objs}
+        for m in mappings:
+            unit_map[m.unit_id].append({
+                "id": str(m.chapter_id),
+                "chapter_key": m.chapter_key,
+                "title": m.chapter_key.replace("-", " ").title(),
+                "items_count": len(chapters_map.get(m.chapter_key, [])),
+            })
+        for u in unit_objs:
+            units_list.append({
+                "id": str(u.id),
+                "title": u.title,
+                "unit_number": u.sort_order or 1,
+                "chapters": unit_map.get(u.id, []),
+            })
+    elif chapters_summary:
+        units_list.append({
+            "id": str(edition.id),
+            "title": "Chapters",
+            "unit_number": 1,
+            "chapters": [
+                {
+                    "id": c["chapter_id"],
+                    "chapter_key": c["chapter_key"],
+                    "title": c["chapter_key"].replace("-", " ").title(),
+                    "items_count": c.get("summary", {}).get("total_items", 0),
+                }
+                for c in chapters_summary
+            ],
+        })
+
+    all_editions = Edition.objects.filter(work=work).order_by("-applies_from_ord")
+    editions_list = []
+    for ed in all_editions:
+        editions_list.append({
+            "id": str(ed.id),
+            "edition_key": ed.label.lower().replace(" ", "-"),
+            "term_code": ed.applies_from_term or "",
+            "publication_year": ed.applies_from_ord // 100 if ed.applies_from_ord else 2024,
+            "label": ed.label,
+            "is_current": ed.status == Edition.Status.CURRENT,
+            "rights_level": "L1",
+            "pdf_url": ed.source_url,
+            "source_url": ed.source_url,
+            "page_offset": ed.page_offset,
+            "work_id": str(work.id),
+            "work_slug": work.work_key,
+            "work_title": work.title,
+            "units": units_list if ed.id == edition.id else [],
+        })
+
     return {
         "id": str(work.id),
         "work_key": work.work_key,
+        "slug": work.work_key,
         "title": work.title,
         "kind": work.kind,
         "provider": {
@@ -225,7 +288,10 @@ def get_work(
             "source_url": edition.source_url,
             "source_page_url": edition.source_page_url,
             "page_offset": edition.page_offset,
+            "units": units_list,
         },
+        "editions": editions_list,
+        "units": units_list,
         "banner": banner_data,
         "overall_summary": overall_summary,
         "chapters": chapters_summary,

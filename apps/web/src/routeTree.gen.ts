@@ -20,6 +20,7 @@ import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as AmendmentsIndexRouteImport } from './routes/amendments.index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppAccountRouteImport } from './routes/app.account'
+import { Route as AppMaterialsRouteImport } from './routes/app.materials'
 import { Route as AppNotificationsRouteImport } from './routes/app.notifications'
 import { Route as AppOnboardingRouteImport } from './routes/app.onboarding'
 import { Route as AppPlannerRouteImport } from './routes/app.planner'
@@ -188,6 +189,11 @@ const AppIndexRoute = AppIndexRouteImport.update({
 const AppAccountRoute = AppAccountRouteImport.update({
   id: '/account',
   path: '/account',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMaterialsRoute = AppMaterialsRouteImport.update({
+  id: '/materials',
+  path: '/materials',
   getParentRoute: () => AppRoute,
 } as any)
 const AppNotificationsRoute = AppNotificationsRouteImport.update({
@@ -794,6 +800,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/app/account': typeof AppAccountRoute
+  '/app/materials': typeof AppMaterialsRoute
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/planner': typeof AppPlannerRoute
@@ -920,6 +927,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/app/account': typeof AppAccountRoute
+  '/app/materials': typeof AppMaterialsRoute
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/planner': typeof AppPlannerRoute
@@ -1047,6 +1055,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/unsubscribe': typeof UnsubscribeRoute
   '/app/account': typeof AppAccountRoute
+  '/app/materials': typeof AppMaterialsRoute
   '/app/notifications': typeof AppNotificationsRoute
   '/app/onboarding': typeof AppOnboardingRoute
   '/app/planner': typeof AppPlannerRoute
@@ -1176,6 +1185,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/unsubscribe'
     | '/app/account'
+    | '/app/materials'
     | '/app/notifications'
     | '/app/onboarding'
     | '/app/planner'
@@ -1302,6 +1312,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/unsubscribe'
     | '/app/account'
+    | '/app/materials'
     | '/app/notifications'
     | '/app/onboarding'
     | '/app/planner'
@@ -1428,6 +1439,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/unsubscribe'
     | '/app/account'
+    | '/app/materials'
     | '/app/notifications'
     | '/app/onboarding'
     | '/app/planner'
@@ -1652,6 +1664,13 @@ declare module '@tanstack/react-router' {
       path: '/account'
       fullPath: '/app/account'
       preLoaderRoute: typeof AppAccountRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/materials': {
+      id: '/app/materials'
+      path: '/materials'
+      fullPath: '/app/materials'
+      preLoaderRoute: typeof AppMaterialsRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/notifications': {
@@ -2499,6 +2518,7 @@ const AppMocksAttemptAttemptIdRouteWithChildren =
 
 interface AppRouteChildren {
   AppAccountRoute: typeof AppAccountRoute
+  AppMaterialsRoute: typeof AppMaterialsRoute
   AppNotificationsRoute: typeof AppNotificationsRoute
   AppOnboardingRoute: typeof AppOnboardingRoute
   AppPlannerRoute: typeof AppPlannerRoute
@@ -2593,6 +2613,7 @@ interface AppRouteChildren {
 
 const AppRouteChildren: AppRouteChildren = {
   AppAccountRoute: AppAccountRoute,
+  AppMaterialsRoute: AppMaterialsRoute,
   AppNotificationsRoute: AppNotificationsRoute,
   AppOnboardingRoute: AppOnboardingRoute,
   AppPlannerRoute: AppPlannerRoute,

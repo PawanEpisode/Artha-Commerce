@@ -106,7 +106,7 @@ export const MaterialHubContainer: React.FC<MaterialHubContainerProps> = ({ onSe
       ) : (
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {works.map((work) => (
-            <WorkCard key={work.id} work={work} onSelect={() => onSelectWork(work.slug)} />
+            <WorkCard key={work.id} work={work} onSelect={() => onSelectWork(work.work_key || work.slug || work.id)} />
           ))}
         </div>
       )}
@@ -115,6 +115,9 @@ export const MaterialHubContainer: React.FC<MaterialHubContainerProps> = ({ onSe
 }
 
 const WorkCard: React.FC<{ work: Work; onSelect: () => void }> = ({ work, onSelect }) => {
+  const editionLabel = work.current_edition?.label || work.edition?.label
+  const chapterCount = work.chapters_count ?? work.item_count ?? 0
+
   return (
     <button
       type="button"
@@ -124,11 +127,11 @@ const WorkCard: React.FC<{ work: Work; onSelect: () => void }> = ({ work, onSele
       <div className="space-y-3">
         <div className="flex items-center justify-between gap-2">
           <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold tracking-wide text-primary uppercase">
-            {work.course} • {work.level}
+            {work.course || 'CMA'} • {work.level || 'Final'}
           </span>
-          {work.current_edition && (
+          {editionLabel && (
             <span className="rounded-md border bg-muted/50 px-2 py-0.5 font-mono text-xs text-muted-foreground">
-              {work.current_edition.label}
+              {editionLabel}
             </span>
           )}
         </div>
@@ -139,13 +142,13 @@ const WorkCard: React.FC<{ work: Work; onSelect: () => void }> = ({ work, onSele
           </h2>
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Building2 className="h-3.5 w-3.5" />
-            <span>{work.provider?.name || 'ICAI'}</span>
+            <span>{work.provider?.name || 'ICMAI'}</span>
           </div>
         </div>
       </div>
 
       <div className="flex items-center justify-between border-t pt-3 text-xs text-muted-foreground">
-        <span>{work.chapters_count} Chapters</span>
+        <span>{chapterCount} Chapters</span>
         <div className="flex items-center gap-1 font-semibold text-primary transition-transform group-hover:translate-x-0.5">
           <span>Open Book</span>
           <ChevronRight className="h-4 w-4" />

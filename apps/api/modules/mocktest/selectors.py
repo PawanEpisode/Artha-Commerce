@@ -72,6 +72,13 @@ def list_papers(
 
     papers = list(qs[:limit])
 
+    # Fetch live versions for duration and total marks
+    live_version_ids = [p.live_version_id for p in papers if p.live_version_id]
+    version_map = {
+        v.id: v
+        for v in PaperVersion.objects.filter(id__in=live_version_ids)
+    }
+
     # Overlay user attempt state if viewer_id is given
     attempt_map = {}
     if viewer_id and papers:
@@ -90,6 +97,7 @@ def list_papers(
 
     results = []
     for p in papers:
+        ver = version_map.get(p.live_version_id)
         results.append({
             "id": str(p.id),
             "public_id": p.public_id,
@@ -101,6 +109,8 @@ def list_papers(
             "visibility": p.visibility,
             "status": p.status,
             "delivery_mode": p.delivery_mode,
+            "duration_seconds": ver.duration_seconds if ver else 10800,
+            "total_marks": float(ver.total_marks) if ver else 100.0,
             "source_pdf_url": p.source_pdf_url,
             "solution_pdf_url": p.solution_pdf_url,
             "answer_key_status": p.answer_key_status,

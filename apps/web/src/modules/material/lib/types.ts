@@ -21,28 +21,34 @@ export interface Provider {
 
 export interface Work {
   id: string
+  work_key: string
   slug: string
   title: string
   course: string
-  level: string
-  subject_code: string
+  level: string | number
+  subject_code?: string
+  subject_key?: string
+  kind?: string
   provider: Provider
   current_edition?: EditionSummary | null
-  editions_count: number
-  chapters_count: number
+  edition?: EditionSummary | null
+  editions_count?: number
+  chapters_count?: number
+  item_count?: number
 }
 
 export interface EditionSummary {
   id: string
   edition_key: string
-  term_code: string
-  publication_year: number
+  term_code?: string
+  publication_year?: number
   label: string
-  is_current: boolean
-  rights_level: RightsLevel
+  is_current?: boolean
+  rights_level?: RightsLevel
   pdf_url?: string | null
   source_url?: string | null
-  page_offset: number
+  page_offset?: number
+  units?: UnitDetail[]
 }
 
 export interface EditionDetail extends EditionSummary {

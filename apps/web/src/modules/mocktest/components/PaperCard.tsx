@@ -9,7 +9,7 @@ interface PaperCardProps {
 }
 
 export const PaperCard: React.FC<PaperCardProps> = ({ paper, onSelect, className = '' }) => {
-  const durationMins = Math.round(paper.duration_seconds / 60)
+  const durationMins = paper.duration_seconds ? Math.round(paper.duration_seconds / 60) : 180
 
   return (
     <div
@@ -30,7 +30,7 @@ export const PaperCard: React.FC<PaperCardProps> = ({ paper, onSelect, className
               </span>
             )}
           </div>
-          <span className="text-xs text-muted-foreground">{paper.attempt_count} attempts</span>
+          <span className="text-xs text-muted-foreground">{paper.attempt_count ?? 0} attempts</span>
         </div>
 
         <h3 className="line-clamp-2 text-base leading-snug font-bold text-foreground">{paper.title}</h3>
@@ -50,7 +50,11 @@ export const PaperCard: React.FC<PaperCardProps> = ({ paper, onSelect, className
             <span>{durationMins} mins</span>
           </div>
           <div className="flex items-center gap-1 font-mono">
-            <span>{paper.total_marks} Marks</span>
+            <span>
+              {paper.total_marks !== undefined && paper.total_marks !== null
+                ? `${paper.total_marks} Marks`
+                : '100 Marks'}
+            </span>
           </div>
         </div>
 
