@@ -96,13 +96,33 @@ export const features: Feature[] = [
   },
   {
     slug: 'mock-tests',
-    title: 'Mock Tests and Practice',
-    tagline: 'Timed practice that feels like the real exam.',
+    title: 'Mock Tests and MTP Series',
+    tagline: 'Timed CBT practice that feels like the real exam.',
     description:
-      'Attempt chapter tests, subject mocks and full-length papers under exam conditions, then review mistakes with clear explanations.',
+      'Attempt chapter tests, subject mocks and full-length papers under exam conditions with official choice rules, section timers, and percentile rankings.',
     icon: 'timer',
-    highlights: ['Chapter, subject and full-length tests', 'Timed exam mode', 'Mistake review and retry'],
-    status: 'soon',
+    highlights: [
+      'Official CBT shell with section locks',
+      'Best of N choice rules and integrity checking',
+      'Instant scorecard and solution review',
+    ],
+    status: 'live',
+    tool: { to: '/app/mocks', cta: 'Start a mock test', flag: 'mock_tests' },
+  },
+  {
+    slug: 'study-material',
+    title: 'Institute Study Material & Checklists',
+    tagline: 'Master every official illustration, practical exercise and TYK.',
+    description:
+      'Official institute study material mapped chapter-by-chapter with illustrations, practical exercises, and deep-linked PDF references with revision tracking.',
+    icon: 'book-open',
+    highlights: [
+      'Illustration and practical checklists',
+      'Official PDF page locators',
+      'Edition diff and what-changed alerts',
+    ],
+    status: 'live',
+    tool: { to: '/app/material', cta: 'Open study material', flag: 'study_material' },
   },
   {
     slug: 'ai-doubt-solver',

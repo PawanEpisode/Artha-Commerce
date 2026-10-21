@@ -11,13 +11,13 @@ from core.events import subscribe
 logger = logging.getLogger(__name__)
 
 
-def on_question_version_live(event: dict) -> None:
+def on_question_version_live(*args, **kwargs) -> None:
     """Checks for drift when a question's mapping changes."""
     # To be wired with flag/service logic in Wave 2
     pass
 
 
-def on_question_taken_down(event: dict) -> None:
+def on_question_taken_down(*args, **kwargs) -> None:
     """Hides question text while preserving marks and statistics facts."""
     # To be wired in Wave 2
     pass

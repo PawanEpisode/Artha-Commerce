@@ -28,6 +28,8 @@ APP_LABELS = (
     "paperanalysis",
     "progression",
     "amendments",
+    "mocktest",
+    "material",
 )
 
 

@@ -27,4 +27,6 @@ urlpatterns = [
     path("api/v1/paperanalysis/", include("modules.paperanalysis.urls")),
     path("api/v1/progression/", include("modules.progression.urls")),
     path("api/v1/amendments/", include("modules.amendments.urls")),
+    path("api/v1/mocktest/", include("modules.mocktest.urls")),
+    path("api/v1/material/", include("modules.material.urls")),
 ]

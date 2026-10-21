@@ -22,6 +22,8 @@ export function useWorkspaceNav() {
     paper_analysis: useFeatureFlag('paper_analysis', { strict: true }),
     progression_engine: useFeatureFlag('progression_engine'),
     amendments: useFeatureFlag('amendments', { strict: true }),
+    mock_tests: useFeatureFlag('mock_tests'),
+    study_material: useFeatureFlag('study_material'),
   }
   const { data } = useBootstrap()
   return {

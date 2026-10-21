@@ -15,6 +15,8 @@ export type WorkspaceFlag =
   | 'paper_analysis'
   | 'progression_engine'
   | 'amendments'
+  | 'mock_tests'
+  | 'study_material'
 
 /** A page inside a section. Shown under its section in the sidebar while that section is open. */
 export interface WorkspaceSubLink {
@@ -63,6 +65,8 @@ export interface WorkspaceLink {
     | '/app/analysis'
     | '/app/vault'
     | '/app/amendments'
+    | '/app/mocks'
+    | '/app/material'
     | '/app/settings/today'
     | '/app/settings/focus'
     | '/app/settings/tracker'
@@ -72,6 +76,8 @@ export interface WorkspaceLink {
     | '/app/settings/analysis'
     | '/app/settings/progression'
     | '/app/settings/articleship'
+    | '/app/settings/material'
+    | '/app/settings/mocks'
     | '/app/account'
   label: string
   description?: string
@@ -202,6 +208,13 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
     flag: 'progression_engine',
   },
   {
+    to: '/app/material',
+    group: 'learn',
+    label: 'Study material',
+    description: 'Official institute study material and illustrations.',
+    flag: 'study_material',
+  },
+  {
     to: '/app/practice',
     group: 'practice',
     label: 'Practice',
@@ -212,6 +225,13 @@ export const STUDY_LINKS: readonly WorkspaceLink[] = [
       { to: '/app/practice/bookmarks', label: 'Bookmarks' },
       { to: '/app/practice/mistakes', label: 'Mistakes' },
     ],
+  },
+  {
+    to: '/app/mocks',
+    group: 'practice',
+    label: 'Mock tests',
+    description: 'Timed CBT mock tests with percentile ranking.',
+    flag: 'mock_tests',
   },
   {
     to: '/app/questions',
@@ -261,6 +281,8 @@ export const SETTINGS_LINKS: readonly WorkspaceLink[] = [
   { to: '/app/settings/analysis', label: 'Paper analysis settings', flag: 'paper_analysis' },
   { to: '/app/settings/progression', label: 'Progression settings', flag: 'progression_engine' },
   { to: '/app/settings/articleship', label: 'Articleship settings', flag: 'progression_engine' },
+  { to: '/app/settings/material', label: 'Material settings', flag: 'study_material' },
+  { to: '/app/settings/mocks', label: 'Mock settings', flag: 'mock_tests' },
   { to: '/app/account', label: 'Account' },
 ]
 
@@ -280,6 +302,8 @@ const ALL_ON: Record<WorkspaceFlag, boolean> = {
   paper_analysis: true,
   progression_engine: true,
   amendments: true,
+  mock_tests: true,
+  study_material: true,
 }
 
 /** Keep links whose flag is on. Links with no flag always stay. */

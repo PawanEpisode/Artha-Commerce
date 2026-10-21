@@ -44,6 +44,8 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/analytics': TrendingUp,
   '/app/vault': ArchiveRestore,
   '/app/amendments': BellRing,
+  '/app/mocks': Timer,
+  '/app/material': BookOpen,
   '/app/settings/today': CalendarClock,
   '/app/settings/focus': Timer,
   '/app/settings/tracker': Clock,
@@ -53,6 +55,8 @@ const ICONS: Record<WorkspaceLink['to'], LucideIcon> = {
   '/app/settings/analysis': Settings,
   '/app/settings/progression': GraduationCap,
   '/app/settings/articleship': Briefcase,
+  '/app/settings/material': BookOpen,
+  '/app/settings/mocks': Timer,
   '/app/account': Settings,
 }
 

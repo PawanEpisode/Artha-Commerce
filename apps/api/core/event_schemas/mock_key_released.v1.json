@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "mock_key_released.v1",
+  "type": "object",
+  "required": [
+    "paper_id",
+    "answer_key_status",
+    "affected_attempts"
+  ],
+  "properties": {
+    "paper_id": { "type": "string", "format": "uuid" },
+    "answer_key_status": { "type": "string" },
+    "affected_attempts": { "type": "integer" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "material_edition_withdrawn.v1",
+  "type": "object",
+  "required": [
+    "edition_id",
+    "reason"
+  ],
+  "properties": {
+    "edition_id": { "type": "string", "format": "uuid" },
+    "reason": { "type": "string" }
+  },
+  "additionalProperties": false
+}

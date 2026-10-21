@@ -79,9 +79,7 @@ function Unavailable() {
         description="We are rolling it out gradually. Please check back soon."
         action={
           <Button asChild variant="outline">
-            <Link to="/app" search={{ from: undefined, home: true }}>
-              Back to your workspace
-            </Link>
+            <Link to="/app">Back to your workspace</Link>
           </Button>
         }
       />

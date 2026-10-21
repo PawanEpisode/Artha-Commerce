@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "mock_attempt_started.v1",
+  "type": "object",
+  "required": [
+    "attempt_id",
+    "paper_id",
+    "paper_version_id",
+    "run_mode",
+    "source_tag",
+    "kind",
+    "duration_seconds"
+  ],
+  "properties": {
+    "attempt_id": { "type": "string", "format": "uuid" },
+    "paper_id": { "type": "string", "format": "uuid" },
+    "paper_version_id": { "type": "string", "format": "uuid" },
+    "run_mode": { "type": "string" },
+    "source_tag": { "type": "string" },
+    "kind": { "type": "string" },
+    "duration_seconds": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false
+}

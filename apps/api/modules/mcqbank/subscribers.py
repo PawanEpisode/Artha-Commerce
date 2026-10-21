@@ -47,9 +47,10 @@ def on_takedown(payload: dict) -> None:
         McqSet.objects.filter(collection_id=cid).update(question_count=cnt)
 
 
-def on_session_completed(payload: dict) -> None:
+def on_session_completed(payload: dict | None = None, **kwargs: Any) -> None:
     """Increments use_count on preset when session was created from a preset."""
-    origin_module = payload.get("origin_module")
+    data = payload or kwargs.get("payload") or kwargs
+    origin_module = data.get("origin_module")
     if origin_module != "mcq_bank":
         return
     origin_ref = payload.get("origin_ref", "")

@@ -14,6 +14,8 @@ const flagsOn: FeatureViewer['flags'] = {
   question_bank: true,
   mcq_bank: true,
   amendments: true,
+  mock_tests: true,
+  study_material: true,
 }
 
 const guest: FeatureViewer = { signedIn: false, flags: flagsOn }
@@ -46,7 +48,7 @@ describe('offerFor', () => {
   })
 
   it('labels unbuilt features as coming soon', () => {
-    expect(offerFor(bySlug('mock-tests'), student)).toMatchObject({ destination: 'soon', label: 'Coming soon' })
+    expect(offerFor(bySlug('study-planner'), student)).toMatchObject({ destination: 'soon', label: 'Coming soon' })
   })
 
   it('hides a shipped tool when its flag is off', () => {
@@ -63,6 +65,8 @@ describe('groupFeatures', () => {
       'syllabus-tracker',
       'time-tracker',
       'streaks-analytics',
+      'mock-tests',
+      'study-material',
       'smart-notes',
       'revision',
       'past-papers',

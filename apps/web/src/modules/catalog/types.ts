@@ -29,6 +29,7 @@ export type FeatureIconKey =
   | 'flame'
   | 'study-time'
   | 'bell-ring'
+  | 'book-open'
 
 export type LiveToolPath =
   | '/app/focus'
@@ -41,6 +42,8 @@ export type LiveToolPath =
   | '/app/mcq'
   | '/app/questions'
   | '/app/amendments'
+  | '/app/mocks'
+  | '/app/material'
 
 export type FeatureFlagName =
   | 'focus_timer'
@@ -52,6 +55,8 @@ export type FeatureFlagName =
   | 'question_bank'
   | 'mcq_bank'
   | 'amendments'
+  | 'mock_tests'
+  | 'study_material'
 
 /** Where a shipped tool opens. Absent on features that are not built yet. */
 export interface FeatureTool {

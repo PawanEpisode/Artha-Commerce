@@ -179,6 +179,32 @@ export const featureBeats: readonly FeatureBeat[] = [
     cta: 'See amendments',
   },
   {
+    slug: 'mock-tests',
+    rail: 'Mocks',
+    headline: 'Timed practice that feels like the hall, then a review that does not.',
+    insight:
+      'Writing a full paper at the dining table is useful only if you sit the clock, then spend longer on the mistakes than on the score. Chapter tests first; full papers when the coverage says you are ready.',
+    points: [
+      'Chapter, subject and full-length papers',
+      'Exam-mode timing with section locks and strict autosave',
+      'Retry the questions you missed and review full solutions',
+    ],
+    cta: 'See mock tests',
+  },
+  {
+    slug: 'study-material',
+    rail: 'Material',
+    headline: 'Official institute study material and illustrations in one checklist.',
+    insight:
+      'Working through official study material problems chapter by chapter ensures zero surprise in the exam hall. Deep-link directly to official PDF pages and track revisions.',
+    points: [
+      'Illustration and practical problem checklists',
+      'Direct deep-link to official Institute PDF page numbers',
+      'What-changed comparison when a new edition is published',
+    ],
+    cta: 'See study material',
+  },
+  {
     slug: 'today',
     rail: 'Today',
     headline: 'Open the app and know what to study, paper by paper.',
@@ -203,19 +229,6 @@ export const featureBeats: readonly FeatureBeat[] = [
       'Re-plan when a week slips, instead of colouring the same grid again',
     ],
     cta: 'How the planner will work',
-  },
-  {
-    slug: 'mock-tests',
-    rail: 'Mocks',
-    headline: 'Timed practice that feels like the hall, then a review that does not.',
-    insight:
-      'Writing a full paper at the dining table is useful only if you sit the clock, then spend longer on the mistakes than on the score. Chapter tests first; full papers when the coverage says you are ready.',
-    points: [
-      'Chapter, subject and full-length papers',
-      'Exam-mode timing, then mistake review',
-      'Retry the questions you actually missed',
-    ],
-    cta: 'How mocks will work',
   },
   {
     slug: 'ai-doubt-solver',

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "material_progress_changed.v1",
+  "type": "object",
+  "required": [
+    "user_id",
+    "chapter_id",
+    "done",
+    "total"
+  ],
+  "properties": {
+    "user_id": { "type": "string", "format": "uuid" },
+    "chapter_id": { "type": "string", "format": "uuid" },
+    "done": { "type": "integer", "minimum": 0 },
+    "total": { "type": "integer", "minimum": 0 },
+    "self_declared": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

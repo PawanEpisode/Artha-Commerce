@@ -1,5 +1,6 @@
 import {
   BellRing,
+  BookOpen,
   CalendarRange,
   FileClock,
   Flame,
@@ -25,6 +26,7 @@ const icons: Record<FeatureIconKey, React.ComponentType<LucideProps>> = {
   flame: Flame,
   'study-time': StudyTimeIcon,
   'bell-ring': BellRing,
+  'book-open': BookOpen,
 }
 
 export function FeatureIcon({ name, ...props }: { name: FeatureIconKey } & LucideProps) {

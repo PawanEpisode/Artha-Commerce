@@ -18,6 +18,8 @@ const off = {
   paper_analysis: false,
   progression_engine: false,
   amendments: false,
+  mock_tests: false,
+  study_material: false,
 }
 
 describe('visibleLinks', () => {
@@ -35,7 +37,9 @@ describe('visibleLinks', () => {
       '/app/notes',
       '/app/recall',
       '/app/vault',
+      '/app/material',
       '/app/practice',
+      '/app/mocks',
       '/app/questions',
       '/app/pyq',
       '/app/mcq',
@@ -52,6 +56,8 @@ describe('visibleLinks', () => {
       '/app/settings/analysis',
       '/app/settings/progression',
       '/app/settings/articleship',
+      '/app/settings/material',
+      '/app/settings/mocks',
       '/app/account',
     ])
   })

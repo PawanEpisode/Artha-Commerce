@@ -80,6 +80,8 @@ INSTALLED_APPS = [
     "modules.paperanalysis",
     "modules.progression",
     "modules.amendments",
+    "modules.mocktest",
+    "modules.material",
 ]
 
 MIDDLEWARE = [
@@ -215,6 +217,19 @@ REST_FRAMEWORK = {
         "amendments_bulk": "10/min",
         "amendments_report": "10/day",
         "amendments_public": "120/min",
+        # F-08 mocktest (PRD 9.4)
+        "mocktest_read": "300/min",
+        "mocktest_write": "240/min",
+        "mocktest_clock": "60/min",
+        "mocktest_events": "60/min",
+        "mocktest_start": "30/hour",
+        "mocktest_generate": "20/hour",
+        # F-12 material (PRD 9)
+        "material_read": "300/min",
+        "material_write": "120/min",
+        "material_report": "20/hour",
+        "material_import": "10/hour",
+        "material_public": "60/min",
     },
     "UNAUTHENTICATED_USER": None,
 }
@@ -232,6 +247,8 @@ SUPABASE_JWT_SECRET = env("SUPABASE_JWT_SECRET")  # legacy HS256 projects; asymm
 SUPABASE_SERVICE_ROLE_KEY = env("SUPABASE_SERVICE_ROLE_KEY")
 SUPABASE_AVATAR_BUCKET = env("SUPABASE_AVATAR_BUCKET", "avatars")
 SUPABASE_AMENDMENTS_BUCKET = env("SUPABASE_AMENDMENTS_BUCKET", "amendments")
+SUPABASE_MOCKTEST_BUCKET = env("SUPABASE_MOCKTEST_BUCKET", "mock-tests")
+SUPABASE_STUDY_MATERIAL_BUCKET = env("SUPABASE_STUDY_MATERIAL_BUCKET", "study-material")
 # POSTHOG_API_KEY is the project API key (starts with phc_), the same one the web uses as VITE_POSTHOG_KEY.
 POSTHOG_API_KEY = env("POSTHOG_API_KEY")
 POSTHOG_HOST = env("POSTHOG_HOST", "https://us.i.posthog.com")  # the real host, not the web's /ingest proxy

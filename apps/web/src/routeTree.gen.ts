@@ -45,7 +45,9 @@ import { Route as AppAnalyticsIndexRouteImport } from './routes/app.analytics.in
 import { Route as AppFocusIndexRouteImport } from './routes/app.focus.index'
 import { Route as AppFocusHistoryRouteImport } from './routes/app.focus.history'
 import { Route as AppFocusMiniRouteImport } from './routes/app.focus.mini'
+import { Route as AppMaterialIndexRouteImport } from './routes/app.material.index'
 import { Route as AppMcqIndexRouteImport } from './routes/app.mcq.index'
+import { Route as AppMocksIndexRouteImport } from './routes/app.mocks.index'
 import { Route as AppNotesIndexRouteImport } from './routes/app.notes.index'
 import { Route as AppNotesLibraryRouteImport } from './routes/app.notes.library'
 import { Route as AppNotesNewRouteImport } from './routes/app.notes.new'
@@ -69,6 +71,8 @@ import { Route as AppSettingsAnalysisRouteImport } from './routes/app.settings.a
 import { Route as AppSettingsArticleshipRouteImport } from './routes/app.settings.articleship'
 import { Route as AppSettingsCoverageRouteImport } from './routes/app.settings.coverage'
 import { Route as AppSettingsFocusRouteImport } from './routes/app.settings.focus'
+import { Route as AppSettingsMaterialRouteImport } from './routes/app.settings.material'
+import { Route as AppSettingsMocksRouteImport } from './routes/app.settings.mocks'
 import { Route as AppSettingsNotesRouteImport } from './routes/app.settings.notes'
 import { Route as AppSettingsNotificationsRouteImport } from './routes/app.settings.notifications'
 import { Route as AppSettingsProgressionRouteImport } from './routes/app.settings.progression'
@@ -89,8 +93,14 @@ import { Route as AppAnalysisSubjectKeyIndexRouteImport } from './routes/app.ana
 import { Route as AppAnalysisSubjectKeyChapterKeyRouteImport } from './routes/app.analysis.$subjectKey.$chapterKey'
 import { Route as AppAnalysisPlanActiveRouteImport } from './routes/app.analysis.plan.active'
 import { Route as AppAnalyticsShareTokenRouteImport } from './routes/app.analytics.share.$token'
+import { Route as AppMaterialWorkKeyIndexRouteImport } from './routes/app.material.$workKey.index'
+import { Route as AppMaterialWorkKeyChapterKeyRouteImport } from './routes/app.material.$workKey.$chapterKey'
+import { Route as AppMaterialWorkKeyChangesRouteImport } from './routes/app.material.$workKey.changes'
+import { Route as AppMaterialItemItemIdRouteImport } from './routes/app.material.item.$itemId'
 import { Route as AppMcqSetsIndexRouteImport } from './routes/app.mcq.sets.index'
 import { Route as AppMcqSetsSlugRouteImport } from './routes/app.mcq.sets.$slug'
+import { Route as AppMocksAttemptAttemptIdRouteImport } from './routes/app.mocks.attempt.$attemptId'
+import { Route as AppMocksPapersPaperIdRouteImport } from './routes/app.mocks.papers.$paperId'
 import { Route as AppNotesSubjectIndexRouteImport } from './routes/app.notes.$subject.index'
 import { Route as AppNotesSubjectChapterRouteImport } from './routes/app.notes.$subject.$chapter'
 import { Route as AppNotesNNoteIdRouteImport } from './routes/app.notes.n.$noteId'
@@ -111,6 +121,8 @@ import { Route as CoursesCourseLevelIndexRouteImport } from './routes/courses.$c
 import { Route as AppAdminAnalysisPapersIndexRouteImport } from './routes/app.admin.analysis.papers.index'
 import { Route as AppAdminAnalysisPapersPaperIdRouteImport } from './routes/app.admin.analysis.papers.$paperId'
 import { Route as AppMcqSubjectsSubjectIndexRouteImport } from './routes/app.mcq.subjects.$subject.index'
+import { Route as AppMocksAttemptAttemptIdResultRouteImport } from './routes/app.mocks.attempt.$attemptId.result'
+import { Route as AppMocksAttemptAttemptIdReviewRouteImport } from './routes/app.mocks.attempt.$attemptId.review'
 import { Route as AppPracticeSessionIdIndexRouteImport } from './routes/app.practice.session.$id.index'
 import { Route as AppPracticeSessionIdReviewRouteImport } from './routes/app.practice.session.$id.review'
 import { Route as AppRecallReviewSummarySessionIdRouteImport } from './routes/app.recall.review.summary.$sessionId'
@@ -303,9 +315,19 @@ const AppFocusMiniRoute = AppFocusMiniRouteImport.update({
   path: '/focus/mini',
   getParentRoute: () => AppRoute,
 } as any)
+const AppMaterialIndexRoute = AppMaterialIndexRouteImport.update({
+  id: '/material/',
+  path: '/material/',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppMcqIndexRoute = AppMcqIndexRouteImport.update({
   id: '/mcq/',
   path: '/mcq/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMocksIndexRoute = AppMocksIndexRouteImport.update({
+  id: '/mocks/',
+  path: '/mocks/',
   getParentRoute: () => AppRoute,
 } as any)
 const AppNotesIndexRoute = AppNotesIndexRouteImport.update({
@@ -423,6 +445,16 @@ const AppSettingsFocusRoute = AppSettingsFocusRouteImport.update({
   path: '/settings/focus',
   getParentRoute: () => AppRoute,
 } as any)
+const AppSettingsMaterialRoute = AppSettingsMaterialRouteImport.update({
+  id: '/settings/material',
+  path: '/settings/material',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsMocksRoute = AppSettingsMocksRouteImport.update({
+  id: '/settings/mocks',
+  path: '/settings/mocks',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppSettingsNotesRoute = AppSettingsNotesRouteImport.update({
   id: '/settings/notes',
   path: '/settings/notes',
@@ -526,6 +558,28 @@ const AppAnalyticsShareTokenRoute = AppAnalyticsShareTokenRouteImport.update({
   path: '/analytics/share/$token',
   getParentRoute: () => AppRoute,
 } as any)
+const AppMaterialWorkKeyIndexRoute = AppMaterialWorkKeyIndexRouteImport.update({
+  id: '/material/$workKey/',
+  path: '/material/$workKey/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMaterialWorkKeyChapterKeyRoute =
+  AppMaterialWorkKeyChapterKeyRouteImport.update({
+    id: '/material/$workKey/$chapterKey',
+    path: '/material/$workKey/$chapterKey',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppMaterialWorkKeyChangesRoute =
+  AppMaterialWorkKeyChangesRouteImport.update({
+    id: '/material/$workKey/changes',
+    path: '/material/$workKey/changes',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppMaterialItemItemIdRoute = AppMaterialItemItemIdRouteImport.update({
+  id: '/material/item/$itemId',
+  path: '/material/item/$itemId',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppMcqSetsIndexRoute = AppMcqSetsIndexRouteImport.update({
   id: '/mcq/sets/',
   path: '/mcq/sets/',
@@ -534,6 +588,17 @@ const AppMcqSetsIndexRoute = AppMcqSetsIndexRouteImport.update({
 const AppMcqSetsSlugRoute = AppMcqSetsSlugRouteImport.update({
   id: '/mcq/sets/$slug',
   path: '/mcq/sets/$slug',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMocksAttemptAttemptIdRoute =
+  AppMocksAttemptAttemptIdRouteImport.update({
+    id: '/mocks/attempt/$attemptId',
+    path: '/mocks/attempt/$attemptId',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppMocksPapersPaperIdRoute = AppMocksPapersPaperIdRouteImport.update({
+  id: '/mocks/papers/$paperId',
+  path: '/mocks/papers/$paperId',
   getParentRoute: () => AppRoute,
 } as any)
 const AppNotesSubjectIndexRoute = AppNotesSubjectIndexRouteImport.update({
@@ -639,6 +704,18 @@ const AppMcqSubjectsSubjectIndexRoute =
     id: '/mcq/subjects/$subject/',
     path: '/mcq/subjects/$subject/',
     getParentRoute: () => AppRoute,
+  } as any)
+const AppMocksAttemptAttemptIdResultRoute =
+  AppMocksAttemptAttemptIdResultRouteImport.update({
+    id: '/result',
+    path: '/result',
+    getParentRoute: () => AppMocksAttemptAttemptIdRoute,
+  } as any)
+const AppMocksAttemptAttemptIdReviewRoute =
+  AppMocksAttemptAttemptIdReviewRouteImport.update({
+    id: '/review',
+    path: '/review',
+    getParentRoute: () => AppMocksAttemptAttemptIdRoute,
   } as any)
 const AppPracticeSessionIdIndexRoute =
   AppPracticeSessionIdIndexRouteImport.update({
@@ -758,6 +835,8 @@ export interface FileRoutesByFullPath {
   '/app/settings/articleship': typeof AppSettingsArticleshipRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/material': typeof AppSettingsMaterialRoute
+  '/app/settings/mocks': typeof AppSettingsMocksRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/progression': typeof AppSettingsProgressionRoute
@@ -774,7 +853,9 @@ export interface FileRoutesByFullPath {
   '/app/analysis/': typeof AppAnalysisIndexRoute
   '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
+  '/app/material/': typeof AppMaterialIndexRoute
   '/app/mcq/': typeof AppMcqIndexRoute
+  '/app/mocks/': typeof AppMocksIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
   '/app/practice/': typeof AppPracticeIndexRoute
   '/app/pyq/': typeof AppPyqIndexRoute
@@ -787,7 +868,12 @@ export interface FileRoutesByFullPath {
   '/app/analysis/$subjectKey/$chapterKey': typeof AppAnalysisSubjectKeyChapterKeyRoute
   '/app/analysis/plan/active': typeof AppAnalysisPlanActiveRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
+  '/app/material/$workKey/$chapterKey': typeof AppMaterialWorkKeyChapterKeyRoute
+  '/app/material/$workKey/changes': typeof AppMaterialWorkKeyChangesRoute
+  '/app/material/item/$itemId': typeof AppMaterialItemItemIdRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
+  '/app/mocks/attempt/$attemptId': typeof AppMocksAttemptAttemptIdRouteWithChildren
+  '/app/mocks/papers/$paperId': typeof AppMocksPapersPaperIdRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
@@ -800,6 +886,7 @@ export interface FileRoutesByFullPath {
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/analysis/$subjectKey/': typeof AppAnalysisSubjectKeyIndexRoute
+  '/app/material/$workKey/': typeof AppMaterialWorkKeyIndexRoute
   '/app/mcq/sets/': typeof AppMcqSetsIndexRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards/': typeof AppRecallCardsIndexRoute
@@ -808,6 +895,8 @@ export interface FileRoutesByFullPath {
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/app/admin/analysis/papers/$paperId': typeof AppAdminAnalysisPapersPaperIdRoute
+  '/app/mocks/attempt/$attemptId/result': typeof AppMocksAttemptAttemptIdResultRoute
+  '/app/mocks/attempt/$attemptId/review': typeof AppMocksAttemptAttemptIdReviewRoute
   '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
@@ -871,6 +960,8 @@ export interface FileRoutesByTo {
   '/app/settings/articleship': typeof AppSettingsArticleshipRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/material': typeof AppSettingsMaterialRoute
+  '/app/settings/mocks': typeof AppSettingsMocksRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/progression': typeof AppSettingsProgressionRoute
@@ -887,7 +978,9 @@ export interface FileRoutesByTo {
   '/app/analysis': typeof AppAnalysisIndexRoute
   '/app/analytics': typeof AppAnalyticsIndexRoute
   '/app/focus': typeof AppFocusIndexRoute
+  '/app/material': typeof AppMaterialIndexRoute
   '/app/mcq': typeof AppMcqIndexRoute
+  '/app/mocks': typeof AppMocksIndexRoute
   '/app/notes': typeof AppNotesIndexRoute
   '/app/practice': typeof AppPracticeIndexRoute
   '/app/pyq': typeof AppPyqIndexRoute
@@ -900,7 +993,12 @@ export interface FileRoutesByTo {
   '/app/analysis/$subjectKey/$chapterKey': typeof AppAnalysisSubjectKeyChapterKeyRoute
   '/app/analysis/plan/active': typeof AppAnalysisPlanActiveRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
+  '/app/material/$workKey/$chapterKey': typeof AppMaterialWorkKeyChapterKeyRoute
+  '/app/material/$workKey/changes': typeof AppMaterialWorkKeyChangesRoute
+  '/app/material/item/$itemId': typeof AppMaterialItemItemIdRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
+  '/app/mocks/attempt/$attemptId': typeof AppMocksAttemptAttemptIdRouteWithChildren
+  '/app/mocks/papers/$paperId': typeof AppMocksPapersPaperIdRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
@@ -913,6 +1011,7 @@ export interface FileRoutesByTo {
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/analysis/$subjectKey': typeof AppAnalysisSubjectKeyIndexRoute
+  '/app/material/$workKey': typeof AppMaterialWorkKeyIndexRoute
   '/app/mcq/sets': typeof AppMcqSetsIndexRoute
   '/app/notes/$subject': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards': typeof AppRecallCardsIndexRoute
@@ -921,6 +1020,8 @@ export interface FileRoutesByTo {
   '/app/syllabus/$subject': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level': typeof CoursesCourseLevelIndexRoute
   '/app/admin/analysis/papers/$paperId': typeof AppAdminAnalysisPapersPaperIdRoute
+  '/app/mocks/attempt/$attemptId/result': typeof AppMocksAttemptAttemptIdResultRoute
+  '/app/mocks/attempt/$attemptId/review': typeof AppMocksAttemptAttemptIdReviewRoute
   '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
@@ -987,6 +1088,8 @@ export interface FileRoutesById {
   '/app/settings/articleship': typeof AppSettingsArticleshipRoute
   '/app/settings/coverage': typeof AppSettingsCoverageRoute
   '/app/settings/focus': typeof AppSettingsFocusRoute
+  '/app/settings/material': typeof AppSettingsMaterialRoute
+  '/app/settings/mocks': typeof AppSettingsMocksRoute
   '/app/settings/notes': typeof AppSettingsNotesRoute
   '/app/settings/notifications': typeof AppSettingsNotificationsRoute
   '/app/settings/progression': typeof AppSettingsProgressionRoute
@@ -1003,7 +1106,9 @@ export interface FileRoutesById {
   '/app/analysis/': typeof AppAnalysisIndexRoute
   '/app/analytics/': typeof AppAnalyticsIndexRoute
   '/app/focus/': typeof AppFocusIndexRoute
+  '/app/material/': typeof AppMaterialIndexRoute
   '/app/mcq/': typeof AppMcqIndexRoute
+  '/app/mocks/': typeof AppMocksIndexRoute
   '/app/notes/': typeof AppNotesIndexRoute
   '/app/practice/': typeof AppPracticeIndexRoute
   '/app/pyq/': typeof AppPyqIndexRoute
@@ -1016,7 +1121,12 @@ export interface FileRoutesById {
   '/app/analysis/$subjectKey/$chapterKey': typeof AppAnalysisSubjectKeyChapterKeyRoute
   '/app/analysis/plan/active': typeof AppAnalysisPlanActiveRoute
   '/app/analytics/share/$token': typeof AppAnalyticsShareTokenRoute
+  '/app/material/$workKey/$chapterKey': typeof AppMaterialWorkKeyChapterKeyRoute
+  '/app/material/$workKey/changes': typeof AppMaterialWorkKeyChangesRoute
+  '/app/material/item/$itemId': typeof AppMaterialItemItemIdRoute
   '/app/mcq/sets/$slug': typeof AppMcqSetsSlugRoute
+  '/app/mocks/attempt/$attemptId': typeof AppMocksAttemptAttemptIdRouteWithChildren
+  '/app/mocks/papers/$paperId': typeof AppMocksPapersPaperIdRoute
   '/app/notes/$subject/$chapter': typeof AppNotesSubjectChapterRoute
   '/app/notes/n/$noteId': typeof AppNotesNNoteIdRoute
   '/app/notes/pdf/$docId': typeof AppNotesPdfDocIdRoute
@@ -1029,6 +1139,7 @@ export interface FileRoutesById {
   '/app/syllabus/$subject/$chapter': typeof AppSyllabusSubjectChapterRoute
   '/app/tracker/day/$date': typeof AppTrackerDayDateRoute
   '/app/analysis/$subjectKey/': typeof AppAnalysisSubjectKeyIndexRoute
+  '/app/material/$workKey/': typeof AppMaterialWorkKeyIndexRoute
   '/app/mcq/sets/': typeof AppMcqSetsIndexRoute
   '/app/notes/$subject/': typeof AppNotesSubjectIndexRoute
   '/app/recall/cards/': typeof AppRecallCardsIndexRoute
@@ -1037,6 +1148,8 @@ export interface FileRoutesById {
   '/app/syllabus/$subject/': typeof AppSyllabusSubjectIndexRoute
   '/courses/$course/$level/': typeof CoursesCourseLevelIndexRoute
   '/app/admin/analysis/papers/$paperId': typeof AppAdminAnalysisPapersPaperIdRoute
+  '/app/mocks/attempt/$attemptId/result': typeof AppMocksAttemptAttemptIdResultRoute
+  '/app/mocks/attempt/$attemptId/review': typeof AppMocksAttemptAttemptIdReviewRoute
   '/app/practice/session/$id/review': typeof AppPracticeSessionIdReviewRoute
   '/app/recall/review/summary/$sessionId': typeof AppRecallReviewSummarySessionIdRoute
   '/courses/$course/$level/$subject/$chapter': typeof CoursesCourseLevelSubjectChapterRouteWithChildren
@@ -1104,6 +1217,8 @@ export interface FileRouteTypes {
     | '/app/settings/articleship'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/material'
+    | '/app/settings/mocks'
     | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/progression'
@@ -1120,7 +1235,9 @@ export interface FileRouteTypes {
     | '/app/analysis/'
     | '/app/analytics/'
     | '/app/focus/'
+    | '/app/material/'
     | '/app/mcq/'
+    | '/app/mocks/'
     | '/app/notes/'
     | '/app/practice/'
     | '/app/pyq/'
@@ -1133,7 +1250,12 @@ export interface FileRouteTypes {
     | '/app/analysis/$subjectKey/$chapterKey'
     | '/app/analysis/plan/active'
     | '/app/analytics/share/$token'
+    | '/app/material/$workKey/$chapterKey'
+    | '/app/material/$workKey/changes'
+    | '/app/material/item/$itemId'
     | '/app/mcq/sets/$slug'
+    | '/app/mocks/attempt/$attemptId'
+    | '/app/mocks/papers/$paperId'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
@@ -1146,6 +1268,7 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/analysis/$subjectKey/'
+    | '/app/material/$workKey/'
     | '/app/mcq/sets/'
     | '/app/notes/$subject/'
     | '/app/recall/cards/'
@@ -1154,6 +1277,8 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
     | '/app/admin/analysis/papers/$paperId'
+    | '/app/mocks/attempt/$attemptId/result'
+    | '/app/mocks/attempt/$attemptId/review'
     | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
@@ -1217,6 +1342,8 @@ export interface FileRouteTypes {
     | '/app/settings/articleship'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/material'
+    | '/app/settings/mocks'
     | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/progression'
@@ -1233,7 +1360,9 @@ export interface FileRouteTypes {
     | '/app/analysis'
     | '/app/analytics'
     | '/app/focus'
+    | '/app/material'
     | '/app/mcq'
+    | '/app/mocks'
     | '/app/notes'
     | '/app/practice'
     | '/app/pyq'
@@ -1246,7 +1375,12 @@ export interface FileRouteTypes {
     | '/app/analysis/$subjectKey/$chapterKey'
     | '/app/analysis/plan/active'
     | '/app/analytics/share/$token'
+    | '/app/material/$workKey/$chapterKey'
+    | '/app/material/$workKey/changes'
+    | '/app/material/item/$itemId'
     | '/app/mcq/sets/$slug'
+    | '/app/mocks/attempt/$attemptId'
+    | '/app/mocks/papers/$paperId'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
@@ -1259,6 +1393,7 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/analysis/$subjectKey'
+    | '/app/material/$workKey'
     | '/app/mcq/sets'
     | '/app/notes/$subject'
     | '/app/recall/cards'
@@ -1267,6 +1402,8 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject'
     | '/courses/$course/$level'
     | '/app/admin/analysis/papers/$paperId'
+    | '/app/mocks/attempt/$attemptId/result'
+    | '/app/mocks/attempt/$attemptId/review'
     | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
@@ -1332,6 +1469,8 @@ export interface FileRouteTypes {
     | '/app/settings/articleship'
     | '/app/settings/coverage'
     | '/app/settings/focus'
+    | '/app/settings/material'
+    | '/app/settings/mocks'
     | '/app/settings/notes'
     | '/app/settings/notifications'
     | '/app/settings/progression'
@@ -1348,7 +1487,9 @@ export interface FileRouteTypes {
     | '/app/analysis/'
     | '/app/analytics/'
     | '/app/focus/'
+    | '/app/material/'
     | '/app/mcq/'
+    | '/app/mocks/'
     | '/app/notes/'
     | '/app/practice/'
     | '/app/pyq/'
@@ -1361,7 +1502,12 @@ export interface FileRouteTypes {
     | '/app/analysis/$subjectKey/$chapterKey'
     | '/app/analysis/plan/active'
     | '/app/analytics/share/$token'
+    | '/app/material/$workKey/$chapterKey'
+    | '/app/material/$workKey/changes'
+    | '/app/material/item/$itemId'
     | '/app/mcq/sets/$slug'
+    | '/app/mocks/attempt/$attemptId'
+    | '/app/mocks/papers/$paperId'
     | '/app/notes/$subject/$chapter'
     | '/app/notes/n/$noteId'
     | '/app/notes/pdf/$docId'
@@ -1374,6 +1520,7 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/$chapter'
     | '/app/tracker/day/$date'
     | '/app/analysis/$subjectKey/'
+    | '/app/material/$workKey/'
     | '/app/mcq/sets/'
     | '/app/notes/$subject/'
     | '/app/recall/cards/'
@@ -1382,6 +1529,8 @@ export interface FileRouteTypes {
     | '/app/syllabus/$subject/'
     | '/courses/$course/$level/'
     | '/app/admin/analysis/papers/$paperId'
+    | '/app/mocks/attempt/$attemptId/result'
+    | '/app/mocks/attempt/$attemptId/review'
     | '/app/practice/session/$id/review'
     | '/app/recall/review/summary/$sessionId'
     | '/courses/$course/$level/$subject/$chapter'
@@ -1680,11 +1829,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppFocusMiniRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/material/': {
+      id: '/app/material/'
+      path: '/material'
+      fullPath: '/app/material/'
+      preLoaderRoute: typeof AppMaterialIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/mcq/': {
       id: '/app/mcq/'
       path: '/mcq'
       fullPath: '/app/mcq/'
       preLoaderRoute: typeof AppMcqIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/mocks/': {
+      id: '/app/mocks/'
+      path: '/mocks'
+      fullPath: '/app/mocks/'
+      preLoaderRoute: typeof AppMocksIndexRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/notes/': {
@@ -1848,6 +2011,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppSettingsFocusRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/settings/material': {
+      id: '/app/settings/material'
+      path: '/settings/material'
+      fullPath: '/app/settings/material'
+      preLoaderRoute: typeof AppSettingsMaterialRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings/mocks': {
+      id: '/app/settings/mocks'
+      path: '/settings/mocks'
+      fullPath: '/app/settings/mocks'
+      preLoaderRoute: typeof AppSettingsMocksRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/settings/notes': {
       id: '/app/settings/notes'
       path: '/settings/notes'
@@ -1988,6 +2165,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAnalyticsShareTokenRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/material/$workKey/': {
+      id: '/app/material/$workKey/'
+      path: '/material/$workKey'
+      fullPath: '/app/material/$workKey/'
+      preLoaderRoute: typeof AppMaterialWorkKeyIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/material/$workKey/$chapterKey': {
+      id: '/app/material/$workKey/$chapterKey'
+      path: '/material/$workKey/$chapterKey'
+      fullPath: '/app/material/$workKey/$chapterKey'
+      preLoaderRoute: typeof AppMaterialWorkKeyChapterKeyRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/material/$workKey/changes': {
+      id: '/app/material/$workKey/changes'
+      path: '/material/$workKey/changes'
+      fullPath: '/app/material/$workKey/changes'
+      preLoaderRoute: typeof AppMaterialWorkKeyChangesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/material/item/$itemId': {
+      id: '/app/material/item/$itemId'
+      path: '/material/item/$itemId'
+      fullPath: '/app/material/item/$itemId'
+      preLoaderRoute: typeof AppMaterialItemItemIdRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/mcq/sets/': {
       id: '/app/mcq/sets/'
       path: '/mcq/sets'
@@ -2000,6 +2205,20 @@ declare module '@tanstack/react-router' {
       path: '/mcq/sets/$slug'
       fullPath: '/app/mcq/sets/$slug'
       preLoaderRoute: typeof AppMcqSetsSlugRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/mocks/attempt/$attemptId': {
+      id: '/app/mocks/attempt/$attemptId'
+      path: '/mocks/attempt/$attemptId'
+      fullPath: '/app/mocks/attempt/$attemptId'
+      preLoaderRoute: typeof AppMocksAttemptAttemptIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/mocks/papers/$paperId': {
+      id: '/app/mocks/papers/$paperId'
+      path: '/mocks/papers/$paperId'
+      fullPath: '/app/mocks/papers/$paperId'
+      preLoaderRoute: typeof AppMocksPapersPaperIdRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/notes/$subject/': {
@@ -2142,6 +2361,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppMcqSubjectsSubjectIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/mocks/attempt/$attemptId/result': {
+      id: '/app/mocks/attempt/$attemptId/result'
+      path: '/result'
+      fullPath: '/app/mocks/attempt/$attemptId/result'
+      preLoaderRoute: typeof AppMocksAttemptAttemptIdResultRouteImport
+      parentRoute: typeof AppMocksAttemptAttemptIdRoute
+    }
+    '/app/mocks/attempt/$attemptId/review': {
+      id: '/app/mocks/attempt/$attemptId/review'
+      path: '/review'
+      fullPath: '/app/mocks/attempt/$attemptId/review'
+      preLoaderRoute: typeof AppMocksAttemptAttemptIdReviewRouteImport
+      parentRoute: typeof AppMocksAttemptAttemptIdRoute
+    }
     '/app/practice/session/$id/': {
       id: '/app/practice/session/$id/'
       path: '/practice/session/$id'
@@ -2248,6 +2481,22 @@ const AppAnalysisPlanRouteWithChildren = AppAnalysisPlanRoute._addFileChildren(
   AppAnalysisPlanRouteChildren,
 )
 
+interface AppMocksAttemptAttemptIdRouteChildren {
+  AppMocksAttemptAttemptIdResultRoute: typeof AppMocksAttemptAttemptIdResultRoute
+  AppMocksAttemptAttemptIdReviewRoute: typeof AppMocksAttemptAttemptIdReviewRoute
+}
+
+const AppMocksAttemptAttemptIdRouteChildren: AppMocksAttemptAttemptIdRouteChildren =
+  {
+    AppMocksAttemptAttemptIdResultRoute: AppMocksAttemptAttemptIdResultRoute,
+    AppMocksAttemptAttemptIdReviewRoute: AppMocksAttemptAttemptIdReviewRoute,
+  }
+
+const AppMocksAttemptAttemptIdRouteWithChildren =
+  AppMocksAttemptAttemptIdRoute._addFileChildren(
+    AppMocksAttemptAttemptIdRouteChildren,
+  )
+
 interface AppRouteChildren {
   AppAccountRoute: typeof AppAccountRoute
   AppNotificationsRoute: typeof AppNotificationsRoute
@@ -2281,6 +2530,8 @@ interface AppRouteChildren {
   AppSettingsArticleshipRoute: typeof AppSettingsArticleshipRoute
   AppSettingsCoverageRoute: typeof AppSettingsCoverageRoute
   AppSettingsFocusRoute: typeof AppSettingsFocusRoute
+  AppSettingsMaterialRoute: typeof AppSettingsMaterialRoute
+  AppSettingsMocksRoute: typeof AppSettingsMocksRoute
   AppSettingsNotesRoute: typeof AppSettingsNotesRoute
   AppSettingsNotificationsRoute: typeof AppSettingsNotificationsRoute
   AppSettingsProgressionRoute: typeof AppSettingsProgressionRoute
@@ -2294,7 +2545,9 @@ interface AppRouteChildren {
   AppAnalysisIndexRoute: typeof AppAnalysisIndexRoute
   AppAnalyticsIndexRoute: typeof AppAnalyticsIndexRoute
   AppFocusIndexRoute: typeof AppFocusIndexRoute
+  AppMaterialIndexRoute: typeof AppMaterialIndexRoute
   AppMcqIndexRoute: typeof AppMcqIndexRoute
+  AppMocksIndexRoute: typeof AppMocksIndexRoute
   AppNotesIndexRoute: typeof AppNotesIndexRoute
   AppPracticeIndexRoute: typeof AppPracticeIndexRoute
   AppPyqIndexRoute: typeof AppPyqIndexRoute
@@ -2304,7 +2557,12 @@ interface AppRouteChildren {
   AppTrackerIndexRoute: typeof AppTrackerIndexRoute
   AppAnalysisSubjectKeyChapterKeyRoute: typeof AppAnalysisSubjectKeyChapterKeyRoute
   AppAnalyticsShareTokenRoute: typeof AppAnalyticsShareTokenRoute
+  AppMaterialWorkKeyChapterKeyRoute: typeof AppMaterialWorkKeyChapterKeyRoute
+  AppMaterialWorkKeyChangesRoute: typeof AppMaterialWorkKeyChangesRoute
+  AppMaterialItemItemIdRoute: typeof AppMaterialItemItemIdRoute
   AppMcqSetsSlugRoute: typeof AppMcqSetsSlugRoute
+  AppMocksAttemptAttemptIdRoute: typeof AppMocksAttemptAttemptIdRouteWithChildren
+  AppMocksPapersPaperIdRoute: typeof AppMocksPapersPaperIdRoute
   AppNotesSubjectChapterRoute: typeof AppNotesSubjectChapterRoute
   AppNotesNNoteIdRoute: typeof AppNotesNNoteIdRoute
   AppNotesPdfDocIdRoute: typeof AppNotesPdfDocIdRoute
@@ -2317,6 +2575,7 @@ interface AppRouteChildren {
   AppSyllabusSubjectChapterRoute: typeof AppSyllabusSubjectChapterRoute
   AppTrackerDayDateRoute: typeof AppTrackerDayDateRoute
   AppAnalysisSubjectKeyIndexRoute: typeof AppAnalysisSubjectKeyIndexRoute
+  AppMaterialWorkKeyIndexRoute: typeof AppMaterialWorkKeyIndexRoute
   AppMcqSetsIndexRoute: typeof AppMcqSetsIndexRoute
   AppNotesSubjectIndexRoute: typeof AppNotesSubjectIndexRoute
   AppRecallCardsIndexRoute: typeof AppRecallCardsIndexRoute
@@ -2365,6 +2624,8 @@ const AppRouteChildren: AppRouteChildren = {
   AppSettingsArticleshipRoute: AppSettingsArticleshipRoute,
   AppSettingsCoverageRoute: AppSettingsCoverageRoute,
   AppSettingsFocusRoute: AppSettingsFocusRoute,
+  AppSettingsMaterialRoute: AppSettingsMaterialRoute,
+  AppSettingsMocksRoute: AppSettingsMocksRoute,
   AppSettingsNotesRoute: AppSettingsNotesRoute,
   AppSettingsNotificationsRoute: AppSettingsNotificationsRoute,
   AppSettingsProgressionRoute: AppSettingsProgressionRoute,
@@ -2378,7 +2639,9 @@ const AppRouteChildren: AppRouteChildren = {
   AppAnalysisIndexRoute: AppAnalysisIndexRoute,
   AppAnalyticsIndexRoute: AppAnalyticsIndexRoute,
   AppFocusIndexRoute: AppFocusIndexRoute,
+  AppMaterialIndexRoute: AppMaterialIndexRoute,
   AppMcqIndexRoute: AppMcqIndexRoute,
+  AppMocksIndexRoute: AppMocksIndexRoute,
   AppNotesIndexRoute: AppNotesIndexRoute,
   AppPracticeIndexRoute: AppPracticeIndexRoute,
   AppPyqIndexRoute: AppPyqIndexRoute,
@@ -2388,7 +2651,12 @@ const AppRouteChildren: AppRouteChildren = {
   AppTrackerIndexRoute: AppTrackerIndexRoute,
   AppAnalysisSubjectKeyChapterKeyRoute: AppAnalysisSubjectKeyChapterKeyRoute,
   AppAnalyticsShareTokenRoute: AppAnalyticsShareTokenRoute,
+  AppMaterialWorkKeyChapterKeyRoute: AppMaterialWorkKeyChapterKeyRoute,
+  AppMaterialWorkKeyChangesRoute: AppMaterialWorkKeyChangesRoute,
+  AppMaterialItemItemIdRoute: AppMaterialItemItemIdRoute,
   AppMcqSetsSlugRoute: AppMcqSetsSlugRoute,
+  AppMocksAttemptAttemptIdRoute: AppMocksAttemptAttemptIdRouteWithChildren,
+  AppMocksPapersPaperIdRoute: AppMocksPapersPaperIdRoute,
   AppNotesSubjectChapterRoute: AppNotesSubjectChapterRoute,
   AppNotesNNoteIdRoute: AppNotesNNoteIdRoute,
   AppNotesPdfDocIdRoute: AppNotesPdfDocIdRoute,
@@ -2401,6 +2669,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppSyllabusSubjectChapterRoute: AppSyllabusSubjectChapterRoute,
   AppTrackerDayDateRoute: AppTrackerDayDateRoute,
   AppAnalysisSubjectKeyIndexRoute: AppAnalysisSubjectKeyIndexRoute,
+  AppMaterialWorkKeyIndexRoute: AppMaterialWorkKeyIndexRoute,
   AppMcqSetsIndexRoute: AppMcqSetsIndexRoute,
   AppNotesSubjectIndexRoute: AppNotesSubjectIndexRoute,
   AppRecallCardsIndexRoute: AppRecallCardsIndexRoute,

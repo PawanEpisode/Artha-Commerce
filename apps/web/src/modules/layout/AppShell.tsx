@@ -3,6 +3,7 @@ import {
   type CommandItem,
   CommandPalette,
   GraduationCap,
+  House,
   isThemePreference,
   LogOut,
   PanelLeft,
@@ -43,7 +44,7 @@ function CommandMenu({ open, onOpenChange }: { open: boolean; onOpenChange: (ope
         id: '/app',
         label: 'Home',
         group: 'Go to',
-        icon: workspaceIcon('/app/today'),
+        icon: House,
         keywords: ['dashboard', 'workspace'],
       },
       ...study.flatMap((l) => [

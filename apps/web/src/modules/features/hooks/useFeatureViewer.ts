@@ -24,6 +24,8 @@ export function useFeatureViewer(): FeatureViewer {
     question_bank: useFeatureFlag('question_bank', { strict: true }),
     mcq_bank: useFeatureFlag('mcq_bank', { strict: true }),
     amendments: useFeatureFlag('amendments', { strict: true }),
+    mock_tests: useFeatureFlag('mock_tests'),
+    study_material: useFeatureFlag('study_material'),
   }
   const overview = useOverview(signedIn && flags.syllabus_coverage)
   const sessions = useSessionsPage({}, signedIn && flags.time_tracker)

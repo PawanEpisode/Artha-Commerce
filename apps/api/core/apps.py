@@ -19,8 +19,12 @@ def enable_rls_everywhere(sender, using="default", **kwargs):
             DO $$
             DECLARE t record;
             BEGIN
-              FOR t IN SELECT tablename FROM pg_tables WHERE schemaname = 'public' LOOP
-                EXECUTE format('ALTER TABLE public.%I ENABLE ROW LEVEL SECURITY', t.tablename);
+              FOR t IN SELECT tablename FROM pg_tables WHERE schemaname = 'public' AND rowsecurity = false LOOP
+                BEGIN
+                  EXECUTE format('ALTER TABLE public.%I ENABLE ROW LEVEL SECURITY', t.tablename);
+                EXCEPTION WHEN OTHERS THEN
+                  RAISE WARNING 'Could not enable RLS on %: %', t.tablename, SQLERRM;
+                END;
               END LOOP;
             END $$;
             """

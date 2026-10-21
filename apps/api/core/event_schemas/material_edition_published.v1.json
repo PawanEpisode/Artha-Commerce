@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "material_edition_published.v1",
+  "type": "object",
+  "required": [
+    "work_id",
+    "edition_id",
+    "applies_from_term"
+  ],
+  "properties": {
+    "work_id": { "type": "string", "format": "uuid" },
+    "edition_id": { "type": "string", "format": "uuid" },
+    "applies_from_term": { "type": "string" },
+    "counts": { "type": "object" },
+    "subject_key": { "type": "string" }
+  },
+  "additionalProperties": false
+}
